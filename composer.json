@@ -1,0 +1,35 @@
+{
+    "name": "automattic/dsapi-client",
+    "description": "Client library for Automattic's Domain Services API.",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Automattic\\Domain_Services_API_Client\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Igor Giussani",
+            "email": "igor.giussani@automattic.com"
+        },
+        {
+            "name": "Kamen Stanev",
+            "email": "kamen.stanev@automattic.com"
+        },
+        {
+            "name": "Leonardo Sameshima Taba",
+            "email": "leonardo.taba@automattic.com"
+        },
+        {
+            "name": "Rafael Galani",
+            "email": "rafael.galani@automattic.com"
+        },
+        {
+            "name": "Ramy Nasr",
+            "email": "ramy@automattic.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4.0"
+    }
+}
