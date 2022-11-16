@@ -8,7 +8,7 @@ class Set implements Response\Response_Interface {
 	use Response\Data_Trait;
 
 	public function get_contacts(): Entity\Domain_Contacts {
-		$contact_data = $this->get_data_by_key( 'contacts' ) ?? [];
+		$contact_data = $this->get_data_by_key( 'data.contacts' ) ?? [];
 		return Entity\Domain_Contacts::from_array( $contact_data );
 	}
 }
