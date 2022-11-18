@@ -16,7 +16,7 @@ Client code for Automattic's [Domain Services](https://github.com/Automattic/dom
 Download the files and include `lib/loader.php`:
 
 ```php
-<?php
+
 require_once '/path/to/automattic/domain-services/lib/loader.php';
 ```
 
