@@ -8,7 +8,7 @@ class Renew implements Response\Response_Interface {
 	use Response\Data_Trait;
 
 	public function get_expiration_date(): ?string {
-		return $this->get_data_by_key( 'expiration_date' );
+		return $this->get_data_by_key( 'data.expiration_date' );
 	}
 }
 

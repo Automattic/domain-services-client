@@ -10,9 +10,9 @@ use Automattic\Domain_Services\{Entity, Response};
 class Get implements Response\Response_Interface {
 	use Response\Data_Trait;
 
-	private const TOTAL_COUNT = 'total_count';
-	private const EVENTS = 'events';
-	private const REQUEST_PARAMS = 'request_params';
+	private const TOTAL_COUNT = 'data.total_count';
+	private const EVENTS = 'data.events';
+	private const REQUEST_PARAMS = 'data.request_params';
 
 	/**
 	 * @return int

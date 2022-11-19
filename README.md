@@ -30,18 +30,6 @@ require_once __DIR__ . '/automattic/lib/loader.php');
 
 use Automattic\Domain_Services\{Api, Command, Configuration, Entity, Response};
 
-// Configure API key authorization: apiKey
-$config = Configuration::get_default_configuration()
-	->set_api_key( 'X-DSAPI-KEY', 'YOUR_API_KEY' )
-	->set_api_key( 'X-DSAPI-USER', 'YOUR_API_USER' );
-
-$api = new Api(
-	$config,
-	new Response\Factory(),
-	// If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-	new GuzzleHttp\Client(),
-);
-
 // Set the domain to use
 $domain_name = new Entity\Domain_Name( 'a8ctest.com' );
 
@@ -70,8 +58,20 @@ $domain_contacts = new Entity\Domain_Contacts(
 // Set up the Contacts\Set command
 $command = new Command\Domain\Contacts\Set( $domain_name, $domain_contacts );
 
-// Create an optional client transaction ID
+// Create an optional client transaction ID (useful for finding related log entries)
 $client_transaction_id = 'client_tx_id_example';
+
+// Configure API key authorization: apiKey
+$config = Configuration::get_default_configuration()
+	->set_api_key( 'X-DSAPI-KEY', 'YOUR_API_KEY' )
+	->set_api_key( 'X-DSAPI-USER', 'YOUR_API_USER' );
+
+$api = new Api(
+	$config,
+	new Response\Factory(),
+	// If you want use custom http client, pass your client which implements `\Psr\Http\Client\ClientInterface`.
+	new GuzzleHttp\Client(),
+);
 
 try {
 	// Make the call to the endpoint
@@ -85,4 +85,18 @@ try {
 } catch (Exception $e) {
 	echo 'Exception when calling Domain_Contacts_Set: ', $e->getMessage(), PHP_EOL;
 }
+```
+
+## Run the unit tests
+
+Install the dependencies via `composer`
+
+```shell
+$ composer install
+```
+
+Then run the unit tests
+
+```shell
+$ ./vendor/bin/phpunit -c ./test/phpunit.xml
 ```

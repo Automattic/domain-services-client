@@ -25,7 +25,7 @@ class Check implements Response\Response_Interface {
 	 * @return array
 	 */
 	public function get_domain(): array {
-		return $this->get_data_by_key( 'domains' ) ?? [];
+		return $this->get_data_by_key( 'data.domains' ) ?? [];
 	}
 }
 

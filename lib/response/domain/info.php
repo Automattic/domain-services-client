@@ -13,28 +13,28 @@ class Info implements Response\Response_Interface {
 	use Response\Data_Trait;
 
 	public function get_auth_code(): string {
-		return $this->get_data_by_key( 'auth_code' );
+		return $this->get_data_by_key( 'data.auth_code' );
 	}
 
 	public function get_contacts(): Entity\Domain_Contacts {
-		$contact_data = $this->get_data_by_key( 'contacts' ) ?? [];
+		$contact_data = $this->get_data_by_key( 'data.contacts' ) ?? [];
 		return Entity\Domain_Contacts::from_array( $contact_data );
 	}
 
 	public function get_created_date(): ?string {
-		return $this->get_data_by_key( 'created_date' );
+		return $this->get_data_by_key( 'data.created_date' );
 	}
 
 	public function get_dnssec(): ?string {
-		return $this->get_data_by_key( 'dnssec' );
+		return $this->get_data_by_key( 'data.dnssec' );
 	}
 
 	public function get_dnssec_ds_dsata(): ?string {
-		return $this->get_data_by_key( 'dnssec_ds_data' );
+		return $this->get_data_by_key( 'data.dnssec_ds_data' );
 	}
 
 	public function get_epp_statuses(): Entity\Epp_Status_Codes {
-		$epp_statuses_data = $this->get_data_by_key( 'epp_statuses' );
+		$epp_statuses_data = $this->get_data_by_key( 'data.epp_statuses' );
 		$epp_statuses = [];
 		foreach( $epp_statuses_data as $epp_status_data ) {
 			$epp_statuses[] = new Entity\Epp_Status_Code( $epp_status_data );
@@ -43,7 +43,7 @@ class Info implements Response\Response_Interface {
 	}
 
 	public function get_name_servers(): ?Entity\Nameservers {
-		$nameservers_data = $this->get_data_by_key( 'nameservers' );
+		$nameservers_data = $this->get_data_by_key( 'data.nameservers' );
 		$nameservers = [];
 		foreach ( $nameservers_data as $nameserver_data ) {
 			$domain_name = new Entity\Domain_Name( $nameserver_data );
@@ -54,33 +54,33 @@ class Info implements Response\Response_Interface {
 	}
 
 	public function get_paid_until(): ?string {
-		return $this->get_data_by_key( 'paid_until' );
+		return $this->get_data_by_key( 'data.paid_until' );
 	}
 
 	public function get_privacy_setting(): ?Entity\Whois_Privacy {
-		$privacy_setting_data = $this->get_data_by_key( 'privacy_setting' );
+		$privacy_setting_data = $this->get_data_by_key( 'data.privacy_setting' );
 
 		return new Entity\Whois_Privacy( $privacy_setting_data );
 	}
 
 	public function get_registrar_transfer_date(): ?string {
-		return $this->get_data_by_key( 'registrar_transfer_date' );
+		return $this->get_data_by_key( 'data.registrar_transfer_date' );
 	}
 
 	public function get_renewal_mode(): ?string {
-		return $this->get_data_by_key( 'renewal_mode' );
+		return $this->get_data_by_key( 'data.renewal_mode' );
 	}
 
 	public function get_rgp_status(): ?string {
-		return $this->get_data_by_key( 'rgp_status' );
+		return $this->get_data_by_key( 'data.rgp_status' );
 	}
 
 	public function get_transfer_lock(): ?bool {
-		return $this->get_data_by_key( 'transfer_lock' );
+		return $this->get_data_by_key( 'data.transfer_lock' );
 	}
 
 	public function get_updated_date(): ?string {
-		return $this->get_data_by_key( 'updated_date' );
+		return $this->get_data_by_key( 'data.updated_date' );
 	}
 }
 

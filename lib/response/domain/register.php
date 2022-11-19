@@ -8,27 +8,27 @@ class Register implements Response\Response_Interface {
 	use Response\Data_Trait;
 
 	public function get_domain_status(): ?string {
-		return $this->get_data_by_key( 'domain_status' );
+		return $this->get_data_by_key( 'data.domain_status' );
 	}
 
 	public function get_created_date(): ?string {
-		return $this->get_data_by_key( 'created_date' );
+		return $this->get_data_by_key( 'data.created_date' );
 	}
 
 	public function get_expiration_date(): ?string {
-		return $this->get_data_by_key( 'expiration_date' );
+		return $this->get_data_by_key( 'data.expiration_date' );
 	}
 
 	public function get_renewal_date(): ?string {
-		return $this->get_data_by_key( 'renewal_date' );
+		return $this->get_data_by_key( 'data.renewal_date' );
 	}
 
 	public function get_unverified_contact_suspension_date(): ?string {
-		return $this->get_data_by_key( 'unverified_contact_suspension_date' );
+		return $this->get_data_by_key( 'data.unverified_contact_suspension_date' );
 	}
 
 	public function get_contacts(): Entity\Domain_Contacts {
-		$contact_data = $this->get_data_by_key( 'contacts' ) ?? [];
+		$contact_data = $this->get_data_by_key( 'data.contacts' ) ?? [];
 		return Entity\Domain_Contacts::from_array( $contact_data );
 	}
 }

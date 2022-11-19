@@ -10,9 +10,9 @@ use Automattic\Domain_Services\{Entity, Response};
 class Details implements Response\Response_Interface {
 	use Response\Data_Trait;
 
-	public const CONTACT_INFORMATION = 'contact_information';
-	public const VALIDATED = 'validated';
-	public const VERIFIED = 'verified';
+	public const CONTACT_INFORMATION = 'data.contact_information';
+	public const VALIDATED = 'data.validated';
+	public const VERIFIED = 'data.verified';
 
 	/**
 	 * @return Entity\Contact_Information

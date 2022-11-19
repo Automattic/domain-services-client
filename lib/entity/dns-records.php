@@ -16,11 +16,11 @@ class Dns_Records {
 	/**
 	 * The list of DNS records for this domain.
 	 *
-	 * @var Dns_Record_Set[]
+	 * @var Dns_Record_Sets
 	 */
-	private array $record_sets;
+	private Dns_Record_Sets $record_sets;
 
-	public function __construct( Domain_Name $domain, Dns_Record_Set ...$record_sets ) {
+	public function __construct( Domain_Name $domain, Dns_Record_Sets $record_sets ) {
 		$this->domain = $domain;
 		$this->record_sets = $record_sets;
 	}
@@ -33,9 +33,9 @@ class Dns_Records {
 	}
 
 	/**
-	 * @return Dns_Record_Set[]
+	 * @return Dns_Record_Sets
 	 */
-	public function get_record_sets(): array {
+	public function get_record_sets(): Dns_Record_Sets {
 		return $this->record_sets;
 	}
 
@@ -43,25 +43,16 @@ class Dns_Records {
 	 * @return array
 	 */
 	public function to_array(): array {
-		$record_sets_array = array_map(
-			static fn( Dns_Record_Set $record_set ): array => $record_set->to_array(),
-			$this->record_sets
-		);
-
 		return [
 			self::get_domain_name_array_key() => $this->domain->get_name(),
-			self::get_dns_record_sets_array_key() => $record_sets_array,
+			self::get_dns_record_sets_array_key() => $this->record_sets->to_array(),
 		];
 	}
 
 	public static function from_array( string $domain_name_data, array $record_sets_data ): self {
 		$domain_name = new Domain_Name( $domain_name_data );
+		$dns_record_sets = Dns_Record_Sets::from_array( $record_sets_data );
 
-		$record_sets = [];
-		foreach ( $record_sets_data as $record_set_data ) {
-			$record_sets[] = Dns_Record_Set::from_array( $record_set_data );
-		}
-
-		return new self( $domain_name, ...$record_sets );
+		return new self( $domain_name, $dns_record_sets );
 	}
 }
