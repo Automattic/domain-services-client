@@ -9,7 +9,7 @@ class Dns_Records_Get_Test extends Domain_Services_Client_Test_Case {
 		$domain = new Entity\Domain_Name( 'test-domain-name.blog' );
 		$command = new Command\Dns\Records\Get( $domain );
 
-		$response_data = get_mock_response( $command, 'success' );
+		$response_data = get_mock_response( $command, $domain->get_name(), 'success' );
 
 		/** @var Response\Dns\Records\Get $response_object */
 		$response_object = $this->response_factory->build_response( $command, $response_data );
