@@ -6,99 +6,6 @@ use Automattic\Domain_Services\{Api, Command, Configuration, Entity, Mock, Respo
 
 class Dns_Records_Set_Test extends Domain_Services_Client_Test_Case {
 	public function test_response_factory_success(): void {
-
-//		array (
-//			'command' => 'Dns_Records_Set',
-//			'params' =>
-//				array (
-//					'records' =>
-//						array (
-//							'domain' => 'test-domain-name.com',
-//							'record_sets' =>
-//								array (
-//									0 =>
-//										array (
-//											'name' => '@',
-//											'type' => 'A',
-//											'ttl' => 3600,
-//											'data' =>
-//												array (
-//													0 => '9.10.11.12',
-//													1 => '13.14.15.16',
-//												),
-//										),
-//									1 =>
-//										array (
-//											'name' => '@',
-//											'type' => 'TXT',
-//											'ttl' => 3600,
-//											'data' =>
-//												array (
-//													0 => 'Hi! I am TXT record!',
-//												),
-//										),
-//								),
-//						),
-//				),
-//			'client_txn_id' => 'test-client-transaction-id',
-//			'auth' =>
-//				array (
-//					0 => 'token',
-//				),
-//		)
-//array (
-//	'change_set' =>
-//		array (
-//			'domain' => 'test-domain-name.com',
-//			'records_added' =>
-//				array (
-//					0 =>
-//						array (
-//							'name' => '@',
-//							'type' => 'A',
-//							'ttl' => 300,
-//							'data' =>
-//								array (
-//									0 => '9.10.11.12',
-//									1 => '13.14.15.16',
-//								),
-//						),
-//				),
-//			'records_deleted' =>
-//				array (
-//					0 =>
-//						array (
-//							'name' => '@',
-//							'type' => 'A',
-//							'ttl' => 300,
-//							'data' =>
-//								array (
-//									0 => '1.2.3.4',
-//									1 => '5.6.7.8',
-//								),
-//						),
-//					1 =>
-//						array (
-//							'name' => '*',
-//							'type' => 'CNAME',
-//							'ttl' => 14400,
-//							'data' =>
-//								array (
-//									0 => 'test-domain-name.com.',
-//								),
-//						),
-//				),
-//		),
-//	'status' => 200,
-//	'status_description' => 'Command completed successfully',
-//	'success' => true,
-//	'client_txn_id' => 'test-client-transaction-id',
-//	'server_txn_id' => '72f6f165-1328-4989-912b-1dd936e11866.local-isolated-test-request',
-//	'timestamp' => 1668865903,
-//	'runtime' => 0.0037,
-//)
-
-
 		$domain = new Entity\Domain_Name( 'dns-records-set-test-domain.blog' );
 		$dns_record_sets = Entity\Dns_Record_Sets::from_array(
 			[
@@ -148,6 +55,5 @@ class Dns_Records_Set_Test extends Domain_Services_Client_Test_Case {
 		$response_dns_deleted_record_sets_data = $response_dns_deleted_record_sets->to_array();
 		$this->assertIsArray( $response_dns_deleted_record_sets_data );
 		$this->assertCount( 2, $response_dns_deleted_record_sets_data );
-
 	}
 }
