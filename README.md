@@ -9,7 +9,7 @@ Client code for Automattic's [Domain Services](https://github.com/Automattic/dom
 - PHP 7.4 and later.
   (Should also work with PHP 8.0.)
 
-- Also requires a Http client compatible with \Psr\Http\Client\ClientInterface.
+- Also requires an Http client compatible with \Psr\Http\Client\ClientInterface.
 
 ### Manual Installation
 
