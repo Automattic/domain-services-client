@@ -121,6 +121,18 @@ function get_mock_response( Command\Command_Interface $command, string $domain, 
 			];
 			break;
 
+		case 'Event_Ack-success':
+			$response = [
+				'status' => 200,
+				'status_description' => 'Command completed successfully',
+				'success' => true,
+				'client_txn_id' => 'test-client-transaction-id',
+				'server_txn_id' => 'a7903cee-043b-4763-b078-737308b5d284.local-isolated-test-request',
+				'timestamp' => 1668886944,
+				'runtime' => 0.0053,
+			];
+			break;
+
 		default:
 			throw new \RuntimeException( 'Unknown command used in mock response request' );
 	}
