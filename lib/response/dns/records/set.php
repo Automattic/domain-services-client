@@ -11,18 +11,19 @@ class Set implements Response\Response_Interface {
 	use Response\Data_Trait;
 
 	public function get_domain_name(): Entity\Domain_Name {
-		return $this->get_domain_name_from_response_data( 'data.change_set.domain' );
+		$domain_data = $this->get_data_by_key( 'data.change_set.domain' );
+		return new Entity\Domain_Name( $domain_data );
 	}
 
 	public function get_records_added(): Entity\Dns_Records {
-		$domain_name_data = $this->get_data_by_key( 'data.change_set.domain' );
+		$domain_name_data = $this->get_domain_name()->get_name();
 		$record_sets_data = $this->get_data_by_key( 'data.change_set.records_added' );
 
 		return Entity\Dns_Records::from_array( $domain_name_data, $record_sets_data );
 	}
 
 	public function get_records_deleted(): Entity\Dns_Records {
-		$domain_name_data = $this->get_data_by_key( 'data.change_set.domain' );
+		$domain_name_data = $this->get_domain_name()->get_name();
 		$record_sets_data = $this->get_data_by_key( 'data.change_set.records_deleted' );
 
 		return Entity\Dns_Records::from_array( $domain_name_data, $record_sets_data );
