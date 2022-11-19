@@ -1,24 +1,24 @@
 <phpunit
-        stopOnFailure="false"
-        backupGlobals="false"
-        timeoutForSmallTests="25"
-        timeoutForMediumTests="50"
-        timeoutForLargeTests="120"
-        convertNoticesToExceptions="false"
-        convertWarningsToExceptions="false"
-        bootstrap="bootstrap.php">
-    <testsuites>
-        <testsuite name="command">
-            <directory suffix="test.php">command</directory>
-        </testsuite>
-        <testsuite name="entity">
-            <directory suffix="test.php">entity</directory>
-        </testsuite>
-        <testsuite name="response">
-            <directory suffix="test.php">response</directory>
-        </testsuite>
-        <testsuite name="api">
-            <directory suffix="test.php">api</directory>
-        </testsuite>
-    </testsuites>
+		stopOnFailure="false"
+		backupGlobals="false"
+		timeoutForSmallTests="25"
+		timeoutForMediumTests="50"
+		timeoutForLargeTests="120"
+		convertNoticesToExceptions="false"
+		convertWarningsToExceptions="false"
+		bootstrap="bootstrap.php">
+	<testsuites>
+		<testsuite name="command">
+			<directory suffix="test.php">command</directory>
+		</testsuite>
+		<testsuite name="entity">
+			<directory suffix="test.php">entity</directory>
+		</testsuite>
+		<testsuite name="response">
+			<directory suffix="test.php">response</directory>
+		</testsuite>
+		<testsuite name="api">
+			<directory suffix="test.php">api</directory>
+		</testsuite>
+	</testsuites>
 </phpunit>
