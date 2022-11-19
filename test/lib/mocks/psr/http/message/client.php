@@ -16,7 +16,6 @@ class Client implements \Psr\Http\Client\ClientInterface {
 	 *
 	 * @return \Psr\Http\Message\ResponseInterface
 	 *
-	 * @throws \Psr\Http\Client\ClientExceptionInterface If an error happens while processing the request.
 	 */
 	public function sendRequest( \Psr\Http\Message\RequestInterface $request ): \Psr\Http\Message\ResponseInterface {
 		return $this->mock_response;

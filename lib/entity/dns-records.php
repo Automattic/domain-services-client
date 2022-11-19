@@ -51,7 +51,7 @@ class Dns_Records {
 
 	public static function from_array( string $domain_name_data, array $record_sets_data ): self {
 		$domain_name = new Domain_Name( $domain_name_data );
-        $dns_record_sets = Dns_Record_Sets::from_array( $record_sets_data );
+		$dns_record_sets = Dns_Record_Sets::from_array( $record_sets_data );
 
 		return new self( $domain_name, $dns_record_sets );
 	}

@@ -7,49 +7,49 @@ use Automattic\Domain_Services\{ Command };
 function get_mock_response( Command\Command_Interface $command, string $response_type ): array {
 	$response = [];
 
-    $command_name = $command::get_name();
-    $response_requested = $command_name . '-' . $response_type;
+	$command_name = $command::get_name();
+	$response_requested = $command_name . '-' . $response_type;
 
-    $command_data = $command->to_array();
-    $domain = $command_data['domain'] ?? null;
+	$command_data = $command->to_array();
+	$domain = $command_data['domain'] ?? null;
 
 	switch ( $response_requested ) {
 		case 'Dns_Records_Get-success':
 			$response = [
-                'status' => 200,
-                'status_description' => 'Command completed successfully',
-                'success' => true,
-                'client_txn_id' => 'test-client-transaction-id',
-                'server_txn_id' => 'f3ef7b83-54b8-4f9c-a0a0-bf94374f1563.local-isolated-test-request',
-                'timestamp' => 1668798703,
-                'runtime' => 0.0014,
-                'data' => [
-                    'dns_records' => [
-                        'domain' => $domain,
-                        'record_sets' => [
-                            [
-                                'name' => '@',
-                                'type' => 'A',
-                                'ttl' => 300,
-                                'data' =>
-                                    [
-                                        '1.2.3.4',
-                                        '5.6.7.8',
-                                    ],
-                            ],
-                            [
-                                'name' => '*',
-                                'type' => 'CNAME',
-                                'ttl' => 14400,
-                                'data' =>
-                                    [
-                                        'test-domain-name.com.',
-                                    ],
-                            ],
-                        ],
-                    ],
-                ],
-            ];
+				'status' => 200,
+				'status_description' => 'Command completed successfully',
+				'success' => true,
+				'client_txn_id' => 'test-client-transaction-id',
+				'server_txn_id' => 'f3ef7b83-54b8-4f9c-a0a0-bf94374f1563.local-isolated-test-request',
+				'timestamp' => 1668798703,
+				'runtime' => 0.0014,
+				'data' => [
+					'dns_records' => [
+						'domain' => $domain,
+						'record_sets' => [
+							[
+								'name' => '@',
+								'type' => 'A',
+								'ttl' => 300,
+								'data' =>
+									[
+										'1.2.3.4',
+										'5.6.7.8',
+									],
+							],
+							[
+								'name' => '*',
+								'type' => 'CNAME',
+								'ttl' => 14400,
+								'data' =>
+									[
+										'test-domain-name.com.',
+									],
+							],
+						],
+					],
+				],
+			];
 			break;
 
 		case 'Domain_Contacts_Set-success':
@@ -74,10 +74,10 @@ function get_mock_response( Command\Command_Interface $command, string $response
 							),
 					),
 			);
-            break;
+			break;
 
-        default:
-            throw new \RuntimeException( 'Unknown command used in mock response request' );
+		default:
+			throw new \RuntimeException( 'Unknown command used in mock response request' );
 	}
 
 	return $response;
