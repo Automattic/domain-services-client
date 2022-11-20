@@ -2,7 +2,7 @@
 
 namespace Automattic\Domain_Services\Response;
 
-use Automattic\Domain_Services\{Command, Exception, Response};
+use Automattic\Domain_Services\{Command, Exception};
 
 class Factory {
 	public function build_response( Command\Command_Interface $command, array $response ): Response_Interface {
