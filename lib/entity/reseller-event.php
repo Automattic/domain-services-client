@@ -2,7 +2,7 @@
 
 namespace Automattic\Domain_Services\Entity;
 
-use Automattic\Domain_Services\{Exception, Exception\Entity\Invalid_Value_Exception};
+use Automattic\Domain_Services\{Exception};
 
 class Reseller_Event {
 
@@ -210,14 +210,14 @@ class Reseller_Event {
 		if ( null === $id ) {
 			throw new Exception\Entity\Invalid_Value_Exception( __CLASS__, 'ID field cannot be null' );
 		}
-		$reseller_event->set_id( $id );
-		$reseller_event->set_event_class( $event_entity->get_event_class() );
-		$reseller_event->set_event_subclass( $event_entity->get_event_subclass() );
-		$reseller_event->set_object_type( $event_entity->get_object_type() );
-		$reseller_event->set_object_id( $event_entity->get_object_id() );
-		$reseller_event->set_event_data( $event_entity->get_event_data() );
-		$reseller_event->set_created_date( $event_entity->get_created_date() );
-		$reseller_event->set_acknowledged_date( $event_entity->get_acknowledged_date() );
+		$reseller_event->set_id( $id )
+			->set_event_class( $event_entity->get_event_class() )
+			->set_event_subclass( $event_entity->get_event_subclass() )
+			->set_object_type( $event_entity->get_object_type() )
+			->set_object_id( $event_entity->get_object_id() )
+			->set_event_data( $event_entity->get_event_data() )
+			->set_created_date( $event_entity->get_created_date() )
+			->set_acknowledged_date( $event_entity->get_acknowledged_date() );
 		return $reseller_event;
 	}
 
@@ -235,8 +235,24 @@ class Reseller_Event {
 		return $result;
 	}
 
+	/**
+	 * @throws \JsonException
+	 */
 	public static function from_array( array $data ): self {
-		$event = Event::from_array( $data );
-		return self::from_event_entity( $event );
+		$reseller_event = new self();
+		$event_data = json_decode( $data[ self::EVENT_DATA ], true, 512, JSON_THROW_ON_ERROR );
+		$created_date = \DateTimeImmutable::createFromFormat( Entity_Interface::DATE_FORMAT, $data[ self::CREATED_DATE ] );
+		$acknowledged_date = \DateTimeImmutable::createFromFormat( Entity_Interface::DATE_FORMAT, $data[ self::ACKNOWLEDGED_DATE ] );
+
+		$reseller_event->set_id( $data[ self::ID ] )
+			->set_event_class( $data[ self::EVENT_CLASS ] )
+			->set_event_subclass( $data[ self::EVENT_SUBCLASS ] )
+			->set_object_type( $data[ self::OBJECT_TYPE ] )
+			->set_object_id( $data[ self::OBJECT_ID ] )
+			->set_event_data( $event_data )
+			->set_created_date( $created_date )
+			->set_acknowledged_date( $acknowledged_date );
+
+		return $reseller_event;
 	}
 }
