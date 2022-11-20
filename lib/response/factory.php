@@ -18,12 +18,12 @@ class Factory {
 
 		$class_name = str_replace( '_', '\\', $class_name );
 
-		if ( !empty( $response['response']['data'] ) && !is_array( $response['response']['data'] ) ) {
+		if ( ! empty( $response['response']['data'] ) && ! is_array( $response['response']['data'] ) ) {
 			throw new Exception\Command\Invalid_Format_Exception( 'Response data must be array' );
 		}
 
 		$class_name = __NAMESPACE__ . '\\' . $class_name;
-		if ( !class_exists( $class_name ) ) {
+		if ( ! class_exists( $class_name ) ) {
 			throw new Exception\Domain_Services_Exception( 'Missing response class: ' . $class_name );
 		}
 
