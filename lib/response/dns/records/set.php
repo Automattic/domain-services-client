@@ -11,7 +11,8 @@ class Set implements Response\Response_Interface {
 	use Response\Data_Trait;
 
 	public function get_domain_name(): Entity\Domain_Name {
-		return $this->get_domain_name_from_response_data( 'data.change_set.domain' );
+		$domain_name_data = $this->get_data_by_key( 'data.change_set.domain' );
+		return new Entity\Domain_Name( $domain_name_data );
 	}
 
 	public function get_records_added(): Entity\Dns_Records {
@@ -29,53 +30,3 @@ class Set implements Response\Response_Interface {
 	}
 }
 
-//'change_set' =>
-//  array (
-//	  'domain' => 'test-domain-name.com',
-//	  'records_added' =>
-//		  array (
-//			  0 =>
-//				  array (
-//					  'name' => '@',
-//					  'type' => 'A',
-//					  'ttl' => 300,
-//					  'data' =>
-//						  array (
-//							  0 => '9.10.11.12',
-//							  1 => '13.14.15.16',
-//						  ),
-//				  ),
-//		  ),
-//	  'records_deleted' =>
-//		  array (
-//			  0 =>
-//				  array (
-//					  'name' => '@',
-//					  'type' => 'A',
-//					  'ttl' => 300,
-//					  'data' =>
-//						  array (
-//							  0 => '1.2.3.4',
-//							  1 => '5.6.7.8',
-//						  ),
-//				  ),
-//			  1 =>
-//				  array (
-//					  'name' => '*',
-//					  'type' => 'CNAME',
-//					  'ttl' => 14400,
-//					  'data' =>
-//						  array (
-//							  0 => 'test-domain-name.com.',
-//						  ),
-//				  ),
-//		  ),
-//  ),
-//  'status' => 200,
-//  'status_description' => 'Command completed successfully',
-//  'success' => true,
-//  'client_txn_id' => 'test-client-transaction-id',
-//  'server_txn_id' => 'f52caf64-8f60-4871-8a4b-a99d2e001bc3.local-isolated-test-request',
-//  'timestamp' => 1667671342,
-//  'runtime' => 0.0024,
-//)
