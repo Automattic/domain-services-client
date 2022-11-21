@@ -157,6 +157,61 @@ function get_mock_response( Command\Command_Interface $command, ?string $domain,
 			];
 			break;
 
+		case 'Events_Get-success':
+			$response = [
+				'status' => 200,
+				'status_description' => 'Command completed successfully',
+				'success' => true,
+				'client_txn_id' => 'test-client-transaction-id',
+				'server_txn_id' => 'e5b5f2de-099f-4469-9e0b-724e53d3f241.local-isolated-test-request',
+				'timestamp' => 1668865904,
+				'runtime' => 0.0028,
+				'data' => [
+					'total_count' => 3,
+					'events' => [
+						[
+							'id' => 1,
+							'event_class' => 'main-event-class-A',
+							'event_subclass' => '',
+							'event_data' => '{"test-data":11111}',
+							'object_type' => '',
+							'object_id' => '',
+							'created_date' => '2022-01-01 00:00:00',
+							'acknowledged_date' => '2022-01-01 10:00:00',
+						],
+						[
+							'id' => 2,
+							'event_class' => 'main-event-class-A',
+							'event_subclass' => '',
+							'event_data' => '{"test-data":22222}',
+							'object_type' => '',
+							'object_id' => '',
+							'created_date' => '2022-02-01 00:00:00',
+							'acknowledged_date' => NULL,
+						],
+						[
+							'id' => 3,
+							'event_class' => 'main-event-class-B',
+							'event_subclass' => '',
+							'event_data' => '{"test-data":33333}',
+							'object_type' => '',
+							'object_id' => '',
+							'created_date' => '2022-03-01 00:00:00',
+							'acknowledged_date' => NULL,
+						],
+					],
+					'request_params' => [
+						'filter' => NULL,
+						'first' => 0,
+						'limit' => 50,
+						'date_start' => NULL,
+						'date_end' => NULL,
+						'show_acknowledged' => true,
+					],
+				],
+			];
+			break;
+
 		default:
 			throw new \RuntimeException( 'Unknown command used in mock response request' );
 	}

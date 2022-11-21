@@ -2,7 +2,7 @@
 
 namespace Automattic\Domain_Services\Command\Events;
 
-use Automattic\Domain_Services\{Command,Entity};
+use Automattic\Domain_Services\{Command, Entity};
 
 /**
  * Retrieves a list of events.
@@ -98,10 +98,30 @@ class Get implements Command\Command_Interface {
 	}
 
 	/**
+	 * @param string|null $filter
+	 * @return Get
+	 */
+	public function set_filter( ?string $filter ): self {
+		$this->filter = $filter;
+
+		return $this;
+	}
+
+	/**
 	 * @return int
 	 */
 	public function get_first(): int {
 		return $this->first;
+	}
+
+	/**
+	 * @param int $first
+	 * @return setlf
+	 */
+	public function set_first( int $first ): setlf {
+		$this->first = $first;
+
+		return $this;
 	}
 
 	/**
@@ -112,10 +132,30 @@ class Get implements Command\Command_Interface {
 	}
 
 	/**
+	 * @param int $limit
+	 * @return Get
+	 */
+	public function set_limit( int $limit ): self {
+		$this->limit = $limit;
+
+		return $this;
+	}
+
+	/**
 	 * @return \DateTimeInterface|null
 	 */
 	public function get_date_start(): ?\DateTimeInterface {
 		return $this->date_start;
+	}
+
+	/**
+	 * @param \DateTimeInterface|null $date_start
+	 * @return Get
+	 */
+	public function set_date_start( ?\DateTimeInterface $date_start ): self {
+		$this->date_start = $date_start;
+
+		return $this;
 	}
 
 	/**
@@ -126,10 +166,30 @@ class Get implements Command\Command_Interface {
 	}
 
 	/**
+	 * @param \DateTimeInterface|null $date_end
+	 * @return Get
+	 */
+	public function set_date_end( ?\DateTimeInterface $date_end ): self {
+		$this->date_end = $date_end;
+
+		return $this;
+	}
+
+	/**
 	 * @return bool
 	 */
 	public function get_show_acknowledged(): bool {
 		return $this->show_acknowledged;
+	}
+
+	/**
+	 * @param bool $show_acknowledged
+	 * @return Get
+	 */
+	public function set_show_acknowledged( bool $show_acknowledged ): self {
+		$this->show_acknowledged = $show_acknowledged;
+
+		return $this;
 	}
 
 	/**
@@ -140,6 +200,16 @@ class Get implements Command\Command_Interface {
 	}
 
 	/**
+	 * @param bool $hide_details
+	 * @return Get
+	 */
+	public function set_hide_details( bool $hide_details ): self {
+		$this->hide_details = $hide_details;
+
+		return $this;
+	}
+
+	/**
 	 * @return string
 	 */
 	public static function get_name(): string {
@@ -147,9 +217,14 @@ class Get implements Command\Command_Interface {
 	}
 
 	public function to_array(): array {
+		$start_date_time = $this->get_date_start();
+		$start_date = null === $start_date_time ? null : $start_date_time->format( Entity\Entity_Interface::DATE_FORMAT );
+		$end_date_time = $this->get_date_start();
+		$end_date = null === $end_date_time ? null : $end_date_time->format( Entity\Entity_Interface::DATE_FORMAT );
+
 		return [
-			self::get_event_date_start_array_key() => $this->get_date_start()->format( Entity\Entity_Interface::DATE_FORMAT ),
-			self::get_event_date_end_array_key() => $this->get_date_end()->format( Entity\Entity_Interface::DATE_FORMAT ),
+			self::get_event_date_start_array_key() => $start_date,
+			self::get_event_date_end_array_key() => $end_date,
 			self::get_event_filter_array_key() => $this->get_filter(),
 			self::get_event_first_array_key() => $this->get_first(),
 			self::get_event_limit_array_key() => $this->get_limit(),
