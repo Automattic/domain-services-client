@@ -45,41 +45,6 @@ class Reseller_Event {
 	/**
 	 * @return string
 	 */
-	public function get_source(): string {
-		return $this->source;
-	}
-
-	/**
-	 * @param string $source
-	 *
-	 * @return self
-	 */
-	public function set_source( string $source ): self {
-		$this->source = $source;
-		return $this;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function get_target(): string {
-		return $this->target;
-	}
-
-	/**
-	 * @param string $target
-	 *
-	 * @return self
-	 */
-	public function set_target( string $target ): self {
-		$this->target = $target;
-
-		return $this;
-	}
-
-	/**
-	 * @return string
-	 */
 	public function get_event_class(): string {
 		return $this->event_class;
 	}
@@ -242,7 +207,7 @@ class Reseller_Event {
 		$reseller_event = new self();
 		$event_data = json_decode( $data[ self::EVENT_DATA ], true, 512, JSON_THROW_ON_ERROR );
 		$created_date = \DateTimeImmutable::createFromFormat( Entity_Interface::DATE_FORMAT, $data[ self::CREATED_DATE ] );
-		$acknowledged_date = \DateTimeImmutable::createFromFormat( Entity_Interface::DATE_FORMAT, $data[ self::ACKNOWLEDGED_DATE ] );
+		$acknowledged_date = null === $data[ self::ACKNOWLEDGED_DATE ] ? null : \DateTimeImmutable::createFromFormat( Entity_Interface::DATE_FORMAT, $data[ self::ACKNOWLEDGED_DATE ] );
 
 		$reseller_event->set_id( $data[ self::ID ] )
 			->set_event_class( $data[ self::EVENT_CLASS ] )
