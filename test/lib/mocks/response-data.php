@@ -2,16 +2,13 @@
 
 namespace Automattic\Domain_Services\Test;
 
-use Automattic\Domain_Services\{ Command };
+use Automattic\Domain_Services\{Command};
 
-function get_mock_response( Command\Command_Interface $command, string $response_type ): array {
+function get_mock_response( Command\Command_Interface $command, string $domain, string $response_type ): array {
 	$response = [];
 
 	$command_name = $command::get_name();
 	$response_requested = $command_name . '-' . $response_type;
-
-	$command_data = $command->to_array();
-	$domain = $command_data['domain'] ?? null;
 
 	switch ( $response_requested ) {
 		case 'Dns_Records_Get-success':
@@ -52,8 +49,56 @@ function get_mock_response( Command\Command_Interface $command, string $response
 			];
 			break;
 
+		case 'Dns_Records_Set-success':
+			$response = [
+				'data' => [
+					'change_set' => [
+						'domain' => $domain,
+						'records_added' => [
+							[
+								'name' => '@',
+								'type' => 'A',
+								'ttl' => 300,
+								'data' =>
+									[
+										'9.10.11.12',
+										'13.14.15.16',
+									],
+							],
+						],
+						'records_deleted' => [
+							[
+								'name' => '@',
+								'type' => 'A',
+								'ttl' => 300,
+								'data' => [
+									'1.2.3.4',
+									'5.6.7.8',
+								],
+							],
+							[
+								'name' => '*',
+								'type' => 'CNAME',
+								'ttl' => 14400,
+								'data' => [
+									'test-domain-name.com.',
+								],
+							],
+						],
+					],
+				],
+				'status' => 200,
+				'status_description' => 'Command completed successfully',
+				'success' => true,
+				'client_txn_id' => 'test-client-transaction-id',
+				'server_txn_id' => '72f6f165-1328-4989-912b-1dd936e11866.local-isolated-test-request',
+				'timestamp' => 1668865903,
+				'runtime' => 0.0037,
+			];
+			break;
+
 		case 'Domain_Contacts_Set-success':
-			$response = array(
+			$response = [
 				'status' => 200,
 				'status_description' => 'Command completed successfully',
 				'success' => true,
@@ -62,18 +107,18 @@ function get_mock_response( Command\Command_Interface $command, string $response
 				'timestamp' => 1668625533,
 				'runtime' => 0.0069,
 				'data' =>
-					array(
+					[
 						'contacts' =>
-							array(
+							[
 								'owner' =>
-									array(
+									[
 										'contact_id' => 'SP1:P-ABC1234',
 										'contact_information' => null,
 										'contact_disclosure' => 'none',
-									),
-							),
-					),
-			);
+									],
+							],
+					],
+			];
 			break;
 
 		default:
