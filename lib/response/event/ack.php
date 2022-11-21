@@ -2,7 +2,7 @@
 
 namespace Automattic\Domain_Services\Response\Event;
 
-use Automattic\Domain_Services\{ Response };
+use Automattic\Domain_Services\{Response};
 
 /**
  * Response of an Event_Ack command.
