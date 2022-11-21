@@ -133,6 +133,30 @@ function get_mock_response( Command\Command_Interface $command, ?string $domain,
 			];
 			break;
 
+		case 'Event_Details-success':
+			$response = [
+				'status' => 200,
+				'status_description' => 'Command completed successfully',
+				'success' => true,
+				'client_txn_id' => 'test-client-transaction-id',
+				'server_txn_id' => '7577b593-0cc4-457a-ac91-a71ea435effd.local-isolated-test-request',
+				'timestamp' => 1668886944,
+				'runtime' => 0.0041,
+				'data' => [
+					'event' => [
+						'id' => 1234,
+						'event_class' => 'main-event-class',
+						'event_subclass' => 'event-subclass',
+						'event_data' => '{"test-data":12345}',
+						'object_type' => 'domain',
+						'object_id' => 'A1234',
+						'created_date' => '2022-08-01 01:23:45',
+						'acknowledged_date' => '2022-08-02 06:07:08',
+					],
+				],
+			];
+			break;
+
 		default:
 			throw new \RuntimeException( 'Unknown command used in mock response request' );
 	}

@@ -16,6 +16,8 @@ class Dns_Records_Get_Test extends Domain_Services_Client_Test_Case {
 
 		$this->assertInstanceOf( Response\Dns\Records\Get::class, $response_object );
 
+		// TODO: Add in assertIsValidResponse once this method is merged from PR #5
+
 		$response_dns_records = $response_object->get_dns_records();
 
 		$response_domain_name = $response_dns_records->get_domain();
