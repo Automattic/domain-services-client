@@ -4,7 +4,7 @@ namespace Automattic\Domain_Services\Test;
 
 use Automattic\Domain_Services\{Command};
 
-function get_mock_response( Command\Command_Interface $command, string $domain, string $response_type ): array {
+function get_mock_response( Command\Command_Interface $command, ?string $domain, string $response_type ): array {
 	$response = [];
 
 	$command_name = $command::get_name();

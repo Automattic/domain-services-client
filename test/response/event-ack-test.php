@@ -8,7 +8,7 @@ class Event_Ack_Test extends Domain_Services_Client_Test_Case {
 	public function test_response_factory_success(): void {
 		$command = new Command\Event\Ack( 1234 );
 
-		$response_data = get_mock_response( $command, 'success' );
+		$response_data = get_mock_response( $command, null, 'success' );
 
 		/** @var Response\Dns\Records\Get $response_object */
 		$response_object = $this->response_factory->build_response( $command, $response_data );
