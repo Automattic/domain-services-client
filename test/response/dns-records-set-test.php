@@ -57,3 +57,4 @@ class Dns_Records_Set_Test extends Domain_Services_Client_Test_Case {
 		$this->assertCount( 2, $response_dns_deleted_record_sets_data );
 	}
 }
+

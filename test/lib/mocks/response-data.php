@@ -212,6 +212,36 @@ function get_mock_response( Command\Command_Interface $command, ?string $domain,
 			];
 			break;
 
+		case 'Contact_Details-success':
+			$response = [
+				'status' => 200,
+				'status_description' => 'Command completed successfully',
+				'success' => true,
+				'client_txn_id' => 'test-client-transaction-id',
+				'server_txn_id' => '5ffdba44-eeec-4647-9cc4-27cdf8352efc.local-isolated-test-request',
+				'timestamp' => 1669075517,
+				'runtime' => 0.0019,
+				'data' => [
+					'contact_information' => [
+						'first_name' => 'John',
+						'last_name' => 'Doe',
+						'organization' => '',
+						'address_1' => 'Avenida dos Bandeirantes 123',
+						'address_2' => 'Apto 12',
+						'postal_code' => '12345-678',
+						'city' => 'Sao Paulo',
+						'state' => '',
+						'country_code' => 'BR',
+						'email' => 'john.doe@automattic.com',
+						'phone' => '+55.11987654321',
+						'fax' => '',
+					],
+					'validated' => true,
+					'verified' => false,
+				],
+			];
+			break;
+
 		default:
 			throw new \RuntimeException( 'Unknown command used in mock response request' );
 	}

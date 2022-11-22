@@ -24,7 +24,7 @@ class Factory {
 
 		$class_name = __NAMESPACE__ . '\\' . $class_name;
 		if ( ! class_exists( $class_name ) ) {
-			throw new Exception\Domain_Services_Exception( 'Missing response class: ' . $class_name );
+			throw new Exception\Domain_Services_Exception( Code::INVALID_COMMAND_NAME, ['message' => 'Missing response class: ' . $class_name] );
 		}
 
 		return new $class_name( $response );

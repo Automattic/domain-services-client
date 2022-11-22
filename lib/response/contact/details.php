@@ -1,6 +1,6 @@
 <?php declare( strict_types=1 );
 
-namespace Automattic\Domain_Services\Response\Internal\Contact;
+namespace Automattic\Domain_Services\Response\Contact;
 
 use Automattic\Domain_Services\{Entity, Response};
 
@@ -20,7 +20,7 @@ class Details implements Response\Response_Interface {
 	 */
 	public function get_contact_information(): Entity\Contact_Information {
 		$contact_information_data = $this->get_data_by_key( self::CONTACT_INFORMATION );
-		return new Entity\Contact_Information::from_array( $contact_information_data );
+		return Entity\Contact_Information::from_array( $contact_information_data );
 	}
 
 	/**
