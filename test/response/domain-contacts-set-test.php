@@ -8,26 +8,24 @@ class Domain_Contacts_Set_Test extends Domain_Services_Client_Test_Case {
 	public function test_response_factory_success(): void {
 		$domain = new Entity\Domain_Name( 'test-domain-name.blog' );
 		$contact_info = [
-			'contact_info' => [
-				'first_name' => 'John',
-				'last_name' => 'Doe',
-				'organization' => '',
-				'address_1' => '60 29th Street #343',
-				'address_2' => '',
-				'postal_code' => '94110',
-				'city' => 'San Francisco',
-				'state' => 'CA',
-				'country_code' => 'US',
-				'email' => 'registrar@automattic.com',
-				'phone' => '+1.8772733049',
-				'fax' => '',
-			],
+			'first_name' => 'John',
+			'last_name' => 'Doe',
+			'organization' => '',
+			'address_1' => '60 29th Street #343',
+			'address_2' => '',
+			'postal_code' => '94110',
+			'city' => 'San Francisco',
+			'state' => 'CA',
+			'country_code' => 'US',
+			'email' => 'registrar@automattic.com',
+			'phone' => '+1.8772733049',
+			'fax' => '',
 		];
 
 		$contacts = Entity\Domain_Contacts::from_array(
 			[
-				'owner' => $contact_info,
-				'admin' => $contact_info,
+				'owner' => ['contact_information' => $contact_info],
+				'admin' => ['contact_information' => $contact_info],
 			]
 		);
 		$command = new Command\Domain\Contacts\Set( $domain, $contacts );
@@ -44,12 +42,12 @@ class Domain_Contacts_Set_Test extends Domain_Services_Client_Test_Case {
 				'contacts' => [
 					'owner' => [
 						'contact_id' => 'SP1:P-ABC1234',
-						'contact_information' => NULL,
+						'contact_information' => $contact_info,
 						'contact_disclosure' => 'none',
 					],
 					'admin' => [
 						'contact_id' => 'SP1:P-XYZ5678',
-						'contact_information' => NULL,
+						'contact_information' => $contact_info,
 						'contact_disclosure' => 'none',
 					],
 				],
@@ -66,7 +64,7 @@ class Domain_Contacts_Set_Test extends Domain_Services_Client_Test_Case {
 
 		$owner_contact = $response_object->get_contacts()->get_owner();
 		$owner_contact_id = (string)$owner_contact->get_contact_id();
-		$owner_contact_info = $owner_contact->get_contact_information();
+		$owner_contact_info = $owner_contact->get_contact_information()->to_array();
 		$owner_contact_disclosure = $owner_contact->get_contact_disclosure()->get_disclose_fields();
 
 		$this->assertSame( $mock_response_data['data']['contacts']['owner']['contact_id'], $owner_contact_id );
