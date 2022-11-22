@@ -12,7 +12,7 @@ class Domain_Services_Client_Test_Case extends \PHPUnit\Framework\TestCase {
 		$this->response_factory = new Response\Factory();
 	}
 
-	public function assertIsValidResponse( array $expected_data, Response\Event\Ack $response ): void {
+	public function assertIsValidResponse( array $expected_data, Response\Response_Interface $response ): void {
 		$this->assertInstanceOf( Response\Response_Interface::class, $response );
 
 		$this->assertIsString( $response->get_server_txn_id() );
