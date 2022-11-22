@@ -15,6 +15,16 @@ class Domain_Names {
 	}
 
 	/**
+	 * @param Domain_name $domain_name
+	 * @return $this
+	 */
+	public function add_domain_name( Domain_name $domain_name ): self {
+		$this->domain_names[] = $domain_name;
+
+		return $this;
+	}
+
+	/**
 	 * @return Domain_Name[]
 	 */
 	public function get_domain_names(): array {
