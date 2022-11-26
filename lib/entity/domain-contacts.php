@@ -89,7 +89,7 @@ class Domain_Contacts implements \Iterator {
 	}
 
 	/**
-	 * @param string $key
+	 * @param string         $key
 	 * @param Domain_Contact $domain_contact
 	 * @return void
 	 * @throws Exception\Entity\Invalid_Value_Exception

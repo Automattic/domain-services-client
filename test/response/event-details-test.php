@@ -1,8 +1,8 @@
-<?php
+<?php declare( strict_types=1 );
 
 namespace Automattic\Domain_Services\Test\Response;
 
-use Automattic\Domain_Services\{Api, Command, Configuration, Entity, Mock, Response, Test};
+use Automattic\Domain_Services\{Command, Mock, Response, Test};
 
 class Event_Details_Test extends Test\Domain_Services_Client_Test_Case {
 	public function test_response_factory_success(): void {
@@ -13,7 +13,7 @@ class Event_Details_Test extends Test\Domain_Services_Client_Test_Case {
 		/** @var Response\Event\Details $response_object */
 		$response_object = $this->response_factory->build_response( $command, $response_data );
 
-		// TODO: Add in assertIsValidResponse once this method is merged from PR #5
+		$this->assertIsValidResponse( $response_data, $response_object );
 
 		$reseller_event = $response_object->get_event();
 		$this->assertNotNull( $reseller_event );

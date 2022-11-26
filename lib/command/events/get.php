@@ -62,13 +62,13 @@ class Get implements Command\Command_Interface {
 	/**
 	 * Class contructor
 	 *
-	 * @param null|string $filter Pattern to use to filter event class.
-	 * @param null|int $first Index of first record to include, for pagination.
-	 * @param null|int $limit Max count of returned events.
-	 * @param null|string $date_start Limit results by events that happened after or on this date (date string should be in this format 'Y-m-d H:i:s').
-	 * @param null|string $date_end Limit results to events happened before or on this date (date string should be in this format 'Y-m-d H:i:s').
-	 * @param null|bool $show_acknowledged Show already acknowledged events.
-	 * @param null|bool $hide_details Hide event details in the result.
+	 * @param null|string $filter            Pattern to use to filter event class.
+	 * @param null|int    $first             Index of first record to include, for pagination.
+	 * @param null|int    $limit             Max count of returned events.
+	 * @param null|string $date_start        Limit results by events that happened after or on this date (date string should be in this format 'Y-m-d H:i:s').
+	 * @param null|string $date_end          Limit results to events happened before or on this date (date string should be in this format 'Y-m-d H:i:s').
+	 * @param null|bool   $show_acknowledged Show already acknowledged events.
+	 * @param null|bool   $hide_details      Hide event details in the result.
 	 */
 	public function __construct( ?string $filter = null, ?int $first = 0, ?int $limit = 50, ?string $date_start = null, ?string $date_end = null, ?bool $show_acknowledged = false, ?bool $hide_details = false ) {
 		$this->filter = $filter;

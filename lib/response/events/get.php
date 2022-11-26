@@ -23,6 +23,7 @@ class Get implements Response\Response_Interface {
 
 	/**
 	 * @return Entity\Reseller_Event[]
+	 * @throws \JsonException
 	 */
 	public function get_events(): array {
 		$events_data = $this->get_data_by_key( self::EVENTS );

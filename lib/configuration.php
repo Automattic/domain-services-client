@@ -12,14 +12,14 @@ class Configuration {
 	private static ?self $default_configuration = null;
 
 	/**
-	 * Associate array to store API key(s)
+	 * Associative array to store API key(s)
 	 *
 	 * @var string[]
 	 */
 	private array $api_keys = [];
 
 	/**
-	 * Associate array to store API prefix (e.g. Bearer)
+	 * Associative array to store API prefix (e.g. Bearer)
 	 *
 	 * @var string[]
 	 */
@@ -373,7 +373,7 @@ class Configuration {
 	 * @return string The report for debugging
 	 */
 	public static function to_debug_report(): string {
-		$report  = 'PHP SDK (Domain Services) Debug Report:' . PHP_EOL;
+		$report = 'PHP SDK (Domain Services) Debug Report:' . PHP_EOL;
 		$report .= '    OS: ' . php_uname() . PHP_EOL;
 		$report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
 		$report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
@@ -384,7 +384,7 @@ class Configuration {
 	/**
 	 * Get API key (with prefix if set)
 	 *
-	 * @param  string $api_key_identifier name of apikey
+	 * @param string $api_key_identifier name of apikey
 	 *
 	 * @return null|string API key with the prefix
 	 */
@@ -415,18 +415,18 @@ class Configuration {
 			[
 				'url' => $this->get_host(),
 				'description' => 'Automattic domain services host',
-			]
+			],
 		];
 	}
 
 	/**
-	* Returns URL based on host settings, index and variables
-	*
-	* @param array      $host_settings array of host settings, generated from getHostSettings() or equivalent from the API clients
-	* @param int        $host_index    index of the host settings
-	* @param array|null $variables     hash of variable and the corresponding value (optional)
-	* @return string URL based on host settings
-	*/
+	 * Returns URL based on host settings, index and variables
+	 *
+	 * @param array      $host_settings array of host settings, generated from getHostSettings() or equivalent from the API clients
+	 * @param int        $host_index    index of the host settings
+	 * @param array|null $variables     hash of variable and the corresponding value (optional)
+	 * @return string URL based on host settings
+	 */
 	public static function get_host_string( array $host_settings, int $host_index, ?array $variables = null ): string {
 		if ( null === $variables ) {
 			$variables = [];
@@ -441,16 +441,16 @@ class Configuration {
 		$url = $host['url'];
 
 		// go through variable and assign a value
-		foreach ( $host[ 'variables' ] ?? [] as $name => $variable ) {
+		foreach ( $host['variables'] ?? [] as $name => $variable ) {
 			if ( array_key_exists( $name, $variables ) ) { // check to see if it's in the variables provided by the user
 				if ( ! isset( $variable['enum_values'] ) || in_array( $variables[ $name ], $variable['enum_values'], true ) ) { // check to see if the value is in the enum
-					$url = str_replace('{' . $name . '}', $variables[ $name ], $url );
+					$url = str_replace( '{' . $name . '}', $variables[ $name ], $url );
 				} else {
-					throw new \InvalidArgumentException("The variable `$name` in the host URL has invalid value " . $variables[ $name ] . ". Must be " . implode( ',', $variable['enum_values'] ) . '.' );
+					throw new \InvalidArgumentException( "The variable `$name` in the host URL has invalid value " . $variables[ $name ] . ". Must be " . implode( ',', $variable['enum_values'] ) . '.' );
 				}
 			} else {
 				// use default value
-				$url = str_replace('{' . $name . '}', $variable['default_value'], $url );
+				$url = str_replace( '{' . $name . '}', $variable['default_value'], $url );
 			}
 		}
 
