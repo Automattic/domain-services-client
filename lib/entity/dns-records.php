@@ -6,6 +6,7 @@ use Automattic\Domain_Services\{Command};
 
 class Dns_Records {
 	use Command\Array_Key_Domain_Trait, Command\Array_Key_Dns_Record_Sets_Trait;
+
 	/**
 	 * The domain name that the DNS records apply to.
 	 *

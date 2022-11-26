@@ -12,10 +12,10 @@ trait Command_Trait {
 	 */
 	final public function jsonSerialize(): array { //phpcs:ignore WordPress.NamingConventions.ValidFunctionName.MethodNameInvalid
 		return [
-			'command' => [
-				'params' => $this->to_array(),
+			Command_Interface::COMMAND => [
+				Command_Interface::PARAMS => $this->to_array(),
 			],
-			'client_txn_id' => $this->get_client_txn_id(),
+			Command_Interface::CLIENT_TXN_ID => $this->get_client_txn_id(),
 		];
 	}
 

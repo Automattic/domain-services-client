@@ -2,7 +2,7 @@
 
 namespace Automattic\Domain_Services\Test;
 
-use Automattic\Domain_Services\{Api, Command, Configuration, Entity, Mock, Response};
+use Automattic\Domain_Services\{Command, Entity, Mock, Response};
 
 class Dns_Records_Set_Test extends Domain_Services_Client_Test_Case {
 	public function test_response_factory_success(): void {

@@ -2,7 +2,7 @@
 
 namespace Automattic\Domain_Services\Test;
 
-use Automattic\Domain_Services\{Api, Command, Configuration, Entity, Mock, Response};
+use Automattic\Domain_Services\{Command, Entity, Mock, Response};
 
 class Events_Get_Test extends Domain_Services_Client_Test_Case {
 	public function test_response_factory_success(): void {
@@ -13,7 +13,7 @@ class Events_Get_Test extends Domain_Services_Client_Test_Case {
 		/** @var Response\Events\Get $response_object */
 		$response_object = $this->response_factory->build_response( $command, $response_data );
 
-		// TODO: Add in assertIsValidResponse once this method is merged from PR #5
+		$this->assertIsValidResponse( $response_data, $response_object );
 
 		$this->assertInstanceOf( Response\Events\Get::class, $response_object );
 

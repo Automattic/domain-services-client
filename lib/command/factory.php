@@ -8,15 +8,15 @@ class Factory {
 	public function process_command( Context $context ): Command_Interface {
 		$command_data = $context->get_command_data();
 
-		$class_name = $command_data['command'] ?? '';
+		$class_name = $command_data[ Command_Interface::COMMAND ] ?? '';
 
 		if ( empty( $class_name ) ) {
-			throw new Exception\Command\Missing_Option_Exception( 'command' );
+			throw new Exception\Command\Missing_Option_Exception( Command_Interface::COMMAND );
 		}
 
 		$class_name = str_replace( '_', '\\', $class_name );
 
-		if ( ! empty( $command_data['params'] ) && ! is_array( $command_data['params'] ) ) {
+		if ( ! empty( $command_data[ Command_Interface::PARAMS ] ) && ! is_array( $command_data[ Command_Interface::PARAMS ] ) ) {
 			throw new Exception\Command\Invalid_Format_Exception( 'Command parameters must be array' );
 		}
 
@@ -38,13 +38,13 @@ class Factory {
 			throw new Exception\Command\Invalid_Command_Exception();
 		}
 
-		$params = $command_data['params'] ?? [];
+		$params = $command_data[ Command_Interface::PARAMS ] ?? [];
 
 		return $this->build_command_object( $class_name, $params );
 	}
 
 	private function build_command_object( $class_name, $params ): Command_Interface {
-		return $this->get_named_parameters_instance( $class_name, $params, 'command' );
+		return $this->get_named_parameters_instance( $class_name, $params, Command_Interface::COMMAND );
 	}
 
 	public function get_named_parameters_instance( $class_name, $params, $parent_name ) {

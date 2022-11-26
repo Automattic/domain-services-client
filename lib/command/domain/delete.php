@@ -8,10 +8,10 @@ class Delete implements Command\Command_Interface {
 	use Command\Command_Trait, Command\Array_Key_Domain_Trait;
 
 	/**
-	* The domain name to delete
-	*
-	* @var Entity\Domain_Name
-	*/
+	 * The domain name to delete
+	 *
+	 * @var Entity\Domain_Name
+	 */
 	private Entity\Domain_Name $domain;
 
 	public function __construct( Entity\Domain_Name $domain ) {
