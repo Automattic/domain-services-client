@@ -23,7 +23,7 @@ class Code {
 	public const COMMAND_FAILED = 549;
 	public const UNKNOWN_ERROR = 999;
 
-	const DESCRIPTION = [
+	private const DESCRIPTION = [
 		self::SUCCESS => 'Command completed successfully',
 		self::INVALID_COMMAND_NAME => 'Invalid command name',
 		self::INVALID_COMMAND_OPTION => 'Invalid command option',
@@ -43,7 +43,6 @@ class Code {
 		self::ENTITY_NOT_FOUND => 'Entity not found',
 		self::COMMAND_FAILED => 'Command failed',
 		self::UNKNOWN_ERROR => 'Unknown error',
-		self::ENTITY_NOT_FOUND => 'Object not found',
 	];
 
 	public static function get_description( int $code ): string {

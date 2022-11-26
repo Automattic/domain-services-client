@@ -2,7 +2,7 @@
 
 namespace Automattic\Domain_Services\Command\Domain\Privacy;
 
-use Automattic\Domain_Services\{Command, Entity, Exception};
+use Automattic\Domain_Services\{Command, Entity};
 
 /**
  * Sets the privacy option that determines what contact information is shown in the response of a whois query for this domain.
