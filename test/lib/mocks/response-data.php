@@ -242,6 +242,34 @@ function get_mock_response( Command\Command_Interface $command, ?string $domain,
 			];
 			break;
 
+		case 'Domain_Check-success':
+			$response = [
+				'status' => 200,
+				'status_description' => 'Command completed successfully',
+				'success' => true,
+				'client_txn_id' => 'test-client-transaction-id',
+				'server_txn_id' => '3b581197-d93a-466a-957d-3569cb28279c.local-isolated-test-request',
+				'timestamp' => 1669075519,
+				'runtime' => 0.0013,
+				'data' => [
+					'domains' => [
+						'test-domain-name-1.com' => [
+							'available' => true,
+							'fee_class' => 'standard',
+						],
+						'test-domain-name-2.com' => [
+							'available' => true,
+							'fee_class' => 'standard',
+						],
+						'test-domain-name-3.com' => [
+							'available' => false,
+							'fee_class' => 'standard',
+						],
+					],
+				],
+			];
+			break;
+
 		default:
 			throw new \RuntimeException( 'Unknown command used in mock response request' );
 	}
