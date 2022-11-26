@@ -16,11 +16,11 @@ class Nameservers {
 
 	public function __construct( Domain_Name ...$nameservers ) {
 		if ( count( $nameservers ) < 2 ) {
-			throw new Exception\Entity\Invalid_Value_Exception( __CLASS__, 'Must have at least two nameservers' );
+			throw new Exception\Entity\Invalid_Value_Exception( __CLASS__, 'Must have at least two name servers' );
 		}
 
 		if ( count( $nameservers ) > 12 ) {
-			throw new Exception\Entity\Invalid_Value_Exception( __CLASS__, 'Must have at no more than 12 nameservers' );
+			throw new Exception\Entity\Invalid_Value_Exception( __CLASS__, 'Must have at no more than 12 name servers' );
 		}
 
 		foreach ( $nameservers as $nameserver ) {
@@ -30,11 +30,11 @@ class Nameservers {
 
 	public function add_nameserver( Domain_Name $nameserver ): void {
 		if ( 12 === count( $this->nameservers ) ) {
-			throw new Exception\Entity\Invalid_Value_Exception( __CLASS__, 'Must have at no more than 12 nameservers' );
+			throw new Exception\Entity\Invalid_Value_Exception( __CLASS__, 'Must have at no more than 12 name servers' );
 		}
 
 		if ( isset( $this->nameservers[ $nameserver->get_name() ] ) ) {
-			throw new Exception\Entity\Invalid_Value_Exception( __CLASS__, 'Must have unique nameserver names' );
+			throw new Exception\Entity\Invalid_Value_Exception( __CLASS__, 'Must have unique name server names' );
 		}
 
 		$this->nameservers[ $nameserver->get_name() ] = $nameserver;
