@@ -24,8 +24,8 @@ class Context {
 
 	/**
 	 * @param Entity\Reseller $reseller
-	 * @param array $command_data
-	 * @param Context|null $parent_context
+	 * @param array           $command_data
+	 * @param Context|null    $parent_context
 	 */
 	public function __construct( Entity\Reseller $reseller, array $command_data, ?self $parent_context ) {
 		$this->command_data = $command_data;
@@ -154,7 +154,7 @@ class Context {
 	 * Adds a log to the log array.
 	 *
 	 * @param string $message
-	 * @param array $log_data
+	 * @param array  $log_data
 	 * @param string $level
 	 */
 	public function log( string $message, array $log_data = [], string $level = Log\Log_Level::INFO ): void {
@@ -165,7 +165,7 @@ class Context {
 	 * Adds an error log to the log array.
 	 *
 	 * @param string $message
-	 * @param array $log_data
+	 * @param array  $log_data
 	 */
 	public function log_error( string $message, array $log_data = [] ): void {
 		$this->log( $message, $log_data, Log\Log_Level::ERROR );
@@ -175,7 +175,7 @@ class Context {
 	 * Adds a warning log to the log array.
 	 *
 	 * @param string $message
-	 * @param array $log_data
+	 * @param array  $log_data
 	 */
 	public function log_warning( string $message, array $log_data = [] ): void {
 		$this->log( $message, $log_data, Log\Log_Level::WARNING );

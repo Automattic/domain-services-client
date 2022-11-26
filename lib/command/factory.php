@@ -58,7 +58,7 @@ class Factory {
 				$variadic_ref_param_class_name = $ref_params[0]->getClass()->getName();
 				$variadic_params = [];
 				foreach ( $params as $param_value ) {
-					$variadic_params[] = $this->get_named_parameters_instance( $variadic_ref_param_class_name, [$param_value], $class_name );
+					$variadic_params[] = $this->get_named_parameters_instance( $variadic_ref_param_class_name, [ $param_value ], $class_name );
 				}
 
 				return new $class_name( ...$variadic_params );
@@ -92,7 +92,7 @@ class Factory {
 
 			if ( ! is_array( $param_value ) ) {
 				// If the constructor argument is NOT scalar and the value is not an array, wrap it in an array
-				$param_value = [$param_value];
+				$param_value = [ $param_value ];
 			}
 
 			if ( $parameter->isVariadic() ) {

@@ -6,6 +6,7 @@ use Automattic\Domain_Services\{Command};
 
 class Domain_Contact {
 	use Command\Array_Key_Contact_Id_Trait, Command\Array_Key_Contact_Information_Trait, Command\Array_Key_Contact_Disclosure_Trait;
+
 	/**
 	 * The contact ID
 	 *

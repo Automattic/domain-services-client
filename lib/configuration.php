@@ -99,7 +99,7 @@ class Configuration {
 	 * Sets API key
 	 *
 	 * @param string $api_key_identifier API key identifier (authentication scheme)
-	 * @param string $key API key or token
+	 * @param string $key                API key or token
 	 *
 	 * @return $this
 	 */
@@ -124,7 +124,7 @@ class Configuration {
 	 * Sets the prefix for API key (e.g. Bearer)
 	 *
 	 * @param string $api_key_identifier API key identifier (authentication scheme)
-	 * @param string $prefix API key prefix, e.g. Bearer
+	 * @param string $prefix             API key prefix, e.g. Bearer
 	 *
 	 * @return $this
 	 */
@@ -422,9 +422,9 @@ class Configuration {
 	/**
 	 * Returns URL based on host settings, index and variables
 	 *
-	 * @param array $host_settings array of host settings, generated from getHostSettings() or equivalent from the API clients
-	 * @param int $host_index index of the host settings
-	 * @param array|null $variables hash of variable and the corresponding value (optional)
+	 * @param array      $host_settings array of host settings, generated from getHostSettings() or equivalent from the API clients
+	 * @param int        $host_index    index of the host settings
+	 * @param array|null $variables     hash of variable and the corresponding value (optional)
 	 * @return string URL based on host settings
 	 */
 	public static function get_host_string( array $host_settings, int $host_index, ?array $variables = null ): string {
@@ -460,7 +460,7 @@ class Configuration {
 	/**
 	 * Returns URL based on the index and variables
 	 *
-	 * @param int $index index of the host settings
+	 * @param int        $index     index of the host settings
 	 * @param array|null $variables hash of variable and the corresponding value (optional)
 	 * @return string URL based on host settings
 	 */
