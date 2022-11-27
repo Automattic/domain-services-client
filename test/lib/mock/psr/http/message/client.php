@@ -1,6 +1,6 @@
 <?php declare( strict_types=1 );
 
-namespace Automattic\Domain_Services\Mock\Http;
+namespace Automattic\Domain_Services\Test\Lib\Mock\Psr\Http\Message;
 
 class Client implements \Psr\Http\Client\ClientInterface {
 	private Response $mock_response;

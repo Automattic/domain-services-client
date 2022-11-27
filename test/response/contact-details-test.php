@@ -1,15 +1,15 @@
 <?php declare( strict_types=1 );
 
-namespace Automattic\Domain_Services\Test;
+namespace Automattic\Domain_Services\Test\Response;
 
-use Automattic\Domain_Services\{Command, Entity, Mock, Response};
+use Automattic\Domain_Services\{Command, Entity, Response, Test};
 
-class Contact_Details_Test extends Domain_Services_Client_Test_Case {
+class Contact_Details_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_response_factory_success(): void {
 		$contact_id = new Entity\Contact_Id( 'SP1:P-ABC2134' );
 		$command = new Command\Contact\Details( $contact_id );
 
-		$response_data = get_mock_response( $command, null, 'success' );
+		$response_data = Test\Lib\Mock\get_mock_response( $command, null, 'success' );
 
 		/** @var Response\Contact\Details $response_object */
 		$response_object = $this->response_factory->build_response( $command, $response_data );

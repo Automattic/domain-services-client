@@ -1,6 +1,6 @@
 <?php declare( strict_types=1 );
 
-namespace Automattic\Domain_Services\Test;
+namespace Automattic\Domain_Services\Test\Lib\Mock;
 
 use Automattic\Domain_Services\{Command};
 
