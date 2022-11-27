@@ -1,8 +1,8 @@
 <?php declare( strict_types=1 );
 
-namespace Automattic\Domain_Services\Test;
+namespace Automattic\Domain_Services\Test\Lib;
 
-use Automattic\Domain_Services\{Api, Command, Configuration, Entity, Mock, Response};
+use Automattic\Domain_Services\{Mock, Response};
 
 class Domain_Services_Client_Test_Case extends \PHPUnit\Framework\TestCase {
 	protected Response\Factory $response_factory;

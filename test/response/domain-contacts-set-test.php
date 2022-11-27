@@ -1,10 +1,10 @@
 <?php declare( strict_types=1 );
 
-namespace Automattic\Domain_Services\Test;
+namespace Automattic\Domain_Services\Test\Response;
 
-use Automattic\Domain_Services\{Command, Entity, Mock, Response};
+use Automattic\Domain_Services\{Command, Entity, Response, Test};
 
-class Domain_Contacts_Set_Test extends Domain_Services_Client_Test_Case {
+class Domain_Contacts_Set_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_response_factory_success(): void {
 		$domain = new Entity\Domain_Name( 'test-domain-name.blog' );
 		$contact_info = [
@@ -24,8 +24,8 @@ class Domain_Contacts_Set_Test extends Domain_Services_Client_Test_Case {
 
 		$contacts = Entity\Domain_Contacts::from_array(
 			[
-				'owner' => ['contact_information' => $contact_info],
-				'admin' => ['contact_information' => $contact_info],
+				'owner' => [ 'contact_information' => $contact_info ],
+				'admin' => [ 'contact_information' => $contact_info ],
 			]
 		);
 		$command = new Command\Domain\Contacts\Set( $domain, $contacts );
@@ -63,7 +63,7 @@ class Domain_Contacts_Set_Test extends Domain_Services_Client_Test_Case {
 		$this->assertIsValidResponse( $mock_response_data, $response_object );
 
 		$owner_contact = $response_object->get_contacts()->get_owner();
-		$owner_contact_id = (string)$owner_contact->get_contact_id();
+		$owner_contact_id = (string) $owner_contact->get_contact_id();
 		$owner_contact_info = $owner_contact->get_contact_information()->to_array();
 		$owner_contact_disclosure = $owner_contact->get_contact_disclosure()->get_disclose_fields();
 

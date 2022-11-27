@@ -1,10 +1,10 @@
 <?php declare( strict_types=1 );
 
-namespace Automattic\Domain_Services\Test;
+namespace Automattic\Domain_Services\Test\Api;
 
-use Automattic\Domain_Services\{Api, Command, Configuration, Entity, Mock, Response};
+use Automattic\Domain_Services\{Api, Command, Configuration, Entity, Response, Test};
 
-class ApiTest extends Domain_Services_Client_Test_Case {
+class ApiTest extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_api_success(): void {
 		// Set the domain to use
 		$domain_name = new Entity\Domain_Name( 'a8ctest.com' );
@@ -37,12 +37,12 @@ class ApiTest extends Domain_Services_Client_Test_Case {
 		// Create an optional client transaction ID
 		$client_transaction_id = 'client_tx_id_example';
 
-		$mock_response_array = get_mock_response( $command, $domain_name->get_name(), 'success' );
+		$mock_response_array = Test\Lib\Mock\get_mock_response( $command, $domain_name->get_name(), 'success' );
 
-		$mock_response = new Mock\Http\Response();
+		$mock_response = new Test\Lib\Mock\Psr\Http\Message\Response();
 		$mock_response->set_mock_body_from_array( $mock_response_array );
 
-		$mock_http_client = new Mock\Http\Client();
+		$mock_http_client = new Test\Lib\Mock\Psr\Http\Message\Client();
 		$mock_http_client->set_mock_response( $mock_response );
 
 		$config = Configuration::get_default_configuration()
