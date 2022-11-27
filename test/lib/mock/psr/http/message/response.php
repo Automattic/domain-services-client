@@ -1,6 +1,6 @@
 <?php declare( strict_types=1 );
 
-namespace Automattic\Domain_Services\Mock\Http;
+namespace Automattic\Domain_Services\Test\Lib\Mock\Psr\Http\Message;
 
 /**
  * Representation of an outgoing, server-side response.
@@ -96,8 +96,8 @@ class Response implements \Psr\Http\Message\ResponseInterface {
 	 *
 	 * @param string $name Case-insensitive header field name.
 	 * @return bool Returns true if any header names match the given header
-	 *     name using a case-insensitive string comparison. Returns false if
-	 *     no matching header name is found in the message.
+	 *                     name using a case-insensitive string comparison. Returns false if
+	 *                     no matching header name is found in the message.
 	 */
 	public function hasHeader( $name ) {
 		// TODO: Implement hasHeader() method.
@@ -114,8 +114,8 @@ class Response implements \Psr\Http\Message\ResponseInterface {
 	 *
 	 * @param string $name Case-insensitive header field name.
 	 * @return string[] An array of string values as provided for the given
-	 *    header. If the header does not appear in the message, this method MUST
-	 *    return an empty array.
+	 *                     header. If the header does not appear in the message, this method MUST
+	 *                     return an empty array.
 	 */
 	public function getHeader( $name ) {
 		// TODO: Implement getHeader() method.
@@ -137,8 +137,8 @@ class Response implements \Psr\Http\Message\ResponseInterface {
 	 *
 	 * @param string $name Case-insensitive header field name.
 	 * @return string A string of values as provided for the given header
-	 *    concatenated together using a comma. If the header does not appear in
-	 *    the message, this method MUST return an empty string.
+	 *                     concatenated together using a comma. If the header does not appear in
+	 *                     the message, this method MUST return an empty string.
 	 */
 	public function getHeaderLine( $name ) {
 		// TODO: Implement getHeaderLine() method.
@@ -154,7 +154,7 @@ class Response implements \Psr\Http\Message\ResponseInterface {
 	 * immutability of the message, and MUST return an instance that has the
 	 * new and/or updated header and value.
 	 *
-	 * @param string $name Case-insensitive header field name.
+	 * @param string          $name  Case-insensitive header field name.
 	 * @param string|string[] $value Header value(s).
 	 * @return static
 	 * @throws \InvalidArgumentException for invalid header names or values.
@@ -174,7 +174,7 @@ class Response implements \Psr\Http\Message\ResponseInterface {
 	 * immutability of the message, and MUST return an instance that has the
 	 * new header and/or value.
 	 *
-	 * @param string $name Case-insensitive header field name to add.
+	 * @param string          $name  Case-insensitive header field name to add.
 	 * @param string|string[] $value Header value(s).
 	 * @return static
 	 * @throws \InvalidArgumentException for invalid header names or values.
@@ -250,10 +250,10 @@ class Response implements \Psr\Http\Message\ResponseInterface {
 	 *
 	 * @link http://tools.ietf.org/html/rfc7231#section-6
 	 * @link http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml
-	 * @param int $code The 3-digit integer result code to set.
+	 * @param int    $code         The 3-digit integer result code to set.
 	 * @param string $reasonPhrase The reason phrase to use with the
-	 *     provided status code; if none is provided, implementations MAY
-	 *     use the defaults as suggested in the HTTP specification.
+	 *                             provided status code; if none is provided, implementations MAY
+	 *                             use the defaults as suggested in the HTTP specification.
 	 * @return static
 	 * @throws \InvalidArgumentException For invalid status code arguments.
 	 */

@@ -1,10 +1,10 @@
 <?php declare( strict_types=1 );
 
-namespace Automattic\Domain_Services\Test;
+namespace Automattic\Domain_Services\Test\Response;
 
-use Automattic\Domain_Services\{Command, Entity, Mock, Response};
+use Automattic\Domain_Services\{Command, Entity, Response, Test};
 
-class Dns_Records_Set_Test extends Domain_Services_Client_Test_Case {
+class Dns_Records_Set_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_response_factory_success(): void {
 		$domain = new Entity\Domain_Name( 'dns-records-set-test-domain.blog' );
 		$dns_record_sets = Entity\Dns_Record_Sets::from_array(
@@ -31,7 +31,7 @@ class Dns_Records_Set_Test extends Domain_Services_Client_Test_Case {
 		$dns_records = new Entity\Dns_Records( $domain, $dns_record_sets );
 		$command = new Command\Dns\Records\Set( $dns_records );
 
-		$response_data = get_mock_response( $command, $domain->get_name(), 'success' );
+		$response_data = Test\Lib\Mock\get_mock_response( $command, $domain->get_name(), 'success' );
 
 		/** @var Response\Dns\Records\Set $response_object */
 		$response_object = $this->response_factory->build_response( $command, $response_data );
