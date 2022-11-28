@@ -205,7 +205,7 @@ class Reseller_Event {
 	 */
 	public static function from_array( array $data ): self {
 		$reseller_event = new self();
-		$event_data = json_decode( $data[ self::EVENT_DATA ], true, 512, JSON_THROW_ON_ERROR );
+		$event_data = json_decode( $data[ self::EVENT_DATA ] ?? '[]', true, 512, JSON_THROW_ON_ERROR );
 		$created_date = \DateTimeImmutable::createFromFormat( Entity_Interface::DATE_FORMAT, $data[ self::CREATED_DATE ] );
 		$acknowledged_date = null === $data[ self::ACKNOWLEDGED_DATE ] ? null : \DateTimeImmutable::createFromFormat( Entity_Interface::DATE_FORMAT, $data[ self::ACKNOWLEDGED_DATE ] );
 
