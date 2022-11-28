@@ -2,8 +2,6 @@
 
 namespace Automattic\Domain_Services\Entity;
 
-use Automattic\Domain_Services\{Exception};
-
 class Dns_Record_Sets implements \Iterator {
 	/**
 	 * The list of EPP status codes that apply to a single domain
