@@ -7,8 +7,8 @@ use Automattic\Domain_Services\{Command};
 /**
  * Retrieves details of an event.
  */
-class Details implements Command\Command_Interface {
-	use Command\Command_Trait, Command\Array_Key_Event_Trait;
+class Details implements Command\Command_Interface, Command\Command_Serialize_Interface {
+	use Command\Command_Trait, Command\Command_Serialize_Trait, Command\Array_Key_Event_Trait;
 
 	/**
 	 * ID of the event whose details will be checked.

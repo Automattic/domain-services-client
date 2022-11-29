@@ -4,8 +4,8 @@ namespace Automattic\Domain_Services\Command\Domain\Transferlock;
 
 use Automattic\Domain_Services\{Command, Entity};
 
-class Set implements Command\Command_Interface {
-	use Command\Command_Trait, Command\Array_Key_Domain_Trait, Command\Array_Key_Domain_Trait, Command\Array_Key_Transferlock_Trait;
+class Set implements Command\Command_Interface, Command\Command_Serialize_Interface {
+	use Command\Command_Trait, Command\Command_Serialize_Trait, Command\Array_Key_Domain_Trait, Command\Array_Key_Domain_Trait, Command\Array_Key_Transferlock_Trait;
 
 	/**
 	 * The domain name that will be updated.
