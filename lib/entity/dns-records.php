@@ -50,9 +50,9 @@ class Dns_Records {
 		];
 	}
 
-	public static function from_array( string $domain_name_data, array $record_sets_data ): self {
-		$domain_name = new Domain_Name( $domain_name_data );
-		$dns_record_sets = Dns_Record_Sets::from_array( $record_sets_data );
+	public static function from_array( array $dns_records_data ): self {
+		$domain_name = new Domain_Name( $dns_records_data[ self::get_domain_name_array_key() ] );
+		$dns_record_sets = Dns_Record_Sets::from_array( $dns_records_data[ self::get_dns_record_sets_array_key() ] );
 
 		return new self( $domain_name, $dns_record_sets );
 	}
