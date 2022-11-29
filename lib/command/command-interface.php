@@ -2,7 +2,7 @@
 
 namespace Automattic\Domain_Services\Command;
 
-interface Command_Interface extends \JsonSerializable {
+interface Command_Interface {
 	public const COMMAND = 'command';
 	public const PARAMS = 'params';
 	public const CLIENT_TXN_ID = 'client_txn_id';
@@ -13,6 +13,13 @@ interface Command_Interface extends \JsonSerializable {
 	 * @return string
 	 */
 	public static function get_name(): string;
+
+	/**
+	 * Gets the client transaction ID
+	 *
+	 * @return string
+	 */
+	public function get_client_txn_id(): string;
 
 	/**
 	 * Sets the client transaction ID

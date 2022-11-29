@@ -7,8 +7,8 @@ use Automattic\Domain_Services\{Command, Entity};
 /**
  * Retrieves a list of events.
  */
-class Get implements Command\Command_Interface {
-	use Command\Command_Trait, Command\Array_Key_Event_Trait;
+class Get implements Command\Command_Interface, Command\Command_Serialize_Interface {
+	use Command\Command_Trait, Command\Command_Serialize_Trait, Command\Array_Key_Event_Trait;
 
 	/**
 	 * Index of first record to include, for pagination

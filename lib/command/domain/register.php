@@ -4,8 +4,8 @@ namespace Automattic\Domain_Services\Command\Domain;
 
 use Automattic\Domain_Services\{Command, Entity, Exception};
 
-class Register implements Command\Command_Interface {
-	use Command\Command_Trait, Command\Array_Key_Domain_Trait, Command\Array_Key_Contacts_Trait;
+class Register implements Command\Command_Interface, Command\Command_Serialize_Interface {
+	use Command\Command_Trait, Command\Command_Serialize_Trait, Command\Array_Key_Domain_Trait, Command\Array_Key_Contacts_Trait;
 
 	/**
 	 * The domain name to register
