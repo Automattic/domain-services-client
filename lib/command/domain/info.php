@@ -11,8 +11,8 @@ use Automattic\Domain_Services\{Command, Entity};
  * name servers and EPP statuses. If the domain is not registered with us, the information of a Domain_Check command
  * is returned instead (domain availability and fees).
  */
-class Info implements Command\Command_Interface {
-	use Command\Command_Trait, Command\Array_Key_Domain_Trait;
+class Info implements Command\Command_Interface, Command\Command_Serialize_Interface {
+	use Command\Command_Trait, Command\Command_Serialize_Trait, Command\Array_Key_Domain_Trait;
 
 	/**
 	 * @var Entity\Domain_Name domain which information will be retrieved

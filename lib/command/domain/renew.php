@@ -4,8 +4,8 @@ namespace Automattic\Domain_Services\Command\Domain;
 
 use Automattic\Domain_Services\{Command, Entity};
 
-class Renew implements Command\Command_Interface {
-	use Command\Command_Trait, Command\Array_Key_Domain_Trait, Command\Array_Key_Period_Trait, Command\Array_Key_Current_Expiration_Year_Trait, Command\Array_Key_Fee_Amount_Trait;
+class Renew implements Command\Command_Interface, Command\Command_Serialize_Interface {
+	use Command\Command_Trait, Command\Command_Serialize_Trait, Command\Array_Key_Domain_Trait, Command\Array_Key_Period_Trait, Command\Array_Key_Current_Expiration_Year_Trait, Command\Array_Key_Fee_Amount_Trait;
 
 	/**
 	 * The domain name to renew

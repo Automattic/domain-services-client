@@ -6,20 +6,6 @@ trait Command_Trait {
 	private string $client_txn_id = '';
 
 	/**
-	 * Implements the JsonSerializable interface
-	 *
-	 * @return array
-	 */
-	final public function jsonSerialize(): array { //phpcs:ignore WordPress.NamingConventions.ValidFunctionName.MethodNameInvalid
-		return [
-			Command_Interface::COMMAND => [
-				Command_Interface::PARAMS => $this->to_array(),
-			],
-			Command_Interface::CLIENT_TXN_ID => $this->get_client_txn_id(),
-		];
-	}
-
-	/**
 	 * @return string
 	 */
 	final public function get_resource_path(): string {
