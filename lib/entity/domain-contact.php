@@ -39,13 +39,18 @@ class Domain_Contact {
 	}
 
 	public function to_array(): array {
+		$contact_id = $this->get_contact_id();
+		if ( null !== $contact_id ) {
+			$contact_id = (string) $contact_id;
+		}
+
 		$contact_info = $this->get_contact_information();
 		if ( null !== $contact_info ) {
 			$contact_info = $contact_info->to_array();
 		}
 
 		return [
-			self::get_contact_id_array_key() => (string) $this->get_contact_id(),
+			self::get_contact_id_array_key() => $contact_id,
 			self::get_contact_information_array_key() => $contact_info,
 			self::get_contact_disclosure_array_key() => $this->get_contact_disclosure()->get_disclose_fields(),
 		];
