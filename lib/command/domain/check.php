@@ -5,7 +5,7 @@ namespace Automattic\Domain_Services\Command\Domain;
 use Automattic\Domain_Services\{Command, Entity, Exception};
 
 class Check implements Command\Command_Interface, Command\Command_Serialize_Interface {
-	use Command\Command_Trait, Command\Command_Serialize_Trait, Command\Array_Key_Domain_Trait;
+	use Command\Command_Trait, Command\Command_Serialize_Trait, Command\Array_Key_Domains_Trait;
 
 	/**
 	 * List of domains to check for availability.
@@ -34,7 +34,7 @@ class Check implements Command\Command_Interface, Command\Command_Serialize_Inte
 
 	public function to_array(): array {
 		return [
-			self::get_domain_name_array_key() => $this->get_domains()->to_array(),
+			self::get_domain_names_array_key() => $this->get_domains()->to_array(),
 		];
 	}
 }
