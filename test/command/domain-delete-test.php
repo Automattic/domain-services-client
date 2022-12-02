@@ -4,7 +4,7 @@ namespace Automattic\Domain_Services\Test\Command;
 
 use Automattic\Domain_Services\{Command, Entity, Test};
 
-class Domain_Delete_Set_Test extends Test\Lib\Domain_Services_Client_Test_Case {
+class Domain_Delete_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	use Command\Array_Key_Domain_Trait;
 
 	public function test_command_instance_success(): void {
