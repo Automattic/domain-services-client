@@ -33,4 +33,20 @@ class Domain_Services_Client_Test_Case extends \PHPUnit\Framework\TestCase {
 		$this->assertIsString( $response->get_status_description() );
 		$this->assertEquals( $expected_data['status_description'], $response->get_status_description() );
 	}
+
+	private function ksortMultidimensionalArray( array &$array ): void {
+		foreach ( $array as $key => $value ) {
+			if ( is_array( $value ) ) {
+				$this->ksortMultidimensionalArray( $array[ $key ] );
+			}
+		}
+		ksort( $array );
+	}
+
+	public function assertArraysEqual( array $expected, array $actual, string $message = '' ): void {
+		$this->ksortMultidimensionalArray( $expected );
+		$this->ksortMultidimensionalArray( $actual );
+
+		$this->assertEquals( $expected, $actual, $message );
+	}
 }
