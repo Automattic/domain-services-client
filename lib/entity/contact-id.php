@@ -10,11 +10,16 @@ class Contact_Id implements Entity_Interface {
 
 	public function __construct( string $contact_id ) {
 		$contact_id_parts = explode( ':', $contact_id, 2 );
+
+		if ( 2 !== count( $contact_id_parts ) ) {
+			throw new Exception\Entity\Invalid_Value_Exception( __CLASS__, 'Invalid contact ID format' );
+		}
+
 		$this->provider_id = $contact_id_parts[0];
 		$this->provider_contact_id = $contact_id_parts[1];
 
 		if ( ! in_array( $this->provider_id, Entity_Interface::VALID_PROVIDER_IDS, true ) ) {
-			throw new Exception\Command\Invalid_Format_Exception( 'Invalid contact ID prefix' );
+			throw new Exception\Entity\Invalid_Value_Exception( __CLASS__, 'Invalid contact ID prefix' );
 		}
 	}
 

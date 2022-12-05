@@ -12,7 +12,28 @@ class Domain_Services_Exception extends \Exception {
 		parent::__construct( Response\Code::get_description( $code ), $code, $previous );
 	}
 
+	public function get_exception_type(): array {
+		return [
+			'class' => null,
+			'subclass' => 'Domain_Services',
+		];
+	}
+
 	public function to_response( Command\Context $context ): Response\Exception\Error {
-		return new Response\Exception\Error( $context, $this->code, false, array_merge( $this->data, [ 'command_data' => $context->get_command_data() ] ) );
+		return new Response\Exception\Error(
+			$context,
+			$this->code,
+			false,
+			[
+				'error' => array_merge(
+					$this->get_exception_type(),
+					[ 'data' => $this->get_error_data() ],
+				),
+			]
+		);
+	}
+
+	public function get_error_data(): array {
+		return $this->data;
 	}
 }

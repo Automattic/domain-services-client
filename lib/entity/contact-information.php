@@ -2,7 +2,7 @@
 
 namespace Automattic\Domain_Services\Entity;
 
-use Automattic\Domain_Services\{Exception, Exception\Entity\Invalid_Value_Exception};
+use Automattic\Domain_Services\{Exception};
 
 /**
  * The contact information for domain registrants.
@@ -56,35 +56,35 @@ class Contact_Information {
 	 * @param string|null $email
 	 * @param string|null $phone
 	 * @param string|null $fax
-	 * @throws Invalid_Value_Exception
+	 * @throws Exception\Entity\Invalid_Value_Exception
 	 */
 	public function __construct( ?string $first_name = null, ?string $last_name = null, ?string $organization = null, ?string $address_1 = null, ?string $address_2 = null, ?string $postal_code = null, ?string $city = null, ?string $state = null, ?string $country_code = null, ?string $email = null, ?string $phone = null, ?string $fax = null ) {
 		// TODO: Validate all of the data
 
-		$this->set_by_key( self::FIRST_NAME, $first_name );
-		$this->set_by_key( self::LAST_NAME, $last_name );
-		$this->set_by_key( self::ORGANIZATION, $organization );
-		$this->set_by_key( self::ADDRESS_1, $address_1 );
-		$this->set_by_key( self::ADDRESS_2, $address_2 );
-		$this->set_by_key( self::POSTAL_CODE, $postal_code );
-		$this->set_by_key( self::CITY, $city );
-		$this->set_by_key( self::STATE, $state );
-		$this->set_by_key( self::COUNTRY_CODE, $country_code );
-		$this->set_by_key( self::EMAIL, $email );
-		$this->set_by_key( self::PHONE, $phone );
-		$this->set_by_key( self::FAX, $fax );
+		$this->set_by_key( self::FIRST_NAME, $first_name )
+			->set_by_key( self::LAST_NAME, $last_name )
+			->set_by_key( self::ORGANIZATION, $organization )
+			->set_by_key( self::ADDRESS_1, $address_1 )
+			->set_by_key( self::ADDRESS_2, $address_2 )
+			->set_by_key( self::POSTAL_CODE, $postal_code )
+			->set_by_key( self::CITY, $city )
+			->set_by_key( self::STATE, $state )
+			->set_by_key( self::COUNTRY_CODE, $country_code )
+			->set_by_key( self::EMAIL, $email )
+			->set_by_key( self::PHONE, $phone )
+			->set_by_key( self::FAX, $fax );
 	}
 
 	/**
 	 * Set a contact data value with a given key.
 	 *
-	 * @param string $key
-	 * @param string $contact_item_value
-	 * @return void
+	 * @param string      $key
+	 * @param string|null $contact_item_value
+	 * @return Contact_Information
 	 * @throws Exception\Entity\Invalid_Value_Exception
 	 */
 	public function set_by_key( string $key, ?string $contact_item_value ): self {
-		if ( ! in_array( $key, self::VALID_CONTACT_INFORMATION_KEY ) ) {
+		if ( ! in_array( $key, self::VALID_CONTACT_INFORMATION_KEY, true ) ) {
 			throw new Exception\Entity\Invalid_Value_Exception( __CLASS__, 'Invalid contact key' );
 		}
 
@@ -111,7 +111,7 @@ class Contact_Information {
 	}
 
 	/**
-	 * @throws Invalid_Value_Exception
+	 * @throws Exception\Entity\Invalid_Value_Exception
 	 */
 	public static function from_array( array $data ): self {
 		$contact_information = new self();
