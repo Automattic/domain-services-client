@@ -27,7 +27,7 @@ class Domain_Contacts_Set_Test extends Test\Lib\Domain_Services_Client_Test_Case
 							'country_code' => 'US',
 							'email' => 'registrar@automattic.com',
 							'phone' => '+1.8772733049',
-							'fax' => '',
+							'fax' => null,
 						],
 						self::get_contact_disclosure_array_key() => Entity\Contact_Disclosure::NONE,
 					],

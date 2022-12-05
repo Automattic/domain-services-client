@@ -25,7 +25,7 @@ class ApiTest extends Test\Lib\Domain_Services_Client_Test_Case {
 					'US',
 					'del@putnams.net',
 					'+1.7577468269',
-					''
+					null
 				),
 				new Entity\Contact_Disclosure( \Automattic\Domain_Services\Entity\Contact_Disclosure::NONE )
 			)

@@ -8,4 +8,11 @@ class Invalid_Value_Exception extends Exception\Domain_Services_Exception {
 	public function __construct( string $invalid_option, string $reason = '' ) {
 		parent::__construct( Response\Code::INVALID_ENTITY_VALUE, [ 'invalid_option' => $invalid_option, 'reason' => $reason ] );
 	}
+
+	public function get_exception_type(): array {
+		return [
+			'class' => 'Entity',
+			'subclass' => 'Invalid_Value',
+		];
+	}
 }
