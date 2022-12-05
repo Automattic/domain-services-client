@@ -26,7 +26,7 @@ class Domain_Register_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 							'country_code' => 'US',
 							'email' => 'registrar@automattic.com',
 							'phone' => '+1.8772733049',
-							'fax' => '',
+							'fax' => null,
 						],
 					],
 				],
