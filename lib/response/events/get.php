@@ -2,13 +2,13 @@
 
 namespace Automattic\Domain_Services\Response\Events;
 
-use Automattic\Domain_Services\{Entity, Response};
+use Automattic\Domain_Services\{Event, Exception, Response};
 
 /**
  * Response of Events_Get command.
  */
 class Get implements Response\Response_Interface {
-	use Response\Data_Trait;
+	use Response\Data_Trait, Response\Event_Aware;
 
 	private const TOTAL_COUNT = 'data.total_count';
 	private const EVENTS = 'data.events';
@@ -22,15 +22,15 @@ class Get implements Response\Response_Interface {
 	}
 
 	/**
-	 * @return Entity\Reseller_Event[]
-	 * @throws \JsonException
+	 * @return Event\Event_Interface[]
+	 * @throws Exception\Event\Invalid_Event_Name
 	 */
 	public function get_events(): array {
 		$events_data = $this->get_data_by_key( self::EVENTS );
 
 		$events = [];
 		foreach ( $events_data as $event_data ) {
-			$events[] = Entity\Reseller_Event::from_array( $event_data );
+			$events[] = $this->get_event_factory()->build_event( $event_data );
 		}
 
 		return $events;
