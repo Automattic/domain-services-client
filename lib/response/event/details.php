@@ -2,17 +2,20 @@
 
 namespace Automattic\Domain_Services\Response\Event;
 
-use Automattic\Domain_Services\{Entity, Response};
+use Automattic\Domain_Services\{Event, Exception\Event\Invalid_Event_Name, Response};
 
 /**
  * Response of an Event_Details command.
  */
 class Details implements Response\Response_Interface {
-	use Response\Data_Trait;
+	use Response\Data_Trait, Response\Event_Aware;
 
-	public function get_event(): ?Entity\Reseller_Event {
+	/**
+	 * @throws Invalid_Event_Name
+	 */
+	public function get_event(): ?Event\Event_Interface {
 		$event_data = $this->get_data_by_key( 'data.event' );
 
-		return Entity\Reseller_Event::from_array( $event_data );
+		return $this->get_event_factory()->build_event( $event_data );
 	}
 }

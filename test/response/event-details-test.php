@@ -2,7 +2,7 @@
 
 namespace Automattic\Domain_Services\Test\Response;
 
-use Automattic\Domain_Services\{Command, Response, Test};
+use Automattic\Domain_Services\{Command, Event, Response, Test};
 
 class Event_Details_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_response_factory_success(): void {
@@ -15,19 +15,18 @@ class Event_Details_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 
 		$this->assertIsValidResponse( $response_data, $response_object );
 
-		$reseller_event = $response_object->get_event();
-		$this->assertNotNull( $reseller_event );
+		$event = $response_object->get_event();
+		$this->assertNotNull( $event );
 
 		$expected_response_data = $response_data['data']['event'];
-		$json_encoded_reseller_event_data = json_encode( $reseller_event->get_event_data(), JSON_THROW_ON_ERROR );
 
-		$this->assertEquals( $expected_response_data['created_date'], $reseller_event->get_created_date()->format( 'Y-m-d H:i:s' ) );
-		$this->assertEquals( $expected_response_data['acknowledged_date'], $reseller_event->get_acknowledged_date()->format( 'Y-m-d H:i:s' ) );
-		$this->assertEquals( $expected_response_data['event_class'], $reseller_event->get_event_class() );
-		$this->assertEquals( $expected_response_data['event_data'], $json_encoded_reseller_event_data );
-		$this->assertEquals( $expected_response_data['event_subclass'], $reseller_event->get_event_subclass() );
-		$this->assertEquals( $expected_response_data['id'], $reseller_event->get_id() );
-		$this->assertEquals( $expected_response_data['object_id'], $reseller_event->get_object_id() );
-		$this->assertEquals( $expected_response_data['object_type'], $reseller_event->get_object_type() );
+		$this->assertEquals( $expected_response_data['created_date'], $event->get_created_date()->format( 'Y-m-d H:i:s' ) );
+		$this->assertEquals( $expected_response_data['acknowledged_date'], $event->get_acknowledged_date()->format( 'Y-m-d H:i:s' ) );
+		$this->assertEquals( $expected_response_data['event_class'], $event->get_event_class() );
+		$this->assertEquals( $expected_response_data['event_data'], json_encode( $event->get_event_data(), JSON_THROW_ON_ERROR ) );
+		$this->assertEquals( $expected_response_data['event_subclass'], $event->get_event_subclass() );
+		$this->assertEquals( $expected_response_data['id'], $event->get_id() );
+		$this->assertEquals( $expected_response_data['object_id'], $event->get_object_id() );
+		$this->assertEquals( $expected_response_data['object_type'], $event->get_object_type() );
 	}
 }

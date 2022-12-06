@@ -2,7 +2,7 @@
 
 namespace Automattic\Domain_Services\Response;
 
-use Automattic\Domain_Services\{Command, Exception};
+use Automattic\Domain_Services\{Command, Event, Exception};
 
 class Factory {
 	public function build_response( Command\Command_Interface $command, array $response ): Response_Interface {
@@ -27,6 +27,12 @@ class Factory {
 			throw new Exception\Domain_Services_Exception( Code::INVALID_COMMAND_NAME, [ 'message' => 'Missing response class: ' . $class_name ] );
 		}
 
-		return new $class_name( $response );
+		$response = new $class_name( $response );
+
+		if ( method_exists( $class_name, 'set_event_factory' ) ) {
+			$response->set_event_factory( new Event\Factory() );
+		}
+
+		return $response;
 	}
 }
