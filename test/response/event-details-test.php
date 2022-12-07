@@ -20,7 +20,7 @@ class Event_Details_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 
 		$expected_response_data = $response_data['data']['event'];
 
-		$this->assertEquals( $expected_response_data['created_date'], $event->get_created_date()->format( 'Y-m-d H:i:s' ) );
+		$this->assertEquals( $expected_response_data['event_date'], $event->get_event_date()->format( 'Y-m-d H:i:s' ) );
 		$this->assertEquals( $expected_response_data['acknowledged_date'], $event->get_acknowledged_date()->format( 'Y-m-d H:i:s' ) );
 		$this->assertEquals( $expected_response_data['event_class'], $event->get_event_class() );
 		$this->assertEquals( $expected_response_data['event_data'], json_encode( $event->get_event_data(), JSON_THROW_ON_ERROR ) );
