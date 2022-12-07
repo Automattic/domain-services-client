@@ -69,11 +69,6 @@ class ApiTest extends Test\Lib\Domain_Services_Client_Test_Case {
 			$this->assertEquals( $mock_response_array['runtime'], $response->get_runtime() );
 			$this->assertEquals( $mock_response_array['timestamp'], $response->get_timestamp() );
 			$this->assertEquals( $mock_response_array['server_txn_id'], $response->get_server_txn_id() );
-
-			$contact_id_parts = explode( ':', $mock_response_array['data']['contacts']['owner']['contact_id'] );
-
-			$this->assertEquals( $contact_id_parts[0], $response->get_contacts()->get_owner()->get_contact_id()->get_provider_id() );
-			$this->assertEquals( $contact_id_parts[1], $response->get_contacts()->get_owner()->get_contact_id()->get_provider_contact_id() );
 		} catch ( \Automattic\Domain_Services\Exception\Domain_Services_Exception $e ) {
 			echo 'Exception when calling Domain_Contacts_Set: ', $e->getMessage(), PHP_EOL;
 			var_dump( $e->getCode() );
