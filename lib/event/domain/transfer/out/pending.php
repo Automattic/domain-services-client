@@ -1,6 +1,6 @@
 <?php declare( strict_types=1 );
 
-namespace Automattic\Domain_Services\Event\Domain\Transferout;
+namespace Automattic\Domain_Services\Event\Domain\Transfer\Out;
 
 use Automattic\Domain_Services\{Event};
 

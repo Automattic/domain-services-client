@@ -1,6 +1,6 @@
 <?php declare( strict_types=1 );
 
-namespace Automattic\Domain_Services\Event\Domain\Contact\Verification;
+namespace Automattic\Domain_Services\Event\Contact\Verification;
 
 use Automattic\Domain_Services\{Event};
 
