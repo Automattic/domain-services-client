@@ -62,8 +62,8 @@ trait Data_Trait {
 	/**
 	 * @return \DateTimeInterface
 	 */
-	public function get_created_date(): \DateTimeInterface {
-		return \DateTimeImmutable::createFromFormat( Entity_Interface::DATE_FORMAT, $this->get_data_by_key( 'created_date' ) );
+	public function get_event_date(): \DateTimeInterface {
+		return \DateTimeImmutable::createFromFormat( Entity_Interface::DATE_FORMAT, $this->get_data_by_key( 'event_date' ) );
 	}
 
 	/**
