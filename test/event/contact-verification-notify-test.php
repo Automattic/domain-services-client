@@ -23,8 +23,8 @@ class Contact_Verification_Notify_Test extends Test\Lib\Domain_Services_Client_T
 					'event_subclass' => 'Notify',
 					'object_type' => 'contact',
 					'object_id' => 'SP1:P-ABC1234',
-					'created_date' => '2022-01-23 12:34:56',
-					'acknowldeged_date' => null,
+					'event_date' => '2022-01-23 12:34:56',
+					'acknowledged_date' => null,
 					'event_data' => [
 						'verified' => true,
 					],
@@ -42,5 +42,6 @@ class Contact_Verification_Notify_Test extends Test\Lib\Domain_Services_Client_T
 
 		$this->assertInstanceOf( Event\Contact\Verification\Notify::class, $event );
 		$this->assertSame( $response_data['data']['event']['event_data']['verified'], $event->is_verified() );
+		$this->assertSame( $response_data['data']['event']['object_id'], (string) $event->get_contact_id() );
 	}
 }
