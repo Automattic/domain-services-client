@@ -14,6 +14,9 @@
 		<testsuite name="entity">
 			<directory suffix="test.php">entity</directory>
 		</testsuite>
+		<testsuite name="event">
+			<directory suffix="test.php">event</directory>
+		</testsuite>
 		<testsuite name="response">
 			<directory suffix="test.php">response</directory>
 		</testsuite>
