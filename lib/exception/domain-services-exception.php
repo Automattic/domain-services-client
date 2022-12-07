@@ -19,20 +19,6 @@ class Domain_Services_Exception extends \Exception {
 		];
 	}
 
-	public function to_response( Command\Context $context ): Response\Exception\Error {
-		return new Response\Exception\Error(
-			$context,
-			$this->code,
-			false,
-			[
-				'error' => array_merge(
-					$this->get_exception_type(),
-					[ 'data' => $this->get_error_data() ],
-				),
-			]
-		);
-	}
-
 	public function get_error_data(): array {
 		return $this->data;
 	}
