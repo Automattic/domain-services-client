@@ -8,7 +8,7 @@ use Automattic\Domain_Services\{Event};
  * This event indicates a change in the contact status
  */
 class Notify implements Event\Event_Interface {
-	use Event\Data_Trait;
+	use Event\Data_Trait, Event\Object_Type_Contact_Trait;
 
 	/**
 	 * Returns tha verification status of the contact.

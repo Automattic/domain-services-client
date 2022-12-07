@@ -23,8 +23,8 @@ class Contact_Verification_Request_Test extends Test\Lib\Domain_Services_Client_
 					'event_subclass' => 'Request',
 					'object_type' => 'contact',
 					'object_id' => 'SP1:P-ABC1234',
-					'created_date' => '2022-01-23 12:34:56',
-					'acknowldeged_date' => null,
+					'event_date' => '2022-01-23 12:34:56',
+					'acknowledged_date' => null,
 					'event_data' => [
 						'email' => 'registrant@example.com',
 						'verification_code' => 'qwerty12345',
@@ -43,5 +43,6 @@ class Contact_Verification_Request_Test extends Test\Lib\Domain_Services_Client_
 
 		$this->assertInstanceOf( Event\Contact\Verification\Request::class, $event );
 		$this->assertSame( $response_data['data']['event']['event_data']['email'], $event->get_email() );
+		$this->assertSame( $response_data['data']['event']['object_id'], (string) $event->get_contact_id() );
 	}
 }
