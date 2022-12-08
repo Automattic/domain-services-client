@@ -19,13 +19,18 @@ class Domain_Nameservers_Set_Success_Test extends Test\Lib\Domain_Services_Clien
 			'data' => [
 				'event' => [
 					'id' => 1234,
-					'event_class' => 'Domain_Delete',
+					'event_class' => 'Domain_Nameservers_Set',
 					'event_subclass' => 'Success',
 					'object_type' => 'domain',
 					'object_id' => 'example.com',
 					'event_date' => '2022-01-23 12:34:56',
 					'acknowledged_date' => null,
-					'event_data' => [],
+					'event_data' => [
+						'name_servers' => [
+							'ns1.wordpress.com',
+							'ns2.wordpress.com',
+						],
+					],
 				],
 			],
 		];
@@ -38,7 +43,8 @@ class Domain_Nameservers_Set_Success_Test extends Test\Lib\Domain_Services_Clien
 		$event = $response_object->get_event();
 		$this->assertNotNull( $event );
 
-		$this->assertInstanceOf( Event\Domain\Delete\Success::class, $event );
+		$this->assertInstanceOf( Event\Domain\Nameservers\Set\Success::class, $event );
 		$this->assertSame( $response_data['data']['event']['object_id'], $event->get_domain()->get_name() );
+		$this->assertSame( $response_data['data']['event']['event_data']['name_servers'], $event->get_nameservers()->to_array() );
 	}
 }
