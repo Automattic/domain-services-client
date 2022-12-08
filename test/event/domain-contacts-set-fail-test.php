@@ -26,6 +26,7 @@ class Domain_Contacts_Set_Fail_Test extends Test\Lib\Domain_Services_Client_Test
 					'event_date' => '2022-01-23 12:34:56',
 					'acknowledged_date' => null,
 					'event_data' => [
+						// TODO: Provide accurate error data once this is finalized in the server repo
 						'error' => [
 							'class' => 'Entity',
 							'subclass' => 'Invalid_Value',
@@ -49,6 +50,7 @@ class Domain_Contacts_Set_Fail_Test extends Test\Lib\Domain_Services_Client_Test
 		$this->assertNotNull( $event );
 
 		$this->assertInstanceOf( Event\Domain\Contacts\Set\Fail::class, $event );
+		$this->assertSame( $response_data['data']['event']['object_id'], $event->get_domain()->get_name() );
 		$this->assertSame( $response_data['data']['event']['event_data']['error']['data']['reason'], $event->get_error_reason() );
 	}
 }
