@@ -8,7 +8,7 @@ class Argp implements Event\Event_Interface {
 	use Event\Data_Trait, Event\Object_Type_Domain_Trait;
 
 	public function get_argp_end_date(): ?\DateTimeImmutable {
-		$argp_end_date = $this->get_data_by_key( 'event_data.argp_end_date' ) ?? null;
+		$argp_end_date = $this->get_data_by_key( 'event_data.argp_end_date' );
 
 		if ( null === $argp_end_date ) {
 			return null;
