@@ -22,7 +22,7 @@ class Auction implements Event\Event_Interface {
 	 * @return \DateTimeImmutable|null
 	 */
 	public function get_auction_status_end_date(): ?\DateTimeImmutable {
-		$auction_state_end_date = $this->get_data_by_key( 'event_data.auction_status_end_date' ) ?? null;
+		$auction_state_end_date = $this->get_data_by_key( 'event_data.auction_status_end_date' );
 
 		if ( null === $auction_state_end_date ) {
 			return null;
