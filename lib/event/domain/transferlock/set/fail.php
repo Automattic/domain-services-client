@@ -1,6 +1,6 @@
 <?php declare( strict_types=1 );
 
-namespace Automattic\Domain_Services\Event\Domain\Contacts\Set;
+namespace Automattic\Domain_Services\Event\Domain\Transferlock\Set;
 
 use Automattic\Domain_Services\{Event};
 
