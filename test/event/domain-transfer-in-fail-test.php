@@ -4,7 +4,7 @@ namespace Automattic\Domain_Services\Test\Event;
 
 use Automattic\Domain_Services\{Command, Entity, Event, Response, Test};
 
-class Domain_NTransfer_In_Fail_Test extends Test\Lib\Domain_Services_Client_Test_Case {
+class Domain_Transfer_In_Fail_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_event_success(): void {
 		$command = new Command\Event\Details( 1234 );
 
