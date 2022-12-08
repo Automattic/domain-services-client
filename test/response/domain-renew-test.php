@@ -10,9 +10,7 @@ class Domain_Renew_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 		$command = new Command\Domain\Renew( $domain_name, 2022, 1, null );
 
 		$response_data = [
-			'data' => [
-				'expiration_date' => '2024-06-30 12:00:00',
-			],
+			'data' => [],
 			'status' => 200,
 			'status_description' => 'Command completed successfully',
 			'success' => true,
@@ -28,7 +26,5 @@ class Domain_Renew_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 		$this->assertInstanceOf( Response\Domain\Renew::class, $response_object );
 
 		$this->assertIsValidResponse( $response_data, $response_object );
-
-		$this->assertSame( $response_data['data']['expiration_date'], $response_object->get_expiration_date()->format( Entity\Entity_Interface::DATE_FORMAT ) );
 	}
 }
