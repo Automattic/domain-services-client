@@ -30,5 +30,4 @@ class Auction implements Event\Event_Interface {
 
 		return \DateTimeImmutable::createFromFormat( Entity\Entity_Interface::DATE_FORMAT, $auction_state_end_date );
 	}
-
 }
