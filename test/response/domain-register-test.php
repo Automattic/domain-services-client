@@ -59,35 +59,7 @@ class Domain_Register_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 			'server_txn_id' => '990c3ae1-3210-49f2-9ce6-51a14bc2a2c6.local-isolated-test-request',
 			'timestamp' => 1669075523,
 			'runtime' => 0.0029,
-			'data' => [
-				'domain_status' => 'ACTIVE',
-				'created_date' => '2022-06-24 15:18:08',
-				'expiration_date' => '2023-06-24 15:18:08',
-				'renewal_date' => '2023-07-29 15:18:08',
-				'unverified_contact_suspension_date' => '2022-07-09 15:18:08',
-				'contacts' => [
-					'owner' => [
-						'contact_id' => 'SP1:P-ABC1234',
-						'contact_information' => $contact_info,
-						'contact_disclosure' => 'none',
-					],
-					'admin' => [
-						'contact_id' => 'SP1:P-ABC1234',
-						'contact_information' => $contact_info,
-						'contact_disclosure' => 'none',
-					],
-					'tech' => [
-						'contact_id' => 'SP1:P-ABC1234',
-						'contact_information' => $contact_info,
-						'contact_disclosure' => 'none',
-					],
-					'billing' => [
-						'contact_id' => 'SP1:P-ABC1234',
-						'contact_information' => $contact_info,
-						'contact_disclosure' => 'none',
-					],
-				],
-			],
+			'data' => [],
 		];
 
 		/** @var Response\Domain\Register $response_object */
@@ -96,24 +68,5 @@ class Domain_Register_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 		$this->assertInstanceOf( Response\Domain\Register::class, $response_object );
 
 		$this->assertIsValidResponse( $mock_response_data, $response_object );
-
-		$response_contacts = $response_object->get_contacts();
-		foreach ( $response_contacts as $contact_type => $response_contact ) {
-			$contact_id = (string) $response_contact->get_contact_id();
-			$contact_info = $response_contact->get_contact_information()->to_array();
-			$contact_disclosure = $response_contact->get_contact_disclosure()->get_disclose_fields();
-
-			$this->assertSame( $mock_response_data['data']['contacts'][ $contact_type ]['contact_id'], $contact_id );
-			$this->assertSame( $mock_response_data['data']['contacts'][ $contact_type ]['contact_information'], $contact_info );
-			$this->assertSame( $mock_response_data['data']['contacts'][ $contact_type ]['contact_disclosure'], $contact_disclosure );
-		}
-
-		$this->assertSame( $mock_response_data['data']['contacts'], $response_object->get_contacts()->to_array() );
-
-		$this->assertSame( $mock_response_data['data']['domain_status'], $response_object->get_domain_status() );
-		$this->assertSame( $mock_response_data['data']['created_date'], $response_object->get_created_date()->format( Entity\Entity_Interface::DATE_FORMAT ) );
-		$this->assertSame( $mock_response_data['data']['expiration_date'], $response_object->get_expiration_date()->format( Entity\Entity_Interface::DATE_FORMAT ) );
-		$this->assertSame( $mock_response_data['data']['renewal_date'], $response_object->get_renewal_date()->format( Entity\Entity_Interface::DATE_FORMAT ) );
-		$this->assertSame( $mock_response_data['data']['unverified_contact_suspension_date'], $response_object->get_unverified_contact_suspension_date()->format( Entity\Entity_Interface::DATE_FORMAT ) );
 	}
 }
