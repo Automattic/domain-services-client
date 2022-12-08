@@ -2,7 +2,7 @@
 
 namespace Automattic\Domain_Services\Response\Domain\Contacts;
 
-use Automattic\Domain_Services\{Entity, Response};
+use Automattic\Domain_Services\{Response};
 
 class Set implements Response\Response_Interface {
 	use Response\Data_Trait;
