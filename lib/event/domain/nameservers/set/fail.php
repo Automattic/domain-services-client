@@ -5,5 +5,5 @@ namespace Automattic\Domain_Services\Event\Domain\Nameservers\Set;
 use Automattic\Domain_Services\{Event};
 
 class Fail implements Event\Event_Interface {
-	use Event\Data_Trait;
+	use Event\Data_Trait, Event\Object_Type_Domain_Trait, Event\Error_Trait;
 }
