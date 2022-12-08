@@ -26,6 +26,7 @@ class Domain_Delete_Fail_Test extends Test\Lib\Domain_Services_Client_Test_Case 
 					'event_date' => '2022-01-23 12:34:56',
 					'acknowledged_date' => null,
 					'event_data' => [
+						// TODO: Provide accurate error data once this is finalized in the server repo
 						'error' => [
 							'class' => '',
 							'subclass' => 'Domain_Services',
@@ -49,5 +50,6 @@ class Domain_Delete_Fail_Test extends Test\Lib\Domain_Services_Client_Test_Case 
 
 		$this->assertInstanceOf( Event\Domain\Delete\Fail::class, $event );
 		$this->assertSame( $response_data['data']['event']['object_id'], $event->get_domain()->get_name() );
+		$this->assertSame( $response_data['data']['event']['event_data']['error']['data']['reason'], $event->get_error_reason() );
 	}
 }
