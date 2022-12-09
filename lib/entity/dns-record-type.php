@@ -52,4 +52,8 @@ class Dns_Record_Type {
 	public function get_type(): string {
 		return $this->type;
 	}
+
+	public function __toString() {
+		return $this->get_type();
+	}
 }
