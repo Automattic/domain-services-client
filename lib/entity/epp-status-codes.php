@@ -24,6 +24,7 @@ class Epp_Status_Codes implements \Iterator {
 	}
 
 	public function add_epp_code( Epp_Status_Code $epp_status_code ): void {
+		// @todo where are we checking whether the EPP status is updateable or not
 		$this->epp_status_codes[ (string) $epp_status_code ] = $epp_status_code;
 	}
 
