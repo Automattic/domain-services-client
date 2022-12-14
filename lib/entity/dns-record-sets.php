@@ -24,6 +24,7 @@ class Dns_Record_Sets implements \Iterator {
 	}
 
 	public function add_record_set( Dns_Record_Set $dns_record_set ): void {
+		// @todo check for duplicates before adding new records?
 		$this->dns_record_sets[] = $dns_record_set;
 	}
 

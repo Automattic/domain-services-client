@@ -15,4 +15,8 @@ class Domain_Name {
 	public function get_name(): string {
 		return $this->name;
 	}
+
+	public function __toString() {
+		return $this->get_name();
+	}
 }
