@@ -2,7 +2,7 @@
 
 namespace Automattic\Domain_Services\Exception;
 
-use Automattic\Domain_Services\{Command, Response};
+use Automattic\Domain_Services\{Response};
 
 class Domain_Services_Exception extends \Exception {
 	private array $data;

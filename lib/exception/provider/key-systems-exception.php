@@ -7,6 +7,7 @@ use Automattic\Domain_Services\{Exception, Response};
 class Key_Systems_Exception extends Exception\Domain_Services_Exception {
 	public function __construct( \Key_Systems\Key_Systems_Exception $ks_exception ) {
 		$code = $ks_exception->data[ \Key_Systems\Key_Systems_Exception::RESPONSE ][ \Key_Systems\API\Response::CODE ] ?? Response\Code::UNKNOWN_ERROR;
-		parent::__construct( $code, [], $ks_exception );
+		$error_detail = $ks_exception->data[ \Key_Systems\Key_Systems_Exception::RESPONSE ][ \Key_Systems\API\Response::DESCRIPTION ] ?? '';
+		parent::__construct( $code, [ 'error_detail' => $error_detail ], $ks_exception );
 	}
 }
