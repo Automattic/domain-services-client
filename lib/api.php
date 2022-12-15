@@ -27,6 +27,7 @@ class Api {
 		$uri = $api_host . $resourcePath;
 
 		$headers = [
+			'User-Agent' => $this->configuration->get_user_agent(),
 			'X-DSAPI-KEY' => $this->configuration->get_api_key_with_prefix( 'X-DSAPI-KEY' ),
 			'X-DSAPI-USER' => $this->configuration->get_api_key_with_prefix( 'X-DSAPI-USER' ),
 		];
