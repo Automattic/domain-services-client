@@ -3,6 +3,10 @@
 namespace Automattic\Domain_Services\Command;
 
 trait Array_Key_Event_Trait {
+	final public static function get_event_id_array_key(): string {
+		return 'event_id';
+	}
+
 	final public static function get_event_limit_array_key(): string {
 		return 'limit';
 	}
