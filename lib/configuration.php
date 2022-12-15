@@ -61,7 +61,7 @@ class Configuration {
 	private string $host = 'https://public-api.wordpress.com/rest/v1/domain-services/reseller/command';
 
 	/**
-	 * User agent of the HTTP request, set to "OpenAPI-Generator/{version}/PHP" by default
+	 * User agent of the HTTP request
 	 *
 	 * @var string
 	 */
