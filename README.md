@@ -100,3 +100,7 @@ Then run the unit tests
 ```shell
 $ ./vendor/bin/phpunit -c ./test/phpunit.xml
 ```
+
+## License
+
+The Automattic Domain Services Client is licensed under [GNU General Public License v2 (or later)](./LICENSE.md).
