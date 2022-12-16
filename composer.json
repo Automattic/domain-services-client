@@ -1,48 +1,51 @@
 {
-	"name": "automattic/domain-services-client",
-	"description": "Client library for Automattic's Domain Services API.",
-	"type": "library",
-	"authors": [
-		{
-			"name": "Igor Giussani",
-			"email": "igor.giussani@automattic.com"
-		},
-		{
-			"name": "Kamen Stanev",
-			"email": "kamen.stanev@automattic.com"
-		},
-		{
-			"name": "Leonardo Sameshima Taba",
-			"email": "leonardo.taba@automattic.com"
-		},
-		{
-			"name": "Rafael Galani",
-			"email": "rafael.galani@automattic.com"
-		},
-		{
-			"name": "Ramy Nasr",
-			"email": "ramy@automattic.com"
-		},
-		{
-			"name": "Del Putnam",
-			"email": "del@automattic.com"
-		}
-	],
-	"require": {
-		"php": ">=7.4.0",
-		"ext-curl": "*",
-		"ext-json": "*",
-		"ext-mbstring": "*",
-		"guzzlehttp/guzzle": "^7.3",
-		"guzzlehttp/psr7": "^1.7 || ^2.0"
-	},
-	"require-dev": {
-		"phpunit/phpunit": "^9.5",
-		"psr/http-message": "^1.0",
-		"psr/http-client": "^1.0",
-		"guzzlehttp/psr7": "^1.7 || ^2.0"
-	},
-	"autoload": {
-		"files": [ "lib/loader.php" ]
-	}
+  "name": "automattic/domain-services-client",
+  "description": "Client library for Automattic's Domain Services API.",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Igor Giussani",
+      "email": "igor.giussani@automattic.com"
+    },
+    {
+      "name": "Kamen Stanev",
+      "email": "kamen.stanev@automattic.com"
+    },
+    {
+      "name": "Leonardo Sameshima Taba",
+      "email": "leonardo.taba@automattic.com"
+    },
+    {
+      "name": "Rafael Galani",
+      "email": "rafael.galani@automattic.com"
+    },
+    {
+      "name": "Ramy Nasr",
+      "email": "ramy@automattic.com"
+    },
+    {
+      "name": "Del Putnam",
+      "email": "del@automattic.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.4.0",
+    "ext-curl": "*",
+    "ext-json": "*",
+    "ext-mbstring": "*",
+    "guzzlehttp/guzzle": "^7.3",
+    "guzzlehttp/psr7": "^1.7 || ^2.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.5",
+    "psr/http-message": "^1.0",
+    "psr/http-client": "^1.0",
+    "guzzlehttp/psr7": "^1.7 || ^2.0"
+  },
+  "autoload": {
+    "files": [
+      "lib/loader.php"
+    ]
+  },
+  "license": "GPL-2.0-or-later"
 }
