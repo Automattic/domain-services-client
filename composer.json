@@ -43,8 +43,9 @@
     "guzzlehttp/psr7": "^1.7 || ^2.0"
   },
   "autoload": {
-    "files": [
-      "lib/loader.php"
+    "classmap": [
+      "test/",
+      "lib/"
     ]
   },
   "license": "GPL-2.0-or-later"
