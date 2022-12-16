@@ -44,8 +44,12 @@
   },
   "autoload": {
     "classmap": [
-      "test/",
       "lib/"
+    ]
+  },
+  "autoload-dev": {
+    "classmap": [
+      "test/"
     ]
   },
   "license": "GPL-2.0-or-later"
