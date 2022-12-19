@@ -50,8 +50,6 @@ class Get implements Response\Response_Interface {
 	 *
 	 * @return Event\Event_Interface[]
 	 * @throws Exception\Event\Invalid_Event_Name
-	 * @see Event\
-	 *
 	 */
 	public function get_events(): array {
 		$events_data = $this->get_data_by_key( self::EVENTS );
