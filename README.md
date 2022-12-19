@@ -11,22 +11,15 @@ Client code for Automattic's [Domain Services](https://github.com/Automattic/dom
 
 - Also requires an Http client compatible with \Psr\Http\Client\ClientInterface.
 
-### Manual Installation
-
-Download the files and include `lib/loader.php`:
-
-```php
-
-require_once '/path/to/automattic/domain-services/lib/loader.php';
-```
-
 ## Getting Started
 
 Please follow the [installation procedure](#installation--usage) and then run the following:
 
 ```php
 <?php
-require_once __DIR__ . '/automattic/lib/loader.php');
+
+// Change the path as necessary
+require_once 'vendor/autoload.php';
 
 use Automattic\Domain_Services\{Api, Command, Configuration, Entity, Response};
 
