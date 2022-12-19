@@ -18,6 +18,9 @@ Please follow the [installation procedure](#installation--usage) and then run th
 ```php
 <?php
 
+// Change the dirname $levels parameter as necessary
+require_once dirname( __DIR__, 1 ) . '/vendor/autoload.php';
+
 use Automattic\Domain_Services\{Api, Command, Configuration, Entity, Response};
 
 // Set the domain to use
