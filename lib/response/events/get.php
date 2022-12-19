@@ -21,7 +21,12 @@ namespace Automattic\Domain_Services\Response\Events;
 use Automattic\Domain_Services\{Event, Exception, Response};
 
 /**
- * Response of Events_Get command.
+ * Response of Events\Get command
+ *
+ * This class encapsulates the data for a successful call to the Events\Get command. It includes a list of Event objects
+ * which all implement the methods in Event\Data_Trait. Each event may also implement additional methods depending
+ * on the specific event_class and event_subclass.
+ * @see Event\Data_Trait
  */
 class Get implements Response\Response_Interface {
 	use Response\Data_Trait, Response\Event_Aware;
@@ -31,6 +36,8 @@ class Get implements Response\Response_Interface {
 	private const REQUEST_PARAMS = 'data.request_params';
 
 	/**
+	 * Gets the total number of events returned
+	 *
 	 * @return int
 	 */
 	public function get_total_count(): int {
@@ -38,8 +45,12 @@ class Get implements Response\Response_Interface {
 	}
 
 	/**
+	 * Gets the list of events returned, converted to Event objects
+	 *
 	 * @return Event\Event_Interface[]
 	 * @throws Exception\Event\Invalid_Event_Name
+	 * @see Event\
+	 *
 	 */
 	public function get_events(): array {
 		$events_data = $this->get_data_by_key( self::EVENTS );
@@ -53,6 +64,8 @@ class Get implements Response\Response_Interface {
 	}
 
 	/**
+	 * Gets the request parameters from the original Command\Events\Get request
+	 *
 	 * @return array
 	 */
 	public function get_request_params(): array {
