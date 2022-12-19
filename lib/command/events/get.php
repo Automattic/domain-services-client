@@ -18,10 +18,17 @@
 
 namespace Automattic\Domain_Services\Command\Events;
 
-use Automattic\Domain_Services\{Command, Entity};
+use Automattic\Domain_Services\{Command};
 
 /**
- * Retrieves a list of unacknowledged events.
+ * Requests a list of unacknowledged events
+ *
+ * This command is used to request a list of the unacknowledged events. On success, the response object will include an
+ * array of events in ascending order by age (oldest to newest). The maximum number of events returned in the response,
+ * can be set using the $limit property for this command. The limit defaults to 50 if none is set.
+ *
+ * This command executes synchronously on the server. The corresponding response object will include the list of events.
+ * @see \Automattic\Domain_Services\Response\Events\Get
  */
 class Get implements Command\Command_Interface, Command\Command_Serialize_Interface {
 	use Command\Command_Trait, Command\Command_Serialize_Trait, Command\Array_Key_Event_Trait;
@@ -43,6 +50,8 @@ class Get implements Command\Command_Interface, Command\Command_Serialize_Interf
 	}
 
 	/**
+	 * Gets the maximum number of events to return in the response.
+	 *
 	 * @return int
 	 */
 	public function get_limit(): int {
@@ -50,6 +59,8 @@ class Get implements Command\Command_Interface, Command\Command_Serialize_Interf
 	}
 
 	/**
+	 * Sets the maximum number of events to return in the response.
+	 *
 	 * @param int $limit
 	 * @return Get
 	 */
@@ -60,12 +71,19 @@ class Get implements Command\Command_Interface, Command\Command_Serialize_Interf
 	}
 
 	/**
+	 * Returns the command name
+	 *
 	 * @return string
 	 */
 	public static function get_name(): string {
 		return 'Events_Get';
 	}
 
+	/**
+	 * Returns the command data as an array.
+	 *
+	 * @return array
+	 */
 	public function to_array(): array {
 		return [
 			self::get_event_limit_array_key() => $this->get_limit(),
