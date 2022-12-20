@@ -23,10 +23,10 @@ use Automattic\Domain_Services\{Command};
 /**
  * Requests details of an event
  *
- * This command requests the details of a spcific event using its ID.
- *  * IDs can be fetched using the Events_Get command.
- *  * This command executes synchronously on the server.
- *  * The corresponding response object will include the details of an event.
+ *  - This command requests the details of a spcific event using its ID.
+ *  - IDs can be fetched using the `Events\Get` command.
+ *  - This command executes synchronously on the server.
+ *  - The corresponding response object will include the details of an event.
  *
  * @see \Automattic\Domain_Services\Response\Event\Details
  * @see \Automattic\Domain_Services\Response\Events\Get
@@ -61,19 +61,16 @@ class Details implements Command\Command_Interface, Command\Command_Serialize_In
 		return $this->event_id;
 	}
 
+
 	/**
-	 * Gets the command name
-	 *
-	 * @return string
+	 * {@inheritDoc}
 	 */
 	public static function get_name(): string {
 		return 'Event_Details';
 	}
 
 	/**
-	 * Returns the command data as an array.
-	 *
-	 * @return int[]
+	 * {@inheritDoc}
 	 */
 	public function to_array(): array {
 		return [
