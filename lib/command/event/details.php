@@ -21,10 +21,20 @@ namespace Automattic\Domain_Services\Command\Event;
 use Automattic\Domain_Services\{Command};
 
 /**
- * Retrieves details of an event.
+ * Requests details of an event
+ *
+ *  - This command requests the details of a spcific event using its ID.
+ *  - IDs can be fetched using the `Events\Get` command.
+ *  - This command executes synchronously on the server.
+ *  - The corresponding response object will include the details of an event.
+ *
+ * @see \Automattic\Domain_Services\Response\Event\Details
+ * @see \Automattic\Domain_Services\Response\Events\Get
  */
 class Details implements Command\Command_Interface, Command\Command_Serialize_Interface {
-	use Command\Command_Trait, Command\Command_Serialize_Trait, Command\Array_Key_Event_Trait;
+	use Command\Command_Trait;
+	use Command\Command_Serialize_Trait;
+	use Command\Array_Key_Event_Trait;
 
 	/**
 	 * ID of the event whose details will be checked.
@@ -34,6 +44,8 @@ class Details implements Command\Command_Interface, Command\Command_Serialize_In
 	private int $event_id;
 
 	/**
+	 * Event_Details command constructor
+	 *
 	 * @param int $event_id
 	 */
 	public function __construct( int $event_id ) {
@@ -41,19 +53,25 @@ class Details implements Command\Command_Interface, Command\Command_Serialize_In
 	}
 
 	/**
+	 * Gets the event ID
+	 *
 	 * @return int
 	 */
 	public function get_event_id(): int {
 		return $this->event_id;
 	}
 
+
 	/**
-	 * @return string
+	 * {@inheritDoc}
 	 */
 	public static function get_name(): string {
 		return 'Event_Details';
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	public function to_array(): array {
 		return [
 			self::get_event_id_array_key() => $this->get_event_id(),
