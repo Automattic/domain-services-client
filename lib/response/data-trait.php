@@ -22,7 +22,7 @@ trait Data_Trait {
 	private array $data;
 
 	/**
-	 * Response object constructor
+	 * `Response` object constructor
 	 *
 	 * @param array $data
 	 */

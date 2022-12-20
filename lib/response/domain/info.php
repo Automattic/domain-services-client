@@ -21,14 +21,10 @@ namespace Automattic\Domain_Services\Response\Domain;
 use Automattic\Domain_Services\{Entity, Response};
 
 /**
- * Response of a Domain_Info command.
+ * Response of a `Domain\Info` command
  *
- * This is the response returned from a successful execution of the Domain\Info command.
- *
- * @see Entity\Domain_Contacts
- * @see Entity\Epp_Status_Codes
- * @see Entity\Nameservers
- * @see Entity\Whois_Privacy
+ * This is the response returned from a successful execution of the `Domain\Info` command. It includes all the current
+ * attributes of the domain at the registry.
  */
 class Info implements Response\Response_Interface {
 	use Response\Data_Trait;
