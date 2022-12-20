@@ -21,7 +21,14 @@ namespace Automattic\Domain_Services\Command\Event;
 use Automattic\Domain_Services\{Command};
 
 /**
- * Acknowledge an event.
+ * Acknowledge an event
+ *
+ *  - The command requests acknowledging a specific event by using the event ID.
+ *  - IDs can be fetched using the `Events\Get` command.
+ *  - This command executes synchronously on the server.
+ *
+ * @see \Automattic\Domain_Services\Response\Event\Ack
+ * @see \Automattic\Domain_Services\Response\Events\Get
  */
 class Ack implements Command\Command_Interface, Command\Command_Serialize_Interface {
 	use Command\Command_Trait, Command\Command_Serialize_Trait, Command\Array_Key_Event_Trait;
@@ -41,6 +48,8 @@ class Ack implements Command\Command_Interface, Command\Command_Serialize_Interf
 	}
 
 	/**
+	 * Gets the event ID
+	 *
 	 * @return int
 	 */
 	public function get_event_id(): int {
@@ -48,12 +57,15 @@ class Ack implements Command\Command_Interface, Command\Command_Serialize_Interf
 	}
 
 	/**
-	 * @return string
+	 * {@inheritDoc}
 	 */
 	public static function get_name(): string {
 		return 'Event_Ack';
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	public function to_array(): array {
 		return [
 			self::get_event_id_array_key() => $this->get_event_id(),
