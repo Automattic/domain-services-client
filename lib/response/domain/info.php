@@ -151,9 +151,9 @@ class Info implements Response\Response_Interface {
 
 	/**
 	 * Gets the Renewal Grace Period (RGP) status for this domain. This is usually one of the following:
-	 * - "addPeriod": The grace period after initial registration of the domain name. If the reseller deletes the domain
+	 * - `addPeriod`: The grace period after initial registration of the domain name. If the reseller deletes the domain
 	 *      during this period, the registry may provide a credit for the cost of the registration.
-	 * - "autoRenewPeriod": The grace period after a domain name expires. The domain may be renewed at the regular cost
+	 * - `autoRenewPeriod`: The grace period after a domain name expires. The domain may be renewed at the regular cost
 	 *      during this period.
 	 *
 	 * @return string|null
@@ -164,8 +164,8 @@ class Info implements Response\Response_Interface {
 
 	/**
 	 * Gets the transferlock status.
-	 * - true: The domain must be unlocked before it can be transferred.
-	 * - false: The domain does not need to be unlocked before it can be transferred.
+	 * - `true`: The domain must be unlocked before it can be transferred.
+	 * - `false`: The domain does not need to be unlocked before it can be transferred.
 	 *
 	 * @return bool|null
 	 */
@@ -176,8 +176,8 @@ class Info implements Response\Response_Interface {
 	/**
 	 * Gets the transfer mode. One of the following:
 	 * - Default: apply the registry policy (usually auto deny)
-	 * - "autoapprove": Automatically approve outbound transfers after 5 days
-	 * - "autodeny": Automatically deny outbound transfers after 5 days
+	 * - `autoapprove`: Automatically approve outbound transfers after 5 days
+	 * - `autodeny`: Automatically deny outbound transfers after 5 days
 	 *
 	 * @return string|null
 	 */
