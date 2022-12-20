@@ -20,13 +20,21 @@ namespace Automattic\Domain_Services\Response\Domain;
 
 use Automattic\Domain_Services\Response;
 
+/**
+ * Response of the `Domain\Check` command
+ */
 class Check implements Response\Response_Interface {
 	use Response\Data_Trait;
 
 	/**
-	 * Gets the availability information for a list of domain from the response.
+	 * Gets the availability and pricing information for a list of domain from the response.
 	 *
-	 * @return array
+	 * @return array[
+	 *     'domain_name' => [
+	 *         'available' => bool,
+	 *         'fee_class' => 'standard',
+	 *     ],
+	 * ]
 	 */
 	public function get_domains(): array {
 		return $this->get_data_by_key( 'data.domains' ) ?? [];
