@@ -21,7 +21,9 @@ namespace Automattic\Domain_Services\Response\Event;
 use Automattic\Domain_Services\{Response};
 
 /**
- * Response of an Event_Ack command.
+ * Response of an `Event\Ack` command.
+ *
+ * @see \Automattic\Domain_Services\Command\Event\Ack
  */
 class Ack implements Response\Response_Interface {
 	use Response\Data_Trait;
