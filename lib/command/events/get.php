@@ -28,6 +28,7 @@ use Automattic\Domain_Services\{Command};
  * can be set using the $limit property for this command. The limit defaults to 50 if none is set.
  * - This command executes synchronously on the server.
  * - The corresponding response object will include the list of events.
+ *
  * @see \Automattic\Domain_Services\Response\Events\Get
  */
 class Get implements Command\Command_Interface, Command\Command_Serialize_Interface {
@@ -71,18 +72,14 @@ class Get implements Command\Command_Interface, Command\Command_Serialize_Interf
 	}
 
 	/**
-	 * Returns the command name
-	 *
-	 * @return string
+	 * {@inheritDoc}
 	 */
 	public static function get_name(): string {
 		return 'Events_Get';
 	}
 
 	/**
-	 * Returns the command data as an array.
-	 *
-	 * @return array
+	 * {@inheritDoc}
 	 */
 	public function to_array(): array {
 		return [
