@@ -23,6 +23,7 @@ use Automattic\Domain_Services\Response;
 /**
  * Response of a set transfer lock command.
  *
+ * @see \Automattic\Domain_Services\Command\Domain\Transferlock\Set
  */
 class Set implements Response\Response_Interface {
 	use Response\Data_Trait;
