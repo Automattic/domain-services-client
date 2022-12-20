@@ -21,5 +21,7 @@ namespace Automattic\Domain_Services\Event\Domain\Restore;
 use Automattic\Domain_Services\{Event};
 
 class Fail implements Event\Event_Interface {
-	use Event\Data_Trait, Event\Object_Type_Domain_Trait, Event\Error_Trait;
+	use Event\Data_Trait;
+	use Event\Error_Trait;
+	use Event\Object_Type_Domain_Trait;
 }

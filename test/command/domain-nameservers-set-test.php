@@ -21,7 +21,8 @@ namespace Automattic\Domain_Services\Test\Command;
 use Automattic\Domain_Services\{Command, Entity, Test};
 
 class Domain_Nameservers_Set_Test extends Test\Lib\Domain_Services_Client_Test_Case {
-	use Command\Array_Key_Domain_Trait, Command\Array_Key_Nameservers_Trait;
+	use Command\Array_Key_Domain_Trait;
+	use Command\Array_Key_Nameservers_Trait;
 
 	public function test_command_instance_success(): void {
 		$mock_command_data = [

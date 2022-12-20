@@ -26,7 +26,9 @@ use Automattic\Domain_Services\{Command, Entity};
  * @package Automattic\Domain_Services\Command\Domain
  */
 class Restore implements Command\Command_Interface, Command\Command_Serialize_Interface {
-	use Command\Command_Trait, Command\Command_Serialize_Trait, Command\Array_Key_Domain_Trait;
+	use Command\Array_Key_Domain_Trait;
+	use Command\Command_Serialize_Trait;
+	use Command\Command_Trait;
 
 	/**
 	 * @var Entity\Domain_Name domain to be restored

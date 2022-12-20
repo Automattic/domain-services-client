@@ -21,7 +21,8 @@ namespace Automattic\Domain_Services\Event\Domain\Notification;
 use Automattic\Domain_Services\{Event};
 
 class Suspended implements Event\Event_Interface {
-	use Event\Data_Trait, Event\Object_Type_Domain_Trait;
+	use Event\Data_Trait;
+	use Event\Object_Type_Domain_Trait;
 
 	/**
 	 * Returns information about the reason the domain is suspended, if available.

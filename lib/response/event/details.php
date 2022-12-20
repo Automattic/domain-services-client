@@ -23,12 +23,14 @@ use Automattic\Domain_Services\{Event, Exception\Event\Invalid_Event_Name, Respo
 /**
  * Response of an Event_Details command.
  *
- * This is the response returned from a successful execution of Event_Details command. The event can be retrieved using get_event() method.
+ * This is the response returned from a successful execution of Event_Details command. The event can be retrieved using
+ * get_event() method.
  *
  * @see \Automattic\Domain_Services\Command\Event\Details
  */
 class Details implements Response\Response_Interface {
-	use Response\Data_Trait, Response\Event_Aware;
+	use Response\Data_Trait;
+	use Response\Event_Aware;
 
 	/**
 	 * Builds and returns an event entity

@@ -21,7 +21,12 @@ namespace Automattic\Domain_Services\Command\Domain;
 use Automattic\Domain_Services\{Command, Entity};
 
 class Renew implements Command\Command_Interface, Command\Command_Serialize_Interface {
-	use Command\Command_Trait, Command\Command_Serialize_Trait, Command\Array_Key_Domain_Trait, Command\Array_Key_Period_Trait, Command\Array_Key_Current_Expiration_Year_Trait, Command\Array_Key_Fee_Amount_Trait;
+	use Command\Array_Key_Current_Expiration_Year_Trait;
+	use Command\Array_Key_Domain_Trait;
+	use Command\Array_Key_Fee_Amount_Trait;
+	use Command\Array_Key_Period_Trait;
+	use Command\Command_Serialize_Trait;
+	use Command\Command_Trait;
 
 	/**
 	 * The domain name to renew
@@ -39,8 +44,9 @@ class Renew implements Command\Command_Interface, Command\Command_Serialize_Inte
 	private int $period;
 
 	/**
-	 * The current expiration year of the domain. If the domain is in auto renew grace period (a specified number of calendar
-	 * days following an auto-renewal), please use the previous expiration. This will prevent unintended two year renewals.
+	 * The current expiration year of the domain. If the domain is in auto renew grace period (a specified number of
+	 * calendar days following an auto-renewal), please use the previous expiration. This will prevent unintended two
+	 * year renewals.
 	 *
 	 * @var int
 	 */

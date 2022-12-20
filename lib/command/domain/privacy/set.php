@@ -21,10 +21,14 @@ namespace Automattic\Domain_Services\Command\Domain\Privacy;
 use Automattic\Domain_Services\{Command, Entity};
 
 /**
- * Sets the privacy option that determines what contact information is shown in the response of a whois query for this domain.
+ * Sets the privacy option that determines what contact information is shown in the response of a whois query for this
+ * domain.
  */
 class Set implements Command\Command_Interface, Command\Command_Serialize_Interface {
-	use Command\Command_Trait, Command\Command_Serialize_Trait, Command\Array_Key_Domain_Trait, Command\Array_Key_Privacy_Setting_Trait;
+	use Command\Array_Key_Domain_Trait;
+	use Command\Array_Key_Privacy_Setting_Trait;
+	use Command\Command_Serialize_Trait;
+	use Command\Command_Trait;
 
 	/**
 	 * The domain that will be updated.

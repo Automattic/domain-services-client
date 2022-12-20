@@ -21,7 +21,9 @@ namespace Automattic\Domain_Services\Command\Domain;
 use Automattic\Domain_Services\{Command, Entity, Exception};
 
 class Check implements Command\Command_Interface, Command\Command_Serialize_Interface {
-	use Command\Command_Trait, Command\Command_Serialize_Trait, Command\Array_Key_Domains_Trait;
+	use Command\Array_Key_Domains_Trait;
+	use Command\Command_Serialize_Trait;
+	use Command\Command_Trait;
 
 	/**
 	 * List of domains to check for availability.

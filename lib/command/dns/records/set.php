@@ -24,7 +24,9 @@ use Automattic\Domain_Services\{Command, Entity};
  * Updates all DNS records associated with a domain.
  */
 class Set implements Command\Command_Interface, Command\Command_Serialize_Interface {
-	use Command\Command_Trait, Command\Command_Serialize_Trait, Command\Array_Key_Dns_Records_Trait;
+	use Command\Array_Key_Dns_Records_Trait;
+	use Command\Command_Serialize_Trait;
+	use Command\Command_Trait;
 
 	private Entity\Dns_Records $records;
 

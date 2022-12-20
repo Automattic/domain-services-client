@@ -32,7 +32,9 @@ use Automattic\Domain_Services\{Command};
  * @see \Automattic\Domain_Services\Response\Events\Get
  */
 class Get implements Command\Command_Interface, Command\Command_Serialize_Interface {
-	use Command\Command_Trait, Command\Command_Serialize_Trait, Command\Array_Key_Event_Trait;
+	use Command\Array_Key_Event_Trait;
+	use Command\Command_Serialize_Trait;
+	use Command\Command_Trait;
 
 	/**
 	 * Max count of returned events

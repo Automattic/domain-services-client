@@ -21,7 +21,8 @@ namespace Automattic\Domain_Services\Event\Domain\Privacy\Set;
 use Automattic\Domain_Services\{Entity, Event, Exception};
 
 class Success implements Event\Event_Interface {
-	use Event\Data_Trait, Event\Object_Type_Domain_Trait;
+	use Event\Data_Trait;
+	use Event\Object_Type_Domain_Trait;
 
 	/**
 	 * Returns the Whois_Privacy setting that for this domain, if available
