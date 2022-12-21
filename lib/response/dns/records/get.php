@@ -21,11 +21,18 @@ namespace Automattic\Domain_Services\Response\Dns\Records;
 use Automattic\Domain_Services\{Entity, Response};
 
 /**
- * Response containing all DNS records associated with a domain.
+ * Response of a `Dns\Records\Get` command
+ *
+ * Contains all DNS records associated with a domain.
+ *
+ * @see \Automattic\Domain_Services\COmmand\Dns\Records\Set
  */
 class Get implements Response\Response_Interface {
 	use Response\Data_Trait;
 
+	/**
+	 * @return Entity\Dns_Records
+	 */
 	public function get_dns_records(): Entity\Dns_Records {
 		$dns_records_data = $this->get_data_by_key( 'data.dns_records' );
 

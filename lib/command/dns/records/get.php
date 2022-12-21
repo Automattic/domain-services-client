@@ -21,11 +21,19 @@ namespace Automattic\Domain_Services\Command\Dns\Records;
 use Automattic\Domain_Services\{Command, Entity};
 
 /**
- * Retrieves all DNS records associated with a domain.
+ * Returns the DNS records of a domain
+ *
+ * - This command returns all the DNS records associated with a domain
+ * - Runs synchronously on the server
+ *
+ * @see \Automattic\Domain_Services\Response\Dns\Records\Get
  */
 class Get implements Command\Command_Interface, Command\Command_Serialize_Interface {
 	use Command\Command_Trait, Command\Command_Serialize_Trait, Command\Array_Key_Domain_Trait;
 
+	/**
+	 * @var Entity\Domain_Name
+	 */
 	private Entity\Domain_Name $domain;
 
 	/**
@@ -49,6 +57,9 @@ class Get implements Command\Command_Interface, Command\Command_Serialize_Interf
 		return 'Dns_Records_Get';
 	}
 
+	/**
+	 * @return array
+	 */
 	public function to_array(): array {
 		return [
 			self::get_domain_name_array_key() => $this->get_domain()->get_name(),
