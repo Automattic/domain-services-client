@@ -18,6 +18,9 @@
 
 namespace Automattic\Domain_Services\Entity;
 
+/**
+ * Set of DNS records
+ */
 class Dns_Record_Sets implements \Iterator {
 	/**
 	 * The list of EPP status codes that apply to a single domain
@@ -33,17 +36,27 @@ class Dns_Record_Sets implements \Iterator {
 	 */
 	private int $iterator_pointer = 0;
 
+	/**
+	 * @param Dns_Record_Set ...$dns_record_sets
+	 */
 	public function __construct( Dns_Record_Set ...$dns_record_sets ) {
 		foreach ( $dns_record_sets as $dns_record_set ) {
 			$this->add_record_set( $dns_record_set );
 		}
 	}
 
+	/**
+	 * @param Dns_Record_Set $dns_record_set
+	 * @return void
+	 */
 	public function add_record_set( Dns_Record_Set $dns_record_set ): void {
 		// @todo check for duplicates before adding new records?
 		$this->dns_record_sets[] = $dns_record_set;
 	}
 
+	/**
+	 * @return array
+	 */
 	public function to_array(): array {
 		$dns_record_sets = [];
 
@@ -54,6 +67,10 @@ class Dns_Record_Sets implements \Iterator {
 		return $dns_record_sets;
 	}
 
+	/**
+	 * @param array $dns_record_sets_data
+	 * @return static
+	 */
 	public static function from_array( array $dns_record_sets_data ): self {
 		$dns_record_sets = new self();
 
@@ -73,18 +90,30 @@ class Dns_Record_Sets implements \Iterator {
 		return $this->dns_record_sets[ $keys[ $this->iterator_pointer ] ];
 	}
 
+	/**
+	 * @return void
+	 */
 	public function next(): void {
 		$this->iterator_pointer++;
 	}
 
+	/**
+	 * @return int|null
+	 */
 	public function key(): ?int {
 		return $this->iterator_pointer;
 	}
 
+	/**
+	 * @return bool
+	 */
 	public function valid(): bool {
 		return $this->iterator_pointer < count( $this->dns_record_sets );
 	}
 
+	/**
+	 * @return void
+	 */
 	public function rewind(): void {
 		$this->iterator_pointer = 0;
 	}
