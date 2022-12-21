@@ -31,7 +31,7 @@ use Automattic\Domain_Services\{Entity, Event};
  * - Note that there's a limit to the number of domains that can be refunded with no cost in AGP: if a registrar cancels
  *   more than 10% of the total number of newly registered domains in a month during AGP, the exceeding canceled domains
  *   are not refunded
- * - This event contains an `agp_end_date` property which is a timestamp in Y-m-d H:i:s format representing the date
+ * - This event contains an `agp_end_date` property which is a timestamp in `Y-m-d H:i:s` format representing the date
  *   until which the domain is in AGP
  */
 class Agp implements Event\Event_Interface {
