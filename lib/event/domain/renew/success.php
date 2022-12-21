@@ -20,6 +20,17 @@ namespace Automattic\Domain_Services\Event\Domain\Renew;
 
 use Automattic\Domain_Services\{Entity, Event};
 
+/**
+ * Domain renewed successfully event
+ *
+ * - This event is generated when a `Domain\Renew` command runs successfully
+ * - It contains three properties:
+ *     - domain_status - status of the domain
+ *     - expiration_date - date on which the domain will expire now
+ *     - renewal_date - date on which the domain was renewed
+ *
+ * @see \Automattic\Domain_Services\Command\Domain\Renew
+ */
 class Success implements Event\Event_Interface {
 	use Event\Data_Trait, Event\Object_Type_Domain_Trait;
 

@@ -21,11 +21,12 @@ namespace Automattic\Domain_Services\Event\Domain\Renew;
 use Automattic\Domain_Services\{Event};
 
 /**
- * Failure event for a `Domain\Register` command
+ * Domain failed to renew event
  *
- * This event is sent when a register operation fails. There may be more information about the cause of the failure in the event data.
+ * - This event is generated when a domain renewal operation fails
+ * - There might be more information about the cause of the failure in the event data
  *
- * @see \Automattic\Domain_Services\Command\Domain\Register
+ * @see \Automattic\Domain_Services\Command\Domain\Renew
  */
 class Fail implements Event\Event_Interface {
 	use Event\Data_Trait, Event\Object_Type_Domain_Trait, Event\Error_Trait;
