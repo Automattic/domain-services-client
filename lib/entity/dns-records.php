@@ -20,6 +20,12 @@ namespace Automattic\Domain_Services\Entity;
 
 use Automattic\Domain_Services\{Command};
 
+/**
+ * Set of DNS records associated with a specific domain
+ *
+ * @see Domain_Name
+ * @see Dns_Record_Sets
+ */
 class Dns_Records {
 	use Command\Array_Key_Domain_Trait, Command\Array_Key_Dns_Record_Sets_Trait;
 
@@ -37,6 +43,10 @@ class Dns_Records {
 	 */
 	private Dns_Record_Sets $record_sets;
 
+	/**
+	 * @param Domain_Name $domain
+	 * @param Dns_Record_Sets $record_sets
+	 */
 	public function __construct( Domain_Name $domain, Dns_Record_Sets $record_sets ) {
 		$this->domain = $domain;
 		$this->record_sets = $record_sets;
@@ -66,6 +76,10 @@ class Dns_Records {
 		];
 	}
 
+	/**
+	 * @param array $dns_records_data
+	 * @return static
+	 */
 	public static function from_array( array $dns_records_data ): self {
 		$domain_name = new Domain_Name( $dns_records_data[ self::get_domain_name_array_key() ] );
 		$dns_record_sets = Dns_Record_Sets::from_array( $dns_records_data[ self::get_dns_record_sets_array_key() ] );
