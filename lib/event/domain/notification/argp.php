@@ -20,6 +20,20 @@ namespace Automattic\Domain_Services\Event\Domain\Notification;
 
 use Automattic\Domain_Services\{Entity, Event};
 
+/**
+ * Domain entered the Auto-Renew Grace Period (ARGP) event
+ *
+ * - This event is generated when a domain enters the Auto-Renew Grace Period (ARGP)
+ * - A domain enters the ARGP when it expires without being renewed. The ARGP is a period (usually of 45 days) after the
+ *   domain's expiration when it is automatically renewed for a year at the registry (the registrar is also charged for
+ *   that renewal)
+ * - The registrant may renew the domain for the regular renewal price during ARGP
+ * - If the registrant deletes the domain during ARGP, the renewal is canceled at the registry and the renewal cost is
+ *   refunded to the registrar
+ * - If the ARGP ends and no action was taken, the domain enters the Redemption Grace Period (RGP)
+ * - This event contains an `argp_end_date` property which is a timestamp in `Y-m-d H:i:s` format representing the date
+ *   until which the domain is in ARGP
+ */
 class Argp implements Event\Event_Interface {
 	use Event\Data_Trait, Event\Object_Type_Domain_Trait;
 
