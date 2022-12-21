@@ -20,10 +20,27 @@ namespace Automattic\Domain_Services\Command\Domain;
 
 use Automattic\Domain_Services\{Command, Entity};
 
+/**
+ * Renews a domain
+ *
+ * - This command renews a domain for a specified number of years
+ * - The required parameters are:
+ *     - domain_name - the domain to renew
+ *     - period - number of years to renew the domain
+ *     - current_expiration_year - in which year the domain is currently going to expire (used to prevent unwanted multiple renewals)
+ * - Optional parameter:
+ *     - fee_amount - used when renewing premium domains because they have special pricing
+ * - Runs asynchronously on the server
+ * - Reseller will receive a Domain\Renew\Success or Domain\Renew\Fail event depending on the result of the command
+ *
+ * @see \Automattic\Domain_Services\Response\Domain\Renew
+ * @see \Automattic\Domain_Services\Event\Domain\Renew\Success
+ * @see \Automattic\Domain_Services\Event\Domain\Renew\Fail
+ */
 class Renew implements Command\Command_Interface, Command\Command_Serialize_Interface {
 	use Command\Command_Trait, Command\Command_Serialize_Trait, Command\Array_Key_Domain_Trait, Command\Array_Key_Period_Trait, Command\Array_Key_Current_Expiration_Year_Trait, Command\Array_Key_Fee_Amount_Trait;
 
-	/**
+	/**lib/response/domain/renew.php
 	 * The domain name to renew
 	 *
 	 * @var Entity\Domain_Name
@@ -54,6 +71,12 @@ class Renew implements Command\Command_Interface, Command\Command_Serialize_Inte
 	 */
 	private ?float $fee_amount;
 
+	/**
+	 * @param Entity\Domain_Name $domain
+	 * @param int $current_expiration_year
+	 * @param int $period
+	 * @param float|null $fee_amount
+	 */
 	public function __construct( Entity\Domain_Name $domain, int $current_expiration_year, int $period = 1, ?float $fee_amount = null ) {
 		$this->domain = $domain;
 		$this->period = $period;
@@ -96,6 +119,9 @@ class Renew implements Command\Command_Interface, Command\Command_Serialize_Inte
 		return 'Domain_Renew';
 	}
 
+	/**
+	 * @return array
+	 */
 	public function to_array(): array {
 		return [
 			self::get_domain_name_array_key() => $this->get_domain()->get_name(),
