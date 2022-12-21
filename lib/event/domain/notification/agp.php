@@ -21,7 +21,7 @@ namespace Automattic\Domain_Services\Event\Domain\Notification;
 use Automattic\Domain_Services\{Entity, Event};
 
 /**
- * Domain entered the Add Grace Period (AGP)
+ * Domain entered the Add Grace Period (AGP) event
  *
  * - This event is generated when a domain enters the Add Grace Period (AGP)
  * - The AGP is a period (usually of 5 days) starting with the domain's registration when it can be deleted and its
