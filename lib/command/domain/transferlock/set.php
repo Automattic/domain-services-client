@@ -20,8 +20,18 @@ namespace Automattic\Domain_Services\Command\Domain\Transferlock;
 
 use Automattic\Domain_Services\{Command, Entity};
 
+/**
+ * Enables/Disables the transfer lock
+ *
+ * This commands requests either enabling or disabling the transfer lock on a specific domain.
+ *
+ * @see \Automattic\Domain_Services\Response\Domain\Transferlock\Set
+ */
 class Set implements Command\Command_Interface, Command\Command_Serialize_Interface {
-	use Command\Command_Trait, Command\Command_Serialize_Trait, Command\Array_Key_Domain_Trait, Command\Array_Key_Domain_Trait, Command\Array_Key_Transferlock_Trait;
+	use Command\Command_Trait;
+	use Command\Command_Serialize_Trait;
+	use Command\Array_Key_Domain_Trait;
+	use Command\Array_Key_Transferlock_Trait;
 
 	/**
 	 * The domain name that will be updated.
@@ -37,12 +47,18 @@ class Set implements Command\Command_Interface, Command\Command_Serialize_Interf
 	 */
 	private bool $transfer_lock;
 
+	/**
+	 * @param Entity\Domain_Name $domain
+	 * @param bool $transfer_lock
+	 */
 	public function __construct( Entity\Domain_Name $domain, bool $transfer_lock ) {
 		$this->domain = $domain;
 		$this->transfer_lock = $transfer_lock;
 	}
 
 	/**
+	 * Gets the domain name for that command
+	 *
 	 * @return Entity\Domain_Name
 	 */
 	public function get_domain(): Entity\Domain_Name {
@@ -50,16 +66,24 @@ class Set implements Command\Command_Interface, Command\Command_Serialize_Interf
 	}
 
 	/**
+	 * Gets the transfer lock state to be applied
+	 *
 	 * @return bool
 	 */
 	public function get_transfer_lock(): bool {
 		return $this->transfer_lock;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	public static function get_name(): string {
 		return 'Domain_Transferlock_Set';
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	public function to_array(): array {
 		return [
 			self::get_domain_name_array_key() => $this->get_domain()->get_name(),
