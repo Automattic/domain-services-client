@@ -32,12 +32,14 @@ use Automattic\Domain_Services\{Command, Entity};
  *   returned in an event.
  *
  * Example usage:
+ * ```
  * $domain_name = new Entity\Domain_Name( 'example.com' );
  * $command = new Command\Restore( $domain_name );
  * $response = $api->post( $command );
  * if ( $response->is_success() ) {
  *        // The restore request was successfully queued.
  * }
+ * ```
  *
  * @package Automattic\Domain_Services\Command\Domain
  * @see     \Automattic\Domain_Services\Event\Domain\Restore\Fail
