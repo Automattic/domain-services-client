@@ -20,6 +20,13 @@ namespace Automattic\Domain_Services\Event\Domain\Delete;
 
 use Automattic\Domain_Services\{Event};
 
+/**
+ * Domain deletion failed event
+ *
+ * This event is generated when a `Domain\Delete` command fails.
+ *
+ * @see \Automattic\Domain_Services\Command\Domain\Delete
+ */
 class Fail implements Event\Event_Interface {
 	use Event\Data_Trait, Event\Object_Type_Domain_Trait, Event\Error_Trait;
 }
