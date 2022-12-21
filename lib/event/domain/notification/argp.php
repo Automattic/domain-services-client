@@ -20,6 +20,20 @@ namespace Automattic\Domain_Services\Event\Domain\Notification;
 
 use Automattic\Domain_Services\{Entity, Event};
 
+/**
+ * Domain entered the Add Grace Period (AGP)
+ *
+ * - This event is generated when a domain enters the Add Grace Period (AGP)
+ * - The AGP is a period (usually of 5 days) starting with the domain's registration when it can be deleted and its
+ *   registration cost can be refunded by the registry
+ * - The idea of the AGP is to allow domains registered by mistake or with typos to be canceled with no penalty for the
+ *   registrant or registrars
+ * - Note that there's a limit to the number of domains that can be refunded with no cost in AGP: if a registrar cancels
+ *   more than 10% of the total number of newly registered domains in a month during AGP, the exceeding canceled domains
+ *   are not refunded
+ * - This event contains an `agp_end_date` property which is a timestamp in Y-m-d H:i:s format representing the date
+ *   until which the domain is in AGP
+ */
 class Argp implements Event\Event_Interface {
 	use Event\Data_Trait, Event\Object_Type_Domain_Trait;
 
