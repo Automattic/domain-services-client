@@ -18,5 +18,8 @@
 
 namespace Automattic\Domain_Services\Event;
 
+/**
+ * An interface used by all event classes.
+ */
 interface Event_Interface {
 }

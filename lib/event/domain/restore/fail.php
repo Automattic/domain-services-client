@@ -20,6 +20,15 @@ namespace Automattic\Domain_Services\Event\Domain\Restore;
 
 use Automattic\Domain_Services\{Event};
 
+/**
+ * Failure event for a `Domain\Restore` command
+ *
+ * This event is sent when a restore operation fails. There may be more information about the cause of the failure in the event data.
+ *
+ * @see \Automattic\Domain_Services\Command\Domain\Restore
+ */
 class Fail implements Event\Event_Interface {
-	use Event\Data_Trait, Event\Object_Type_Domain_Trait, Event\Error_Trait;
+	use Event\Data_Trait;
+	use Event\Error_Trait;
+	use Event\Object_Type_Domain_Trait;
 }
