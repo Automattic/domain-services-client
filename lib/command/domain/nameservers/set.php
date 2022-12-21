@@ -21,7 +21,15 @@ namespace Automattic\Domain_Services\Command\Domain\Nameservers;
 use Automattic\Domain_Services\{Command, Entity};
 
 /**
- * Set the nameservers for the specified domain
+ * Sets name servers for the specified domain
+ *
+ * - This command sets the name servers for a domain
+ * - Runs asynchronously on the server
+ * - Reseller will receive a Domain\Nameservers\Set\Success or Domain\Nameservers\Set\Fail event depending on the result of the command
+ *
+ * @see \Automattic\Domain_Services\Response\Domain\Nameservers\Set
+ * @see \Automattic\Domain_Services\Event\Domain\Nameservers\Set\Success
+ * @see \Automattic\Domain_Services\Event\Domain\Nameservers\Set\Fail
  */
 class Set implements Command\Command_Interface, Command\Command_Serialize_Interface {
 	use Command\Command_Trait, Command\Command_Serialize_Trait, Command\Array_Key_Domain_Trait, Command\Array_Key_Nameservers_Trait;
@@ -70,6 +78,9 @@ class Set implements Command\Command_Interface, Command\Command_Serialize_Interf
 		return 'Domain_Nameservers_Set';
 	}
 
+	/**
+	 * @return array
+	 */
 	public function to_array(): array {
 		return [
 			self::get_domain_name_array_key() => $this->get_domain()->get_name(),
