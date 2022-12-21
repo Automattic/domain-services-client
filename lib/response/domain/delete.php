@@ -20,6 +20,11 @@ namespace Automattic\Domain_Services\Response\Domain;
 
 use Automattic\Domain_Services\Response;
 
+/**
+ * Response of a Domain\Delete command
+ *
+ * @see \Automattic\Domain_Services\Command\Domain\Delete
+ */
 class Delete implements Response\Response_Interface {
 	use Response\Data_Trait;
 }
