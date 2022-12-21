@@ -24,7 +24,7 @@ use Automattic\Domain_Services\{Command, Entity};
  * Restores (redeems) a domain that is currently in the redemption period.
  *
  * - This command requests a restore for the specified domain.
- * - May only be used when a domain is in the redemption period. (Usually days 43-73 after expiration for most TLDs)
+ * - May only be used when a domain is in the redemption period. (Usually days 45-75 after expiration for most TLDs)
  * - Restoring a domain will usually also renew the domain for another year from the expiration date.
  * - Restoring a domain usually incurs an additional fee over the regular renewal cost.
  * - Note that not all TLDs support redemption.
