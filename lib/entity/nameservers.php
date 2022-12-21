@@ -20,6 +20,9 @@ namespace Automattic\Domain_Services\Entity;
 
 use Automattic\Domain_Services\{Exception};
 
+/**
+ * Set of name servers
+ */
 class Nameservers {
 	/**
 	 * A list of name servers for a domain name.
@@ -30,6 +33,10 @@ class Nameservers {
 	 */
 	private array $nameservers = [];
 
+	/**
+	 * @param Domain_Name ...$nameservers
+	 * @throws Exception\Entity\Invalid_Value_Exception
+	 */
 	public function __construct( Domain_Name ...$nameservers ) {
 		if ( count( $nameservers ) < 2 ) {
 			throw new Exception\Entity\Invalid_Value_Exception( __CLASS__, 'Must have at least two name servers' );
@@ -44,6 +51,13 @@ class Nameservers {
 		}
 	}
 
+	/**
+	 * Adds a name server to the list of name servers
+	 *
+	 * @param Domain_Name $nameserver
+	 * @return void
+	 * @throws Exception\Entity\Invalid_Value_Exception
+	 */
 	public function add_nameserver( Domain_Name $nameserver ): void {
 		if ( 12 === count( $this->nameservers ) ) {
 			throw new Exception\Entity\Invalid_Value_Exception( __CLASS__, 'Must have at no more than 12 name servers' );
@@ -56,6 +70,9 @@ class Nameservers {
 		$this->nameservers[ $nameserver->get_name() ] = $nameserver;
 	}
 
+	/**
+	 * @return array
+	 */
 	public function to_array(): array {
 		$nameserver_names = [];
 		foreach ( $this->nameservers as $domain_name ) {

@@ -21,7 +21,9 @@ namespace Automattic\Domain_Services\Response\Domain\Nameservers;
 use Automattic\Domain_Services\Response;
 
 /**
- * Response of a Domain_Nameserver_Set command.
+ * Response of a Domain\Nameservers\Set command
+ *
+ * @see \Automattic\Domain_Services\Command\Domain\Nameservers\Set
  */
 class Set implements Response\Response_Interface {
 	use Response\Data_Trait;
