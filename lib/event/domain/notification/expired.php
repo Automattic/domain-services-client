@@ -20,6 +20,15 @@ namespace Automattic\Domain_Services\Event\Domain\Notification;
 
 use Automattic\Domain_Services\{Event};
 
+/**
+ * Domain expired event
+ *
+ * - This event is generated when a domain expires.
+ * - When a domain expires, it usually enters the Auto-Renew Grace Period (ARGP) and can still be renewed for the
+ *   regular renewal price.
+ *
+ * @see \Automattic\Domain_Services\Event\Domain\Notification\Argp
+ */
 class Expired implements Event\Event_Interface {
 	use Event\Data_Trait, Event\Object_Type_Domain_Trait;
 }

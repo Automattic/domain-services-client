@@ -20,6 +20,15 @@ namespace Automattic\Domain_Services\Event\Domain\Notification;
 
 use Automattic\Domain_Services\{Event};
 
+/**
+ * Domain verified event
+ *
+ * - This event is generated when a domain is verified
+ * - A domain is usually verified when its contact info email is verified
+ * - This event contains an `info` property with information about the reason why the domain was verified, if available
+ *
+ * @see \Automattic\Domain_Services\Event\Domain\Notification\Suspended
+ */
 class Verified implements Event\Event_Interface {
 	use Event\Data_Trait, Event\Object_Type_Domain_Trait;
 
