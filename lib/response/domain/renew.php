@@ -18,8 +18,13 @@
 
 namespace Automattic\Domain_Services\Response\Domain;
 
-use Automattic\Domain_Services\{Entity, Response};
+use Automattic\Domain_Services\{Response};
 
+/**
+ * Response of a `Domain\Renew` command
+ *
+ * @see \Automattic\Domain_Services\Command\Domain\Renew
+ */
 class Renew implements Response\Response_Interface {
 	use Response\Data_Trait;
 }
