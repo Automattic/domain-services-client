@@ -37,7 +37,7 @@ use Automattic\Domain_Services\{Command, Entity};
  * $response = $api->post( $command );
  * if ( $response->is_success() ) {
  *        // The restore request was successfully queued.
- *    }
+ * }
  *
  * @package Automattic\Domain_Services\Command\Domain
  * @see     \Automattic\Domain_Services\Event\Domain\Restore\Fail
