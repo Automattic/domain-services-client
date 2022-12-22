@@ -21,7 +21,7 @@ namespace Automattic\Domain_Services\Event\Domain\Privacy\Set;
 /**
  * Fail event for a `Domain\Privacy\Set command
  *
- * - This event is generated when a privacy setting update fails at the server.
+ * This event is generated when a privacy setting update fails at the server.
  *
  * @see \Automattic\Domain_Services\Command\Domain\Privacy\Set
  */
