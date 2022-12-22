@@ -81,7 +81,7 @@ class Success implements Event\Event_Interface {
 	}
 
 	/**
-	 * Gets the contatcs set for the domain
+	 * Gets the contacts set for the domain
 	 *
 	 * @return null|Domain_Contacts
 	 * @throws Invalid_Value_Exception
