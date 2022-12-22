@@ -20,6 +20,40 @@ namespace Automattic\Domain_Services\Command\Domain\Contacts;
 
 use Automattic\Domain_Services\{Command, Entity, Exception};
 
+/**
+ * Updates domain contacts
+ *
+ * - This command updates any or all of a domain's contacts.
+ * - Contact types not included in the request would not be updated, but won't be deleted.
+ * - For each contact type, either a contact ID or the full contact information can be provided.
+ * - If contact information is provided, a new contact will be created and the contact ID will be returned.
+ * - This command runs asynchoronously on the server.
+ * - Getting that response back means that the operation was queued successfully.
+ * - A domain has four contact types: owner, admin, tech and billing
+ *
+ *  * ## Example:
+ * ```
+ * $domain_name = new Entity\Domain_Name( 'example.com' );
+ * $contact_id = new Entity\Contact_Id( 'SP1:5499554' );
+ * $domain_contacts = new Entity\Domain_Contacts();
+ *
+ * $domain_contacts->set_owner( new Entity\Domain_Contact( $contact_id ) );
+ * $domain_contacts->set_billing( new Entity\Domain_Contact( $contact_id ) );
+ *
+ * $command = new Command\Domain\Contacts\Set( $domain_name, $domain_contacts );
+ *
+ * $response = $api->post( $command );
+ * if ( $response->is_success() ) {
+ *     $status = $response->get_status();
+ * }
+ * ```
+ *
+ * @see \Automattic\Domain_Services\Response\Domain\Contacts\Set
+ * @see Entity\Domain_Contacts
+ * @see Entity\Domain_Contact
+ * @see Entity\Contact_Information
+ * @see Entity\Contact_Id
+ */
 class Set implements Command\Command_Interface, Command\Command_Serialize_Interface {
 	use Command\Command_Trait, Command\Command_Serialize_Trait, Command\Array_Key_Contacts_Trait, Command\Array_Key_Domain_Trait;
 
@@ -38,6 +72,14 @@ class Set implements Command\Command_Interface, Command\Command_Serialize_Interf
 	 */
 	private Entity\Domain_Contacts $contacts;
 
+	/**
+	 * Constructs a Domain\Contacts\Set command
+	 *
+	 * @param Entity\Domain_Name     $domain
+	 * @param Entity\Domain_Contacts $contacts
+	 *
+	 * @throws Exception\Entity\Invalid_Value_Exception
+	 */
 	public function __construct( Entity\Domain_Name $domain, Entity\Domain_Contacts $contacts ) {
 		$this->domain = $domain;
 
@@ -63,12 +105,15 @@ class Set implements Command\Command_Interface, Command\Command_Serialize_Interf
 	}
 
 	/**
-	 * @return string
+	 * {@inheritDoc}
 	 */
 	public static function get_name(): string {
 		return 'Domain_Contacts_Set';
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	public function to_array(): array {
 		return [
 			self::get_domain_name_array_key() => $this->get_domain()->get_name(),

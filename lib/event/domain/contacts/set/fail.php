@@ -18,8 +18,15 @@
 
 namespace Automattic\Domain_Services\Event\Domain\Contacts\Set;
 
-use Automattic\Domain_Services\{Event};
+use Automattic\Domain_Services\{Command, Event};
 
+/**
+ * Event representing a Domain\Contacts\Set command failure
+ *
+ * @see Command\Domain\Contacts\Set
+ */
 class Fail implements Event\Event_Interface {
-	use Event\Data_Trait, Event\Object_Type_Domain_Trait, Event\Error_Trait;
+	use Event\Data_Trait;
+	use Event\Object_Type_Domain_Trait;
+	use Event\Error_Trait;
 }

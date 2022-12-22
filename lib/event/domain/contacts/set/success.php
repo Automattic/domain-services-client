@@ -18,13 +18,25 @@
 
 namespace Automattic\Domain_Services\Event\Domain\Contacts\Set;
 
-use Automattic\Domain_Services\{Entity, Event};
+use Automattic\Domain_Services\{Command, Entity, Event, Exception};
 
+/**
+ * Event representing a Domain\Contacts\Set command success
+ *
+ * @see Command\Domain\Contacts\Set
+ */
 class Success implements Event\Event_Interface {
 	use Event\Data_Trait, Event\Object_Type_Domain_Trait;
 
+	/**
+	 * Returns the domain contacts of the updated domain
+	 *
+	 * @return Entity\Domain_Contacts
+	 * @throws Exception\Entity\Invalid_Value_Exception
+	 */
 	public function get_contacts(): Entity\Domain_Contacts {
 		$contact_data = $this->get_data_by_key( 'event_data.contacts' ) ?? [];
+
 		return Entity\Domain_Contacts::from_array( $contact_data );
 	}
 }
