@@ -18,9 +18,16 @@
 
 namespace Automattic\Domain_Services\Event;
 
-use Automattic\Domain_Services\{Entity};
-
+/**
+ * A trait that specifies methods common to all error event classes.
+ */
 trait Error_Trait {
+
+	/**
+	 * Gets additional information about the reason for the error.
+	 *
+	 * @return string
+	 */
 	final public function get_error_reason(): string {
 		return $this->get_data_by_key( 'event_data.error.data.reason' );
 	}

@@ -20,6 +20,16 @@ namespace Automattic\Domain_Services\Response\Domain;
 
 use Automattic\Domain_Services\Response;
 
+/**
+ * Response of a `Domain\Restore` command
+ *
+ * - The restore operation runs asynchronously on the server.
+ * - A success response indicates that the restore request is queued, not completed.
+ *
+ * @see \Automattic\Domain_Services\Command\Domain\Restore
+ * @see \Automattic\Domain_Services\Event\Domain\Restore\Fail
+ * @see \Automattic\Domain_Services\Event\Domain\Restore\Success
+ */
 class Restore implements Response\Response_Interface {
 	use Response\Data_Trait;
 }

@@ -20,14 +20,29 @@ namespace Automattic\Domain_Services\Event;
 
 use Automattic\Domain_Services\Entity\Entity_Interface;
 
+/**
+ * A trait that defines data access methods common to all event classes.
+ */
 trait Data_Trait {
+	/**
+	 * The raw event data received from the server.
+	 *
+	 * @var array
+	 */
 	private array $data;
 
+	/**
+	 * Constructs an event object
+	 *
+	 * @param array $data
+	 */
 	final public function __construct( array $data = [] ) {
 		$this->data = $data;
 	}
 
 	/**
+	 * Gets the value of the event data specified by the given key.
+	 *
 	 * @param string $key
 	 * @return array|mixed|null
 	 */
@@ -41,6 +56,8 @@ trait Data_Trait {
 	}
 
 	/**
+	 * Gets the event ID
+	 *
 	 * @return int
 	 */
 	public function get_id(): int {
@@ -48,6 +65,8 @@ trait Data_Trait {
 	}
 
 	/**
+	 * Gets the event class
+	 *
 	 * @return string
 	 */
 	public function get_event_class(): string {
@@ -55,6 +74,8 @@ trait Data_Trait {
 	}
 
 	/**
+	 * Gets the event subclass
+	 *
 	 * @return string
 	 */
 	public function get_event_subclass(): string {
@@ -62,6 +83,8 @@ trait Data_Trait {
 	}
 
 	/**
+	 * Gets the type of object that this event references (ex. 'domain' or 'contact')
+	 *
 	 * @return string
 	 */
 	public function get_object_type(): string {
@@ -69,6 +92,10 @@ trait Data_Trait {
 	}
 
 	/**
+	 * Gets the ID of the object that this event references.
+	 * - The contact ID for a contact object type
+	 * - The domain name for a domain object type
+	 *
 	 * @return string
 	 */
 	public function get_object_id(): string {
@@ -76,6 +103,8 @@ trait Data_Trait {
 	}
 
 	/**
+	 * Gets the date this event was generated.
+	 *
 	 * @return \DateTimeInterface
 	 */
 	public function get_event_date(): \DateTimeInterface {
@@ -83,6 +112,8 @@ trait Data_Trait {
 	}
 
 	/**
+	 * Gets the date this event was acknowledged.
+	 *
 	 * @return \DateTimeInterface|null
 	 */
 	public function get_acknowledged_date(): ?\DateTimeInterface {
@@ -95,6 +126,8 @@ trait Data_Trait {
 	}
 
 	/**
+	 * Gets all the event data as an array
+	 *
 	 * @return array
 	 * @throws \JsonException
 	 */
