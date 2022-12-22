@@ -20,6 +20,16 @@ namespace Automattic\Domain_Services\Event\Domain\Notification;
 
 use Automattic\Domain_Services\{Event};
 
+/**
+ * Domain suspended event
+ *
+ * - This event is generated when a domain is suspended
+ * - One frequent cause for suspension is the contact info email not being verified some time after registration
+ * - This event contains an `info` property with information about the reason why the domain was suspended, if available
+ *     - It can be retrieved with the `get_info` method
+ *
+ * @see \Automattic\Domain_Services\Event\Domain\Notification\Verified
+ */
 class Suspended implements Event\Event_Interface {
 	use Event\Data_Trait, Event\Object_Type_Domain_Trait;
 

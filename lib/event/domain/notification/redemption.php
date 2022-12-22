@@ -20,9 +20,29 @@ namespace Automattic\Domain_Services\Event\Domain\Notification;
 
 use Automattic\Domain_Services\{Entity, Event};
 
+/**
+ * Domain entered redemption period event
+ *
+ * - This event is generated when a domain enters the redemption period
+ * - A domain enters redemption when the Auto-Renew Grace Period (ARGP) ends and the domain wasn't renewed
+ * - A domain in redemption can still be restored, but a redemption fee (which is costlier than a renewal fee) will be
+ *   charged
+ * - If the redemption period ends, the domain goes into `pending_delete` status at the registry for 5 days and, after
+ *   that, it's usually released and may become available for registration again
+ * - This event contains a `redemption_end_date` property which can be retrieved using the `get_redemption_end_date`
+ *   method
+ *     - That is the date until which the domain is in redemption
+ *
+ * @see \Automattic\Domain_Services\Event\Domain\Notification\Argp
+ */
 class Redemption implements Event\Event_Interface {
 	use Event\Data_Trait, Event\Object_Type_Domain_Trait;
 
+	/**
+	 * Returns the date until which a domain is in redemption, if available
+	 *
+	 * @return \DateTimeImmutable|null
+	 */
 	public function get_redemption_end_date(): ?\DateTimeImmutable {
 		$redemption_end_date = $this->get_data_by_key( 'event_data.redemption_end_date' );
 
