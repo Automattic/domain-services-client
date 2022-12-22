@@ -23,9 +23,9 @@ use Automattic\Domain_Services\{Command, Entity};
 /**
  * Sets name servers for the specified domain
  *
- * - This command sets the name servers for a domain
  * - Runs asynchronously on the server
- * - Reseller will receive a Domain\Nameservers\Set\Success or Domain\Nameservers\Set\Fail event depending on the result of the command
+ * - Reseller will receive a `Domain\Nameservers\Set\Success` or `Domain\Nameservers\Set\Fail` event depending on the
+ *   result of the operation
  *
  * @see \Automattic\Domain_Services\Response\Domain\Nameservers\Set
  * @see \Automattic\Domain_Services\Event\Domain\Nameservers\Set\Success

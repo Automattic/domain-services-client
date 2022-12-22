@@ -23,7 +23,7 @@ use Automattic\Domain_Services\{Event};
 /**
  * Set name servers failure event
  *
- * This event is generated when a `Domain\Nameservers\Set` command fails.
+ * This event is generated when a name server update fails at the server.
  *
  * @see \Automattic\Domain_Services\Command\Domain\Nameservers\Set
  */
