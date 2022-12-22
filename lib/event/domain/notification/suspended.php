@@ -24,8 +24,9 @@ use Automattic\Domain_Services\{Event};
  * Domain suspended event
  *
  * - This event is generated when a domain is suspended
- * - A domain is usually suspended due to its contact info email not being verified some time after registration
+ * - One frequent cause for suspension is the contact info email not being verified some time after registration
  * - This event contains an `info` property with information about the reason why the domain was suspended, if available
+ *     - It can be retrieved with the `get_info` method
  *
  * @see \Automattic\Domain_Services\Event\Domain\Notification\Verified
  */

@@ -23,9 +23,9 @@ use Automattic\Domain_Services\{Event};
 /**
  * Domain expired event
  *
- * - This event is generated when a domain expires.
+ * - This event is generated when a domain expires
  * - When a domain expires, it usually enters the Auto-Renew Grace Period (ARGP) and can still be renewed for the
- *   regular renewal price.
+ *   regular renewal price
  *
  * @see \Automattic\Domain_Services\Event\Domain\Notification\Argp
  */
