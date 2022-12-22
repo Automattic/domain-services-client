@@ -101,7 +101,7 @@ class Domain_Contacts implements \Iterator {
 	 * Builds an instance from an array
 	 *
 	 * - The $data array is expected to have the contact type as key and an array as a value.
-	 * - The array can either has a `contact_id` or a `contact_information` key with the corresponding data.
+	 * - The array can either have a `contact_id` or a `contact_information` key with the corresponding data.
 	 * - There is also an optional `contact_disclosure` that can be passed for each contact.
 	 *
 	 * @param array $data
