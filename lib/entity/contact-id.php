@@ -33,6 +33,8 @@ class Contact_Id implements Entity_Interface {
 	private string $provider_contact_id;
 
 	/**
+	 * Constructs a Contact_Id entity
+	 *
 	 * @param string $contact_id
 	 *
 	 * @throws Exception\Entity\Invalid_Value_Exception
