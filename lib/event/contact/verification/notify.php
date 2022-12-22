@@ -29,7 +29,7 @@ class Notify implements Event\Event_Interface {
 	use Event\Data_Trait, Event\Object_Type_Contact_Trait;
 
 	/**
-	 * Returns tha verification status of the contact.
+	 * Returns tha verification status of the contact
 	 *
 	 * @return bool
 	 */
