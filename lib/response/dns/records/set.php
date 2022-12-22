@@ -21,7 +21,7 @@ namespace Automattic\Domain_Services\Response\Dns\Records;
 use Automattic\Domain_Services\{Entity, Response};
 
 /**
- * Response of a `Dns\Records\Set` command
+ * Response of a Dns\Records\Set command
  *
  * Contains the domain name, the newly added records and the deleted records.
  *
@@ -31,6 +31,8 @@ class Set implements Response\Response_Interface {
 	use Response\Data_Trait;
 
 	/**
+	 * Returns the domain name for which DNS records were updated
+	 *
 	 * @return Entity\Domain_Name
 	 */
 	public function get_domain_name(): Entity\Domain_Name {
@@ -39,6 +41,8 @@ class Set implements Response\Response_Interface {
 	}
 
 	/**
+	 * Returns the DNS records that were added
+	 *
 	 * @return Entity\Dns_Records
 	 */
 	public function get_records_added(): Entity\Dns_Records {
@@ -54,6 +58,8 @@ class Set implements Response\Response_Interface {
 	}
 
 	/**
+	 * Returns the DNS records that were deleted
+	 *
 	 * @return Entity\Dns_Records
 	 */
 	public function get_records_deleted(): Entity\Dns_Records {
