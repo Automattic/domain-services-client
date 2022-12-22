@@ -18,7 +18,7 @@
 
 namespace Automattic\Domain_Services\Entity;
 
-use Automattic\Domain_Services\{Command};
+use Automattic\Domain_Services\{Command, Exception};
 
 /**
  * Set of DNS records associated with a specific domain
@@ -44,6 +44,8 @@ class Dns_Records {
 	private Dns_Record_Sets $record_sets;
 
 	/**
+	 * Constructs a Dns_Records entity
+	 *
 	 * @param Domain_Name $domain
 	 * @param Dns_Record_Sets $record_sets
 	 */
@@ -53,6 +55,8 @@ class Dns_Records {
 	}
 
 	/**
+	 * Returns the domain name associated with the DNS records
+	 *
 	 * @return Domain_Name
 	 */
 	public function get_domain(): Domain_Name {
@@ -60,6 +64,8 @@ class Dns_Records {
 	}
 
 	/**
+	 * Returns the sets of DNS records associated with a domain
+	 *
 	 * @return Dns_Record_Sets
 	 */
 	public function get_record_sets(): Dns_Record_Sets {
@@ -67,6 +73,8 @@ class Dns_Records {
 	}
 
 	/**
+	 * Returns an array containing sets of DNS records associated with a domain
+	 *
 	 * @return array
 	 */
 	public function to_array(): array {
@@ -77,8 +85,13 @@ class Dns_Records {
 	}
 
 	/**
+	 * Constructs a Dns_Records entity from an array containing sets of DNS records
+	 *
 	 * @param array $dns_records_data
 	 * @return static
+	 * @throws Exception\Entity\Invalid_Value_Exception
+	 *
+	 * @see \Automattic\Domain_Services\Entity\Dns_Record_Sets
 	 */
 	public static function from_array( array $dns_records_data ): self {
 		$domain_name = new Domain_Name( $dns_records_data[ self::get_domain_name_array_key() ] );
