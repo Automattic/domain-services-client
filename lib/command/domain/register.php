@@ -19,11 +19,6 @@
 namespace Automattic\Domain_Services\Command\Domain;
 
 use Automattic\Domain_Services\{Command, Entity, Exception};
-use Automattic\Domain_Services\Entity\Domain_Name;
-use Automattic\Domain_Services\Entity\Domain_Contacts;
-use Automattic\Domain_Services\Entity\Nameservers;
-use Automattic\Domain_Services\Entity\Dns_Records;
-use Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception;
 
 /**
  * Register a new a domain.

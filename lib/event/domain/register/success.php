@@ -19,9 +19,6 @@
 namespace Automattic\Domain_Services\Event\Domain\Register;
 
 use Automattic\Domain_Services\{Entity, Event};
-use Automattic\Domain_Services\Entity\Domain_Contacts;
-use Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception;
-use DateTimeInterface;
 
 /**
  * Success event for a `Domain\Register` command.
@@ -48,7 +45,7 @@ class Success implements Event\Event_Interface {
 
 	/**
 	 * Gets the date the domain was created
-	 * @return null|DateTimeInterface
+	 * @return null|\DateTimeInterface
 	 */
 	public function get_created_date(): ?\DateTimeInterface {
 		$created_date = $this->get_data_by_key( 'event_data.created_date' );
@@ -57,7 +54,7 @@ class Success implements Event\Event_Interface {
 
 	/**
 	 * Gets the domain expiration date
-	 * @return null|DateTimeInterface
+	 * @return null|\DateTimeInterface
 	 */
 	public function get_expiration_date(): ?\DateTimeInterface {
 		$expiration_date = $this->get_data_by_key( 'event_data.expiration_date' );
@@ -66,7 +63,7 @@ class Success implements Event\Event_Interface {
 
 	/**
 	 * Get the last date to renew the domain
-	 * @return null|DateTimeInterface
+	 * @return null|\DateTimeInterface
 	 */
 	public function get_renewable_until(): ?\DateTimeInterface {
 		$renewable_until = $this->get_data_by_key( 'event_data.renewable_until' );
@@ -76,7 +73,7 @@ class Success implements Event\Event_Interface {
 	/**
 	 * Gets the date when the domain will be suspended if the contact information is not verified
 	 *
-	 * @return null|DateTimeInterface 
+	 * @return null|\DateTimeInterface 
 	 */
 	public function get_unverified_contact_suspension_date(): ?\DateTimeInterface {
 		$unverified_contact_suspension_date = $this->get_data_by_key( 'event_data.unverified_contact_suspension_date' );
