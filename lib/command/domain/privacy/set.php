@@ -27,12 +27,15 @@ use Automattic\Domain_Services\{Command, Entity};
  * - Reseller will receive a Domain\Privacy\Set\Success or Domain\Privacy\Set\Fail event depending on the result of the command
  *
  * Example:
- * <code>
+ * ```
  * $domain_name = new Entity\Domain_Name( 'example-domain.com' );
  * $privacy_setting = new Entity\Whois_Privacy( Entity\Whois_Privacy::ENABLE_PRIVACY_SERVICE );
  * $command = new Command\Domain\Privacy\Set( $domain, $privacy_setting );
  * $response = $api->post( $command );
- * </code>
+ * if ( $response->is_success() ) {
+ *   // the request to update the privacy setting was queued successfully
+ * }
+ * ```
  *
  * @see \Automattic\Domain_Services\Response\Domain\Privacy\Set
  * @see \Automattic\Domain_Services\Event\Domain\Privacy\Set\Success
@@ -57,6 +60,7 @@ class Set implements Command\Command_Interface, Command\Command_Serialize_Interf
 	private Entity\Whois_Privacy $privacy_setting;
 
 	/**
+	 * Construct the Domain\Privacy\Set
 	 * @param Domain_Name $domain
 	 * @param Whois_Privacy $privacy_setting
 	 */

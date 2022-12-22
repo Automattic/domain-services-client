@@ -25,15 +25,15 @@ use Automattic\Domain_Services\{Exception};
  */
 class Whois_Privacy {
 	/**
-	 * Contact information is publicly visible on Whois
+	 * Contact information is publicly visible in whois query results
 	 */
 	public const DISCLOSE_CONTACT_INFO = 'disclose_contact_info';
 	/**
-	 * Contact information is redacted on Whois (for each field a generic "REDACTED FOR PRIVACY" is displayed)
+	 * Contact information is redacted in whois query results (for each field a generic "REDACTED FOR PRIVACY" is displayed)
 	 */
 	public const REDACT_CONTACT_INFO = 'redact_contact_info';
 	/**
-	 * Third party (privacy service provider) contact information is displayed on Whois.
+	 * Third party (privacy service provider) contact information is displayed in whois query results.
 	 */
 	public const ENABLE_PRIVACY_SERVICE = 'enable_privacy_service';
 
@@ -65,6 +65,8 @@ class Whois_Privacy {
 	}
 
 	/**
+	 * Return the whois privacy setting
+	 *
 	 * @return string
 	 */
 	public function get_setting(): string {

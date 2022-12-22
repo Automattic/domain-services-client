@@ -32,7 +32,7 @@ class Success implements Event\Event_Interface {
 	use Event\Data_Trait, Event\Object_Type_Domain_Trait;
 
 	/**
-	 * Returns the Whois_Privacy setting that was set for this domain, if available
+	 * Returns the Whois_Privacy setting that was set for this domain
 	 *
 	 * @return Entity\Whois_Privacy|null
 	 * @throws Exception\Entity\Invalid_Value_Exception
