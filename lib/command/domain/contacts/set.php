@@ -23,11 +23,30 @@ use Automattic\Domain_Services\{Command, Entity, Exception};
 /**
  * Updates domain contacts
  *
- * - This command updates any or all of domain contacts.
+ * - This command updates any or all of a domain's contacts.
  * - Contact types not included in the request would not be updated, but won't be deleted.
  * - For each contact type, either a contact ID or the full contact information can be provided.
  * - If contact information is provided, a new contact will be created and the contact ID will be returned.
- * - This command runs asynchoronously.
+ * - This command runs asynchoronously on the server.
+ * - Getting that response back means that the operation was queued successfully.
+ * - A domain has four contact types: owner, admin, tech and billing
+ *
+ *  * ## Example:
+ * ```
+ * $domain_name = new Entity\Domain_Name( 'example.com' );
+ * $contact_id = new Entity\Contact_Id( 'SP1:5499554' );
+ * $domain_contacts = new Entity\Domain_Contacts();
+ *
+ * $domain_contacts->set_owner( new Entity\Domain_Contact( $contact_id ) );
+ * $domain_contacts->set_billing( new Entity\Domain_Contact( $contact_id ) );
+ *
+ * $command = new Command\Domain\Contacts\Set( $domain_name, $domain_contacts );
+ *
+ * $response = $api->post( $command );
+ * if ( $response->is_success() ) {
+ *     $status = $response->get_status();
+ * }
+ * ```
  *
  * @see \Automattic\Domain_Services\Response\Domain\Contacts\Set
  * @see Entity\Domain_Contacts
@@ -54,7 +73,7 @@ class Set implements Command\Command_Interface, Command\Command_Serialize_Interf
 	private Entity\Domain_Contacts $contacts;
 
 	/**
-	 * @param Entity\Domain_Name $domain
+	 * @param Entity\Domain_Name     $domain
 	 * @param Entity\Domain_Contacts $contacts
 	 *
 	 * @throws Exception\Entity\Invalid_Value_Exception
