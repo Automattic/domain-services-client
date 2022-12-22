@@ -20,11 +20,19 @@ namespace Automattic\Domain_Services\Event\Domain\Privacy\Set;
 
 use Automattic\Domain_Services\{Entity, Event, Exception};
 
+/**
+ * Success event for a `Domain\Privacy\Set command
+ *
+ * - This event is generated when a privacy setting update succeds at the server.
+ * - Contains a `privacy_setting` property with the privacy option that was set at the registry
+ *
+ * @see \Automattic\Domain_Services\Command\Domain\Privacy\Set
+ */
 class Success implements Event\Event_Interface {
 	use Event\Data_Trait, Event\Object_Type_Domain_Trait;
 
 	/**
-	 * Returns the Whois_Privacy setting that for this domain, if available
+	 * Returns the Whois_Privacy setting that was set for this domain
 	 *
 	 * @return Entity\Whois_Privacy|null
 	 * @throws Exception\Entity\Invalid_Value_Exception
