@@ -19,7 +19,7 @@
 namespace Automattic\Domain_Services\Entity;
 
 /**
- * A set of DNS records that share the same name, type and TTL.
+ * A set of DNS records that share the same name, type and TTL
  */
 class Dns_Record_Set {
 
@@ -56,6 +56,14 @@ class Dns_Record_Set {
 	 */
 	private array $data;
 
+	/**
+	 * Constructs a Dns_Record_Set entity
+	 *
+	 * @param string $name
+	 * @param Dns_Record_Type $type
+	 * @param int $ttl
+	 * @param array $data
+	 */
 	public function __construct( string $name, Dns_Record_Type $type, int $ttl, array $data ) {
 		$this->name = $name;
 		$this->type = $type;
@@ -64,6 +72,8 @@ class Dns_Record_Set {
 	}
 
 	/**
+	 * Returns the name of this DNS record set
+	 *
 	 * @return string
 	 */
 	public function get_name(): string {
@@ -71,6 +81,8 @@ class Dns_Record_Set {
 	}
 
 	/**
+	 * Returns the type of this DNS record set
+	 *
 	 * @return Dns_Record_Type
 	 */
 	public function get_type(): Dns_Record_Type {
@@ -78,6 +90,8 @@ class Dns_Record_Set {
 	}
 
 	/**
+	 * Returns the TTL of this DNS record set
+	 *
 	 * @return int
 	 */
 	public function get_ttl(): int {
@@ -85,16 +99,28 @@ class Dns_Record_Set {
 	}
 
 	/**
+	 * Returns the data of this DNS record set
+	 *
 	 * @return array
 	 */
 	public function get_data(): array {
 		return $this->data;
 	}
 
+	/**
+	 * Returns a string representation of this DNS record set
+	 *
+	 * @return string
+	 */
 	public function __toString() {
 		return $this->name . ' ' . $this->ttl . ' ' . $this->type . ' ' . implode( ', ', $this->data );
 	}
 
+	/**
+	 * Returns an associative array containing this DNS record set's values
+	 *
+	 * @return array
+	 */
 	public function to_array(): array {
 		return [
 			self::NAME => $this->name,
@@ -104,6 +130,13 @@ class Dns_Record_Set {
 		];
 	}
 
+	/**
+	 * Constructs a Dns_Record_Set entity from an associative array containing a DNS record set
+	 *
+	 * @param array $data
+	 * @return static
+	 * @throws \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception
+	 */
 	public static function from_array( array $data ): self {
 		return new self(
 			$data[ self::NAME ],
