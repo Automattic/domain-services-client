@@ -140,14 +140,14 @@ class Register implements Command\Command_Interface, Command\Command_Serialize_I
 	/**
 	 * Constructs the Register command
 	 *
-	 * @param Domain_Name $domain
-	 * @param Domain_Contacts $contacts
+	 * @param Entity\Domain_Name $domain
+	 * @param Entity\Domain_Contacts $contacts
 	 * @param int $period
-	 * @param Nameservers|null $nameservers
-	 * @param Dns_Records|null $dns_records
+	 * @param Entity\Nameservers|null $nameservers
+	 * @param Entity\Dns_Records|null $dns_records
 	 * @param string $privacy_setting
 	 * @param null|int $price
-	 * @throws Invalid_Value_Exception
+	 * @throws Exception\Invalid_Value_Exception
 	 */
 	public function __construct( Entity\Domain_Name $domain, Entity\Domain_Contacts $contacts, int $period = 1, Entity\Nameservers $nameservers = null, Entity\Dns_Records $dns_records = null, string $privacy_setting = 'a8c_privacy_service', ?int $price = null ) {
 		if ( null === $nameservers ) {
