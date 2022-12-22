@@ -258,7 +258,7 @@ class Domain_Contacts implements \Iterator {
 	}
 
 	public function next(): void {
-		$this->iterator_pointer ++;
+		$this->iterator_pointer++;
 	}
 
 	public function key(): ?string {

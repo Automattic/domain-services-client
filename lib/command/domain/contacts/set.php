@@ -73,6 +73,8 @@ class Set implements Command\Command_Interface, Command\Command_Serialize_Interf
 	private Entity\Domain_Contacts $contacts;
 
 	/**
+	 * Constructs a Domain\Contacts\Set command
+	 *
 	 * @param Entity\Domain_Name     $domain
 	 * @param Entity\Domain_Contacts $contacts
 	 *
