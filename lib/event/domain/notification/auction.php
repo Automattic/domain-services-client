@@ -24,16 +24,20 @@ use Automattic\Domain_Services\{Entity, Event};
  * Domain entered auction phase event
  *
  * - This event is generated when a domain enters an expiry auction phase
- * - There are three domain auction phases (refer to this post for more detailed info)
+ * - There are three domain auction phases
  *     - `parked` - 5 days after expiration, the domain's name servers and DNS records will be changed to our auction
  *        partners' servers
  *     - `submitted` - 21 days after expiration, the domain is appraised by our auction partners
  *     - `active` - 30 days after expiration, if the domain is selected for auction, is when the actual auction starts.
  *       This phase lasts until day 43 after the domain expiration date
+ * - After day 43, if the domain was not sold in auction, it will enter the redemption phase as usual
  * - This event contains two properties:
- *     - `auction_status` - current expiry auction status phase (will be either `PARKED`, `SUBMITTED` or `ACTIVE`)
- *     - `auction_status_end_date` - timestamp in `Y-m-d H:i:s` format representing the date until which the domain is
- *       in the current auction phase
+ *     - `auction_status` - current expiry auction status phase (will be either `PARKED`, `SUBMITTED` or `ACTIVE`),
+ *       can be retrieved using the `get_auction_status` method
+ *     - `auction_status_end_date` - date until which the domain is in the current auction phase, can be retrieved using
+ *       the `get_auction_status_end_date` method
+ *
+ * @see \Automattic\Domain_Services\Event\Domain\Notification\Redemption
  */
 class Auction implements Event\Event_Interface {
 	use Event\Data_Trait, Event\Object_Type_Domain_Trait;
