@@ -20,6 +20,11 @@ namespace Automattic\Domain_Services\Event\Domain\Transfer\In;
 
 use Automattic\Domain_Services\{Event};
 
+/**
+ * Inbound domain transfer success event
+ *
+ * This event is generated when a domain transfer from another registrar to the reseller's account is successful.
+ */
 class Success implements Event\Event_Interface {
 	use Event\Data_Trait, Event\Object_Type_Domain_Trait, Event\Transfer_Trait;
 }

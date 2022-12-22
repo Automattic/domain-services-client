@@ -18,8 +18,15 @@
 
 namespace Automattic\Domain_Services\Event\Domain\Transfer\In;
 
-use Automattic\Domain_Services\{Entity, Event};
+use Automattic\Domain_Services\{Event};
 
+/**
+ * Inbound domain transfer failure event
+ *
+ * - This event is generated when a domain transfer from another registrar to the reseller's account fails after it was
+ *   successfully started
+ * - There might be more information about the cause of the failure in the event data
+ */
 class Fail implements Event\Event_Interface {
 	use Event\Data_Trait, Event\Object_Type_Domain_Trait, Event\Transfer_Trait;
 }

@@ -20,6 +20,11 @@ namespace Automattic\Domain_Services\Event\Domain\Transfer\Out;
 
 use Automattic\Domain_Services\{Event};
 
+/**
+ * Outbound domain transfer start event
+ *
+ * This event is generated when a domain transfer to another registrar is started.
+ */
 class Pending implements Event\Event_Interface {
 	use Event\Data_Trait, Event\Object_Type_Domain_Trait, Event\Transfer_Trait;
 }

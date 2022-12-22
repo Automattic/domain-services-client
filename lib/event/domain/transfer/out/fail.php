@@ -20,6 +20,12 @@ namespace Automattic\Domain_Services\Event\Domain\Transfer\Out;
 
 use Automattic\Domain_Services\{Event};
 
+/**
+ * Outbound domain transfer failure event
+ *
+ * - This event is generated when a domain transfer to another registrar fails after it was successfully started
+ * - There might be more information about the cause of the failure in the event data
+ */
 class Fail implements Event\Event_Interface {
 	use Event\Data_Trait, Event\Object_Type_Domain_Trait, Event\Transfer_Trait;
 }
