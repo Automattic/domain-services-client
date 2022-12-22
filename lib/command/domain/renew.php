@@ -25,13 +25,30 @@ use Automattic\Domain_Services\{Command, Entity};
  *
  * - This command renews a domain for a specified number of years
  * - The required parameters are:
- *     - domain_name - the domain to renew
- *     - period - number of years to renew the domain
- *     - current_expiration_year - in which year the domain is currently going to expire (used to prevent unwanted multiple renewals)
+ *     - `domain_name` - the domain to renew
+ *     - `period` - number of years to renew the domain
+ *     - `current_expiration_year` - in which year the domain is currently going to expire (used to prevent unwanted
+ *       multiple renewals)
  * - Optional parameter:
- *     - fee_amount - used when renewing premium domains because they have special pricing
+ *     - `fee_amount` - used when renewing premium domains because they have special pricing
  * - Runs asynchronously on the server
- * - Reseller will receive a Domain\Renew\Success or Domain\Renew\Fail event depending on the result of the command
+ * - Reseller will receive a `Domain\Renew\Success` or `Domain\Renew\Fail` event depending on the result of the command
+ *
+ * Example usage:
+ *
+ * ```
+ * $domain_name = new Entity\Domain_Name( 'example-domain.com' );
+ * $current_expiration_year = 2022;
+ * $period = 1;
+ *
+ * $command = new Command\Domain\Renew( $domain_name, $current_expiration_year, $period );
+ *
+ * $response = $api->post( $command );
+ *
+ * if ( $response->is_success() ) {
+ *     // domain was renewed successfully
+ * }
+ * ```
  *
  * @see \Automattic\Domain_Services\Response\Domain\Renew
  * @see \Automattic\Domain_Services\Event\Domain\Renew\Success
@@ -48,7 +65,8 @@ class Renew implements Command\Command_Interface, Command\Command_Serialize_Inte
 	private Entity\Domain_Name $domain;
 
 	/**
-	 * The amount of years you want to renew the domain.
+	 * The amount of years you want to renew the domain
+	 *
 	 * (Optional, defaults to 1)
 	 *
 	 * @var int
@@ -56,15 +74,18 @@ class Renew implements Command\Command_Interface, Command\Command_Serialize_Inte
 	private int $period;
 
 	/**
-	 * The current expiration year of the domain. If the domain is in auto renew grace period (a specified number of calendar
-	 * days following an auto-renewal), please use the previous expiration. This will prevent unintended two year renewals.
+	 * The current expiration year of the domain
+	 *
+	 * If the domain is in auto-renew grace period (a specified number of calendar days following an auto-renewal),
+	 * please use the previous expiration. This will prevent unintended two year renewals.
 	 *
 	 * @var int
 	 */
 	private int $current_expiration_year;
 
 	/**
-	 * Amount of the fee extension.
+	 * Amount of the fee extension
+	 *
 	 * (Optional, use it only for premium domains).
 	 *
 	 * @var float|null
@@ -72,6 +93,8 @@ class Renew implements Command\Command_Interface, Command\Command_Serialize_Inte
 	private ?float $fee_amount;
 
 	/**
+	 * Constructs a Domain\Renew command
+	 *
 	 * @param Entity\Domain_Name $domain
 	 * @param int $current_expiration_year
 	 * @param int $period
@@ -85,6 +108,8 @@ class Renew implements Command\Command_Interface, Command\Command_Serialize_Inte
 	}
 
 	/**
+	 * Returns the domain name that will be renewed
+	 *
 	 * @return Entity\Domain_Name
 	 */
 	public function get_domain(): Entity\Domain_Name {
@@ -92,6 +117,8 @@ class Renew implements Command\Command_Interface, Command\Command_Serialize_Inte
 	}
 
 	/**
+	 * Returns the number of years the domain will be renewed for
+	 *
 	 * @return int
 	 */
 	public function get_period(): int {
@@ -99,6 +126,8 @@ class Renew implements Command\Command_Interface, Command\Command_Serialize_Inte
 	}
 
 	/**
+	 * Returns the domain's current expiration year
+	 *
 	 * @return int
 	 */
 	public function get_current_expiration_year(): int {
@@ -106,6 +135,8 @@ class Renew implements Command\Command_Interface, Command\Command_Serialize_Inte
 	}
 
 	/**
+	 * Returns the renewal fee amount (used for premium domains)
+	 *
 	 * @return float|null
 	 */
 	public function get_fee_amount(): ?float {
@@ -113,14 +144,14 @@ class Renew implements Command\Command_Interface, Command\Command_Serialize_Inte
 	}
 
 	/**
-	 * @return string
+	 * {@inheritDoc}
 	 */
 	public static function get_name(): string {
 		return 'Domain_Renew';
 	}
 
 	/**
-	 * @return array
+	 * {@inheritDoc}
 	 */
 	public function to_array(): array {
 		return [
