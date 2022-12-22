@@ -80,14 +80,14 @@ class Set implements Command\Command_Interface, Command\Command_Serialize_Interf
 	}
 
 	/**
-	 * @return string
+	 * {@inheritDoc}
 	 */
 	public static function get_name(): string {
 		return 'Domain_Privacy_Set';
 	}
 
 	/**
-	 * @return array
+	 * {@inheritDoc}
 	 */
 	public function to_array(): array {
 		return [
