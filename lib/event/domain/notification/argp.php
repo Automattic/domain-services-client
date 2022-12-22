@@ -25,18 +25,21 @@ use Automattic\Domain_Services\{Entity, Event};
  *
  * - This event is generated when a domain enters the Auto-Renew Grace Period (ARGP)
  * - A domain enters the ARGP when it expires without being renewed. The ARGP is a period (usually of 45 days) after the
- *   domain's expiration when it is automatically renewed for a year at the registry (the registrar is also charged for
- *   that renewal)
- * - The registrant may renew the domain for the regular renewal price during ARGP
- * - If the registrant deletes the domain during ARGP, the renewal is canceled at the registry and the renewal cost is
- *   refunded to the registrar
- * - If the ARGP ends and no action was taken, the domain enters the Redemption Grace Period (RGP)
- * - This event contains an `argp_end_date` property which is a timestamp in `Y-m-d H:i:s` format representing the date
- *   until which the domain is in ARGP
+ *   domain's expiration when it is still able to be renewed at the regular price
+ *     - If the ARGP ends and no action was taken, the domain enters the redemption period
+ * - This event may contain an `argp_end_date` property which can be retrieved using the `get_argp_end_date` method
+ *     - That is the date until which the domain is in ARGP
+ *
+ * @see \Automattic\Domain_Services\Event\Domain\Notification\Redemption
  */
 class Argp implements Event\Event_Interface {
 	use Event\Data_Trait, Event\Object_Type_Domain_Trait;
 
+	/**
+	 * Returns the date until which a domain is in ARGP, if available
+	 *
+	 * @return \DateTimeImmutable|null
+	 */
 	public function get_argp_end_date(): ?\DateTimeImmutable {
 		$argp_end_date = $this->get_data_by_key( 'event_data.argp_end_date' );
 
