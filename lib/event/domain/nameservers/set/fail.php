@@ -20,6 +20,13 @@ namespace Automattic\Domain_Services\Event\Domain\Nameservers\Set;
 
 use Automattic\Domain_Services\{Event};
 
+/**
+ * Set name servers failure event
+ *
+ * This event is generated when a name server update fails at the server.
+ *
+ * @see \Automattic\Domain_Services\Command\Domain\Nameservers\Set
+ */
 class Fail implements Event\Event_Interface {
 	use Event\Data_Trait, Event\Object_Type_Domain_Trait, Event\Error_Trait;
 }
