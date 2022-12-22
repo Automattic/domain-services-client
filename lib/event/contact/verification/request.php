@@ -29,7 +29,7 @@ class Request implements Event\Event_Interface {
 	use Event\Data_Trait, Event\Object_Type_Contact_Trait;
 
 	/**
-	 * Returns the email address that the verification request was sent to.
+	 * Returns the email address that the verification request was sent to
 	 *
 	 * @return string|null
 	 */
