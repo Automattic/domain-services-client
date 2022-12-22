@@ -23,7 +23,7 @@ use Automattic\Domain_Services\{Entity, Event, Exception};
 /**
  * Set name servers success event
  *
- * - This event is generated when a `Domain\Nameservers\Set` command succeeds
+ * - This event is generated when a name server update succeeds at the server
  * - Contains a `name_servers` property with the name servers that were set at the registry
  *
  * @see \Automattic\Domain_Services\Command\Domain\Nameservers\Set
