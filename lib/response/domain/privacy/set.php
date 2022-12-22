@@ -20,6 +20,15 @@ namespace Automattic\Domain_Services\Response\Domain\Privacy;
 
 use Automattic\Domain_Services\{Response};
 
+/**
+ * Response of a Domain\Privacy\Set command
+ *
+ * Since the command runs asynchronously on the server, success response indicates that request has been queued, not completed.
+ *
+ * @see \Automattic\Domain_Services\Command\Domain\Privacy\Set
+ * @see \Automattic\Domain_Services\Event\Domain\Privacy\Set\Success
+ * @see \Automattic\Domain_Services\Event\Domain\Privacy\Set\Fail
+ */
 class Set implements Response\Response_Interface {
 	use Response\Data_Trait;
 }

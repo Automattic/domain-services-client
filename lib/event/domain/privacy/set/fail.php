@@ -18,6 +18,13 @@
 
 namespace Automattic\Domain_Services\Event\Domain\Privacy\Set;
 
+/**
+ * Set doman privacy fail event
+ *
+ * - This event is generated when a privacy setting update fails at the server.
+ *
+ * @see \Automattic\Domain_Services\Command\Domain\Privacy\Set
+ */
 use Automattic\Domain_Services\{Event};
 
 class Fail implements Event\Event_Interface {
