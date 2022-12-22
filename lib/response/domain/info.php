@@ -58,6 +58,15 @@ class Info implements Response\Response_Interface {
 	}
 
 	/**
+	 * Gets the date the domain registration will expire
+	 *
+	 * @return string|null
+	 */
+	public function get_expiration_date(): ?string {
+		return $this->get_data_by_key( 'data.expiration_date' );
+	}
+
+	/**
 	 * Gets the DNSSec key data for the domain, if any exists
 	 *
 	 * @return string|null

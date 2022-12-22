@@ -58,6 +58,7 @@ class Domain_Info_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 					],
 				],
 				'created_date' => '2022-06-22 01:23:45',
+				'expiration_date' => '2023-06-22 01:23:45',
 				'dnssec' => NULL,
 				'dnssec_ds_data' => NULL,
 				'epp_statuses' => [
@@ -88,6 +89,7 @@ class Domain_Info_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 
 		$this->assertEquals( $mock_response_data['data']['contacts'], $response_object->get_contacts()->to_array() );
 		$this->assertEquals( $mock_response_data['data']['created_date'], $response_object->get_created_date() );
+		$this->assertEquals( $mock_response_data['data']['expiration_date'], $response_object->get_expiration_date() );
 		$this->assertEquals( $mock_response_data['data']['dnssec'], $response_object->get_dnssec() );
 		$this->assertEquals( $mock_response_data['data']['dnssec_ds_data'], $response_object->get_dnssec_ds_dsata() );
 		$this->assertEquals( $mock_response_data['data']['epp_statuses'], $response_object->get_epp_statuses()->to_array() );
