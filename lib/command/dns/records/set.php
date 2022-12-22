@@ -27,17 +27,54 @@ use Automattic\Domain_Services\{Command, Entity};
  * - Any existing records are replaced by the new records
  * - Runs synchronously on the server
  *
+ * Example usage:
+ *
+ * ```
+ * $domain_name = new Entity\Domain_Name( 'example-domain.com' );
+ * $records_array = [
+ *     [
+ *         'name' => 'www',
+ *         'type' => 'CNAME',
+ *         'ttl' => 3600,
+ *         'data' => [ 'example-domain.com.' ]
+ *     ],
+ *     [
+ *         'name' => '@',
+ *         'type' => 'A',
+ *         'ttl' => 3600,
+ *         'data' => [ '1.2.3.4' ]
+ *     ],
+ * ];
+ * $dns_record_sets = Entity\Dns_Record_Sets::from_array( $records_array );
+ *
+ * $dns_records = new Entity\Dns_Records( $domain_name, $dns_record_sets );
+ * $command = new Command\Dns\Set( $dns_records );
+ *
+ * $response = $api->post( $command );
+ *
+ * if ( $response->is_success() ) {
+ *     $domain_name = $response->get_domain_name();
+ *     $reords_added = $response->get_records_added();
+ *     $records_deleted = $response->get_records_deleted();
+ * }
+ * ```
+ *
  * @see \Automattic\Domain_Services\Response\Dns\Records\Set
+ * @see \Automattic\Domain_Services\Command\Dns\Records\Get
  */
 class Set implements Command\Command_Interface, Command\Command_Serialize_Interface {
 	use Command\Command_Trait, Command\Command_Serialize_Trait, Command\Array_Key_Dns_Records_Trait;
 
 	/**
+	 * DNS records that will be set at the server
+	 *
 	 * @var Entity\Dns_Records
 	 */
 	private Entity\Dns_Records $records;
 
 	/**
+	 * Constructs a Dns\Records\Set command
+	 *
 	 * @param Entity\Dns_Records $records
 	 */
 	public function __construct( Entity\Dns_Records $records ) {
@@ -45,6 +82,8 @@ class Set implements Command\Command_Interface, Command\Command_Serialize_Interf
 	}
 
 	/**
+	 * Returns the DNS records that will be set at the server
+	 *
 	 * @return Entity\Dns_Records
 	 */
 	public function get_records(): Entity\Dns_Records {
@@ -52,14 +91,14 @@ class Set implements Command\Command_Interface, Command\Command_Serialize_Interf
 	}
 
 	/**
-	 * @return string
+	 * {@inheritDoc}
 	 */
 	public static function get_name(): string {
 		return 'Dns_Records_Set';
 	}
 
 	/**
-	 * @return array
+	 * {@inheritDoc}
 	 */
 	public function to_array(): array {
 		return [

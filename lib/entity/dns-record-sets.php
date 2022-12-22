@@ -18,8 +18,12 @@
 
 namespace Automattic\Domain_Services\Entity;
 
+use Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception;
+
 /**
- * Set of DNS records
+ * Set of sets of DNS records
+ *
+ * @see \Automattic\Domain_Services\Entity\Dns_Record_Set
  */
 class Dns_Record_Sets implements \Iterator {
 	/**
@@ -37,6 +41,8 @@ class Dns_Record_Sets implements \Iterator {
 	private int $iterator_pointer = 0;
 
 	/**
+	 * Constructs a Dns_Record_Sets entity
+	 *
 	 * @param Dns_Record_Set ...$dns_record_sets
 	 */
 	public function __construct( Dns_Record_Set ...$dns_record_sets ) {
@@ -46,6 +52,8 @@ class Dns_Record_Sets implements \Iterator {
 	}
 
 	/**
+	 * Adds a Dns_Record_Set to this entity
+	 *
 	 * @param Dns_Record_Set $dns_record_set
 	 * @return void
 	 */
@@ -55,6 +63,8 @@ class Dns_Record_Sets implements \Iterator {
 	}
 
 	/**
+	 * Returns each Dns_Record_Set in this entity as an array
+	 *
 	 * @return array
 	 */
 	public function to_array(): array {
@@ -68,8 +78,13 @@ class Dns_Record_Sets implements \Iterator {
 	}
 
 	/**
+	 * Constructs a DNS_Record_Sets entity from an array of DNS record set values
+	 *
 	 * @param array $dns_record_sets_data
 	 * @return static
+	 * @throws Invalid_Value_Exception
+	 *
+	 * @see \Automattic\Domain_Services\Entity\Dns_Record_Set
 	 */
 	public static function from_array( array $dns_record_sets_data ): self {
 		$dns_record_sets = new self();
@@ -91,6 +106,8 @@ class Dns_Record_Sets implements \Iterator {
 	}
 
 	/**
+	 * Part of the iterator interface implementation
+	 *
 	 * @return void
 	 */
 	public function next(): void {
@@ -98,6 +115,8 @@ class Dns_Record_Sets implements \Iterator {
 	}
 
 	/**
+	 * Part of the iterator interface implementation
+	 *
 	 * @return int|null
 	 */
 	public function key(): ?int {
@@ -105,6 +124,8 @@ class Dns_Record_Sets implements \Iterator {
 	}
 
 	/**
+	 * Part of the iterator interface implementation
+	 *
 	 * @return bool
 	 */
 	public function valid(): bool {
@@ -112,6 +133,8 @@ class Dns_Record_Sets implements \Iterator {
 	}
 
 	/**
+	 * Part of the iterator interface implementation
+	 *
 	 * @return void
 	 */
 	public function rewind(): void {
