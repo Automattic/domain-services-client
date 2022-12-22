@@ -20,9 +20,21 @@ namespace Automattic\Domain_Services\Entity;
 
 use Automattic\Domain_Services\{Exception};
 
+/**
+ * Define a valid privacy setting to be used for a domain
+ */
 class Whois_Privacy {
+	/**
+	 * Contact information is publicly visible in whois query results
+	 */
 	public const DISCLOSE_CONTACT_INFO = 'disclose_contact_info';
+	/**
+	 * Contact information is redacted in whois query results (for each field a generic "REDACTED FOR PRIVACY" is displayed)
+	 */
 	public const REDACT_CONTACT_INFO = 'redact_contact_info';
+	/**
+	 * Third party (privacy service provider) contact information is displayed in whois query results.
+	 */
 	public const ENABLE_PRIVACY_SERVICE = 'enable_privacy_service';
 
 	private const VALID_PRIVACY_SETTINGS = [
@@ -38,6 +50,12 @@ class Whois_Privacy {
 	 */
 	private string $setting;
 
+	/**
+	 * Whois_Privacy entity constructor
+	 *
+	 * @param string $setting
+	 * @throws Invalid_Value_Exception 
+	 */
 	public function __construct( string $setting ) {
 		if ( ! in_array( $setting, self::VALID_PRIVACY_SETTINGS ) ) {
 			throw new Exception\Entity\Invalid_Value_Exception( __CLASS__, 'Invalid whois privacy setting' );
@@ -47,12 +65,19 @@ class Whois_Privacy {
 	}
 
 	/**
+	 * Return the whois privacy setting
+	 *
 	 * @return string
 	 */
 	public function get_setting(): string {
 		return $this->setting;
 	}
 
+	/**
+	 * Convert the object to scalar
+	 *
+	 * @return string
+	 */
 	public function to_scalar(): string {
 		return $this->get_setting();
 	}

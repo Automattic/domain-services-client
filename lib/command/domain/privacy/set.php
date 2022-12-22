@@ -22,7 +22,26 @@ use Automattic\Domain_Services\{Command, Entity};
 
 /**
  * Sets the privacy option that determines what contact information is shown in the response of a whois query for this domain.
+ *
+ * - Runs asynchronously on the server
+ * - Reseller will receive a Domain\Privacy\Set\Success or Domain\Privacy\Set\Fail event depending on the result of the command
+ *
+ * Example:
+ * ```
+ * $domain_name = new Entity\Domain_Name( 'example-domain.com' );
+ * $privacy_setting = new Entity\Whois_Privacy( Entity\Whois_Privacy::ENABLE_PRIVACY_SERVICE );
+ * $command = new Command\Domain\Privacy\Set( $domain, $privacy_setting );
+ * $response = $api->post( $command );
+ * if ( $response->is_success() ) {
+ *   // the request to update the privacy setting was queued successfully
+ * }
+ * ```
+ *
+ * @see \Automattic\Domain_Services\Response\Domain\Privacy\Set
+ * @see \Automattic\Domain_Services\Event\Domain\Privacy\Set\Success
+ * @see \Automattic\Domain_Services\Event\Domain\Privacy\Set\Fail
  */
+
 class Set implements Command\Command_Interface, Command\Command_Serialize_Interface {
 	use Command\Command_Trait, Command\Command_Serialize_Trait, Command\Array_Key_Domain_Trait, Command\Array_Key_Privacy_Setting_Trait;
 
@@ -40,6 +59,11 @@ class Set implements Command\Command_Interface, Command\Command_Serialize_Interf
 	 */
 	private Entity\Whois_Privacy $privacy_setting;
 
+	/**
+	 * Construct the Domain\Privacy\Set
+	 * @param Domain_Name $domain
+	 * @param Whois_Privacy $privacy_setting
+	 */
 	public function __construct( Entity\Domain_Name $domain, Entity\Whois_Privacy $privacy_setting ) {
 		$this->domain = $domain;
 		$this->privacy_setting = $privacy_setting;
@@ -59,10 +83,16 @@ class Set implements Command\Command_Interface, Command\Command_Serialize_Interf
 		return $this->privacy_setting;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	public static function get_name(): string {
 		return 'Domain_Privacy_Set';
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	public function to_array(): array {
 		return [
 			self::get_domain_name_array_key() => $this->get_domain()->get_name(),
