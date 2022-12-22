@@ -20,6 +20,31 @@ namespace Automattic\Domain_Services\Command\Domain;
 
 use Automattic\Domain_Services\{Command, Entity};
 
+/**
+ * Deletes a domain
+ *
+ * - This command deletes a domain from the reseller's account
+ * - After you delete a domain, it may be impossible to register it again
+ * - Runs asynchronously on the server
+ * - Reseller will receive a `Domain\Delete\Success` or `Domain\Delete\Fail` event depending on the result of the command
+ *
+ * Example usage:
+ *
+ * ```
+ * $domain_name = new Entity\Domain_Name( 'example-domain.com' );
+ * $command = new Command\Domain\Delete( $domain_name );
+ *
+ * $response = $api->post( $command );
+ *
+ * if ( $response->is_success() ) {
+ *     // command was issued correctly, the client should wait for a `Domain\Delete\Success` or `Domain\Delete\Fail event`
+ * }
+ * ```
+ *
+ * @see \Automattic\Domain_Services\Response\Domain\Delete
+ * @see \Automattic\Domain_Services\Event\Domain\Delete\Success
+ * @see \Automattic\Domain_Services\Event\Domain\Delete\Fail
+ */
 class Delete implements Command\Command_Interface, Command\Command_Serialize_Interface {
 	use Command\Command_Trait, Command\Command_Serialize_Trait, Command\Array_Key_Domain_Trait;
 
@@ -30,11 +55,18 @@ class Delete implements Command\Command_Interface, Command\Command_Serialize_Int
 	 */
 	private Entity\Domain_Name $domain;
 
+	/**
+	 * Constructs the Delete command
+	 *
+	 * @param Entity\Domain_Name $domain
+	 */
 	public function __construct( Entity\Domain_Name $domain ) {
 		$this->domain = $domain;
 	}
 
 	/**
+	 * Returns the domain name that will be deleted
+	 *
 	 * @return Entity\Domain_Name
 	 */
 	public function get_domain(): Entity\Domain_Name {
@@ -42,12 +74,15 @@ class Delete implements Command\Command_Interface, Command\Command_Serialize_Int
 	}
 
 	/**
-	 * @return string
+	 * {@inheritDoc}
 	 */
 	public static function get_name(): string {
 		return 'Domain_Delete';
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	public function to_array(): array {
 		return [
 			self::get_domain_name_array_key() => $this->get_domain()->get_name(),
