@@ -27,6 +27,24 @@ use Automattic\Domain_Services\{Command, Entity};
  * - Reseller will receive a `Domain\Nameservers\Set\Success` or `Domain\Nameservers\Set\Fail` event depending on the
  *   result of the operation
  *
+ * Example usage:
+ *
+ * ```
+ * $domain_name = new Entity\Domain_Name( 'example-domain.com' );
+ * $nameservers_array = [
+ *     new Entity\Domain_Name( 'ns1.wordpress.com' ),
+ *     new Entity\Domain_Name( 'ns2.wordpress.com' ),
+ * ];
+ * $nameservers = new Entity\Nameservers( $nameservers_array );
+ * $command = new Command\Domain\Nameservers\Set( $domain_name, $nameservers );
+ *
+ * $response = $api->post( $command );
+ *
+ * if ( $response->is_success() ) {
+ *     // command was issued successfully, the client should wait for a `Domain\Nameservers\Set\Success` or `Domain\Nameservers\Set\Fail event`
+ * }
+ * ```
+ *
  * @see \Automattic\Domain_Services\Response\Domain\Nameservers\Set
  * @see \Automattic\Domain_Services\Event\Domain\Nameservers\Set\Success
  * @see \Automattic\Domain_Services\Event\Domain\Nameservers\Set\Fail
