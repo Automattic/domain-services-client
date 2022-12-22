@@ -21,9 +21,9 @@ namespace Automattic\Domain_Services\Response\Dns\Records;
 use Automattic\Domain_Services\{Entity, Response};
 
 /**
- * Response of a `Dns\Records\Get` command
+ * Response of a Dns\Records\Get command
  *
- * Contains all DNS records associated with a domain.
+ * Contains all DNS records associated with a domain, which can be accessed using the `get_dns_records` method.
  *
  * @see \Automattic\Domain_Services\COmmand\Dns\Records\Set
  */
