@@ -22,6 +22,8 @@ trait Command_Trait {
 	private string $client_txn_id = '';
 
 	/**
+	 * Gets the path part for this command on the API endpoint.
+	 *
 	 * @return string
 	 */
 	final public function get_resource_path(): string {
@@ -29,6 +31,8 @@ trait Command_Trait {
 	}
 
 	/**
+	 * Gets the client transaction ID set for this command.
+	 *
 	 * @return string
 	 */
 	final public function get_client_txn_id(): string {
@@ -36,6 +40,9 @@ trait Command_Trait {
 	}
 
 	/**
+	 * Sets the client transaction ID for this command. This optional value may be set by the reseller. It will be
+	 * reflected in the corresponding Response class and may be useful for logging and debugging.
+	 *
 	 * @param string $client_txn_id
 	 */
 	final public function set_client_txn_id( string $client_txn_id ): void {
