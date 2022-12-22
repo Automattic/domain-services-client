@@ -18,14 +18,24 @@
 
 namespace Automattic\Domain_Services\Response\Dns\Records;
 
-use Automattic\Domain_Services\{Entity, Response};
+use Automattic\Domain_Services\{Entity, Exception, Response};
 
 /**
- * Response containing all DNS records associated with a domain.
+ * Response of a Dns\Records\Get command
+ *
+ * Contains all DNS records associated with a domain, which can be accessed using the `get_dns_records` method.
+ *
+ * @see \Automattic\Domain_Services\COmmand\Dns\Records\Set
  */
 class Get implements Response\Response_Interface {
 	use Response\Data_Trait;
 
+	/**
+	 * Returns the DNS records associated with a domain
+	 *
+	 * @return Entity\Dns_Records
+	 * @throws Exception\Entity\Invalid_Value_Exception
+	 */
 	public function get_dns_records(): Entity\Dns_Records {
 		$dns_records_data = $this->get_data_by_key( 'data.dns_records' );
 

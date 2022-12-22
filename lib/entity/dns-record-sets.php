@@ -18,6 +18,13 @@
 
 namespace Automattic\Domain_Services\Entity;
 
+use Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception;
+
+/**
+ * Set of sets of DNS records
+ *
+ * @see \Automattic\Domain_Services\Entity\Dns_Record_Set
+ */
 class Dns_Record_Sets implements \Iterator {
 	/**
 	 * The list of EPP status codes that apply to a single domain
@@ -33,17 +40,33 @@ class Dns_Record_Sets implements \Iterator {
 	 */
 	private int $iterator_pointer = 0;
 
+	/**
+	 * Constructs a Dns_Record_Sets entity
+	 *
+	 * @param Dns_Record_Set ...$dns_record_sets
+	 */
 	public function __construct( Dns_Record_Set ...$dns_record_sets ) {
 		foreach ( $dns_record_sets as $dns_record_set ) {
 			$this->add_record_set( $dns_record_set );
 		}
 	}
 
+	/**
+	 * Adds a Dns_Record_Set to this entity
+	 *
+	 * @param Dns_Record_Set $dns_record_set
+	 * @return void
+	 */
 	public function add_record_set( Dns_Record_Set $dns_record_set ): void {
 		// @todo check for duplicates before adding new records?
 		$this->dns_record_sets[] = $dns_record_set;
 	}
 
+	/**
+	 * Returns each Dns_Record_Set in this entity as an array
+	 *
+	 * @return array
+	 */
 	public function to_array(): array {
 		$dns_record_sets = [];
 
@@ -54,6 +77,15 @@ class Dns_Record_Sets implements \Iterator {
 		return $dns_record_sets;
 	}
 
+	/**
+	 * Constructs a DNS_Record_Sets entity from an array of DNS record set values
+	 *
+	 * @param array $dns_record_sets_data
+	 * @return static
+	 * @throws Invalid_Value_Exception
+	 *
+	 * @see \Automattic\Domain_Services\Entity\Dns_Record_Set
+	 */
 	public static function from_array( array $dns_record_sets_data ): self {
 		$dns_record_sets = new self();
 
@@ -73,18 +105,38 @@ class Dns_Record_Sets implements \Iterator {
 		return $this->dns_record_sets[ $keys[ $this->iterator_pointer ] ];
 	}
 
+	/**
+	 * Part of the iterator interface implementation
+	 *
+	 * @return void
+	 */
 	public function next(): void {
 		$this->iterator_pointer++;
 	}
 
+	/**
+	 * Part of the iterator interface implementation
+	 *
+	 * @return int|null
+	 */
 	public function key(): ?int {
 		return $this->iterator_pointer;
 	}
 
+	/**
+	 * Part of the iterator interface implementation
+	 *
+	 * @return bool
+	 */
 	public function valid(): bool {
 		return $this->iterator_pointer < count( $this->dns_record_sets );
 	}
 
+	/**
+	 * Part of the iterator interface implementation
+	 *
+	 * @return void
+	 */
 	public function rewind(): void {
 		$this->iterator_pointer = 0;
 	}
