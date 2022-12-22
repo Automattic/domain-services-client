@@ -21,7 +21,24 @@ namespace Automattic\Domain_Services\Command\Contact;
 use Automattic\Domain_Services\{Command, Entity};
 
 /**
- * Retrieves the details of a Contact_Id.
+ * Retrieves the details of a contact by ID
+ *
+ * - The command returns the `Contact_Information` for a specific contact ID
+ * - This command runs synchoronously on the server
+ *
+ * ## Example:
+ * ```
+ * $contact_id = new Entity\Contact_Id( 'SP1:5499554' );
+ * $command = new Command\Contact\Details( $contact_id );
+ *
+ * $response = $api->post( $command );
+ * if ( $response->is_success() ) {
+ *     $contact_information = $response->get_contact_information();
+ * }
+ * ```
+ *
+ * @see \Automattic\Domain_Services\Response\Contact\Details
+ * @see \Automattic\Domain_Services\Command\Domain\Contacts\Set
  */
 class Details implements Command\Command_Interface, Command\Command_Serialize_Interface {
 	use Command\Command_Trait, Command\Command_Serialize_Trait, Command\Array_Key_Contact_Id_Trait;
@@ -41,6 +58,8 @@ class Details implements Command\Command_Interface, Command\Command_Serialize_In
 	}
 
 	/**
+	 * Gets the contact ID
+	 *
 	 * @return Entity\Contact_Id
 	 */
 	public function get_contact_id(): Entity\Contact_Id {
@@ -48,12 +67,15 @@ class Details implements Command\Command_Interface, Command\Command_Serialize_In
 	}
 
 	/**
-	 * @return string
+	 * {@inheritDoc}
 	 */
 	public static function get_name(): string {
 		return 'Contact_Details';
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	public function to_array(): array {
 		return [
 			self::get_contact_id_array_key() => (string) $this->get_contact_id(),

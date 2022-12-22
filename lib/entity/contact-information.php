@@ -72,6 +72,7 @@ class Contact_Information {
 	 * @param string|null $email
 	 * @param string|null $phone
 	 * @param string|null $fax
+	 *
 	 * @throws Exception\Entity\Invalid_Value_Exception
 	 */
 	public function __construct( ?string $first_name = null, ?string $last_name = null, ?string $organization = null, ?string $address_1 = null, ?string $address_2 = null, ?string $postal_code = null, ?string $city = null, ?string $state = null, ?string $country_code = null, ?string $email = null, ?string $phone = null, ?string $fax = null ) {
@@ -96,6 +97,7 @@ class Contact_Information {
 	 *
 	 * @param string      $key
 	 * @param string|null $contact_item_value
+	 *
 	 * @return Contact_Information
 	 * @throws Exception\Entity\Invalid_Value_Exception
 	 */
@@ -113,6 +115,7 @@ class Contact_Information {
 	 * Get the contact data value fot the given key
 	 *
 	 * @param string $key
+	 *
 	 * @return string|null
 	 */
 	public function get_by_key( string $key ): ?string {
@@ -120,6 +123,8 @@ class Contact_Information {
 	}
 
 	/**
+	 * Returns an array representation of this instance
+	 *
 	 * @return string[]
 	 */
 	public function to_array(): array {
@@ -127,6 +132,8 @@ class Contact_Information {
 	}
 
 	/**
+	 * Builds an instance from an array
+	 *
 	 * @throws Exception\Entity\Invalid_Value_Exception
 	 */
 	public static function from_array( array $data ): self {

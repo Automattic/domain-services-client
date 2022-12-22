@@ -18,10 +18,17 @@
 
 namespace Automattic\Domain_Services\Entity;
 
-use Automattic\Domain_Services\{Command};
+use Automattic\Domain_Services\{Command, Exception};
 
+/**
+ * Represents a domain contact
+ *
+ * Represents one of the domain's contacts and its privacy setting.
+ */
 class Domain_Contact {
-	use Command\Array_Key_Contact_Id_Trait, Command\Array_Key_Contact_Information_Trait, Command\Array_Key_Contact_Disclosure_Trait;
+	use Command\Array_Key_Contact_Id_Trait;
+	use Command\Array_Key_Contact_Information_Trait;
+	use Command\Array_Key_Contact_Disclosure_Trait;
 
 	/**
 	 * The contact ID
@@ -54,6 +61,11 @@ class Domain_Contact {
 		$this->contact_disclosure = $disclose_fields;
 	}
 
+	/**
+	 * Returns an array representation of this instance
+	 *
+	 * @return array
+	 */
 	public function to_array(): array {
 		$contact_id = $this->get_contact_id();
 		if ( null !== $contact_id ) {
@@ -72,6 +84,16 @@ class Domain_Contact {
 		];
 	}
 
+	/**
+	 * Builds an instance from an array
+	 *
+	 * The array can include `contact_id`, `contact_information`, and/or `contact_disclosure`
+	 *
+	 * @param array $data
+	 *
+	 * @return static
+	 * @throws Exception\Entity\Invalid_Value_Exception
+	 */
 	public static function from_array( array $data ): self {
 		$domain_contact = new Domain_Contact();
 
