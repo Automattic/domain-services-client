@@ -20,6 +20,13 @@ namespace Automattic\Domain_Services\Event\Domain\Delete;
 
 use Automattic\Domain_Services\{Event};
 
+/**
+ * Domain deletion success event
+ *
+ * This event is generated when a domain delete operation succeeds at the server.
+ *
+ * @see \Automattic\Domain_Services\Command\Domain\Delete
+ */
 class Success implements Event\Event_Interface {
 	use Event\Data_Trait, Event\Object_Type_Domain_Trait;
 }
