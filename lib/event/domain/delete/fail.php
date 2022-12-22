@@ -23,7 +23,7 @@ use Automattic\Domain_Services\{Event};
 /**
  * Domain deletion failed event
  *
- * This event is generated when a `Domain\Delete` command fails.
+ * This event is generated when a domain delete operation fails at the server.
  *
  * @see \Automattic\Domain_Services\Command\Domain\Delete
  */
