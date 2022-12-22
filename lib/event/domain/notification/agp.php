@@ -20,9 +20,26 @@ namespace Automattic\Domain_Services\Event\Domain\Notification;
 
 use Automattic\Domain_Services\{Entity, Event};
 
+/**
+ * Domain entered the Add Grace Period (AGP) event
+ *
+ * - This event is generated when a domain enters the Add Grace Period (AGP)
+ * - The AGP is a period (usually of 5 days) starting with the domain's registration when it can be deleted and its
+ *   registration cost will be credited back to the registrar
+ * - The idea of the AGP is to allow domains registered by mistake or with typos to be canceled with little to no
+ *   penalty for the registrant or registrars
+ * - Excessive cancellations in AGP may incur a penalty
+ * - This event may contain an `agp_end_date` property which can be retrieved using the `get_agp_end_date` method
+ *     - That is the date until which the domain is in AGP
+ */
 class Agp implements Event\Event_Interface {
 	use Event\Data_Trait, Event\Object_Type_Domain_Trait;
 
+	/**
+	 * Returns the date until which a domain is in AGP, if available
+	 *
+	 * @return \DateTimeImmutable|null
+	 */
 	public function get_agp_end_date(): ?\DateTimeImmutable {
 		$agp_end_date = $this->get_data_by_key( 'event_data.agp_end_date' );
 
