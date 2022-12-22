@@ -20,6 +20,11 @@ namespace Automattic\Domain_Services\Entity;
 
 use Automattic\Domain_Services\{Exception};
 
+/**
+ * Represents all contact types for a domain name
+ *
+ * @see Domain_Contact
+ */
 class Domain_Contacts implements \Iterator {
 	public const OWNER = 'owner';
 	public const ADMIN = 'admin';
@@ -52,6 +57,7 @@ class Domain_Contacts implements \Iterator {
 	 * @param Domain_Contact|null $admin
 	 * @param Domain_Contact|null $tech
 	 * @param Domain_Contact|null $billing
+	 *
 	 * @throws Exception\Entity\Invalid_Value_Exception
 	 */
 	public function __construct( ?Domain_Contact $owner = null, ?Domain_Contact $admin = null, ?Domain_Contact $tech = null, ?Domain_Contact $billing = null ) {
@@ -91,6 +97,20 @@ class Domain_Contacts implements \Iterator {
 		return $result;
 	}
 
+	/**
+	 * Builds an instance from an array
+	 *
+	 * - The $data array is expected to have the contact type as key and an array as a value.
+	 * - The array can either has a `contact_id` or a `contact_information` key with the corresponding data.
+	 * - There is also an optional `contact_disclosure` that can be passed for each contact.
+	 *
+	 * @param array $data
+	 *
+	 * @return static
+	 * @throws Exception\Entity\Invalid_Value_Exception
+	 *
+	 * @see Domain_Contact
+	 */
 	public static function from_array( array $data ): self {
 		$domain_contacts = new self();
 
@@ -105,8 +125,11 @@ class Domain_Contacts implements \Iterator {
 	}
 
 	/**
+	 * Sets domain contact by type
+	 *
 	 * @param string         $key
 	 * @param Domain_Contact $domain_contact
+	 *
 	 * @return void
 	 * @throws Exception\Entity\Invalid_Value_Exception
 	 */
@@ -119,7 +142,10 @@ class Domain_Contacts implements \Iterator {
 	}
 
 	/**
+	 * Gets domain contact by type
+	 *
 	 * @param string $key
+	 *
 	 * @return Domain_Contact|null
 	 * @throws Exception\Entity\Invalid_Value_Exception
 	 */
@@ -141,56 +167,84 @@ class Domain_Contacts implements \Iterator {
 	}
 
 	/**
+	 * Gets the domain owner's contact
+	 *
 	 * @return Domain_Contact|null
+	 * @throws Exception\Entity\Invalid_Value_Exception
 	 */
 	public function get_owner(): ?Domain_Contact {
 		return $this->get_by_key( self::OWNER );
 	}
 
 	/**
+	 * Sets the domain owner's contact
+	 *
 	 * @param Domain_Contact $owner
+	 *
+	 * @throws Exception\Entity\Invalid_Value_Exception
 	 */
 	public function set_owner( Domain_Contact $owner ): void {
 		$this->set_by_key( self::OWNER, $owner );
 	}
 
 	/**
+	 * Gets the domain admin's contact
+	 *
 	 * @return Domain_Contact|null
+	 * @throws Exception\Entity\Invalid_Value_Exception
 	 */
 	public function get_admin(): ?Domain_Contact {
 		return $this->get_by_key( self::ADMIN );
 	}
 
 	/**
+	 * Sets the domain admin's contact
+	 *
 	 * @param Domain_Contact|null $admin
+	 *
+	 * @throws Exception\Entity\Invalid_Value_Exception
 	 */
 	public function set_admin( Domain_Contact $admin ): void {
 		$this->set_by_key( self::ADMIN, $admin );
 	}
 
 	/**
+	 * Gets the domain tech's contact
+	 *
 	 * @return Domain_Contact|null
+	 * @throws Exception\Entity\Invalid_Value_Exception
 	 */
 	public function get_tech(): ?Domain_Contact {
 		return $this->get_by_key( self::TECH );
 	}
 
 	/**
+	 * Sets the domain tech's contact
+	 *
 	 * @param Domain_Contact|null $tech
+	 *
+	 * @throws Exception\Entity\Invalid_Value_Exception
 	 */
 	public function set_tech( Domain_Contact $tech ): void {
 		$this->set_by_key( self::TECH, $tech );
 	}
 
 	/**
+	 * Gets the domain billing's contact
+	 *
 	 * @return Domain_Contact|null
+	 * @throws Exception\Entity\Invalid_Value_Exception
 	 */
 	public function get_billing(): ?Domain_Contact {
 		return $this->get_by_key( self::BILLING );
 	}
 
 	/**
+	 * Sets the domain billing's contact
+	 *
 	 * @param Domain_Contact|null $billing
+	 *
+	 * @throws Exception\Entity\Invalid_Value_Exception
 	 */
 	public function set_billing( Domain_Contact $billing ): void {
 		$this->set_by_key( self::BILLING, $billing );
@@ -204,7 +258,7 @@ class Domain_Contacts implements \Iterator {
 	}
 
 	public function next(): void {
-		$this->iterator_pointer++;
+		$this->iterator_pointer ++;
 	}
 
 	public function key(): ?string {

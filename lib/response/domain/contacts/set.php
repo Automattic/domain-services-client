@@ -20,6 +20,11 @@ namespace Automattic\Domain_Services\Response\Domain\Contacts;
 
 use Automattic\Domain_Services\{Response};
 
+/**
+ * Response for Domain\Contacts\Set command
+ *
+ * @see \Automattic\Domain_Services\Command\Domain\Contacts\Set
+ */
 class Set implements Response\Response_Interface {
 	use Response\Data_Trait;
 }
