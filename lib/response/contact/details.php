@@ -18,10 +18,12 @@
 
 namespace Automattic\Domain_Services\Response\Contact;
 
-use Automattic\Domain_Services\{Entity, Response};
+use Automattic\Domain_Services\{Entity, Response, Exception};
 
 /**
  * Response containing the Contact_Information associated with a Contact_Id.
+ *
+ * @see \Automattic\Domain_Services\Command\Contact\Details
  */
 class Details implements Response\Response_Interface {
 	use Response\Data_Trait;
@@ -31,15 +33,20 @@ class Details implements Response\Response_Interface {
 	public const VERIFIED = 'data.verified';
 
 	/**
+	 * Returns the contact information
+	 *
 	 * @return Entity\Contact_Information
-	 * @throws \ReflectionException
+	 * @throws Exception\Entity\Invalid_Value_Exception
 	 */
 	public function get_contact_information(): Entity\Contact_Information {
 		$contact_information_data = $this->get_data_by_key( self::CONTACT_INFORMATION );
+
 		return Entity\Contact_Information::from_array( $contact_information_data );
 	}
 
 	/**
+	 * Returns whether a contact is validated or not
+	 *
 	 * @return bool
 	 */
 	public function is_validated(): bool {
@@ -47,6 +54,8 @@ class Details implements Response\Response_Interface {
 	}
 
 	/**
+	 * Returns whether a contact is verified or not
+	 *
 	 * @return bool
 	 */
 	public function is_verified(): bool {
