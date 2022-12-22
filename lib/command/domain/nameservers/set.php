@@ -21,7 +21,33 @@ namespace Automattic\Domain_Services\Command\Domain\Nameservers;
 use Automattic\Domain_Services\{Command, Entity};
 
 /**
- * Set the nameservers for the specified domain
+ * Sets name servers for the specified domain
+ *
+ * - Runs asynchronously on the server
+ * - Reseller will receive a `Domain\Nameservers\Set\Success` or `Domain\Nameservers\Set\Fail` event depending on the
+ *   result of the operation
+ *
+ * Example usage:
+ *
+ * ```
+ * $domain_name = new Entity\Domain_Name( 'example-domain.com' );
+ * $nameservers_array = [
+ *     new Entity\Domain_Name( 'ns1.wordpress.com' ),
+ *     new Entity\Domain_Name( 'ns2.wordpress.com' ),
+ * ];
+ * $nameservers = new Entity\Nameservers( $nameservers_array );
+ * $command = new Command\Domain\Nameservers\Set( $domain_name, $nameservers );
+ *
+ * $response = $api->post( $command );
+ *
+ * if ( $response->is_success() ) {
+ *     // command was issued successfully, the client should wait for a `Domain\Nameservers\Set\Success` or `Domain\Nameservers\Set\Fail event`
+ * }
+ * ```
+ *
+ * @see \Automattic\Domain_Services\Response\Domain\Nameservers\Set
+ * @see \Automattic\Domain_Services\Event\Domain\Nameservers\Set\Success
+ * @see \Automattic\Domain_Services\Event\Domain\Nameservers\Set\Fail
  */
 class Set implements Command\Command_Interface, Command\Command_Serialize_Interface {
 	use Command\Command_Trait, Command\Command_Serialize_Trait, Command\Array_Key_Domain_Trait, Command\Array_Key_Nameservers_Trait;
@@ -70,6 +96,9 @@ class Set implements Command\Command_Interface, Command\Command_Serialize_Interf
 		return 'Domain_Nameservers_Set';
 	}
 
+	/**
+	 * @return array
+	 */
 	public function to_array(): array {
 		return [
 			self::get_domain_name_array_key() => $this->get_domain()->get_name(),

@@ -21,7 +21,16 @@ namespace Automattic\Domain_Services\Response\Domain\Nameservers;
 use Automattic\Domain_Services\Response;
 
 /**
- * Response of a Domain_Nameserver_Set command.
+ * Response of a Domain\Nameservers\Set command
+ *
+ * - The name server update operation runs asynchronously at the server
+ * - A success response indicates that the operation was queued, not completed
+ *     - The `Domain\Nameservers\Set\Success` and `Domain\Nameservers\Set\Fail` events will indicate whether the
+ *       operation was successful or not
+ *
+ * @see \Automattic\Domain_Services\Command\Domain\Nameservers\Set
+ * @see \Automattic\Domain_Services\Event\Domain\Nameservers\Set\Success
+ * @see \Automattic\Domain_Services\Event\Domain\Nameservers\Set\Fail
  */
 class Set implements Response\Response_Interface {
 	use Response\Data_Trait;
