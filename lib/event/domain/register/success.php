@@ -30,10 +30,11 @@ use Automattic\Domain_Services\{Entity, Event};
 class Success implements Event\Event_Interface {
 	use Event\Data_Trait, Event\Object_Type_Domain_Trait;
 
-	 /**
-		* Gets the list of domain statuses
-		* @return null|Entity\Epp_Status_Codes
-		*/
+	/**
+	* Gets the list of domain statuses
+	*
+	* @return null|Entity\Epp_Status_Codes
+	*/
 	public function get_domain_statuses(): Entity\Epp_Status_Codes {
 		$epp_statuses_data = $this->get_data_by_key( 'event_data.domain_statuses' );
 		$epp_statuses = [];
@@ -45,6 +46,7 @@ class Success implements Event\Event_Interface {
 
 	/**
 	 * Gets the date the domain was created
+	 *
 	 * @return null|\DateTimeInterface
 	 */
 	public function get_created_date(): ?\DateTimeInterface {
@@ -54,6 +56,7 @@ class Success implements Event\Event_Interface {
 
 	/**
 	 * Gets the domain expiration date
+	 *
 	 * @return null|\DateTimeInterface
 	 */
 	public function get_expiration_date(): ?\DateTimeInterface {
@@ -63,6 +66,7 @@ class Success implements Event\Event_Interface {
 
 	/**
 	 * Get the last date to renew the domain
+	 *
 	 * @return null|\DateTimeInterface
 	 */
 	public function get_renewable_until(): ?\DateTimeInterface {

@@ -190,6 +190,7 @@ class Register implements Command\Command_Interface, Command\Command_Serialize_I
 
 	/**
 	 * Get the amount of years for which the domain is to be renewed.
+	 *
 	 * @return int
 	 */
 	public function get_period(): int {
@@ -207,6 +208,7 @@ class Register implements Command\Command_Interface, Command\Command_Serialize_I
 
 	/**
 	 * Gets the dns records to be set for the domain
+	 *
 	 * @return ?Entity\Dns_Records
 	 */
 	public function get_dns_records(): ?Entity\Dns_Records {
@@ -215,6 +217,7 @@ class Register implements Command\Command_Interface, Command\Command_Serialize_I
 
 	/**
 	 * Gets the Whois privacy setting to be used for this domain.
+	 *
 	 * @return string
 	 */
 	public function get_privacy_setting(): string {
