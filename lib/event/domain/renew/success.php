@@ -20,18 +20,40 @@ namespace Automattic\Domain_Services\Event\Domain\Renew;
 
 use Automattic\Domain_Services\{Entity, Event};
 
+/**
+ * Domain renewed successfully event
+ *
+ * This event is generated when a domain renewal operation has completed successfully at the server.
+ *
+ * @see \Automattic\Domain_Services\Command\Domain\Renew
+ */
 class Success implements Event\Event_Interface {
 	use Event\Data_Trait, Event\Object_Type_Domain_Trait;
 
+	/**
+	 * Returns the domain status after the renewal operation
+	 *
+	 * @return string|null
+	 */
 	public function get_domain_status(): ?string {
 		return $this->get_data_by_key( 'event_data.domain_status' );
 	}
 
+	/**
+	 * Returns the domain expiration date after the renewal operation
+	 *
+	 * @return \DateTimeInterface|null
+	 */
 	public function get_expiration_date(): ?\DateTimeInterface {
 		$expiration_date = $this->get_data_by_key( 'event_data.expiration_date' );
 		return null === $expiration_date ? null : \DateTimeImmutable::createFromFormat( Entity\Entity_Interface::DATE_FORMAT, $expiration_date );
 	}
 
+	/**
+	 * Returns the date until which the domain can be renewed after the renewal operation
+	 *
+	 * @return \DateTimeInterface|null
+	 */
 	public function get_renewable_until(): ?\DateTimeInterface {
 		$renewable_until = $this->get_data_by_key( 'event_data.renewable_until' );
 		return null === $renewable_until ? null : \DateTimeImmutable::createFromFormat( Entity\Entity_Interface::DATE_FORMAT, $renewable_until );
