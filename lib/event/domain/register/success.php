@@ -18,7 +18,7 @@
 
 namespace Automattic\Domain_Services\Event\Domain\Register;
 
-use Automattic\Domain_Services\{Entity, Event};
+use Automattic\Domain_Services\{Entity, Event, Exception};
 
 /**
  * Success event for a `Domain\Register` command.
@@ -28,13 +28,14 @@ use Automattic\Domain_Services\{Entity, Event};
  * @see \Automattic\Domain_Services\Command\Domain\Register
  */
 class Success implements Event\Event_Interface {
-	use Event\Data_Trait, Event\Object_Type_Domain_Trait;
+	use Event\Data_Trait;
+	use Event\Object_Type_Domain_Trait;
 
 	/**
-	* Gets the list of domain statuses
-	*
-	* @return null|Entity\Epp_Status_Codes
-	*/
+	 * Gets the list of domain statuses
+	 *
+	 * @return null|Entity\Epp_Status_Codes
+	 */
 	public function get_domain_statuses(): Entity\Epp_Status_Codes {
 		$epp_statuses_data = $this->get_data_by_key( 'event_data.domain_statuses' );
 		$epp_statuses = [];
@@ -77,7 +78,7 @@ class Success implements Event\Event_Interface {
 	/**
 	 * Gets the date when the domain will be suspended if the contact information is not verified
 	 *
-	 * @return null|\DateTimeInterface 
+	 * @return null|\DateTimeInterface
 	 */
 	public function get_unverified_contact_suspension_date(): ?\DateTimeInterface {
 		$unverified_contact_suspension_date = $this->get_data_by_key( 'event_data.unverified_contact_suspension_date' );
@@ -87,8 +88,8 @@ class Success implements Event\Event_Interface {
 	/**
 	 * Gets the contacts set for the domain
 	 *
-	 * @return null|Domain_Contacts
-	 * @throws Invalid_Value_Exception
+	 * @return null|Entity\Domain_Contacts
+	 * @throws Exception\Entity\Invalid_Value_Exception
 	 */
 	public function get_contacts(): ?Entity\Domain_Contacts {
 		$contact_data = $this->get_data_by_key( 'event_data.contacts' ) ?? [];

@@ -39,12 +39,15 @@ use Automattic\Domain_Services\{Command, Entity};
  * }
  * ```
  *
- * @see \Automattic\Domain_Services\Response\Domain\Set\Privacy
- * @see \Automattic\Domain_Services\Event\Domain\Set\Privacy\Success
  * @see \Automattic\Domain_Services\Event\Domain\Set\Privacy\Fail
+ * @see \Automattic\Domain_Services\Event\Domain\Set\Privacy\Success
+ * @see \Automattic\Domain_Services\Response\Domain\Set\Privacy
  */
 class Privacy implements Command\Command_Interface, Command\Command_Serialize_Interface {
-	use Command\Command_Trait, Command\Command_Serialize_Trait, Command\Array_Key_Domain_Trait, Command\Array_Key_Privacy_Setting_Trait;
+	use Command\Array_Key_Domain_Trait;
+	use Command\Array_Key_Privacy_Setting_Trait;
+	use Command\Command_Serialize_Trait;
+	use Command\Command_Trait;
 
 	/**
 	 * The domain that will be updated.
@@ -63,8 +66,8 @@ class Privacy implements Command\Command_Interface, Command\Command_Serialize_In
 	/**
 	 * Construct the Domain\Set\Privacy
 	 *
-	 * @param Domain_Name   $domain
-	 * @param Whois_Privacy $privacy_setting
+	 * @param Entity\Domain_Name   $domain
+	 * @param Entity\Whois_Privacy $privacy_setting
 	 */
 	public function __construct( Entity\Domain_Name $domain, Entity\Whois_Privacy $privacy_setting ) {
 		$this->domain = $domain;

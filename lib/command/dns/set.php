@@ -54,16 +54,18 @@ use Automattic\Domain_Services\{Command, Entity};
  *
  * if ( $response->is_success() ) {
  *     $domain_name = $response->get_domain_name();
- *     $reords_added = $response->get_records_added();
+ *     $records_added = $response->get_records_added();
  *     $records_deleted = $response->get_records_deleted();
  * }
  * ```
  *
- * @see \Automattic\Domain_Services\Response\Dns\Set
  * @see \Automattic\Domain_Services\Command\Dns\Get
+ * @see \Automattic\Domain_Services\Response\Dns\Set
  */
 class Set implements Command\Command_Interface, Command\Command_Serialize_Interface {
-	use Command\Command_Trait, Command\Command_Serialize_Trait, Command\Array_Key_Dns_Records_Trait;
+	use Command\Array_Key_Dns_Records_Trait;
+	use Command\Command_Serialize_Trait;
+	use Command\Command_Trait;
 
 	/**
 	 * DNS records that will be set at the server

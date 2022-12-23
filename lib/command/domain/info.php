@@ -29,7 +29,9 @@ use Automattic\Domain_Services\{Command, Entity};
  * @see \Automattic\Domain_Services\Response\Domain\Info
  */
 class Info implements Command\Command_Interface, Command\Command_Serialize_Interface {
-	use Command\Command_Trait, Command\Command_Serialize_Trait, Command\Array_Key_Domain_Trait;
+	use Command\Array_Key_Domain_Trait;
+	use Command\Command_Serialize_Trait;
+	use Command\Command_Trait;
 
 	/**
 	 * @var Entity\Domain_Name domain which information will be retrieved

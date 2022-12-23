@@ -33,7 +33,8 @@ use Automattic\Domain_Services\{Entity, Event};
  *     - That is the date until which the domain is in AGP
  */
 class Agp implements Event\Event_Interface {
-	use Event\Data_Trait, Event\Object_Type_Domain_Trait;
+	use Event\Data_Trait;
+	use Event\Object_Type_Domain_Trait;
 
 	/**
 	 * Returns the date until which a domain is in AGP, if available

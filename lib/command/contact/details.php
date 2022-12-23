@@ -24,7 +24,7 @@ use Automattic\Domain_Services\{Command, Entity};
  * Retrieves the details of a contact by ID
  *
  * - The command returns the `Contact_Information` for a specific contact ID
- * - This command runs synchoronously on the server
+ * - This command runs synchronously on the server
  *
  * ## Example:
  * ```

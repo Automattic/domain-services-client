@@ -21,7 +21,8 @@ namespace Automattic\Domain_Services\Event\Domain\Set\Transferlock;
 use Automattic\Domain_Services\{Event};
 
 class Success implements Event\Event_Interface {
-	use Event\Data_Trait, Event\Object_Type_Domain_Trait;
+	use Event\Data_Trait;
+	use Event\Object_Type_Domain_Trait;
 
 	public function is_locked(): bool {
 		return $this->get_data_by_key( 'event_data.transferlock' ) ?? false;

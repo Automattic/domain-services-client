@@ -29,7 +29,8 @@ class Whois_Privacy {
 	 */
 	public const DISCLOSE_CONTACT_INFO = 'disclose_contact_info';
 	/**
-	 * Contact information is redacted in whois query results (for each field a generic "REDACTED FOR PRIVACY" is displayed)
+	 * Contact information is redacted in whois query results (for each field a generic "REDACTED FOR PRIVACY" is
+	 * displayed)
 	 */
 	public const REDACT_CONTACT_INFO = 'redact_contact_info';
 	/**
@@ -54,7 +55,7 @@ class Whois_Privacy {
 	 * Whois_Privacy entity constructor
 	 *
 	 * @param string $setting
-	 * @throws Invalid_Value_Exception 
+	 * @throws Exception\Entity\Invalid_Value_Exception
 	 */
 	public function __construct( string $setting ) {
 		if ( ! in_array( $setting, self::VALID_PRIVACY_SETTINGS ) ) {

@@ -27,7 +27,8 @@ use Automattic\Domain_Services\{Command, Exception};
  * @see Dns_Record_Sets
  */
 class Dns_Records {
-	use Command\Array_Key_Domain_Trait, Command\Array_Key_Dns_Record_Sets_Trait;
+	use Command\Array_Key_Dns_Record_Sets_Trait;
+	use Command\Array_Key_Domain_Trait;
 
 	/**
 	 * The domain name that the DNS records apply to.
@@ -46,7 +47,7 @@ class Dns_Records {
 	/**
 	 * Constructs a Dns_Records entity
 	 *
-	 * @param Domain_Name $domain
+	 * @param Domain_Name     $domain
 	 * @param Dns_Record_Sets $record_sets
 	 */
 	public function __construct( Domain_Name $domain, Dns_Record_Sets $record_sets ) {

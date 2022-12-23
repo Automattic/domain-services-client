@@ -26,7 +26,7 @@ class Dns_Record_Set_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 			'name' => 'www2',
 			'type' => 'CNAME',
 			'ttl' => 3600,
-			'data' => [ 'nomado-test-2022-07-11.com.' ]
+			'data' => [ 'nomado-test-2022-07-11.com.' ],
 		];
 
 		$entity = new Entity\Dns_Record_Set( $record['name'], new Entity\Dns_Record_Type( $record['type'] ), $record['ttl'], $record['data'] );
@@ -41,7 +41,7 @@ class Dns_Record_Set_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 			'name' => 'www2',
 			'type' => 'CNAME',
 			'ttl' => 3600,
-			'data' => [ 'nomado-test-2022-07-11.com.' ]
+			'data' => [ 'nomado-test-2022-07-11.com.' ],
 		];
 
 		$entity = Entity\Dns_Record_Set::from_array( $record );
@@ -56,7 +56,7 @@ class Dns_Record_Set_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 			'name' => 'www2',
 			'type' => 'CNAME',
 			'ttl' => 3600,
-			'data' => [ 'nomado-test-2022-07-11.com.' ]
+			'data' => [ 'nomado-test-2022-07-11.com.' ],
 		];
 
 		$this->expectException( \TypeError::class );

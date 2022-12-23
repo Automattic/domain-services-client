@@ -55,7 +55,12 @@ use Automattic\Domain_Services\{Command, Entity};
  * @see \Automattic\Domain_Services\Event\Domain\Renew\Fail
  */
 class Renew implements Command\Command_Interface, Command\Command_Serialize_Interface {
-	use Command\Command_Trait, Command\Command_Serialize_Trait, Command\Array_Key_Domain_Trait, Command\Array_Key_Period_Trait, Command\Array_Key_Current_Expiration_Year_Trait, Command\Array_Key_Fee_Amount_Trait;
+	use Command\Array_Key_Current_Expiration_Year_Trait;
+	use Command\Array_Key_Domain_Trait;
+	use Command\Array_Key_Fee_Amount_Trait;
+	use Command\Array_Key_Period_Trait;
+	use Command\Command_Serialize_Trait;
+	use Command\Command_Trait;
 
 	/**
 	 * The domain name to renew
@@ -96,9 +101,9 @@ class Renew implements Command\Command_Interface, Command\Command_Serialize_Inte
 	 * Constructs a Domain\Renew command
 	 *
 	 * @param Entity\Domain_Name $domain
-	 * @param int $current_expiration_year
-	 * @param int $period
-	 * @param float|null $fee_amount
+	 * @param int                $current_expiration_year
+	 * @param int                $period
+	 * @param float|null         $fee_amount
 	 */
 	public function __construct( Entity\Domain_Name $domain, int $current_expiration_year, int $period = 1, ?float $fee_amount = null ) {
 		$this->domain = $domain;

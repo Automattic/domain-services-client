@@ -22,6 +22,7 @@ use Automattic\Domain_Services\{Exception};
 
 /**
  * A class that represents an EPP status code
+ *
  * @link: https://www.icann.org/resources/pages/epp-status-codes-2014-06-16-en
  */
 class Epp_Status_Code {
