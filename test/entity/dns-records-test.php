@@ -28,13 +28,13 @@ class Dns_Records_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 				'name' => 'www2',
 				'type' => 'CNAME',
 				'ttl' => 3600,
-				'data' => [ 'nomado-dns-records-test.com.' ]
+				'data' => [ 'nomado-dns-records-test.com.' ],
 			],
 			[
 				'name' => 'www3',
 				'type' => 'CNAME',
 				'ttl' => 3600,
-				'data' => [ 'nomado-dns-records-test.com.' ]
+				'data' => [ 'nomado-dns-records-test.com.' ],
 			],
 		];
 
@@ -56,13 +56,13 @@ class Dns_Records_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 				'name' => 'www2',
 				'type' => 'CNAME',
 				'ttl' => 3600,
-				'data' => [ 'nomado-dns-records-test.com.' ]
+				'data' => [ 'nomado-dns-records-test.com.' ],
 			],
 			[
 				'name' => 'www3',
 				'type' => 'CNAME',
 				'ttl' => 3600,
-				'data' => [ 'nomado-dns-records-test.com.' ]
+				'data' => [ 'nomado-dns-records-test.com.' ],
 			],
 		];
 

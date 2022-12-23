@@ -18,14 +18,14 @@
 
 namespace Automattic\Domain_Services\Event;
 
-use Automattic\Domain_Services\{Exception, Response};
+use Automattic\Domain_Services\{Exception};
 
 class Factory {
 	public function build_event( array $event_data ): Event_Interface {
 		$event_class = $event_data['event_class'] ?? null;
 		$event_subclass = $event_data['event_subclass'] ?? null;
 
-		if ( null === $event_class or null === $event_subclass ) {
+		if ( null === $event_class || null === $event_subclass ) {
 			throw new Exception\Event\Invalid_Event_Name( 'Missing event class or subclass' );
 		}
 

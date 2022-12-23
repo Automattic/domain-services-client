@@ -49,13 +49,16 @@ use Automattic\Domain_Services\{Command, Entity, Exception};
  * ```
  *
  * @see \Automattic\Domain_Services\Response\Domain\Set\Contacts
+ * @see Entity\Contact_Id
+ * @see Entity\Contact_Information
  * @see Entity\Domain_Contacts
  * @see Entity\Domain_Contact
- * @see Entity\Contact_Information
- * @see Entity\Contact_Id
  */
 class Contacts implements Command\Command_Interface, Command\Command_Serialize_Interface {
-	use Command\Command_Trait, Command\Command_Serialize_Trait, Command\Array_Key_Contacts_Trait, Command\Array_Key_Domain_Trait;
+	use Command\Array_Key_Contacts_Trait;
+	use Command\Array_Key_Domain_Trait;
+	use Command\Command_Serialize_Trait;
+	use Command\Command_Trait;
 
 	/**
 	 * The domain name that will be updated.

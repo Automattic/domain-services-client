@@ -59,10 +59,10 @@ class Dns_Record_Set {
 	/**
 	 * Constructs a Dns_Record_Set entity
 	 *
-	 * @param string $name
+	 * @param string          $name
 	 * @param Dns_Record_Type $type
-	 * @param int $ttl
-	 * @param array $data
+	 * @param int             $ttl
+	 * @param array           $data
 	 */
 	public function __construct( string $name, Dns_Record_Type $type, int $ttl, array $data ) {
 		$this->name = $name;

@@ -76,7 +76,7 @@ class ApiTest extends Test\Lib\Domain_Services_Client_Test_Case {
 			/** @var Response\Domain\Set\Contacts $response */
 			$response = $api->post( $command, $client_transaction_id );
 
-			// Extract some data from the resopnse
+			// Extract some data from the response
 			$this->assertEquals( $mock_response_array['status'], $response->get_status() );
 			$this->assertEquals( $mock_response_array['status_description'], $response->get_status_description() );
 			$this->assertEquals( $mock_response_array['status_description'], $response->get_status_description() );

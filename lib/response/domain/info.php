@@ -130,7 +130,6 @@ class Info implements Response\Response_Interface {
 	 * Gets the whois privacy setting for the domain
 	 *
 	 * @return Entity\Whois_Privacy|null
-	 * @throws \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception
 	 */
 	public function get_privacy_setting(): ?Entity\Whois_Privacy {
 		$privacy_setting_data = $this->get_data_by_key( 'data.privacy_setting' );

@@ -40,7 +40,8 @@ use Automattic\Domain_Services\{Entity, Event};
  * @see \Automattic\Domain_Services\Event\Domain\Notification\Redemption
  */
 class Auction implements Event\Event_Interface {
-	use Event\Data_Trait, Event\Object_Type_Domain_Trait;
+	use Event\Data_Trait;
+	use Event\Object_Type_Domain_Trait;
 
 	/**
 	 * This should be one of PARKED, SUBMITTED, ACTIVE

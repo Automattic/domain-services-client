@@ -25,7 +25,8 @@ use Automattic\Domain_Services\{Command, Entity, Exception};
  *
  * - This command requests a new domain registration
  * - It runs asynchronously on the server
- * - Reseller will receive a Domain\Register\Success or Domain\Register\Fail event depending on the result of the command
+ * - Reseller will receive a Domain\Register\Success or Domain\Register\Fail event depending on the result of the
+ *   command
  *
  * Example usage:
  * ```
@@ -68,7 +69,8 @@ use Automattic\Domain_Services\{Command, Entity, Exception};
  *     )
  *   )
  * );
- * $command = new Command\Domain\Register( $domain_name, $contacts, 1, $name_servers, $dns_records, Entity\Whois_Privacy::ENABLE_PRIVACY_SERVICE, null );
+ * $command = new Command\Domain\Register( $domain_name, $contacts, 1, $name_servers, $dns_records,
+ * Entity\Whois_Privacy::ENABLE_PRIVACY_SERVICE, null );
  * $response = $api->post( $command );
  * if ( $response->is_success() ) {
  *   // The register request was successfully queued.
@@ -81,7 +83,10 @@ use Automattic\Domain_Services\{Command, Entity, Exception};
  * @see     \Automattic\Domain_Services\Response\Domain\Register
  */
 class Register implements Command\Command_Interface, Command\Command_Serialize_Interface {
-	use Command\Command_Trait, Command\Command_Serialize_Trait, Command\Array_Key_Domain_Trait, Command\Array_Key_Contacts_Trait;
+	use Command\Array_Key_Contacts_Trait;
+	use Command\Array_Key_Domain_Trait;
+	use Command\Command_Serialize_Trait;
+	use Command\Command_Trait;
 
 	/**
 	 * The domain name to register
@@ -117,7 +122,7 @@ class Register implements Command\Command_Interface, Command\Command_Serialize_I
 	 * The DNS records to set for this domain, if using WordPress.com nameservers.
 	 * (Optional, defaults to no records.)
 	 *
-	 * @var Entity\Dns_Records
+	 * @var Entity\Dns_Records|null
 	 */
 	private ?Entity\Dns_Records $dns_records;
 
@@ -140,14 +145,14 @@ class Register implements Command\Command_Interface, Command\Command_Serialize_I
 	/**
 	 * Constructs the Register command
 	 *
-	 * @param Entity\Domain_Name $domain
-	 * @param Entity\Domain_Contacts $contacts
-	 * @param int $period
+	 * @param Entity\Domain_Name      $domain
+	 * @param Entity\Domain_Contacts  $contacts
+	 * @param int                     $period
 	 * @param Entity\Nameservers|null $nameservers
 	 * @param Entity\Dns_Records|null $dns_records
-	 * @param string $privacy_setting
-	 * @param null|int $price
-	 * @throws Exception\Invalid_Value_Exception
+	 * @param string                  $privacy_setting
+	 * @param null|int                $price
+	 * @throws Exception\Entity\Invalid_Value_Exception
 	 */
 	public function __construct( Entity\Domain_Name $domain, Entity\Domain_Contacts $contacts, int $period = 1, Entity\Nameservers $nameservers = null, Entity\Dns_Records $dns_records = null, string $privacy_setting = 'a8c_privacy_service', ?int $price = null ) {
 		if ( null === $nameservers ) {

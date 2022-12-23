@@ -103,7 +103,7 @@ class Nameservers_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	private function generate_nameservers( int $count ) {
 		$nameservers = [];
 
-		for ( $i = 1; $i <= $count; $i ++ ) {
+		for ( $i = 1; $i <= $count; $i++ ) {
 			$nameservers[] = "ns$i.nameservers-test.com";
 		}
 

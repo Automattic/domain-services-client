@@ -21,7 +21,10 @@ namespace Automattic\Domain_Services\Test\Command;
 use Automattic\Domain_Services\{Command, Entity, Test};
 
 class Domain_Renew_Test extends Test\Lib\Domain_Services_Client_Test_Case {
-	use Command\Array_Key_Domain_Trait, Command\Array_Key_Current_Expiration_Year_Trait, Command\Array_Key_Fee_Amount_Trait, Command\Array_Key_Period_Trait;
+	use Command\Array_Key_Current_Expiration_Year_Trait;
+	use Command\Array_Key_Domain_Trait;
+	use Command\Array_Key_Fee_Amount_Trait;
+	use Command\Array_Key_Period_Trait;
 
 	public function test_command_instance_success(): void {
 		$mock_command_data = [

@@ -25,11 +25,12 @@ use Automattic\Domain_Services\{Response};
  *
  * - The domain renewal operation runs asynchronously at the server
  * - A success response indicates that the operation was queued, not completed
- *     - The `Domain\Renew\Success` and `Domain\Renew\Fail` events will indicate whether the operation was successful or not
+ *     - The `Domain\Renew\Success` and `Domain\Renew\Fail` events will indicate whether the operation was successful
+ *     or not
  *
  * @see \Automattic\Domain_Services\Command\Domain\Renew
- * @see \Automattic\Domain_Services\Event\Domain\Renew\Success
  * @see \Automattic\Domain_Services\Event\Domain\Renew\Fail
+ * @see \Automattic\Domain_Services\Event\Domain\Renew\Success
  */
 class Renew implements Response\Response_Interface {
 	use Response\Data_Trait;
