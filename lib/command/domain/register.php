@@ -69,8 +69,15 @@ use Automattic\Domain_Services\{Command, Entity, Exception};
  *     )
  *   )
  * );
- * $command = new Command\Domain\Register( $domain_name, $contacts, 1, $name_servers, $dns_records,
- * Entity\Whois_Privacy::ENABLE_PRIVACY_SERVICE, null );
+ * $command = new Command\Domain\Register(
+ *     $domain_name,
+ *     $contacts,
+ *     1,
+ *     $name_servers,
+ *     $dns_records,
+ *     Entity\Whois_Privacy::ENABLE_PRIVACY_SERVICE,
+ *     null
+ * );
  * $response = $api->post( $command );
  * if ( $response->is_success() ) {
  *   // The register request was successfully queued.
