@@ -38,10 +38,12 @@ use Automattic\Domain_Services\{Command, Entity};
  * ```
  *
  * @see \Automattic\Domain_Services\Response\Contact\Details
- * @see \Automattic\Domain_Services\Command\Domain\Contacts\Set
+ * @see \Automattic\Domain_Services\Command\Domain\Set\Contacts
  */
 class Details implements Command\Command_Interface, Command\Command_Serialize_Interface {
-	use Command\Command_Trait, Command\Command_Serialize_Trait, Command\Array_Key_Contact_Id_Trait;
+	use Command\Array_Key_Contact_Id_Trait;
+	use Command\Command_Serialize_Trait;
+	use Command\Command_Trait;
 
 	/**
 	 * The contact ID to get details of.

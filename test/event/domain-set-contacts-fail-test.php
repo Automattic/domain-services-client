@@ -20,7 +20,7 @@ namespace Automattic\Domain_Services\Test\Event;
 
 use Automattic\Domain_Services\{Command, Event, Response, Test};
 
-class Domain_Contacts_Set_Fail_Test extends Test\Lib\Domain_Services_Client_Test_Case {
+class Domain_Set_Contacts_Fail_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_event_success(): void {
 		$command = new Command\Event\Details( 1234 );
 
@@ -35,7 +35,7 @@ class Domain_Contacts_Set_Fail_Test extends Test\Lib\Domain_Services_Client_Test
 			'data' => [
 				'event' => [
 					'id' => 1234,
-					'event_class' => 'Domain_Contacts_Set',
+					'event_class' => 'Domain_Set_Contacts',
 					'event_subclass' => 'Fail',
 					'object_type' => 'domain',
 					'object_id' => 'example.com',
@@ -48,7 +48,7 @@ class Domain_Contacts_Set_Fail_Test extends Test\Lib\Domain_Services_Client_Test
 							'subclass' => 'Invalid_Value',
 							'data' =>
 								[
-									'invalid_option' => 'Automattic\\Domain_Services\\Command\\Domain\\Contacts\\Set',
+									'invalid_option' => 'Automattic\\Domain_Services\\Command\\Domain\\Contacts\\Contacts',
 									'reason' => 'Missing country code.',
 								],
 						],
@@ -65,7 +65,7 @@ class Domain_Contacts_Set_Fail_Test extends Test\Lib\Domain_Services_Client_Test
 		$event = $response_object->get_event();
 		$this->assertNotNull( $event );
 
-		$this->assertInstanceOf( Event\Domain\Contacts\Set\Fail::class, $event );
+		$this->assertInstanceOf( Event\Domain\Set\Contacts\Fail::class, $event );
 		$this->assertSame( $response_data['data']['event']['object_id'], $event->get_domain()->get_name() );
 		$this->assertSame( $response_data['data']['event']['event_data']['error']['data']['reason'], $event->get_error_reason() );
 	}
