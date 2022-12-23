@@ -23,7 +23,7 @@ use Automattic\Domain_Services\{Event};
 /**
  * Domain failed to renew event
  *
- * - This event is generated when a domain renewal operation fails
+ * - This event is generated when a domain renewal operation fails at the server
  * - There might be more information about the cause of the failure in the event data
  *
  * @see \Automattic\Domain_Services\Command\Domain\Renew
