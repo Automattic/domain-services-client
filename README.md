@@ -49,7 +49,7 @@ $domain_contacts = new Entity\Domain_Contacts(
 );
 
 // Set up the Contacts\Set command
-$command = new Command\Domain\Contacts\Set( $domain_name, $domain_contacts );
+$command = new Command\Domain\Set\Contacts( $domain_name, $domain_contacts );
 
 // Create an optional client transaction ID (useful for finding related log entries)
 $client_transaction_id = 'client_tx_id_example';
@@ -68,7 +68,7 @@ $api = new Api(
 
 try {
 	// Make the call to the endpoint
-	/** @var Response\Domain\Contacts\Set $response */
+	/** @var Response\Domain\Set\Contacts $response */
 	$response = $api->post( $command, $client_transaction_id );
 
 	// Extract some data from the resopnse
@@ -76,7 +76,7 @@ try {
 	echo "Status description: " . $response->get_status_description() . "\n";
 	echo "New contact ID: " . $response->get_contacts()->get_owner()->get_contact_id()->get_provider_contact_id() . "\n";
 } catch (Exception $e) {
-	echo 'Exception when calling Domain_Contacts_Set: ', $e->getMessage(), PHP_EOL;
+	echo 'Exception when calling Domain_Set_Contacts: ', $e->getMessage(), PHP_EOL;
 }
 ```
 

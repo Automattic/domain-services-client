@@ -20,12 +20,12 @@ namespace Automattic\Domain_Services\Test\Command;
 
 use Automattic\Domain_Services\{Command, Entity, Test};
 
-class Domain_Contacts_Set_Test extends Test\Lib\Domain_Services_Client_Test_Case {
+class Domain_Set_Contacts_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	use Command\Array_Key_Domain_Trait, Command\Array_Key_Contacts_Trait, Command\Array_Key_Contact_Information_Trait, Command\Array_Key_Contact_Id_Trait, Command\Array_Key_Contact_Disclosure_Trait;
 
 	public function test_command_instance_success(): void {
 		$mock_command_data = [
-			Command\Command_Interface::COMMAND => 'Domain_Contacts_Set',
+			Command\Command_Interface::COMMAND => 'Domain_Set_Contacts',
 			Command\Command_Interface::PARAMS => [
 				self::get_domain_name_array_key() => 'test-domain-name.com',
 				self::get_contacts_array_key() => [
@@ -54,10 +54,10 @@ class Domain_Contacts_Set_Test extends Test\Lib\Domain_Services_Client_Test_Case
 
 		$domain = new Entity\Domain_Name( $mock_command_data[ Command\Command_Interface::PARAMS ][ self::get_domain_name_array_key() ] );
 		$contacts = Entity\Domain_Contacts::from_array( $mock_command_data[ Command\Command_Interface::PARAMS ][ self::get_contacts_array_key() ] );
-		$command = new Command\Domain\Contacts\Set( $domain, $contacts );
+		$command = new Command\Domain\Set\Contacts( $domain, $contacts );
 		$command->set_client_txn_id( $mock_command_data[ Command\Command_Interface::CLIENT_TXN_ID ] );
 
-		$this->assertInstanceOf( Command\Domain\Contacts\Set::class, $command );
+		$this->assertInstanceOf( Command\Domain\Set\Contacts::class, $command );
 
 		$actual_command_array = $command->jsonSerialize();
 

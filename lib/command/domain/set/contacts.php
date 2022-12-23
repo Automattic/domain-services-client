@@ -16,7 +16,7 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Command\Domain\Contacts;
+namespace Automattic\Domain_Services\Command\Domain\Set;
 
 use Automattic\Domain_Services\{Command, Entity, Exception};
 
@@ -27,8 +27,8 @@ use Automattic\Domain_Services\{Command, Entity, Exception};
  * - Contact types not included in the request would not be updated, but won't be deleted.
  * - For each contact type, either a contact ID or the full contact information can be provided.
  * - If contact information is provided, a new contact will be created and the contact ID will be returned.
- * - This command runs asynchoronously on the server.
- * - Getting that response back means that the operation was queued successfully.
+ * - This command runs asynchronously on the server.
+ * - Getting a success response means that the operation was queued successfully.
  * - A domain has four contact types: owner, admin, tech and billing
  *
  *  * ## Example:
@@ -40,21 +40,21 @@ use Automattic\Domain_Services\{Command, Entity, Exception};
  * $domain_contacts->set_owner( new Entity\Domain_Contact( $contact_id ) );
  * $domain_contacts->set_billing( new Entity\Domain_Contact( $contact_id ) );
  *
- * $command = new Command\Domain\Contacts\Set( $domain_name, $domain_contacts );
+ * $command = new Command\Domain\Set\Contacts( $domain_name, $domain_contacts );
  *
  * $response = $api->post( $command );
  * if ( $response->is_success() ) {
- *     $status = $response->get_status();
+ *     // The update request was queued successfully
  * }
  * ```
  *
- * @see \Automattic\Domain_Services\Response\Domain\Contacts\Set
+ * @see \Automattic\Domain_Services\Response\Domain\Set\Contacts
  * @see Entity\Domain_Contacts
  * @see Entity\Domain_Contact
  * @see Entity\Contact_Information
  * @see Entity\Contact_Id
  */
-class Set implements Command\Command_Interface, Command\Command_Serialize_Interface {
+class Contacts implements Command\Command_Interface, Command\Command_Serialize_Interface {
 	use Command\Command_Trait, Command\Command_Serialize_Trait, Command\Array_Key_Contacts_Trait, Command\Array_Key_Domain_Trait;
 
 	/**
@@ -73,7 +73,7 @@ class Set implements Command\Command_Interface, Command\Command_Serialize_Interf
 	private Entity\Domain_Contacts $contacts;
 
 	/**
-	 * Constructs a Domain\Contacts\Set command
+	 * Constructs a Domain\Set\Contacts command
 	 *
 	 * @param Entity\Domain_Name     $domain
 	 * @param Entity\Domain_Contacts $contacts
@@ -108,7 +108,7 @@ class Set implements Command\Command_Interface, Command\Command_Serialize_Interf
 	 * {@inheritDoc}
 	 */
 	public static function get_name(): string {
-		return 'Domain_Contacts_Set';
+		return 'Domain_Set_Contacts';
 	}
 
 	/**
