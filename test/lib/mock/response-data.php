@@ -173,7 +173,7 @@ function get_mock_response( Command\Command_Interface $command, ?string $domain,
 			];
 			break;
 
-		case 'Events_Get-success':
+		case 'Event_Enumerate-success':
 			$response = [
 				'status' => 200,
 				'status_description' => 'Command completed successfully',
