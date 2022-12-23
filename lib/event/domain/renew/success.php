@@ -32,8 +32,8 @@ class Success implements Event\Event_Interface {
 		return null === $expiration_date ? null : \DateTimeImmutable::createFromFormat( Entity\Entity_Interface::DATE_FORMAT, $expiration_date );
 	}
 
-	public function get_renewal_date(): ?\DateTimeInterface {
-		$renewal_date = $this->get_data_by_key( 'event_data.renewal_date' );
-		return null === $renewal_date ? null : \DateTimeImmutable::createFromFormat( Entity\Entity_Interface::DATE_FORMAT, $renewal_date );
+	public function get_renewable_until(): ?\DateTimeInterface {
+		$renewable_until = $this->get_data_by_key( 'event_data.renewable_until' );
+		return null === $renewable_until ? null : \DateTimeImmutable::createFromFormat( Entity\Entity_Interface::DATE_FORMAT, $renewable_until );
 	}
 }

@@ -44,7 +44,7 @@ class Domain_Renew_Success_Test extends Test\Lib\Domain_Services_Client_Test_Cas
 					'event_data' => [
 						'domain_status' => 'ACTIVE',
 						'expiration_date' => '2023-06-24 15:18:08',
-						'renewal_date' => '2023-07-29 15:18:08',
+						'renewable_until' => '2023-07-29 15:18:08',
 					],
 				],
 			],
@@ -63,6 +63,6 @@ class Domain_Renew_Success_Test extends Test\Lib\Domain_Services_Client_Test_Cas
 
 		$this->assertSame( $response_data['data']['event']['event_data']['domain_status'], $event->get_domain_status() );
 		$this->assertSame( $response_data['data']['event']['event_data']['expiration_date'], $event->get_expiration_date()->format( Entity\Entity_Interface::DATE_FORMAT ) );
-		$this->assertSame( $response_data['data']['event']['event_data']['renewal_date'], $event->get_renewal_date()->format( Entity\Entity_Interface::DATE_FORMAT ) );
+		$this->assertSame( $response_data['data']['event']['event_data']['renewable_until'], $event->get_renewable_until()->format( Entity\Entity_Interface::DATE_FORMAT ) );
 	}
 }
