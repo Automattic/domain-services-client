@@ -20,7 +20,7 @@ namespace Automattic\Domain_Services\Test\Event;
 
 use Automattic\Domain_Services\{Command, Event, Response, Test};
 
-class Domain_Transferlock_Set_Success_Test extends Test\Lib\Domain_Services_Client_Test_Case {
+class Domain_Set_Transferlock_Fail_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_event_success(): void {
 		$command = new Command\Event\Details( 1234 );
 
@@ -35,14 +35,21 @@ class Domain_Transferlock_Set_Success_Test extends Test\Lib\Domain_Services_Clie
 			'data' => [
 				'event' => [
 					'id' => 1234,
-					'event_class' => 'Domain_Transferlock_Set',
-					'event_subclass' => 'Success',
+					'event_class' => 'Domain_Set_Transferlock',
+					'event_subclass' => 'Fail',
 					'object_type' => 'domain',
 					'object_id' => 'example.com',
 					'event_date' => '2022-01-23 12:34:56',
 					'acknowledged_date' => null,
 					'event_data' => [
-						'transferlock' => true,
+						// TODO: Provide accurate error data once this is finalized in the server repo
+						'error' => [
+							'class' => '',
+							'subclass' => 'Domain_Services',
+							'data' => [
+								'reason' => 'Invalid domain state',
+							],
+						],
 					],
 				],
 			],
@@ -56,8 +63,8 @@ class Domain_Transferlock_Set_Success_Test extends Test\Lib\Domain_Services_Clie
 		$event = $response_object->get_event();
 		$this->assertNotNull( $event );
 
-		$this->assertInstanceOf( Event\Domain\Transferlock\Set\Success::class, $event );
-		$this->assertSame( $response_data['data']['event']['event_data']['transferlock'], $event->is_locked() );
+		$this->assertInstanceOf( Event\Domain\Set\Transferlock\Fail::class, $event );
 		$this->assertSame( $response_data['data']['event']['object_id'], $event->get_domain()->get_name() );
+		$this->assertSame( $response_data['data']['event']['event_data']['error']['data']['reason'], $event->get_error_reason() );
 	}
 }

@@ -20,10 +20,10 @@ namespace Automattic\Domain_Services\Test\Response;
 
 use Automattic\Domain_Services\{Command, Entity, Response, Test};
 
-class Domain_Transferlock_Set_Test extends Test\Lib\Domain_Services_Client_Test_Case {
+class Domain_Set_Transferlock_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_response_factory_success(): void {
 		$domain_name = new Entity\Domain_Name( 'test-domain-name.com' );
-		$command = new Command\Domain\Transferlock\Set( $domain_name, true );
+		$command = new Command\Domain\Set\Transferlock( $domain_name, true );
 
 		$response_data = [
 			'status' => 200,
@@ -35,10 +35,10 @@ class Domain_Transferlock_Set_Test extends Test\Lib\Domain_Services_Client_Test_
 			'runtime' => 0.0061,
 		];
 
-		/** @var Response\Domain\Transferlock\Set $response_object */
+		/** @var Response\Domain\Set\Transferlock $response_object */
 		$response_object = $this->response_factory->build_response( $command, $response_data );
 
-		$this->assertInstanceOf( Response\Domain\Transferlock\Set::class, $response_object );
+		$this->assertInstanceOf( Response\Domain\Set\Transferlock::class, $response_object );
 
 		$this->assertIsValidResponse( $response_data, $response_object );
 	}
