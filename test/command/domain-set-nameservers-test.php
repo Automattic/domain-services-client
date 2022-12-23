@@ -20,12 +20,12 @@ namespace Automattic\Domain_Services\Test\Command;
 
 use Automattic\Domain_Services\{Command, Entity, Test};
 
-class Domain_Nameservers_Set_Test extends Test\Lib\Domain_Services_Client_Test_Case {
+class Domain_Set_Nameservers_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	use Command\Array_Key_Domain_Trait, Command\Array_Key_Nameservers_Trait;
 
 	public function test_command_instance_success(): void {
 		$mock_command_data = [
-			Command\Command_Interface::COMMAND => 'Domain_Nameservers_Set',
+			Command\Command_Interface::COMMAND => 'Domain_Set_Nameservers',
 			Command\Command_Interface::PARAMS => [
 				self::get_domain_name_array_key() => 'test-domain-name.com',
 				self::get_nameservers_array_key() => [
@@ -43,10 +43,10 @@ class Domain_Nameservers_Set_Test extends Test\Lib\Domain_Services_Client_Test_C
 				$mock_command_data[ Command\Command_Interface::PARAMS ][ self::get_nameservers_array_key() ]
 			)
 		);
-		$command = new Command\Domain\Nameservers\Set( $domain, $nameservers );
+		$command = new Command\Domain\Set\Nameservers( $domain, $nameservers );
 		$command->set_client_txn_id( $mock_command_data[ Command\Command_Interface::CLIENT_TXN_ID ] );
 
-		$this->assertInstanceOf( Command\Domain\Nameservers\Set::class, $command );
+		$this->assertInstanceOf( Command\Domain\Set\Nameservers::class, $command );
 
 		$actual_command_array = $command->jsonSerialize();
 

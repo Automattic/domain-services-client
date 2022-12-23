@@ -16,22 +16,17 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Response\Domain\Nameservers;
+namespace Automattic\Domain_Services\Event\Domain\Set\Nameservers;
 
-use Automattic\Domain_Services\Response;
+use Automattic\Domain_Services\{Event};
 
 /**
- * Response of a Domain\Nameservers\Set command
+ * Set name servers failure event
  *
- * - The name server update operation runs asynchronously at the server
- * - A success response indicates that the operation was queued, not completed
- *     - The `Domain\Nameservers\Set\Success` and `Domain\Nameservers\Set\Fail` events will indicate whether the
- *       operation was successful or not
+ * This event is generated when a name server update fails at the server.
  *
- * @see \Automattic\Domain_Services\Command\Domain\Nameservers\Set
- * @see \Automattic\Domain_Services\Event\Domain\Nameservers\Set\Success
- * @see \Automattic\Domain_Services\Event\Domain\Nameservers\Set\Fail
+ * @see \Automattic\Domain_Services\Command\Domain\Set\Nameservers
  */
-class Set implements Response\Response_Interface {
-	use Response\Data_Trait;
+class Fail implements Event\Event_Interface {
+	use Event\Data_Trait, Event\Object_Type_Domain_Trait, Event\Error_Trait;
 }

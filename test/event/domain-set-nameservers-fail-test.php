@@ -20,7 +20,7 @@ namespace Automattic\Domain_Services\Test\Event;
 
 use Automattic\Domain_Services\{Command, Event, Response, Test};
 
-class Domain_Nameservers_Set_Success_Test extends Test\Lib\Domain_Services_Client_Test_Case {
+class Domain_Set_Nameservers_Fail_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_event_success(): void {
 		$command = new Command\Event\Details( 1234 );
 
@@ -35,16 +35,20 @@ class Domain_Nameservers_Set_Success_Test extends Test\Lib\Domain_Services_Clien
 			'data' => [
 				'event' => [
 					'id' => 1234,
-					'event_class' => 'Domain_Nameservers_Set',
-					'event_subclass' => 'Success',
+					'event_class' => 'Domain_Set_Nameservers',
+					'event_subclass' => 'Fail',
 					'object_type' => 'domain',
 					'object_id' => 'example.com',
 					'event_date' => '2022-01-23 12:34:56',
 					'acknowledged_date' => null,
 					'event_data' => [
-						'name_servers' => [
-							'ns1.wordpress.com',
-							'ns2.wordpress.com',
+						// TODO: Provide accurate error data once this is finalized in the server repo
+						'error' => [
+							'class' => '',
+							'subclass' => 'Domain_Services',
+							'data' => [
+								'reason' => 'Entity not found',
+							],
 						],
 					],
 				],
@@ -59,8 +63,8 @@ class Domain_Nameservers_Set_Success_Test extends Test\Lib\Domain_Services_Clien
 		$event = $response_object->get_event();
 		$this->assertNotNull( $event );
 
-		$this->assertInstanceOf( Event\Domain\Nameservers\Set\Success::class, $event );
+		$this->assertInstanceOf( Event\Domain\Set\Nameservers\Fail::class, $event );
 		$this->assertSame( $response_data['data']['event']['object_id'], $event->get_domain()->get_name() );
-		$this->assertSame( $response_data['data']['event']['event_data']['name_servers'], $event->get_nameservers()->to_array() );
+		$this->assertSame( $response_data['data']['event']['event_data']['error']['data']['reason'], $event->get_error_reason() );
 	}
 }
