@@ -18,22 +18,30 @@
 
 namespace Automattic\Domain_Services;
 
-use Automattic\Domain_Services\{Command, Response};
+use Automattic\Domain_Services\{Command, Exception, Response};
+use Psr\Http\Client;
 
 class Api {
 	private Configuration $configuration;
 	private Response\Factory $response_factory;
-	private \Psr\Http\Client\ClientInterface $http_client;
+	private Client\ClientInterface $http_client;
 
-	public function __construct( Configuration $configuration, Response\Factory $response_factory, \Psr\Http\Client\ClientInterface $http_client ) {
+	public function __construct( Configuration $configuration, Response\Factory $response_factory, Client\ClientInterface $http_client ) {
 		$this->configuration = $configuration;
 		$this->response_factory = $response_factory;
 		$this->http_client = $http_client;
 	}
 
 	/**
-	 * @throws \Psr\Http\Client\ClientExceptionInterface
+	 * @param Command\Command_Interface $command
+	 * @param string                    $client_txn_id
+	 *
+	 * @return Response\Response_Interface
+	 * @throws Exception\Command\Invalid_Format_Exception
+	 * @throws Exception\Command\Missing_Option_Exception
+	 * @throws Exception\Domain_Services_Exception
 	 * @throws \JsonException
+	 * @throws Client\ClientExceptionInterface
 	 */
 	public function post( Command\Command_Interface $command, string $client_txn_id = '' ): Response\Response_Interface {
 		$command->set_client_txn_id( $client_txn_id );

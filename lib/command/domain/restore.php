@@ -41,7 +41,6 @@ use Automattic\Domain_Services\{Command, Entity};
  * }
  * ```
  *
- * @package Automattic\Domain_Services\Command\Domain
  * @see     \Automattic\Domain_Services\Event\Domain\Restore\Fail
  * @see     \Automattic\Domain_Services\Event\Domain\Restore\Success
  * @see     \Automattic\Domain_Services\Response\Domain\Restore

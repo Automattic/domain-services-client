@@ -31,7 +31,7 @@ use Automattic\Domain_Services\{Command, Entity, Exception};
  * - Getting a success response means that the operation was queued successfully.
  * - A domain has four contact types: owner, admin, tech and billing
  *
- *  * ## Example:
+ * ## Example:
  * ```
  * $domain_name = new Entity\Domain_Name( 'example.com' );
  * $contact_id = new Entity\Contact_Id( 'SP1:5499554' );

@@ -18,7 +18,7 @@
 
 namespace Automattic\Domain_Services\Response\Dns;
 
-use Automattic\Domain_Services\{Entity, Response};
+use Automattic\Domain_Services\{Entity, Exception, Response};
 
 /**
  * Response of a Dns\Set command
@@ -37,6 +37,7 @@ class Set implements Response\Response_Interface {
 	 */
 	public function get_domain_name(): Entity\Domain_Name {
 		$domain_name_data = $this->get_data_by_key( 'data.change_set.domain' );
+
 		return new Entity\Domain_Name( $domain_name_data );
 	}
 
@@ -44,6 +45,7 @@ class Set implements Response\Response_Interface {
 	 * Returns the DNS records that were added
 	 *
 	 * @return Entity\Dns_Records
+	 * @throws Exception\Entity\Invalid_Value_Exception
 	 */
 	public function get_records_added(): Entity\Dns_Records {
 		$domain_name_data = $this->get_data_by_key( 'data.change_set.domain' );
