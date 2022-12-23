@@ -16,20 +16,20 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Response\Events;
+namespace Automattic\Domain_Services\Response\Event;
 
 use Automattic\Domain_Services\{Event, Exception, Response};
 
 /**
- * Response of Events\Get command
+ * Response of Event\Enumerate command
  *
- * This class encapsulates the data for a successful call to the Events\Get command. It includes a list of Event
+ * This class encapsulates the data for a successful call to the Event\Enumerate command. It includes a list of Event
  * objects which all implement the methods in Event\Data_Trait. Each individual event class may also implement
  * additional methods depending on the specific event_class and event_subclass properties of the event.
  *
  * @see Event\Data_Trait
  */
-class Get implements Response\Response_Interface {
+class Enumerate implements Response\Response_Interface {
 	use Response\Data_Trait, Response\Event_Aware;
 
 	private const TOTAL_COUNT = 'data.total_count';
@@ -63,7 +63,7 @@ class Get implements Response\Response_Interface {
 	}
 
 	/**
-	 * Gets the request parameters from the original Command\Events\Get request
+	 * Gets the request parameters from the original Command\Event\Enumerate request
 	 *
 	 * @return array
 	 */

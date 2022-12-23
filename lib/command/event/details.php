@@ -24,12 +24,12 @@ use Automattic\Domain_Services\{Command};
  * Requests details of an event
  *
  *  - This command requests the details of a spcific event using its ID.
- *  - IDs can be fetched using the `Events\Get` command.
+ *  - IDs can be fetched using the `Event\Enumerate` command.
  *  - This command executes synchronously on the server.
  *  - The corresponding response object will include the details of an event.
  *
  * @see \Automattic\Domain_Services\Response\Event\Details
- * @see \Automattic\Domain_Services\Response\Events\Get
+ * @see \Automattic\Domain_Services\Response\Event\Enumerate
  */
 class Details implements Command\Command_Interface, Command\Command_Serialize_Interface {
 	use Command\Command_Trait;

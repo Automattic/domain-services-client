@@ -24,11 +24,11 @@ use Automattic\Domain_Services\{Command};
  * Acknowledge an event
  *
  *  - The command requests acknowledging a specific event by using the event ID.
- *  - IDs can be fetched using the `Events\Get` command.
+ *  - IDs can be fetched using the `Event\Enumerate` command.
  *  - This command executes synchronously on the server.
  *
  * @see \Automattic\Domain_Services\Response\Event\Ack
- * @see \Automattic\Domain_Services\Response\Events\Get
+ * @see \Automattic\Domain_Services\Response\Event\Enumerate
  */
 class Ack implements Command\Command_Interface, Command\Command_Serialize_Interface {
 	use Command\Command_Trait, Command\Command_Serialize_Trait, Command\Array_Key_Event_Trait;
