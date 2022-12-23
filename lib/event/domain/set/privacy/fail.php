@@ -18,6 +18,8 @@
 
 namespace Automattic\Domain_Services\Event\Domain\Set\Privacy;
 
+use Automattic\Domain_Services\{Event};
+
 /**
  * Fail event for a `Domain\Set\Privacy command
  *
@@ -25,9 +27,6 @@ namespace Automattic\Domain_Services\Event\Domain\Set\Privacy;
  *
  * @see \Automattic\Domain_Services\Command\Domain\Set\Privacy
  */
-
-use Automattic\Domain_Services\{Event};
-
 class Fail implements Event\Event_Interface {
 	use Event\Data_Trait, Event\Object_Type_Domain_Trait, Event\Error_Trait;
 }
