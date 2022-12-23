@@ -23,11 +23,11 @@ use Automattic\Domain_Services\{Entity, Event};
 /**
  * Domain renewed successfully event
  *
- * - This event is generated when a `Domain\Renew` command runs successfully
+ * - This event is generated when a domain renewal operation has completed successfully at the server
  * - It contains three properties:
- *     - domain_status - status of the domain
- *     - expiration_date - date on which the domain will expire now
- *     - renewal_date - date on which the domain was renewed
+ *     - domain_status - status of the domain immediately after the renewal operation
+ *     - expiration_date - the expiration date of the domain after the renewal operation
+ *     - renewable_until - the date until which the domain can be renewed
  *
  * @see \Automattic\Domain_Services\Command\Domain\Renew
  */
