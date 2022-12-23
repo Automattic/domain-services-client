@@ -16,7 +16,7 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Command\Domain\Transferlock;
+namespace Automattic\Domain_Services\Command\Domain\Set;
 
 use Automattic\Domain_Services\{Command, Entity};
 
@@ -25,9 +25,9 @@ use Automattic\Domain_Services\{Command, Entity};
  *
  * This commands requests either enabling or disabling the transfer lock on a specific domain.
  *
- * @see \Automattic\Domain_Services\Response\Domain\Transferlock\Set
+ * @see \Automattic\Domain_Services\Response\Domain\Set\Transferlock
  */
-class Set implements Command\Command_Interface, Command\Command_Serialize_Interface {
+class Transferlock implements Command\Command_Interface, Command\Command_Serialize_Interface {
 	use Command\Command_Trait;
 	use Command\Command_Serialize_Trait;
 	use Command\Array_Key_Domain_Trait;
@@ -49,7 +49,7 @@ class Set implements Command\Command_Interface, Command\Command_Serialize_Interf
 
 	/**
 	 * @param Entity\Domain_Name $domain
-	 * @param bool $transfer_lock
+	 * @param bool               $transfer_lock
 	 */
 	public function __construct( Entity\Domain_Name $domain, bool $transfer_lock ) {
 		$this->domain = $domain;
@@ -78,7 +78,7 @@ class Set implements Command\Command_Interface, Command\Command_Serialize_Interf
 	 * {@inheritDoc}
 	 */
 	public static function get_name(): string {
-		return 'Domain_Transferlock_Set';
+		return 'Domain_Set_Transferlock';
 	}
 
 	/**

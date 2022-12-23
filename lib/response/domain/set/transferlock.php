@@ -16,10 +16,15 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Event\Domain\Transferlock\Set;
+namespace Automattic\Domain_Services\Response\Domain\Set;
 
-use Automattic\Domain_Services\{Event};
+use Automattic\Domain_Services\Response;
 
-class Fail implements Event\Event_Interface {
-	use Event\Data_Trait, Event\Object_Type_Domain_Trait, Event\Error_Trait;
+/**
+ * Response of a Transferlock\Set command.
+ *
+ * @see \Automattic\Domain_Services\Command\Domain\Set\Transferlock
+ */
+class Transferlock implements Response\Response_Interface {
+	use Response\Data_Trait;
 }
