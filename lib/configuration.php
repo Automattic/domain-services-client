@@ -100,16 +100,9 @@ class Configuration {
 	/**
 	 * Debug file location (log to STDOUT by default)
 	 *
-	 * @var string
+	 * @var string|null
 	 */
-	private string $temp_folder_path;
-
-	/**
-	 * Constructor
-	 */
-	public function __construct() {
-		$this->temp_folder_path = sys_get_temp_dir();
-	}
+	private static ?string $temp_folder_path;
 
 	/**
 	 * Sets API key
@@ -168,7 +161,7 @@ class Configuration {
 	 *
 	 * @return $this
 	 */
-	public function set_access_token( $access_token ): self {
+	public function set_access_token( string $access_token ): self {
 		$this->access_token = $access_token;
 
 		return $this;
@@ -186,7 +179,7 @@ class Configuration {
 	/**
 	 * Sets boolean format for query string.
 	 *
-	 * @param string $boolean_format Boolean format for query string
+	 * @param string $boolean_format_for_query_string Boolean format for query string
 	 *
 	 * @return $this
 	 */
@@ -345,7 +338,7 @@ class Configuration {
 	 * @return $this
 	 */
 	public function set_temp_folder_path( string $temp_folder_path ): self {
-		$this->temp_folder_path = $temp_folder_path;
+		self::$temp_folder_path = $temp_folder_path;
 
 		return $this;
 	}
@@ -355,8 +348,12 @@ class Configuration {
 	 *
 	 * @return string Temp folder path
 	 */
-	public function get_temp_folder_path(): string {
-		return $this->temp_folder_path;
+	public static function get_temp_folder_path(): string {
+		if ( null === self::$temp_folder_path ) {
+			self::$temp_folder_path = sys_get_temp_dir();
+		}
+
+		return self::$temp_folder_path;
 	}
 
 	/**
@@ -366,7 +363,7 @@ class Configuration {
 	 */
 	public static function get_default_configuration(): self {
 		if ( self::$default_configuration === null ) {
-			self::$default_configuration = new Configuration();
+			self::$default_configuration = new self();
 		}
 
 		return self::$default_configuration;
@@ -392,7 +389,7 @@ class Configuration {
 		$report = 'PHP SDK (Domain Services) Debug Report:' . PHP_EOL;
 		$report .= '    OS: ' . php_uname() . PHP_EOL;
 		$report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
-		$report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
+		$report .= '    Temp Folder Path: ' . self::get_temp_folder_path() . PHP_EOL;
 
 		return $report;
 	}
@@ -438,7 +435,8 @@ class Configuration {
 	/**
 	 * Returns URL based on host settings, index and variables
 	 *
-	 * @param array      $host_settings array of host settings, generated from getHostSettings() or equivalent from the API clients
+	 * @param array      $host_settings array of host settings, generated from getHostSettings() or equivalent from the
+	 *                                  API clients
 	 * @param int        $host_index    index of the host settings
 	 * @param array|null $variables     hash of variable and the corresponding value (optional)
 	 * @return string URL based on host settings

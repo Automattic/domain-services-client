@@ -51,7 +51,10 @@ use Automattic\Domain_Services\{Command, Entity};
  * @see \Automattic\Domain_Services\Event\Domain\Set\Nameservers\Fail
  */
 class Nameservers implements Command\Command_Interface, Command\Command_Serialize_Interface {
-	use Command\Command_Trait, Command\Command_Serialize_Trait, Command\Array_Key_Domain_Trait, Command\Array_Key_Nameservers_Trait;
+	use Command\Array_Key_Domain_Trait;
+	use Command\Array_Key_Nameservers_Trait;
+	use Command\Command_Serialize_Trait;
+	use Command\Command_Trait;
 
 	/**
 	 * The domain name that will be updated.

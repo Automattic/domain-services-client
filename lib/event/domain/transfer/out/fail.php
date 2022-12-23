@@ -27,5 +27,7 @@ use Automattic\Domain_Services\{Event};
  * - There might be more information about the cause of the failure in the event data
  */
 class Fail implements Event\Event_Interface {
-	use Event\Data_Trait, Event\Object_Type_Domain_Trait, Event\Transfer_Trait;
+	use Event\Data_Trait;
+	use Event\Object_Type_Domain_Trait;
+	use Event\Transfer_Trait;
 }

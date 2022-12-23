@@ -26,7 +26,8 @@ use Automattic\Domain_Services\{Command, Entity};
  * - This command deletes a domain from the reseller's account
  * - After you delete a domain, it may be impossible to register it again
  * - Runs asynchronously on the server
- * - Reseller will receive a `Domain\Delete\Success` or `Domain\Delete\Fail` event depending on the result of the command
+ * - Reseller will receive a `Domain\Delete\Success` or `Domain\Delete\Fail` event depending on the result of the
+ *   command
  *
  * Example usage:
  *
@@ -37,7 +38,8 @@ use Automattic\Domain_Services\{Command, Entity};
  * $response = $api->post( $command );
  *
  * if ( $response->is_success() ) {
- *     // command was issued correctly, the client should wait for a `Domain\Delete\Success` or `Domain\Delete\Fail event`
+ *     // command was issued correctly, the client should wait for a `Domain\Delete\Success` or
+ *     // `Domain\Delete\Fail` event
  * }
  * ```
  *
@@ -46,7 +48,9 @@ use Automattic\Domain_Services\{Command, Entity};
  * @see \Automattic\Domain_Services\Event\Domain\Delete\Fail
  */
 class Delete implements Command\Command_Interface, Command\Command_Serialize_Interface {
-	use Command\Command_Trait, Command\Command_Serialize_Trait, Command\Array_Key_Domain_Trait;
+	use Command\Array_Key_Domain_Trait;
+	use Command\Command_Serialize_Trait;
+	use Command\Command_Trait;
 
 	/**
 	 * The domain name to delete

@@ -23,7 +23,7 @@ use Automattic\Domain_Services\{Command};
 /**
  * Requests details of an event
  *
- *  - This command requests the details of a spcific event using its ID.
+ *  - This command requests the details of a specific event using its ID.
  *  - IDs can be fetched using the `Event\Enumerate` command.
  *  - This command executes synchronously on the server.
  *  - The corresponding response object will include the details of an event.

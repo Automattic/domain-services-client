@@ -28,5 +28,7 @@ use Automattic\Domain_Services\{Event};
  * @see \Automattic\Domain_Services\Command\Domain\Set\Nameservers
  */
 class Fail implements Event\Event_Interface {
-	use Event\Data_Trait, Event\Object_Type_Domain_Trait, Event\Error_Trait;
+	use Event\Data_Trait;
+	use Event\Error_Trait;
+	use Event\Object_Type_Domain_Trait;
 }

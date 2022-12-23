@@ -23,7 +23,8 @@ use Automattic\Domain_Services\{Event};
 /**
  * Failure event for a `Domain\Restore` command
  *
- * This event is sent when a restore operation fails. There may be more information about the cause of the failure in the event data.
+ * This event is sent when a restore operation fails. There may be more information about the cause of the failure in
+ * the event data.
  *
  * @see \Automattic\Domain_Services\Command\Domain\Restore
  */

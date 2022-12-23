@@ -30,7 +30,8 @@ use Automattic\Domain_Services\{Event, Exception, Response};
  * @see Event\Data_Trait
  */
 class Enumerate implements Response\Response_Interface {
-	use Response\Data_Trait, Response\Event_Aware;
+	use Response\Data_Trait;
+	use Response\Event_Aware;
 
 	private const TOTAL_COUNT = 'data.total_count';
 	private const EVENTS = 'data.events';

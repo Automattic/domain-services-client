@@ -28,7 +28,8 @@ use Automattic\Domain_Services\{Entity, Event};
  * @see \Automattic\Domain_Services\Command\Domain\Renew
  */
 class Success implements Event\Event_Interface {
-	use Event\Data_Trait, Event\Object_Type_Domain_Trait;
+	use Event\Data_Trait;
+	use Event\Object_Type_Domain_Trait;
 
 	/**
 	 * Returns the domain status after the renewal operation

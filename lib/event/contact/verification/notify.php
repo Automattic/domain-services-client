@@ -26,7 +26,8 @@ use Automattic\Domain_Services\{Event};
  * This event indicates a change in the contact's status. It's usually generated when a contact is marked as verified.
  */
 class Notify implements Event\Event_Interface {
-	use Event\Data_Trait, Event\Object_Type_Contact_Trait;
+	use Event\Data_Trait;
+	use Event\Object_Type_Contact_Trait;
 
 	/**
 	 * Returns tha verification status of the contact
