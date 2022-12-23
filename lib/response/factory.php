@@ -21,6 +21,17 @@ namespace Automattic\Domain_Services\Response;
 use Automattic\Domain_Services\{Command, Event, Exception};
 
 class Factory {
+	/**
+	 * Builds a response from the provided response data
+	 *
+	 * @param Command\Command_Interface $command
+	 * @param array                     $response
+	 *
+	 * @return Response_Interface
+	 * @throws Exception\Command\Invalid_Format_Exception
+	 * @throws Exception\Command\Missing_Option_Exception
+	 * @throws Exception\Domain_Services_Exception
+	 */
 	public function build_response( Command\Command_Interface $command, array $response ): Response_Interface {
 		if ( false === $response['success'] ) {
 			throw new Exception\Domain_Services_Exception( $response['status'], $response );

@@ -29,12 +29,17 @@ class Check implements Response\Response_Interface {
 	/**
 	 * Gets the availability and pricing information for a list of domain from the response.
 	 *
-	 * @return array[
+	 * ## Example of a returned array:
+	 * ```
+	 * [
 	 *     'domain_name' => [
 	 *         'available' => bool,
 	 *         'fee_class' => 'standard',
 	 *     ],
 	 * ]
+	 * ```
+	 *
+	 * @return array
 	 */
 	public function get_domains(): array {
 		return $this->get_data_by_key( 'data.domains' ) ?? [];

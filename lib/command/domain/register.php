@@ -84,7 +84,6 @@ use Automattic\Domain_Services\{Command, Entity, Exception};
  * }
  * ```
  *
- * @package Automattic\Domain_Services\Command\Domain
  * @see     \Automattic\Domain_Services\Event\Domain\Register\Fail
  * @see     \Automattic\Domain_Services\Event\Domain\Register\Success
  * @see     \Automattic\Domain_Services\Response\Domain\Register

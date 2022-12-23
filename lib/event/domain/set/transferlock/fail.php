@@ -18,8 +18,13 @@
 
 namespace Automattic\Domain_Services\Event\Domain\Set\Transferlock;
 
-use Automattic\Domain_Services\{Event};
+use Automattic\Domain_Services\{Command, Event};
 
+/**
+ * Fail event for Domain\Set\TransferLock command
+ *
+ * @see Command\Domain\Set\Transferlock
+ */
 class Fail implements Event\Event_Interface {
 	use Event\Data_Trait;
 	use Event\Error_Trait;
