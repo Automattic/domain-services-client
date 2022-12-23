@@ -20,18 +20,18 @@ namespace Automattic\Domain_Services\Test\Response;
 
 use Automattic\Domain_Services\{Command, Entity, Response, Test};
 
-class Events_Get_Test extends Test\Lib\Domain_Services_Client_Test_Case {
+class Event_Enumerate_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_response_factory_success(): void {
-		$command = new Command\Events\Get();
+		$command = new Command\Event\Enumerate();
 
 		$response_data = Test\Lib\Mock\get_mock_response( $command, null, 'success' );
 
-		/** @var Response\Events\Get $response_object */
+		/** @var Response\Event\Enumerate $response_object */
 		$response_object = $this->response_factory->build_response( $command, $response_data );
 
 		$this->assertIsValidResponse( $response_data, $response_object );
 
-		$this->assertInstanceOf( Response\Events\Get::class, $response_object );
+		$this->assertInstanceOf( Response\Event\Enumerate::class, $response_object );
 
 		$events = $response_object->get_events();
 		$request_params = $response_object->get_request_params();

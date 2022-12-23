@@ -16,7 +16,7 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Command\Events;
+namespace Automattic\Domain_Services\Command\Event;
 
 use Automattic\Domain_Services\{Command};
 
@@ -29,9 +29,9 @@ use Automattic\Domain_Services\{Command};
  * - This command executes synchronously on the server.
  * - The corresponding response object will include the list of events.
  *
- * @see \Automattic\Domain_Services\Response\Events\Get
+ * @see \Automattic\Domain_Services\Response\Event\Enumerate
  */
-class Get implements Command\Command_Interface, Command\Command_Serialize_Interface {
+class Enumerate implements Command\Command_Interface, Command\Command_Serialize_Interface {
 	use Command\Command_Trait, Command\Command_Serialize_Trait, Command\Array_Key_Event_Trait;
 
 	/**
@@ -63,7 +63,7 @@ class Get implements Command\Command_Interface, Command\Command_Serialize_Interf
 	 * Sets the maximum number of events to return in the response.
 	 *
 	 * @param int $limit
-	 * @return Get
+	 * @return Enumerate
 	 */
 	public function set_limit( int $limit ): self {
 		$this->limit = $limit;
@@ -75,7 +75,7 @@ class Get implements Command\Command_Interface, Command\Command_Serialize_Interf
 	 * {@inheritDoc}
 	 */
 	public static function get_name(): string {
-		return 'Events_Get';
+		return 'Event_Enumerate';
 	}
 
 	/**
