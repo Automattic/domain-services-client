@@ -16,15 +16,14 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Response\Domain\Transferlock;
+namespace Automattic\Domain_Services\Event\Domain\Set\Transferlock;
 
-use Automattic\Domain_Services\Response;
+use Automattic\Domain_Services\{Event};
 
-/**
- * Response of a Transferlock\Set command.
- *
- * @see \Automattic\Domain_Services\Command\Domain\Transferlock\Set
- */
-class Set implements Response\Response_Interface {
-	use Response\Data_Trait;
+class Success implements Event\Event_Interface {
+	use Event\Data_Trait, Event\Object_Type_Domain_Trait;
+
+	public function is_locked(): bool {
+		return $this->get_data_by_key( 'event_data.transferlock' ) ?? false;
+	}
 }
