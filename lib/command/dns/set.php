@@ -16,7 +16,7 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Command\Dns\Records;
+namespace Automattic\Domain_Services\Command\Dns;
 
 use Automattic\Domain_Services\{Command, Entity};
 
@@ -59,8 +59,8 @@ use Automattic\Domain_Services\{Command, Entity};
  * }
  * ```
  *
- * @see \Automattic\Domain_Services\Response\Dns\Records\Set
- * @see \Automattic\Domain_Services\Command\Dns\Records\Get
+ * @see \Automattic\Domain_Services\Response\Dns\Set
+ * @see \Automattic\Domain_Services\Command\Dns\Get
  */
 class Set implements Command\Command_Interface, Command\Command_Serialize_Interface {
 	use Command\Command_Trait, Command\Command_Serialize_Trait, Command\Array_Key_Dns_Records_Trait;
@@ -73,7 +73,7 @@ class Set implements Command\Command_Interface, Command\Command_Serialize_Interf
 	private Entity\Dns_Records $records;
 
 	/**
-	 * Constructs a Dns\Records\Set command
+	 * Constructs a Dns\Set command
 	 *
 	 * @param Entity\Dns_Records $records
 	 */
@@ -94,7 +94,7 @@ class Set implements Command\Command_Interface, Command\Command_Serialize_Interf
 	 * {@inheritDoc}
 	 */
 	public static function get_name(): string {
-		return 'Dns_Records_Set';
+		return 'Dns_Set';
 	}
 
 	/**
