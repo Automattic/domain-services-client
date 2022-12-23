@@ -16,17 +16,20 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Event\Domain\Privacy\Set;
+namespace Automattic\Domain_Services\Response\Domain\Set;
+
+use Automattic\Domain_Services\{Response};
 
 /**
- * Fail event for a `Domain\Privacy\Set command
+ * Response of a Domain\Set\Privacy command
  *
- * This event is generated when a privacy setting update fails at the server.
+ * Since the command runs asynchronously on the server, success response indicates that request has been queued, not
+ * completed.
  *
- * @see \Automattic\Domain_Services\Command\Domain\Privacy\Set
+ * @see \Automattic\Domain_Services\Command\Domain\Set\Privacy
+ * @see \Automattic\Domain_Services\Event\Domain\Set\Privacy\Success
+ * @see \Automattic\Domain_Services\Event\Domain\Set\Privacy\Fail
  */
-use Automattic\Domain_Services\{Event};
-
-class Fail implements Event\Event_Interface {
-	use Event\Data_Trait, Event\Object_Type_Domain_Trait, Event\Error_Trait;
+class Privacy implements Response\Response_Interface {
+	use Response\Data_Trait;
 }

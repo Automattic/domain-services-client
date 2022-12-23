@@ -20,12 +20,12 @@ namespace Automattic\Domain_Services\Test\Response;
 
 use Automattic\Domain_Services\{Command, Entity, Response, Test};
 
-class Domain_Privacy_Set_Test extends Test\Lib\Domain_Services_Client_Test_Case {
+class Domain_Set_Privacy_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_response_factory_success(): void {
 		$domain = new Entity\Domain_Name( 'test-domain-name.blog' );
 		$whois_privacy_settings = new Entity\Whois_Privacy( Entity\Whois_Privacy::ENABLE_PRIVACY_SERVICE );
 
-		$command = new Command\Domain\Privacy\Set( $domain, $whois_privacy_settings );
+		$command = new Command\Domain\Set\Privacy( $domain, $whois_privacy_settings );
 
 		$mock_response_data = [
 			'status' => 200,
@@ -37,10 +37,10 @@ class Domain_Privacy_Set_Test extends Test\Lib\Domain_Services_Client_Test_Case 
 			'runtime' => 0.0029,
 		];
 
-		/** @var Response\Domain\Privacy\Set $response_object */
+		/** @var Response\Domain\Set\Privacy $response_object */
 		$response_object = $this->response_factory->build_response( $command, $mock_response_data );
 
-		$this->assertInstanceOf( Response\Domain\Privacy\Set::class, $response_object );
+		$this->assertInstanceOf( Response\Domain\Set\Privacy::class, $response_object );
 
 		$this->assertIsValidResponse( $mock_response_data, $response_object );
 	}

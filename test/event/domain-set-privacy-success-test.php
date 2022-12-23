@@ -20,7 +20,7 @@ namespace Automattic\Domain_Services\Test\Event;
 
 use Automattic\Domain_Services\{Command, Event, Response, Test};
 
-class Domain_Privacy_Set_Fail_Test extends Test\Lib\Domain_Services_Client_Test_Case {
+class Domain_Set_Privacy_Success_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_event_success(): void {
 		$command = new Command\Event\Details( 1234 );
 
@@ -35,23 +35,14 @@ class Domain_Privacy_Set_Fail_Test extends Test\Lib\Domain_Services_Client_Test_
 			'data' => [
 				'event' => [
 					'id' => 1234,
-					'event_class' => 'Domain_Privacy_Set',
-					'event_subclass' => 'Fail',
+					'event_class' => 'Domain_Set_Privacy',
+					'event_subclass' => 'Success',
 					'object_type' => 'domain',
 					'object_id' => 'example.com',
 					'event_date' => '2022-01-23 12:34:56',
 					'acknowledged_date' => null,
 					'event_data' => [
-						// TODO: Provide accurate error data once this is finalized in the server repo
-						'error' => [
-							'class' => 'Entity',
-							'subclass' => 'Invalid_Value',
-							'data' =>
-								[
-									'invalid_option' => 'Automattic\\Domain_Services\\Command\\Domain\\Privacy\\Set',
-									'reason' => 'Invalid privacy option.',
-								],
-						],
+						'privacy_setting' => 'enable_privacy_service',
 					],
 				],
 			],
@@ -65,8 +56,8 @@ class Domain_Privacy_Set_Fail_Test extends Test\Lib\Domain_Services_Client_Test_
 		$event = $response_object->get_event();
 		$this->assertNotNull( $event );
 
-		$this->assertInstanceOf( Event\Domain\Privacy\Set\Fail::class, $event );
+		$this->assertInstanceOf( Event\Domain\Set\Privacy\Success::class, $event );
+		$this->assertSame( $response_data['data']['event']['event_data']['privacy_setting'], $event->get_privacy_setting()->get_setting() );
 		$this->assertSame( $response_data['data']['event']['object_id'], $event->get_domain()->get_name() );
-		$this->assertSame( $response_data['data']['event']['event_data']['error']['data']['reason'], $event->get_error_reason() );
 	}
 }
