@@ -20,7 +20,7 @@ namespace Automattic\Domain_Services\Test\Response;
 
 use Automattic\Domain_Services\{Command, Entity, Response, Test};
 
-class Dns_Records_Set_Test extends Test\Lib\Domain_Services_Client_Test_Case {
+class Dns_Set_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_response_factory_success(): void {
 		$domain = new Entity\Domain_Name( 'dns-records-set-test-domain.blog' );
 		$dns_record_sets = Entity\Dns_Record_Sets::from_array(
@@ -45,14 +45,14 @@ class Dns_Records_Set_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 			],
 		);
 		$dns_records = new Entity\Dns_Records( $domain, $dns_record_sets );
-		$command = new Command\Dns\Records\Set( $dns_records );
+		$command = new Command\Dns\Set( $dns_records );
 
 		$response_data = Test\Lib\Mock\get_mock_response( $command, $domain->get_name(), 'success' );
 
-		/** @var Response\Dns\Records\Set $response_object */
+		/** @var Response\Dns\Set $response_object */
 		$response_object = $this->response_factory->build_response( $command, $response_data );
 
-		$this->assertInstanceOf( Response\Dns\Records\Set::class, $response_object );
+		$this->assertInstanceOf( Response\Dns\Set::class, $response_object );
 
 		$response_dns_records_added = $response_object->get_records_added();
 		$response_dns_records_deleted = $response_object->get_records_deleted();

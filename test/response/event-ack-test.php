@@ -26,7 +26,7 @@ class Event_Ack_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 
 		$response_data = Test\Lib\Mock\get_mock_response( $command, null, 'success' );
 
-		/** @var Response\Dns\Records\Get $response_object */
+		/** @var Response\Dns\Get $response_object */
 		$response_object = $this->response_factory->build_response( $command, $response_data );
 
 		$this->assertInstanceOf( Response\Event\Ack::class, $response_object );
