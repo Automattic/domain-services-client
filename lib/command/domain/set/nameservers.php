@@ -16,7 +16,7 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Command\Domain\Nameservers;
+namespace Automattic\Domain_Services\Command\Domain\Set;
 
 use Automattic\Domain_Services\{Command, Entity};
 
@@ -24,7 +24,7 @@ use Automattic\Domain_Services\{Command, Entity};
  * Sets name servers for the specified domain
  *
  * - Runs asynchronously on the server
- * - Reseller will receive a `Domain\Nameservers\Set\Success` or `Domain\Nameservers\Set\Fail` event depending on the
+ * - Reseller will receive a `Domain\Set\Nameservers\Success` or `Domain\Set\Nameservers\Fail` event depending on the
  *   result of the operation
  *
  * Example usage:
@@ -36,20 +36,21 @@ use Automattic\Domain_Services\{Command, Entity};
  *     new Entity\Domain_Name( 'ns2.wordpress.com' ),
  * ];
  * $nameservers = new Entity\Nameservers( $nameservers_array );
- * $command = new Command\Domain\Nameservers\Set( $domain_name, $nameservers );
+ * $command = new Command\Domain\Set\Nameservers( $domain_name, $nameservers );
  *
  * $response = $api->post( $command );
  *
  * if ( $response->is_success() ) {
- *     // command was issued successfully, the client should wait for a `Domain\Nameservers\Set\Success` or `Domain\Nameservers\Set\Fail event`
+ *     // command was issued successfully, the client should wait for a `Domain\Set\Nameservers\Success` or
+ *     `Domain\Set\Nameservers\Fail event`
  * }
  * ```
  *
- * @see \Automattic\Domain_Services\Response\Domain\Nameservers\Set
- * @see \Automattic\Domain_Services\Event\Domain\Nameservers\Set\Success
- * @see \Automattic\Domain_Services\Event\Domain\Nameservers\Set\Fail
+ * @see \Automattic\Domain_Services\Response\Domain\Set\Nameservers
+ * @see \Automattic\Domain_Services\Event\Domain\Set\Nameservers\Success
+ * @see \Automattic\Domain_Services\Event\Domain\Set\Nameservers\Fail
  */
-class Set implements Command\Command_Interface, Command\Command_Serialize_Interface {
+class Nameservers implements Command\Command_Interface, Command\Command_Serialize_Interface {
 	use Command\Command_Trait, Command\Command_Serialize_Trait, Command\Array_Key_Domain_Trait, Command\Array_Key_Nameservers_Trait;
 
 	/**
@@ -93,7 +94,7 @@ class Set implements Command\Command_Interface, Command\Command_Serialize_Interf
 	 * @return string
 	 */
 	public static function get_name(): string {
-		return 'Domain_Nameservers_Set';
+		return 'Domain_Set_Nameservers';
 	}
 
 	/**

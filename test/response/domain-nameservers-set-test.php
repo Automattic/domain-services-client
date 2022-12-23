@@ -20,7 +20,7 @@ namespace Automattic\Domain_Services\Test\Response;
 
 use Automattic\Domain_Services\{Command, Entity, Response, Test};
 
-class Domain_Nameservers_Set_Test extends Test\Lib\Domain_Services_Client_Test_Case {
+class Domain_Set_Nameservers_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_response_factory_success(): void {
 		$domain = new Entity\Domain_Name( 'domain-nameservers-set-test-domain.blog' );
 		$name_servers = new Entity\Nameservers(
@@ -28,7 +28,7 @@ class Domain_Nameservers_Set_Test extends Test\Lib\Domain_Services_Client_Test_C
 			new Entity\Domain_Name( 'ns2.example.com' ),
 		);
 
-		$command = new Command\Domain\Nameservers\Set( $domain, $name_servers );
+		$command = new Command\Domain\Set\Nameservers( $domain, $name_servers );
 
 		$response_data = [
 			'status' => 200,
@@ -40,10 +40,10 @@ class Domain_Nameservers_Set_Test extends Test\Lib\Domain_Services_Client_Test_C
 			'runtime' => 0.0021,
 		];
 
-		/** @var Response\Domain\Nameservers\Set $response_object */
+		/** @var Response\Domain\Set\Nameservers $response_object */
 		$response_object = $this->response_factory->build_response( $command, $response_data );
 
-		$this->assertInstanceOf( Response\Domain\Nameservers\Set::class, $response_object );
+		$this->assertInstanceOf( Response\Domain\Set\Nameservers::class, $response_object );
 
 		$this->assertIsValidResponse( $response_data, $response_object );
 
