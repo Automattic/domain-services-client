@@ -21,6 +21,14 @@ namespace Automattic\Domain_Services\Event;
 use Automattic\Domain_Services\{Exception};
 
 class Factory {
+	/**
+	 * Builds an event from the provided event data
+	 *
+	 * @param array $event_data
+	 *
+	 * @return Event_Interface
+	 * @throws Exception\Event\Invalid_Event_Name
+	 */
 	public function build_event( array $event_data ): Event_Interface {
 		$event_class = $event_data['event_class'] ?? null;
 		$event_subclass = $event_data['event_subclass'] ?? null;

@@ -20,6 +20,11 @@ namespace Automattic\Domain_Services\Event\Domain\Set\Transferlock;
 
 use Automattic\Domain_Services\{Event};
 
+/**
+ * Success event for Domain\Set\TransferLock command
+ *
+ * @see Command\Domain\Set\Transferlock
+ */
 class Success implements Event\Event_Interface {
 	use Event\Data_Trait;
 	use Event\Object_Type_Domain_Trait;

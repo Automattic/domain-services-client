@@ -18,7 +18,7 @@
 
 namespace Automattic\Domain_Services\Event\Domain\Set\Privacy;
 
-use Automattic\Domain_Services\{Entity, Event};
+use Automattic\Domain_Services\{Entity, Event, Exception};
 
 /**
  * Success event for a `Domain\Set\Privacy command
@@ -36,6 +36,7 @@ class Success implements Event\Event_Interface {
 	 * Returns the Whois_Privacy setting that was set for this domain
 	 *
 	 * @return Entity\Whois_Privacy|null
+	 * @throws Exception\Entity\Invalid_Value_Exception
 	 */
 	public function get_privacy_setting(): ?Entity\Whois_Privacy {
 		$privacy_setting_data = $this->get_data_by_key( 'event_data.privacy_setting' );
