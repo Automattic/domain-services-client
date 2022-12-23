@@ -38,8 +38,8 @@ use Automattic\Domain_Services\{Command, Entity};
  * $response = $api->post( $command );
  *
  * if ( $response->is_success() ) {
- *     // command was issued correctly, the client should wait for a `Domain\Delete\Success` or `Domain\Delete\Fail`
- *     event
+ *     // command was issued correctly, the client should wait for a `Domain\Delete\Success` or
+ *     // `Domain\Delete\Fail` event
  * }
  * ```
  *
