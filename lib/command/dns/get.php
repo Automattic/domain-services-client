@@ -16,7 +16,7 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Command\Dns\Records;
+namespace Automattic\Domain_Services\Command\Dns;
 
 use Automattic\Domain_Services\{Command, Entity};
 
@@ -40,8 +40,8 @@ use Automattic\Domain_Services\{Command, Entity};
  * }
  * ```
  *
- * @see \Automattic\Domain_Services\Response\Dns\Records\Get
- * @see \Automattic\Domain_Services\Command\Dns\Records\Set
+ * @see \Automattic\Domain_Services\Response\Dns\Get
+ * @see \Automattic\Domain_Services\Command\Dns\Set
  */
 class Get implements Command\Command_Interface, Command\Command_Serialize_Interface {
 	use Command\Command_Trait, Command\Command_Serialize_Trait, Command\Array_Key_Domain_Trait;
@@ -54,7 +54,7 @@ class Get implements Command\Command_Interface, Command\Command_Serialize_Interf
 	private Entity\Domain_Name $domain;
 
 	/**
-	 * Constructs a Dns\Records\Get command
+	 * Constructs a Dns\Get command
 	 *
 	 * @param Entity\Domain_Name $domain
 	 */
@@ -75,7 +75,7 @@ class Get implements Command\Command_Interface, Command\Command_Serialize_Interf
 	 * {@inheritDoc}
 	 */
 	public static function get_name(): string {
-		return 'Dns_Records_Get';
+		return 'Dns_Get';
 	}
 
 	/**

@@ -16,16 +16,16 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Response\Dns\Records;
+namespace Automattic\Domain_Services\Response\Dns;
 
 use Automattic\Domain_Services\{Entity, Response};
 
 /**
- * Response of a Dns\Records\Set command
+ * Response of a Dns\Set command
  *
  * Contains the domain name, the newly added records and the deleted records.
  *
- * @see \Automattic\Domain_Services\COmmand\Dns\Records\Set
+ * @see \Automattic\Domain_Services\Command\Dns\Set
  */
 class Set implements Response\Response_Interface {
 	use Response\Data_Trait;

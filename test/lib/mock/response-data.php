@@ -27,7 +27,7 @@ function get_mock_response( Command\Command_Interface $command, ?string $domain,
 	$response_requested = $command_name . '-' . $response_type;
 
 	switch ( $response_requested ) {
-		case 'Dns_Records_Get-success':
+		case 'Dns_Get-success':
 			$response = [
 				'status' => 200,
 				'status_description' => 'Command completed successfully',
@@ -65,7 +65,7 @@ function get_mock_response( Command\Command_Interface $command, ?string $domain,
 			];
 			break;
 
-		case 'Dns_Records_Set-success':
+		case 'Dns_Set-success':
 			$response = [
 				'data' => [
 					'change_set' => [
