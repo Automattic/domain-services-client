@@ -20,7 +20,7 @@ namespace Automattic\Domain_Services\Test\Response;
 
 use Automattic\Domain_Services\{Command, Entity, Response, Test};
 
-class Domain_Contacts_Set_Test extends Test\Lib\Domain_Services_Client_Test_Case {
+class Domain_Set_Contacts_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_response_factory_success(): void {
 		$domain = new Entity\Domain_Name( 'test-domain-name.blog' );
 		$contact_info = [
@@ -44,7 +44,7 @@ class Domain_Contacts_Set_Test extends Test\Lib\Domain_Services_Client_Test_Case
 				'admin' => [ 'contact_information' => $contact_info ],
 			]
 		);
-		$command = new Command\Domain\Contacts\Set( $domain, $contacts );
+		$command = new Command\Domain\Set\Contacts( $domain, $contacts );
 
 		$mock_response_data = [
 			'status' => 200,
@@ -58,10 +58,10 @@ class Domain_Contacts_Set_Test extends Test\Lib\Domain_Services_Client_Test_Case
 		];
 
 
-		/** @var Response\Domain\Contacts\Set $response_object */
+		/** @var Response\Domain\Set\Contacts $response_object */
 		$response_object = $this->response_factory->build_response( $command, $mock_response_data );
 
-		$this->assertInstanceOf( Response\Domain\Contacts\Set::class, $response_object );
+		$this->assertInstanceOf( Response\Domain\Set\Contacts::class, $response_object );
 
 		$this->assertIsValidResponse( $mock_response_data, $response_object );
 	}

@@ -20,7 +20,7 @@ namespace Automattic\Domain_Services\Test\Event;
 
 use Automattic\Domain_Services\{Command, Event, Response, Test};
 
-class Domain_Contacts_Set_Success_Test extends Test\Lib\Domain_Services_Client_Test_Case {
+class Domain_Set_Contacts_Success_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_event_success(): void {
 		$command = new Command\Event\Details( 1234 );
 
@@ -50,7 +50,7 @@ class Domain_Contacts_Set_Success_Test extends Test\Lib\Domain_Services_Client_T
 			'data' => [
 				'event' => [
 					'id' => 1234,
-					'event_class' => 'Domain_Contacts_Set',
+					'event_class' => 'Domain_Set_Contacts',
 					'event_subclass' => 'Success',
 					'object_type' => 'domain',
 					'object_id' => 'example.com',
@@ -82,7 +82,7 @@ class Domain_Contacts_Set_Success_Test extends Test\Lib\Domain_Services_Client_T
 		$event = $response_object->get_event();
 		$this->assertNotNull( $event );
 
-		$this->assertInstanceOf( Event\Domain\Contacts\Set\Success::class, $event );
+		$this->assertInstanceOf( Event\Domain\Set\Contacts\Success::class, $event );
 		$this->assertSame( $response_data['data']['event']['event_data']['contacts'], $event->get_contacts()->to_array() );
 		$this->assertSame( $response_data['data']['event']['object_id'], $event->get_domain()->get_name() );
 	}

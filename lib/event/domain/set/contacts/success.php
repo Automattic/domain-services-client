@@ -16,21 +16,27 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Response\Domain\Contacts;
+namespace Automattic\Domain_Services\Event\Domain\Set\Contacts;
 
-use Automattic\Domain_Services\{Event, Response, Command};
+use Automattic\Domain_Services\{Command, Entity, Event, Exception};
 
 /**
- * Response for Domain\Contacts\Set command
+ * Event representing a Domain\Set\Contacts command success
  *
- * - The contacts set operation runs asynchronously at the server
- * - A success response indicates that the operation was queued, not completed
- * - The `Domain\Contacts\Set\Success` and `Domain\Contacts\Set\Fail` events will indicate whether the operation was successful or not
- *
- * @see Command\Domain\Contacts\Set
- * @see Event\Domain\Contacts\Set\Success
- * @see Event\Domain\Contacts\Set\Fail
+ * @see Command\Domain\Set\Contacts
  */
-class Set implements Response\Response_Interface {
-	use Response\Data_Trait;
+class Success implements Event\Event_Interface {
+	use Event\Data_Trait, Event\Object_Type_Domain_Trait;
+
+	/**
+	 * Returns the domain contacts of the updated domain
+	 *
+	 * @return Entity\Domain_Contacts
+	 * @throws Exception\Entity\Invalid_Value_Exception
+	 */
+	public function get_contacts(): Entity\Domain_Contacts {
+		$contact_data = $this->get_data_by_key( 'event_data.contacts' ) ?? [];
+
+		return Entity\Domain_Contacts::from_array( $contact_data );
+	}
 }

@@ -16,14 +16,14 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Event\Domain\Contacts\Set;
+namespace Automattic\Domain_Services\Event\Domain\Set\Contacts;
 
 use Automattic\Domain_Services\{Command, Event};
 
 /**
- * Event representing a Domain\Contacts\Set command failure
+ * Event representing a Domain\Set\Contacts command failure
  *
- * @see Command\Domain\Contacts\Set
+ * @see Command\Domain\Set\Contacts
  */
 class Fail implements Event\Event_Interface {
 	use Event\Data_Trait;

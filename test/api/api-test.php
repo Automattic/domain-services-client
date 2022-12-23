@@ -48,7 +48,7 @@ class ApiTest extends Test\Lib\Domain_Services_Client_Test_Case {
 		);
 
 		// Set up the Contacts\Set command
-		$command = new Command\Domain\Contacts\Set( $domain_name, $domain_contacts );
+		$command = new Command\Domain\Set\Contacts( $domain_name, $domain_contacts );
 
 		// Create an optional client transaction ID
 		$client_transaction_id = 'client_tx_id_example';
@@ -73,7 +73,7 @@ class ApiTest extends Test\Lib\Domain_Services_Client_Test_Case {
 
 		try {
 			// Make the call to the endpoint
-			/** @var Response\Domain\Contacts\Set $response */
+			/** @var Response\Domain\Set\Contacts $response */
 			$response = $api->post( $command, $client_transaction_id );
 
 			// Extract some data from the resopnse
@@ -86,7 +86,7 @@ class ApiTest extends Test\Lib\Domain_Services_Client_Test_Case {
 			$this->assertEquals( $mock_response_array['timestamp'], $response->get_timestamp() );
 			$this->assertEquals( $mock_response_array['server_txn_id'], $response->get_server_txn_id() );
 		} catch ( \Automattic\Domain_Services\Exception\Domain_Services_Exception $e ) {
-			echo 'Exception when calling Domain_Contacts_Set: ', $e->getMessage(), PHP_EOL;
+			echo 'Exception when calling Domain_Set_Contacts: ', $e->getMessage(), PHP_EOL;
 			var_dump( $e->getCode() );
 			var_dump( $e->getMessage() );
 		}
