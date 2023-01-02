@@ -34,19 +34,11 @@ class Client implements ClientInterface {
 		return $this->mock_response;
 	}
 
-	public function send( RequestInterface $request, array $options = [] ) {
-		return $this->mock_response;
-	}
+	public function send( RequestInterface $request, array $options = [] ) {}
 
-	public function sendAsync( RequestInterface $request, array $options = [] ) {
-		return $this->mock_response;
-	}
+	public function sendAsync( RequestInterface $request, array $options = [] ) {}
 
-	public function requestAsync( $method, $uri, array $options = [] ) {
-		return $this->mock_response;
-	}
+	public function requestAsync( $method, $uri, array $options = [] ) {}
 
-	public function getConfig( $option = null ) {
-		return $this->mock_response;
-	}
+	public function getConfig( $option = null ) {}
 }
