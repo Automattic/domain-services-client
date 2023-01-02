@@ -18,7 +18,7 @@
 
 namespace Automattic\Domain_Services\Test\Lib;
 
-use Automattic\Domain_Services\{Mock, Response};
+use Automattic\Domain_Services\{Response};
 
 class Domain_Services_Client_Test_Case extends \PHPUnit\Framework\TestCase {
 	protected Response\Factory $response_factory;

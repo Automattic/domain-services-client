@@ -60,7 +60,6 @@ class Contact_Id_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_entity_instance_build_for_provider_fail_invalid_sp_id(): void {
 		$sp_id = 'invalid_sp_id';
 		$provider_contact_id = 'P-ABC1234';
-		$contact_id = $sp_id . ':' . $provider_contact_id;
 
 		$this->expectException( Exception\Entity\Invalid_Value_Exception::class );
 		$this->expectExceptionCode( Response\Code::INVALID_ENTITY_VALUE );

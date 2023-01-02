@@ -18,7 +18,7 @@
 
 namespace Automattic\Domain_Services\Test\Response;
 
-use Automattic\Domain_Services\{Command, Event, Response, Test};
+use Automattic\Domain_Services\{Command, Response, Test};
 
 class Event_Details_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_response_factory_success(): void {
