@@ -6,14 +6,55 @@ Client code for Automattic's [Domain Services](https://github.com/Automattic/dom
 
 ### Requirements
 
-- PHP 7.4 and later.
-  (Should also work with PHP 8.0.)
-
+- Use of this library requires a reseller relationship with Automattic.
+- PHP 7.4 and later. (Should also work with PHP 8.0.)
 - Also requires an Http client compatible with \Psr\Http\Client\ClientInterface.
+
+### Install
+
+The recommended way to install the Domain Services Client is with [Composer](https://getcomposer.org).
+
+```shell
+# Install Composer
+curl -sS https://getcomposer.org/installer | php
+```
+
+Or [download composer.phar](https://getcomposer.org/composer.phar) into your project root.
+
+See the Composer documentation for complete installation instructions on various platforms.
+
+You can add the Domain Services Client as a dependency using Composer:
+
+```shell
+composer require automattic/domain-services:?^1.0
+```
+
+Alternatively, you can specify it as a dependency in your project's existing composer.json file:
+
+```json
+{
+  "require": {
+    "automattic/domain-services": "^1.0"
+  }
+}
+```
+
+Install the dependencies bvy executing this in your project root:
+
+```shell
+composer install
+```
+
+Autoload the client files in your project:
+
+```php
+require 'vendor/autoload.php';
+```
 
 ## Getting Started
 
-Please follow the [installation procedure](#installation--usage) and then run the following:
+After following the [installation procedure](#installation--usage) you can use something like the following to make
+calls to the server:
 
 ```php
 <?php
