@@ -19,6 +19,7 @@
 namespace Automattic\Domain_Services\Test\Api;
 
 use Automattic\Domain_Services\{Api, Command, Configuration, Entity, Response, Test};
+use Psr\Http\Client\ClientExceptionInterface;
 
 class ApiTest extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_api_success(): void {
@@ -85,10 +86,10 @@ class ApiTest extends Test\Lib\Domain_Services_Client_Test_Case {
 			$this->assertEquals( $mock_response_array['runtime'], $response->get_runtime() );
 			$this->assertEquals( $mock_response_array['timestamp'], $response->get_timestamp() );
 			$this->assertEquals( $mock_response_array['server_txn_id'], $response->get_server_txn_id() );
-		} catch ( \Automattic\Domain_Services\Exception\Domain_Services_Exception $e ) {
+		} catch ( \JsonException $e ) {
 			echo 'Exception when calling Domain_Set_Contacts: ', $e->getMessage(), PHP_EOL;
-			var_dump( $e->getCode() );
-			var_dump( $e->getMessage() );
+		} catch ( ClientExceptionInterface $e ) {
+			echo 'Exception when calling Domain_Set_Contacts: ', $e->getMessage(), PHP_EOL;
 		}
 	}
 }

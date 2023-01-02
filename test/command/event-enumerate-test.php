@@ -18,7 +18,7 @@
 
 namespace Automattic\Domain_Services\Test\Command;
 
-use Automattic\Domain_Services\{Command, Entity, Test};
+use Automattic\Domain_Services\{Command, Test};
 
 class Event_Enumerate_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	use Command\Array_Key_Event_Trait;

@@ -62,6 +62,6 @@ class Dns_Record_Set_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 		$this->expectException( \TypeError::class );
 
 		// Intentionally passing type as a string instead of Dns_Record_Type
-		$entity = new Entity\Dns_Record_Set( $record['name'], $record['type'], $record['ttl'], $record['data'] );
+		new Entity\Dns_Record_Set( $record['name'], $record['type'], $record['ttl'], $record['data'] );
 	}
 }

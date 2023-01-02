@@ -18,7 +18,7 @@
 
 namespace Automattic\Domain_Services\Test\Event;
 
-use Automattic\Domain_Services\{Command, Entity, Event, Response, Test};
+use Automattic\Domain_Services\{Command, Event, Response, Test};
 
 class Domain_Notification_Expired_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_event_success(): void {
