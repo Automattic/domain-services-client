@@ -19,6 +19,7 @@
 namespace Automattic\Domain_Services;
 
 use Automattic\Domain_Services\{Command, Exception, Response};
+use GuzzleHttp\Exception\GuzzleException;
 use Psr\Http\Client;
 
 class Api {
@@ -41,6 +42,7 @@ class Api {
 	 * @throws Exception\Command\Missing_Option_Exception
 	 * @throws Exception\Domain_Services_Exception
 	 * @throws \JsonException
+	 * @throws GuzzleException
 	 */
 	public function post( Command\Command_Interface $command, string $client_txn_id = '' ): Response\Response_Interface {
 		$command->set_client_txn_id( $client_txn_id );
@@ -60,8 +62,6 @@ class Api {
 			\GuzzleHttp\RequestOptions::BODY => $body,
 		];
 
-//		$request = new \GuzzleHttp\Psr7\Request( 'POST', $uri, $headers, $body );
-//		$result = $this->http_client->send( $request );
 		$result = $this->http_client->request( 'POST', $uri, $request_options );
 		$body = $result->getBody()->getContents();
 		$result_data = json_decode( $body, true, 512, JSON_THROW_ON_ERROR );
