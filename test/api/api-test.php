@@ -18,7 +18,7 @@
 
 namespace Automattic\Domain_Services\Test\Api;
 
-use Automattic\Domain_Services\{Api, Command, Configuration, Entity, Response, Test};
+use Automattic\Domain_Services\{Api, Command, Configuration, Entity, Exception\Command\Invalid_Format_Exception, Exception\Command\Missing_Option_Exception, Exception\Domain_Services_Exception, Response, Test};
 use Psr\Http\Client\ClientExceptionInterface;
 
 class ApiTest extends Test\Lib\Domain_Services_Client_Test_Case {
@@ -59,7 +59,7 @@ class ApiTest extends Test\Lib\Domain_Services_Client_Test_Case {
 		$mock_response = new Test\Lib\Mock\Psr\Http\Message\Response();
 		$mock_response->set_mock_body_from_array( $mock_response_array );
 
-		$mock_http_client = new Test\Lib\Mock\Psr\Http\Message\Client();
+		$mock_http_client = new Test\Lib\Mock\GuzzleHttp\Client();
 		$mock_http_client->set_mock_response( $mock_response );
 
 		$config = Configuration::get_default_configuration()
@@ -86,9 +86,7 @@ class ApiTest extends Test\Lib\Domain_Services_Client_Test_Case {
 			$this->assertEquals( $mock_response_array['runtime'], $response->get_runtime() );
 			$this->assertEquals( $mock_response_array['timestamp'], $response->get_timestamp() );
 			$this->assertEquals( $mock_response_array['server_txn_id'], $response->get_server_txn_id() );
-		} catch ( \JsonException $e ) {
-			echo 'Exception when calling Domain_Set_Contacts: ', $e->getMessage(), PHP_EOL;
-		} catch ( ClientExceptionInterface $e ) {
+		} catch ( \JsonException|Invalid_Format_Exception|Missing_Option_Exception|Domain_Services_Exception $e ) {
 			echo 'Exception when calling Domain_Set_Contacts: ', $e->getMessage(), PHP_EOL;
 		}
 	}

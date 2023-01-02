@@ -35,7 +35,7 @@
     "ext-json": "*",
     "ext-mbstring": "*",
     "psr/http-client": "^1.0",
-    "guzzlehttp/guzzle": "^7.3",
+    "guzzlehttp/guzzle": "^6.3",
     "guzzlehttp/psr7": "^1.7 || ^2.0"
   },
   "require-dev": {

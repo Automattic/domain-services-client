@@ -16,6 +16,8 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
+require_once __DIR__ . '/guzzlehttp/client.php';
+
 require_once __DIR__ . '/psr/http/message/client.php';
 require_once __DIR__ . '/psr/http/message/response.php';
 require_once __DIR__ . '/psr/http/message/stream.php';

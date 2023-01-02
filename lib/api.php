@@ -24,9 +24,9 @@ use Psr\Http\Client;
 class Api {
 	private Configuration $configuration;
 	private Response\Factory $response_factory;
-	private Client\ClientInterface $http_client;
+	private \GuzzleHttp\ClientInterface $http_client;
 
-	public function __construct( Configuration $configuration, Response\Factory $response_factory, Client\ClientInterface $http_client ) {
+	public function __construct( Configuration $configuration, Response\Factory $response_factory, \GuzzleHttp\ClientInterface $http_client ) {
 		$this->configuration = $configuration;
 		$this->response_factory = $response_factory;
 		$this->http_client = $http_client;
@@ -41,7 +41,6 @@ class Api {
 	 * @throws Exception\Command\Missing_Option_Exception
 	 * @throws Exception\Domain_Services_Exception
 	 * @throws \JsonException
-	 * @throws Client\ClientExceptionInterface
 	 */
 	public function post( Command\Command_Interface $command, string $client_txn_id = '' ): Response\Response_Interface {
 		$command->set_client_txn_id( $client_txn_id );
@@ -56,8 +55,14 @@ class Api {
 			'X-DSAPI-USER' => $this->configuration->get_api_key_with_prefix( 'X-DSAPI-USER' ),
 		];
 
-		$request = new \GuzzleHttp\Psr7\Request( 'POST', $uri, $headers, $body );
-		$result = $this->http_client->sendRequest( $request );
+		$request_options = [
+			\GuzzleHttp\RequestOptions::HEADERS => $headers,
+			\GuzzleHttp\RequestOptions::BODY => $body,
+		];
+
+//		$request = new \GuzzleHttp\Psr7\Request( 'POST', $uri, $headers, $body );
+//		$result = $this->http_client->send( $request );
+		$result = $this->http_client->request( 'POST', $uri, $request_options );
 		$body = $result->getBody()->getContents();
 		$result_data = json_decode( $body, true, 512, JSON_THROW_ON_ERROR );
 
