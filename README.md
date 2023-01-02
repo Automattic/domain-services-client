@@ -62,7 +62,6 @@ $config = Configuration::get_default_configuration()
 $api = new Api(
 	$config,
 	new Response\Factory(),
-	// If you want use custom http client, pass your client which implements `\Psr\Http\Client\ClientInterface`.
 	new GuzzleHttp\Client(),
 );
 
