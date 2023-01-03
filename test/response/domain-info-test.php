@@ -61,7 +61,7 @@ class Domain_Info_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 				'expiration_date' => '2023-06-22 01:23:45',
 				'dnssec' => NULL,
 				'dnssec_ds_data' => NULL,
-				'epp_statuses' => [
+				'domain_status' => [
 					0 => 'clientTransferProhibited',
 					1 => 'serverTransferProhibited',
 				],
@@ -92,7 +92,7 @@ class Domain_Info_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 		$this->assertEquals( $mock_response_data['data']['expiration_date'], $response_object->get_expiration_date() );
 		$this->assertEquals( $mock_response_data['data']['dnssec'], $response_object->get_dnssec() );
 		$this->assertEquals( $mock_response_data['data']['dnssec_ds_data'], $response_object->get_dnssec_ds_dsata() );
-		$this->assertEquals( $mock_response_data['data']['epp_statuses'], $response_object->get_epp_statuses()->to_array() );
+		$this->assertEquals( $mock_response_data['data']['domain_status'], $response_object->get_domain_status()->to_array() );
 		$this->assertEquals( $mock_response_data['data']['name_servers'], $response_object->get_name_servers()->to_array() );
 		$this->assertEquals( $mock_response_data['data']['paid_until'], $response_object->get_paid_until()->format( Entity\Entity_Interface::DATE_FORMAT ) );
 		$this->assertEquals( $mock_response_data['data']['privacy_setting'], $response_object->get_privacy_setting()->get_setting() );
