@@ -34,7 +34,7 @@ class Success implements Event\Event_Interface {
 	/**
 	 * Gets the list of domain statuses
 	 *
-	 * @return null|Entity\Epp_Status_Codes
+	 * @return Entity\Epp_Status_Codes
 	 * @throws Exception\Entity\Invalid_Value_Exception
 	 */
 	public function get_domain_status(): Entity\Epp_Status_Codes {
