@@ -90,8 +90,8 @@ class Info implements Response\Response_Interface {
 	 * @return Entity\Epp_Status_Codes
 	 * @throws \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception
 	 */
-	public function get_epp_statuses(): Entity\Epp_Status_Codes {
-		$epp_statuses_data = $this->get_data_by_key( 'data.epp_statuses' );
+	public function get_domain_status(): Entity\Epp_Status_Codes {
+		$epp_statuses_data = $this->get_data_by_key( 'data.domain_status' );
 		$epp_statuses = [];
 		foreach ( $epp_statuses_data as $epp_status_data ) {
 			$epp_statuses[] = new Entity\Epp_Status_Code( $epp_status_data );
