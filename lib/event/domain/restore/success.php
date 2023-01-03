@@ -34,10 +34,16 @@ class Success implements Event\Event_Interface {
 	/**
 	 * Gets the status of the domain immediately after the restore operation.
 	 *
-	 * @return string|null
+	 * @return Entity\Epp_Status_Codes
+	 * @throws Exception\Entity\Invalid_Value_Exception
 	 */
-	public function get_domain_status(): ?string {
-		return $this->get_data_by_key( 'event_data.domain_status' );
+	public function get_domain_status(): Entity\Epp_Status_Codes {
+		$epp_statuses_data = $this->get_data_by_key( 'event_data.domain_status' );
+		$epp_statuses = [];
+		foreach ( $epp_statuses_data as $epp_status_data ) {
+			$epp_statuses[] = new Entity\Epp_Status_Code( $epp_status_data );
+		}
+		return new Entity\Epp_Status_Codes( ...$epp_statuses );
 	}
 
 	/**
