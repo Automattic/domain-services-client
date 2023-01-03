@@ -57,7 +57,7 @@ class Domain_Register_Success_Test extends Test\Lib\Domain_Services_Client_Test_
 					'event_date' => '2022-01-23 12:34:56',
 					'acknowledged_date' => null,
 					'event_data' => [
-						'domain_statuses' => [ 'ok' ],
+						'domain_status' => [ 'ok' ],
 						'created_date' => '2022-06-24 15:18:08',
 						'expiration_date' => '2023-06-24 15:18:08',
 						'renewable_until' => '2023-07-29 15:18:08',
@@ -112,7 +112,7 @@ class Domain_Register_Success_Test extends Test\Lib\Domain_Services_Client_Test_
 		}
 
 		$this->assertSame( $response_data['data']['event']['event_data']['contacts'], $event->get_contacts()->to_array() );
-		$this->assertSame( $response_data['data']['event']['event_data']['domain_statuses'], $event->get_domain_statuses()->to_array() );
+		$this->assertSame( $response_data['data']['event']['event_data']['domain_status'], $event->get_domain_status()->to_array() );
 		$this->assertSame( $response_data['data']['event']['event_data']['created_date'], $event->get_created_date()->format( Entity\Entity_Interface::DATE_FORMAT ) );
 		$this->assertSame( $response_data['data']['event']['event_data']['expiration_date'], $event->get_expiration_date()->format( Entity\Entity_Interface::DATE_FORMAT ) );
 		$this->assertSame( $response_data['data']['event']['event_data']['renewable_until'], $event->get_renewable_until()->format( Entity\Entity_Interface::DATE_FORMAT ) );
