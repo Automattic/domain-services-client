@@ -43,7 +43,6 @@ class Success implements Event\Event_Interface {
 		foreach ( $epp_statuses_data as $epp_status_data ) {
 			$epp_statuses[] = new Entity\Epp_Status_Code( $epp_status_data );
 		}
-
 		return new Entity\Epp_Status_Codes( ...$epp_statuses );
 	}
 
