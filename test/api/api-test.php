@@ -70,7 +70,7 @@ class ApiTest extends Test\Lib\Domain_Services_Client_Test_Case {
 
 		$api = new Api(
 			$config,
-			new Request\Factory(new RequestFactory(), new StreamFactory()),
+			new Request\Factory( new RequestFactory(), new StreamFactory() ),
 			new Response\Factory(),
 			$mock_http_client,
 		);
