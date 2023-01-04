@@ -18,7 +18,9 @@
 
 namespace Automattic\Domain_Services\Test\Api;
 
-use Automattic\Domain_Services\{Api, Command, Configuration, Entity, Response, Test};
+use Automattic\Domain_Services\{Api, Command, Configuration, Entity, Response, Request, Test};
+use Http\Factory\Guzzle\RequestFactory;
+use Http\Factory\Guzzle\StreamFactory;
 use Psr\Http\Client\ClientExceptionInterface;
 
 class ApiTest extends Test\Lib\Domain_Services_Client_Test_Case {
@@ -68,6 +70,7 @@ class ApiTest extends Test\Lib\Domain_Services_Client_Test_Case {
 
 		$api = new Api(
 			$config,
+			new Request\Factory(new RequestFactory(), new StreamFactory()),
 			new Response\Factory(),
 			$mock_http_client,
 		);

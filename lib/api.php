@@ -18,16 +18,27 @@
 
 namespace Automattic\Domain_Services;
 
-use Automattic\Domain_Services\{Command, Exception, Response};
+use Automattic\Domain_Services\{Command, Exception, Response, Request};
 use Psr\Http\Client;
 
 class Api {
 	private Configuration $configuration;
+	/**
+	 * @var Request\Factory
+	 */
+	private Request\Factory $request_factory;
+	/**
+	 * @var Response\Factory
+	 */
 	private Response\Factory $response_factory;
+	/**
+	 * @var Client\ClientInterface
+	 */
 	private Client\ClientInterface $http_client;
 
-	public function __construct( Configuration $configuration, Response\Factory $response_factory, Client\ClientInterface $http_client ) {
+	public function __construct( Configuration $configuration, Request\Factory $request_factory, Response\Factory $response_factory, Client\ClientInterface $http_client ) {
 		$this->configuration = $configuration;
+		$this->request_factory = $request_factory;
 		$this->response_factory = $response_factory;
 		$this->http_client = $http_client;
 	}
@@ -56,7 +67,7 @@ class Api {
 			'X-DSAPI-USER' => $this->configuration->get_api_key_with_prefix( 'X-DSAPI-USER' ),
 		];
 
-		$request = new \GuzzleHttp\Psr7\Request( 'POST', $uri, $headers, $body );
+		$request = $this->request_factory->createRequest( 'POST', $uri, $body, $headers );
 		$result = $this->http_client->sendRequest( $request );
 		$body = $result->getBody()->getContents();
 		$result_data = json_decode( $body, true, 512, JSON_THROW_ON_ERROR );
