@@ -82,7 +82,10 @@ mixed
 static public from_array(array  data) : self
 ```
 
-##### SummaryBuilds an instance from an array
+##### Summary
+
+Builds an instance from an array
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -140,7 +143,10 @@ string|null
 public get_by_key(string  key) : string|null
 ```
 
-##### SummaryGet the contact data value fot the given key
+##### Summary
+
+Get the contact data value fot the given key
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -312,7 +318,10 @@ string|null
 public set_by_key(string  key, string|null  contact_item_value) : \Automattic\Domain_Services\Entity\Contact_Information
 ```
 
-##### SummarySet a contact data value with a given key.
+##### Summary
+
+Set a contact data value with a given key.
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -341,7 +350,10 @@ public set_by_key(string  key, string|null  contact_item_value) : \Automattic\Do
 public to_array() : string[]
 ```
 
-##### SummaryReturns an array representation of this instance
+##### Summary
+
+Returns an array representation of this instance
+
 ##### Returns:
 
 ```

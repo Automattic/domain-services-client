@@ -118,7 +118,10 @@ if ( $response->is_success() ) {
 public __construct(\Automattic\Domain_Services\Entity\Domain_Name  domain, \Automattic\Domain_Services\Entity\Domain_Contacts  contacts, int  period = 1, \Automattic\Domain_Services\Entity\Nameservers|null  nameservers = null, \Automattic\Domain_Services\Entity\Dns_Records|null  dns_records = null, string  privacy_setting = &#039;a8c_privacy_service&#039;, null|int  price = null) : mixed
 ```
 
-##### SummaryConstructs the Register command
+##### Summary
+
+Constructs the Register command
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -152,7 +155,10 @@ mixed
 final public get_client_txn_id() : string
 ```
 
-##### SummaryGets the client transaction ID set for this command.
+##### Summary
+
+Gets the client transaction ID set for this command.
+
 ##### Returns:
 
 ```
@@ -168,7 +174,10 @@ string
 public get_contacts() : \Automattic\Domain_Services\Entity\Domain_Contacts
 ```
 
-##### SummaryGets the contacts to be created for the domain
+##### Summary
+
+Gets the contacts to be created for the domain
+
 ##### Returns:
 
 ```
@@ -199,7 +208,10 @@ string
 public get_dns_records() : ?\Automattic\Domain_Services\Entity\Dns_Records
 ```
 
-##### SummaryGets the dns records to be set for the domain
+##### Summary
+
+Gets the dns records to be set for the domain
+
 ##### Returns:
 
 ```
@@ -215,7 +227,10 @@ public get_dns_records() : ?\Automattic\Domain_Services\Entity\Dns_Records
 public get_domain() : \Automattic\Domain_Services\Entity\Domain_Name
 ```
 
-##### SummaryGets the domain name to be registered
+##### Summary
+
+Gets the domain name to be registered
+
 ##### Returns:
 
 ```
@@ -246,7 +261,10 @@ string
 static public get_name() : string
 ```
 
-##### SummaryReturns the command name that can be used to build command data
+##### Summary
+
+Returns the command name that can be used to build command data
+
 ##### Returns:
 
 ```
@@ -262,7 +280,10 @@ string
 public get_nameservers() : \Automattic\Domain_Services\Entity\Nameservers
 ```
 
-##### SummaryGets the contacts to be set for the domain
+##### Summary
+
+Gets the contacts to be set for the domain
+
 ##### Returns:
 
 ```
@@ -278,7 +299,10 @@ public get_nameservers() : \Automattic\Domain_Services\Entity\Nameservers
 public get_period() : int
 ```
 
-##### SummaryGet the amount of years for which the domain is to be renewed.
+##### Summary
+
+Get the amount of years for which the domain is to be renewed.
+
 ##### Returns:
 
 ```
@@ -294,7 +318,10 @@ int
 public get_price() : int|null
 ```
 
-##### SummaryGets the price for this domain.
+##### Summary
+
+Gets the price for this domain.
+
 ##### Returns:
 
 ```
@@ -310,7 +337,10 @@ int|null
 public get_privacy_setting() : string
 ```
 
-##### SummaryGets the Whois privacy setting to be used for this domain.
+##### Summary
+
+Gets the Whois privacy setting to be used for this domain.
+
 ##### Returns:
 
 ```
@@ -326,7 +356,10 @@ string
 final public get_resource_path() : string
 ```
 
-##### SummaryGets the path part for this command on the API endpoint.
+##### Summary
+
+Gets the path part for this command on the API endpoint.
+
 ##### Returns:
 
 ```
@@ -342,7 +375,10 @@ string
 final public jsonSerialize() : array
 ```
 
-##### SummaryImplements the JsonSerializable interface
+##### Summary
+
+Implements the JsonSerializable interface
+
 ##### Returns:
 
 ```
@@ -358,8 +394,11 @@ array
 final public set_client_txn_id(string  client_txn_id) : void
 ```
 
-##### SummarySets the client transaction ID for this command. This optional value may be set by the reseller. It will be
+##### Summary
+
+Sets the client transaction ID for this command. This optional value may be set by the reseller. It will be
 reflected in the corresponding Response class and may be useful for logging and debugging.
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -381,7 +420,10 @@ void
 public to_array() : array
 ```
 
-##### SummaryReturns the command parameters as an array for use when in the jsonSerialize() method
+##### Summary
+
+Returns the command parameters as an array for use when in the jsonSerialize() method
+
 ##### Returns:
 
 ```

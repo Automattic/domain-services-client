@@ -24,7 +24,10 @@
 final public jsonSerialize() : array
 ```
 
-##### SummaryImplements the JsonSerializable interface
+##### Summary
+
+Implements the JsonSerializable interface
+
 ##### Returns:
 
 ```

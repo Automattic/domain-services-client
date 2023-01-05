@@ -40,7 +40,10 @@ Set of sets of DNS records
 public __construct(\Automattic\Domain_Services\Entity\Dns_Record_Set  ...dns_record_sets) : mixed
 ```
 
-##### SummaryConstructs a Dns_Record_Sets entity
+##### Summary
+
+Constructs a Dns_Record_Sets entity
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -62,7 +65,10 @@ mixed
 public add_record_set(\Automattic\Domain_Services\Entity\Dns_Record_Set  dns_record_set) : void
 ```
 
-##### SummaryAdds a Dns_Record_Set to this entity
+##### Summary
+
+Adds a Dns_Record_Set to this entity
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -84,7 +90,10 @@ void
 public current() : ?\Automattic\Domain_Services\Entity\Dns_Record_Set
 ```
 
-##### SummaryFunctions to implement the Iterator interface
+##### Summary
+
+Functions to implement the Iterator interface
+
 ##### Returns:
 
 ```
@@ -100,10 +109,13 @@ public current() : ?\Automattic\Domain_Services\Entity\Dns_Record_Set
 static public from_array(array  dns_record_sets_data) : static
 ```
 
-##### SummaryConstructs a DNS_Record_Sets entity from an array of DNS record set values
+##### Summary
+
+Constructs a DNS_Record_Sets entity from an array of DNS record set values
+
 ##### See Also:
 
- * [](classes/Automattic-Domain-Services-Entity-Dns-Record-Set.md)
+ * [\Automattic\Domain_Services\Entity\Dns_Record_Set](../classes/Automattic-Domain-Services-Entity-Dns-Record-Set.md)
 
 ##### Parameters:
 
@@ -132,7 +144,10 @@ static
 public key() : int|null
 ```
 
-##### SummaryPart of the iterator interface implementation
+##### Summary
+
+Part of the iterator interface implementation
+
 ##### Returns:
 
 ```
@@ -148,7 +163,10 @@ int|null
 public next() : void
 ```
 
-##### SummaryPart of the iterator interface implementation
+##### Summary
+
+Part of the iterator interface implementation
+
 ##### Returns:
 
 ```
@@ -164,7 +182,10 @@ void
 public rewind() : void
 ```
 
-##### SummaryPart of the iterator interface implementation
+##### Summary
+
+Part of the iterator interface implementation
+
 ##### Returns:
 
 ```
@@ -180,7 +201,10 @@ void
 public to_array() : array
 ```
 
-##### SummaryReturns each Dns_Record_Set in this entity as an array
+##### Summary
+
+Returns each Dns_Record_Set in this entity as an array
+
 ##### Returns:
 
 ```
@@ -196,7 +220,10 @@ array
 public valid() : bool
 ```
 
-##### SummaryPart of the iterator interface implementation
+##### Summary
+
+Part of the iterator interface implementation
+
 ##### Returns:
 
 ```

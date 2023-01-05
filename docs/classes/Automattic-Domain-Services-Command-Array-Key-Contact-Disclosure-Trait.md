@@ -1,5 +1,6 @@
 # Class: [\Automattic](../namespaces/automattic.md)[\Domain_Services](../namespaces/automattic-domain-services.md)[\Command](../namespaces/automattic-domain-services-command.md)\Array_Key_Contact_Disclosure_Trait
 
+
 ---
 
 ### Methods

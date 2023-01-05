@@ -30,7 +30,10 @@ Set of name servers
 public __construct(\Automattic\Domain_Services\Entity\Domain_Name  ...nameservers) : mixed
 ```
 
-##### SummaryConstructs the Nameservers entity
+##### Summary
+
+Constructs the Nameservers entity
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -58,7 +61,10 @@ mixed
 public add_nameserver(\Automattic\Domain_Services\Entity\Domain_Name  nameserver) : void
 ```
 
-##### SummaryAdds a name server to the list of name servers
+##### Summary
+
+Adds a name server to the list of name servers
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -86,7 +92,10 @@ void
 public to_array() : array
 ```
 
-##### SummaryReturns the list os name servers as an array of strings
+##### Summary
+
+Returns the list os name servers as an array of strings
+
 ##### Returns:
 
 ```

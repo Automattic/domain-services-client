@@ -85,7 +85,10 @@ if ( $response->is_success() ) {
 public __construct(\Automattic\Domain_Services\Entity\Domain_Name  domain, int  current_expiration_year, int  period = 1, float|null  fee_amount = null) : mixed
 ```
 
-##### SummaryConstructs a Domain\Renew command
+##### Summary
+
+Constructs a Domain\Renew command
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -110,7 +113,10 @@ mixed
 final public get_client_txn_id() : string
 ```
 
-##### SummaryGets the client transaction ID set for this command.
+##### Summary
+
+Gets the client transaction ID set for this command.
+
 ##### Returns:
 
 ```
@@ -126,7 +132,10 @@ string
 public get_current_expiration_year() : int
 ```
 
-##### SummaryReturns the domain&#039;s current expiration year
+##### Summary
+
+Returns the domain&#039;s current expiration year
+
 ##### Returns:
 
 ```
@@ -157,7 +166,10 @@ string
 public get_domain() : \Automattic\Domain_Services\Entity\Domain_Name
 ```
 
-##### SummaryReturns the domain name that will be renewed
+##### Summary
+
+Returns the domain name that will be renewed
+
 ##### Returns:
 
 ```
@@ -188,7 +200,10 @@ string
 public get_fee_amount() : float|null
 ```
 
-##### SummaryReturns the renewal fee amount (used for premium domains)
+##### Summary
+
+Returns the renewal fee amount (used for premium domains)
+
 ##### Returns:
 
 ```
@@ -219,7 +234,10 @@ string
 static public get_name() : string
 ```
 
-##### SummaryReturns the command name that can be used to build command data
+##### Summary
+
+Returns the command name that can be used to build command data
+
 ##### Returns:
 
 ```
@@ -235,7 +253,10 @@ string
 public get_period() : int
 ```
 
-##### SummaryReturns the number of years the domain will be renewed for
+##### Summary
+
+Returns the number of years the domain will be renewed for
+
 ##### Returns:
 
 ```
@@ -266,7 +287,10 @@ string
 final public get_resource_path() : string
 ```
 
-##### SummaryGets the path part for this command on the API endpoint.
+##### Summary
+
+Gets the path part for this command on the API endpoint.
+
 ##### Returns:
 
 ```
@@ -282,7 +306,10 @@ string
 final public jsonSerialize() : array
 ```
 
-##### SummaryImplements the JsonSerializable interface
+##### Summary
+
+Implements the JsonSerializable interface
+
 ##### Returns:
 
 ```
@@ -298,8 +325,11 @@ array
 final public set_client_txn_id(string  client_txn_id) : void
 ```
 
-##### SummarySets the client transaction ID for this command. This optional value may be set by the reseller. It will be
+##### Summary
+
+Sets the client transaction ID for this command. This optional value may be set by the reseller. It will be
 reflected in the corresponding Response class and may be useful for logging and debugging.
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -321,7 +351,10 @@ void
 public to_array() : array
 ```
 
-##### SummaryReturns the command parameters as an array for use when in the jsonSerialize() method
+##### Summary
+
+Returns the command parameters as an array for use when in the jsonSerialize() method
+
 ##### Returns:
 
 ```

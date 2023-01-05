@@ -69,7 +69,10 @@ ENABLE_PRIVACY_SERVICE = 'enable_privacy_service'
 public __construct(string  setting) : mixed
 ```
 
-##### SummaryWhois_Privacy entity constructor
+##### Summary
+
+Whois_Privacy entity constructor
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -97,7 +100,10 @@ mixed
 public get_setting() : string
 ```
 
-##### SummaryReturn the whois privacy setting
+##### Summary
+
+Return the whois privacy setting
+
 ##### Returns:
 
 ```
@@ -113,7 +119,10 @@ string
 public to_scalar() : string
 ```
 
-##### SummaryConvert the object to scalar
+##### Summary
+
+Convert the object to scalar
+
 ##### Returns:
 
 ```

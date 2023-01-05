@@ -76,7 +76,10 @@ BOOLEAN_FORMAT_STRING = 'string'
 public get_access_token() : string
 ```
 
-##### SummaryGets the access token for OAuth
+##### Summary
+
+Gets the access token for OAuth
+
 ##### Returns:
 
 ```
@@ -92,7 +95,10 @@ Access token for OAuth
 public get_api_key(string  api_key_identifier) : null|string
 ```
 
-##### SummaryGets API key
+##### Summary
+
+Gets API key
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -114,7 +120,10 @@ API key or token
 public get_api_key_prefix(string  api_key_identifier) : null|string
 ```
 
-##### SummaryGets API key prefix
+##### Summary
+
+Gets API key prefix
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -136,7 +145,10 @@ null|string
 public get_api_key_with_prefix(string  api_key_identifier) : null|string
 ```
 
-##### SummaryGet API key (with prefix if set)
+##### Summary
+
+Get API key (with prefix if set)
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -158,7 +170,10 @@ API key with the prefix
 public get_boolean_format_for_query_string() : string
 ```
 
-##### SummaryGets boolean format for query string.
+##### Summary
+
+Gets boolean format for query string.
+
 ##### Returns:
 
 ```
@@ -174,7 +189,10 @@ Boolean format for query string
 public get_debug() : bool
 ```
 
-##### SummaryGets the debug flag
+##### Summary
+
+Gets the debug flag
+
 ##### Returns:
 
 ```
@@ -190,7 +208,10 @@ bool
 public get_debug_file() : string
 ```
 
-##### SummaryGets the debug file
+##### Summary
+
+Gets the debug file
+
 ##### Returns:
 
 ```
@@ -206,7 +227,10 @@ string
 static public get_default_configuration() : \Automattic\Domain_Services\Configuration
 ```
 
-##### SummaryGets the default configuration instance
+##### Summary
+
+Gets the default configuration instance
+
 ##### Returns:
 
 ```
@@ -222,7 +246,10 @@ static public get_default_configuration() : \Automattic\Domain_Services\Configur
 public get_host() : string
 ```
 
-##### SummaryGets the host
+##### Summary
+
+Gets the host
+
 ##### Returns:
 
 ```
@@ -238,7 +265,10 @@ Host
 public get_host_from_settings(int  index, array|null  variables = null) : string
 ```
 
-##### SummaryReturns URL based on the index and variables
+##### Summary
+
+Returns URL based on the index and variables
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -261,7 +291,10 @@ URL based on host settings
 public get_host_settings() : array
 ```
 
-##### SummaryReturns an array of host settings
+##### Summary
+
+Returns an array of host settings
+
 ##### Returns:
 
 ```
@@ -277,7 +310,10 @@ an array of host settings
 static public get_host_string(array  host_settings, int  host_index, array|null  variables = null) : string
 ```
 
-##### SummaryReturns URL based on host settings, index and variables
+##### Summary
+
+Returns URL based on host settings, index and variables
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -301,7 +337,10 @@ URL based on host settings
 public get_password() : string
 ```
 
-##### SummaryGets the password for HTTP basic authentication
+##### Summary
+
+Gets the password for HTTP basic authentication
+
 ##### Returns:
 
 ```
@@ -317,7 +356,10 @@ Password for HTTP basic authentication
 static public get_temp_folder_path() : string
 ```
 
-##### SummaryGets the temp folder path
+##### Summary
+
+Gets the temp folder path
+
 ##### Returns:
 
 ```
@@ -333,7 +375,10 @@ Temp folder path
 public get_user_agent() : string
 ```
 
-##### SummaryGets the user agent of the api client
+##### Summary
+
+Gets the user agent of the api client
+
 ##### Returns:
 
 ```
@@ -349,7 +394,10 @@ user agent
 public get_username() : string
 ```
 
-##### SummaryGets the username for HTTP basic authentication
+##### Summary
+
+Gets the username for HTTP basic authentication
+
 ##### Returns:
 
 ```
@@ -365,7 +413,10 @@ Username for HTTP basic authentication
 public set_access_token(string  access_token) : $this
 ```
 
-##### SummarySets the access token for OAuth
+##### Summary
+
+Sets the access token for OAuth
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -387,7 +438,10 @@ $this
 public set_api_key(string  api_key_identifier, string  key) : $this
 ```
 
-##### SummarySets API key
+##### Summary
+
+Sets API key
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -410,7 +464,10 @@ $this
 public set_api_key_prefix(string  api_key_identifier, string  prefix) : $this
 ```
 
-##### SummarySets the prefix for API key (e.g. Bearer)
+##### Summary
+
+Sets the prefix for API key (e.g. Bearer)
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -433,7 +490,10 @@ $this
 public set_boolean_format_for_query_string(string  boolean_format_for_query_string) : $this
 ```
 
-##### SummarySets boolean format for query string.
+##### Summary
+
+Sets boolean format for query string.
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -455,7 +515,10 @@ $this
 public set_debug(bool  debug) : $this
 ```
 
-##### SummarySets debug flag
+##### Summary
+
+Sets debug flag
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -477,7 +540,10 @@ $this
 public set_debug_file(string  debug_file) : $this
 ```
 
-##### SummarySets the debug file
+##### Summary
+
+Sets the debug file
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -499,7 +565,10 @@ $this
 static public set_default_configuration(\Automattic\Domain_Services\Configuration  config) : void
 ```
 
-##### SummarySets the default configuration instance
+##### Summary
+
+Sets the default configuration instance
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -521,7 +590,10 @@ void
 public set_host(string  host) : $this
 ```
 
-##### SummarySets the host
+##### Summary
+
+Sets the host
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -543,7 +615,10 @@ $this
 public set_password(string  password) : $this
 ```
 
-##### SummarySets the password for HTTP basic authentication
+##### Summary
+
+Sets the password for HTTP basic authentication
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -565,7 +640,10 @@ $this
 public set_temp_folder_path(string  temp_folder_path) : $this
 ```
 
-##### SummarySets the temp folder path
+##### Summary
+
+Sets the temp folder path
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -587,7 +665,10 @@ $this
 public set_user_agent(string  user_agent) : $this
 ```
 
-##### SummarySets the user agent of the api client
+##### Summary
+
+Sets the user agent of the api client
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -609,7 +690,10 @@ $this
 public set_username(string  username) : $this
 ```
 
-##### SummarySets the username for HTTP basic authentication
+##### Summary
+
+Sets the username for HTTP basic authentication
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -631,7 +715,10 @@ $this
 static public to_debug_report() : string
 ```
 
-##### SummaryGets the essential information for debugging
+##### Summary
+
+Gets the essential information for debugging
+
 ##### Returns:
 
 ```

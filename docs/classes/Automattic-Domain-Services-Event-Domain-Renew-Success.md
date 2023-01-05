@@ -52,7 +52,10 @@ This event is generated when a domain renewal operation has completed successful
 final public __construct(array  data = []) : mixed
 ```
 
-##### SummaryConstructs an event object
+##### Summary
+
+Constructs an event object
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -74,7 +77,10 @@ mixed
 public get_acknowledged_date() : \DateTimeInterface|null
 ```
 
-##### SummaryGets the date this event was acknowledged.
+##### Summary
+
+Gets the date this event was acknowledged.
+
 ##### Returns:
 
 ```
@@ -90,7 +96,10 @@ public get_acknowledged_date() : \DateTimeInterface|null
 final public get_data_by_key(string  key) : array|mixed|null
 ```
 
-##### SummaryGets the value of the event data specified by the given key.
+##### Summary
+
+Gets the value of the event data specified by the given key.
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -127,7 +136,10 @@ final public get_domain() : \Automattic\Domain_Services\Entity\Domain_Name
 public get_domain_status() : \Automattic\Domain_Services\Entity\Epp_Status_Codes
 ```
 
-##### SummaryReturns the domain status after the renewal operation
+##### Summary
+
+Returns the domain status after the renewal operation
+
 ##### Throws:
 
 | Type | Description |
@@ -149,7 +161,10 @@ public get_domain_status() : \Automattic\Domain_Services\Entity\Epp_Status_Codes
 public get_event_class() : string
 ```
 
-##### SummaryGets the event class
+##### Summary
+
+Gets the event class
+
 ##### Returns:
 
 ```
@@ -165,7 +180,10 @@ string
 public get_event_data() : array
 ```
 
-##### SummaryGets all the event data as an array
+##### Summary
+
+Gets all the event data as an array
+
 ##### Throws:
 
 | Type | Description |
@@ -187,7 +205,10 @@ array
 public get_event_date() : \DateTimeInterface
 ```
 
-##### SummaryGets the date this event was generated.
+##### Summary
+
+Gets the date this event was generated.
+
 ##### Returns:
 
 ```
@@ -203,7 +224,10 @@ public get_event_date() : \DateTimeInterface
 public get_event_subclass() : string
 ```
 
-##### SummaryGets the event subclass
+##### Summary
+
+Gets the event subclass
+
 ##### Returns:
 
 ```
@@ -219,7 +243,10 @@ string
 public get_expiration_date() : \DateTimeInterface|null
 ```
 
-##### SummaryReturns the domain expiration date after the renewal operation
+##### Summary
+
+Returns the domain expiration date after the renewal operation
+
 ##### Returns:
 
 ```
@@ -235,7 +262,10 @@ public get_expiration_date() : \DateTimeInterface|null
 public get_id() : int
 ```
 
-##### SummaryGets the event ID
+##### Summary
+
+Gets the event ID
+
 ##### Returns:
 
 ```
@@ -251,9 +281,15 @@ int
 public get_object_id() : string
 ```
 
-##### SummaryGets the ID of the object that this event references.
-##### Description- The contact ID for a contact object type
+##### Summary
+
+Gets the ID of the object that this event references.
+
+##### Description
+
+- The contact ID for a contact object type
 - The domain name for a domain object type
+
 ##### Returns:
 
 ```
@@ -269,7 +305,10 @@ string
 public get_object_type() : string
 ```
 
-##### SummaryGets the type of object that this event references (ex. &#039;domain&#039; or &#039;contact&#039;)
+##### Summary
+
+Gets the type of object that this event references (ex. &#039;domain&#039; or &#039;contact&#039;)
+
 ##### Returns:
 
 ```
@@ -285,7 +324,10 @@ string
 public get_renewable_until() : \DateTimeInterface|null
 ```
 
-##### SummaryReturns the date until which the domain can be renewed after the renewal operation
+##### Summary
+
+Returns the date until which the domain can be renewed after the renewal operation
+
 ##### Returns:
 
 ```

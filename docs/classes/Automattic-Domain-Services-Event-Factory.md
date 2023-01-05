@@ -24,7 +24,10 @@
 public build_event(array  event_data) : \Automattic\Domain_Services\Event\Event_Interface
 ```
 
-##### SummaryBuilds an event from the provided event data
+##### Summary
+
+Builds an event from the provided event data
+
 ##### Parameters:
 
 | Name | Type | Default |

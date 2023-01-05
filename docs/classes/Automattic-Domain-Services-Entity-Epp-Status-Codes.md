@@ -75,7 +75,10 @@ void
 public current() : ?\Automattic\Domain_Services\Entity\Epp_Status_Code
 ```
 
-##### SummaryFunctions to implement the Iterator interface
+##### Summary
+
+Functions to implement the Iterator interface
+
 ##### Returns:
 
 ```

@@ -57,7 +57,10 @@ CLIENT_TXN_ID = 'client_txn_id'
 public get_client_txn_id() : string
 ```
 
-##### SummaryGets the client transaction ID
+##### Summary
+
+Gets the client transaction ID
+
 ##### Returns:
 
 ```
@@ -73,7 +76,10 @@ string
 static public get_name() : string
 ```
 
-##### SummaryReturns the command name that can be used to build command data
+##### Summary
+
+Returns the command name that can be used to build command data
+
 ##### Returns:
 
 ```
@@ -89,7 +95,10 @@ string
 public set_client_txn_id(string  client_txn_id) : void
 ```
 
-##### SummarySets the client transaction ID
+##### Summary
+
+Sets the client transaction ID
+
 ##### Parameters:
 
 | Name | Type | Default |

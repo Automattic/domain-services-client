@@ -61,7 +61,10 @@ attributes of the domain at the registry.
 final public __construct(array  data = []) : mixed
 ```
 
-##### Summary`Response` object constructor
+##### Summary
+
+`Response` object constructor
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -83,7 +86,10 @@ mixed
 public get_auth_code() : string
 ```
 
-##### SummaryGets the domain EPP auth code
+##### Summary
+
+Gets the domain EPP auth code
+
 ##### Returns:
 
 ```
@@ -99,7 +105,10 @@ string
 final public get_client_txn_id() : string
 ```
 
-##### SummaryGets the client transaction ID that was sent with the request. Useful for logging and debugging.
+##### Summary
+
+Gets the client transaction ID that was sent with the request. Useful for logging and debugging.
+
 ##### Returns:
 
 ```
@@ -115,7 +124,10 @@ string
 public get_contacts() : \Automattic\Domain_Services\Entity\Domain_Contacts
 ```
 
-##### SummaryGets the contacts associated with this domain
+##### Summary
+
+Gets the contacts associated with this domain
+
 ##### Returns:
 
 ```
@@ -131,7 +143,10 @@ public get_contacts() : \Automattic\Domain_Services\Entity\Domain_Contacts
 public get_created_date() : string|null
 ```
 
-##### SummaryGets the date the domain was registered to the reseller&#039;s account
+##### Summary
+
+Gets the date the domain was registered to the reseller&#039;s account
+
 ##### Returns:
 
 ```
@@ -147,7 +162,10 @@ string|null
 final public get_data_by_key(string  key) : array|mixed|null
 ```
 
-##### SummaryReturns the response value for the given key, if it exists.
+##### Summary
+
+Returns the response value for the given key, if it exists.
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -169,7 +187,10 @@ array|mixed|null
 public get_dnssec() : string|null
 ```
 
-##### SummaryGets the DNSSec key data for the domain, if any exists
+##### Summary
+
+Gets the DNSSec key data for the domain, if any exists
+
 ##### Returns:
 
 ```
@@ -185,7 +206,10 @@ string|null
 public get_dnssec_ds_dsata() : string|null
 ```
 
-##### SummaryGets the DNSSec DS data for the domain, if any exists
+##### Summary
+
+Gets the DNSSec DS data for the domain, if any exists
+
 ##### Returns:
 
 ```
@@ -201,7 +225,10 @@ string|null
 public get_domain_status() : \Automattic\Domain_Services\Entity\Epp_Status_Codes
 ```
 
-##### SummaryGets the current EPP status codes for the domain
+##### Summary
+
+Gets the current EPP status codes for the domain
+
 ##### Throws:
 
 | Type | Description |
@@ -223,7 +250,10 @@ public get_domain_status() : \Automattic\Domain_Services\Entity\Epp_Status_Codes
 public get_expiration_date() : string|null
 ```
 
-##### SummaryGets the date the domain registration will expire
+##### Summary
+
+Gets the date the domain registration will expire
+
 ##### Returns:
 
 ```
@@ -239,7 +269,10 @@ string|null
 public get_name_servers() : \Automattic\Domain_Services\Entity\Nameservers|null
 ```
 
-##### SummaryGets the name servers set at the registry for this domain
+##### Summary
+
+Gets the name servers set at the registry for this domain
+
 ##### Throws:
 
 | Type | Description |
@@ -261,7 +294,10 @@ public get_name_servers() : \Automattic\Domain_Services\Entity\Nameservers|null
 public get_paid_until() : \DateTimeInterface|null
 ```
 
-##### SummaryGets the date until which the domain has been paid for
+##### Summary
+
+Gets the date until which the domain has been paid for
+
 ##### Returns:
 
 ```
@@ -277,7 +313,10 @@ public get_paid_until() : \DateTimeInterface|null
 public get_privacy_setting() : \Automattic\Domain_Services\Entity\Whois_Privacy|null
 ```
 
-##### SummaryGets the whois privacy setting for the domain
+##### Summary
+
+Gets the whois privacy setting for the domain
+
 ##### Returns:
 
 ```
@@ -293,8 +332,11 @@ public get_privacy_setting() : \Automattic\Domain_Services\Entity\Whois_Privacy|
 public get_registrar_transfer_date() : \DateTimeInterface|null
 ```
 
-##### SummaryGets the date which the domain was transferred to the reseller&#039;s account, if the domain was added via an inbound
+##### Summary
+
+Gets the date which the domain was transferred to the reseller&#039;s account, if the domain was added via an inbound
 transfer
+
 ##### Returns:
 
 ```
@@ -310,7 +352,10 @@ transfer
 public get_renewal_mode() : string|null
 ```
 
-##### SummaryGets the renewal mode of this domain
+##### Summary
+
+Gets the renewal mode of this domain
+
 ##### Returns:
 
 ```
@@ -326,11 +371,17 @@ string|null
 public get_rgp_status() : string|null
 ```
 
-##### SummaryGets the Renewal Grace Period (RGP) status for this domain. This is usually one of the following:
+##### Summary
+
+Gets the Renewal Grace Period (RGP) status for this domain. This is usually one of the following:
 - `addPeriod`: The grace period after initial registration of the domain name. If the reseller deletes the domain
      during this period, the registry may provide a credit for the cost of the registration.
-##### Description- `autoRenewPeriod`: The grace period after a domain name expires. The domain may be renewed at the regular cost
+
+##### Description
+
+- `autoRenewPeriod`: The grace period after a domain name expires. The domain may be renewed at the regular cost
 during this period.
+
 ##### Returns:
 
 ```
@@ -346,7 +397,10 @@ string|null
 final public get_runtime() : float
 ```
 
-##### SummaryGets the runtime (in seconds) the processing of this command took on the back-end.
+##### Summary
+
+Gets the runtime (in seconds) the processing of this command took on the back-end.
+
 ##### Returns:
 
 ```
@@ -362,8 +416,14 @@ float
 final public get_server_txn_id() : string
 ```
 
-##### SummaryGets the server transaction ID that was generated by the Automattic Domain Services back-end for this request.
-##### DescriptionUseful for logging and debugging.
+##### Summary
+
+Gets the server transaction ID that was generated by the Automattic Domain Services back-end for this request.
+
+##### Description
+
+Useful for logging and debugging.
+
 ##### Returns:
 
 ```
@@ -379,10 +439,13 @@ string
 final public get_status() : int
 ```
 
-##### SummaryGets the response status code
+##### Summary
+
+Gets the response status code
+
 ##### See Also:
 
- * [](classes/Automattic-Domain-Services-Response-Code.md)
+ * [\Automattic\Domain_Services\Response\Code](../classes/Automattic-Domain-Services-Response-Code.md)
 
 ##### Returns:
 
@@ -399,10 +462,13 @@ int
 final public get_status_description() : string
 ```
 
-##### SummaryGets the response status description
+##### Summary
+
+Gets the response status description
+
 ##### See Also:
 
- * [](\Automattic\Domain_Services\Response\Code::DESCRIPTION)
+ * [\Automattic\Domain_Services\Response\Code::DESCRIPTION](../\Automattic\Domain_Services\Response\Code::DESCRIPTION)
 
 ##### Returns:
 
@@ -419,7 +485,10 @@ string
 final public get_timestamp() : int
 ```
 
-##### SummaryGets the timestamp this response was generated.
+##### Summary
+
+Gets the timestamp this response was generated.
+
 ##### Returns:
 
 ```
@@ -435,9 +504,15 @@ int
 public get_transfer_lock() : bool|null
 ```
 
-##### SummaryGets the transferlock status.
-##### Description- `true`: The domain must be unlocked before it can be transferred.
+##### Summary
+
+Gets the transferlock status.
+
+##### Description
+
+- `true`: The domain must be unlocked before it can be transferred.
 - `false`: The domain does not need to be unlocked before it can be transferred.
+
 ##### Returns:
 
 ```
@@ -453,10 +528,13 @@ bool|null
 public get_transfer_mode() : string|null
 ```
 
-##### SummaryGets the transfer mode. One of the following:
+##### Summary
+
+Gets the transfer mode. One of the following:
 - Default: apply the registry policy (usually auto deny)
 - `autoapprove`: Automatically approve outbound transfers after 5 days
 - `autodeny`: Automatically deny outbound transfers after 5 days
+
 ##### Returns:
 
 ```
@@ -472,7 +550,10 @@ string|null
 public get_updated_date() : \DateTimeInterface|null
 ```
 
-##### SummaryGets the date that the domain was last updated at the registry.
+##### Summary
+
+Gets the date that the domain was last updated at the registry.
+
 ##### Returns:
 
 ```
@@ -488,7 +569,10 @@ public get_updated_date() : \DateTimeInterface|null
 final public is_success() : bool
 ```
 
-##### SummaryGets whether the request succeeded.
+##### Summary
+
+Gets whether the request succeeded.
+
 ##### Returns:
 
 ```

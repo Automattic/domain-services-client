@@ -84,7 +84,10 @@ if ( $response->is_success() ) {
 public __construct(\Automattic\Domain_Services\Entity\Dns_Records  records) : mixed
 ```
 
-##### SummaryConstructs a Dns\Set command
+##### Summary
+
+Constructs a Dns\Set command
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -106,7 +109,10 @@ mixed
 final public get_client_txn_id() : string
 ```
 
-##### SummaryGets the client transaction ID set for this command.
+##### Summary
+
+Gets the client transaction ID set for this command.
+
 ##### Returns:
 
 ```
@@ -137,7 +143,10 @@ string
 static public get_name() : string
 ```
 
-##### SummaryReturns the command name that can be used to build command data
+##### Summary
+
+Returns the command name that can be used to build command data
+
 ##### Returns:
 
 ```
@@ -153,7 +162,10 @@ string
 public get_records() : \Automattic\Domain_Services\Entity\Dns_Records
 ```
 
-##### SummaryReturns the DNS records that will be set at the server
+##### Summary
+
+Returns the DNS records that will be set at the server
+
 ##### Returns:
 
 ```
@@ -169,7 +181,10 @@ public get_records() : \Automattic\Domain_Services\Entity\Dns_Records
 final public get_resource_path() : string
 ```
 
-##### SummaryGets the path part for this command on the API endpoint.
+##### Summary
+
+Gets the path part for this command on the API endpoint.
+
 ##### Returns:
 
 ```
@@ -185,7 +200,10 @@ string
 final public jsonSerialize() : array
 ```
 
-##### SummaryImplements the JsonSerializable interface
+##### Summary
+
+Implements the JsonSerializable interface
+
 ##### Returns:
 
 ```
@@ -201,8 +219,11 @@ array
 final public set_client_txn_id(string  client_txn_id) : void
 ```
 
-##### SummarySets the client transaction ID for this command. This optional value may be set by the reseller. It will be
+##### Summary
+
+Sets the client transaction ID for this command. This optional value may be set by the reseller. It will be
 reflected in the corresponding Response class and may be useful for logging and debugging.
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -224,7 +245,10 @@ void
 public to_array() : array
 ```
 
-##### SummaryReturns the command parameters as an array for use when in the jsonSerialize() method
+##### Summary
+
+Returns the command parameters as an array for use when in the jsonSerialize() method
+
 ##### Returns:
 
 ```

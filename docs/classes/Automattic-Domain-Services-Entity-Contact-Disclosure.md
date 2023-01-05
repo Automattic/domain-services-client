@@ -90,7 +90,10 @@ mixed
 public __toString() : string
 ```
 
-##### SummaryGet the disclosed fields as a comma delimited list.
+##### Summary
+
+Get the disclosed fields as a comma delimited list.
+
 ##### Returns:
 
 ```
@@ -106,7 +109,10 @@ string
 static public build_from_whois_privacy(\Automattic\Domain_Services\Entity\Whois_Privacy  whois_privacy) : static
 ```
 
-##### SummaryGenerate the contact disclosure fields based on the given whois privacy settings.
+##### Summary
+
+Generate the contact disclosure fields based on the given whois privacy settings.
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -134,7 +140,10 @@ static
 public get_disclose_fields() : string
 ```
 
-##### SummaryGet the disclosed fields as a comma delimited list.
+##### Summary
+
+Get the disclosed fields as a comma delimited list.
+
 ##### Returns:
 
 ```

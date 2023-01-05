@@ -41,7 +41,10 @@ Represents a contact ID
 public __construct(string  contact_id) : mixed
 ```
 
-##### SummaryConstructs a Contact_Id entity
+##### Summary
+
+Constructs a Contact_Id entity
+
 ##### Parameters:
 
 | Name | Type | Default |

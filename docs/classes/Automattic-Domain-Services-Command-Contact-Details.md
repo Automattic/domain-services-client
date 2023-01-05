@@ -83,7 +83,10 @@ mixed
 final public get_client_txn_id() : string
 ```
 
-##### SummaryGets the client transaction ID set for this command.
+##### Summary
+
+Gets the client transaction ID set for this command.
+
 ##### Returns:
 
 ```
@@ -99,7 +102,10 @@ string
 public get_contact_id() : \Automattic\Domain_Services\Entity\Contact_Id
 ```
 
-##### SummaryGets the contact ID
+##### Summary
+
+Gets the contact ID
+
 ##### Returns:
 
 ```
@@ -130,7 +136,10 @@ string
 static public get_name() : string
 ```
 
-##### SummaryReturns the command name that can be used to build command data
+##### Summary
+
+Returns the command name that can be used to build command data
+
 ##### Returns:
 
 ```
@@ -146,7 +155,10 @@ string
 final public get_resource_path() : string
 ```
 
-##### SummaryGets the path part for this command on the API endpoint.
+##### Summary
+
+Gets the path part for this command on the API endpoint.
+
 ##### Returns:
 
 ```
@@ -162,7 +174,10 @@ string
 final public jsonSerialize() : array
 ```
 
-##### SummaryImplements the JsonSerializable interface
+##### Summary
+
+Implements the JsonSerializable interface
+
 ##### Returns:
 
 ```
@@ -178,8 +193,11 @@ array
 final public set_client_txn_id(string  client_txn_id) : void
 ```
 
-##### SummarySets the client transaction ID for this command. This optional value may be set by the reseller. It will be
+##### Summary
+
+Sets the client transaction ID for this command. This optional value may be set by the reseller. It will be
 reflected in the corresponding Response class and may be useful for logging and debugging.
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -201,7 +219,10 @@ void
 public to_array() : array
 ```
 
-##### SummaryReturns the command parameters as an array for use when in the jsonSerialize() method
+##### Summary
+
+Returns the command parameters as an array for use when in the jsonSerialize() method
+
 ##### Returns:
 
 ```

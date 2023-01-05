@@ -35,7 +35,10 @@ A set of DNS records that share the same name, type and TTL
 public __construct(string  name, \Automattic\Domain_Services\Entity\Dns_Record_Type  type, int  ttl, array  data) : mixed
 ```
 
-##### SummaryConstructs a Dns_Record_Set entity
+##### Summary
+
+Constructs a Dns_Record_Set entity
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -60,7 +63,10 @@ mixed
 public __toString() : string
 ```
 
-##### SummaryReturns a string representation of this DNS record set
+##### Summary
+
+Returns a string representation of this DNS record set
+
 ##### Returns:
 
 ```
@@ -76,7 +82,10 @@ string
 static public from_array(array  data) : static
 ```
 
-##### SummaryConstructs a Dns_Record_Set entity from an associative array containing a DNS record set
+##### Summary
+
+Constructs a Dns_Record_Set entity from an associative array containing a DNS record set
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -104,7 +113,10 @@ static
 public get_data() : array
 ```
 
-##### SummaryReturns the data of this DNS record set
+##### Summary
+
+Returns the data of this DNS record set
+
 ##### Returns:
 
 ```
@@ -120,7 +132,10 @@ array
 public get_name() : string
 ```
 
-##### SummaryReturns the name of this DNS record set
+##### Summary
+
+Returns the name of this DNS record set
+
 ##### Returns:
 
 ```
@@ -136,7 +151,10 @@ string
 public get_ttl() : int
 ```
 
-##### SummaryReturns the TTL of this DNS record set
+##### Summary
+
+Returns the TTL of this DNS record set
+
 ##### Returns:
 
 ```
@@ -152,7 +170,10 @@ int
 public get_type() : \Automattic\Domain_Services\Entity\Dns_Record_Type
 ```
 
-##### SummaryReturns the type of this DNS record set
+##### Summary
+
+Returns the type of this DNS record set
+
 ##### Returns:
 
 ```
@@ -168,7 +189,10 @@ public get_type() : \Automattic\Domain_Services\Entity\Dns_Record_Type
 public to_array() : array
 ```
 
-##### SummaryReturns an associative array containing this DNS record set&#039;s values
+##### Summary
+
+Returns an associative array containing this DNS record set&#039;s values
+
 ##### Returns:
 
 ```

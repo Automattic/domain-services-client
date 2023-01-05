@@ -70,8 +70,14 @@ mixed
 static public from_array(array  data) : static
 ```
 
-##### SummaryBuilds an instance from an array
-##### DescriptionThe array can include `contact_id`, `contact_information`, and/or `contact_disclosure`
+##### Summary
+
+Builds an instance from an array
+
+##### Description
+
+The array can include `contact_id`, `contact_information`, and/or `contact_disclosure`
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -252,7 +258,10 @@ void
 public to_array() : array
 ```
 
-##### SummaryReturns an array representation of this instance
+##### Summary
+
+Returns an array representation of this instance
+
 ##### Returns:
 
 ```

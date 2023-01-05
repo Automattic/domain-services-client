@@ -24,7 +24,10 @@
 public build_response(\Automattic\Domain_Services\Command\Command_Interface  command, array  response) : \Automattic\Domain_Services\Response\Response_Interface
 ```
 
-##### SummaryBuilds a response from the provided response data
+##### Summary
+
+Builds a response from the provided response data
+
 ##### Parameters:
 
 | Name | Type | Default |

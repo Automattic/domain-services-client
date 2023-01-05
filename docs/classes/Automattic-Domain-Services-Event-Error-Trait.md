@@ -28,7 +28,10 @@ A trait that specifies methods common to all error event classes.
 final public get_error_reason() : string
 ```
 
-##### SummaryGets additional information about the reason for the error.
+##### Summary
+
+Gets additional information about the reason for the error.
+
 ##### Returns:
 
 ```

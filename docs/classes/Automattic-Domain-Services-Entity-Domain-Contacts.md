@@ -121,7 +121,10 @@ mixed
 public current() : ?\Automattic\Domain_Services\Entity\Domain_Contact
 ```
 
-##### SummaryFunctions to implement the Iterator interface
+##### Summary
+
+Functions to implement the Iterator interface
+
 ##### Returns:
 
 ```
@@ -137,13 +140,19 @@ public current() : ?\Automattic\Domain_Services\Entity\Domain_Contact
 static public from_array(array  data) : static
 ```
 
-##### SummaryBuilds an instance from an array
-##### Description- The $data array is expected to have the contact type as key and an array as a value.
+##### Summary
+
+Builds an instance from an array
+
+##### Description
+
+- The $data array is expected to have the contact type as key and an array as a value.
 - The array can either have a `contact_id` or a `contact_information` key with the corresponding data.
 - There is also an optional `contact_disclosure` that can be passed for each contact.
+
 ##### See Also:
 
- * [](classes/Automattic-Domain-Services-Entity-Domain-Contact.md)
+ * [\Automattic\Domain_Services\Entity\Domain_Contact](../classes/Automattic-Domain-Services-Entity-Domain-Contact.md)
 
 ##### Parameters:
 
@@ -172,7 +181,10 @@ static
 public get_admin() : \Automattic\Domain_Services\Entity\Domain_Contact|null
 ```
 
-##### SummaryGets the domain admin&#039;s contact
+##### Summary
+
+Gets the domain admin&#039;s contact
+
 ##### Throws:
 
 | Type | Description |
@@ -194,7 +206,10 @@ public get_admin() : \Automattic\Domain_Services\Entity\Domain_Contact|null
 public get_billing() : \Automattic\Domain_Services\Entity\Domain_Contact|null
 ```
 
-##### SummaryGets the domain billing&#039;s contact
+##### Summary
+
+Gets the domain billing&#039;s contact
+
 ##### Throws:
 
 | Type | Description |
@@ -216,7 +231,10 @@ public get_billing() : \Automattic\Domain_Services\Entity\Domain_Contact|null
 public get_by_key(string  key) : \Automattic\Domain_Services\Entity\Domain_Contact|null
 ```
 
-##### SummaryGets domain contact by type
+##### Summary
+
+Gets domain contact by type
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -244,7 +262,10 @@ public get_by_key(string  key) : \Automattic\Domain_Services\Entity\Domain_Conta
 public get_owner() : \Automattic\Domain_Services\Entity\Domain_Contact|null
 ```
 
-##### SummaryGets the domain owner&#039;s contact
+##### Summary
+
+Gets the domain owner&#039;s contact
+
 ##### Throws:
 
 | Type | Description |
@@ -266,7 +287,10 @@ public get_owner() : \Automattic\Domain_Services\Entity\Domain_Contact|null
 public get_tech() : \Automattic\Domain_Services\Entity\Domain_Contact|null
 ```
 
-##### SummaryGets the domain tech&#039;s contact
+##### Summary
+
+Gets the domain tech&#039;s contact
+
 ##### Throws:
 
 | Type | Description |
@@ -288,7 +312,10 @@ public get_tech() : \Automattic\Domain_Services\Entity\Domain_Contact|null
 static public get_valid_contact_types() : string[]
 ```
 
-##### SummaryReturns a list of the valid contact types
+##### Summary
+
+Returns a list of the valid contact types
+
 ##### Returns:
 
 ```
@@ -364,7 +391,10 @@ void
 public set_admin(\Automattic\Domain_Services\Entity\Domain_Contact|null  admin) : void
 ```
 
-##### SummarySets the domain admin&#039;s contact
+##### Summary
+
+Sets the domain admin&#039;s contact
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -392,7 +422,10 @@ void
 public set_billing(\Automattic\Domain_Services\Entity\Domain_Contact|null  billing) : void
 ```
 
-##### SummarySets the domain billing&#039;s contact
+##### Summary
+
+Sets the domain billing&#039;s contact
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -420,7 +453,10 @@ void
 public set_by_key(string  key, \Automattic\Domain_Services\Entity\Domain_Contact  domain_contact) : void
 ```
 
-##### SummarySets domain contact by type
+##### Summary
+
+Sets domain contact by type
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -449,7 +485,10 @@ void
 public set_owner(\Automattic\Domain_Services\Entity\Domain_Contact  owner) : void
 ```
 
-##### SummarySets the domain owner&#039;s contact
+##### Summary
+
+Sets the domain owner&#039;s contact
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -477,7 +516,10 @@ void
 public set_tech(\Automattic\Domain_Services\Entity\Domain_Contact|null  tech) : void
 ```
 
-##### SummarySets the domain tech&#039;s contact
+##### Summary
+
+Sets the domain tech&#039;s contact
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -505,7 +547,10 @@ void
 public to_array() : string[]
 ```
 
-##### SummaryReturns an array of contact IDs that can be returned with the DSAPI response data.
+##### Summary
+
+Returns an array of contact IDs that can be returned with the DSAPI response data.
+
 ##### Returns:
 
 ```

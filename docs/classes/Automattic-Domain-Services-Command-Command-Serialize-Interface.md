@@ -23,7 +23,10 @@
 public to_array() : array
 ```
 
-##### SummaryReturns the command parameters as an array for use when in the jsonSerialize() method
+##### Summary
+
+Returns the command parameters as an array for use when in the jsonSerialize() method
+
 ##### Returns:
 
 ```

@@ -40,7 +40,10 @@ Set of DNS records associated with a specific domain
 public __construct(\Automattic\Domain_Services\Entity\Domain_Name  domain, \Automattic\Domain_Services\Entity\Dns_Record_Sets  record_sets) : mixed
 ```
 
-##### SummaryConstructs a Dns_Records entity
+##### Summary
+
+Constructs a Dns_Records entity
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -63,10 +66,13 @@ mixed
 static public from_array(array  dns_records_data) : static
 ```
 
-##### SummaryConstructs a Dns_Records entity from an array containing sets of DNS records
+##### Summary
+
+Constructs a Dns_Records entity from an array containing sets of DNS records
+
 ##### See Also:
 
- * [](classes/Automattic-Domain-Services-Entity-Dns-Record-Sets.md)
+ * [\Automattic\Domain_Services\Entity\Dns_Record_Sets](../classes/Automattic-Domain-Services-Entity-Dns-Record-Sets.md)
 
 ##### Parameters:
 
@@ -110,7 +116,10 @@ string
 public get_domain() : \Automattic\Domain_Services\Entity\Domain_Name
 ```
 
-##### SummaryReturns the domain name associated with the DNS records
+##### Summary
+
+Returns the domain name associated with the DNS records
+
 ##### Returns:
 
 ```
@@ -141,7 +150,10 @@ string
 public get_record_sets() : \Automattic\Domain_Services\Entity\Dns_Record_Sets
 ```
 
-##### SummaryReturns the sets of DNS records associated with a domain
+##### Summary
+
+Returns the sets of DNS records associated with a domain
+
 ##### Returns:
 
 ```
@@ -157,7 +169,10 @@ public get_record_sets() : \Automattic\Domain_Services\Entity\Dns_Record_Sets
 public to_array() : array
 ```
 
-##### SummaryReturns an array containing sets of DNS records associated with a domain
+##### Summary
+
+Returns an array containing sets of DNS records associated with a domain
+
 ##### Returns:
 
 ```
