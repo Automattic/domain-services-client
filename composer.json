@@ -5,34 +5,8 @@
   "license": "GPL-2.0-or-later",
   "authors": [
     {
-      "name": "Igor Giussani",
-      "homepage": "https://automattic.com",
-      "role": "Developer"
-    },
-    {
-      "name": "Kamen Stanev",
-      "homepage": "https://automattic.com",
-      "role": "Developer"
-    },
-    {
-      "name": "Leonardo Sameshima Taba",
-      "homepage": "https://automattic.com",
-      "role": "Developer"
-    },
-    {
-      "name": "Rafael Galani",
-      "homepage": "https://automattic.com",
-      "role": "Developer"
-    },
-    {
-      "name": "Ramy Nasr",
-      "homepage": "https://automattic.com",
-      "role": "Developer"
-    },
-    {
-      "name": "Del Putnam",
-      "homepage": "https://automattic.com",
-      "role": "Developer"
+      "name": "Automattic",
+      "homepage": "https://automattic.com"
     }
   ],
   "require": {
