@@ -32,6 +32,21 @@ class Success implements Event\Event_Interface {
 	use Event\Object_Type_Domain_Trait;
 
 	/**
+	 * Gets the date the domain will exit the Add Grace Period (AGP); null if no AGP is offered
+	 *
+	 * - If AGP is offered, the reseller may receive a credit for domains deleted during this period (usually 5 days
+	 *   after registration)
+	 * - Excessive cancellations in AGP may incur a penalty
+	 *
+	 * @return \DateTimeInterface|null
+	 */
+	public function get_agp_end_date(): ?\DateTimeInterface {
+		$agp_end_date = $this->get_data_by_key( 'event_data.agp_end_date' );
+
+		return null === $agp_end_date ? null : \DateTimeImmutable::createFromFormat( Entity\Entity_Interface::DATE_FORMAT, $agp_end_date );
+	}
+
+	/**
 	 * Gets the list of domain statuses
 	 *
 	 * @return Entity\Epp_Status_Codes
