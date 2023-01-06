@@ -34,7 +34,7 @@ Contains all DNS records associated with a domain, which can be accessed using t
 * Uses Traits:
   * [\Automattic\Domain_Services\Response\Data_Trait](../classes/Automattic-Domain-Services-Response-Data-Trait.md)
 * See Also:
-  * [\Automattic\Domain_Services\COmmand\Dns\Set](../\Automattic\Domain_Services\COmmand\Dns\Set)
+  * [\Automattic\Domain_Services\Command\Dns\Set](../classes/Automattic-Domain-Services-Command-Dns-Set.md)
 
 ---
 

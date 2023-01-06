@@ -86,6 +86,7 @@ Gets the access token for OAuth
 string
 ```
 Access token for OAuth
+
 ---
 
 <a id="method_get_api_key"></a>
@@ -111,6 +112,7 @@ Gets API key
 null|string
 ```
 API key or token
+
 ---
 
 <a id="method_get_api_key_prefix"></a>
@@ -161,6 +163,7 @@ Get API key (with prefix if set)
 null|string
 ```
 API key with the prefix
+
 ---
 
 <a id="method_get_boolean_format_for_query_string"></a>
@@ -180,6 +183,7 @@ Gets boolean format for query string.
 string
 ```
 Boolean format for query string
+
 ---
 
 <a id="method_get_debug"></a>
@@ -256,6 +260,7 @@ Gets the host
 string
 ```
 Host
+
 ---
 
 <a id="method_get_host_from_settings"></a>
@@ -282,6 +287,7 @@ Returns URL based on the index and variables
 string
 ```
 URL based on host settings
+
 ---
 
 <a id="method_get_host_settings"></a>
@@ -301,6 +307,7 @@ Returns an array of host settings
 array
 ```
 an array of host settings
+
 ---
 
 <a id="method_get_host_string"></a>
@@ -328,6 +335,7 @@ Returns URL based on host settings, index and variables
 string
 ```
 URL based on host settings
+
 ---
 
 <a id="method_get_password"></a>
@@ -347,6 +355,7 @@ Gets the password for HTTP basic authentication
 string
 ```
 Password for HTTP basic authentication
+
 ---
 
 <a id="method_get_temp_folder_path"></a>
@@ -366,6 +375,7 @@ Gets the temp folder path
 string
 ```
 Temp folder path
+
 ---
 
 <a id="method_get_user_agent"></a>
@@ -385,6 +395,7 @@ Gets the user agent of the api client
 string
 ```
 user agent
+
 ---
 
 <a id="method_get_username"></a>
@@ -404,6 +415,7 @@ Gets the username for HTTP basic authentication
 string
 ```
 Username for HTTP basic authentication
+
 ---
 
 <a id="method_set_access_token"></a>

@@ -7,4 +7,4 @@ classes and methods that are meant to be exposed and used by developers using th
 * [\Automattic](namespaces/automattic.md)
 
 --------
-> This document was automatically generated from source code comments on 2023-01-05
+> This document was automatically generated from source code comments on 2023-01-06
