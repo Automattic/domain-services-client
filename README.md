@@ -2,14 +2,45 @@
 
 Client code for Automattic's [Domain Services](https://github.com/Automattic/domain-services-api).
 
+---
+
 ## Installation & Usage
 
 ### Requirements
 
-- PHP 7.4 and later.
-  (Should also work with PHP 8.0.)
+- PHP 7.4 and later. (Should also work with PHP 8.0.)
+- Also requires an Http client compatible with [PSR-18's ClientInterface implementation](https://www.php-fig.org/psr/psr-18/#clientinterface).
 
-- Also requires an Http client compatible with \Psr\Http\Client\ClientInterface.
+### Adding the library to your code
+
+As mentioned in the [requirements](#requirements) above, the package expects a PSR-18 compatible HTTP client. There is a
+list of available HTTP clients with that implementation [available here](https://packagist.org/providers/psr/http-client-implementation).
+Below are instructions for both [Guzzle 6](#guzzle-6) and [Guzzle 7](#guzzle-7) as an example.
+
+#### Guzzle 7
+
+- Guzzle 7 implements both `PSR-18` and `PSR-17` standards. This makes it ready to work with the client library directly.
+- To require this library and Guzzle 7 (if it's not already), the full command should look something like that:
+  ```
+  composer require automattic/domain-services-client guzzelhttp/guzzle
+  ```
+- Once this is done, make sure to require the composer autoload file `vendor/autoload.php` in your code if it's not already.
+- You can see an example of the code [here](./dev-tools/examples/guzzle-7.php)
+
+#### Guzzle 6
+
+- Guzzle 6 does not implement PSR-18 `ClientInterface`, therefore you will need to use an adapter for it. One of the most common
+adapters for that is [php-http/guzzle6-adapter](https://packagist.org/packages/php-http/guzzle6-adapter) package.
+- Guzzle 6 also does implement [PSR-17](https://www.php-fig.org/psr/psr-17/) HTTP Factories. There are many packages to choose from, but
+  for this example, we will be using [http-interop/http-factory-guzzle](https://packagist.org/packages/http-interop/http-factory-guzzle)
+- The full command should look something like that:
+  ```
+  composer require automattic/domain-services-client php-http/guzzle6-adapter http-interop/http-factory-guzzle
+  ```
+- Once this is done, make sure to require the composer autoload file `vendor/autoload.php` in your code if it's not already.
+- You can see an example of the code [here](./dev-tools/examples/guzzle-6.php)
+
+---
 
 ## Getting Started
 
@@ -56,15 +87,17 @@ $client_transaction_id = 'client_tx_id_example';
 
 // Configure API key authorization: apiKey
 $config = Configuration::get_default_configuration()
-	->set_api_key( 'X-DSAPI-KEY', 'YOUR_API_KEY' )
-	->set_api_key( 'X-DSAPI-USER', 'YOUR_API_USER' );
+    ->set_api_key( 'X-DSAPI-KEY', 'your-key-here' )
+    ->set_api_key( 'X-DSAPI-USER', 'your-user-here' );
 
-$api = new Api(
-	$config,
-	new Response\Factory(),
-	// If you want use custom http client, pass your client which implements `\Psr\Http\Client\ClientInterface`.
-	new GuzzleHttp\Client(),
-);
+// Using Guzzle 7
+$http_client = new GuzzleHttp\Client();
+$http_factory = new GuzzleHttp\Psr7\HttpFactory();
+
+$request_factory = new Request\Factory( $http_factory, $http_factory );
+$response_factory = new Response\Factory();
+
+$api = new Api( $config, $request_factory, $response_factory, $http_client );
 
 try {
 	// Make the call to the endpoint
@@ -82,7 +115,7 @@ try {
 
 ## Run the unit tests
 
-Install the dependencies via `composer`
+Install the dependencies via `composer` by following the [instructions above](#adding-the-library-to-your-code)
 
 ```shell
 $ composer install
