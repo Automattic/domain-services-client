@@ -5,28 +5,8 @@
   "license": "GPL-2.0-or-later",
   "authors": [
     {
-      "name": "Igor Giussani",
-      "email": "igor.giussani@automattic.com"
-    },
-    {
-      "name": "Kamen Stanev",
-      "email": "kamen.stanev@automattic.com"
-    },
-    {
-      "name": "Leonardo Sameshima Taba",
-      "email": "leonardo.taba@automattic.com"
-    },
-    {
-      "name": "Rafael Galani",
-      "email": "rafael.galani@automattic.com"
-    },
-    {
-      "name": "Ramy Nasr",
-      "email": "ramy@automattic.com"
-    },
-    {
-      "name": "Del Putnam",
-      "email": "del@automattic.com"
+      "name": "Automattic",
+      "homepage": "https://automattic.com"
     }
   ],
   "require": {
