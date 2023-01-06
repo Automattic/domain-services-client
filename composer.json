@@ -6,27 +6,33 @@
   "authors": [
     {
       "name": "Igor Giussani",
-      "email": "igor.giussani@automattic.com"
+      "homepage": "https://automattic.com",
+      "role": "Developer"
     },
     {
       "name": "Kamen Stanev",
-      "email": "kamen.stanev@automattic.com"
+      "homepage": "https://automattic.com",
+      "role": "Developer"
     },
     {
       "name": "Leonardo Sameshima Taba",
-      "email": "leonardo.taba@automattic.com"
+      "homepage": "https://automattic.com",
+      "role": "Developer"
     },
     {
       "name": "Rafael Galani",
-      "email": "rafael.galani@automattic.com"
+      "homepage": "https://automattic.com",
+      "role": "Developer"
     },
     {
       "name": "Ramy Nasr",
-      "email": "ramy@automattic.com"
+      "homepage": "https://automattic.com",
+      "role": "Developer"
     },
     {
       "name": "Del Putnam",
-      "email": "del@automattic.com"
+      "homepage": "https://automattic.com",
+      "role": "Developer"
     }
   ],
   "require": {
