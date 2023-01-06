@@ -1,8 +1,13 @@
-# Automattic Domain Services Client
+Client
 
-Client code for Automattic's [Domain Services](https://github.com/Automattic/domain-services-api).
+Client code for Automattic's Domain Services.
 
 ---
+
+## Purpose
+
+This library is used to connect a php client to Automattic's domain management service. It is currently only intended
+for use by applications hosted by Automattic and will not work for other use cases.
 
 ## Installation & Usage
 
@@ -30,7 +35,7 @@ Below are instructions for both [Guzzle 6](#guzzle-6) and [Guzzle 7](#guzzle-7) 
 #### Guzzle 6
 
 - Guzzle 6 does not implement PSR-18 `ClientInterface`, therefore you will need to use an adapter for it. One of the most common
-adapters for that is [php-http/guzzle6-adapter](https://packagist.org/packages/php-http/guzzle6-adapter) package.
+  adapters for that is [php-http/guzzle6-adapter](https://packagist.org/packages/php-http/guzzle6-adapter) package.
 - Guzzle 6 also does implement [PSR-17](https://www.php-fig.org/psr/psr-17/) HTTP Factories. There are many packages to choose from, but
   for this example, we will be using [http-interop/http-factory-guzzle](https://packagist.org/packages/http-interop/http-factory-guzzle)
 - The full command should look something like that:
