@@ -21,8 +21,7 @@ namespace Automattic\Domain_Services\Command\Domain\Set;
 use Automattic\Domain_Services\{Command, Entity};
 
 /**
- * Sets the privacy option that determines what contact information is shown in the response of a whois query for this
- * domain.
+ * Sets the privacy option that determines what contact information is shown in WHOIS.
  *
  * - Runs asynchronously on the server
  * - Reseller will receive a Domain\Set\Privacy\Success or Domain\Set\Privacy\Fail event depending on the result of the

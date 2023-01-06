@@ -18,7 +18,7 @@
 
 namespace Automattic\Domain_Services\Event\Domain\Set\Transferlock;
 
-use Automattic\Domain_Services\{Event};
+use Automattic\Domain_Services\{Event, Command};
 
 /**
  * Success event for Domain\Set\TransferLock command

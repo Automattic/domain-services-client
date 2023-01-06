@@ -25,7 +25,7 @@ use Automattic\Domain_Services\{Entity, Exception, Response};
  *
  * Contains all DNS records associated with a domain, which can be accessed using the `get_dns_records` method.
  *
- * @see \Automattic\Domain_Services\COmmand\Dns\Set
+ * @see \Automattic\Domain_Services\Command\Dns\Set
  */
 class Get implements Response\Response_Interface {
 	use Response\Data_Trait;
