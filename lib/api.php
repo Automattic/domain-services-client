@@ -57,9 +57,7 @@ class Api {
 	public function post( Command\Command_Interface $command, string $client_txn_id = '' ): Response\Response_Interface {
 		$command->set_client_txn_id( $client_txn_id );
 		$body = json_encode( $command, JSON_THROW_ON_ERROR );
-		$resourcePath = $command->get_resource_path();
-		$api_host = $this->configuration->get_host();
-		$uri = $api_host . $resourcePath;
+		$uri = $this->configuration->get_host();
 
 		$headers = [
 			'User-Agent' => $this->configuration->get_user_agent(),

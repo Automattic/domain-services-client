@@ -22,15 +22,6 @@ trait Command_Trait {
 	private string $client_txn_id = '';
 
 	/**
-	 * Gets the path part for this command on the API endpoint.
-	 *
-	 * @return string
-	 */
-	final public function get_resource_path(): string {
-		return '/' . strtolower( self::get_name() );
-	}
-
-	/**
 	 * Gets the client transaction ID set for this command.
 	 *
 	 * @return string
@@ -47,5 +38,12 @@ trait Command_Trait {
 	 */
 	final public function set_client_txn_id( string $client_txn_id ): void {
 		$this->client_txn_id = $client_txn_id;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	final public static function get_name(): string {
+		return substr( static::class, strlen( __NAMESPACE__ . '\\' ) );
 	}
 }

@@ -94,13 +94,6 @@ class Nameservers implements Command\Command_Interface, Command\Command_Serializ
 	}
 
 	/**
-	 * @return string
-	 */
-	public static function get_name(): string {
-		return 'Domain_Set_Nameservers';
-	}
-
-	/**
 	 * @return array
 	 */
 	public function to_array(): array {
