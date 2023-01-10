@@ -26,7 +26,7 @@ class Domain_Set_Transferlock_Test extends Test\Lib\Domain_Services_Client_Test_
 
 	public function test_command_instance_success(): void {
 		$mock_command_data = [
-			Command\Command_Interface::COMMAND => 'Domain_Set_Transferlock',
+			Command\Command_Interface::COMMAND => 'Domain\Set\Transferlock',
 			Command\Command_Interface::PARAMS => [
 				self::get_domain_name_array_key() => 'test-domain-name.com',
 				self::get_transferlock_array_key() => true,

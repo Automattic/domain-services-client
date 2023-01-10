@@ -26,7 +26,7 @@ class Domain_Set_Privacy_Test extends Test\Lib\Domain_Services_Client_Test_Case 
 
 	public function test_command_instance_success(): void {
 		$mock_command_data = [
-			Command\Command_Interface::COMMAND => 'Domain_Set_Privacy',
+			Command\Command_Interface::COMMAND => 'Domain\Set\Privacy',
 			Command\Command_Interface::PARAMS => [
 				self::get_domain_name_array_key() => 'test-domain-name.com',
 				self::get_privacy_setting_array_key() => Entity\Whois_Privacy::ENABLE_PRIVACY_SERVICE,
