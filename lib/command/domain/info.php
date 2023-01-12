@@ -29,7 +29,6 @@ use Automattic\Domain_Services\{Command, Entity};
  * @see \Automattic\Domain_Services\Response\Domain\Info
  */
 class Info implements Command\Command_Interface, Command\Command_Serialize_Interface {
-	use Command\Array_Key_Domain_Trait;
 	use Command\Command_Serialize_Trait;
 	use Command\Command_Trait;
 
@@ -68,7 +67,7 @@ class Info implements Command\Command_Interface, Command\Command_Serialize_Inter
 	 */
 	public function to_array(): array {
 		return [
-			self::get_domain_name_array_key() => $this->get_domain()->get_name(),
+			Command\Command_Interface::KEY_DOMAIN => $this->get_domain()->get_name(),
 		];
 	}
 }

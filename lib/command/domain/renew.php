@@ -55,10 +55,6 @@ use Automattic\Domain_Services\{Command, Entity};
  * @see \Automattic\Domain_Services\Event\Domain\Renew\Fail
  */
 class Renew implements Command\Command_Interface, Command\Command_Serialize_Interface {
-	use Command\Array_Key_Current_Expiration_Year_Trait;
-	use Command\Array_Key_Domain_Trait;
-	use Command\Array_Key_Fee_Amount_Trait;
-	use Command\Array_Key_Period_Trait;
 	use Command\Command_Serialize_Trait;
 	use Command\Command_Trait;
 
@@ -160,10 +156,10 @@ class Renew implements Command\Command_Interface, Command\Command_Serialize_Inte
 	 */
 	public function to_array(): array {
 		return [
-			self::get_domain_name_array_key() => $this->get_domain()->get_name(),
-			self::get_period_array_key() => $this->get_period(),
-			self::get_current_expiration_year_array_key() => $this->get_current_expiration_year(),
-			self::get_fee_amount_array_key() => $this->get_fee_amount(),
+			Command\Command_Interface::KEY_DOMAIN => $this->get_domain()->get_name(),
+			Command\Command_Interface::KEY_PERIOD => $this->get_period(),
+			Command\Command_Interface::KEY_CURRENT_EXPIRATION_YEAR => $this->get_current_expiration_year(),
+			Command\Command_Interface::KEY_FEE_AMOUNT => $this->get_fee_amount(),
 		];
 	}
 }

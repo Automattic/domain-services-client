@@ -28,7 +28,6 @@ use Automattic\Domain_Services\{Command, Entity, Exception};
  * @see \Automattic\Domain_Services\Response\Domain\Check
  */
 class Check implements Command\Command_Interface, Command\Command_Serialize_Interface {
-	use Command\Array_Key_Domains_Trait;
 	use Command\Command_Serialize_Trait;
 	use Command\Command_Trait;
 
@@ -73,7 +72,7 @@ class Check implements Command\Command_Interface, Command\Command_Serialize_Inte
 	 */
 	public function to_array(): array {
 		return [
-			self::get_domain_names_array_key() => $this->get_domains()->to_array(),
+			Command\Command_Interface::KEY_DOMAINS => $this->get_domains()->to_array(),
 		];
 	}
 }

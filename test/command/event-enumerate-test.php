@@ -21,19 +21,18 @@ namespace Automattic\Domain_Services\Test\Command;
 use Automattic\Domain_Services\{Command, Test};
 
 class Event_Enumerate_Test extends Test\Lib\Domain_Services_Client_Test_Case {
-	use Command\Array_Key_Event_Trait;
 
 	public function test_command_instance_success(): void {
 		$mock_command_data = [
 			Command\Command_Interface::COMMAND => 'Event_Enumerate',
 			Command\Command_Interface::PARAMS => [
-				self::get_event_limit_array_key() => 50,
+				Command\Command_Interface::KEY_LIMIT => 50,
 			],
 			Command\Command_Interface::CLIENT_TXN_ID => 'client-transaction-info-for-event-enumerate-test-1',
 		];
 
 		$command = new Command\Event\Enumerate();
-		$command->set_limit( $mock_command_data[ Command\Command_Interface::PARAMS ][ self::get_event_limit_array_key() ] );
+		$command->set_limit( $mock_command_data[ Command\Command_Interface::PARAMS ][ Command\Command_Interface::KEY_LIMIT ] );
 		$command->set_client_txn_id( $mock_command_data[ Command\Command_Interface::CLIENT_TXN_ID ] );
 
 		$this->assertInstanceOf( Command\Event\Enumerate::class, $command );
