@@ -52,25 +52,6 @@ class Contact_Disclosure {
 	}
 
 	/**
-	 * Generate the contact disclosure fields based on the given whois privacy settings.
-	 *
-	 * @param Whois_Privacy $whois_privacy
-	 * @return static
-	 * @throws Exception\Entity\Invalid_Value_Exception
-	 */
-	public static function build_from_whois_privacy( Whois_Privacy $whois_privacy ): self {
-		if ( Whois_Privacy::DISCLOSE_CONTACT_INFO === $whois_privacy->get_setting() ) {
-			return new self( self::ALL );
-		}
-
-		if ( in_array( $whois_privacy->get_setting(), [ Whois_Privacy::ENABLE_PRIVACY_SERVICE, Whois_Privacy::REDACT_CONTACT_INFO ], true ) ) {
-			return new self( self::NONE );
-		}
-
-		throw new Exception\Entity\Invalid_Value_Exception( __CLASS__, 'No corresponding contact disclosure value for the given whois privacy setting' );
-	}
-
-	/**
 	 * Get the disclosed fields as a comma delimited list.
 	 *
 	 * @return string
