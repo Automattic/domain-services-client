@@ -21,7 +21,6 @@ namespace Automattic\Domain_Services\Test\Command;
 use Automattic\Domain_Services\{Command, Entity, Test};
 
 class Domain_Set_Contacts_Test extends Test\Lib\Domain_Services_Client_Test_Case {
-	use Command\Array_Key_Contact_Disclosure_Trait;
 	use Command\Array_Key_Contact_Id_Trait;
 	use Command\Array_Key_Contact_Information_Trait;
 	use Command\Array_Key_Contacts_Trait;
@@ -49,7 +48,7 @@ class Domain_Set_Contacts_Test extends Test\Lib\Domain_Services_Client_Test_Case
 							'phone' => '+1.8772733049',
 							'fax' => null,
 						],
-						self::get_contact_disclosure_array_key() => Entity\Contact_Disclosure::NONE,
+						Command\Array_Keys::CONTACT_DISCLOSURE => Entity\Contact_Disclosure::NONE,
 					],
 				],
 			],

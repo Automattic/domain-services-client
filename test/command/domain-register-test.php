@@ -21,7 +21,6 @@ namespace Automattic\Domain_Services\Test\Command;
 use Automattic\Domain_Services\{Command, Entity, Test};
 
 class Domain_Register_Test extends Test\Lib\Domain_Services_Client_Test_Case {
-	use Command\Array_Key_Contact_Disclosure_Trait;
 	use Command\Array_Key_Contact_Id_Trait;
 	use Command\Array_Key_Contact_Information_Trait;
 	use Command\Array_Key_Contacts_Trait;
@@ -65,7 +64,7 @@ class Domain_Register_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 
 		// Add default info to the expected data
 		$mock_command_data[ Command\Command_Interface::PARAMS ][ self::get_contacts_array_key() ]['owner'][ self::get_contact_id_array_key() ] = null;
-		$mock_command_data[ Command\Command_Interface::PARAMS ][ self::get_contacts_array_key() ]['owner'][ self::get_contact_disclosure_array_key() ] = Entity\Contact_Disclosure::NONE;
+		$mock_command_data[ Command\Command_Interface::PARAMS ][ self::get_contacts_array_key() ]['owner'][ Command\Array_Keys::CONTACT_DISCLOSURE ] = Entity\Contact_Disclosure::NONE;
 
 		$this->assertArraysEqual( $mock_command_data, $actual_command_array );
 	}

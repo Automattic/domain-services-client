@@ -28,7 +28,6 @@ use Automattic\Domain_Services\{Command, Exception};
 class Domain_Contact {
 	use Command\Array_Key_Contact_Id_Trait;
 	use Command\Array_Key_Contact_Information_Trait;
-	use Command\Array_Key_Contact_Disclosure_Trait;
 
 	/**
 	 * The contact ID
@@ -80,7 +79,7 @@ class Domain_Contact {
 		return [
 			self::get_contact_id_array_key() => $contact_id,
 			self::get_contact_information_array_key() => $contact_info,
-			self::get_contact_disclosure_array_key() => $this->get_contact_disclosure()->get_disclose_fields(),
+			Command\Array_Keys::CONTACT_DISCLOSURE => $this->get_contact_disclosure()->get_disclose_fields(),
 		];
 	}
 
@@ -107,8 +106,8 @@ class Domain_Contact {
 			$domain_contact->set_contact_information( $contact_information );
 		}
 
-		if ( null !== ( $data[ self::get_contact_disclosure_array_key() ] ?? null ) ) {
-			$contact_disclosure = new Contact_Disclosure( $data[ self::get_contact_disclosure_array_key() ] );
+		if ( null !== ( $data[ Command\Array_Keys::CONTACT_DISCLOSURE ] ?? null ) ) {
+			$contact_disclosure = new Contact_Disclosure( $data[ Command\Array_Keys::CONTACT_DISCLOSURE ] );
 			$domain_contact->set_contact_disclosure( $contact_disclosure );
 		}
 
