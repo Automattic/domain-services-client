@@ -19,8 +19,6 @@ can be set using the $limit property for this command. The limit defaults to 50 
 
 * public [__construct()](#method___construct)
 * public [get_client_txn_id()](#method_get_client_txn_id)
-* public [get_event_id_array_key()](#method_get_event_id_array_key)
-* public [get_event_limit_array_key()](#method_get_event_limit_array_key)
 * public [get_limit()](#method_get_limit)
 * public [get_name()](#method_get_name)
 * public [get_resource_path()](#method_get_resource_path)
@@ -38,7 +36,6 @@ can be set using the $limit property for this command. The limit defaults to 50 
   * [\Automattic\Domain_Services\Command\Command_Interface](../classes/Automattic-Domain-Services-Command-Command-Interface.md)
   * [\Automattic\Domain_Services\Command\Command_Serialize_Interface](../classes/Automattic-Domain-Services-Command-Command-Serialize-Interface.md)
 * Uses Traits:
-  * [\Automattic\Domain_Services\Command\Array_Key_Event_Trait](../classes/Automattic-Domain-Services-Command-Array-Key-Event-Trait.md)
   * [\Automattic\Domain_Services\Command\Command_Serialize_Trait](../classes/Automattic-Domain-Services-Command-Command-Serialize-Trait.md)
   * [\Automattic\Domain_Services\Command\Command_Trait](../classes/Automattic-Domain-Services-Command-Command-Trait.md)
 * See Also:
@@ -83,36 +80,6 @@ final public get_client_txn_id() : string
 ##### Summary
 
 Gets the client transaction ID set for this command.
-
-##### Returns:
-
-```
-string
-```
-
----
-
-<a id="method_get_event_id_array_key"></a>
-### get_event_id_array_key
-
-```
-final static public get_event_id_array_key() : string
-```
-
-##### Returns:
-
-```
-string
-```
-
----
-
-<a id="method_get_event_limit_array_key"></a>
-### get_event_limit_array_key
-
-```
-final static public get_event_limit_array_key() : string
-```
 
 ##### Returns:
 

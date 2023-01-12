@@ -41,14 +41,10 @@ if ( $response->is_success() ) {
 * public [__construct()](#method___construct)
 * public [get_client_txn_id()](#method_get_client_txn_id)
 * public [get_current_expiration_year()](#method_get_current_expiration_year)
-* public [get_current_expiration_year_array_key()](#method_get_current_expiration_year_array_key)
 * public [get_domain()](#method_get_domain)
-* public [get_domain_name_array_key()](#method_get_domain_name_array_key)
 * public [get_fee_amount()](#method_get_fee_amount)
-* public [get_fee_amount_array_key()](#method_get_fee_amount_array_key)
 * public [get_name()](#method_get_name)
 * public [get_period()](#method_get_period)
-* public [get_period_array_key()](#method_get_period_array_key)
 * public [get_resource_path()](#method_get_resource_path)
 * public [jsonSerialize()](#method_jsonSerialize)
 * public [set_client_txn_id()](#method_set_client_txn_id)
@@ -63,10 +59,6 @@ if ( $response->is_success() ) {
   * [\Automattic\Domain_Services\Command\Command_Interface](../classes/Automattic-Domain-Services-Command-Command-Interface.md)
   * [\Automattic\Domain_Services\Command\Command_Serialize_Interface](../classes/Automattic-Domain-Services-Command-Command-Serialize-Interface.md)
 * Uses Traits:
-  * [\Automattic\Domain_Services\Command\Array_Key_Current_Expiration_Year_Trait](../classes/Automattic-Domain-Services-Command-Array-Key-Current-Expiration-Year-Trait.md)
-  * [\Automattic\Domain_Services\Command\Array_Key_Domain_Trait](../classes/Automattic-Domain-Services-Command-Array-Key-Domain-Trait.md)
-  * [\Automattic\Domain_Services\Command\Array_Key_Fee_Amount_Trait](../classes/Automattic-Domain-Services-Command-Array-Key-Fee-Amount-Trait.md)
-  * [\Automattic\Domain_Services\Command\Array_Key_Period_Trait](../classes/Automattic-Domain-Services-Command-Array-Key-Period-Trait.md)
   * [\Automattic\Domain_Services\Command\Command_Serialize_Trait](../classes/Automattic-Domain-Services-Command-Command-Serialize-Trait.md)
   * [\Automattic\Domain_Services\Command\Command_Trait](../classes/Automattic-Domain-Services-Command-Command-Trait.md)
 * See Also:
@@ -144,21 +136,6 @@ int
 
 ---
 
-<a id="method_get_current_expiration_year_array_key"></a>
-### get_current_expiration_year_array_key
-
-```
-final static public get_current_expiration_year_array_key() : string
-```
-
-##### Returns:
-
-```
-string
-```
-
----
-
 <a id="method_get_domain"></a>
 ### get_domain
 
@@ -178,21 +155,6 @@ Returns the domain name that will be renewed
 
 ---
 
-<a id="method_get_domain_name_array_key"></a>
-### get_domain_name_array_key
-
-```
-final static public get_domain_name_array_key() : string
-```
-
-##### Returns:
-
-```
-string
-```
-
----
-
 <a id="method_get_fee_amount"></a>
 ### get_fee_amount
 
@@ -208,21 +170,6 @@ Returns the renewal fee amount (used for premium domains)
 
 ```
 float|null
-```
-
----
-
-<a id="method_get_fee_amount_array_key"></a>
-### get_fee_amount_array_key
-
-```
-final static public get_fee_amount_array_key() : string
-```
-
-##### Returns:
-
-```
-string
 ```
 
 ---
@@ -261,21 +208,6 @@ Returns the number of years the domain will be renewed for
 
 ```
 int
-```
-
----
-
-<a id="method_get_period_array_key"></a>
-### get_period_array_key
-
-```
-final static public get_period_array_key() : string
-```
-
-##### Returns:
-
-```
-string
 ```
 
 ---

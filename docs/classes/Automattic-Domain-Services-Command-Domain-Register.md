@@ -75,10 +75,8 @@ if ( $response->is_success() ) {
 * public [__construct()](#method___construct)
 * public [get_client_txn_id()](#method_get_client_txn_id)
 * public [get_contacts()](#method_get_contacts)
-* public [get_contacts_array_key()](#method_get_contacts_array_key)
 * public [get_dns_records()](#method_get_dns_records)
 * public [get_domain()](#method_get_domain)
-* public [get_domain_name_array_key()](#method_get_domain_name_array_key)
 * public [get_name()](#method_get_name)
 * public [get_nameservers()](#method_get_nameservers)
 * public [get_period()](#method_get_period)
@@ -98,8 +96,6 @@ if ( $response->is_success() ) {
   * [\Automattic\Domain_Services\Command\Command_Interface](../classes/Automattic-Domain-Services-Command-Command-Interface.md)
   * [\Automattic\Domain_Services\Command\Command_Serialize_Interface](../classes/Automattic-Domain-Services-Command-Command-Serialize-Interface.md)
 * Uses Traits:
-  * [\Automattic\Domain_Services\Command\Array_Key_Contacts_Trait](../classes/Automattic-Domain-Services-Command-Array-Key-Contacts-Trait.md)
-  * [\Automattic\Domain_Services\Command\Array_Key_Domain_Trait](../classes/Automattic-Domain-Services-Command-Array-Key-Domain-Trait.md)
   * [\Automattic\Domain_Services\Command\Command_Serialize_Trait](../classes/Automattic-Domain-Services-Command-Command-Serialize-Trait.md)
   * [\Automattic\Domain_Services\Command\Command_Trait](../classes/Automattic-Domain-Services-Command-Command-Trait.md)
 * See Also:
@@ -186,21 +182,6 @@ Gets the contacts to be created for the domain
 
 ---
 
-<a id="method_get_contacts_array_key"></a>
-### get_contacts_array_key
-
-```
-final static public get_contacts_array_key() : string
-```
-
-##### Returns:
-
-```
-string
-```
-
----
-
 <a id="method_get_dns_records"></a>
 ### get_dns_records
 
@@ -235,21 +216,6 @@ Gets the domain name to be registered
 
 ```
 \Automattic\Domain_Services\Entity\Domain_Name
-```
-
----
-
-<a id="method_get_domain_name_array_key"></a>
-### get_domain_name_array_key
-
-```
-final static public get_domain_name_array_key() : string
-```
-
-##### Returns:
-
-```
-string
 ```
 
 ---

@@ -16,11 +16,8 @@ Represents one of the domain's contacts and its privacy setting.
 * public [__construct()](#method___construct)
 * public [from_array()](#method_from_array)
 * public [get_contact_disclosure()](#method_get_contact_disclosure)
-* public [get_contact_disclosure_array_key()](#method_get_contact_disclosure_array_key)
 * public [get_contact_id()](#method_get_contact_id)
-* public [get_contact_id_array_key()](#method_get_contact_id_array_key)
 * public [get_contact_information()](#method_get_contact_information)
-* public [get_contact_information_array_key()](#method_get_contact_information_array_key)
 * public [set_contact_disclosure()](#method_set_contact_disclosure)
 * public [set_contact_id()](#method_set_contact_id)
 * public [set_contact_information()](#method_set_contact_information)
@@ -31,10 +28,6 @@ Represents one of the domain's contacts and its privacy setting.
 ### Details
 
 * File: [lib/entity/domain-contact.php](../../lib/entity/domain-contact.php)
-* Uses Traits:
-  * [\Automattic\Domain_Services\Command\Array_Key_Contact_Id_Trait](../classes/Automattic-Domain-Services-Command-Array-Key-Contact-Id-Trait.md)
-  * [\Automattic\Domain_Services\Command\Array_Key_Contact_Information_Trait](../classes/Automattic-Domain-Services-Command-Array-Key-Contact-Information-Trait.md)
-  * [\Automattic\Domain_Services\Command\Array_Key_Contact_Disclosure_Trait](../classes/Automattic-Domain-Services-Command-Array-Key-Contact-Disclosure-Trait.md)
 
 ---
 
@@ -113,21 +106,6 @@ public get_contact_disclosure() : \Automattic\Domain_Services\Entity\Contact_Dis
 
 ---
 
-<a id="method_get_contact_disclosure_array_key"></a>
-### get_contact_disclosure_array_key
-
-```
-final static public get_contact_disclosure_array_key() : string
-```
-
-##### Returns:
-
-```
-string
-```
-
----
-
 <a id="method_get_contact_id"></a>
 ### get_contact_id
 
@@ -143,21 +121,6 @@ public get_contact_id() : \Automattic\Domain_Services\Entity\Contact_Id|null
 
 ---
 
-<a id="method_get_contact_id_array_key"></a>
-### get_contact_id_array_key
-
-```
-final static public get_contact_id_array_key() : string
-```
-
-##### Returns:
-
-```
-string
-```
-
----
-
 <a id="method_get_contact_information"></a>
 ### get_contact_information
 
@@ -169,21 +132,6 @@ public get_contact_information() : \Automattic\Domain_Services\Entity\Contact_In
 
 ```
 \Automattic\Domain_Services\Entity\Contact_Information|null
-```
-
----
-
-<a id="method_get_contact_information_array_key"></a>
-### get_contact_information_array_key
-
-```
-final static public get_contact_information_array_key() : string
-```
-
-##### Returns:
-
-```
-string
 ```
 
 ---

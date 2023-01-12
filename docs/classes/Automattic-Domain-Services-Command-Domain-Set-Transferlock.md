@@ -16,11 +16,9 @@ This commands requests either enabling or disabling the transfer lock on a speci
 * public [__construct()](#method___construct)
 * public [get_client_txn_id()](#method_get_client_txn_id)
 * public [get_domain()](#method_get_domain)
-* public [get_domain_name_array_key()](#method_get_domain_name_array_key)
 * public [get_name()](#method_get_name)
 * public [get_resource_path()](#method_get_resource_path)
 * public [get_transfer_lock()](#method_get_transfer_lock)
-* public [get_transferlock_array_key()](#method_get_transferlock_array_key)
 * public [jsonSerialize()](#method_jsonSerialize)
 * public [set_client_txn_id()](#method_set_client_txn_id)
 * public [to_array()](#method_to_array)
@@ -36,8 +34,6 @@ This commands requests either enabling or disabling the transfer lock on a speci
 * Uses Traits:
   * [\Automattic\Domain_Services\Command\Command_Trait](../classes/Automattic-Domain-Services-Command-Command-Trait.md)
   * [\Automattic\Domain_Services\Command\Command_Serialize_Trait](../classes/Automattic-Domain-Services-Command-Command-Serialize-Trait.md)
-  * [\Automattic\Domain_Services\Command\Array_Key_Domain_Trait](../classes/Automattic-Domain-Services-Command-Array-Key-Domain-Trait.md)
-  * [\Automattic\Domain_Services\Command\Array_Key_Transferlock_Trait](../classes/Automattic-Domain-Services-Command-Array-Key-Transferlock-Trait.md)
 * See Also:
   * [\Automattic\Domain_Services\Response\Domain\Set\Transferlock](../classes/Automattic-Domain-Services-Response-Domain-Set-Transferlock.md)
 
@@ -105,21 +101,6 @@ Gets the domain name for that command
 
 ---
 
-<a id="method_get_domain_name_array_key"></a>
-### get_domain_name_array_key
-
-```
-final static public get_domain_name_array_key() : string
-```
-
-##### Returns:
-
-```
-string
-```
-
----
-
 <a id="method_get_name"></a>
 ### get_name
 
@@ -173,21 +154,6 @@ Gets the transfer lock state to be applied
 
 ```
 bool
-```
-
----
-
-<a id="method_get_transferlock_array_key"></a>
-### get_transferlock_array_key
-
-```
-final static public get_transferlock_array_key() : string
-```
-
-##### Returns:
-
-```
-string
 ```
 
 ---
