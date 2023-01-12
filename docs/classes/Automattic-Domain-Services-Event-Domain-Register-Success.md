@@ -15,6 +15,7 @@ This event is sent when a register operation succeeds.
 
 * public [__construct()](#method___construct)
 * public [get_acknowledged_date()](#method_get_acknowledged_date)
+* public [get_agp_end_date()](#method_get_agp_end_date)
 * public [get_contacts()](#method_get_contacts)
 * public [get_created_date()](#method_get_created_date)
 * public [get_data_by_key()](#method_get_data_by_key)
@@ -83,6 +84,31 @@ public get_acknowledged_date() : \DateTimeInterface|null
 ##### Summary
 
 Gets the date this event was acknowledged.
+
+##### Returns:
+
+```
+\DateTimeInterface|null
+```
+
+---
+
+<a id="method_get_agp_end_date"></a>
+### get_agp_end_date
+
+```
+public get_agp_end_date() : \DateTimeInterface|null
+```
+
+##### Summary
+
+Gets the date the domain will exit the Add Grace Period (AGP); null if no AGP is offered
+
+##### Description
+
+- If AGP is offered, the reseller may receive a credit for domains deleted during this period (usually 5 days
+  after registration)
+- Excessive cancellations in AGP may incur a penalty
 
 ##### Returns:
 

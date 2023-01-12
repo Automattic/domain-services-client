@@ -108,7 +108,7 @@ function do_build_docs {
 }
 
 function do_build_only {
-  php "${phpdoc_exec}"
+  php "${phpdoc_exec}" && php vendor/automattic/phpdoc-markdown/bin/html-to-md.php --dir="./${docs_dir}/"
 }
 
 function prepare_dev_tools {

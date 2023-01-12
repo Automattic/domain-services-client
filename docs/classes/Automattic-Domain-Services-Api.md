@@ -22,7 +22,7 @@
 ### __construct
 
 ```
-public __construct(\Automattic\Domain_Services\Configuration  configuration, \Automattic\Domain_Services\Response\Factory  response_factory, \Psr\Http\Client\ClientInterface  http_client) : mixed
+public __construct(\Automattic\Domain_Services\Configuration  configuration, \Automattic\Domain_Services\Request\Factory  request_factory, \Automattic\Domain_Services\Response\Factory  response_factory, \Psr\Http\Client\ClientInterface  http_client) : mixed
 ```
 
 ##### Parameters:
@@ -30,6 +30,7 @@ public __construct(\Automattic\Domain_Services\Configuration  configuration, \Au
 | Name | Type | Default |
 |------|------|---------|
 | **$configuration** | \Automattic\Domain_Services\Configuration |  |
+| **$request_factory** | \Automattic\Domain_Services\Request\Factory |  |
 | **$response_factory** | \Automattic\Domain_Services\Response\Factory |  |
 | **$http_client** | \Psr\Http\Client\ClientInterface |  |
 
