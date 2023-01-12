@@ -4,7 +4,6 @@
 
 | Name | Summary |
 |------|---------|
-| [\Automattic\Domain_Services\Event\Domain\Notification\Agp](../classes/Automattic-Domain-Services-Event-Domain-Notification-Agp.md) | Domain entered the Add Grace Period (AGP) event |
 | [\Automattic\Domain_Services\Event\Domain\Notification\Argp](../classes/Automattic-Domain-Services-Event-Domain-Notification-Argp.md) | Domain entered the Auto-Renew Grace Period (ARGP) event |
 | [\Automattic\Domain_Services\Event\Domain\Notification\Auction](../classes/Automattic-Domain-Services-Event-Domain-Notification-Auction.md) | Domain entered auction phase event |
 | [\Automattic\Domain_Services\Event\Domain\Notification\Expired](../classes/Automattic-Domain-Services-Event-Domain-Notification-Expired.md) | Domain expired event |
