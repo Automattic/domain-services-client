@@ -23,4 +23,5 @@
             <output>guides</output>
         </guide>
     </version>
+    <template name="vendor/automattic/phpdoc-markdown/data/templates/markdown" />
 </phpdocumentor>
