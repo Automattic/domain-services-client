@@ -18,7 +18,7 @@
 
 namespace Automattic\Domain_Services\Test\Event;
 
-use Automattic\Domain_Services\{Command, Entity, Event, Response, Test};
+use Automattic\Domain_Services\{Command, Helper, Event, Response, Test};
 
 class Domain_Notification_Auction_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_event_success(): void {
@@ -60,6 +60,6 @@ class Domain_Notification_Auction_Test extends Test\Lib\Domain_Services_Client_T
 		$this->assertInstanceOf( Event\Domain\Notification\Auction::class, $event );
 		$this->assertSame( $response_data['data']['event']['object_id'], $event->get_domain()->get_name() );
 		$this->assertSame( $response_data['data']['event']['event_data']['auction_status'], $event->get_auction_status() );
-		$this->assertSame( $response_data['data']['event']['event_data']['auction_status_end_date'], $event->get_auction_status_end_date()->format( Entity\Entity_Interface::DATE_FORMAT ) );
+		$this->assertSame( $response_data['data']['event']['event_data']['auction_status_end_date'], Helper\Date_Time::format( $event->get_auction_status_end_date() ) );
 	}
 }

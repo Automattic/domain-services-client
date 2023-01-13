@@ -18,7 +18,7 @@
 
 namespace Automattic\Domain_Services\Event;
 
-use Automattic\Domain_Services\Entity\Entity_Interface;
+use Automattic\Domain_Services\Helper;
 
 /**
  * A trait that defines data access methods common to all event classes.
@@ -108,7 +108,7 @@ trait Data_Trait {
 	 * @return \DateTimeInterface
 	 */
 	public function get_event_date(): \DateTimeInterface {
-		return \DateTimeImmutable::createFromFormat( Entity_Interface::DATE_FORMAT, $this->get_data_by_key( 'event_date' ) );
+		return Helper\Date_Time::createImmutable( $this->get_data_by_key( 'event_date' ) );
 	}
 
 	/**
@@ -122,7 +122,7 @@ trait Data_Trait {
 			return null;
 		}
 
-		return \DateTimeImmutable::createFromFormat( Entity_Interface::DATE_FORMAT, $this->get_data_by_key( 'acknowledged_date' ) );
+		return Helper\Date_Time::createImmutable( $this->get_data_by_key( 'acknowledged_date' ) );
 	}
 
 	/**

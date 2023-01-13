@@ -18,7 +18,7 @@
 
 namespace Automattic\Domain_Services\Test\Event;
 
-use Automattic\Domain_Services\{Command, Entity, Event, Response, Test};
+use Automattic\Domain_Services\{Command, Helper, Event, Response, Test};
 
 class Domain_Renew_Success_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_event_success(): void {
@@ -62,7 +62,7 @@ class Domain_Renew_Success_Test extends Test\Lib\Domain_Services_Client_Test_Cas
 		$this->assertSame( $response_data['data']['event']['object_id'], $event->get_domain()->get_name() );
 
 		$this->assertSame( $response_data['data']['event']['event_data']['domain_status'], $event->get_domain_status()->to_array() );
-		$this->assertSame( $response_data['data']['event']['event_data']['expiration_date'], $event->get_expiration_date()->format( Entity\Entity_Interface::DATE_FORMAT ) );
-		$this->assertSame( $response_data['data']['event']['event_data']['renewable_until'], $event->get_renewable_until()->format( Entity\Entity_Interface::DATE_FORMAT ) );
+		$this->assertSame( $response_data['data']['event']['event_data']['expiration_date'], Helper\Date_Time::format( $event->get_expiration_date() ) );
+		$this->assertSame( $response_data['data']['event']['event_data']['renewable_until'], Helper\Date_Time::format( $event->get_renewable_until() ) );
 	}
 }

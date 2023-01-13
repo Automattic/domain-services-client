@@ -18,7 +18,7 @@
 
 namespace Automattic\Domain_Services\Test\Event;
 
-use Automattic\Domain_Services\{Command, Entity, Event, Response, Test};
+use Automattic\Domain_Services\{Command, Helper, Event, Response, Test};
 
 class Domain_Transfer_In_Pending_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_event_success(): void {
@@ -66,8 +66,8 @@ class Domain_Transfer_In_Pending_Test extends Test\Lib\Domain_Services_Client_Te
 		$this->assertSame( $response_data['data']['event']['event_data']['current_registrar'], $event->get_current_registrar() );
 		$this->assertSame( $response_data['data']['event']['event_data']['requesting_registrar'], $event->get_requesting_registrar() );
 		$this->assertSame( $response_data['data']['event']['event_data']['auto_nack'], $event->get_auto_nack() );
-		$this->assertSame( $response_data['data']['event']['event_data']['request_date'], $event->get_request_date()->format( Entity\Entity_Interface::DATE_FORMAT ) );
-		$this->assertSame( $response_data['data']['event']['event_data']['execute_date'], $event->get_execute_date()->format( Entity\Entity_Interface::DATE_FORMAT ) );
+		$this->assertSame( $response_data['data']['event']['event_data']['request_date'], Helper\Date_Time::format( $event->get_request_date() ) );
+		$this->assertSame( $response_data['data']['event']['event_data']['execute_date'], Helper\Date_Time::format( $event->get_execute_date() ) );
 		$this->assertSame( $response_data['data']['event']['event_data']['transfer_status'], $event->get_transfer_status() );
 	}
 }

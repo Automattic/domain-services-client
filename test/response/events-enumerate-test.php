@@ -18,7 +18,7 @@
 
 namespace Automattic\Domain_Services\Test\Response;
 
-use Automattic\Domain_Services\{Command, Entity, Response, Test};
+use Automattic\Domain_Services\{Command, Helper, Response, Test};
 
 class Event_Enumerate_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_response_factory_success(): void {
@@ -94,9 +94,9 @@ class Event_Enumerate_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 			$this->assertEquals( $response_data['data']['events'][ $index ]['object_id'], $event->get_object_id() );
 			$this->assertEquals( $response_data['data']['events'][ $index ]['event_subclass'], $event->get_event_subclass() );
 			$this->assertEquals( $response_data['data']['events'][ $index ]['event_class'], $event->get_event_class() );
-			$this->assertEquals( $response_data['data']['events'][ $index ]['event_date'], $event->get_event_date()->format( Entity\Entity_Interface::DATE_FORMAT ) );
+			$this->assertEquals( $response_data['data']['events'][ $index ]['event_date'], Helper\Date_Time::format( $event->get_event_date() ) );
 			$acknowledge_date = $event->get_acknowledged_date();
-			$acknowledge_date = null === $acknowledge_date ? null : $acknowledge_date->format( Entity\Entity_Interface::DATE_FORMAT );
+			$acknowledge_date = (null === $acknowledge_date) ? null : Helper\Date_Time::format( $acknowledge_date );
 			$this->assertEquals( $response_data['data']['events'][ $index ]['acknowledged_date'], $acknowledge_date );
 		}
 

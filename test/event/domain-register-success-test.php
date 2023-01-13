@@ -18,7 +18,7 @@
 
 namespace Automattic\Domain_Services\Test\Event;
 
-use Automattic\Domain_Services\{Command, Entity, Event, Response, Test};
+use Automattic\Domain_Services\{Command, Helper, Event, Response, Test};
 
 class Domain_Register_Success_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_event_success(): void {
@@ -114,10 +114,10 @@ class Domain_Register_Success_Test extends Test\Lib\Domain_Services_Client_Test_
 
 		$this->assertSame( $response_data['data']['event']['event_data']['contacts'], $event->get_contacts()->to_array() );
 		$this->assertSame( $response_data['data']['event']['event_data']['domain_status'], $event->get_domain_status()->to_array() );
-		$this->assertSame( $response_data['data']['event']['event_data']['agp_end_date'], $event->get_agp_end_date()->format( Entity\Entity_Interface::DATE_FORMAT ) );
-		$this->assertSame( $response_data['data']['event']['event_data']['created_date'], $event->get_created_date()->format( Entity\Entity_Interface::DATE_FORMAT ) );
-		$this->assertSame( $response_data['data']['event']['event_data']['expiration_date'], $event->get_expiration_date()->format( Entity\Entity_Interface::DATE_FORMAT ) );
-		$this->assertSame( $response_data['data']['event']['event_data']['renewable_until'], $event->get_renewable_until()->format( Entity\Entity_Interface::DATE_FORMAT ) );
-		$this->assertSame( $response_data['data']['event']['event_data']['unverified_contact_suspension_date'], $event->get_unverified_contact_suspension_date()->format( Entity\Entity_Interface::DATE_FORMAT ) );
+		$this->assertSame( $response_data['data']['event']['event_data']['agp_end_date'], Helper\Date_Time::format( $event->get_agp_end_date() ) );
+		$this->assertSame( $response_data['data']['event']['event_data']['created_date'], Helper\Date_Time::format( $event->get_created_date() ) );
+		$this->assertSame( $response_data['data']['event']['event_data']['expiration_date'], Helper\Date_Time::format( $event->get_expiration_date() ) );
+		$this->assertSame( $response_data['data']['event']['event_data']['renewable_until'], Helper\Date_Time::format( $event->get_renewable_until() ) );
+		$this->assertSame( $response_data['data']['event']['event_data']['unverified_contact_suspension_date'], Helper\Date_Time::format( $event->get_unverified_contact_suspension_date() ) );
 	}
 }
