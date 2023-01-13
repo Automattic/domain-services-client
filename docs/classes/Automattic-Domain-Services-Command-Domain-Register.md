@@ -82,7 +82,6 @@ if ( $response->is_success() ) {
 * public [get_period()](#method_get_period)
 * public [get_price()](#method_get_price)
 * public [get_privacy_setting()](#method_get_privacy_setting)
-* public [get_resource_path()](#method_get_resource_path)
 * public [jsonSerialize()](#method_jsonSerialize)
 * public [set_client_txn_id()](#method_set_client_txn_id)
 * public [to_array()](#method_to_array)
@@ -224,7 +223,7 @@ Gets the domain name to be registered
 ### get_name
 
 ```
-static public get_name() : string
+final static public get_name() : string
 ```
 
 ##### Summary
@@ -306,25 +305,6 @@ public get_privacy_setting() : string
 ##### Summary
 
 Gets the Whois privacy setting to be used for this domain.
-
-##### Returns:
-
-```
-string
-```
-
----
-
-<a id="method_get_resource_path"></a>
-### get_resource_path
-
-```
-final public get_resource_path() : string
-```
-
-##### Summary
-
-Gets the path part for this command on the API endpoint.
 
 ##### Returns:
 

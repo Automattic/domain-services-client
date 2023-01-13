@@ -1,11 +1,5 @@
 # [\Automattic](../namespaces/automattic.md)[\Domain_Services](../namespaces/automattic-domain-services.md)\Entity
 
-### Interfaces
-
-| Name | Summary |
-|------|---------|
-| [\Automattic\Domain_Services\Entity\Entity_Interface](../classes/Automattic-Domain-Services-Entity-Entity-Interface.md) |  |
-
 ### Classes
 
 | Name | Summary |

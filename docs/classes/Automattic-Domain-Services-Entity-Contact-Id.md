@@ -16,17 +16,13 @@ Represents a contact ID
 
 * public [__construct()](#method___construct)
 * public [__toString()](#method___toString)
-* public [build_for_provider()](#method_build_for_provider)
-* public [get_provider_contact_id()](#method_get_provider_contact_id)
-* public [get_provider_id()](#method_get_provider_id)
+* public [get_contact_id()](#method_get_contact_id)
 
 ---
 
 ### Details
 
 * File: [lib/entity/contact-id.php](../../lib/entity/contact-id.php)
-* Implements:
-  * [\Automattic\Domain_Services\Entity\Entity_Interface](../classes/Automattic-Domain-Services-Entity-Entity-Interface.md)
 * See Also:
   * [\Automattic\Domain_Services\Entity\Domain_Contact](../classes/Automattic-Domain-Services-Entity-Domain-Contact.md)
 
@@ -80,48 +76,11 @@ string
 
 ---
 
-<a id="method_build_for_provider"></a>
-### build_for_provider
+<a id="method_get_contact_id"></a>
+### get_contact_id
 
 ```
-static public build_for_provider(string  provider_id, string  provider_contact_id) : self
-```
-
-##### Parameters:
-
-| Name | Type | Default |
-|------|------|---------|
-| **$provider_id** | string |  |
-| **$provider_contact_id** | string |  |
-
-##### Returns:
-
-```
-self
-```
-
----
-
-<a id="method_get_provider_contact_id"></a>
-### get_provider_contact_id
-
-```
-public get_provider_contact_id() : string
-```
-
-##### Returns:
-
-```
-string
-```
-
----
-
-<a id="method_get_provider_id"></a>
-### get_provider_id
-
-```
-public get_provider_id() : string
+public get_contact_id() : string
 ```
 
 ##### Returns:
