@@ -28,7 +28,7 @@ use Automattic\Domain_Services\{Exception};
  *
  * @see Domain_Contact
  */
-class Contact_Id implements Entity_Interface {
+class Contact_Id {
 	/**
 	 * @var string
 	 */
