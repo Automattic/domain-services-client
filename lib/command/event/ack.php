@@ -31,7 +31,6 @@ use Automattic\Domain_Services\{Command};
  * @see \Automattic\Domain_Services\Response\Event\Enumerate
  */
 class Ack implements Command\Command_Interface, Command\Command_Serialize_Interface {
-	use Command\Array_Key_Event_Trait;
 	use Command\Command_Serialize_Trait;
 	use Command\Command_Trait;
 
@@ -63,7 +62,7 @@ class Ack implements Command\Command_Interface, Command\Command_Serialize_Interf
 	 */
 	public function to_array(): array {
 		return [
-			self::get_event_id_array_key() => $this->get_event_id(),
+			Command\Command_Interface::KEY_EVENT_ID => $this->get_event_id(),
 		];
 	}
 }

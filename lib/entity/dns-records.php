@@ -27,9 +27,6 @@ use Automattic\Domain_Services\{Command, Exception};
  * @see Dns_Record_Sets
  */
 class Dns_Records {
-	use Command\Array_Key_Dns_Record_Sets_Trait;
-	use Command\Array_Key_Domain_Trait;
-
 	/**
 	 * The domain name that the DNS records apply to.
 	 *
@@ -80,8 +77,8 @@ class Dns_Records {
 	 */
 	public function to_array(): array {
 		return [
-			self::get_domain_name_array_key() => $this->domain->get_name(),
-			self::get_dns_record_sets_array_key() => $this->record_sets->to_array(),
+			Command\Command_Interface::KEY_DOMAIN => $this->domain->get_name(),
+			Command\Command_Interface::KEY_RECORD_SETS => $this->record_sets->to_array(),
 		];
 	}
 
@@ -95,8 +92,8 @@ class Dns_Records {
 	 * @see \Automattic\Domain_Services\Entity\Dns_Record_Sets
 	 */
 	public static function from_array( array $dns_records_data ): self {
-		$domain_name = new Domain_Name( $dns_records_data[ self::get_domain_name_array_key() ] );
-		$dns_record_sets = Dns_Record_Sets::from_array( $dns_records_data[ self::get_dns_record_sets_array_key() ] );
+		$domain_name = new Domain_Name( $dns_records_data[ Command\Command_Interface::KEY_DOMAIN ] );
+		$dns_record_sets = Dns_Record_Sets::from_array( $dns_records_data[ Command\Command_Interface::KEY_RECORD_SETS ] );
 
 		return new self( $domain_name, $dns_record_sets );
 	}

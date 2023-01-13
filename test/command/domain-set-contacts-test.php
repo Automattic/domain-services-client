@@ -21,21 +21,16 @@ namespace Automattic\Domain_Services\Test\Command;
 use Automattic\Domain_Services\{Command, Entity, Test};
 
 class Domain_Set_Contacts_Test extends Test\Lib\Domain_Services_Client_Test_Case {
-	use Command\Array_Key_Contact_Disclosure_Trait;
-	use Command\Array_Key_Contact_Id_Trait;
-	use Command\Array_Key_Contact_Information_Trait;
-	use Command\Array_Key_Contacts_Trait;
-	use Command\Array_Key_Domain_Trait;
 
 	public function test_command_instance_success(): void {
 		$mock_command_data = [
 			Command\Command_Interface::COMMAND => 'Domain\Set\Contacts',
 			Command\Command_Interface::PARAMS => [
-				self::get_domain_name_array_key() => 'test-domain-name.com',
-				self::get_contacts_array_key() => [
+				Command\Command_Interface::KEY_DOMAIN => 'test-domain-name.com',
+				Command\Command_Interface::KEY_CONTACTS => [
 					'owner' => [
-						self::get_contact_id_array_key() => null,
-						self::get_contact_information_array_key() => [
+						Command\Command_Interface::KEY_CONTACT_ID => null,
+						Command\Command_Interface::KEY_CONTACT_INFORMATION => [
 							'first_name' => 'John',
 							'last_name' => 'Doe',
 							'organization' => '',
@@ -49,15 +44,15 @@ class Domain_Set_Contacts_Test extends Test\Lib\Domain_Services_Client_Test_Case
 							'phone' => '+1.8772733049',
 							'fax' => null,
 						],
-						self::get_contact_disclosure_array_key() => Entity\Contact_Disclosure::NONE,
+						Command\Command_Interface::KEY_CONTACT_DISCLOSURE => Entity\Contact_Disclosure::NONE,
 					],
 				],
 			],
 			Command\Command_Interface::CLIENT_TXN_ID => 'client-transaction-info-for-dns-records-get-test-1',
 		];
 
-		$domain = new Entity\Domain_Name( $mock_command_data[ Command\Command_Interface::PARAMS ][ self::get_domain_name_array_key() ] );
-		$contacts = Entity\Domain_Contacts::from_array( $mock_command_data[ Command\Command_Interface::PARAMS ][ self::get_contacts_array_key() ] );
+		$domain = new Entity\Domain_Name( $mock_command_data[ Command\Command_Interface::PARAMS ][ Command\Command_Interface::KEY_DOMAIN ] );
+		$contacts = Entity\Domain_Contacts::from_array( $mock_command_data[ Command\Command_Interface::PARAMS ][ Command\Command_Interface::KEY_CONTACTS ] );
 		$command = new Command\Domain\Set\Contacts( $domain, $contacts );
 		$command->set_client_txn_id( $mock_command_data[ Command\Command_Interface::CLIENT_TXN_ID ] );
 

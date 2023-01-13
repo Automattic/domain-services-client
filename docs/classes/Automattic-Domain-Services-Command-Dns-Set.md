@@ -49,7 +49,6 @@ if ( $response->is_success() ) {
 
 * public [__construct()](#method___construct)
 * public [get_client_txn_id()](#method_get_client_txn_id)
-* public [get_dns_records_array_key()](#method_get_dns_records_array_key)
 * public [get_name()](#method_get_name)
 * public [get_records()](#method_get_records)
 * public [get_resource_path()](#method_get_resource_path)
@@ -66,7 +65,6 @@ if ( $response->is_success() ) {
   * [\Automattic\Domain_Services\Command\Command_Interface](../classes/Automattic-Domain-Services-Command-Command-Interface.md)
   * [\Automattic\Domain_Services\Command\Command_Serialize_Interface](../classes/Automattic-Domain-Services-Command-Command-Serialize-Interface.md)
 * Uses Traits:
-  * [\Automattic\Domain_Services\Command\Array_Key_Dns_Records_Trait](../classes/Automattic-Domain-Services-Command-Array-Key-Dns-Records-Trait.md)
   * [\Automattic\Domain_Services\Command\Command_Serialize_Trait](../classes/Automattic-Domain-Services-Command-Command-Serialize-Trait.md)
   * [\Automattic\Domain_Services\Command\Command_Trait](../classes/Automattic-Domain-Services-Command-Command-Trait.md)
 * See Also:
@@ -112,21 +110,6 @@ final public get_client_txn_id() : string
 ##### Summary
 
 Gets the client transaction ID set for this command.
-
-##### Returns:
-
-```
-string
-```
-
----
-
-<a id="method_get_dns_records_array_key"></a>
-### get_dns_records_array_key
-
-```
-final static public get_dns_records_array_key() : string
-```
 
 ##### Returns:
 

@@ -30,8 +30,6 @@ use Automattic\Domain_Services\{Command, Entity};
 class Transferlock implements Command\Command_Interface, Command\Command_Serialize_Interface {
 	use Command\Command_Trait;
 	use Command\Command_Serialize_Trait;
-	use Command\Array_Key_Domain_Trait;
-	use Command\Array_Key_Transferlock_Trait;
 
 	/**
 	 * The domain name that will be updated.
@@ -79,8 +77,8 @@ class Transferlock implements Command\Command_Interface, Command\Command_Seriali
 	 */
 	public function to_array(): array {
 		return [
-			self::get_domain_name_array_key() => $this->get_domain()->get_name(),
-			self::get_transferlock_array_key() => $this->get_transfer_lock(),
+			Command\Command_Interface::KEY_DOMAIN => $this->get_domain()->get_name(),
+			Command\Command_Interface::KEY_TRANSFERLOCK => $this->get_transfer_lock(),
 		];
 	}
 }

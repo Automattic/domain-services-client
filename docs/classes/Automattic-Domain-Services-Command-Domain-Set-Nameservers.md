@@ -37,10 +37,8 @@ if ( $response->is_success() ) {
 * public [__construct()](#method___construct)
 * public [get_client_txn_id()](#method_get_client_txn_id)
 * public [get_domain()](#method_get_domain)
-* public [get_domain_name_array_key()](#method_get_domain_name_array_key)
 * public [get_name()](#method_get_name)
 * public [get_nameservers()](#method_get_nameservers)
-* public [get_nameservers_array_key()](#method_get_nameservers_array_key)
 * public [get_resource_path()](#method_get_resource_path)
 * public [jsonSerialize()](#method_jsonSerialize)
 * public [set_client_txn_id()](#method_set_client_txn_id)
@@ -55,8 +53,6 @@ if ( $response->is_success() ) {
   * [\Automattic\Domain_Services\Command\Command_Interface](../classes/Automattic-Domain-Services-Command-Command-Interface.md)
   * [\Automattic\Domain_Services\Command\Command_Serialize_Interface](../classes/Automattic-Domain-Services-Command-Command-Serialize-Interface.md)
 * Uses Traits:
-  * [\Automattic\Domain_Services\Command\Array_Key_Domain_Trait](../classes/Automattic-Domain-Services-Command-Array-Key-Domain-Trait.md)
-  * [\Automattic\Domain_Services\Command\Array_Key_Nameservers_Trait](../classes/Automattic-Domain-Services-Command-Array-Key-Nameservers-Trait.md)
   * [\Automattic\Domain_Services\Command\Command_Serialize_Trait](../classes/Automattic-Domain-Services-Command-Command-Serialize-Trait.md)
   * [\Automattic\Domain_Services\Command\Command_Trait](../classes/Automattic-Domain-Services-Command-Command-Trait.md)
 * See Also:
@@ -124,21 +120,6 @@ public get_domain() : \Automattic\Domain_Services\Entity\Domain_Name
 
 ---
 
-<a id="method_get_domain_name_array_key"></a>
-### get_domain_name_array_key
-
-```
-final static public get_domain_name_array_key() : string
-```
-
-##### Returns:
-
-```
-string
-```
-
----
-
 <a id="method_get_name"></a>
 ### get_name
 
@@ -169,21 +150,6 @@ public get_nameservers() : \Automattic\Domain_Services\Entity\Nameservers
 
 ```
 \Automattic\Domain_Services\Entity\Nameservers
-```
-
----
-
-<a id="method_get_nameservers_array_key"></a>
-### get_nameservers_array_key
-
-```
-final static public get_nameservers_array_key() : string
-```
-
-##### Returns:
-
-```
-string
 ```
 
 ---

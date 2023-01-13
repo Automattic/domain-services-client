@@ -26,10 +26,6 @@ use Automattic\Domain_Services\{Command, Exception};
  * Represents one of the domain's contacts and its privacy setting.
  */
 class Domain_Contact {
-	use Command\Array_Key_Contact_Id_Trait;
-	use Command\Array_Key_Contact_Information_Trait;
-	use Command\Array_Key_Contact_Disclosure_Trait;
-
 	/**
 	 * The contact ID
 	 *
@@ -78,9 +74,9 @@ class Domain_Contact {
 		}
 
 		return [
-			self::get_contact_id_array_key() => $contact_id,
-			self::get_contact_information_array_key() => $contact_info,
-			self::get_contact_disclosure_array_key() => $this->get_contact_disclosure()->get_disclose_fields(),
+			Command\Command_Interface::KEY_CONTACT_ID => $contact_id,
+			Command\Command_Interface::KEY_CONTACT_INFORMATION => $contact_info,
+			Command\Command_Interface::KEY_CONTACT_DISCLOSURE => $this->get_contact_disclosure()->get_disclose_fields(),
 		];
 	}
 
@@ -97,18 +93,18 @@ class Domain_Contact {
 	public static function from_array( array $data ): self {
 		$domain_contact = new Domain_Contact();
 
-		if ( null !== ( $data[ self::get_contact_id_array_key() ] ?? null ) ) {
-			$contact_id = new Contact_Id( $data[ self::get_contact_id_array_key() ] );
+		if ( null !== ( $data[ Command\Command_Interface::KEY_CONTACT_ID ] ?? null ) ) {
+			$contact_id = new Contact_Id( $data[ Command\Command_Interface::KEY_CONTACT_ID ] );
 			$domain_contact->set_contact_id( $contact_id );
 		}
 
-		if ( null !== ( $data[ self::get_contact_information_array_key() ] ?? null ) ) {
-			$contact_information = Contact_Information::from_array( $data[ self::get_contact_information_array_key() ] );
+		if ( null !== ( $data[ Command\Command_Interface::KEY_CONTACT_INFORMATION ] ?? null ) ) {
+			$contact_information = Contact_Information::from_array( $data[ Command\Command_Interface::KEY_CONTACT_INFORMATION ] );
 			$domain_contact->set_contact_information( $contact_information );
 		}
 
-		if ( null !== ( $data[ self::get_contact_disclosure_array_key() ] ?? null ) ) {
-			$contact_disclosure = new Contact_Disclosure( $data[ self::get_contact_disclosure_array_key() ] );
+		if ( null !== ( $data[ Command\Command_Interface::KEY_CONTACT_DISCLOSURE ] ?? null ) ) {
+			$contact_disclosure = new Contact_Disclosure( $data[ Command\Command_Interface::KEY_CONTACT_DISCLOSURE ] );
 			$domain_contact->set_contact_disclosure( $contact_disclosure );
 		}
 

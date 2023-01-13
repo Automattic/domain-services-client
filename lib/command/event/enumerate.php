@@ -32,7 +32,6 @@ use Automattic\Domain_Services\{Command};
  * @see \Automattic\Domain_Services\Response\Event\Enumerate
  */
 class Enumerate implements Command\Command_Interface, Command\Command_Serialize_Interface {
-	use Command\Array_Key_Event_Trait;
 	use Command\Command_Serialize_Trait;
 	use Command\Command_Trait;
 
@@ -78,7 +77,7 @@ class Enumerate implements Command\Command_Interface, Command\Command_Serialize_
 	 */
 	public function to_array(): array {
 		return [
-			self::get_event_limit_array_key() => $this->get_limit(),
+			Command\Command_Interface::KEY_LIMIT => $this->get_limit(),
 		];
 	}
 }
