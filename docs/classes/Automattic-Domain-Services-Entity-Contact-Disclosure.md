@@ -18,7 +18,6 @@ The list of domain contact fields to disclose in the Whois results
 
 * public [__construct()](#method___construct)
 * public [__toString()](#method___toString)
-* public [build_from_whois_privacy()](#method_build_from_whois_privacy)
 * public [get_disclose_fields()](#method_get_disclose_fields)
 
 ---
@@ -98,37 +97,6 @@ Get the disclosed fields as a comma delimited list.
 
 ```
 string
-```
-
----
-
-<a id="method_build_from_whois_privacy"></a>
-### build_from_whois_privacy
-
-```
-static public build_from_whois_privacy(\Automattic\Domain_Services\Entity\Whois_Privacy  whois_privacy) : static
-```
-
-##### Summary
-
-Generate the contact disclosure fields based on the given whois privacy settings.
-
-##### Parameters:
-
-| Name | Type | Default |
-|------|------|---------|
-| **$whois_privacy** | \Automattic\Domain_Services\Entity\Whois_Privacy |  |
-
-##### Throws:
-
-| Type | Description |
-|------|-------------|
-| \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception |  |
-
-##### Returns:
-
-```
-static
 ```
 
 ---

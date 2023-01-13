@@ -18,7 +18,7 @@
 
 namespace Automattic\Domain_Services\Test\Response;
 
-use Automattic\Domain_Services\{Command, Entity, Response, Test};
+use Automattic\Domain_Services\{Command, Entity, Response, Test, Helper};
 
 class Domain_Info_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_response_factory_success(): void {
@@ -94,12 +94,12 @@ class Domain_Info_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 		$this->assertEquals( $mock_response_data['data']['dnssec_ds_data'], $response_object->get_dnssec_ds_dsata() );
 		$this->assertEquals( $mock_response_data['data']['domain_status'], $response_object->get_domain_status()->to_array() );
 		$this->assertEquals( $mock_response_data['data']['name_servers'], $response_object->get_name_servers()->to_array() );
-		$this->assertEquals( $mock_response_data['data']['paid_until'], $response_object->get_paid_until()->format( Entity\Entity_Interface::DATE_FORMAT ) );
+		$this->assertEquals( $mock_response_data['data']['paid_until'], Helper\Date_Time::format( $response_object->get_paid_until() ) );
 		$this->assertEquals( $mock_response_data['data']['privacy_setting'], $response_object->get_privacy_setting()->get_setting() );
 		$this->assertEquals( $mock_response_data['data']['registrar_transfer_date'], $response_object->get_registrar_transfer_date() );
 		$this->assertEquals( $mock_response_data['data']['rgp_status'], $response_object->get_rgp_status() );
 		$this->assertEquals( $mock_response_data['data']['transfer_lock'], $response_object->get_transfer_lock() );
 		$this->assertEquals( $mock_response_data['data']['transfer_mode'], $response_object->get_transfer_mode() );
-		$this->assertEquals( $mock_response_data['data']['updated_date'], $response_object->get_updated_date()->format( Entity\Entity_Interface::DATE_FORMAT ) );
+		$this->assertEquals( $mock_response_data['data']['updated_date'], Helper\Date_Time::format( $response_object->get_updated_date() ) );
 	}
 }

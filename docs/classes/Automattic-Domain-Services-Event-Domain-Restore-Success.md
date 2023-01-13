@@ -144,7 +144,7 @@ Gets the status of the domain immediately after the restore operation.
 
 | Type | Description |
 |------|-------------|
-| \Automattic\Domain_Services\Event\Domain\Restore\Exception\Entity\Invalid_Value_Exception |  |
+| \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception |  |
 
 ##### Returns:
 

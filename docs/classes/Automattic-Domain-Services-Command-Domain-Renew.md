@@ -45,7 +45,6 @@ if ( $response->is_success() ) {
 * public [get_fee_amount()](#method_get_fee_amount)
 * public [get_name()](#method_get_name)
 * public [get_period()](#method_get_period)
-* public [get_resource_path()](#method_get_resource_path)
 * public [jsonSerialize()](#method_jsonSerialize)
 * public [set_client_txn_id()](#method_set_client_txn_id)
 * public [to_array()](#method_to_array)
@@ -178,7 +177,7 @@ float|null
 ### get_name
 
 ```
-static public get_name() : string
+final static public get_name() : string
 ```
 
 ##### Summary
@@ -208,25 +207,6 @@ Returns the number of years the domain will be renewed for
 
 ```
 int
-```
-
----
-
-<a id="method_get_resource_path"></a>
-### get_resource_path
-
-```
-final public get_resource_path() : string
-```
-
-##### Summary
-
-Gets the path part for this command on the API endpoint.
-
-##### Returns:
-
-```
-string
 ```
 
 ---

@@ -29,7 +29,6 @@ if ( $response->is_success() ) {
 * public [get_client_txn_id()](#method_get_client_txn_id)
 * public [get_contact_id()](#method_get_contact_id)
 * public [get_name()](#method_get_name)
-* public [get_resource_path()](#method_get_resource_path)
 * public [jsonSerialize()](#method_jsonSerialize)
 * public [set_client_txn_id()](#method_set_client_txn_id)
 * public [to_array()](#method_to_array)
@@ -116,31 +115,12 @@ Gets the contact ID
 ### get_name
 
 ```
-static public get_name() : string
+final static public get_name() : string
 ```
 
 ##### Summary
 
 Returns the command name that can be used to build command data
-
-##### Returns:
-
-```
-string
-```
-
----
-
-<a id="method_get_resource_path"></a>
-### get_resource_path
-
-```
-final public get_resource_path() : string
-```
-
-##### Summary
-
-Gets the path part for this command on the API endpoint.
 
 ##### Returns:
 

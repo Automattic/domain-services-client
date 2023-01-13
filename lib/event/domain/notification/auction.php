@@ -18,7 +18,7 @@
 
 namespace Automattic\Domain_Services\Event\Domain\Notification;
 
-use Automattic\Domain_Services\{Entity, Event};
+use Automattic\Domain_Services\{Helper, Event};
 
 /**
  * Domain entered auction phase event
@@ -64,6 +64,6 @@ class Auction implements Event\Event_Interface {
 			return null;
 		}
 
-		return \DateTimeImmutable::createFromFormat( Entity\Entity_Interface::DATE_FORMAT, $auction_state_end_date );
+		return Helper\Date_Time::createImmutable( $auction_state_end_date );
 	}
 }

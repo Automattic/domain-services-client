@@ -18,7 +18,7 @@
 
 namespace Automattic\Domain_Services\Event\Domain\Notification;
 
-use Automattic\Domain_Services\{Entity, Event};
+use Automattic\Domain_Services\{Helper, Event};
 
 /**
  * Domain entered the Auto-Renew Grace Period (ARGP) event
@@ -48,6 +48,6 @@ class Argp implements Event\Event_Interface {
 			return null;
 		}
 
-		return \DateTimeImmutable::createFromFormat( Entity\Entity_Interface::DATE_FORMAT, $argp_end_date );
+		return Helper\Date_Time::createImmutable( $argp_end_date );
 	}
 }
