@@ -1,5 +1,9 @@
 # Class: [\Automattic](../namespaces/automattic.md)[\Domain_Services](../namespaces/automattic-domain-services.md)[\Helper](../namespaces/automattic-domain-services-helper.md)\Date_Time
 
+## Summary:
+
+A helper class to help formatting DateTime
+
 
 ---
 
@@ -14,7 +18,7 @@
 
 ### Details
 
-* File: [lib/Helper/Date_Time.php](../../lib/Helper/Date_Time.php)
+* File: [lib/helper/date-time.php](../../lib/helper/date-time.php)
 
 ---
 

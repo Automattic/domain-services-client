@@ -4,4 +4,4 @@
 
 | Name | Summary |
 |------|---------|
-| [\Automattic\Domain_Services\Helper\Date_Time](../classes/Automattic-Domain-Services-Helper-Date-Time.md) |  |
+| [\Automattic\Domain_Services\Helper\Date_Time](../classes/Automattic-Domain-Services-Helper-Date-Time.md) | A helper class to help formatting DateTime |

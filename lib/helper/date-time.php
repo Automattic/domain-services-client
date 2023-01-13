@@ -1,5 +1,4 @@
-<?php
-declare( strict_types=1 );
+<?php declare( strict_types=1 );
 /*
  * Copyright (c) 2022 Automattic, Inc.
  *
@@ -23,6 +22,9 @@ use DateTime;
 use DateTimeImmutable;
 use DateTimeInterface;
 
+/**
+ * A helper class to help formatting DateTime
+ */
 class Date_Time {
 	private const FORMAT = 'Y-m-d H:i:s';
 
