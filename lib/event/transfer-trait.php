@@ -18,7 +18,7 @@
 
 namespace Automattic\Domain_Services\Event;
 
-use Automattic\Domain_Services\{Entity};
+use Automattic\Domain_Services\{Helper};
 
 trait Transfer_Trait {
 	final public function get_current_registrar(): ?string {
@@ -35,12 +35,12 @@ trait Transfer_Trait {
 
 	final public function get_request_date(): ?\DateTimeImmutable {
 		$request_date = $this->get_data_by_key( 'event_data.request_date' );
-		return null === $request_date ? null : \DateTimeImmutable::createFromFormat( Entity\Entity_Interface::DATE_FORMAT, $request_date );
+		return null === $request_date ? null : Helper\Date_Time::createImmutable( $request_date );
 	}
 
 	final public function get_execute_date(): ?\DateTimeImmutable {
 		$execute_date = $this->get_data_by_key( 'event_data.execute_date' );
-		return null === $execute_date ? null : \DateTimeImmutable::createFromFormat( Entity\Entity_Interface::DATE_FORMAT, $execute_date );
+		return null === $execute_date ? null : Helper\Date_Time::createImmutable( $execute_date );
 	}
 
 	final public function get_transfer_status(): ?string {

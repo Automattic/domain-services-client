@@ -18,7 +18,7 @@
 
 namespace Automattic\Domain_Services\Response\Domain;
 
-use Automattic\Domain_Services\{Entity, Response};
+use Automattic\Domain_Services\{Entity, Response, Helper};
 
 /**
  * Response of a `Domain\Info` command
@@ -123,7 +123,7 @@ class Info implements Response\Response_Interface {
 	 */
 	public function get_paid_until(): ?\DateTimeInterface {
 		$paid_until_data = $this->get_data_by_key( 'data.paid_until' );
-		return null === $paid_until_data ? null : \DateTimeImmutable::createFromFormat( Entity\Entity_Interface::DATE_FORMAT, $paid_until_data );
+		return null === $paid_until_data ? null : Helper\Date_Time::createImmutable( $paid_until_data );
 	}
 
 	/**
@@ -145,7 +145,7 @@ class Info implements Response\Response_Interface {
 	 */
 	public function get_registrar_transfer_date(): ?\DateTimeInterface {
 		$transfer_date_data = $this->get_data_by_key( 'data.registrar_transfer_date' );
-		return null === $transfer_date_data ? null : \DateTimeImmutable::createFromFormat( Entity\Entity_Interface::DATE_FORMAT, $transfer_date_data );
+		return null === $transfer_date_data ? null : Helper\Date_Time::createImmutable( $transfer_date_data );
 	}
 
 	/**
@@ -200,6 +200,6 @@ class Info implements Response\Response_Interface {
 	 */
 	public function get_updated_date(): ?\DateTimeInterface {
 		$updated_date_data = $this->get_data_by_key( 'data.updated_date' );
-		return null === $updated_date_data ? null : \DateTimeImmutable::createFromFormat( Entity\Entity_Interface::DATE_FORMAT, $updated_date_data );
+		return null === $updated_date_data ? null : Helper\Date_Time::createImmutable( $updated_date_data );
 	}
 }
