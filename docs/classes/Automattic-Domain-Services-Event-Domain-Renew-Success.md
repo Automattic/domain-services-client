@@ -144,7 +144,7 @@ Returns the domain status after the renewal operation
 
 | Type | Description |
 |------|-------------|
-| \Automattic\Domain_Services\Event\Domain\Renew\Exception\Entity\Invalid_Value_Exception |  |
+| \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception |  |
 
 ##### Returns:
 

@@ -18,7 +18,7 @@
 
 namespace Automattic\Domain_Services\Event\Domain\Restore;
 
-use Automattic\Domain_Services\{Entity, Event};
+use Automattic\Domain_Services\{Entity, Event, Helper, Exception};
 
 /**
  * Success event for a `Domain\Restore` command.
@@ -53,7 +53,7 @@ class Success implements Event\Event_Interface {
 	 */
 	public function get_expiration_date(): ?\DateTimeInterface {
 		$expiration_date = $this->get_data_by_key( 'event_data.expiration_date' );
-		return null === $expiration_date ? null : \DateTimeImmutable::createFromFormat( Entity\Entity_Interface::DATE_FORMAT, $expiration_date );
+		return null === $expiration_date ? null : Helper\Date_Time::createImmutable( $expiration_date );
 	}
 
 	/**
@@ -63,6 +63,6 @@ class Success implements Event\Event_Interface {
 	 */
 	public function get_renewable_until(): ?\DateTimeInterface {
 		$renewable_until = $this->get_data_by_key( 'event_data.renewable_until' );
-		return null === $renewable_until ? null : \DateTimeImmutable::createFromFormat( Entity\Entity_Interface::DATE_FORMAT, $renewable_until );
+		return null === $renewable_until ? null : Helper\Date_Time::createImmutable( $renewable_until );
 	}
 }

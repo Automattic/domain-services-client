@@ -18,7 +18,7 @@
 
 namespace Automattic\Domain_Services\Event\Domain\Register;
 
-use Automattic\Domain_Services\{Entity, Event, Exception};
+use Automattic\Domain_Services\{Entity, Event, Exception, Helper};
 
 /**
  * Success event for a `Domain\Register` command.
@@ -43,7 +43,7 @@ class Success implements Event\Event_Interface {
 	public function get_agp_end_date(): ?\DateTimeInterface {
 		$agp_end_date = $this->get_data_by_key( 'event_data.agp_end_date' );
 
-		return null === $agp_end_date ? null : \DateTimeImmutable::createFromFormat( Entity\Entity_Interface::DATE_FORMAT, $agp_end_date );
+		return null === $agp_end_date ? null : Helper\Date_Time::createImmutable( $agp_end_date );
 	}
 
 	/**
@@ -69,7 +69,7 @@ class Success implements Event\Event_Interface {
 	public function get_created_date(): ?\DateTimeInterface {
 		$created_date = $this->get_data_by_key( 'event_data.created_date' );
 
-		return null === $created_date ? null : \DateTimeImmutable::createFromFormat( Entity\Entity_Interface::DATE_FORMAT, $created_date );
+		return null === $created_date ? null : Helper\Date_Time::createImmutable( $created_date );
 	}
 
 	/**
@@ -80,7 +80,7 @@ class Success implements Event\Event_Interface {
 	public function get_expiration_date(): ?\DateTimeInterface {
 		$expiration_date = $this->get_data_by_key( 'event_data.expiration_date' );
 
-		return null === $expiration_date ? null : \DateTimeImmutable::createFromFormat( Entity\Entity_Interface::DATE_FORMAT, $expiration_date );
+		return null === $expiration_date ? null : Helper\Date_Time::createImmutable( $expiration_date );
 	}
 
 	/**
@@ -91,7 +91,7 @@ class Success implements Event\Event_Interface {
 	public function get_renewable_until(): ?\DateTimeInterface {
 		$renewable_until = $this->get_data_by_key( 'event_data.renewable_until' );
 
-		return null === $renewable_until ? null : \DateTimeImmutable::createFromFormat( Entity\Entity_Interface::DATE_FORMAT, $renewable_until );
+		return null === $renewable_until ? null : Helper\Date_Time::createImmutable( $renewable_until );
 	}
 
 	/**
@@ -102,7 +102,7 @@ class Success implements Event\Event_Interface {
 	public function get_unverified_contact_suspension_date(): ?\DateTimeInterface {
 		$unverified_contact_suspension_date = $this->get_data_by_key( 'event_data.unverified_contact_suspension_date' );
 
-		return null === $unverified_contact_suspension_date ? null : \DateTimeImmutable::createFromFormat( Entity\Entity_Interface::DATE_FORMAT, $unverified_contact_suspension_date );
+		return null === $unverified_contact_suspension_date ? null : Helper\Date_Time::createImmutable( $unverified_contact_suspension_date );
 	}
 
 	/**

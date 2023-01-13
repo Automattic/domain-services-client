@@ -51,7 +51,6 @@ if ( $response->is_success() ) {
 * public [get_client_txn_id()](#method_get_client_txn_id)
 * public [get_name()](#method_get_name)
 * public [get_records()](#method_get_records)
-* public [get_resource_path()](#method_get_resource_path)
 * public [jsonSerialize()](#method_jsonSerialize)
 * public [set_client_txn_id()](#method_set_client_txn_id)
 * public [to_array()](#method_to_array)
@@ -123,7 +122,7 @@ string
 ### get_name
 
 ```
-static public get_name() : string
+final static public get_name() : string
 ```
 
 ##### Summary
@@ -153,25 +152,6 @@ Returns the DNS records that will be set at the server
 
 ```
 \Automattic\Domain_Services\Entity\Dns_Records
-```
-
----
-
-<a id="method_get_resource_path"></a>
-### get_resource_path
-
-```
-final public get_resource_path() : string
-```
-
-##### Summary
-
-Gets the path part for this command on the API endpoint.
-
-##### Returns:
-
-```
-string
 ```
 
 ---

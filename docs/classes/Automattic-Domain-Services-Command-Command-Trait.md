@@ -6,7 +6,7 @@
 ### Methods
 
 * public [get_client_txn_id()](#method_get_client_txn_id)
-* public [get_resource_path()](#method_get_resource_path)
+* public [get_name()](#method_get_name)
 * public [set_client_txn_id()](#method_set_client_txn_id)
 
 ---
@@ -38,16 +38,16 @@ string
 
 ---
 
-<a id="method_get_resource_path"></a>
-### get_resource_path
+<a id="method_get_name"></a>
+### get_name
 
 ```
-final public get_resource_path() : string
+final static public get_name() : string
 ```
 
 ##### Summary
 
-Gets the path part for this command on the API endpoint.
+Returns the command name that can be used to build command data
 
 ##### Returns:
 

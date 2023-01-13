@@ -41,7 +41,9 @@ trait Command_Trait {
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * Returns the command name that can be used to build command data
+	 *
+	 * @return string
 	 */
 	final public static function get_name(): string {
 		return substr( static::class, strlen( __NAMESPACE__ . '\\' ) );

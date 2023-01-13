@@ -6,6 +6,7 @@
 * [\Automattic\Domain_Services\Entity](../namespaces/automattic-domain-services-entity.md)
 * [\Automattic\Domain_Services\Event](../namespaces/automattic-domain-services-event.md)
 * [\Automattic\Domain_Services\Exception](../namespaces/automattic-domain-services-exception.md)
+* [\Automattic\Domain_Services\Helper](../namespaces/automattic-domain-services-helper.md)
 * [\Automattic\Domain_Services\Request](../namespaces/automattic-domain-services-request.md)
 * [\Automattic\Domain_Services\Response](../namespaces/automattic-domain-services-response.md)
 
