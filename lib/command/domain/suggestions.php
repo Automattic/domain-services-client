@@ -73,8 +73,8 @@ class Suggestions implements Command\Command_Interface, Command\Command_Serializ
 	 */
 	public function to_array(): array {
 		return [
-			'query' => $this->query,
-			'quantity' => $this->quantity,
+			Command\Command_Interface::KEY_QUERY => $this->query,
+			Command\Command_Interface::KEY_QUANTITY => $this->quantity,
 		];
 	}
 }
