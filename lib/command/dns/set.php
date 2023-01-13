@@ -63,7 +63,6 @@ use Automattic\Domain_Services\{Command, Entity};
  * @see \Automattic\Domain_Services\Response\Dns\Set
  */
 class Set implements Command\Command_Interface, Command\Command_Serialize_Interface {
-	use Command\Array_Key_Dns_Records_Trait;
 	use Command\Command_Serialize_Trait;
 	use Command\Command_Trait;
 
@@ -97,7 +96,7 @@ class Set implements Command\Command_Interface, Command\Command_Serialize_Interf
 	 */
 	public function to_array(): array {
 		return [
-			self::get_dns_records_array_key() => $this->get_records()->to_array(),
+			Command\Command_Interface::KEY_RECORDS => $this->get_records()->to_array(),
 		];
 	}
 }

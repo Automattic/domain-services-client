@@ -24,6 +24,26 @@ interface Command_Interface {
 	public const CLIENT_TXN_ID = 'client_txn_id';
 
 	/**
+	 * Array keys to be used with all commands
+	 */
+	public const KEY_CONTACT_DISCLOSURE = 'contact_disclosure';
+	public const KEY_CONTACT_ID = 'contact_id';
+	public const KEY_CONTACT_INFORMATION = 'contact_information';
+	public const KEY_CONTACTS = 'contacts';
+	public const KEY_CURRENT_EXPIRATION_YEAR = 'current_expiration_year';
+	public const KEY_DOMAIN = 'domain';
+	public const KEY_DOMAINS = 'domains';
+	public const KEY_EVENT_ID = 'event_id';
+	public const KEY_FEE_AMOUNT = 'fee_amount';
+	public const KEY_LIMIT = 'limit';
+	public const KEY_NAMESERVERS = 'nameservers';
+	public const KEY_PERIOD = 'period';
+	public const KEY_PRIVACY_SETTINGS = 'privacy_setting';
+	public const KEY_RECORD_SETS = 'record_sets';
+	public const KEY_RECORDS = 'records';
+	public const KEY_TRANSFERLOCK = 'transferlock';
+
+	/**
 	 * Returns the command name that can be used to build command data
 	 *
 	 * @return string

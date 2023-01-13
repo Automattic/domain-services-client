@@ -89,8 +89,6 @@ use Automattic\Domain_Services\{Command, Entity, Exception};
  * @see     \Automattic\Domain_Services\Response\Domain\Register
  */
 class Register implements Command\Command_Interface, Command\Command_Serialize_Interface {
-	use Command\Array_Key_Contacts_Trait;
-	use Command\Array_Key_Domain_Trait;
 	use Command\Command_Serialize_Trait;
 	use Command\Command_Trait;
 
@@ -249,8 +247,8 @@ class Register implements Command\Command_Interface, Command\Command_Serialize_I
 	 */
 	public function to_array(): array {
 		return [
-			self::get_domain_name_array_key() => $this->get_domain()->get_name(),
-			self::get_contacts_array_key() => $this->get_contacts()->to_array(),
+			Command\Command_Interface::KEY_DOMAIN => $this->get_domain()->get_name(),
+			Command\Command_Interface::KEY_CONTACTS => $this->get_contacts()->to_array(),
 		];
 	}
 }

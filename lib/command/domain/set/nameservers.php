@@ -51,8 +51,6 @@ use Automattic\Domain_Services\{Command, Entity};
  * @see \Automattic\Domain_Services\Event\Domain\Set\Nameservers\Fail
  */
 class Nameservers implements Command\Command_Interface, Command\Command_Serialize_Interface {
-	use Command\Array_Key_Domain_Trait;
-	use Command\Array_Key_Nameservers_Trait;
 	use Command\Command_Serialize_Trait;
 	use Command\Command_Trait;
 
@@ -98,8 +96,8 @@ class Nameservers implements Command\Command_Interface, Command\Command_Serializ
 	 */
 	public function to_array(): array {
 		return [
-			self::get_domain_name_array_key() => $this->get_domain()->get_name(),
-			self::get_nameservers_array_key() => $this->get_nameservers()->to_array(),
+			Command\Command_Interface::KEY_DOMAIN => $this->get_domain()->get_name(),
+			Command\Command_Interface::KEY_NAMESERVERS => $this->get_nameservers()->to_array(),
 		];
 	}
 }

@@ -21,13 +21,12 @@ namespace Automattic\Domain_Services\Test\Command;
 use Automattic\Domain_Services\{Command, Entity, Test};
 
 class Domain_Check_Test extends Test\Lib\Domain_Services_Client_Test_Case {
-	use Command\Array_Key_Domains_Trait;
 
 	public function test_command_instance_success(): void {
 		$mock_command_data = [
 			Command\Command_Interface::COMMAND => 'Domain\Check',
 			Command\Command_Interface::PARAMS => [
-				self::get_domain_names_array_key() => [
+				Command\Command_Interface::KEY_DOMAINS => [
 					'test-domain-name-1.com',
 					'test-domain-name-2.com',
 					'test-domain-name-3.com',
@@ -39,7 +38,7 @@ class Domain_Check_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 		$domains = new Entity\Domain_Names(
 			...array_map(
 				static fn( $d ) => new Entity\Domain_Name( $d ),
-				$mock_command_data[ Command\Command_Interface::PARAMS ][ self::get_domain_names_array_key() ]
+				$mock_command_data[ Command\Command_Interface::PARAMS ][ Command\Command_Interface::KEY_DOMAINS ]
 			)
 		);
 		$command = new Command\Domain\Check( $domains );

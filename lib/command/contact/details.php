@@ -41,7 +41,6 @@ use Automattic\Domain_Services\{Command, Entity};
  * @see \Automattic\Domain_Services\Command\Domain\Set\Contacts
  */
 class Details implements Command\Command_Interface, Command\Command_Serialize_Interface {
-	use Command\Array_Key_Contact_Id_Trait;
 	use Command\Command_Serialize_Trait;
 	use Command\Command_Trait;
 
@@ -73,7 +72,7 @@ class Details implements Command\Command_Interface, Command\Command_Serialize_In
 	 */
 	public function to_array(): array {
 		return [
-			self::get_contact_id_array_key() => (string) $this->get_contact_id(),
+			Command\Command_Interface::KEY_CONTACT_ID => (string) $this->get_contact_id(),
 		];
 	}
 }

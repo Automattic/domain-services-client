@@ -34,7 +34,6 @@ use Automattic\Domain_Services\{Command};
 class Details implements Command\Command_Interface, Command\Command_Serialize_Interface {
 	use Command\Command_Trait;
 	use Command\Command_Serialize_Trait;
-	use Command\Array_Key_Event_Trait;
 
 	/**
 	 * ID of the event whose details will be checked.
@@ -66,7 +65,7 @@ class Details implements Command\Command_Interface, Command\Command_Serialize_In
 	 */
 	public function to_array(): array {
 		return [
-			self::get_event_id_array_key() => $this->get_event_id(),
+			Command\Command_Interface::KEY_EVENT_ID => $this->get_event_id(),
 		];
 	}
 }

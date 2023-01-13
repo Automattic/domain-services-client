@@ -11,9 +11,7 @@ Set of DNS records associated with a specific domain
 
 * public [__construct()](#method___construct)
 * public [from_array()](#method_from_array)
-* public [get_dns_record_sets_array_key()](#method_get_dns_record_sets_array_key)
 * public [get_domain()](#method_get_domain)
-* public [get_domain_name_array_key()](#method_get_domain_name_array_key)
 * public [get_record_sets()](#method_get_record_sets)
 * public [to_array()](#method_to_array)
 
@@ -22,9 +20,6 @@ Set of DNS records associated with a specific domain
 ### Details
 
 * File: [lib/entity/dns-records.php](../../lib/entity/dns-records.php)
-* Uses Traits:
-  * [\Automattic\Domain_Services\Command\Array_Key_Dns_Record_Sets_Trait](../classes/Automattic-Domain-Services-Command-Array-Key-Dns-Record-Sets-Trait.md)
-  * [\Automattic\Domain_Services\Command\Array_Key_Domain_Trait](../classes/Automattic-Domain-Services-Command-Array-Key-Domain-Trait.md)
 * See Also:
   * [\Automattic\Domain_Services\Entity\Domain_Name](../classes/Automattic-Domain-Services-Entity-Domain-Name.md)
   * [\Automattic\Domain_Services\Entity\Dns_Record_Sets](../classes/Automattic-Domain-Services-Entity-Dns-Record-Sets.md)
@@ -94,21 +89,6 @@ static
 
 ---
 
-<a id="method_get_dns_record_sets_array_key"></a>
-### get_dns_record_sets_array_key
-
-```
-final static public get_dns_record_sets_array_key() : string
-```
-
-##### Returns:
-
-```
-string
-```
-
----
-
 <a id="method_get_domain"></a>
 ### get_domain
 
@@ -124,21 +104,6 @@ Returns the domain name associated with the DNS records
 
 ```
 \Automattic\Domain_Services\Entity\Domain_Name
-```
-
----
-
-<a id="method_get_domain_name_array_key"></a>
-### get_domain_name_array_key
-
-```
-final static public get_domain_name_array_key() : string
-```
-
-##### Returns:
-
-```
-string
 ```
 
 ---
