@@ -24,7 +24,15 @@ class Event_Ack_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_response_factory_success(): void {
 		$command = new Command\Event\Ack( 1234 );
 
-		$response_data = Test\Lib\Mock\get_mock_response( $command, null, 'success' );
+		$response_data = [
+			'status' => 200,
+			'status_description' => 'Command completed successfully',
+			'success' => true,
+			'client_txn_id' => 'test-client-transaction-id',
+			'server_txn_id' => 'a7903cee-043b-4763-b078-737308b5d284.local-isolated-test-request',
+			'timestamp' => 1668886944,
+			'runtime' => 0.0053,
+		];
 
 		/** @var Response\Dns\Get $response_object */
 		$response_object = $this->response_factory->build_response( $command, $response_data );

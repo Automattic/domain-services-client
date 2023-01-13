@@ -90,13 +90,6 @@ class Privacy implements Command\Command_Interface, Command\Command_Serialize_In
 	/**
 	 * {@inheritDoc}
 	 */
-	public static function get_name(): string {
-		return 'Domain_Set_Privacy';
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
 	public function to_array(): array {
 		return [
 			self::get_domain_name_array_key() => $this->get_domain()->get_name(),

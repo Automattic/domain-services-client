@@ -71,13 +71,6 @@ class Details implements Command\Command_Interface, Command\Command_Serialize_In
 	/**
 	 * {@inheritDoc}
 	 */
-	public static function get_name(): string {
-		return 'Contact_Details';
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
 	public function to_array(): array {
 		return [
 			self::get_contact_id_array_key() => (string) $this->get_contact_id(),

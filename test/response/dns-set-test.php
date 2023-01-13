@@ -22,7 +22,8 @@ use Automattic\Domain_Services\{Command, Entity, Response, Test};
 
 class Dns_Set_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_response_factory_success(): void {
-		$domain = new Entity\Domain_Name( 'dns-records-set-test-domain.blog' );
+		$domain_name_string = 'dns-records-set-test-domain.blog';
+		$domain = new Entity\Domain_Name( $domain_name_string );
 		$dns_record_sets = Entity\Dns_Record_Sets::from_array(
 			[
 				[
@@ -47,7 +48,51 @@ class Dns_Set_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 		$dns_records = new Entity\Dns_Records( $domain, $dns_record_sets );
 		$command = new Command\Dns\Set( $dns_records );
 
-		$response_data = Test\Lib\Mock\get_mock_response( $command, $domain->get_name(), 'success' );
+		$response_data = [
+			'data' => [
+				'change_set' => [
+					'domain' => $domain_name_string,
+					'records_added' => [
+						[
+							'name' => '@',
+							'type' => 'A',
+							'ttl' => 300,
+							'data' =>
+								[
+									'9.10.11.12',
+									'13.14.15.16',
+								],
+						],
+					],
+					'records_deleted' => [
+						[
+							'name' => '@',
+							'type' => 'A',
+							'ttl' => 300,
+							'data' => [
+								'1.2.3.4',
+								'5.6.7.8',
+							],
+						],
+						[
+							'name' => '*',
+							'type' => 'CNAME',
+							'ttl' => 14400,
+							'data' => [
+								'test-domain-name.com.',
+							],
+						],
+					],
+				],
+			],
+			'status' => 200,
+			'status_description' => 'Command completed successfully',
+			'success' => true,
+			'client_txn_id' => 'test-client-transaction-id',
+			'server_txn_id' => '72f6f165-1328-4989-912b-1dd936e11866.local-isolated-test-request',
+			'timestamp' => 1668865903,
+			'runtime' => 0.0037,
+		];
 
 		/** @var Response\Dns\Set $response_object */
 		$response_object = $this->response_factory->build_response( $command, $response_data );

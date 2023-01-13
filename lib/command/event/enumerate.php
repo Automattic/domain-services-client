@@ -76,13 +76,6 @@ class Enumerate implements Command\Command_Interface, Command\Command_Serialize_
 	/**
 	 * {@inheritDoc}
 	 */
-	public static function get_name(): string {
-		return 'Event_Enumerate';
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
 	public function to_array(): array {
 		return [
 			self::get_event_limit_array_key() => $this->get_limit(),

@@ -24,7 +24,27 @@ class Event_Details_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_response_factory_success(): void {
 		$command = new Command\Event\Details( 1234 );
 
-		$response_data = Test\Lib\Mock\get_mock_response( $command, null, 'success' );
+		$response_data = [
+			'status' => 200,
+			'status_description' => 'Command completed successfully',
+			'success' => true,
+			'client_txn_id' => 'test-client-transaction-id',
+			'server_txn_id' => '7577b593-0cc4-457a-ac91-a71ea435effd.local-isolated-test-request',
+			'timestamp' => 1668886944,
+			'runtime' => 0.0041,
+			'data' => [
+				'event' => [
+					'id' => 1234,
+					'event_class' => 'Domain_Set_Nameservers',
+					'event_subclass' => 'Success',
+					'event_data' => '[]',
+					'object_type' => 'domain',
+					'object_id' => 'example.com',
+					'event_date' => '2022-08-01 01:23:45',
+					'acknowledged_date' => '2022-08-02 06:07:08',
+				],
+			],
+		];
 
 		/** @var Response\Event\Details $response_object */
 		$response_object = $this->response_factory->build_response( $command, $response_data );

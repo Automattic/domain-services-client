@@ -43,8 +43,6 @@ class Factory {
 			throw new Exception\Command\Missing_Option_Exception( 'command_name' );
 		}
 
-		$class_name = str_replace( '_', '\\', $class_name );
-
 		if ( ! empty( $response['response']['data'] ) && ! is_array( $response['response']['data'] ) ) {
 			throw new Exception\Command\Invalid_Format_Exception( 'Response data must be array' );
 		}

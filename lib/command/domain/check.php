@@ -64,13 +64,6 @@ class Check implements Command\Command_Interface, Command\Command_Serialize_Inte
 	/**
 	 * {@inheritDoc}
 	 */
-	public static function get_name(): string {
-		return 'Domain_Check';
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
 	public function to_array(): array {
 		return [
 			self::get_domain_names_array_key() => $this->get_domains()->to_array(),

@@ -25,7 +25,7 @@ class Event_Ack_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 
 	public function test_command_instance_success(): void {
 		$mock_command_data = [
-			Command\Command_Interface::COMMAND => 'Event_Ack',
+			Command\Command_Interface::COMMAND => 'Event\Ack',
 			Command\Command_Interface::PARAMS => [
 				self::get_event_id_array_key() => 1234,
 			],

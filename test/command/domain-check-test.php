@@ -25,7 +25,7 @@ class Domain_Check_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 
 	public function test_command_instance_success(): void {
 		$mock_command_data = [
-			Command\Command_Interface::COMMAND => 'Domain_Check',
+			Command\Command_Interface::COMMAND => 'Domain\Check',
 			Command\Command_Interface::PARAMS => [
 				self::get_domain_names_array_key() => [
 					'test-domain-name-1.com',

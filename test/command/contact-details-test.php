@@ -25,7 +25,7 @@ class Contact_Details_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 
 	public function test_command_instance_success(): void {
 		$mock_command_data = [
-			Command\Command_Interface::COMMAND => 'Contact_Details',
+			Command\Command_Interface::COMMAND => 'Contact\Details',
 			Command\Command_Interface::PARAMS => [
 				self::get_contact_id_array_key() => 'SP1:P-ABC2134',
 			],
