@@ -61,13 +61,6 @@ class Ack implements Command\Command_Interface, Command\Command_Serialize_Interf
 	/**
 	 * {@inheritDoc}
 	 */
-	public static function get_name(): string {
-		return 'Event_Ack';
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
 	public function to_array(): array {
 		return [
 			self::get_event_id_array_key() => $this->get_event_id(),

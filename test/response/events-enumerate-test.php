@@ -24,7 +24,58 @@ class Event_Enumerate_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_response_factory_success(): void {
 		$command = new Command\Event\Enumerate();
 
-		$response_data = Test\Lib\Mock\get_mock_response( $command, null, 'success' );
+		$response_data = [
+			'status' => 200,
+			'status_description' => 'Command completed successfully',
+			'success' => true,
+			'client_txn_id' => 'test-client-transaction-id',
+			'server_txn_id' => 'e5b5f2de-099f-4469-9e0b-724e53d3f241.local-isolated-test-request',
+			'timestamp' => 1668865904,
+			'runtime' => 0.0028,
+			'data' => [
+				'total_count' => 3,
+				'events' => [
+					[
+						'id' => 1,
+						'event_class' => 'Domain_Set_Nameservers',
+						'event_subclass' => 'Success',
+						'event_data' => '[]',
+						'object_type' => 'domain',
+						'object_id' => 'example.com',
+						'event_date' => '2022-01-01 00:00:00',
+						'acknowledged_date' => '2022-01-01 10:00:00',
+					],
+					[
+						'id' => 2,
+						'event_class' => 'Domain_Set_Nameservers',
+						'event_subclass' => 'Success',
+						'event_data' => '[]',
+						'object_type' => 'domain',
+						'object_id' => 'example.com',
+						'event_date' => '2022-02-01 00:00:00',
+						'acknowledged_date' => NULL,
+					],
+					[
+						'id' => 3,
+						'event_class' => 'Domain_Set_Nameservers',
+						'event_subclass' => 'Success',
+						'event_data' => '[]',
+						'object_type' => 'domain',
+						'object_id' => 'example.com',
+						'event_date' => '2022-03-01 00:00:00',
+						'acknowledged_date' => NULL,
+					],
+				],
+				'request_params' => [
+					'filter' => NULL,
+					'first' => 0,
+					'limit' => 50,
+					'date_start' => NULL,
+					'date_end' => NULL,
+					'show_acknowledged' => true,
+				],
+			],
+		];
 
 		/** @var Response\Event\Enumerate $response_object */
 		$response_object = $this->response_factory->build_response( $command, $response_data );

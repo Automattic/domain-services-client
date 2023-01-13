@@ -22,10 +22,45 @@ use Automattic\Domain_Services\{Command, Entity, Response, Test};
 
 class Dns_Get_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_response_factory_success(): void {
-		$domain = new Entity\Domain_Name( 'test-domain-name.blog' );
+		$domain_name_string = 'test-domain-name.blog';
+		$domain = new Entity\Domain_Name( $domain_name_string );
 		$command = new Command\Dns\Get( $domain );
 
-		$response_data = Test\Lib\Mock\get_mock_response( $command, $domain->get_name(), 'success' );
+		$response_data = [
+			'status' => 200,
+			'status_description' => 'Command completed successfully',
+			'success' => true,
+			'client_txn_id' => 'test-client-transaction-id',
+			'server_txn_id' => 'f3ef7b83-54b8-4f9c-a0a0-bf94374f1563.local-isolated-test-request',
+			'timestamp' => 1668798703,
+			'runtime' => 0.0014,
+			'data' => [
+				'dns_records' => [
+					'domain' => $domain_name_string,
+					'record_sets' => [
+						[
+							'name' => '@',
+							'type' => 'A',
+							'ttl' => 300,
+							'data' =>
+								[
+									'1.2.3.4',
+									'5.6.7.8',
+								],
+						],
+						[
+							'name' => '*',
+							'type' => 'CNAME',
+							'ttl' => 14400,
+							'data' =>
+								[
+									'test-domain-name.com.',
+								],
+						],
+					],
+				],
+			],
+		];
 
 		/** @var Response\Dns\Get $response_object */
 		$response_object = $this->response_factory->build_response( $command, $response_data );

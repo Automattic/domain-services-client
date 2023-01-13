@@ -110,13 +110,6 @@ class Contacts implements Command\Command_Interface, Command\Command_Serialize_I
 	/**
 	 * {@inheritDoc}
 	 */
-	public static function get_name(): string {
-		return 'Domain_Set_Contacts';
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
 	public function to_array(): array {
 		return [
 			self::get_domain_name_array_key() => $this->get_domain()->get_name(),

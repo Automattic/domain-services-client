@@ -95,13 +95,6 @@ class Set implements Command\Command_Interface, Command\Command_Serialize_Interf
 	/**
 	 * {@inheritDoc}
 	 */
-	public static function get_name(): string {
-		return 'Dns_Set';
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
 	public function to_array(): array {
 		return [
 			self::get_dns_records_array_key() => $this->get_records()->to_array(),

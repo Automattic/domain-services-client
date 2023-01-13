@@ -29,7 +29,7 @@ class Domain_Register_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 
 	public function test_command_instance_success(): void {
 		$mock_command_data = [
-			Command\Command_Interface::COMMAND => 'Domain_Register',
+			Command\Command_Interface::COMMAND => 'Domain\Register',
 			Command\Command_Interface::PARAMS => [
 				self::get_domain_name_array_key() => 'test-domain-name.com',
 				self::get_contacts_array_key() => [

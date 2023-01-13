@@ -28,7 +28,31 @@ class Domain_Check_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 			->add_domain_name( new Entity\Domain_Name( 'test-domain-name-3.com' ) );
 		$command = new Command\Domain\Check( $domain_names );
 
-		$response_data = Test\Lib\Mock\get_mock_response( $command, null, 'success' );
+		$response_data = [
+			'status' => 200,
+			'status_description' => 'Command completed successfully',
+			'success' => true,
+			'client_txn_id' => 'test-client-transaction-id',
+			'server_txn_id' => '3b581197-d93a-466a-957d-3569cb28279c.local-isolated-test-request',
+			'timestamp' => 1669075519,
+			'runtime' => 0.0013,
+			'data' => [
+				'domains' => [
+					'test-domain-name-1.com' => [
+						'available' => true,
+						'fee_class' => 'standard',
+					],
+					'test-domain-name-2.com' => [
+						'available' => true,
+						'fee_class' => 'standard',
+					],
+					'test-domain-name-3.com' => [
+						'available' => false,
+						'fee_class' => 'standard',
+					],
+				],
+			],
+		];
 
 		/** @var Response\Domain\Check $response_object */
 		$response_object = $this->response_factory->build_response( $command, $response_data );

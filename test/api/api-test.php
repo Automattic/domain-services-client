@@ -56,7 +56,27 @@ class ApiTest extends Test\Lib\Domain_Services_Client_Test_Case {
 		// Create an optional client transaction ID
 		$client_transaction_id = 'client_tx_id_example';
 
-		$mock_response_array = Test\Lib\Mock\get_mock_response( $command, $domain_name->get_name(), 'success' );
+		$mock_response_array = [
+			'status' => 200,
+			'status_description' => 'Command completed successfully',
+			'success' => true,
+			'client_txn_id' => 'test-client-transaction-id-1',
+			'server_txn_id' => '729062dd-702c-4a9a-8457-972f72c56184.local-isolated-test-request',
+			'timestamp' => 1668625533,
+			'runtime' => 0.0069,
+			'data' =>
+				[
+					'contacts' =>
+						[
+							'owner' =>
+								[
+									'contact_id' => 'SP1:P-ABC1234',
+									'contact_information' => null,
+									'contact_disclosure' => 'none',
+								],
+						],
+				],
+		];
 
 		$mock_response = new Test\Lib\Mock\Psr\Http\Message\Response();
 		$mock_response->set_mock_body_from_array( $mock_response_array );

@@ -61,14 +61,6 @@ class Details implements Command\Command_Interface, Command\Command_Serialize_In
 		return $this->event_id;
 	}
 
-
-	/**
-	 * {@inheritDoc}
-	 */
-	public static function get_name(): string {
-		return 'Event_Details';
-	}
-
 	/**
 	 * {@inheritDoc}
 	 */
