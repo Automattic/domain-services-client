@@ -13,7 +13,6 @@
 | Name | Summary |
 |------|---------|
 | [\Automattic\Domain_Services\Response\Data_Trait](../classes/Automattic-Domain-Services-Response-Data-Trait.md) |  |
-| [\Automattic\Domain_Services\Response\Event_Aware](../classes/Automattic-Domain-Services-Response-Event-Aware.md) |  |
 
 ### Interfaces
 
@@ -26,4 +25,3 @@
 | Name | Summary |
 |------|---------|
 | [\Automattic\Domain_Services\Response\Code](../classes/Automattic-Domain-Services-Response-Code.md) |  |
-| [\Automattic\Domain_Services\Response\Factory](../classes/Automattic-Domain-Services-Response-Factory.md) |  |

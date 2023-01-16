@@ -14,3 +14,4 @@
 | [\Automattic\Domain_Services\Command\Domain\Register](../classes/Automattic-Domain-Services-Command-Domain-Register.md) | Register a new a domain. |
 | [\Automattic\Domain_Services\Command\Domain\Renew](../classes/Automattic-Domain-Services-Command-Domain-Renew.md) | Renews a domain |
 | [\Automattic\Domain_Services\Command\Domain\Restore](../classes/Automattic-Domain-Services-Command-Domain-Restore.md) | Restores (redeems) a domain that is currently in the redemption period. |
+| [\Automattic\Domain_Services\Command\Domain\Suggestions](../classes/Automattic-Domain-Services-Command-Domain-Suggestions.md) | Retrieves a list of domain name suggestions based on a query string |

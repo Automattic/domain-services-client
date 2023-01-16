@@ -20,9 +20,3 @@
 | Name | Summary |
 |------|---------|
 | [\Automattic\Domain_Services\Event\Event_Interface](../classes/Automattic-Domain-Services-Event-Event-Interface.md) | An interface used by all event classes. |
-
-### Classes
-
-| Name | Summary |
-|------|---------|
-| [\Automattic\Domain_Services\Event\Factory](../classes/Automattic-Domain-Services-Event-Factory.md) |  |

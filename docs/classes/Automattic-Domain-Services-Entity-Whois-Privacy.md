@@ -18,7 +18,6 @@ Define a valid privacy setting to be used for a domain
 
 * public [__construct()](#method___construct)
 * public [get_setting()](#method_get_setting)
-* public [to_scalar()](#method_to_scalar)
 
 ---
 
@@ -103,25 +102,6 @@ public get_setting() : string
 ##### Summary
 
 Return the whois privacy setting
-
-##### Returns:
-
-```
-string
-```
-
----
-
-<a id="method_to_scalar"></a>
-### to_scalar
-
-```
-public to_scalar() : string
-```
-
-##### Summary
-
-Convert the object to scalar
 
 ##### Returns:
 
