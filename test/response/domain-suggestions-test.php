@@ -18,7 +18,7 @@
 
 namespace Automattic\Domain_Services\Test\Response;
 
-use Automattic\Domain_Services\{Command, Entity, Response, Test};
+use Automattic\Domain_Services\{Command, Response, Test};
 
 class Domain_Suggestions_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_response_factory_success(): void {

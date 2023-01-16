@@ -19,7 +19,6 @@
 namespace Automattic\Domain_Services\Response\Domain;
 
 use Automattic\Domain_Services\{Entity, Response};
-use http\Encoding\Stream\Enbrotli;
 
 /**
  * Response of a Domain_Suggestions command

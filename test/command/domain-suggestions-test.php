@@ -18,7 +18,7 @@
 
 namespace Automattic\Domain_Services\Test\Command;
 
-use Automattic\Domain_Services\{Command, Entity, Test};
+use Automattic\Domain_Services\{Command, Test};
 
 class Domain_Suggestions_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 
