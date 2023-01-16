@@ -106,7 +106,7 @@ class Contacts implements Command\Command_Interface, Command\Command_Serialize_I
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @internal
 	 */
 	public function to_array(): array {
 		return [

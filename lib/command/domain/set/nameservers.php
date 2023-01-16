@@ -92,6 +92,7 @@ class Nameservers implements Command\Command_Interface, Command\Command_Serializ
 	}
 
 	/**
+	 * @internal
 	 * @return array
 	 */
 	public function to_array(): array {

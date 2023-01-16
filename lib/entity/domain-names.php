@@ -47,6 +47,9 @@ class Domain_Names {
 		return $this->domain_names;
 	}
 
+	/**
+	 * @internal
+	 */
 	public function to_array(): array {
 		return array_map(
 			static fn( $domain_name ) => $domain_name->get_name(),

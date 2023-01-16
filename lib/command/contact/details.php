@@ -68,7 +68,7 @@ class Details implements Command\Command_Interface, Command\Command_Serialize_In
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @internal
 	 */
 	public function to_array(): array {
 		return [

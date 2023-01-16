@@ -60,6 +60,7 @@ class Domain_Contact {
 	/**
 	 * Returns an array representation of this instance
 	 *
+	 * @internal
 	 * @return array
 	 */
 	public function to_array(): array {
@@ -84,6 +85,8 @@ class Domain_Contact {
 	 * Builds an instance from an array
 	 *
 	 * The array can include `contact_id`, `contact_information`, and/or `contact_disclosure`
+	 *
+	 * @internal
 	 *
 	 * @param array $data
 	 *

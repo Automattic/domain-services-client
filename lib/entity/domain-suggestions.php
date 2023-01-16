@@ -67,6 +67,7 @@ class Suggestions {
 	/**
 	 * Returns an array containing this entity's domain name suggestions
 	 *
+	 * @internal
 	 * @return array
 	 */
 	public function to_array(): array {

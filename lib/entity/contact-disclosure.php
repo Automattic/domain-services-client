@@ -63,6 +63,7 @@ class Contact_Disclosure {
 	/**
 	 * Get the disclosed fields as a comma delimited list.
 	 *
+	 * @internal
 	 * @return string
 	 */
 	public function __toString(): string {

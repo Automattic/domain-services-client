@@ -77,7 +77,7 @@ class Delete implements Command\Command_Interface, Command\Command_Serialize_Int
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @internal
 	 */
 	public function to_array(): array {
 		return [

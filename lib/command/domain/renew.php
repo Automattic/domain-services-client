@@ -145,7 +145,7 @@ class Renew implements Command\Command_Interface, Command\Command_Serialize_Inte
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @internal
 	 */
 	public function to_array(): array {
 		return [

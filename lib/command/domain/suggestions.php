@@ -69,7 +69,7 @@ class Suggestions implements Command\Command_Interface, Command\Command_Serializ
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @internal
 	 */
 	public function to_array(): array {
 		return [

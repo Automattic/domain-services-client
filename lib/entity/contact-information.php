@@ -125,6 +125,7 @@ class Contact_Information {
 	/**
 	 * Returns an array representation of this instance
 	 *
+	 * @internal
 	 * @return string[]
 	 */
 	public function to_array(): array {
@@ -134,6 +135,7 @@ class Contact_Information {
 	/**
 	 * Builds an instance from an array
 	 *
+	 * @internal
 	 * @throws Exception\Entity\Invalid_Value_Exception
 	 */
 	public static function from_array( array $data ): self {

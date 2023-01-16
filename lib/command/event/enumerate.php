@@ -62,7 +62,7 @@ class Enumerate implements Command\Command_Interface, Command\Command_Serialize_
 
 	/**
 	 * Sets the maximum number of events to return in the response.
-	 *
+	 * @internal
 	 * @param int $limit
 	 * @return Enumerate
 	 */
@@ -73,7 +73,7 @@ class Enumerate implements Command\Command_Interface, Command\Command_Serialize_
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @internal
 	 */
 	public function to_array(): array {
 		return [

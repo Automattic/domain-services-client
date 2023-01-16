@@ -56,7 +56,7 @@ class Info implements Command\Command_Interface, Command\Command_Serialize_Inter
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @internal
 	 */
 	public function to_array(): array {
 		return [

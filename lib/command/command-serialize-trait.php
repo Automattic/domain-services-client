@@ -22,6 +22,7 @@ trait Command_Serialize_Trait {
 	/**
 	 * Implements the JsonSerializable interface
 	 *
+	 * @internal
 	 * @return array
 	 */
 	final public function jsonSerialize(): array { //phpcs:ignore WordPress.NamingConventions.ValidFunctionName.MethodNameInvalid

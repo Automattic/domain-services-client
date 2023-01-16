@@ -73,7 +73,7 @@ class Get implements Command\Command_Interface, Command\Command_Serialize_Interf
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @internal
 	 */
 	public function to_array(): array {
 		return [

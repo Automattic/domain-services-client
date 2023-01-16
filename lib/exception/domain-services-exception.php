@@ -23,11 +23,17 @@ use Automattic\Domain_Services\{Response};
 class Domain_Services_Exception extends \Exception {
 	private array $data;
 
+	/**
+	 * @internal
+	 */
 	public function __construct( int $code, array $data, \Throwable $previous = null ) {
 		$this->data = $data;
 		parent::__construct( Response\Code::get_description( $code ), $code, $previous );
 	}
 
+	/**
+	 * @internal
+	 */
 	public function get_exception_type(): array {
 		return [
 			'class' => null,
