@@ -184,7 +184,7 @@ class Register implements Command\Command_Interface, Command\Command_Serialize_I
 	 *
 	 * @return Entity\Domain_Name
 	 */
-	public function get_domain(): Entity\Domain_Name {
+	private function get_domain(): Entity\Domain_Name {
 		return $this->domain;
 	}
 
@@ -193,7 +193,7 @@ class Register implements Command\Command_Interface, Command\Command_Serialize_I
 	 *
 	 * @return Entity\Domain_Contacts
 	 */
-	public function get_contacts(): Entity\Domain_Contacts {
+	private function get_contacts(): Entity\Domain_Contacts {
 		return $this->contacts;
 	}
 
@@ -202,7 +202,7 @@ class Register implements Command\Command_Interface, Command\Command_Serialize_I
 	 *
 	 * @return int
 	 */
-	public function get_period(): int {
+	private function get_period(): int {
 		return $this->period;
 	}
 
@@ -211,7 +211,7 @@ class Register implements Command\Command_Interface, Command\Command_Serialize_I
 	 *
 	 * @return Entity\Nameservers
 	 */
-	public function get_nameservers(): Entity\Nameservers {
+	private function get_nameservers(): Entity\Nameservers {
 		return $this->nameservers;
 	}
 
@@ -220,7 +220,7 @@ class Register implements Command\Command_Interface, Command\Command_Serialize_I
 	 *
 	 * @return ?Entity\Dns_Records
 	 */
-	public function get_dns_records(): ?Entity\Dns_Records {
+	private function get_dns_records(): ?Entity\Dns_Records {
 		return $this->dns_records;
 	}
 
@@ -229,7 +229,7 @@ class Register implements Command\Command_Interface, Command\Command_Serialize_I
 	 *
 	 * @return string
 	 */
-	public function get_privacy_setting(): string {
+	private function get_privacy_setting(): string {
 		return $this->privacy_setting;
 	}
 
@@ -238,7 +238,7 @@ class Register implements Command\Command_Interface, Command\Command_Serialize_I
 	 *
 	 * @return int|null
 	 */
-	public function get_price(): ?int {
+	private function get_price(): ?int {
 		return $this->price;
 	}
 

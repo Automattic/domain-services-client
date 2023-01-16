@@ -59,7 +59,7 @@ class Transferlock implements Command\Command_Interface, Command\Command_Seriali
 	 *
 	 * @return Entity\Domain_Name
 	 */
-	public function get_domain(): Entity\Domain_Name {
+	private function get_domain(): Entity\Domain_Name {
 		return $this->domain;
 	}
 
@@ -68,7 +68,7 @@ class Transferlock implements Command\Command_Interface, Command\Command_Seriali
 	 *
 	 * @return bool
 	 */
-	public function get_transfer_lock(): bool {
+	private function get_transfer_lock(): bool {
 		return $this->transfer_lock;
 	}
 

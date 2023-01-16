@@ -94,14 +94,14 @@ class Contacts implements Command\Command_Interface, Command\Command_Serialize_I
 	/**
 	 * @return Entity\Domain_Name
 	 */
-	public function get_domain(): Entity\Domain_Name {
+	private function get_domain(): Entity\Domain_Name {
 		return $this->domain;
 	}
 
 	/**
 	 * @return Entity\Domain_Contacts
 	 */
-	public function get_contacts(): Entity\Domain_Contacts {
+	private function get_contacts(): Entity\Domain_Contacts {
 		return $this->contacts;
 	}
 

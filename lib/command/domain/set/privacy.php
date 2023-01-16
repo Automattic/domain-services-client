@@ -74,14 +74,14 @@ class Privacy implements Command\Command_Interface, Command\Command_Serialize_In
 	/**
 	 * @return Entity\Domain_Name
 	 */
-	public function get_domain(): Entity\Domain_Name {
+	private function get_domain(): Entity\Domain_Name {
 		return $this->domain;
 	}
 
 	/**
 	 * @return Entity\Whois_Privacy
 	 */
-	public function get_privacy_setting(): Entity\Whois_Privacy {
+	private function get_privacy_setting(): Entity\Whois_Privacy {
 		return $this->privacy_setting;
 	}
 

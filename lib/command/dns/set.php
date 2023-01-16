@@ -87,7 +87,7 @@ class Set implements Command\Command_Interface, Command\Command_Serialize_Interf
 	 *
 	 * @return Entity\Dns_Records
 	 */
-	public function get_records(): Entity\Dns_Records {
+	private function get_records(): Entity\Dns_Records {
 		return $this->records;
 	}
 

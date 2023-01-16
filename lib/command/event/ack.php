@@ -53,7 +53,7 @@ class Ack implements Command\Command_Interface, Command\Command_Serialize_Interf
 	 *
 	 * @return int
 	 */
-	public function get_event_id(): int {
+	private function get_event_id(): int {
 		return $this->event_id;
 	}
 

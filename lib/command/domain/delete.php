@@ -72,7 +72,7 @@ class Delete implements Command\Command_Interface, Command\Command_Serialize_Int
 	 *
 	 * @return Entity\Domain_Name
 	 */
-	public function get_domain(): Entity\Domain_Name {
+	private function get_domain(): Entity\Domain_Name {
 		return $this->domain;
 	}
 

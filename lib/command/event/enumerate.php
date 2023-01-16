@@ -56,7 +56,7 @@ class Enumerate implements Command\Command_Interface, Command\Command_Serialize_
 	 *
 	 * @return int
 	 */
-	public function get_limit(): int {
+	private function get_limit(): int {
 		return $this->limit;
 	}
 
