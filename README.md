@@ -27,7 +27,7 @@ Below are instructions for both [Guzzle 6](#guzzle-6) and [Guzzle 7](#guzzle-7) 
 - Guzzle 7 implements both `PSR-18` and `PSR-17` standards. This makes it ready to work with the client library directly.
 - To require this library and Guzzle 7 (if it's not already), the full command should look something like that:
   ```
-  composer require automattic/domain-services-client guzzelhttp/guzzle
+  composer require automattic/domain-services-client guzzlehttp/guzzle
   ```
 - Once this is done, make sure to require the composer autoload file `vendor/autoload.php` in your code if it's not already.
 - You can see an example of the code [here](./dev-tools/examples/guzzle-7.php)
