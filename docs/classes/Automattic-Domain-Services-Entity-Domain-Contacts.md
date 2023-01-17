@@ -24,6 +24,7 @@ Represents all contact types for a domain name
 * public [get_owner()](#method_get_owner)
 * public [get_tech()](#method_get_tech)
 * public [get_valid_contact_types()](#method_get_valid_contact_types)
+* public [is_empty()](#method_is_empty)
 * public [set_admin()](#method_set_admin)
 * public [set_billing()](#method_set_billing)
 * public [set_by_key()](#method_set_by_key)
@@ -252,6 +253,21 @@ Returns a list of the valid contact types
 
 ```
 string[]
+```
+
+---
+
+<a id="method_is_empty"></a>
+### is_empty
+
+```
+public is_empty() : bool
+```
+
+##### Returns:
+
+```
+bool
 ```
 
 ---

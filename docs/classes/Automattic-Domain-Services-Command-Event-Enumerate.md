@@ -18,6 +18,7 @@ can be set using the $limit property for this command. The limit defaults to 50 
 ### Methods
 
 * public [__construct()](#method___construct)
+* public [set_limit()](#method_set_limit)
 
 ---
 
@@ -58,4 +59,29 @@ Class constructor
 
 ```
 mixed
+```
+
+---
+
+<a id="method_set_limit"></a>
+### set_limit
+
+```
+public set_limit(int  limit) : \Automattic\Domain_Services\Command\Event\Enumerate
+```
+
+##### Summary
+
+Sets the maximum number of events to return in the response.
+
+##### Parameters:
+
+| Name | Type | Default |
+|------|------|---------|
+| **$limit** | int |  |
+
+##### Returns:
+
+```
+\Automattic\Domain_Services\Command\Event\Enumerate
 ```
