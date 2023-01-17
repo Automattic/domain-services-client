@@ -22,7 +22,6 @@
 ### Methods
 
 * public [__construct()](#method___construct)
-* public [__toString()](#method___toString)
 * public [get_type()](#method_get_type)
 
 ---
@@ -135,21 +134,6 @@ public __construct(string  type) : mixed
 | Name | Type | Default |
 |------|------|---------|
 | **$type** | string |  |
-
-##### Returns:
-
-```
-mixed
-```
-
----
-
-<a id="method___toString"></a>
-### __toString
-
-```
-public __toString() : mixed
-```
 
 ##### Returns:
 

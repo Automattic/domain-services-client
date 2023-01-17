@@ -10,10 +10,8 @@ Set of DNS records associated with a specific domain
 ### Methods
 
 * public [__construct()](#method___construct)
-* public [from_array()](#method_from_array)
 * public [get_domain()](#method_get_domain)
 * public [get_record_sets()](#method_get_record_sets)
-* public [to_array()](#method_to_array)
 
 ---
 
@@ -54,41 +52,6 @@ mixed
 
 ---
 
-<a id="method_from_array"></a>
-### from_array
-
-```
-static public from_array(array  dns_records_data) : static
-```
-
-##### Summary
-
-Constructs a Dns_Records entity from an array containing sets of DNS records
-
-##### See Also:
-
- * [\Automattic\Domain_Services\Entity\Dns_Record_Sets](../classes/Automattic-Domain-Services-Entity-Dns-Record-Sets.md)
-
-##### Parameters:
-
-| Name | Type | Default |
-|------|------|---------|
-| **$dns_records_data** | array |  |
-
-##### Throws:
-
-| Type | Description |
-|------|-------------|
-| \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception |  |
-
-##### Returns:
-
-```
-static
-```
-
----
-
 <a id="method_get_domain"></a>
 ### get_domain
 
@@ -123,23 +86,4 @@ Returns the sets of DNS records associated with a domain
 
 ```
 \Automattic\Domain_Services\Entity\Dns_Record_Sets
-```
-
----
-
-<a id="method_to_array"></a>
-### to_array
-
-```
-public to_array() : array
-```
-
-##### Summary
-
-Returns an array containing sets of DNS records associated with a domain
-
-##### Returns:
-
-```
-array
 ```

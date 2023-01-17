@@ -8,7 +8,6 @@
 * public [__construct()](#method___construct)
 * public [add_domain_name()](#method_add_domain_name)
 * public [get_domain_names()](#method_get_domain_names)
-* public [to_array()](#method_to_array)
 
 ---
 
@@ -73,19 +72,4 @@ public get_domain_names() : \Automattic\Domain_Services\Entity\Domain_Name[]
 
 ```
 \Automattic\Domain_Services\Entity\Domain_Name[]
-```
-
----
-
-<a id="method_to_array"></a>
-### to_array
-
-```
-public to_array() : array
-```
-
-##### Returns:
-
-```
-array
 ```

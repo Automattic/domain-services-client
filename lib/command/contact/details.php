@@ -63,12 +63,12 @@ class Details implements Command\Command_Interface, Command\Command_Serialize_In
 	 *
 	 * @return Entity\Contact_Id
 	 */
-	public function get_contact_id(): Entity\Contact_Id {
+	private function get_contact_id(): Entity\Contact_Id {
 		return $this->contact_id;
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @internal
 	 */
 	public function to_array(): array {
 		return [

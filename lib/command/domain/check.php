@@ -56,12 +56,12 @@ class Check implements Command\Command_Interface, Command\Command_Serialize_Inte
 	 *
 	 * @return Entity\Domain_Names
 	 */
-	public function get_domains(): Entity\Domain_Names {
+	private function get_domains(): Entity\Domain_Names {
 		return $this->domains;
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @internal
 	 */
 	public function to_array(): array {
 		return [

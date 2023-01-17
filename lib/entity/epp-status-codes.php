@@ -44,6 +44,9 @@ class Epp_Status_Codes implements \Iterator {
 		$this->epp_status_codes[ (string) $epp_status_code ] = $epp_status_code;
 	}
 
+	/**
+	 * @internal
+	 */
 	public function to_array(): array {
 		$epp_status_codes = [];
 
@@ -56,24 +59,37 @@ class Epp_Status_Codes implements \Iterator {
 
 	/**
 	 * Functions to implement the Iterator interface
+	 * @internal
 	 */
 	public function current(): ?Epp_Status_Code {
 		$keys = array_keys( $this->epp_status_codes );
 		return $this->epp_status_codes[ $keys[ $this->iterator_pointer ] ];
 	}
 
+	/**
+	 * @internal
+	 */
 	public function next(): void {
 		$this->iterator_pointer++;
 	}
 
+	/**
+	 * @internal
+	 */
 	public function key(): ?int {
 		return $this->iterator_pointer;
 	}
 
+	/**
+	 * @internal
+	 */
 	public function valid(): bool {
 		return $this->iterator_pointer < count( $this->epp_status_codes );
 	}
 
+	/**
+	 * @internal
+	 */
 	public function rewind(): void {
 		$this->iterator_pointer = 0;
 	}

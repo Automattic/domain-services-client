@@ -1,13 +1,8 @@
-# Class: [\Automattic](../namespaces/automattic.md)[\Domain_Services](../namespaces/automattic-domain-services.md)[\Response](../namespaces/automattic-domain-services-response.md)[\Event](../namespaces/automattic-domain-services-response-event.md)\Details
+# Class: [\Automattic](../namespaces/automattic.md)[\Domain_Services](../namespaces/automattic-domain-services.md)[\Response](../namespaces/automattic-domain-services-response.md)[\Domain](../namespaces/automattic-domain-services-response-domain.md)\Suggestions
 
 ## Summary:
 
-Response of an Event_Details command.
-
-## Description:
-
-This is the response returned from a successful execution of Event_Details command. The event can be retrieved using
-get_event() method.
+Response of a Domain_Suggestions command
 
 
 ---
@@ -17,11 +12,11 @@ get_event() method.
 * public [__construct()](#method___construct)
 * public [get_client_txn_id()](#method_get_client_txn_id)
 * public [get_data_by_key()](#method_get_data_by_key)
-* public [get_event()](#method_get_event)
 * public [get_runtime()](#method_get_runtime)
 * public [get_server_txn_id()](#method_get_server_txn_id)
 * public [get_status()](#method_get_status)
 * public [get_status_description()](#method_get_status_description)
+* public [get_suggestions()](#method_get_suggestions)
 * public [get_timestamp()](#method_get_timestamp)
 * public [is_success()](#method_is_success)
 
@@ -29,14 +24,13 @@ get_event() method.
 
 ### Details
 
-* File: [lib/response/event/details.php](../../lib/response/event/details.php)
+* File: [lib/response/domain/suggestions.php](../../lib/response/domain/suggestions.php)
 * Implements:
   * [\Automattic\Domain_Services\Response\Response_Interface](../classes/Automattic-Domain-Services-Response-Response-Interface.md)
 * Uses Traits:
   * [\Automattic\Domain_Services\Response\Data_Trait](../classes/Automattic-Domain-Services-Response-Data-Trait.md)
-  * [\Automattic\Domain_Services\Response\Event_Aware](../classes/Automattic-Domain-Services-Response-Event-Aware.md)
 * See Also:
-  * [\Automattic\Domain_Services\Command\Event\Details](../classes/Automattic-Domain-Services-Command-Event-Details.md)
+  * [\Automattic\Domain_Services\Command\Domain\Suggestions](../classes/Automattic-Domain-Services-Command-Domain-Suggestions.md)
 
 ---
 
@@ -107,31 +101,6 @@ Returns the response value for the given key, if it exists.
 
 ```
 array|mixed|null
-```
-
----
-
-<a id="method_get_event"></a>
-### get_event
-
-```
-public get_event() : \Automattic\Domain_Services\Event\Event_Interface
-```
-
-##### Summary
-
-Builds and returns an event entity
-
-##### Throws:
-
-| Type | Description |
-|------|-------------|
-| \Automattic\Domain_Services\Exception\Event\Invalid_Event_Name |  |
-
-##### Returns:
-
-```
-\Automattic\Domain_Services\Event\Event_Interface
 ```
 
 ---
@@ -220,6 +189,25 @@ Gets the response status description
 
 ```
 string
+```
+
+---
+
+<a id="method_get_suggestions"></a>
+### get_suggestions
+
+```
+public get_suggestions() : \Automattic\Domain_Services\Entity\Suggestions|null
+```
+
+##### Summary
+
+Returns the suggestions of the response object
+
+##### Returns:
+
+```
+\Automattic\Domain_Services\Entity\Suggestions|null
 ```
 
 ---

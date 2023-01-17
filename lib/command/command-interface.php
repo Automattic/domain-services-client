@@ -48,6 +48,7 @@ interface Command_Interface {
 	/**
 	 * Returns the command name that can be used to build command data
 	 *
+	 * @internal
 	 * @return string
 	 */
 	public static function get_name(): string;
@@ -55,6 +56,7 @@ interface Command_Interface {
 	/**
 	 * Gets the client transaction ID
 	 *
+	 * @internal
 	 * @return string
 	 */
 	public function get_client_txn_id(): string;
@@ -62,6 +64,7 @@ interface Command_Interface {
 	/**
 	 * Sets the client transaction ID
 	 *
+	 * @internal
 	 * @param string $client_txn_id
 	 * @return void
 	 */

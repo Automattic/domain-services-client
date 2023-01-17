@@ -14,14 +14,12 @@ Represents one of the domain's contacts and its privacy setting.
 ### Methods
 
 * public [__construct()](#method___construct)
-* public [from_array()](#method_from_array)
 * public [get_contact_disclosure()](#method_get_contact_disclosure)
 * public [get_contact_id()](#method_get_contact_id)
 * public [get_contact_information()](#method_get_contact_information)
 * public [set_contact_disclosure()](#method_set_contact_disclosure)
 * public [set_contact_id()](#method_set_contact_id)
 * public [set_contact_information()](#method_set_contact_information)
-* public [to_array()](#method_to_array)
 
 ---
 
@@ -52,41 +50,6 @@ public __construct(?\Automattic\Domain_Services\Entity\Contact_Id  contact_id = 
 
 ```
 mixed
-```
-
----
-
-<a id="method_from_array"></a>
-### from_array
-
-```
-static public from_array(array  data) : static
-```
-
-##### Summary
-
-Builds an instance from an array
-
-##### Description
-
-The array can include `contact_id`, `contact_information`, and/or `contact_disclosure`
-
-##### Parameters:
-
-| Name | Type | Default |
-|------|------|---------|
-| **$data** | array |  |
-
-##### Throws:
-
-| Type | Description |
-|------|-------------|
-| \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception |  |
-
-##### Returns:
-
-```
-static
 ```
 
 ---
@@ -195,23 +158,4 @@ public set_contact_information(\Automattic\Domain_Services\Entity\Contact_Inform
 
 ```
 void
-```
-
----
-
-<a id="method_to_array"></a>
-### to_array
-
-```
-public to_array() : array
-```
-
-##### Summary
-
-Returns an array representation of this instance
-
-##### Returns:
-
-```
-array
 ```

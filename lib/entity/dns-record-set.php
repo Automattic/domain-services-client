@@ -110,6 +110,7 @@ class Dns_Record_Set {
 	/**
 	 * Returns a string representation of this DNS record set
 	 *
+	 * @internal
 	 * @return string
 	 */
 	public function __toString() {
@@ -119,6 +120,7 @@ class Dns_Record_Set {
 	/**
 	 * Returns an associative array containing this DNS record set's values
 	 *
+	 * @internal
 	 * @return array
 	 */
 	public function to_array(): array {
@@ -133,6 +135,7 @@ class Dns_Record_Set {
 	/**
 	 * Constructs a Dns_Record_Set entity from an associative array containing a DNS record set
 	 *
+	 * @internal
 	 * @param array $data
 	 * @return static
 	 * @throws \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception

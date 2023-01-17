@@ -6,7 +6,6 @@
 ### Methods
 
 * public [__construct()](#method___construct)
-* public [__toString()](#method___toString)
 * public [get_name()](#method_get_name)
 
 ---
@@ -31,21 +30,6 @@ public __construct(string  name) : mixed
 | Name | Type | Default |
 |------|------|---------|
 | **$name** | string |  |
-
-##### Returns:
-
-```
-mixed
-```
-
----
-
-<a id="method___toString"></a>
-### __toString
-
-```
-public __toString() : mixed
-```
 
 ##### Returns:
 

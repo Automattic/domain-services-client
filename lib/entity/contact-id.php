@@ -51,6 +51,9 @@ class Contact_Id {
 		$this->contact_id = $contact_id;
 	}
 
+	/**
+	 * @internal
+	 */
 	public function __toString(): string {
 		return $this->get_contact_id();
 	}

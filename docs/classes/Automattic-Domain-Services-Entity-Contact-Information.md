@@ -10,7 +10,6 @@ The contact information for domain registrants.
 ### Methods
 
 * public [__construct()](#method___construct)
-* public [from_array()](#method_from_array)
 * public [get_address_1()](#method_get_address_1)
 * public [get_address_2()](#method_get_address_2)
 * public [get_by_key()](#method_get_by_key)
@@ -25,7 +24,6 @@ The contact information for domain registrants.
 * public [get_postal_code()](#method_get_postal_code)
 * public [get_state()](#method_get_state)
 * public [set_by_key()](#method_set_by_key)
-* public [to_array()](#method_to_array)
 
 ---
 
@@ -71,37 +69,6 @@ public __construct(string|null  first_name = null, string|null  last_name = null
 
 ```
 mixed
-```
-
----
-
-<a id="method_from_array"></a>
-### from_array
-
-```
-static public from_array(array  data) : self
-```
-
-##### Summary
-
-Builds an instance from an array
-
-##### Parameters:
-
-| Name | Type | Default |
-|------|------|---------|
-| **$data** | array |  |
-
-##### Throws:
-
-| Type | Description |
-|------|-------------|
-| \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception |  |
-
-##### Returns:
-
-```
-self
 ```
 
 ---
@@ -339,23 +306,4 @@ Set a contact data value with a given key.
 
 ```
 \Automattic\Domain_Services\Entity\Contact_Information
-```
-
----
-
-<a id="method_to_array"></a>
-### to_array
-
-```
-public to_array() : string[]
-```
-
-##### Summary
-
-Returns an array representation of this instance
-
-##### Returns:
-
-```
-string[]
 ```

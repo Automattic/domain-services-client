@@ -15,7 +15,6 @@ Represents a contact ID
 ### Methods
 
 * public [__construct()](#method___construct)
-* public [__toString()](#method___toString)
 * public [get_contact_id()](#method_get_contact_id)
 
 ---
@@ -57,21 +56,6 @@ Constructs a Contact_Id entity
 
 ```
 mixed
-```
-
----
-
-<a id="method___toString"></a>
-### __toString
-
-```
-public __toString() : string
-```
-
-##### Returns:
-
-```
-string
 ```
 
 ---

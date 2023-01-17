@@ -85,6 +85,7 @@ class Domain_Contacts implements \Iterator {
 	/**
 	 * Returns an array of contact IDs that can be returned with the DSAPI response data.
 	 *
+	 * @internal
 	 * @return string[]
 	 */
 	public function to_array(): array {
@@ -104,6 +105,7 @@ class Domain_Contacts implements \Iterator {
 	 * - The array can either have a `contact_id` or a `contact_information` key with the corresponding data.
 	 * - There is also an optional `contact_disclosure` that can be passed for each contact.
 	 *
+	 * @internal
 	 * @param array $data
 	 *
 	 * @return static
@@ -252,23 +254,37 @@ class Domain_Contacts implements \Iterator {
 
 	/**
 	 * Functions to implement the Iterator interface
+	 *
+	 * @internal
 	 */
 	public function current(): ?Domain_Contact {
 		return $this->get_by_key( self::ITERATOR_KEYS[ $this->iterator_pointer ] );
 	}
 
+	/**
+	 * @internal
+	 */
 	public function next(): void {
 		$this->iterator_pointer++;
 	}
 
+	/**
+	 * @internal
+	 */
 	public function key(): ?string {
 		return self::ITERATOR_KEYS[ $this->iterator_pointer ];
 	}
 
+	/**
+	 * @internal
+	 */
 	public function valid(): bool {
 		return isset( self::ITERATOR_KEYS[ $this->iterator_pointer ] );
 	}
 
+	/**
+	 * @internal
+	 */
 	public function rewind(): void {
 		$this->iterator_pointer = 0;
 	}

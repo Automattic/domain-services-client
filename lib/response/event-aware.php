@@ -20,6 +20,9 @@ namespace Automattic\Domain_Services\Response;
 
 use Automattic\Domain_Services\{Event};
 
+/**
+ * @internal
+ */
 trait Event_Aware {
 	protected Event\Factory $event_factory;
 

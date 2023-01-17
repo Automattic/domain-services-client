@@ -19,17 +19,11 @@
 * public [KEY_NAMESERVERS](#constant_KEY_NAMESERVERS)
 * public [KEY_PERIOD](#constant_KEY_PERIOD)
 * public [KEY_PRIVACY_SETTINGS](#constant_KEY_PRIVACY_SETTINGS)
+* public [KEY_QUANTITY](#constant_KEY_QUANTITY)
+* public [KEY_QUERY](#constant_KEY_QUERY)
 * public [KEY_RECORD_SETS](#constant_KEY_RECORD_SETS)
 * public [KEY_RECORDS](#constant_KEY_RECORDS)
 * public [KEY_TRANSFERLOCK](#constant_KEY_TRANSFERLOCK)
-
----
-
-### Methods
-
-* public [get_client_txn_id()](#method_get_client_txn_id)
-* public [get_name()](#method_get_name)
-* public [set_client_txn_id()](#method_set_client_txn_id)
 
 ---
 
@@ -154,6 +148,20 @@ KEY_PRIVACY_SETTINGS = 'privacy_setting'
 ```
 
 
+<a id="constant_KEY_QUANTITY"></a>
+###### KEY_QUANTITY
+```
+KEY_QUANTITY = 'quantity'
+```
+
+
+<a id="constant_KEY_QUERY"></a>
+###### KEY_QUERY
+```
+KEY_QUERY = 'query'
+```
+
+
 <a id="constant_KEY_RECORD_SETS"></a>
 ###### KEY_RECORD_SETS
 ```
@@ -175,68 +183,3 @@ KEY_TRANSFERLOCK = 'transferlock'
 ```
 
 
-
----
-
-## Methods
-
-<a id="method_get_client_txn_id"></a>
-### get_client_txn_id
-
-```
-public get_client_txn_id() : string
-```
-
-##### Summary
-
-Gets the client transaction ID
-
-##### Returns:
-
-```
-string
-```
-
----
-
-<a id="method_get_name"></a>
-### get_name
-
-```
-static public get_name() : string
-```
-
-##### Summary
-
-Returns the command name that can be used to build command data
-
-##### Returns:
-
-```
-string
-```
-
----
-
-<a id="method_set_client_txn_id"></a>
-### set_client_txn_id
-
-```
-public set_client_txn_id(string  client_txn_id) : void
-```
-
-##### Summary
-
-Sets the client transaction ID
-
-##### Parameters:
-
-| Name | Type | Default |
-|------|------|---------|
-| **$client_txn_id** | string |  |
-
-##### Returns:
-
-```
-void
-```

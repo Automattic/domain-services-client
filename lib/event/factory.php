@@ -20,6 +20,9 @@ namespace Automattic\Domain_Services\Event;
 
 use Automattic\Domain_Services\{Exception};
 
+/**
+ * @internal
+ */
 class Factory {
 	/**
 	 * Builds an event from the provided event data

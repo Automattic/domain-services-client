@@ -14,3 +14,4 @@
 | [\Automattic\Domain_Services\Response\Domain\Register](../classes/Automattic-Domain-Services-Response-Domain-Register.md) |  |
 | [\Automattic\Domain_Services\Response\Domain\Renew](../classes/Automattic-Domain-Services-Response-Domain-Renew.md) | Response of a Domain\Renew command |
 | [\Automattic\Domain_Services\Response\Domain\Restore](../classes/Automattic-Domain-Services-Response-Domain-Restore.md) | Response of a `Domain\Restore` command |
+| [\Automattic\Domain_Services\Response\Domain\Suggestions](../classes/Automattic-Domain-Services-Response-Domain-Suggestions.md) | Response of a Domain_Suggestions command |

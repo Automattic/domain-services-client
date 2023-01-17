@@ -113,7 +113,7 @@ class Renew implements Command\Command_Interface, Command\Command_Serialize_Inte
 	 *
 	 * @return Entity\Domain_Name
 	 */
-	public function get_domain(): Entity\Domain_Name {
+	private function get_domain(): Entity\Domain_Name {
 		return $this->domain;
 	}
 
@@ -122,7 +122,7 @@ class Renew implements Command\Command_Interface, Command\Command_Serialize_Inte
 	 *
 	 * @return int
 	 */
-	public function get_period(): int {
+	private function get_period(): int {
 		return $this->period;
 	}
 
@@ -131,7 +131,7 @@ class Renew implements Command\Command_Interface, Command\Command_Serialize_Inte
 	 *
 	 * @return int
 	 */
-	public function get_current_expiration_year(): int {
+	private function get_current_expiration_year(): int {
 		return $this->current_expiration_year;
 	}
 
@@ -140,12 +140,12 @@ class Renew implements Command\Command_Interface, Command\Command_Serialize_Inte
 	 *
 	 * @return float|null
 	 */
-	public function get_fee_amount(): ?float {
+	private function get_fee_amount(): ?float {
 		return $this->fee_amount;
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @internal
 	 */
 	public function to_array(): array {
 		return [

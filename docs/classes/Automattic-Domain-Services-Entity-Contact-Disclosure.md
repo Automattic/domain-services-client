@@ -17,7 +17,6 @@ The list of domain contact fields to disclose in the Whois results
 ### Methods
 
 * public [__construct()](#method___construct)
-* public [__toString()](#method___toString)
 * public [get_disclose_fields()](#method_get_disclose_fields)
 
 ---
@@ -78,25 +77,6 @@ public __construct(string  disclose_fields) : mixed
 
 ```
 mixed
-```
-
----
-
-<a id="method___toString"></a>
-### __toString
-
-```
-public __toString() : string
-```
-
-##### Summary
-
-Get the disclosed fields as a comma delimited list.
-
-##### Returns:
-
-```
-string
 ```
 
 ---
