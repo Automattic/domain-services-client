@@ -18,13 +18,7 @@ can be set using the $limit property for this command. The limit defaults to 50 
 ### Methods
 
 * public [__construct()](#method___construct)
-* public [get_client_txn_id()](#method_get_client_txn_id)
-* public [get_limit()](#method_get_limit)
-* public [get_name()](#method_get_name)
-* public [jsonSerialize()](#method_jsonSerialize)
-* public [set_client_txn_id()](#method_set_client_txn_id)
 * public [set_limit()](#method_set_limit)
-* public [to_array()](#method_to_array)
 
 ---
 
@@ -69,108 +63,6 @@ mixed
 
 ---
 
-<a id="method_get_client_txn_id"></a>
-### get_client_txn_id
-
-```
-final public get_client_txn_id() : string
-```
-
-##### Summary
-
-Gets the client transaction ID set for this command.
-
-##### Returns:
-
-```
-string
-```
-
----
-
-<a id="method_get_limit"></a>
-### get_limit
-
-```
-public get_limit() : int
-```
-
-##### Summary
-
-Gets the maximum number of events to return in the response.
-
-##### Returns:
-
-```
-int
-```
-
----
-
-<a id="method_get_name"></a>
-### get_name
-
-```
-final static public get_name() : string
-```
-
-##### Summary
-
-Returns the command name that can be used to build command data
-
-##### Returns:
-
-```
-string
-```
-
----
-
-<a id="method_jsonSerialize"></a>
-### jsonSerialize
-
-```
-final public jsonSerialize() : array
-```
-
-##### Summary
-
-Implements the JsonSerializable interface
-
-##### Returns:
-
-```
-array
-```
-
----
-
-<a id="method_set_client_txn_id"></a>
-### set_client_txn_id
-
-```
-final public set_client_txn_id(string  client_txn_id) : void
-```
-
-##### Summary
-
-Sets the client transaction ID for this command. This optional value may be set by the reseller. It will be
-reflected in the corresponding Response class and may be useful for logging and debugging.
-
-##### Parameters:
-
-| Name | Type | Default |
-|------|------|---------|
-| **$client_txn_id** | string |  |
-
-##### Returns:
-
-```
-void
-```
-
----
-
 <a id="method_set_limit"></a>
 ### set_limit
 
@@ -192,23 +84,4 @@ Sets the maximum number of events to return in the response.
 
 ```
 \Automattic\Domain_Services\Command\Event\Enumerate
-```
-
----
-
-<a id="method_to_array"></a>
-### to_array
-
-```
-public to_array() : array
-```
-
-##### Summary
-
-Returns the command parameters as an array for use when in the jsonSerialize() method
-
-##### Returns:
-
-```
-array
 ```

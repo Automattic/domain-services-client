@@ -97,6 +97,9 @@ class Epp_Status_Code {
 		$this->status = $status;
 	}
 
+	/**
+	 * @internal
+	 */
 	public function __toString(): string {
 		return $this->status;
 	}

@@ -11,7 +11,6 @@ Set of name servers
 
 * public [__construct()](#method___construct)
 * public [add_nameserver()](#method_add_nameserver)
-* public [to_array()](#method_to_array)
 
 ---
 
@@ -81,23 +80,4 @@ Adds a name server to the list of name servers
 
 ```
 void
-```
-
----
-
-<a id="method_to_array"></a>
-### to_array
-
-```
-public to_array() : array
-```
-
-##### Summary
-
-Returns the list os name servers as an array of strings
-
-##### Returns:
-
-```
-array
 ```

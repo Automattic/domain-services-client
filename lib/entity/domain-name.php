@@ -32,6 +32,9 @@ class Domain_Name {
 		return $this->name;
 	}
 
+	/**
+	 * @internal
+	 */
 	public function __toString() {
 		return $this->get_name();
 	}

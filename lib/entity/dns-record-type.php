@@ -69,6 +69,9 @@ class Dns_Record_Type {
 		return $this->type;
 	}
 
+	/**
+	 * @internal
+	 */
 	public function __toString() {
 		return $this->get_type();
 	}

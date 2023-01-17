@@ -18,7 +18,6 @@ additional methods depending on the specific event_class and event_subclass prop
 * public [__construct()](#method___construct)
 * public [get_client_txn_id()](#method_get_client_txn_id)
 * public [get_data_by_key()](#method_get_data_by_key)
-* public [get_event_factory()](#method_get_event_factory)
 * public [get_events()](#method_get_events)
 * public [get_request_params()](#method_get_request_params)
 * public [get_runtime()](#method_get_runtime)
@@ -28,7 +27,6 @@ additional methods depending on the specific event_class and event_subclass prop
 * public [get_timestamp()](#method_get_timestamp)
 * public [get_total_count()](#method_get_total_count)
 * public [is_success()](#method_is_success)
-* public [set_event_factory()](#method_set_event_factory)
 
 ---
 
@@ -112,21 +110,6 @@ Returns the response value for the given key, if it exists.
 
 ```
 array|mixed|null
-```
-
----
-
-<a id="method_get_event_factory"></a>
-### get_event_factory
-
-```
-public get_event_factory() : \Automattic\Domain_Services\Event\Factory
-```
-
-##### Returns:
-
-```
-\Automattic\Domain_Services\Event\Factory
 ```
 
 ---
@@ -316,25 +299,4 @@ Gets whether the request succeeded.
 
 ```
 bool
-```
-
----
-
-<a id="method_set_event_factory"></a>
-### set_event_factory
-
-```
-public set_event_factory(\Automattic\Domain_Services\Event\Factory  event_factory) : void
-```
-
-##### Parameters:
-
-| Name | Type | Default |
-|------|------|---------|
-| **$event_factory** | \Automattic\Domain_Services\Event\Factory |  |
-
-##### Returns:
-
-```
-void
 ```

@@ -18,8 +18,6 @@ Represents all contact types for a domain name
 ### Methods
 
 * public [__construct()](#method___construct)
-* public [current()](#method_current)
-* public [from_array()](#method_from_array)
 * public [get_admin()](#method_get_admin)
 * public [get_billing()](#method_get_billing)
 * public [get_by_key()](#method_get_by_key)
@@ -27,16 +25,11 @@ Represents all contact types for a domain name
 * public [get_tech()](#method_get_tech)
 * public [get_valid_contact_types()](#method_get_valid_contact_types)
 * public [is_empty()](#method_is_empty)
-* public [key()](#method_key)
-* public [next()](#method_next)
-* public [rewind()](#method_rewind)
 * public [set_admin()](#method_set_admin)
 * public [set_billing()](#method_set_billing)
 * public [set_by_key()](#method_set_by_key)
 * public [set_owner()](#method_set_owner)
 * public [set_tech()](#method_set_tech)
-* public [to_array()](#method_to_array)
-* public [valid()](#method_valid)
 
 ---
 
@@ -110,66 +103,6 @@ public __construct(\Automattic\Domain_Services\Entity\Domain_Contact|null  owner
 
 ```
 mixed
-```
-
----
-
-<a id="method_current"></a>
-### current
-
-```
-public current() : ?\Automattic\Domain_Services\Entity\Domain_Contact
-```
-
-##### Summary
-
-Functions to implement the Iterator interface
-
-##### Returns:
-
-```
-?\Automattic\Domain_Services\Entity\Domain_Contact
-```
-
----
-
-<a id="method_from_array"></a>
-### from_array
-
-```
-static public from_array(array  data) : static
-```
-
-##### Summary
-
-Builds an instance from an array
-
-##### Description
-
-- The $data array is expected to have the contact type as key and an array as a value.
-- The array can either have a `contact_id` or a `contact_information` key with the corresponding data.
-- There is also an optional `contact_disclosure` that can be passed for each contact.
-
-##### See Also:
-
- * [\Automattic\Domain_Services\Entity\Domain_Contact](../classes/Automattic-Domain-Services-Entity-Domain-Contact.md)
-
-##### Parameters:
-
-| Name | Type | Default |
-|------|------|---------|
-| **$data** | array |  |
-
-##### Throws:
-
-| Type | Description |
-|------|-------------|
-| \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception |  |
-
-##### Returns:
-
-```
-static
 ```
 
 ---
@@ -339,51 +272,6 @@ bool
 
 ---
 
-<a id="method_key"></a>
-### key
-
-```
-public key() : ?string
-```
-
-##### Returns:
-
-```
-?string
-```
-
----
-
-<a id="method_next"></a>
-### next
-
-```
-public next() : void
-```
-
-##### Returns:
-
-```
-void
-```
-
----
-
-<a id="method_rewind"></a>
-### rewind
-
-```
-public rewind() : void
-```
-
-##### Returns:
-
-```
-void
-```
-
----
-
 <a id="method_set_admin"></a>
 ### set_admin
 
@@ -536,38 +424,4 @@ Sets the domain tech&#039;s contact
 
 ```
 void
-```
-
----
-
-<a id="method_to_array"></a>
-### to_array
-
-```
-public to_array() : string[]
-```
-
-##### Summary
-
-Returns an array of contact IDs that can be returned with the DSAPI response data.
-
-##### Returns:
-
-```
-string[]
-```
-
----
-
-<a id="method_valid"></a>
-### valid
-
-```
-public valid() : bool
-```
-
-##### Returns:
-
-```
-bool
 ```

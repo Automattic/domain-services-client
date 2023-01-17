@@ -75,6 +75,7 @@ class Nameservers {
 	/**
 	 * Returns the list os name servers as an array of strings
 	 *
+	 * @internal
 	 * @return array
 	 */
 	public function to_array(): array {

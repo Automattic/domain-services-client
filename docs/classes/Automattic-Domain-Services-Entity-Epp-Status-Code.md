@@ -38,7 +38,6 @@ A class that represents an EPP status code
 ### Methods
 
 * public [__construct()](#method___construct)
-* public [__toString()](#method___toString)
 * public [is_updateable()](#method_is_updateable)
 
 ---
@@ -240,21 +239,6 @@ public __construct(string  status) : mixed
 
 ```
 mixed
-```
-
----
-
-<a id="method___toString"></a>
-### __toString
-
-```
-public __toString() : string
-```
-
-##### Returns:
-
-```
-string
 ```
 
 ---

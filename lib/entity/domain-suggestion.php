@@ -52,6 +52,7 @@ class Suggestion {
 	/**
 	 * Returns an associative array containing the domain name suggestion
 	 *
+	 * @internal
 	 * @return array
 	 */
 	public function to_array(): array {

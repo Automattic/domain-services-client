@@ -73,6 +73,7 @@ class Dns_Records {
 	/**
 	 * Returns an array containing sets of DNS records associated with a domain
 	 *
+	 * @internal
 	 * @return array
 	 */
 	public function to_array(): array {
@@ -85,6 +86,7 @@ class Dns_Records {
 	/**
 	 * Constructs a Dns_Records entity from an array containing sets of DNS records
 	 *
+	 * @internal
 	 * @param array $dns_records_data
 	 * @return static
 	 * @throws Exception\Entity\Invalid_Value_Exception

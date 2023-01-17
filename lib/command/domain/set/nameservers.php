@@ -80,18 +80,19 @@ class Nameservers implements Command\Command_Interface, Command\Command_Serializ
 	/**
 	 * @return Entity\Domain_Name
 	 */
-	public function get_domain(): Entity\Domain_Name {
+	private function get_domain(): Entity\Domain_Name {
 		return $this->domain;
 	}
 
 	/**
 	 * @return Entity\Nameservers
 	 */
-	public function get_nameservers(): Entity\Nameservers {
+	private function get_nameservers(): Entity\Nameservers {
 		return $this->nameservers;
 	}
 
 	/**
+	 * @internal
 	 * @return array
 	 */
 	public function to_array(): array {

@@ -19,4 +19,6 @@
 | [\Automattic\Domain_Services\Entity\Epp_Status_Code](../classes/Automattic-Domain-Services-Entity-Epp-Status-Code.md) | A class that represents an EPP status code |
 | [\Automattic\Domain_Services\Entity\Epp_Status_Codes](../classes/Automattic-Domain-Services-Entity-Epp-Status-Codes.md) |  |
 | [\Automattic\Domain_Services\Entity\Nameservers](../classes/Automattic-Domain-Services-Entity-Nameservers.md) | Set of name servers |
+| [\Automattic\Domain_Services\Entity\Suggestion](../classes/Automattic-Domain-Services-Entity-Suggestion.md) | Domain name suggestion |
+| [\Automattic\Domain_Services\Entity\Suggestions](../classes/Automattic-Domain-Services-Entity-Suggestions.md) | List of Suggestion entities |
 | [\Automattic\Domain_Services\Entity\Whois_Privacy](../classes/Automattic-Domain-Services-Entity-Whois-Privacy.md) | Define a valid privacy setting to be used for a domain |

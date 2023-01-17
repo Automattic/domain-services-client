@@ -20,6 +20,9 @@ namespace Automattic\Domain_Services\Response;
 
 use Automattic\Domain_Services\{Command, Event, Exception};
 
+/**
+ * @internal
+ */
 class Factory {
 	/**
 	 * Builds a response from the provided response data

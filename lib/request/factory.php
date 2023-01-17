@@ -22,6 +22,9 @@ use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\StreamFactoryInterface;
 
+/**
+ * @internal
+ */
 class Factory {
 
 	private RequestFactoryInterface $request_factory;

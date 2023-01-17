@@ -56,13 +56,12 @@ class Enumerate implements Command\Command_Interface, Command\Command_Serialize_
 	 *
 	 * @return int
 	 */
-	public function get_limit(): int {
+	private function get_limit(): int {
 		return $this->limit;
 	}
 
 	/**
 	 * Sets the maximum number of events to return in the response.
-	 *
 	 * @param int $limit
 	 * @return Enumerate
 	 */
@@ -73,7 +72,7 @@ class Enumerate implements Command\Command_Interface, Command\Command_Serialize_
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @internal
 	 */
 	public function to_array(): array {
 		return [

@@ -55,7 +55,7 @@ class Suggestions implements Command\Command_Interface, Command\Command_Serializ
 	 *
 	 * @return string
 	 */
-	public function get_query(): string {
+	private function get_query(): string {
 		return $this->query;
 	}
 
@@ -64,12 +64,12 @@ class Suggestions implements Command\Command_Interface, Command\Command_Serializ
 	 *
 	 * @return int
 	 */
-	public function get_quantity(): int {
+	private function get_quantity(): int {
 		return $this->quantity;
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * @internal
 	 */
 	public function to_array(): array {
 		return [
