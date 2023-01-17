@@ -92,6 +92,8 @@ class Contacts implements Command\Command_Interface, Command\Command_Serialize_I
 	}
 
 	/**
+	 * Gets the domain name that will be updated
+	 *
 	 * @return Entity\Domain_Name
 	 */
 	private function get_domain(): Entity\Domain_Name {
@@ -99,6 +101,8 @@ class Contacts implements Command\Command_Interface, Command\Command_Serialize_I
 	}
 
 	/**
+	 * Gets the contact information that will be updated in the domain
+	 *
 	 * @return Entity\Domain_Contacts
 	 */
 	private function get_contacts(): Entity\Domain_Contacts {
@@ -106,7 +110,11 @@ class Contacts implements Command\Command_Interface, Command\Command_Serialize_I
 	}
 
 	/**
+	 * Converts the command to an associative array
+	 *
 	 * @internal
+	 *
+	 * @return array
 	 */
 	public function to_array(): array {
 		return [

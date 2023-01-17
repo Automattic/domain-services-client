@@ -18,6 +18,11 @@
 
 namespace Automattic\Domain_Services_Client\Entity;
 
+/**
+ * List of `Domain_Name` entities
+ *
+ * @see \Automattic\Domain_Services\Entity\Domain_Name
+ */
 class Domain_Names {
 	/**
 	 * The list of domain names.
@@ -26,11 +31,18 @@ class Domain_Names {
 	 */
 	private array $domain_names;
 
+	/**
+	 * Constructs a Domain_Names entity
+	 *
+	 * @param Domain_Name ...$domain_names
+	 */
 	public function __construct( Domain_Name ...$domain_names ) {
 		$this->domain_names = $domain_names;
 	}
 
 	/**
+	 * Adds a domain name to the list of domain names
+	 *
 	 * @param Domain_name $domain_name
 	 * @return $this
 	 */
@@ -41,6 +53,8 @@ class Domain_Names {
 	}
 
 	/**
+	 * Gets the list of domain names
+	 *
 	 * @return Domain_Name[]
 	 */
 	public function get_domain_names(): array {
@@ -48,7 +62,11 @@ class Domain_Names {
 	}
 
 	/**
+	 * Returns the domain names as an array
+	 *
 	 * @internal
+	 *
+	 * @return array
 	 */
 	public function to_array(): array {
 		return array_map(

@@ -18,6 +18,9 @@
 
 namespace Automattic\Domain_Services_Client\Response;
 
+/**
+ * Trait that provides a set of methods for accessing a response's data.
+ */
 trait Data_Trait {
 	private array $data;
 

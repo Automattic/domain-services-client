@@ -20,6 +20,9 @@ namespace Automattic\Domain_Services_Client\Entity;
 
 use Automattic\Domain_Services_Client\{Exception};
 
+/**
+ * Represents a DNS Record Type
+ */
 class Dns_Record_Type {
 	public const A = 'A';
 	public const AAAA = 'AAAA';
@@ -54,6 +57,13 @@ class Dns_Record_Type {
 	 */
 	private string $type;
 
+	/**
+	 * Constructs a Dns_Record_Type entity
+	 *
+	 * @param string $type
+	 *
+	 * @throws \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception
+	 */
 	public function __construct( string $type ) {
 		if ( ! in_array( $type, self::VALID_RECORD_TYPES ) ) {
 			throw new Exception\Entity\Invalid_Value_Exception( __CLASS__ );
@@ -63,6 +73,8 @@ class Dns_Record_Type {
 	}
 
 	/**
+	 * Returns the DNS record type
+	 *
 	 * @return string
 	 */
 	public function get_type(): string {
@@ -70,6 +82,8 @@ class Dns_Record_Type {
 	}
 
 	/**
+	 * Returns the DNS record type as a string
+	 *
 	 * @internal
 	 */
 	public function __toString() {

@@ -52,6 +52,8 @@ class Details implements Command\Command_Interface, Command\Command_Serialize_In
 	private Entity\Contact_Id $contact_id;
 
 	/**
+	 * Constructs a Contact\Details command
+	 *
 	 * @param Entity\Contact_Id $contact_id
 	 */
 	public function __construct( Entity\Contact_Id $contact_id ) {
@@ -68,7 +70,11 @@ class Details implements Command\Command_Interface, Command\Command_Serialize_In
 	}
 
 	/**
+	 * Converts the command to an associative array
+	 *
 	 * @internal
+	 *
+	 * @return array
 	 */
 	public function to_array(): array {
 		return [

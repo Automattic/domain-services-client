@@ -89,6 +89,13 @@ class Epp_Status_Code {
 	 */
 	private string $status;
 
+	/**
+	 * Constructs an EPP status code entity
+	 *
+	 * @param string $status
+	 *
+	 * @throws \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception
+	 */
 	public function __construct( string $status ) {
 		if ( ! isset( self::VALID_EPP_STATUSES[ $status ] ) ) {
 			throw new Exception\Entity\Invalid_Value_Exception( strtolower( __CLASS__ ), $status );
@@ -98,12 +105,21 @@ class Epp_Status_Code {
 	}
 
 	/**
+	 * Returns the string representation of the EPP status code object.
+	 *
 	 * @internal
+	 *
+	 * @return string
 	 */
 	public function __toString(): string {
 		return $this->status;
 	}
 
+	/**
+	 * Checks whether the EPP status is updateable
+	 *
+	 * @return bool
+	 */
 	public function is_updateable(): bool {
 		return self::READ_WRITE === self::VALID_EPP_STATUSES[ $this->status ];
 	}

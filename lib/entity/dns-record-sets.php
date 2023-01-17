@@ -100,8 +100,11 @@ class Dns_Record_Sets implements \Iterator {
 	}
 
 	/**
-	 * Functions to implement the Iterator interface
+	 * Part of the iterator interface implementation
+	 *
 	 * @internal
+	 *
+	 * @return Dns_Record_Set|null
 	 */
 	public function current(): ?Dns_Record_Set {
 		$keys = array_keys( $this->dns_record_sets );
@@ -112,6 +115,7 @@ class Dns_Record_Sets implements \Iterator {
 	 * Part of the iterator interface implementation
 	 *
 	 * @internal
+	 *
 	 * @return void
 	 */
 	public function next(): void {
@@ -122,6 +126,7 @@ class Dns_Record_Sets implements \Iterator {
 	 * Part of the iterator interface implementation
 	 *
 	 * @internal
+	 *
 	 * @return int|null
 	 */
 	public function key(): ?int {
@@ -132,6 +137,7 @@ class Dns_Record_Sets implements \Iterator {
 	 * Part of the iterator interface implementation
 	 *
 	 * @internal
+	 *
 	 * @return bool
 	 */
 	public function valid(): bool {
@@ -142,6 +148,7 @@ class Dns_Record_Sets implements \Iterator {
 	 * Part of the iterator interface implementation
 	 *
 	 * @internal
+	 *
 	 * @return void
 	 */
 	public function rewind(): void {

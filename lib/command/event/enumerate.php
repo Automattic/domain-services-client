@@ -43,9 +43,9 @@ class Enumerate implements Command\Command_Interface, Command\Command_Serialize_
 	private int $limit;
 
 	/**
-	 * Class constructor
+	 * Constructs an Event\Enumerate command
 	 *
-	 * @param null|int $limit Max count of returned events.
+	 * @param int|null $limit Max count of returned events.
 	 */
 	public function __construct( int $limit = 50 ) {
 		$this->set_limit( $limit );
@@ -72,7 +72,11 @@ class Enumerate implements Command\Command_Interface, Command\Command_Serialize_
 	}
 
 	/**
+	 * Converts the command to an associative array
+	 *
 	 * @internal
+	 *
+	 * @return array
 	 */
 	public function to_array(): array {
 		return [

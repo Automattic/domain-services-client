@@ -243,7 +243,11 @@ class Register implements Command\Command_Interface, Command\Command_Serialize_I
 	}
 
 	/**
+	 * Converts the command to an associative array
+	 *
 	 * @internal
+	 *
+	 * @return array
 	 */
 	public function to_array(): array {
 		return [

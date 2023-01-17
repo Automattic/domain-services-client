@@ -18,11 +18,29 @@
 
 namespace Automattic\Domain_Services_Client;
 
+/**
+ * Configuration class for the API settings.
+ */
 class Configuration {
+	// Formats for the query string boolean values
+	/**
+	 * - true: 1
+	 * - false: 0
+	 *
+	 * @var string
+	 */
 	public const BOOLEAN_FORMAT_INT = 'int';
+	/**
+	 * - true: true
+	 * - false: false
+	 *
+	 * @var string
+	 */
 	public const BOOLEAN_FORMAT_STRING = 'string';
 
 	/**
+	 * The default configuration instance - used when no configuration is provided
+	 *
 	 * @var Configuration|null
 	 */
 	private static ?self $default_configuration = null;

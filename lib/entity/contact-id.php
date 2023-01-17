@@ -30,6 +30,8 @@ use Automattic\Domain_Services_Client\{Exception};
  */
 class Contact_Id {
 	/**
+	 * The contact ID
+	 *
 	 * @var string
 	 */
 	private string $contact_id;
@@ -52,13 +54,19 @@ class Contact_Id {
 	}
 
 	/**
+	 * Returns the string representation of the contact ID
+	 *
 	 * @internal
+	 *
+	 * @return string
 	 */
 	public function __toString(): string {
 		return $this->get_contact_id();
 	}
 
 	/**
+	 * Returns the contact ID
+	 *
 	 * @return string
 	 */
 	public function get_contact_id(): string {

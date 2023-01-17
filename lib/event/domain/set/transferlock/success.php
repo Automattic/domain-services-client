@@ -29,6 +29,11 @@ class Success implements Event\Event_Interface {
 	use Event\Data_Trait;
 	use Event\Object_Type_Domain_Trait;
 
+	/**
+	 * Checks if the domain has a transfer lock.
+	 *
+	 * @return bool
+	 */
 	public function is_locked(): bool {
 		return $this->get_data_by_key( 'event_data.transferlock' ) ?? false;
 	}

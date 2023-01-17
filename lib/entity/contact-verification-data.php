@@ -18,6 +18,9 @@
 
 namespace Automattic\Domain_Services_Client\Entity;
 
+/**
+ * Represents the verification data of contact associated with a domain
+ */
 class Contact_Verification_Data {
 	/**
 	 * The verification code used to verify a contact.
@@ -26,11 +29,18 @@ class Contact_Verification_Data {
 	 */
 	private string $code;
 
+	/**
+	 * Constructs a Contact_Verification_Data entity
+	 *
+	 * @param string $code
+	 */
 	public function __construct( string $code ) {
 		$this->code = $code;
 	}
 
 	/**
+	 * Returns the verification code
+	 *
 	 * @return string
 	 */
 	public function get_code(): string {

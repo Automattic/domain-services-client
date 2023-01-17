@@ -78,6 +78,7 @@ class Whois_Privacy {
 	 * Convert the object to scalar
 	 *
 	 * @internal
+	 *
 	 * @return string
 	 */
 	public function to_scalar(): string {

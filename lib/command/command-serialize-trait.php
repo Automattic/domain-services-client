@@ -18,11 +18,15 @@
 
 namespace Automattic\Domain_Services_Client\Command;
 
+/**
+ * Trait used by commands that can be serialized
+ */
 trait Command_Serialize_Trait {
 	/**
 	 * Implements the JsonSerializable interface
 	 *
 	 * @internal
+	 *
 	 * @return array
 	 */
 	final public function jsonSerialize(): array { //phpcs:ignore WordPress.NamingConventions.ValidFunctionName.MethodNameInvalid

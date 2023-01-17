@@ -53,6 +53,8 @@ class Domain_Contacts implements \Iterator {
 	private int $iterator_pointer = 0;
 
 	/**
+	 * Constructs a `Domain_Contacts` entity
+	 *
 	 * @param Domain_Contact|null $owner
 	 * @param Domain_Contact|null $admin
 	 * @param Domain_Contact|null $tech
@@ -253,37 +255,56 @@ class Domain_Contacts implements \Iterator {
 	}
 
 	/**
-	 * Functions to implement the Iterator interface
+	 * Part of the iterator interface implementation
 	 *
 	 * @internal
+	 *
+	 * @return Domain_Contact|null
+	 * @throws \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception
 	 */
 	public function current(): ?Domain_Contact {
 		return $this->get_by_key( self::ITERATOR_KEYS[ $this->iterator_pointer ] );
 	}
 
 	/**
+	 * Part of the iterator interface implementation
+	 *
 	 * @internal
+	 *
+	 * @return void
 	 */
 	public function next(): void {
 		$this->iterator_pointer++;
 	}
 
 	/**
+	 * Part of the iterator interface implementation
+	 *
 	 * @internal
+	 *
+	 * @return string|null
 	 */
 	public function key(): ?string {
 		return self::ITERATOR_KEYS[ $this->iterator_pointer ];
 	}
 
 	/**
+	 * Part of the iterator interface implementation
+	 *
 	 * @internal
+	 *
+	 * @return void
 	 */
 	public function valid(): bool {
 		return isset( self::ITERATOR_KEYS[ $this->iterator_pointer ] );
 	}
 
 	/**
+	 * Part of the iterator interface implementation
+	 *
 	 * @internal
+	 *
+	 * @return void
 	 */
 	public function rewind(): void {
 		$this->iterator_pointer = 0;

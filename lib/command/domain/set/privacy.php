@@ -61,7 +61,7 @@ class Privacy implements Command\Command_Interface, Command\Command_Serialize_In
 	private Entity\Whois_Privacy $privacy_setting;
 
 	/**
-	 * Construct the Domain\Set\Privacy
+	 * Constructs a Domain\Set\Privacy command
 	 *
 	 * @param Entity\Domain_Name   $domain
 	 * @param Entity\Whois_Privacy $privacy_setting
@@ -72,6 +72,8 @@ class Privacy implements Command\Command_Interface, Command\Command_Serialize_In
 	}
 
 	/**
+	 * Gets the domain that will be updated
+	 *
 	 * @return Entity\Domain_Name
 	 */
 	private function get_domain(): Entity\Domain_Name {
@@ -79,6 +81,8 @@ class Privacy implements Command\Command_Interface, Command\Command_Serialize_In
 	}
 
 	/**
+	 * Gets the privacy setting to use for this domain
+	 *
 	 * @return Entity\Whois_Privacy
 	 */
 	private function get_privacy_setting(): Entity\Whois_Privacy {
@@ -86,7 +90,11 @@ class Privacy implements Command\Command_Interface, Command\Command_Serialize_In
 	}
 
 	/**
+	 * Converts the command to an associative array
+	 *
 	 * @internal
+	 *
+	 * @return array
 	 */
 	public function to_array(): array {
 		return [

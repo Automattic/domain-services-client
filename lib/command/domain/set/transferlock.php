@@ -46,6 +46,8 @@ class Transferlock implements Command\Command_Interface, Command\Command_Seriali
 	private bool $transfer_lock;
 
 	/**
+	 * Constructs a Domain\Set\Transferlock command
+	 *
 	 * @param Entity\Domain_Name $domain
 	 * @param bool               $transfer_lock
 	 */
@@ -73,7 +75,11 @@ class Transferlock implements Command\Command_Interface, Command\Command_Seriali
 	}
 
 	/**
+	 * Converts the command to an associative array
+	 *
 	 * @internal
+	 *
+	 * @return array
 	 */
 	public function to_array(): array {
 		return [

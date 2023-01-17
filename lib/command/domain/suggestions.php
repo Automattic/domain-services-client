@@ -69,7 +69,11 @@ class Suggestions implements Command\Command_Interface, Command\Command_Serializ
 	}
 
 	/**
+	 * Converts the command to an associative array
+	 *
 	 * @internal
+	 *
+	 * @return array
 	 */
 	public function to_array(): array {
 		return [

@@ -56,7 +56,11 @@ class Info implements Command\Command_Interface, Command\Command_Serialize_Inter
 	}
 
 	/**
+	 * Converts the command to an associative array
+	 *
 	 * @internal
+	 *
+	 * @return array
 	 */
 	public function to_array(): array {
 		return [

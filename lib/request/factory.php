@@ -23,6 +23,8 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\StreamFactoryInterface;
 
 /**
+ * Factory for creating PSR-7 requests.
+ *
  * @internal
  */
 class Factory {
@@ -30,12 +32,20 @@ class Factory {
 	private RequestFactoryInterface $request_factory;
 	private StreamFactoryInterface $stream_factory;
 
+	/**
+	 * Constructs a `Request\Factory` object.
+	 *
+	 * @param \Psr\Http\Message\RequestFactoryInterface $request_factory
+	 * @param \Psr\Http\Message\StreamFactoryInterface $stream_factory
+	 */
 	public function __construct( RequestFactoryInterface $request_factory, StreamFactoryInterface $stream_factory ) {
 		$this->request_factory = $request_factory;
 		$this->stream_factory = $stream_factory;
 	}
 
 	/**
+	 * Creates a new request object with the specified method, URI, and optional body and headers
+	 *
 	 * @param string $method
 	 * @param string $uri
 	 * @param string $body

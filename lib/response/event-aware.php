@@ -21,12 +21,21 @@ namespace Automattic\Domain_Services_Client\Response;
 use Automattic\Domain_Services_Client\{Event};
 
 /**
+ * Trait used by responses that need to be aware of events
+ * 
  * @internal
  */
 trait Event_Aware {
+	/**
+	 * The factory used to create event objects
+	 *
+	 * @var Event\Factory
+	 */
 	protected Event\Factory $event_factory;
 
 	/**
+	 * Sets the event factory for the class
+	 *
 	 * @param Event\Factory $event_factory
 	 * @return void
 	 */
@@ -35,6 +44,8 @@ trait Event_Aware {
 	}
 
 	/**
+	 * Returns the event factory for the class
+	 *
 	 * @return Event\Factory
 	 */
 	public function get_event_factory(): Event\Factory {
