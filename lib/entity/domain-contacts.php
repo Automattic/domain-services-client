@@ -78,9 +78,6 @@ class Domain_Contacts implements \Iterator {
 		}
 	}
 
-	/**
-	 * @internal
-	 */
 	public function is_empty(): bool {
 		return empty( $this->domain_contacts );
 	}
