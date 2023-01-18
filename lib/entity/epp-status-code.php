@@ -21,7 +21,7 @@ namespace Automattic\Domain_Services_Client\Entity;
 use Automattic\Domain_Services_Client\{Exception};
 
 /**
- * A class that represents an EPP status code
+ * Represents an EPP status code
  *
  * @link: https://www.icann.org/resources/pages/epp-status-codes-2014-06-16-en
  */
@@ -90,7 +90,7 @@ class Epp_Status_Code {
 	private string $status;
 
 	/**
-	 * Constructs an EPP status code entity
+	 * Constructs an `Epp_Status_Code` entity
 	 *
 	 * @param string $status
 	 *

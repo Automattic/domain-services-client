@@ -30,7 +30,7 @@ class Domain_Name {
 	private string $name;
 
 	/**
-	 * Constructs a Domain_Name entity
+	 * Constructs a `Domain_Name` entity
 	 *
 	 * @param string $name
 	 */
@@ -48,7 +48,7 @@ class Domain_Name {
 	}
 
 	/**
-	 * Returns the string representation of the Domain_Name object (the domain name itself).
+	 * Returns the string representation of the `Domain_Name` object (the domain name itself).
 	 *
 	 * @internal
 	 *

@@ -55,7 +55,7 @@ class Restore implements Command\Command_Interface, Command\Command_Serialize_In
 	private Entity\Domain_Name $domain;
 
 	/**
-	 * Constructs the Restore command
+	 * Constructs a `Domain\Restore` command
 	 *
 	 * @param Entity\Domain_Name $domain
 	 */

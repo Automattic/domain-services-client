@@ -60,7 +60,7 @@ class Contact_Information {
 	private array $contact_information = [];
 
 	/**
-	 * Constructs a Contact_Information entity
+	 * Constructs a `Contact_Information` entity
 	 *
 	 * @param string|null $first_name
 	 * @param string|null $last_name

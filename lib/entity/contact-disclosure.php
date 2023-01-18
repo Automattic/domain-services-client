@@ -40,7 +40,7 @@ class Contact_Disclosure {
 	private string $disclose_fields;
 
 	/**
-	 * Constructs a Contact_Disclosure entity
+	 * Constructs a `Contact_Disclosure` entity
 	 *
 	 * @param string $disclose_fields The fields to disclose in whois responses
 	 * @throws Exception\Entity\Invalid_Value_Exception

@@ -39,7 +39,7 @@ class Epp_Status_Codes implements \Iterator {
 	private int $iterator_pointer = 0;
 
 	/**
-	 * Constructs an Epp_Status_Codes entity
+	 * Constructs an `Epp_Status_Codes` entity
 	 *
 	 * @param \Automattic\Domain_Services\Entity\Epp_Status_Code ...$epp_status_codes
 	 */
@@ -62,7 +62,11 @@ class Epp_Status_Codes implements \Iterator {
 	}
 
 	/**
+	 * Returns the list of EPP status codes as an array of strings
+	 *
 	 * @internal
+	 *
+	 * @return array
 	 */
 	public function to_array(): array {
 		$epp_status_codes = [];

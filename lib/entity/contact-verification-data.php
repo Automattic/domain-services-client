@@ -30,7 +30,7 @@ class Contact_Verification_Data {
 	private string $code;
 
 	/**
-	 * Constructs a Contact_Verification_Data entity
+	 * Constructs a `Contact_Verification_Data` entity
 	 *
 	 * @param string $code
 	 */

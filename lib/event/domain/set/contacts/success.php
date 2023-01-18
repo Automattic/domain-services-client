@@ -21,7 +21,7 @@ namespace Automattic\Domain_Services_Client\Event\Domain\Set\Contacts;
 use Automattic\Domain_Services_Client\{Command, Entity, Event, Exception};
 
 /**
- * Event representing a Domain\Set\Contacts command success
+ * Event representing a `Domain\Set\Contacts` command success
  *
  * @see Command\Domain\Set\Contacts
  */

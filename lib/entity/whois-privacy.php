@@ -52,7 +52,7 @@ class Whois_Privacy {
 	private string $setting;
 
 	/**
-	 * Whois_Privacy entity constructor
+	 * Constructs a `Whois_Privacy` entity
 	 *
 	 * @param string $setting
 	 * @throws Exception\Entity\Invalid_Value_Exception

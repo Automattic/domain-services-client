@@ -69,7 +69,7 @@ class Nameservers implements Command\Command_Interface, Command\Command_Serializ
 	private Entity\Nameservers $nameservers;
 
 	/**
-	 * Constructs a Domain\Set\Nameservers command
+	 * Constructs a `Domain\Set\Nameservers` command
 	 *
 	 * @param Entity\Domain_Name $domain
 	 * @param Entity\Nameservers $nameservers

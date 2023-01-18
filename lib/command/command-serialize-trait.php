@@ -23,7 +23,7 @@ namespace Automattic\Domain_Services_Client\Command;
  */
 trait Command_Serialize_Trait {
 	/**
-	 * Implements the JsonSerializable interface
+	 * Implements the `JsonSerializable` interface
 	 *
 	 * @internal
 	 *

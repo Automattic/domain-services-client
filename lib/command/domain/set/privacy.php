@@ -24,7 +24,7 @@ use Automattic\Domain_Services_Client\{Command, Entity};
  * Sets the privacy option that determines what contact information is shown in WHOIS.
  *
  * - Runs asynchronously on the server
- * - Reseller will receive a Domain\Set\Privacy\Success or Domain\Set\Privacy\Fail event depending on the result of the
+ * - Reseller will receive a `Domain\Set\Privacy\Success` or `Domain\Set\Privacy\Fail` event depending on the result of the
  * command
  *
  * Example:
@@ -61,7 +61,7 @@ class Privacy implements Command\Command_Interface, Command\Command_Serialize_In
 	private Entity\Whois_Privacy $privacy_setting;
 
 	/**
-	 * Constructs a Domain\Set\Privacy command
+	 * Constructs a `Domain\Set\Privacy` command
 	 *
 	 * @param Entity\Domain_Name   $domain
 	 * @param Entity\Whois_Privacy $privacy_setting

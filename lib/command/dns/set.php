@@ -74,7 +74,7 @@ class Set implements Command\Command_Interface, Command\Command_Serialize_Interf
 	private Entity\Dns_Records $records;
 
 	/**
-	 * Constructs a Dns\Set command
+	 * Constructs a `Dns\Set` command
 	 *
 	 * @param Entity\Dns_Records $records
 	 */

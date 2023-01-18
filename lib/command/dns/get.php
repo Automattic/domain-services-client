@@ -55,7 +55,7 @@ class Get implements Command\Command_Interface, Command\Command_Serialize_Interf
 	private Entity\Domain_Name $domain;
 
 	/**
-	 * Constructs a Dns\Get command
+	 * Constructs a `Dns\Get` command
 	 *
 	 * @param Entity\Domain_Name $domain
 	 */

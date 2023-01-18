@@ -32,7 +32,7 @@ class Domain_Names {
 	private array $domain_names;
 
 	/**
-	 * Constructs a Domain_Names entity
+	 * Constructs a `Domain_Names` entity
 	 *
 	 * @param Domain_Name ...$domain_names
 	 */

@@ -21,7 +21,7 @@ namespace Automattic\Domain_Services_Client\Response\Contact;
 use Automattic\Domain_Services_Client\{Entity, Response, Exception};
 
 /**
- * Response containing the Contact_Information associated with a Contact_Id
+ * Response containing the `Entity\Contact_Information` associated with a `Contact_Id`
  *
  * @see \Automattic\Domain_Services_Client\Command\Contact\Details
  */

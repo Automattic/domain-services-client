@@ -74,7 +74,7 @@ class Contacts implements Command\Command_Interface, Command\Command_Serialize_I
 	private Entity\Domain_Contacts $contacts;
 
 	/**
-	 * Constructs a Domain\Set\Contacts command
+	 * Constructs a `Domain\Set\Contacts` command
 	 *
 	 * @param Entity\Domain_Name     $domain
 	 * @param Entity\Domain_Contacts $contacts

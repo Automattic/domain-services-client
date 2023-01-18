@@ -42,7 +42,7 @@ class Dns_Records {
 	private Dns_Record_Sets $record_sets;
 
 	/**
-	 * Constructs a Dns_Records entity
+	 * Constructs a `Dns_Records` entity
 	 *
 	 * @param Domain_Name     $domain
 	 * @param Dns_Record_Sets $record_sets

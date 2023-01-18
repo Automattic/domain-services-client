@@ -37,7 +37,7 @@ class Contact_Id {
 	private string $contact_id;
 
 	/**
-	 * Constructs a Contact_Id entity
+	 * Constructs a `Contact_Id` entity
 	 *
 	 * @param string $contact_id
 	 *

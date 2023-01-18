@@ -94,7 +94,7 @@ class Renew implements Command\Command_Interface, Command\Command_Serialize_Inte
 	private ?float $fee_amount;
 
 	/**
-	 * Constructs a Domain\Renew command
+	 * Constructs a `Domain\Renew` command
 	 *
 	 * @param Entity\Domain_Name $domain
 	 * @param int                $current_expiration_year

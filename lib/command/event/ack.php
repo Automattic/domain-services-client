@@ -42,6 +42,8 @@ class Ack implements Command\Command_Interface, Command\Command_Serialize_Interf
 	private int $event_id;
 
 	/**
+	 * Constructs an `Event\Ack` command
+	 *
 	 * @param int $event_id
 	 */
 	public function __construct( int $event_id ) {

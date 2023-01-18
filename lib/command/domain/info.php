@@ -38,7 +38,7 @@ class Info implements Command\Command_Interface, Command\Command_Serialize_Inter
 	private Entity\Domain_Name $domain;
 
 	/**
-	 * `Domain\Info` command constructor
+	 * Constructs a `Domain\Info` command
 	 *
 	 * @param Entity\Domain_Name $domain
 	 */

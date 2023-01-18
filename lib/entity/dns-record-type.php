@@ -58,7 +58,7 @@ class Dns_Record_Type {
 	private string $type;
 
 	/**
-	 * Constructs a Dns_Record_Type entity
+	 * Constructs a `Dns_Record_Type` entity
 	 *
 	 * @param string $type
 	 *

@@ -34,7 +34,7 @@ class Nameservers {
 	private array $nameservers = [];
 
 	/**
-	 * Constructs the Nameservers entity
+	 * Constructs a `Nameservers` entity
 	 *
 	 * @param Domain_Name ...$nameservers
 	 * @throws Exception\Entity\Invalid_Value_Exception

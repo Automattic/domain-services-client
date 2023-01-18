@@ -21,7 +21,7 @@ namespace Automattic\Domain_Services_Client\Response\Domain;
 use Automattic\Domain_Services_Client\{Entity, Response};
 
 /**
- * Response of a Domain_Suggestions command
+ * Response of a `Domain\Suggestions` command
  *
  * @see \Automattic\Domain_Services_Client\Command\Domain\Suggestions
  */

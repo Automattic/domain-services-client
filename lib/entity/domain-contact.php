@@ -48,7 +48,7 @@ class Domain_Contact {
 	private Contact_Disclosure $contact_disclosure;
 
 	/**
-	 * Constructs a Domain_Contact entity
+	 * Constructs a `Domain_Contact` entity
 	 *
 	 * @param \Automattic\Domain_Services\Entity\Contact_Id|null $contact_id
 	 * @param \Automattic\Domain_Services\Entity\Contact_Information|null $contact_info

@@ -27,6 +27,7 @@ use Automattic\Domain_Services_Client\{Entity};
 trait Object_Type_Contact_Trait {
 	/**
 	 * Returns the contact object.
+	 *
 	 * @return \Automattic\Domain_Services\Entity\Contact_Id
 	 * @throws \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception
 	 */

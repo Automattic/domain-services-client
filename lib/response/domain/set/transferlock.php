@@ -21,7 +21,7 @@ namespace Automattic\Domain_Services_Client\Response\Domain\Set;
 use Automattic\Domain_Services_Client\Response;
 
 /**
- * Response of a Transferlock\Set command.
+ * Response of a `Domain\Transferlock\Set` command.
  *
  * @see \Automattic\Domain_Services_Client\Command\Domain\Set\Transferlock
  */

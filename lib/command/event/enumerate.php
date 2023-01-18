@@ -25,7 +25,7 @@ use Automattic\Domain_Services_Client\{Command};
  *
  * This command is used to request a list of the unacknowledged events. On success, the response object will include an
  * array of events in ascending order by age (oldest to newest). The maximum number of events returned in the response,
- * can be set using the $limit property for this command. The limit defaults to 50 if none is set.
+ * can be set using the `$limit` property for this command. The limit defaults to 50 if none is set.
  * - This command executes synchronously on the server.
  * - The corresponding response object will include the list of events.
  *
@@ -43,7 +43,7 @@ class Enumerate implements Command\Command_Interface, Command\Command_Serialize_
 	private int $limit;
 
 	/**
-	 * Constructs an Event\Enumerate command
+	 * Constructs an `Event\Enumerate` command
 	 *
 	 * @param int|null $limit Max count of returned events.
 	 */

@@ -59,7 +59,7 @@ class Delete implements Command\Command_Interface, Command\Command_Serialize_Int
 	private Entity\Domain_Name $domain;
 
 	/**
-	 * Constructs the Delete command
+	 * Constructs a `Domain\Delete` command
 	 *
 	 * @param Entity\Domain_Name $domain
 	 */
