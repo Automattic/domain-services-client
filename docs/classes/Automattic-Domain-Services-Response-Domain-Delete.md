@@ -2,7 +2,7 @@
 
 ## Summary:
 
-Response of a Domain\Delete command
+Response of a `Domain\Delete` command
 
 ## Description:
 

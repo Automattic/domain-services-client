@@ -9,11 +9,11 @@
 
 | Name | Summary |
 |------|---------|
-| [\Automattic\Domain_Services\Event\Data_Trait](../classes/Automattic-Domain-Services-Event-Data-Trait.md) | A trait that defines data access methods common to all event classes. |
-| [\Automattic\Domain_Services\Event\Error_Trait](../classes/Automattic-Domain-Services-Event-Error-Trait.md) | A trait that specifies methods common to all error event classes. |
-| [\Automattic\Domain_Services\Event\Object_Type_Contact_Trait](../classes/Automattic-Domain-Services-Event-Object-Type-Contact-Trait.md) |  |
-| [\Automattic\Domain_Services\Event\Object_Type_Domain_Trait](../classes/Automattic-Domain-Services-Event-Object-Type-Domain-Trait.md) |  |
-| [\Automattic\Domain_Services\Event\Transfer_Trait](../classes/Automattic-Domain-Services-Event-Transfer-Trait.md) |  |
+| [\Automattic\Domain_Services\Event\Data_Trait](../classes/Automattic-Domain-Services-Event-Data-Trait.md) | Trait that defines data access methods common to all event classes. |
+| [\Automattic\Domain_Services\Event\Error_Trait](../classes/Automattic-Domain-Services-Event-Error-Trait.md) | Trait that specifies methods common to all error event classes. |
+| [\Automattic\Domain_Services\Event\Object_Type_Contact_Trait](../classes/Automattic-Domain-Services-Event-Object-Type-Contact-Trait.md) | Trait for objects that are associated with a contact. |
+| [\Automattic\Domain_Services\Event\Object_Type_Domain_Trait](../classes/Automattic-Domain-Services-Event-Object-Type-Domain-Trait.md) | Trait for objects that are associated with a domain. |
+| [\Automattic\Domain_Services\Event\Transfer_Trait](../classes/Automattic-Domain-Services-Event-Transfer-Trait.md) | Trait that adds transfer-related methods to an event. |
 
 ### Interfaces
 

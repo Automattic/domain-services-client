@@ -69,7 +69,7 @@ public __construct(\Automattic\Domain_Services\Entity\Domain_Name  domain, \Auto
 
 ##### Summary
 
-Constructs a Domain\Set\Contacts command
+Constructs a `Domain\Set\Contacts` command
 
 ##### Parameters:
 

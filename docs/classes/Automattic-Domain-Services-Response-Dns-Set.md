@@ -2,7 +2,7 @@
 
 ## Summary:
 
-Response of a Dns\Set command
+Response of a `Dns\Set` command
 
 ## Description:
 
@@ -165,6 +165,12 @@ public get_records_deleted() : \Automattic\Domain_Services\Entity\Dns_Records
 ##### Summary
 
 Returns the DNS records that were deleted
+
+##### Throws:
+
+| Type | Description |
+|------|-------------|
+| \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception |  |
 
 ##### Returns:
 

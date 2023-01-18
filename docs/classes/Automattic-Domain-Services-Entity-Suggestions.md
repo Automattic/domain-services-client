@@ -2,7 +2,7 @@
 
 ## Summary:
 
-List of Suggestion entities
+List of `Suggestion` entities
 
 ## Description:
 
@@ -39,7 +39,7 @@ public __construct(\Automattic\Domain_Services\Entity\Suggestion  ...suggestions
 
 ##### Summary
 
-Constructs a Suggestions entity
+Constructs a `Suggestions` entity
 
 ##### Parameters:
 
@@ -64,7 +64,7 @@ public add_suggestion(\Automattic\Domain_Services\Entity\Suggestion  suggestion)
 
 ##### Summary
 
-Adds a new Suggestion to the list of suggestions
+Adds a new `Suggestion` to the list of suggestions
 
 ##### Parameters:
 

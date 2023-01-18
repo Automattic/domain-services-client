@@ -43,7 +43,7 @@ public __construct(\Automattic\Domain_Services\Entity\Domain_Name  domain) : mix
 
 ##### Summary
 
-`Domain\Info` command constructor
+Constructs a `Domain\Info` command
 
 ##### Parameters:
 

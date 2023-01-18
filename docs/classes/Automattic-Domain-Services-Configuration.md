@@ -1,5 +1,9 @@
 # Class: [\Automattic](../namespaces/automattic.md)[\Domain_Services](../namespaces/automattic-domain-services.md)\Configuration
 
+## Summary:
+
+Configuration class for the API settings.
+
 
 ---
 
@@ -52,15 +56,21 @@
 ## Constants
 <a id="constant_BOOLEAN_FORMAT_INT"></a>
 ###### BOOLEAN_FORMAT_INT
+- true: 1
+- false: 0
+
 ```
-BOOLEAN_FORMAT_INT = 'int'
+BOOLEAN_FORMAT_INT = 'int' : string
 ```
 
 
 <a id="constant_BOOLEAN_FORMAT_STRING"></a>
 ###### BOOLEAN_FORMAT_STRING
+- true: true
+- false: false
+
 ```
-BOOLEAN_FORMAT_STRING = 'string'
+BOOLEAN_FORMAT_STRING = 'string' : string
 ```
 
 

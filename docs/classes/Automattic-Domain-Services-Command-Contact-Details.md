@@ -53,6 +53,10 @@ if ( $response->is_success() ) {
 public __construct(\Automattic\Domain_Services\Entity\Contact_Id  contact_id) : mixed
 ```
 
+##### Summary
+
+Constructs a `Contact\Details` command
+
 ##### Parameters:
 
 | Name | Type | Default |

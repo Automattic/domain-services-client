@@ -43,6 +43,10 @@ Acknowledge an event
 public __construct(int  event_id) : mixed
 ```
 
+##### Summary
+
+Constructs an `Event\Ack` command
+
 ##### Parameters:
 
 | Name | Type | Default |

@@ -2,7 +2,7 @@
 
 ## Summary:
 
-Response of a Domain\Renew command
+Response of a `Domain\Renew` command
 
 ## Description:
 

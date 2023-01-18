@@ -128,6 +128,12 @@ public get_contacts() : \Automattic\Domain_Services\Entity\Domain_Contacts
 
 Gets the contacts associated with this domain
 
+##### Throws:
+
+| Type | Description |
+|------|-------------|
+| \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception |  |
+
 ##### Returns:
 
 ```
@@ -316,6 +322,12 @@ public get_privacy_setting() : \Automattic\Domain_Services\Entity\Whois_Privacy|
 ##### Summary
 
 Gets the whois privacy setting for the domain
+
+##### Throws:
+
+| Type | Description |
+|------|-------------|
+| \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception |  |
 
 ##### Returns:
 

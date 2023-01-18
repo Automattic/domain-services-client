@@ -35,7 +35,7 @@ public __construct(\Automattic\Domain_Services\Entity\Dns_Record_Set  ...dns_rec
 
 ##### Summary
 
-Constructs a Dns_Record_Sets entity
+Constructs a `Dns_Record_Sets` entity
 
 ##### Parameters:
 
@@ -60,7 +60,7 @@ public add_record_set(\Automattic\Domain_Services\Entity\Dns_Record_Set  dns_rec
 
 ##### Summary
 
-Adds a Dns_Record_Set to this entity
+Adds a `Dns_Record_Set` to this entity
 
 ##### Parameters:
 

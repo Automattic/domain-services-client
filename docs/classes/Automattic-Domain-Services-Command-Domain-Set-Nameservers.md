@@ -63,6 +63,10 @@ if ( $response->is_success() ) {
 public __construct(\Automattic\Domain_Services\Entity\Domain_Name  domain, \Automattic\Domain_Services\Entity\Nameservers  nameservers) : mixed
 ```
 
+##### Summary
+
+Constructs a `Domain\Set\Nameservers` command
+
 ##### Parameters:
 
 | Name | Type | Default |

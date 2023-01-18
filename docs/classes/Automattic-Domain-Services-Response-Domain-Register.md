@@ -1,5 +1,14 @@
 # Class: [\Automattic](../namespaces/automattic.md)[\Domain_Services](../namespaces/automattic-domain-services.md)[\Response](../namespaces/automattic-domain-services-response.md)[\Domain](../namespaces/automattic-domain-services-response-domain.md)\Register
 
+## Summary:
+
+Response of a `Domain\Register` command
+
+## Description:
+
+Since the command runs asynchronously on the server, success response indicates that request has been queued, not
+completed.
+
 
 ---
 
@@ -24,6 +33,10 @@
   * [\Automattic\Domain_Services\Response\Response_Interface](../classes/Automattic-Domain-Services-Response-Response-Interface.md)
 * Uses Traits:
   * [\Automattic\Domain_Services\Response\Data_Trait](../classes/Automattic-Domain-Services-Response-Data-Trait.md)
+* See Also:
+  * [\Automattic\Domain_Services\Command\Domain\Register](../classes/Automattic-Domain-Services-Command-Domain-Register.md)
+  * [\Automattic\Domain_Services\Event\Domain\Register\Fail](../classes/Automattic-Domain-Services-Event-Domain-Register-Fail.md)
+  * [\Automattic\Domain_Services\Event\Domain\Register\Success](../classes/Automattic-Domain-Services-Event-Domain-Register-Success.md)
 
 ---
 

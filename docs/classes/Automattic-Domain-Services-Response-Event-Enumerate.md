@@ -2,13 +2,13 @@
 
 ## Summary:
 
-Response of Event\Enumerate command
+Response of an `Event\Enumerate` command
 
 ## Description:
 
-This class encapsulates the data for a successful call to the Event\Enumerate command. It includes a list of Event
-objects which all implement the methods in Event\Data_Trait. Each individual event class may also implement
-additional methods depending on the specific event_class and event_subclass properties of the event.
+This class encapsulates the data for a successful call to the `Event\Enumerate` command. It includes a list of Event
+objects which all implement the methods in `Event\Data_Trait`. Each individual event class may also implement
+additional methods depending on the specific `event_class` and `event_subclass` properties of the event.
 
 
 ---
@@ -148,7 +148,7 @@ public get_request_params() : array
 
 ##### Summary
 
-Gets the request parameters from the original Command\Event\Enumerate request
+Gets the request parameters from the original `Command\Event\Enumerate` request
 
 ##### Returns:
 

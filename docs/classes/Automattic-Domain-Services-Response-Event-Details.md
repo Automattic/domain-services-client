@@ -2,12 +2,12 @@
 
 ## Summary:
 
-Response of an Event_Details command.
+Response of an `Event\Details` command.
 
 ## Description:
 
-This is the response returned from a successful execution of Event_Details command. The event can be retrieved using
-get_event() method.
+This is the response returned from a successful execution of `Event\Details` command. The event can be retrieved using
+`get_event()` method.
 
 
 ---

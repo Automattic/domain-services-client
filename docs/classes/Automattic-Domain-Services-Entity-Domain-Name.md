@@ -1,5 +1,9 @@
 # Class: [\Automattic](../namespaces/automattic.md)[\Domain_Services](../namespaces/automattic-domain-services.md)[\Entity](../namespaces/automattic-domain-services-entity.md)\Domain_Name
 
+## Summary:
+
+Represents a domain name
+
 
 ---
 
@@ -25,6 +29,10 @@
 public __construct(string  name) : mixed
 ```
 
+##### Summary
+
+Constructs a `Domain_Name` entity
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -45,6 +53,10 @@ mixed
 ```
 public get_name() : string
 ```
+
+##### Summary
+
+Returns the domain name
 
 ##### Returns:
 

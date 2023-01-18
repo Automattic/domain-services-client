@@ -46,7 +46,7 @@ public __construct(int  event_id) : mixed
 
 ##### Summary
 
-Event_Details command constructor
+Constructs an `Event\Details` command
 
 ##### Parameters:
 

@@ -2,7 +2,7 @@
 
 ## Summary:
 
-Response of a Domain\Set\Privacy command
+Response of a `Domain\Set\Privacy` command
 
 ## Description:
 

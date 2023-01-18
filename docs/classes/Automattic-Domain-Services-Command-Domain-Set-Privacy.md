@@ -7,7 +7,7 @@ Sets the privacy option that determines what contact information is shown in WHO
 ## Description:
 
 - Runs asynchronously on the server
-- Reseller will receive a Domain\Set\Privacy\Success or Domain\Set\Privacy\Fail event depending on the result of the
+- Reseller will receive a `Domain\Set\Privacy\Success` or `Domain\Set\Privacy\Fail` event depending on the result of the
 command
 
 Example:
@@ -57,7 +57,7 @@ public __construct(\Automattic\Domain_Services\Entity\Domain_Name  domain, \Auto
 
 ##### Summary
 
-Construct the Domain\Set\Privacy
+Constructs a `Domain\Set\Privacy` command
 
 ##### Parameters:
 

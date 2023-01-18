@@ -4,4 +4,4 @@
 
 | Name | Summary |
 |------|---------|
-| [\Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception](../classes/Automattic-Domain-Services-Exception-Entity-Invalid-Value-Exception.md) |  |
+| [\Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception](../classes/Automattic-Domain-Services-Exception-Entity-Invalid-Value-Exception.md) | Exception thrown when an invalid value/option is passed to the entity. |

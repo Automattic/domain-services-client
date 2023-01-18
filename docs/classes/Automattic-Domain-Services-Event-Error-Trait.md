@@ -2,7 +2,7 @@
 
 ## Summary:
 
-A trait that specifies methods common to all error event classes.
+Trait that specifies methods common to all error event classes.
 
 
 ---

@@ -2,7 +2,7 @@
 
 ## Summary:
 
-Response for Domain\Set\Contacts command
+Response of a `Domain\Set\Contacts` command
 
 ## Description:
 

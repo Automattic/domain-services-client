@@ -2,7 +2,7 @@
 
 ## Summary:
 
-Response containing the Contact_Information associated with a Contact_Id
+Response containing the `Entity\Contact_Information` associated with a `Contact_Id`
 
 
 ---

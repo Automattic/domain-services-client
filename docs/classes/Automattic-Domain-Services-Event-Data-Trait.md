@@ -2,7 +2,7 @@
 
 ## Summary:
 
-A trait that defines data access methods common to all event classes.
+Trait that defines data access methods common to all event classes.
 
 
 ---

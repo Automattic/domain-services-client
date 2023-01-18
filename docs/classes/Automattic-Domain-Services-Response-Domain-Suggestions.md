@@ -2,7 +2,7 @@
 
 ## Summary:
 
-Response of a Domain_Suggestions command
+Response of a `Domain\Suggestions` command
 
 
 ---

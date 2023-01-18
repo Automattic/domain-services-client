@@ -1,5 +1,9 @@
 # Class: [\Automattic](../namespaces/automattic.md)[\Domain_Services](../namespaces/automattic-domain-services.md)[\Response](../namespaces/automattic-domain-services-response.md)[\Exception](../namespaces/automattic-domain-services-response-exception.md)\Error
 
+## Summary:
+
+Response of a request that returned an error.
+
 
 ---
 
@@ -81,13 +85,17 @@ string
 ### get_command
 
 ```
-public get_command() : ?string
+public get_command() : string|null
 ```
+
+##### Summary
+
+Returns the command used
 
 ##### Returns:
 
 ```
-?string
+string|null
 ```
 
 ---
@@ -96,13 +104,17 @@ public get_command() : ?string
 ### get_command_params
 
 ```
-public get_command_params() : ?array
+public get_command_params() : array|null
 ```
+
+##### Summary
+
+Returns the command parameters used
 
 ##### Returns:
 
 ```
-?array
+array|null
 ```
 
 ---
@@ -136,13 +148,17 @@ array|mixed|null
 ### get_invalid_option
 
 ```
-public get_invalid_option() : ?string
+public get_invalid_option() : string|null
 ```
+
+##### Summary
+
+Returns the invalid option
 
 ##### Returns:
 
 ```
-?string
+string|null
 ```
 
 ---
@@ -151,13 +167,17 @@ public get_invalid_option() : ?string
 ### get_reason
 
 ```
-public get_reason() : ?string
+public get_reason() : string|null
 ```
+
+##### Summary
+
+Returns the reason for the error
 
 ##### Returns:
 
 ```
-?string
+string|null
 ```
 
 ---

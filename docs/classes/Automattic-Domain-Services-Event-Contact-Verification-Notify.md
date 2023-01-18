@@ -92,6 +92,16 @@ Gets the date this event was acknowledged.
 final public get_contact_id() : \Automattic\Domain_Services\Entity\Contact_Id
 ```
 
+##### Summary
+
+Returns the contact object.
+
+##### Throws:
+
+| Type | Description |
+|------|-------------|
+| \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception |  |
+
 ##### Returns:
 
 ```

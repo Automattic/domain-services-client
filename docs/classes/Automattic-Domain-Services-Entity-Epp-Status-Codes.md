@@ -1,5 +1,9 @@
 # Class: [\Automattic](../namespaces/automattic.md)[\Domain_Services](../namespaces/automattic-domain-services.md)[\Entity](../namespaces/automattic-domain-services-entity.md)\Epp_Status_Codes
 
+## Summary:
+
+List of `Epp_Status_Code` entities
+
 
 ---
 
@@ -15,6 +19,8 @@
 * File: [lib/entity/epp-status-codes.php](../../lib/entity/epp-status-codes.php)
 * Implements:
   * [\Iterator](../classes/Iterator.md)
+* See Also:
+  * [\Automattic\Domain_Services\Entity\Epp_Status_Code](../classes/Automattic-Domain-Services-Entity-Epp-Status-Code.md)
 
 ---
 
@@ -26,6 +32,10 @@
 ```
 public __construct(\Automattic\Domain_Services\Entity\Epp_Status_Code  ...epp_status_codes) : mixed
 ```
+
+##### Summary
+
+Constructs an `Epp_Status_Codes` entity
 
 ##### Parameters:
 
@@ -47,6 +57,10 @@ mixed
 ```
 public add_epp_code(\Automattic\Domain_Services\Entity\Epp_Status_Code  epp_status_code) : void
 ```
+
+##### Summary
+
+Add an EPP status code to the current object
 
 ##### Parameters:
 

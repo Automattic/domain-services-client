@@ -69,7 +69,7 @@ public __construct(\Automattic\Domain_Services\Entity\Domain_Name  domain, int  
 
 ##### Summary
 
-Constructs a Domain\Renew command
+Constructs a `Domain\Renew` command
 
 ##### Parameters:
 

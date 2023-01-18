@@ -1,5 +1,9 @@
 # Class: [\Automattic](../namespaces/automattic.md)[\Domain_Services](../namespaces/automattic-domain-services.md)[\Response](../namespaces/automattic-domain-services-response.md)\Code
 
+## Summary:
+
+Represents status codes and descriptions from the DSAPI command's responses
+
 
 ---
 
@@ -183,6 +187,10 @@ UNKNOWN_ERROR = 999
 ```
 static public get_description(int  code) : string
 ```
+
+##### Summary
+
+Gets the description of a status code
 
 ##### Parameters:
 

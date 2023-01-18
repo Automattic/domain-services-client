@@ -1,5 +1,9 @@
 # Class: [\Automattic](../namespaces/automattic.md)[\Domain_Services](../namespaces/automattic-domain-services.md)[\Event](../namespaces/automattic-domain-services-event.md)\Transfer_Trait
 
+## Summary:
+
+Trait that adds transfer-related methods to an event.
+
 
 ---
 
@@ -26,13 +30,17 @@
 ### get_auto_nack
 
 ```
-final public get_auto_nack() : ?bool
+final public get_auto_nack() : bool|null
 ```
+
+##### Summary
+
+Gets whether the domain transfer associated with the event was automatically rejected.
 
 ##### Returns:
 
 ```
-?bool
+bool|null
 ```
 
 ---
@@ -41,13 +49,17 @@ final public get_auto_nack() : ?bool
 ### get_current_registrar
 
 ```
-final public get_current_registrar() : ?string
+final public get_current_registrar() : string|null
 ```
+
+##### Summary
+
+Gets the current registrar of the domain associated with the event.
 
 ##### Returns:
 
 ```
-?string
+string|null
 ```
 
 ---
@@ -56,13 +68,17 @@ final public get_current_registrar() : ?string
 ### get_execute_date
 
 ```
-final public get_execute_date() : ?\DateTimeImmutable
+final public get_execute_date() : \DateTimeImmutable|null
 ```
+
+##### Summary
+
+Gets the date the transfer was executed.
 
 ##### Returns:
 
 ```
-?\DateTimeImmutable
+\DateTimeImmutable|null
 ```
 
 ---
@@ -71,13 +87,17 @@ final public get_execute_date() : ?\DateTimeImmutable
 ### get_request_date
 
 ```
-final public get_request_date() : ?\DateTimeImmutable
+final public get_request_date() : \DateTimeImmutable|null
 ```
+
+##### Summary
+
+Gets the date the transfer was requested.
 
 ##### Returns:
 
 ```
-?\DateTimeImmutable
+\DateTimeImmutable|null
 ```
 
 ---
@@ -86,13 +106,17 @@ final public get_request_date() : ?\DateTimeImmutable
 ### get_requesting_registrar
 
 ```
-final public get_requesting_registrar() : ?string
+final public get_requesting_registrar() : string|null
 ```
+
+##### Summary
+
+Gets the requesting registrar for the domain transfer associated with the event.
 
 ##### Returns:
 
 ```
-?string
+string|null
 ```
 
 ---
@@ -101,11 +125,15 @@ final public get_requesting_registrar() : ?string
 ### get_transfer_status
 
 ```
-final public get_transfer_status() : ?string
+final public get_transfer_status() : string|null
 ```
+
+##### Summary
+
+Gets the status of the transfer.
 
 ##### Returns:
 
 ```
-?string
+string|null
 ```

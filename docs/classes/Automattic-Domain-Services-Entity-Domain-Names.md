@@ -1,5 +1,9 @@
 # Class: [\Automattic](../namespaces/automattic.md)[\Domain_Services](../namespaces/automattic-domain-services.md)[\Entity](../namespaces/automattic-domain-services-entity.md)\Domain_Names
 
+## Summary:
+
+List of `Domain_Name` entities
+
 
 ---
 
@@ -14,6 +18,8 @@
 ### Details
 
 * File: [lib/entity/domain-names.php](../../lib/entity/domain-names.php)
+* See Also:
+  * [\Automattic\Domain_Services\Entity\Domain_Name](../classes/Automattic-Domain-Services-Entity-Domain-Name.md)
 
 ---
 
@@ -25,6 +31,10 @@
 ```
 public __construct(\Automattic\Domain_Services\Entity\Domain_Name  ...domain_names) : mixed
 ```
+
+##### Summary
+
+Constructs a `Domain_Names` entity
 
 ##### Parameters:
 
@@ -47,6 +57,10 @@ mixed
 public add_domain_name(\Automattic\Domain_Services\Entity\Domain_name  domain_name) : $this
 ```
 
+##### Summary
+
+Adds a domain name to the list of domain names
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -67,6 +81,10 @@ $this
 ```
 public get_domain_names() : \Automattic\Domain_Services\Entity\Domain_Name[]
 ```
+
+##### Summary
+
+Gets the list of domain names
 
 ##### Returns:
 

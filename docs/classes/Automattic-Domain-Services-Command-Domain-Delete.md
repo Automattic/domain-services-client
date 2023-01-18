@@ -62,7 +62,7 @@ public __construct(\Automattic\Domain_Services\Entity\Domain_Name  domain) : mix
 
 ##### Summary
 
-Constructs the Delete command
+Constructs a `Domain\Delete` command
 
 ##### Parameters:
 

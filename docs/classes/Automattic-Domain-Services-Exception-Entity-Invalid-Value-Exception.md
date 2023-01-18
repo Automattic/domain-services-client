@@ -1,5 +1,9 @@
 # Class: [\Automattic](../namespaces/automattic.md)[\Domain_Services](../namespaces/automattic-domain-services.md)[\Exception](../namespaces/automattic-domain-services-exception.md)[\Entity](../namespaces/automattic-domain-services-exception-entity.md)\Invalid_Value_Exception
 
+## Summary:
+
+Exception thrown when an invalid value/option is passed to the entity.
+
 
 ---
 
@@ -23,6 +27,10 @@
 ```
 public get_error_data() : array
 ```
+
+##### Summary
+
+Returns the error data associated with the exception
 
 ##### Returns:
 

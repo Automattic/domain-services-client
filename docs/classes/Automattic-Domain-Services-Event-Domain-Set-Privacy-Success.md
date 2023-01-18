@@ -2,7 +2,7 @@
 
 ## Summary:
 
-Success event for a `Domain\Set\Privacy command
+Success event for a `Domain\Set\Privacy` command
 
 ## Description:
 
@@ -119,6 +119,10 @@ array|mixed|null
 ```
 final public get_domain() : \Automattic\Domain_Services\Entity\Domain_Name
 ```
+
+##### Summary
+
+Returns the domain name object.
 
 ##### Returns:
 
@@ -281,7 +285,7 @@ public get_privacy_setting() : \Automattic\Domain_Services\Entity\Whois_Privacy|
 
 ##### Summary
 
-Returns the Whois_Privacy setting that was set for this domain
+Returns the `Entity\Whois_Privacy` setting that was set for this domain
 
 ##### Throws:
 

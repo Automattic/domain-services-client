@@ -77,7 +77,7 @@ public __construct(\Automattic\Domain_Services\Entity\Dns_Records  records) : mi
 
 ##### Summary
 
-Constructs a Dns\Set command
+Constructs a `Dns\Set` command
 
 ##### Parameters:
 

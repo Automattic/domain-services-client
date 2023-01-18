@@ -1,5 +1,9 @@
 # Class: [\Automattic](../namespaces/automattic.md)[\Domain_Services](../namespaces/automattic-domain-services.md)[\Response](../namespaces/automattic-domain-services-response.md)\Data_Trait
 
+## Summary:
+
+Trait that provides a set of methods for accessing a response's data.
+
 
 ---
 

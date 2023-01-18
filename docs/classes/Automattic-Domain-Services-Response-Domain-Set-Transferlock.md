@@ -2,7 +2,7 @@
 
 ## Summary:
 
-Response of a Transferlock\Set command.
+Response of a `Domain\Transferlock\Set` command.
 
 
 ---

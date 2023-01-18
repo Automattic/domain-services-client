@@ -40,6 +40,10 @@ This commands requests either enabling or disabling the transfer lock on a speci
 public __construct(\Automattic\Domain_Services\Entity\Domain_Name  domain, bool  transfer_lock) : mixed
 ```
 
+##### Summary
+
+Constructs a `Domain\Set\Transferlock` command
+
 ##### Parameters:
 
 | Name | Type | Default |

@@ -2,7 +2,7 @@
 
 ## Summary:
 
-Response of the `Domain\Check` command
+Response of a `Domain\Check` command
 
 
 ---
@@ -29,6 +29,8 @@ Response of the `Domain\Check` command
   * [\Automattic\Domain_Services\Response\Response_Interface](../classes/Automattic-Domain-Services-Response-Response-Interface.md)
 * Uses Traits:
   * [\Automattic\Domain_Services\Response\Data_Trait](../classes/Automattic-Domain-Services-Response-Data-Trait.md)
+* See Also:
+  * [\Automattic\Domain_Services\Command\Domain\Check](../classes/Automattic-Domain-Services-Command-Domain-Check.md)
 
 ---
 

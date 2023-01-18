@@ -8,7 +8,7 @@ Register a new a domain.
 
 - This command requests a new domain registration
 - It runs asynchronously on the server
-- Reseller will receive a Domain\Register\Success or Domain\Register\Fail event depending on the result of the
+- Reseller will receive a `Domain\Register\Success` or `Domain\Register\Fail` event depending on the result of the
   command
 
 Example usage:
@@ -103,7 +103,7 @@ public __construct(\Automattic\Domain_Services\Entity\Domain_Name  domain, \Auto
 
 ##### Summary
 
-Constructs the Register command
+Constructs a `Domain\Register` command
 
 ##### Parameters:
 

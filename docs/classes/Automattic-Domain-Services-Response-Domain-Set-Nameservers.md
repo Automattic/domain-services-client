@@ -2,7 +2,7 @@
 
 ## Summary:
 
-Response of a Domain\Set\Nameservers command
+Response of a `Domain\Set\Nameservers` command
 
 ## Description:
 

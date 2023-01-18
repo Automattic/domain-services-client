@@ -1,5 +1,9 @@
 # Class: [\Automattic](../namespaces/automattic.md)[\Domain_Services](../namespaces/automattic-domain-services.md)[\Command](../namespaces/automattic-domain-services-command.md)\Command_Trait
 
+## Summary:
+
+Trait that specifies methods common to all commands
+
 
 ---
 

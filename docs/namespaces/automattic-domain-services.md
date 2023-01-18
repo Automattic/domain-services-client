@@ -14,5 +14,5 @@
 
 | Name | Summary |
 |------|---------|
-| [\Automattic\Domain_Services\Api](../classes/Automattic-Domain-Services-Api.md) |  |
-| [\Automattic\Domain_Services\Configuration](../classes/Automattic-Domain-Services-Configuration.md) |  |
+| [\Automattic\Domain_Services\Api](../classes/Automattic-Domain-Services-Api.md) | The API client. |
+| [\Automattic\Domain_Services\Configuration](../classes/Automattic-Domain-Services-Configuration.md) | Configuration class for the API settings. |

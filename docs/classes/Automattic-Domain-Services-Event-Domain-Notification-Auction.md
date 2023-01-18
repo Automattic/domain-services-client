@@ -170,6 +170,10 @@ array|mixed|null
 final public get_domain() : \Automattic\Domain_Services\Entity\Domain_Name
 ```
 
+##### Summary
+
+Returns the domain name object.
+
 ##### Returns:
 
 ```

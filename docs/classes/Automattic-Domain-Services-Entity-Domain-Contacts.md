@@ -84,6 +84,10 @@ BILLING = 'billing'
 public __construct(\Automattic\Domain_Services\Entity\Domain_Contact|null  owner = null, \Automattic\Domain_Services\Entity\Domain_Contact|null  admin = null, \Automattic\Domain_Services\Entity\Domain_Contact|null  tech = null, \Automattic\Domain_Services\Entity\Domain_Contact|null  billing = null) : mixed
 ```
 
+##### Summary
+
+Constructs a `Domain_Contacts` entity
+
 ##### Parameters:
 
 | Name | Type | Default |

@@ -2,7 +2,7 @@
 
 ## Summary:
 
-Response of a Dns\Get command
+Response of a `Dns\Get` command
 
 ## Description:
 

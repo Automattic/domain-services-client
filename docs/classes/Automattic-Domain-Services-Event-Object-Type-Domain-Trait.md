@@ -1,5 +1,13 @@
 # Class: [\Automattic](../namespaces/automattic.md)[\Domain_Services](../namespaces/automattic-domain-services.md)[\Event](../namespaces/automattic-domain-services-event.md)\Object_Type_Domain_Trait
 
+## Summary:
+
+Trait for objects that are associated with a domain.
+
+## Description:
+
+This trait relies on the `get_object_id()` method to be defined in the class that uses it.
+
 
 ---
 
@@ -23,6 +31,10 @@
 ```
 final public get_domain() : \Automattic\Domain_Services\Entity\Domain_Name
 ```
+
+##### Summary
+
+Returns the domain name object.
 
 ##### Returns:
 

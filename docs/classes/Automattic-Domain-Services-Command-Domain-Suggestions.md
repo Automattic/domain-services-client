@@ -38,7 +38,7 @@ public __construct(string  query, int  quantity) : mixed
 
 ##### Summary
 
-Constructs a Domain\Suggestions command
+Constructs a `Domain\Suggestions` command
 
 ##### Parameters:
 

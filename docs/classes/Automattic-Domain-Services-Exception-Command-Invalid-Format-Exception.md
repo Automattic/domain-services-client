@@ -1,5 +1,9 @@
 # Class: [\Automattic](../namespaces/automattic.md)[\Domain_Services](../namespaces/automattic-domain-services.md)[\Exception](../namespaces/automattic-domain-services-exception.md)[\Command](../namespaces/automattic-domain-services-exception-command.md)\Invalid_Format_Exception
 
+## Summary:
+
+Exception thrown when a command is sent with an invalid format.
+
 
 ---
 
@@ -23,6 +27,10 @@
 ```
 public get_error_data() : array
 ```
+
+##### Summary
+
+Returns the error data associated with the exception
 
 ##### Returns:
 

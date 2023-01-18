@@ -58,7 +58,7 @@ public __construct(\Automattic\Domain_Services\Entity\Domain_Name  domain) : mix
 
 ##### Summary
 
-Constructs a Dns\Get command
+Constructs a `Dns\Get` command
 
 ##### Parameters:
 

@@ -42,7 +42,7 @@ public __construct(\Automattic\Domain_Services\Entity\Domain_Names  domains) : m
 
 ##### Summary
 
-Constructs the `Domain\Check` command
+Constructs a `Domain\Check` command
 
 ##### Parameters:
 
