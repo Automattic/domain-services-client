@@ -20,7 +20,7 @@ namespace Automattic\Domain_Services\Test\Event;
 
 use Automattic\Domain_Services\{Command, Helper, Event, Response, Test};
 
-class Domain_Transfer_Out_Success_Test extends Test\Lib\Domain_Services_Client_Test_Case {
+class Domain_Notification_Pending_Delete_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_event_success(): void {
 		$command = new Command\Event\Details( 1234 );
 
@@ -35,19 +35,14 @@ class Domain_Transfer_Out_Success_Test extends Test\Lib\Domain_Services_Client_T
 			'data' => [
 				'event' => [
 					'id' => 1234,
-					'event_class' => 'Domain\Transfer\Out',
-					'event_subclass' => 'Success',
+					'event_class' => 'Domain\Notification',
+					'event_subclass' => 'Pending_Delete',
 					'object_type' => 'domain',
 					'object_id' => 'example.com',
 					'event_date' => '2022-01-23 12:34:56',
 					'acknowledged_date' => null,
 					'event_data' => [
-						'current_registrar' => 'automattic',
-						'requesting_registrar' => 'gaining_registrar',
-						'auto_nack' => false,
-						'request_date' => '2022-12-08 18:03:16',
-						'execute_date' => '2022-12-08 18:03:44',
-						'transfer_status' => 'serverApproved',
+						'pending_delete_end_date' => '2022-01-28 23:45:01',
 					],
 				],
 			],
@@ -61,13 +56,8 @@ class Domain_Transfer_Out_Success_Test extends Test\Lib\Domain_Services_Client_T
 		$event = $response_object->get_event();
 		$this->assertNotNull( $event );
 
-		$this->assertInstanceOf( Event\Domain\Transfer\Out\Success::class, $event );
+		$this->assertInstanceOf( Event\Domain\Notification\Pending_Delete::class, $event );
 		$this->assertSame( $response_data['data']['event']['object_id'], $event->get_domain()->get_name() );
-		$this->assertSame( $response_data['data']['event']['event_data']['current_registrar'], $event->get_current_registrar() );
-		$this->assertSame( $response_data['data']['event']['event_data']['requesting_registrar'], $event->get_requesting_registrar() );
-		$this->assertSame( $response_data['data']['event']['event_data']['auto_nack'], $event->get_auto_nack() );
-		$this->assertSame( $response_data['data']['event']['event_data']['request_date'], Helper\Date_Time::format( $event->get_request_date() ) );
-		$this->assertSame( $response_data['data']['event']['event_data']['execute_date'], Helper\Date_Time::format( $event->get_execute_date() ) );
-		$this->assertSame( $response_data['data']['event']['event_data']['transfer_status'], $event->get_transfer_status() );
+		$this->assertSame( $response_data['data']['event']['event_data']['pending_delete_end_date'], Helper\Date_Time::format( $event->get_pending_delete_end_date() ) );
 	}
 }

@@ -37,7 +37,7 @@ class Event_Enumerate_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 				'events' => [
 					[
 						'id' => 1,
-						'event_class' => 'Domain_Set_Nameservers',
+						'event_class' => 'Domain\Set\Nameservers',
 						'event_subclass' => 'Success',
 						'event_data' => '[]',
 						'object_type' => 'domain',
@@ -47,7 +47,7 @@ class Event_Enumerate_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 					],
 					[
 						'id' => 2,
-						'event_class' => 'Domain_Set_Nameservers',
+						'event_class' => 'Domain\Set\Nameservers',
 						'event_subclass' => 'Success',
 						'event_data' => '[]',
 						'object_type' => 'domain',
@@ -57,7 +57,7 @@ class Event_Enumerate_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 					],
 					[
 						'id' => 3,
-						'event_class' => 'Domain_Set_Nameservers',
+						'event_class' => 'Domain\Set\Nameservers',
 						'event_subclass' => 'Success',
 						'event_data' => '[]',
 						'object_type' => 'domain',
@@ -96,7 +96,7 @@ class Event_Enumerate_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 			$this->assertEquals( $response_data['data']['events'][ $index ]['event_class'], $event->get_event_class() );
 			$this->assertEquals( $response_data['data']['events'][ $index ]['event_date'], Helper\Date_Time::format( $event->get_event_date() ) );
 			$acknowledge_date = $event->get_acknowledged_date();
-			$acknowledge_date = (null === $acknowledge_date) ? null : Helper\Date_Time::format( $acknowledge_date );
+			$acknowledge_date = ( null === $acknowledge_date ) ? null : Helper\Date_Time::format( $acknowledge_date );
 			$this->assertEquals( $response_data['data']['events'][ $index ]['acknowledged_date'], $acknowledge_date );
 		}
 

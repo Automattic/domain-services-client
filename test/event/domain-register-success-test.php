@@ -50,7 +50,7 @@ class Domain_Register_Success_Test extends Test\Lib\Domain_Services_Client_Test_
 			'data' => [
 				'event' => [
 					'id' => 1234,
-					'event_class' => 'Domain_Register',
+					'event_class' => 'Domain\Register',
 					'event_subclass' => 'Success',
 					'object_type' => 'domain',
 					'object_id' => 'example.com',

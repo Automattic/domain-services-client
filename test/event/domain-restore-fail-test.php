@@ -35,7 +35,7 @@ class Domain_Restore_Fail_Test extends Test\Lib\Domain_Services_Client_Test_Case
 			'data' => [
 				'event' => [
 					'id' => 1234,
-					'event_class' => 'Domain_Restore',
+					'event_class' => 'Domain\Restore',
 					'event_subclass' => 'Fail',
 					'object_type' => 'domain',
 					'object_id' => 'example.com',

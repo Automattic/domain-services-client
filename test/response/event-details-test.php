@@ -35,7 +35,7 @@ class Event_Details_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 			'data' => [
 				'event' => [
 					'id' => 1234,
-					'event_class' => 'Domain_Set_Nameservers',
+					'event_class' => 'Domain\Set\Nameservers',
 					'event_subclass' => 'Success',
 					'event_data' => '[]',
 					'object_type' => 'domain',

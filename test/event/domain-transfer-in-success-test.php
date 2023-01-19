@@ -35,7 +35,7 @@ class Domain_Transfer_In_Success_Test extends Test\Lib\Domain_Services_Client_Te
 			'data' => [
 				'event' => [
 					'id' => 1234,
-					'event_class' => 'Domain_Transfer_In',
+					'event_class' => 'Domain\Transfer\In',
 					'event_subclass' => 'Success',
 					'object_type' => 'domain',
 					'object_id' => 'example.com',
