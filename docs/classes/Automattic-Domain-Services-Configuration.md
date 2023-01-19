@@ -56,23 +56,25 @@ Configuration class for the API settings.
 ## Constants
 <a id="constant_BOOLEAN_FORMAT_INT"></a>
 ###### BOOLEAN_FORMAT_INT
-- true: 1
-- false: 0
+Used for getting boolean values in the query string represented as an integer.
 
 ```
 BOOLEAN_FORMAT_INT = 'int' : string
 ```
 
+- `true`: `1`
+- `false`: `0`
 
 <a id="constant_BOOLEAN_FORMAT_STRING"></a>
 ###### BOOLEAN_FORMAT_STRING
-- true: true
-- false: false
+Used for getting boolean values in the query string represented as a string.
 
 ```
 BOOLEAN_FORMAT_STRING = 'string' : string
 ```
 
+- `true`: `true`
+- `false`: `false`
 
 
 ---
