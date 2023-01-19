@@ -28,8 +28,6 @@ Response of a request that returned an error.
 ### Details
 
 * File: [lib/response/exception/error.php](../../lib/response/exception/error.php)
-* Implements:
-  * [\Automattic\Domain_Services\Response\Response_Interface](../classes/Automattic-Domain-Services-Response-Response-Interface.md)
 * Uses Traits:
   * [\Automattic\Domain_Services\Response\Data_Trait](../classes/Automattic-Domain-Services-Response-Data-Trait.md)
 

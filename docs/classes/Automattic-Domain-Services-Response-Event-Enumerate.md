@@ -33,11 +33,8 @@ additional methods depending on the specific `event_class` and `event_subclass` 
 ### Details
 
 * File: [lib/response/event/enumerate.php](../../lib/response/event/enumerate.php)
-* Implements:
-  * [\Automattic\Domain_Services\Response\Response_Interface](../classes/Automattic-Domain-Services-Response-Response-Interface.md)
 * Uses Traits:
   * [\Automattic\Domain_Services\Response\Data_Trait](../classes/Automattic-Domain-Services-Response-Data-Trait.md)
-  * [\Automattic\Domain_Services\Response\Event_Aware](../classes/Automattic-Domain-Services-Response-Event-Aware.md)
 * See Also:
   * [\Automattic\Domain_Services\Event\Data_Trait](../classes/Automattic-Domain-Services-Event-Data-Trait.md)
 

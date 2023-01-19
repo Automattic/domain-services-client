@@ -34,8 +34,6 @@ Domain verified event
 ### Details
 
 * File: [lib/event/domain/notification/verified.php](../../lib/event/domain/notification/verified.php)
-* Implements:
-  * [\Automattic\Domain_Services\Event\Event_Interface](../classes/Automattic-Domain-Services-Event-Event-Interface.md)
 * Uses Traits:
   * [\Automattic\Domain_Services\Event\Data_Trait](../classes/Automattic-Domain-Services-Event-Data-Trait.md)
   * [\Automattic\Domain_Services\Event\Object_Type_Domain_Trait](../classes/Automattic-Domain-Services-Event-Object-Type-Domain-Trait.md)

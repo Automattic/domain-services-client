@@ -17,8 +17,6 @@ Set of sets of DNS records
 ### Details
 
 * File: [lib/entity/dns-record-sets.php](../../lib/entity/dns-record-sets.php)
-* Implements:
-  * [\Iterator](../classes/Iterator.md)
 * See Also:
   * [\Automattic\Domain_Services\Entity\Dns_Record_Set](../classes/Automattic-Domain-Services-Entity-Dns-Record-Set.md)
 

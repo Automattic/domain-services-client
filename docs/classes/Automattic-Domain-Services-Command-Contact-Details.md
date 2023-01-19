@@ -32,12 +32,6 @@ if ( $response->is_success() ) {
 ### Details
 
 * File: [lib/command/contact/details.php](../../lib/command/contact/details.php)
-* Implements:
-  * [\Automattic\Domain_Services\Command\Command_Interface](../classes/Automattic-Domain-Services-Command-Command-Interface.md)
-  * [\Automattic\Domain_Services\Command\Command_Serialize_Interface](../classes/Automattic-Domain-Services-Command-Command-Serialize-Interface.md)
-* Uses Traits:
-  * [\Automattic\Domain_Services\Command\Command_Serialize_Trait](../classes/Automattic-Domain-Services-Command-Command-Serialize-Trait.md)
-  * [\Automattic\Domain_Services\Command\Command_Trait](../classes/Automattic-Domain-Services-Command-Command-Trait.md)
 * See Also:
   * [\Automattic\Domain_Services\Response\Contact\Details](../classes/Automattic-Domain-Services-Response-Contact-Details.md)
   * [\Automattic\Domain_Services\Command\Domain\Set\Contacts](../classes/Automattic-Domain-Services-Command-Domain-Set-Contacts.md)

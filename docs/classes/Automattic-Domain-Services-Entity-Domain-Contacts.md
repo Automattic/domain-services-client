@@ -36,8 +36,6 @@ Represents all contact types for a domain name
 ### Details
 
 * File: [lib/entity/domain-contacts.php](../../lib/entity/domain-contacts.php)
-* Implements:
-  * [\Iterator](../classes/Iterator.md)
 * See Also:
   * [\Automattic\Domain_Services\Entity\Domain_Contact](../classes/Automattic-Domain-Services-Entity-Domain-Contact.md)
 

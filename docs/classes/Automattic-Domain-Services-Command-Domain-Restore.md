@@ -36,12 +36,6 @@ if ( $response->is_success() ) {
 ### Details
 
 * File: [lib/command/domain/restore.php](../../lib/command/domain/restore.php)
-* Implements:
-  * [\Automattic\Domain_Services\Command\Command_Interface](../classes/Automattic-Domain-Services-Command-Command-Interface.md)
-  * [\Automattic\Domain_Services\Command\Command_Serialize_Interface](../classes/Automattic-Domain-Services-Command-Command-Serialize-Interface.md)
-* Uses Traits:
-  * [\Automattic\Domain_Services\Command\Command_Serialize_Trait](../classes/Automattic-Domain-Services-Command-Command-Serialize-Trait.md)
-  * [\Automattic\Domain_Services\Command\Command_Trait](../classes/Automattic-Domain-Services-Command-Command-Trait.md)
 * See Also:
   * [\Automattic\Domain_Services\Event\Domain\Restore\Fail](../classes/Automattic-Domain-Services-Event-Domain-Restore-Fail.md)
   * [\Automattic\Domain_Services\Event\Domain\Restore\Success](../classes/Automattic-Domain-Services-Event-Domain-Restore-Success.md)

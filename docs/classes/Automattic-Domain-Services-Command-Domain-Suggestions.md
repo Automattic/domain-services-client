@@ -16,12 +16,6 @@ Retrieves a list of domain name suggestions based on a query string
 ### Details
 
 * File: [lib/command/domain/suggestions.php](../../lib/command/domain/suggestions.php)
-* Implements:
-  * [\Automattic\Domain_Services\Command\Command_Interface](../classes/Automattic-Domain-Services-Command-Command-Interface.md)
-  * [\Automattic\Domain_Services\Command\Command_Serialize_Interface](../classes/Automattic-Domain-Services-Command-Command-Serialize-Interface.md)
-* Uses Traits:
-  * [\Automattic\Domain_Services\Command\Command_Serialize_Trait](../classes/Automattic-Domain-Services-Command-Command-Serialize-Trait.md)
-  * [\Automattic\Domain_Services\Command\Command_Trait](../classes/Automattic-Domain-Services-Command-Command-Trait.md)
 * See Also:
   * [\Automattic\Domain_Services\Response\Domain\Suggestions](../classes/Automattic-Domain-Services-Response-Domain-Suggestions.md)
 

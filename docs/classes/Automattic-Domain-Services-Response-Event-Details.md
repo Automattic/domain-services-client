@@ -30,11 +30,8 @@ This is the response returned from a successful execution of `Event\Details` com
 ### Details
 
 * File: [lib/response/event/details.php](../../lib/response/event/details.php)
-* Implements:
-  * [\Automattic\Domain_Services\Response\Response_Interface](../classes/Automattic-Domain-Services-Response-Response-Interface.md)
 * Uses Traits:
   * [\Automattic\Domain_Services\Response\Data_Trait](../classes/Automattic-Domain-Services-Response-Data-Trait.md)
-  * [\Automattic\Domain_Services\Response\Event_Aware](../classes/Automattic-Domain-Services-Response-Event-Aware.md)
 * See Also:
   * [\Automattic\Domain_Services\Command\Event\Details](../classes/Automattic-Domain-Services-Command-Event-Details.md)
 

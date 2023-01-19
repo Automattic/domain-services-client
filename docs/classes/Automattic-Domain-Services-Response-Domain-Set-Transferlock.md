@@ -24,8 +24,6 @@ Response of a `Domain\Transferlock\Set` command.
 ### Details
 
 * File: [lib/response/domain/set/transferlock.php](../../lib/response/domain/set/transferlock.php)
-* Implements:
-  * [\Automattic\Domain_Services\Response\Response_Interface](../classes/Automattic-Domain-Services-Response-Response-Interface.md)
 * Uses Traits:
   * [\Automattic\Domain_Services\Response\Data_Trait](../classes/Automattic-Domain-Services-Response-Data-Trait.md)
 * See Also:

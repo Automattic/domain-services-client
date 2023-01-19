@@ -31,8 +31,6 @@ This event indicates that a verification request was sent to the contact's email
 ### Details
 
 * File: [lib/event/contact/verification/request.php](../../lib/event/contact/verification/request.php)
-* Implements:
-  * [\Automattic\Domain_Services\Event\Event_Interface](../classes/Automattic-Domain-Services-Event-Event-Interface.md)
 * Uses Traits:
   * [\Automattic\Domain_Services\Event\Data_Trait](../classes/Automattic-Domain-Services-Event-Data-Trait.md)
   * [\Automattic\Domain_Services\Event\Object_Type_Contact_Trait](../classes/Automattic-Domain-Services-Event-Object-Type-Contact-Trait.md)

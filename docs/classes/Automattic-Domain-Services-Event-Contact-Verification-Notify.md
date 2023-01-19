@@ -31,8 +31,6 @@ This event indicates a change in the contact's status. It's usually generated wh
 ### Details
 
 * File: [lib/event/contact/verification/notify.php](../../lib/event/contact/verification/notify.php)
-* Implements:
-  * [\Automattic\Domain_Services\Event\Event_Interface](../classes/Automattic-Domain-Services-Event-Event-Interface.md)
 * Uses Traits:
   * [\Automattic\Domain_Services\Event\Data_Trait](../classes/Automattic-Domain-Services-Event-Data-Trait.md)
   * [\Automattic\Domain_Services\Event\Object_Type_Contact_Trait](../classes/Automattic-Domain-Services-Event-Object-Type-Contact-Trait.md)

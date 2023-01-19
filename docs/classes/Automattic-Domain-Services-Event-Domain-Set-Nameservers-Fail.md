@@ -31,8 +31,6 @@ This event is generated when a name server update fails at the server.
 ### Details
 
 * File: [lib/event/domain/set/nameservers/fail.php](../../lib/event/domain/set/nameservers/fail.php)
-* Implements:
-  * [\Automattic\Domain_Services\Event\Event_Interface](../classes/Automattic-Domain-Services-Event-Event-Interface.md)
 * Uses Traits:
   * [\Automattic\Domain_Services\Event\Data_Trait](../classes/Automattic-Domain-Services-Event-Data-Trait.md)
   * [\Automattic\Domain_Services\Event\Error_Trait](../classes/Automattic-Domain-Services-Event-Error-Trait.md)

@@ -17,8 +17,6 @@ List of `Epp_Status_Code` entities
 ### Details
 
 * File: [lib/entity/epp-status-codes.php](../../lib/entity/epp-status-codes.php)
-* Implements:
-  * [\Iterator](../classes/Iterator.md)
 * See Also:
   * [\Automattic\Domain_Services\Entity\Epp_Status_Code](../classes/Automattic-Domain-Services-Entity-Epp-Status-Code.md)
 
