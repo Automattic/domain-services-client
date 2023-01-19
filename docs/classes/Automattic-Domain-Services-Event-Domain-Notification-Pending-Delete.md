@@ -280,7 +280,7 @@ public get_pending_delete_end_date() : \DateTimeImmutable|null
 
 ##### Summary
 
-Returns the date until which a domain is in ARGP, if available
+Returns the date until which a domain is in the Pending_Delete state.
 
 ##### Returns:
 

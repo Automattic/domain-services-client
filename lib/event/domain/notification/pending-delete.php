@@ -32,7 +32,7 @@ class Pending_Delete implements Event\Event_Interface {
 	use Event\Object_Type_Domain_Trait;
 
 	/**
-	 * Returns the date until which a domain is in ARGP, if available
+	 * Returns the date until which a domain is in the Pending_Delete state.
 	 *
 	 * @return \DateTimeImmutable|null
 	 */
