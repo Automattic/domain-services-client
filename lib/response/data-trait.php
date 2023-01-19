@@ -62,7 +62,7 @@ trait Data_Trait {
 	 * Gets the response status description
 	 *
 	 * @return string
-	 * @see Code::DESCRIPTION
+	 * @see Code
 	 */
 	final public function get_status_description(): string {
 		return $this->get_data_by_key( 'status_description' );
