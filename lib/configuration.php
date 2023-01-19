@@ -22,17 +22,18 @@ namespace Automattic\Domain_Services_Client;
  * Configuration class for the API settings.
  */
 class Configuration {
-	// Formats for the query string boolean values
 	/**
-	 * - true: 1
-	 * - false: 0
+	 * Used for getting boolean values in the query string represented as an integer.
+	 * - `true`: `1`
+	 * - `false`: `0`
 	 *
 	 * @var string
 	 */
 	public const BOOLEAN_FORMAT_INT = 'int';
 	/**
-	 * - true: true
-	 * - false: false
+	 * Used for getting boolean values in the query string represented as a string.
+	 * - `true`: `true`
+	 * - `false`: `false`
 	 *
 	 * @var string
 	 */
