@@ -35,7 +35,7 @@ class Domain_Notification_Verified_Test extends Test\Lib\Domain_Services_Client_
 			'data' => [
 				'event' => [
 					'id' => 1234,
-					'event_class' => 'Domain_Notification',
+					'event_class' => 'Domain\Notification',
 					'event_subclass' => 'Verified',
 					'object_type' => 'domain',
 					'object_id' => 'example.com',

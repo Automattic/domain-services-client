@@ -35,7 +35,7 @@ class Domain_Restore_Success_Test extends Test\Lib\Domain_Services_Client_Test_C
 			'data' => [
 				'event' => [
 					'id' => 1234,
-					'event_class' => 'Domain_Restore',
+					'event_class' => 'Domain\Restore',
 					'event_subclass' => 'Success',
 					'object_type' => 'domain',
 					'object_id' => 'example.com',

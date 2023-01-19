@@ -40,9 +40,7 @@ class Factory {
 			throw new Exception\Event\Invalid_Event_Name( 'Missing event class or subclass' );
 		}
 
-		$class_name = str_replace( '_', '\\', $event_class . '_' . $event_subclass );
-
-		$class_name = __NAMESPACE__ . '\\' . $class_name;
+		$class_name = __NAMESPACE__ . '\\' . $event_class . '\\' . $event_subclass;
 		if ( ! class_exists( $class_name ) ) {
 			throw new Exception\Event\Invalid_Event_Name( 'Event class does not exist: ' . $class_name );
 		}

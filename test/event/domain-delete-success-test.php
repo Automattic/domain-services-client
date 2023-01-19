@@ -35,7 +35,7 @@ class Domain_Delete_Success_Test extends Test\Lib\Domain_Services_Client_Test_Ca
 			'data' => [
 				'event' => [
 					'id' => 1234,
-					'event_class' => 'Domain_Delete',
+					'event_class' => 'Domain\Delete',
 					'event_subclass' => 'Success',
 					'object_type' => 'domain',
 					'object_id' => 'example.com',
