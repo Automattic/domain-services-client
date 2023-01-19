@@ -35,7 +35,7 @@ class Contact_Verification_Notify_Test extends Test\Lib\Domain_Services_Client_T
 			'data' => [
 				'event' => [
 					'id' => 1234,
-					'event_class' => 'Contact_Verification',
+					'event_class' => 'Contact\Verification',
 					'event_subclass' => 'Notify',
 					'object_type' => 'contact',
 					'object_id' => 'SP1:P-ABC1234',

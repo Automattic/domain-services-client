@@ -35,7 +35,7 @@ class Domain_Notification_Redemption_Test extends Test\Lib\Domain_Services_Clien
 			'data' => [
 				'event' => [
 					'id' => 1234,
-					'event_class' => 'Domain_Notification',
+					'event_class' => 'Domain\Notification',
 					'event_subclass' => 'Redemption',
 					'object_type' => 'domain',
 					'object_id' => 'example.com',

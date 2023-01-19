@@ -35,7 +35,7 @@ class Domain_Set_Privacy_Fail_Test extends Test\Lib\Domain_Services_Client_Test_
 			'data' => [
 				'event' => [
 					'id' => 1234,
-					'event_class' => 'Domain_Set_Privacy',
+					'event_class' => 'Domain\Set\Privacy',
 					'event_subclass' => 'Fail',
 					'object_type' => 'domain',
 					'object_id' => 'example.com',

@@ -35,7 +35,7 @@ class Domain_Transfer_Out_Pending_Test extends Test\Lib\Domain_Services_Client_T
 			'data' => [
 				'event' => [
 					'id' => 1234,
-					'event_class' => 'Domain_Transfer_Out',
+					'event_class' => 'Domain\Transfer\Out',
 					'event_subclass' => 'Pending',
 					'object_type' => 'domain',
 					'object_id' => 'example.com',
