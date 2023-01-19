@@ -260,7 +260,7 @@ class Domain_Contacts implements \Iterator {
 	 * @internal
 	 *
 	 * @return Domain_Contact|null
-	 * @throws \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception
+	 * @throws Exception\Entity\Invalid_Value_Exception
 	 */
 	public function current(): ?Domain_Contact {
 		return $this->get_by_key( self::ITERATOR_KEYS[ $this->iterator_pointer ] );

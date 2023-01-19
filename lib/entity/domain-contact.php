@@ -50,9 +50,9 @@ class Domain_Contact {
 	/**
 	 * Constructs a `Domain_Contact` entity
 	 *
-	 * @param \Automattic\Domain_Services\Entity\Contact_Id|null $contact_id
-	 * @param \Automattic\Domain_Services\Entity\Contact_Information|null $contact_info
-	 * @param \Automattic\Domain_Services\Entity\Contact_Disclosure|null $disclose_fields
+	 * @param Contact_Id|null $contact_id
+	 * @param Contact_Information|null $contact_info
+	 * @param Contact_Disclosure|null $disclose_fields
 	 */
 	public function __construct( ?Contact_Id $contact_id = null, ?Contact_Information $contact_info = null, ?Contact_Disclosure $disclose_fields = null ) {
 		$this->contact_id = $contact_id;
