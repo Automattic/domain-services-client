@@ -25,20 +25,8 @@
 		convertWarningsToExceptions="false"
 		bootstrap="bootstrap.php">
 	<testsuites>
-		<testsuite name="command">
-			<directory suffix="test.php">command</directory>
-		</testsuite>
-		<testsuite name="entity">
-			<directory suffix="test.php">entity</directory>
-		</testsuite>
-		<testsuite name="event">
-			<directory suffix="test.php">event</directory>
-		</testsuite>
-		<testsuite name="response">
-			<directory suffix="test.php">response</directory>
-		</testsuite>
-		<testsuite name="api">
-			<directory suffix="test.php">api</directory>
+		<testsuite name="e2e">
+			<directory suffix="test.php">e2e</directory>
 		</testsuite>
 	</testsuites>
 </phpunit>

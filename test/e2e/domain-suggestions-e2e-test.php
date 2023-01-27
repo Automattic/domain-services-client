@@ -21,12 +21,12 @@ namespace Automattic\Domain_Services\Test\Api;
 use Automattic\Domain_Services\{Command, Entity, Response, Test};
 
 /**
- * Run tests with
+ * E2E tests for the Domain\Suggestions command
  *
- *     ./vendor/bin/phpunit -c ./test/phpunit.xml --filter Suggestions_E2E_Test
+ * Run with
+ *     ./vendor/bin/phpunit -c ./test/phpunit-e2e.xml --filter Suggestions_E2E_Test
  */
 class Domain_Suggestions_E2E_Test extends Test\Lib\Domain_Services_Client_E2e_Test_Case {
-
 
 	public function test_suggestions_success(): void {
 		$command = new Command\Domain\Suggestions( 'test-domain-suggestions-query', 5 );
