@@ -24,7 +24,7 @@ use Automattic\Domain_Services\{Command, Entity, Response, Test};
  * E2E tests for the Domain\Suggestions command
  *
  * Run with
- *     ./vendor/bin/phpunit -c ./test/phpunit-e2e.xml --filter Suggestions_E2E_Test
+ *     ./vendor/bin/phpunit -c ./test/phpunit-e2e.xml --filter Domain_Suggestions_E2e_Test
  */
 class Domain_Suggestions_E2e_Test extends Test\Lib\Domain_Services_Client_E2e_Test_Case {
 
