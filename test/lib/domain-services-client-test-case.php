@@ -65,4 +65,8 @@ class Domain_Services_Client_Test_Case extends \PHPUnit\Framework\TestCase {
 
 		$this->assertEquals( $expected, $actual, $message );
 	}
+
+	public function generate_client_transaction_id(): string {
+		return 'client_txn_id_' . date( 'Y-m-d_H:i:s' );
+	}
 }

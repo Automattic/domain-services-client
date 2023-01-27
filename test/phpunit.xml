@@ -40,5 +40,8 @@
 		<testsuite name="api">
 			<directory suffix="test.php">api</directory>
 		</testsuite>
+		<testsuite name="e2e">
+			<directory suffix="test.php">e2e</directory>
+		</testsuite>
 	</testsuites>
 </phpunit>

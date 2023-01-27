@@ -1,4 +1,4 @@
-<?php
+<?php declare( strict_types=1 );
 /*
  * Copyright (c) 2022 Automattic, Inc.
  *
@@ -16,7 +16,29 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-require_once __DIR__ . '/mock/load.php';
+namespace Automattic\Domain_Services\Test\Lib;
 
-require_once __DIR__ . '/domain-services-client-test-case.php';
-require_once __DIR__ . '/domain-services-client-e2e-test-case.php';
+use Automattic\Domain_Services\{Api, Configuration, Request, Response};
+
+class Domain_Services_Client_E2e_Test_Case extends Domain_Services_Client_Test_Case {
+	protected Api $api;
+
+	public function setUp(): void {
+		parent::setUp();
+
+		$config = Configuration::get_default_configuration()
+			->set_api_key( 'X-DSAPI-KEY', 'dsapi_key' ) // put test credentials here
+			->set_api_key( 'X-DSAPI-USER', 'dsapi_user' );
+
+		$guzzle_http_client = new \GuzzleHttp\Client();
+		$http_factory = new \GuzzleHttp\Psr7\HttpFactory();
+		$request_factory = new Request\Factory( $http_factory, $http_factory );
+
+		$this->api = new Api(
+			$config,
+			$request_factory,
+			new Response\Factory(),
+			$guzzle_http_client,
+		);
+	}
+}
