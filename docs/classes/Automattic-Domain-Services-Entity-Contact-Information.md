@@ -63,7 +63,7 @@ public __construct(string|null  first_name = null, string|null  last_name = null
 
 | Type | Description |
 |------|-------------|
-| \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception |  |
+| \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception |  |
 
 ##### Returns:
 
@@ -282,7 +282,7 @@ string|null
 ### set_by_key
 
 ```
-public set_by_key(string  key, string|null  contact_item_value) : \Automattic\Domain_Services\Entity\Contact_Information
+public set_by_key(string  key, string|null  contact_item_value) : \Automattic\Domain_Services_Client\Entity\Contact_Information
 ```
 
 ##### Summary
@@ -300,10 +300,10 @@ Set a contact data value with a given key.
 
 | Type | Description |
 |------|-------------|
-| \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception |  |
+| \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception |  |
 
 ##### Returns:
 
 ```
-\Automattic\Domain_Services\Entity\Contact_Information
+\Automattic\Domain_Services_Client\Entity\Contact_Information
 ```

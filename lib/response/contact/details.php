@@ -16,14 +16,14 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Response\Contact;
+namespace Automattic\Domain_Services_Client\Response\Contact;
 
-use Automattic\Domain_Services\{Entity, Response, Exception};
+use Automattic\Domain_Services_Client\{Entity, Response, Exception};
 
 /**
  * Response containing the Contact_Information associated with a Contact_Id
  *
- * @see \Automattic\Domain_Services\Command\Contact\Details
+ * @see \Automattic\Domain_Services_Client\Command\Contact\Details
  */
 class Details implements Response\Response_Interface {
 	use Response\Data_Trait;

@@ -4,4 +4,4 @@
 
 | Name | Summary |
 |------|---------|
-| [\Automattic\Domain_Services\Command\Contact\Details](../classes/Automattic-Domain-Services-Command-Contact-Details.md) | Retrieves the details of a contact by ID |
+| [\Automattic\Domain_Services_Client\Command\Contact\Details](../classes/Automattic-Domain-Services-Command-Contact-Details.md) | Retrieves the details of a contact by ID |

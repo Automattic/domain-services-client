@@ -80,15 +80,15 @@ if ( $response->is_success() ) {
 
 * File: [lib/command/domain/register.php](../../lib/command/domain/register.php)
 * Implements:
-  * [\Automattic\Domain_Services\Command\Command_Interface](../classes/Automattic-Domain-Services-Command-Command-Interface.md)
-  * [\Automattic\Domain_Services\Command\Command_Serialize_Interface](../classes/Automattic-Domain-Services-Command-Command-Serialize-Interface.md)
+  * [\Automattic\Domain_Services_Client\Command\Command_Interface](../classes/Automattic-Domain-Services-Command-Command-Interface.md)
+  * [\Automattic\Domain_Services_Client\Command\Command_Serialize_Interface](../classes/Automattic-Domain-Services-Command-Command-Serialize-Interface.md)
 * Uses Traits:
-  * [\Automattic\Domain_Services\Command\Command_Serialize_Trait](../classes/Automattic-Domain-Services-Command-Command-Serialize-Trait.md)
-  * [\Automattic\Domain_Services\Command\Command_Trait](../classes/Automattic-Domain-Services-Command-Command-Trait.md)
+  * [\Automattic\Domain_Services_Client\Command\Command_Serialize_Trait](../classes/Automattic-Domain-Services-Command-Command-Serialize-Trait.md)
+  * [\Automattic\Domain_Services_Client\Command\Command_Trait](../classes/Automattic-Domain-Services-Command-Command-Trait.md)
 * See Also:
-  * [\Automattic\Domain_Services\Event\Domain\Register\Fail](../classes/Automattic-Domain-Services-Event-Domain-Register-Fail.md)
-  * [\Automattic\Domain_Services\Event\Domain\Register\Success](../classes/Automattic-Domain-Services-Event-Domain-Register-Success.md)
-  * [\Automattic\Domain_Services\Response\Domain\Register](../classes/Automattic-Domain-Services-Response-Domain-Register.md)
+  * [\Automattic\Domain_Services_Client\Event\Domain\Register\Fail](../classes/Automattic-Domain-Services-Event-Domain-Register-Fail.md)
+  * [\Automattic\Domain_Services_Client\Event\Domain\Register\Success](../classes/Automattic-Domain-Services-Event-Domain-Register-Success.md)
+  * [\Automattic\Domain_Services_Client\Response\Domain\Register](../classes/Automattic-Domain-Services-Response-Domain-Register.md)
 
 ---
 
@@ -98,7 +98,7 @@ if ( $response->is_success() ) {
 ### __construct
 
 ```
-public __construct(\Automattic\Domain_Services\Entity\Domain_Name  domain, \Automattic\Domain_Services\Entity\Domain_Contacts  contacts, int  period = 1, \Automattic\Domain_Services\Entity\Nameservers|null  nameservers = null, \Automattic\Domain_Services\Entity\Dns_Records|null  dns_records = null, string  privacy_setting = &#039;a8c_privacy_service&#039;, null|int  price = null) : mixed
+public __construct(\Automattic\Domain_Services_Client\Entity\Domain_Name  domain, \Automattic\Domain_Services_Client\Entity\Domain_Contacts  contacts, int  period = 1, \Automattic\Domain_Services_Client\Entity\Nameservers|null  nameservers = null, \Automattic\Domain_Services_Client\Entity\Dns_Records|null  dns_records = null, string  privacy_setting = &#039;a8c_privacy_service&#039;, null|int  price = null) : mixed
 ```
 
 ##### Summary
@@ -109,11 +109,11 @@ Constructs the Register command
 
 | Name | Type | Default |
 |------|------|---------|
-| **$domain** | \Automattic\Domain_Services\Entity\Domain_Name |  |
-| **$contacts** | \Automattic\Domain_Services\Entity\Domain_Contacts |  |
+| **$domain** | \Automattic\Domain_Services_Client\Entity\Domain_Name |  |
+| **$contacts** | \Automattic\Domain_Services_Client\Entity\Domain_Contacts |  |
 | **$period** | int | 1 |
-| **$nameservers** | \Automattic\Domain_Services\Entity\Nameservers|null | null |
-| **$dns_records** | \Automattic\Domain_Services\Entity\Dns_Records|null | null |
+| **$nameservers** | \Automattic\Domain_Services_Client\Entity\Nameservers|null | null |
+| **$dns_records** | \Automattic\Domain_Services_Client\Entity\Dns_Records|null | null |
 | **$privacy_setting** | string | &#039;a8c_privacy_service&#039; |
 | **$price** | null|int | null |
 
@@ -121,7 +121,7 @@ Constructs the Register command
 
 | Type | Description |
 |------|-------------|
-| \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception |  |
+| \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception |  |
 
 ##### Returns:
 

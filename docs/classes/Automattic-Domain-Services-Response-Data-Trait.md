@@ -149,7 +149,7 @@ Gets the response status code
 
 ##### See Also:
 
- * [\Automattic\Domain_Services\Response\Code](../classes/Automattic-Domain-Services-Response-Code.md)
+ * [\Automattic\Domain_Services_Client\Response\Code](../classes/Automattic-Domain-Services-Response-Code.md)
 
 ##### Returns:
 
@@ -172,7 +172,7 @@ Gets the response status description
 
 ##### See Also:
 
- * [\Automattic\Domain_Services\Response\Code::DESCRIPTION](../\Automattic\Domain_Services\Response\Code::DESCRIPTION)
+ * [\Automattic\Domain_Services_Client\Response\Code::DESCRIPTION](../\Automattic\Domain_Services_Client\Response\Code::DESCRIPTION)
 
 ##### Returns:
 

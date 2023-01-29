@@ -16,7 +16,7 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Test\Lib\Mock\Psr\Http\Message;
+namespace Automattic\Domain_Services_Client\Test\Lib\Mock\Psr\Http\Message;
 
 class Client implements \Psr\Http\Client\ClientInterface {
 	private Response $mock_response;

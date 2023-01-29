@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Test\Response;
+namespace Automattic\Domain_Services_Client\Test\Response;
 
-use Automattic\Domain_Services\{Command, Response, Test};
+use Automattic\Domain_Services_Client\{Command, Response, Test};
 
 class Domain_Suggestions_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_response_factory_success(): void {

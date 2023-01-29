@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Command\Domain\Set;
+namespace Automattic\Domain_Services_Client\Command\Domain\Set;
 
-use Automattic\Domain_Services\{Command, Entity};
+use Automattic\Domain_Services_Client\{Command, Entity};
 
 /**
  * Sets the privacy option that determines what contact information is shown in WHOIS.
@@ -38,9 +38,9 @@ use Automattic\Domain_Services\{Command, Entity};
  * }
  * ```
  *
- * @see \Automattic\Domain_Services\Event\Domain\Set\Privacy\Fail
- * @see \Automattic\Domain_Services\Event\Domain\Set\Privacy\Success
- * @see \Automattic\Domain_Services\Response\Domain\Set\Privacy
+ * @see \Automattic\Domain_Services_Client\Event\Domain\Set\Privacy\Fail
+ * @see \Automattic\Domain_Services_Client\Event\Domain\Set\Privacy\Success
+ * @see \Automattic\Domain_Services_Client\Response\Domain\Set\Privacy
  */
 class Privacy implements Command\Command_Interface, Command\Command_Serialize_Interface {
 	use Command\Command_Serialize_Trait;

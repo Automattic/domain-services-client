@@ -35,16 +35,16 @@ Represents one of the domain's contacts and its privacy setting.
 ### __construct
 
 ```
-public __construct(?\Automattic\Domain_Services\Entity\Contact_Id  contact_id = null, ?\Automattic\Domain_Services\Entity\Contact_Information  contact_info = null, ?\Automattic\Domain_Services\Entity\Contact_Disclosure  disclose_fields = null) : mixed
+public __construct(?\Automattic\Domain_Services_Client\Entity\Contact_Id  contact_id = null, ?\Automattic\Domain_Services_Client\Entity\Contact_Information  contact_info = null, ?\Automattic\Domain_Services_Client\Entity\Contact_Disclosure  disclose_fields = null) : mixed
 ```
 
 ##### Parameters:
 
 | Name | Type | Default |
 |------|------|---------|
-| **$contact_id** | ?\Automattic\Domain_Services\Entity\Contact_Id | null |
-| **$contact_info** | ?\Automattic\Domain_Services\Entity\Contact_Information | null |
-| **$disclose_fields** | ?\Automattic\Domain_Services\Entity\Contact_Disclosure | null |
+| **$contact_id** | ?\Automattic\Domain_Services_Client\Entity\Contact_Id | null |
+| **$contact_info** | ?\Automattic\Domain_Services_Client\Entity\Contact_Information | null |
+| **$disclose_fields** | ?\Automattic\Domain_Services_Client\Entity\Contact_Disclosure | null |
 
 ##### Returns:
 
@@ -58,13 +58,13 @@ mixed
 ### get_contact_disclosure
 
 ```
-public get_contact_disclosure() : \Automattic\Domain_Services\Entity\Contact_Disclosure
+public get_contact_disclosure() : \Automattic\Domain_Services_Client\Entity\Contact_Disclosure
 ```
 
 ##### Returns:
 
 ```
-\Automattic\Domain_Services\Entity\Contact_Disclosure
+\Automattic\Domain_Services_Client\Entity\Contact_Disclosure
 ```
 
 ---
@@ -73,13 +73,13 @@ public get_contact_disclosure() : \Automattic\Domain_Services\Entity\Contact_Dis
 ### get_contact_id
 
 ```
-public get_contact_id() : \Automattic\Domain_Services\Entity\Contact_Id|null
+public get_contact_id() : \Automattic\Domain_Services_Client\Entity\Contact_Id|null
 ```
 
 ##### Returns:
 
 ```
-\Automattic\Domain_Services\Entity\Contact_Id|null
+\Automattic\Domain_Services_Client\Entity\Contact_Id|null
 ```
 
 ---
@@ -88,13 +88,13 @@ public get_contact_id() : \Automattic\Domain_Services\Entity\Contact_Id|null
 ### get_contact_information
 
 ```
-public get_contact_information() : \Automattic\Domain_Services\Entity\Contact_Information|null
+public get_contact_information() : \Automattic\Domain_Services_Client\Entity\Contact_Information|null
 ```
 
 ##### Returns:
 
 ```
-\Automattic\Domain_Services\Entity\Contact_Information|null
+\Automattic\Domain_Services_Client\Entity\Contact_Information|null
 ```
 
 ---
@@ -103,14 +103,14 @@ public get_contact_information() : \Automattic\Domain_Services\Entity\Contact_In
 ### set_contact_disclosure
 
 ```
-public set_contact_disclosure(\Automattic\Domain_Services\Entity\Contact_Disclosure  contact_disclosure) : void
+public set_contact_disclosure(\Automattic\Domain_Services_Client\Entity\Contact_Disclosure  contact_disclosure) : void
 ```
 
 ##### Parameters:
 
 | Name | Type | Default |
 |------|------|---------|
-| **$contact_disclosure** | \Automattic\Domain_Services\Entity\Contact_Disclosure |  |
+| **$contact_disclosure** | \Automattic\Domain_Services_Client\Entity\Contact_Disclosure |  |
 
 ##### Returns:
 
@@ -124,14 +124,14 @@ void
 ### set_contact_id
 
 ```
-public set_contact_id(\Automattic\Domain_Services\Entity\Contact_Id|null  contact_id) : void
+public set_contact_id(\Automattic\Domain_Services_Client\Entity\Contact_Id|null  contact_id) : void
 ```
 
 ##### Parameters:
 
 | Name | Type | Default |
 |------|------|---------|
-| **$contact_id** | \Automattic\Domain_Services\Entity\Contact_Id|null |  |
+| **$contact_id** | \Automattic\Domain_Services_Client\Entity\Contact_Id|null |  |
 
 ##### Returns:
 
@@ -145,14 +145,14 @@ void
 ### set_contact_information
 
 ```
-public set_contact_information(\Automattic\Domain_Services\Entity\Contact_Information|null  contact_information) : void
+public set_contact_information(\Automattic\Domain_Services_Client\Entity\Contact_Information|null  contact_information) : void
 ```
 
 ##### Parameters:
 
 | Name | Type | Default |
 |------|------|---------|
-| **$contact_information** | \Automattic\Domain_Services\Entity\Contact_Information|null |  |
+| **$contact_information** | \Automattic\Domain_Services_Client\Entity\Contact_Information|null |  |
 
 ##### Returns:
 

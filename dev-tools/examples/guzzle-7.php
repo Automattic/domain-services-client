@@ -17,7 +17,7 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-use Automattic\Domain_Services\{Api, Command, Configuration, Entity, Response, Exception};
+use Automattic\Domain_Services_Client\{Api, Command, Configuration, Entity, Response, Exception};
 use GuzzleHttp\Psr7\HttpFactory;
 use GuzzleHttp\Client;
 

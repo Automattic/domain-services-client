@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Event\Domain\Set\Transferlock;
+namespace Automattic\Domain_Services_Client\Event\Domain\Set\Transferlock;
 
-use Automattic\Domain_Services\{Event, Command};
+use Automattic\Domain_Services_Client\{Event, Command};
 
 /**
  * Success event for Domain\Set\TransferLock command

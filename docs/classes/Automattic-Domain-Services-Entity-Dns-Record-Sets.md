@@ -20,7 +20,7 @@ Set of sets of DNS records
 * Implements:
   * [\Iterator](../classes/Iterator.md)
 * See Also:
-  * [\Automattic\Domain_Services\Entity\Dns_Record_Set](../classes/Automattic-Domain-Services-Entity-Dns-Record-Set.md)
+  * [\Automattic\Domain_Services_Client\Entity\Dns_Record_Set](../classes/Automattic-Domain-Services-Entity-Dns-Record-Set.md)
 
 ---
 
@@ -30,7 +30,7 @@ Set of sets of DNS records
 ### __construct
 
 ```
-public __construct(\Automattic\Domain_Services\Entity\Dns_Record_Set  ...dns_record_sets) : mixed
+public __construct(\Automattic\Domain_Services_Client\Entity\Dns_Record_Set  ...dns_record_sets) : mixed
 ```
 
 ##### Summary
@@ -41,7 +41,7 @@ Constructs a Dns_Record_Sets entity
 
 | Name | Type | Default |
 |------|------|---------|
-| **$dns_record_sets** | \Automattic\Domain_Services\Entity\Dns_Record_Set |  |
+| **$dns_record_sets** | \Automattic\Domain_Services_Client\Entity\Dns_Record_Set |  |
 
 ##### Returns:
 
@@ -55,7 +55,7 @@ mixed
 ### add_record_set
 
 ```
-public add_record_set(\Automattic\Domain_Services\Entity\Dns_Record_Set  dns_record_set) : void
+public add_record_set(\Automattic\Domain_Services_Client\Entity\Dns_Record_Set  dns_record_set) : void
 ```
 
 ##### Summary
@@ -66,7 +66,7 @@ Adds a Dns_Record_Set to this entity
 
 | Name | Type | Default |
 |------|------|---------|
-| **$dns_record_set** | \Automattic\Domain_Services\Entity\Dns_Record_Set |  |
+| **$dns_record_set** | \Automattic\Domain_Services_Client\Entity\Dns_Record_Set |  |
 
 ##### Returns:
 

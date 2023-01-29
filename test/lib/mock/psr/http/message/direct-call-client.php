@@ -16,26 +16,26 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services_Client\Test\Entity;
+namespace Automattic\Domain_Services_Client\Test\Lib\Mock\Psr\Http\Message;
 
-use Automattic\Domain_Services_Client\{Entity, Exception, Response, Test};
+use Automattic\Domain_Services\{Controller, Entity};
 
-class Contact_Id_Test extends Test\Lib\Domain_Services_Client_Test_Case {
-	public function test_entity_instance_success(): void {
-		$contact_id = 'SP1:P-ABC1234';
+class Direct_Call_Client implements \Psr\Http\Client\ClientInterface {
+	private Controller\Common $controller;
 
-		$entity = new Entity\Contact_Id( $contact_id );
-
-		$this->assertSame( $contact_id, (string) $entity );
+	public function __construct( Controller\Common $controller ) {
+		$this->controller = $controller;
 	}
 
-	public function test_entity_instance_fail_invalid_contact_id_format(): void {
-		$contact_id = 'invalid contact id format';
+	public function sendRequest( \Psr\Http\Message\RequestInterface $request ): \Psr\Http\Message\ResponseInterface {
+		$command = json_decode( $request->getBody()->getContents(), true, 512, JSON_THROW_ON_ERROR );
+		// var_dump( $command );
 
-		$this->expectException( Exception\Entity\Invalid_Value_Exception::class );
-		$this->expectExceptionCode( Response\Code::INVALID_ENTITY_VALUE );
-		$this->expectExceptionMessage( Response\Code::get_description( Response\Code::INVALID_ENTITY_VALUE ) );
+		$request_response = $this->controller->process_request( new Entity\Reseller(), $command );
+		// var_dump( $request_response->to_array() );
 
-		new Entity\Contact_Id( $contact_id );
+		$response = new Response();
+		$response->set_mock_body_from_array( $request_response->to_array() );
+		return $response;
 	}
 }

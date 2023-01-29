@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Response\Event;
+namespace Automattic\Domain_Services_Client\Response\Event;
 
-use Automattic\Domain_Services\{Event, Exception, Response};
+use Automattic\Domain_Services_Client\{Event, Exception, Response};
 
 /**
  * Response of Event\Enumerate command

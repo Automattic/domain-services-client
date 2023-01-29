@@ -21,11 +21,11 @@
 ### get_domain
 
 ```
-final public get_domain() : \Automattic\Domain_Services\Entity\Domain_Name
+final public get_domain() : \Automattic\Domain_Services_Client\Entity\Domain_Name
 ```
 
 ##### Returns:
 
 ```
-\Automattic\Domain_Services\Entity\Domain_Name
+\Automattic\Domain_Services_Client\Entity\Domain_Name
 ```

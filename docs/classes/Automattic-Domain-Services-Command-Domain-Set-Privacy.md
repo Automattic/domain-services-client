@@ -34,15 +34,15 @@ if ( $response->is_success() ) {
 
 * File: [lib/command/domain/set/privacy.php](../../lib/command/domain/set/privacy.php)
 * Implements:
-  * [\Automattic\Domain_Services\Command\Command_Interface](../classes/Automattic-Domain-Services-Command-Command-Interface.md)
-  * [\Automattic\Domain_Services\Command\Command_Serialize_Interface](../classes/Automattic-Domain-Services-Command-Command-Serialize-Interface.md)
+  * [\Automattic\Domain_Services_Client\Command\Command_Interface](../classes/Automattic-Domain-Services-Command-Command-Interface.md)
+  * [\Automattic\Domain_Services_Client\Command\Command_Serialize_Interface](../classes/Automattic-Domain-Services-Command-Command-Serialize-Interface.md)
 * Uses Traits:
-  * [\Automattic\Domain_Services\Command\Command_Serialize_Trait](../classes/Automattic-Domain-Services-Command-Command-Serialize-Trait.md)
-  * [\Automattic\Domain_Services\Command\Command_Trait](../classes/Automattic-Domain-Services-Command-Command-Trait.md)
+  * [\Automattic\Domain_Services_Client\Command\Command_Serialize_Trait](../classes/Automattic-Domain-Services-Command-Command-Serialize-Trait.md)
+  * [\Automattic\Domain_Services_Client\Command\Command_Trait](../classes/Automattic-Domain-Services-Command-Command-Trait.md)
 * See Also:
-  * [\Automattic\Domain_Services\Event\Domain\Set\Privacy\Fail](../classes/Automattic-Domain-Services-Event-Domain-Set-Privacy-Fail.md)
-  * [\Automattic\Domain_Services\Event\Domain\Set\Privacy\Success](../classes/Automattic-Domain-Services-Event-Domain-Set-Privacy-Success.md)
-  * [\Automattic\Domain_Services\Response\Domain\Set\Privacy](../classes/Automattic-Domain-Services-Response-Domain-Set-Privacy.md)
+  * [\Automattic\Domain_Services_Client\Event\Domain\Set\Privacy\Fail](../classes/Automattic-Domain-Services-Event-Domain-Set-Privacy-Fail.md)
+  * [\Automattic\Domain_Services_Client\Event\Domain\Set\Privacy\Success](../classes/Automattic-Domain-Services-Event-Domain-Set-Privacy-Success.md)
+  * [\Automattic\Domain_Services_Client\Response\Domain\Set\Privacy](../classes/Automattic-Domain-Services-Response-Domain-Set-Privacy.md)
 
 ---
 
@@ -52,7 +52,7 @@ if ( $response->is_success() ) {
 ### __construct
 
 ```
-public __construct(\Automattic\Domain_Services\Entity\Domain_Name  domain, \Automattic\Domain_Services\Entity\Whois_Privacy  privacy_setting) : mixed
+public __construct(\Automattic\Domain_Services_Client\Entity\Domain_Name  domain, \Automattic\Domain_Services_Client\Entity\Whois_Privacy  privacy_setting) : mixed
 ```
 
 ##### Summary
@@ -63,8 +63,8 @@ Construct the Domain\Set\Privacy
 
 | Name | Type | Default |
 |------|------|---------|
-| **$domain** | \Automattic\Domain_Services\Entity\Domain_Name |  |
-| **$privacy_setting** | \Automattic\Domain_Services\Entity\Whois_Privacy |  |
+| **$domain** | \Automattic\Domain_Services_Client\Entity\Domain_Name |  |
+| **$privacy_setting** | \Automattic\Domain_Services_Client\Entity\Whois_Privacy |  |
 
 ##### Returns:
 

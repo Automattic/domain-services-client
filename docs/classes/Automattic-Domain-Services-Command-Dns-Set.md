@@ -55,14 +55,14 @@ if ( $response->is_success() ) {
 
 * File: [lib/command/dns/set.php](../../lib/command/dns/set.php)
 * Implements:
-  * [\Automattic\Domain_Services\Command\Command_Interface](../classes/Automattic-Domain-Services-Command-Command-Interface.md)
-  * [\Automattic\Domain_Services\Command\Command_Serialize_Interface](../classes/Automattic-Domain-Services-Command-Command-Serialize-Interface.md)
+  * [\Automattic\Domain_Services_Client\Command\Command_Interface](../classes/Automattic-Domain-Services-Command-Command-Interface.md)
+  * [\Automattic\Domain_Services_Client\Command\Command_Serialize_Interface](../classes/Automattic-Domain-Services-Command-Command-Serialize-Interface.md)
 * Uses Traits:
-  * [\Automattic\Domain_Services\Command\Command_Serialize_Trait](../classes/Automattic-Domain-Services-Command-Command-Serialize-Trait.md)
-  * [\Automattic\Domain_Services\Command\Command_Trait](../classes/Automattic-Domain-Services-Command-Command-Trait.md)
+  * [\Automattic\Domain_Services_Client\Command\Command_Serialize_Trait](../classes/Automattic-Domain-Services-Command-Command-Serialize-Trait.md)
+  * [\Automattic\Domain_Services_Client\Command\Command_Trait](../classes/Automattic-Domain-Services-Command-Command-Trait.md)
 * See Also:
-  * [\Automattic\Domain_Services\Command\Dns\Get](../classes/Automattic-Domain-Services-Command-Dns-Get.md)
-  * [\Automattic\Domain_Services\Response\Dns\Set](../classes/Automattic-Domain-Services-Response-Dns-Set.md)
+  * [\Automattic\Domain_Services_Client\Command\Dns\Get](../classes/Automattic-Domain-Services-Command-Dns-Get.md)
+  * [\Automattic\Domain_Services_Client\Response\Dns\Set](../classes/Automattic-Domain-Services-Response-Dns-Set.md)
 
 ---
 
@@ -72,7 +72,7 @@ if ( $response->is_success() ) {
 ### __construct
 
 ```
-public __construct(\Automattic\Domain_Services\Entity\Dns_Records  records) : mixed
+public __construct(\Automattic\Domain_Services_Client\Entity\Dns_Records  records) : mixed
 ```
 
 ##### Summary
@@ -83,7 +83,7 @@ Constructs a Dns\Set command
 
 | Name | Type | Default |
 |------|------|---------|
-| **$records** | \Automattic\Domain_Services\Entity\Dns_Records |  |
+| **$records** | \Automattic\Domain_Services_Client\Entity\Dns_Records |  |
 
 ##### Returns:
 

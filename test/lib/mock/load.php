@@ -17,5 +17,6 @@
  */
 
 require_once __DIR__ . '/psr/http/message/client.php';
+require_once __DIR__ . '/psr/http/message/direct-call-client.php';
 require_once __DIR__ . '/psr/http/message/response.php';
 require_once __DIR__ . '/psr/http/message/stream.php';

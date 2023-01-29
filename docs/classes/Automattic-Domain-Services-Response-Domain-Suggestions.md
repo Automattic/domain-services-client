@@ -26,11 +26,11 @@ Response of a Domain_Suggestions command
 
 * File: [lib/response/domain/suggestions.php](../../lib/response/domain/suggestions.php)
 * Implements:
-  * [\Automattic\Domain_Services\Response\Response_Interface](../classes/Automattic-Domain-Services-Response-Response-Interface.md)
+  * [\Automattic\Domain_Services_Client\Response\Response_Interface](../classes/Automattic-Domain-Services-Response-Response-Interface.md)
 * Uses Traits:
-  * [\Automattic\Domain_Services\Response\Data_Trait](../classes/Automattic-Domain-Services-Response-Data-Trait.md)
+  * [\Automattic\Domain_Services_Client\Response\Data_Trait](../classes/Automattic-Domain-Services-Response-Data-Trait.md)
 * See Also:
-  * [\Automattic\Domain_Services\Command\Domain\Suggestions](../classes/Automattic-Domain-Services-Command-Domain-Suggestions.md)
+  * [\Automattic\Domain_Services_Client\Command\Domain\Suggestions](../classes/Automattic-Domain-Services-Command-Domain-Suggestions.md)
 
 ---
 
@@ -160,7 +160,7 @@ Gets the response status code
 
 ##### See Also:
 
- * [\Automattic\Domain_Services\Response\Code](../classes/Automattic-Domain-Services-Response-Code.md)
+ * [\Automattic\Domain_Services_Client\Response\Code](../classes/Automattic-Domain-Services-Response-Code.md)
 
 ##### Returns:
 
@@ -183,7 +183,7 @@ Gets the response status description
 
 ##### See Also:
 
- * [\Automattic\Domain_Services\Response\Code::DESCRIPTION](../\Automattic\Domain_Services\Response\Code::DESCRIPTION)
+ * [\Automattic\Domain_Services_Client\Response\Code::DESCRIPTION](../\Automattic\Domain_Services_Client\Response\Code::DESCRIPTION)
 
 ##### Returns:
 
@@ -197,7 +197,7 @@ string
 ### get_suggestions
 
 ```
-public get_suggestions() : \Automattic\Domain_Services\Entity\Suggestions|null
+public get_suggestions() : \Automattic\Domain_Services_Client\Entity\Suggestions|null
 ```
 
 ##### Summary
@@ -207,7 +207,7 @@ Returns the suggestions of the response object
 ##### Returns:
 
 ```
-\Automattic\Domain_Services\Entity\Suggestions|null
+\Automattic\Domain_Services_Client\Entity\Suggestions|null
 ```
 
 ---

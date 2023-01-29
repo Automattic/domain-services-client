@@ -57,7 +57,7 @@ Please follow the [installation procedure](#installation--usage) and then run th
 // Change the path as necessary
 require_once 'vendor/autoload.php';
 
-use Automattic\Domain_Services\{Api, Command, Configuration, Entity, Response};
+use Automattic\Domain_Services_Client\{Api, Command, Configuration, Entity, Response};
 
 // Set the domain to use
 $domain_name = new Entity\Domain_Name( 'a8ctest.com' );
@@ -80,7 +80,7 @@ $domain_contacts = new Entity\Domain_Contacts(
 			'+1.7575551234',
 			''
 		),
-		new Entity\Contact_Disclosure( \Automattic\Domain_Services\Entity\Contact_Disclosure::NONE )
+		new Entity\Contact_Disclosure( \Automattic\Domain_Services_Client\Entity\Contact_Disclosure::NONE )
 	)
 );
 

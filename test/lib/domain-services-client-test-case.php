@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Test\Lib;
+namespace Automattic\Domain_Services_Client\Test\Lib;
 
-use Automattic\Domain_Services\{Response};
+use Automattic\Domain_Services_Client\{Response};
 
 class Domain_Services_Client_Test_Case extends \PHPUnit\Framework\TestCase {
 	protected Response\Factory $response_factory;

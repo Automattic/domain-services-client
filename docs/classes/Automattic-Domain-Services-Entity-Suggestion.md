@@ -22,7 +22,7 @@ Used in the `Domain\Suggestions` response.
 
 * File: [lib/entity/domain-suggestion.php](../../lib/entity/domain-suggestion.php)
 * See Also:
-  * [\Automattic\Domain_Services\Response\Domain\Suggestions](../classes/Automattic-Domain-Services-Response-Domain-Suggestions.md)
+  * [\Automattic\Domain_Services_Client\Response\Domain\Suggestions](../classes/Automattic-Domain-Services-Response-Domain-Suggestions.md)
 
 ---
 
@@ -32,7 +32,7 @@ Used in the `Domain\Suggestions` response.
 ### __construct
 
 ```
-public __construct(\Automattic\Domain_Services\Entity\Domain_Name  domain_name) : mixed
+public __construct(\Automattic\Domain_Services_Client\Entity\Domain_Name  domain_name) : mixed
 ```
 
 ##### Summary
@@ -43,7 +43,7 @@ Constructs a Suggestion entity
 
 | Name | Type | Default |
 |------|------|---------|
-| **$domain_name** | \Automattic\Domain_Services\Entity\Domain_Name |  |
+| **$domain_name** | \Automattic\Domain_Services_Client\Entity\Domain_Name |  |
 
 ##### Returns:
 
@@ -57,7 +57,7 @@ mixed
 ### get_domain_name
 
 ```
-public get_domain_name() : \Automattic\Domain_Services\Entity\Domain_Name
+public get_domain_name() : \Automattic\Domain_Services_Client\Entity\Domain_Name
 ```
 
 ##### Summary
@@ -67,5 +67,5 @@ Returns the domain name suggestion
 ##### Returns:
 
 ```
-\Automattic\Domain_Services\Entity\Domain_Name
+\Automattic\Domain_Services_Client\Entity\Domain_Name
 ```

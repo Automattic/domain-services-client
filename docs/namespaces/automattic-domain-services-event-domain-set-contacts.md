@@ -4,5 +4,5 @@
 
 | Name | Summary |
 |------|---------|
-| [\Automattic\Domain_Services\Event\Domain\Set\Contacts\Fail](../classes/Automattic-Domain-Services-Event-Domain-Set-Contacts-Fail.md) | Event representing a Domain\Set\Contacts command failure |
-| [\Automattic\Domain_Services\Event\Domain\Set\Contacts\Success](../classes/Automattic-Domain-Services-Event-Domain-Set-Contacts-Success.md) | Event representing a Domain\Set\Contacts command success |
+| [\Automattic\Domain_Services_Client\Event\Domain\Set\Contacts\Fail](../classes/Automattic-Domain-Services-Event-Domain-Set-Contacts-Fail.md) | Event representing a Domain\Set\Contacts command failure |
+| [\Automattic\Domain_Services_Client\Event\Domain\Set\Contacts\Success](../classes/Automattic-Domain-Services-Event-Domain-Set-Contacts-Success.md) | Event representing a Domain\Set\Contacts command success |

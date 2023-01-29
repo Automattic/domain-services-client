@@ -4,5 +4,5 @@
 
 | Name | Summary |
 |------|---------|
-| [\Automattic\Domain_Services\Event\Domain\Renew\Fail](../classes/Automattic-Domain-Services-Event-Domain-Renew-Fail.md) | Domain failed to renew event |
-| [\Automattic\Domain_Services\Event\Domain\Renew\Success](../classes/Automattic-Domain-Services-Event-Domain-Renew-Success.md) | Domain renewed successfully event |
+| [\Automattic\Domain_Services_Client\Event\Domain\Renew\Fail](../classes/Automattic-Domain-Services-Event-Domain-Renew-Fail.md) | Domain failed to renew event |
+| [\Automattic\Domain_Services_Client\Event\Domain\Renew\Success](../classes/Automattic-Domain-Services-Event-Domain-Renew-Success.md) | Domain renewed successfully event |

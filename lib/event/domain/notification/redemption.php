@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Event\Domain\Notification;
+namespace Automattic\Domain_Services_Client\Event\Domain\Notification;
 
-use Automattic\Domain_Services\{Helper, Event};
+use Automattic\Domain_Services_Client\{Helper, Event};
 
 /**
  * Domain entered redemption period event
@@ -33,7 +33,7 @@ use Automattic\Domain_Services\{Helper, Event};
  *   method
  *     - That is the date until which the domain is in redemption
  *
- * @see \Automattic\Domain_Services\Event\Domain\Notification\Argp
+ * @see \Automattic\Domain_Services_Client\Event\Domain\Notification\Argp
  */
 class Redemption implements Event\Event_Interface {
 	use Event\Data_Trait;

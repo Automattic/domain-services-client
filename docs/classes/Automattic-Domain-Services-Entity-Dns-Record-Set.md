@@ -29,7 +29,7 @@ A set of DNS records that share the same name, type and TTL
 ### __construct
 
 ```
-public __construct(string  name, \Automattic\Domain_Services\Entity\Dns_Record_Type  type, int  ttl, array  data) : mixed
+public __construct(string  name, \Automattic\Domain_Services_Client\Entity\Dns_Record_Type  type, int  ttl, array  data) : mixed
 ```
 
 ##### Summary
@@ -41,7 +41,7 @@ Constructs a Dns_Record_Set entity
 | Name | Type | Default |
 |------|------|---------|
 | **$name** | string |  |
-| **$type** | \Automattic\Domain_Services\Entity\Dns_Record_Type |  |
+| **$type** | \Automattic\Domain_Services_Client\Entity\Dns_Record_Type |  |
 | **$ttl** | int |  |
 | **$data** | array |  |
 
@@ -114,7 +114,7 @@ int
 ### get_type
 
 ```
-public get_type() : \Automattic\Domain_Services\Entity\Dns_Record_Type
+public get_type() : \Automattic\Domain_Services_Client\Entity\Dns_Record_Type
 ```
 
 ##### Summary
@@ -124,5 +124,5 @@ Returns the type of this DNS record set
 ##### Returns:
 
 ```
-\Automattic\Domain_Services\Entity\Dns_Record_Type
+\Automattic\Domain_Services_Client\Entity\Dns_Record_Type
 ```

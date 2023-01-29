@@ -16,7 +16,7 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services;
+namespace Automattic\Domain_Services_Client;
 
 class Configuration {
 	public const BOOLEAN_FORMAT_INT = 'int';

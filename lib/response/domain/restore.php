@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Response\Domain;
+namespace Automattic\Domain_Services_Client\Response\Domain;
 
-use Automattic\Domain_Services\Response;
+use Automattic\Domain_Services_Client\Response;
 
 /**
  * Response of a `Domain\Restore` command
@@ -26,9 +26,9 @@ use Automattic\Domain_Services\Response;
  * - The restore operation runs asynchronously on the server.
  * - A success response indicates that the restore request is queued, not completed.
  *
- * @see \Automattic\Domain_Services\Command\Domain\Restore
- * @see \Automattic\Domain_Services\Event\Domain\Restore\Fail
- * @see \Automattic\Domain_Services\Event\Domain\Restore\Success
+ * @see \Automattic\Domain_Services_Client\Command\Domain\Restore
+ * @see \Automattic\Domain_Services_Client\Event\Domain\Restore\Fail
+ * @see \Automattic\Domain_Services_Client\Event\Domain\Restore\Success
  */
 class Restore implements Response\Response_Interface {
 	use Response\Data_Trait;

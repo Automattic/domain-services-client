@@ -4,5 +4,5 @@
 
 | Name | Summary |
 |------|---------|
-| [\Automattic\Domain_Services\Event\Contact\Verification\Notify](../classes/Automattic-Domain-Services-Event-Contact-Verification-Notify.md) | Verification notify event |
-| [\Automattic\Domain_Services\Event\Contact\Verification\Request](../classes/Automattic-Domain-Services-Event-Contact-Verification-Request.md) | Verification request event |
+| [\Automattic\Domain_Services_Client\Event\Contact\Verification\Notify](../classes/Automattic-Domain-Services-Event-Contact-Verification-Notify.md) | Verification notify event |
+| [\Automattic\Domain_Services_Client\Event\Contact\Verification\Request](../classes/Automattic-Domain-Services-Event-Contact-Verification-Request.md) | Verification request event |

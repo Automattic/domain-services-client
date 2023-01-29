@@ -4,4 +4,4 @@
 
 | Name | Summary |
 |------|---------|
-| [\Automattic\Domain_Services\Response\Exception\Error](../classes/Automattic-Domain-Services-Response-Exception-Error.md) |  |
+| [\Automattic\Domain_Services_Client\Response\Exception\Error](../classes/Automattic-Domain-Services-Response-Exception-Error.md) |  |

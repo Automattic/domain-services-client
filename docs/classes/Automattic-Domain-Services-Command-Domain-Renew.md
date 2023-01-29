@@ -46,15 +46,15 @@ if ( $response->is_success() ) {
 
 * File: [lib/command/domain/renew.php](../../lib/command/domain/renew.php)
 * Implements:
-  * [\Automattic\Domain_Services\Command\Command_Interface](../classes/Automattic-Domain-Services-Command-Command-Interface.md)
-  * [\Automattic\Domain_Services\Command\Command_Serialize_Interface](../classes/Automattic-Domain-Services-Command-Command-Serialize-Interface.md)
+  * [\Automattic\Domain_Services_Client\Command\Command_Interface](../classes/Automattic-Domain-Services-Command-Command-Interface.md)
+  * [\Automattic\Domain_Services_Client\Command\Command_Serialize_Interface](../classes/Automattic-Domain-Services-Command-Command-Serialize-Interface.md)
 * Uses Traits:
-  * [\Automattic\Domain_Services\Command\Command_Serialize_Trait](../classes/Automattic-Domain-Services-Command-Command-Serialize-Trait.md)
-  * [\Automattic\Domain_Services\Command\Command_Trait](../classes/Automattic-Domain-Services-Command-Command-Trait.md)
+  * [\Automattic\Domain_Services_Client\Command\Command_Serialize_Trait](../classes/Automattic-Domain-Services-Command-Command-Serialize-Trait.md)
+  * [\Automattic\Domain_Services_Client\Command\Command_Trait](../classes/Automattic-Domain-Services-Command-Command-Trait.md)
 * See Also:
-  * [\Automattic\Domain_Services\Response\Domain\Renew](../classes/Automattic-Domain-Services-Response-Domain-Renew.md)
-  * [\Automattic\Domain_Services\Event\Domain\Renew\Success](../classes/Automattic-Domain-Services-Event-Domain-Renew-Success.md)
-  * [\Automattic\Domain_Services\Event\Domain\Renew\Fail](../classes/Automattic-Domain-Services-Event-Domain-Renew-Fail.md)
+  * [\Automattic\Domain_Services_Client\Response\Domain\Renew](../classes/Automattic-Domain-Services-Response-Domain-Renew.md)
+  * [\Automattic\Domain_Services_Client\Event\Domain\Renew\Success](../classes/Automattic-Domain-Services-Event-Domain-Renew-Success.md)
+  * [\Automattic\Domain_Services_Client\Event\Domain\Renew\Fail](../classes/Automattic-Domain-Services-Event-Domain-Renew-Fail.md)
 
 ---
 
@@ -64,7 +64,7 @@ if ( $response->is_success() ) {
 ### __construct
 
 ```
-public __construct(\Automattic\Domain_Services\Entity\Domain_Name  domain, int  current_expiration_year, int  period = 1, float|null  fee_amount = null) : mixed
+public __construct(\Automattic\Domain_Services_Client\Entity\Domain_Name  domain, int  current_expiration_year, int  period = 1, float|null  fee_amount = null) : mixed
 ```
 
 ##### Summary
@@ -75,7 +75,7 @@ Constructs a Domain\Renew command
 
 | Name | Type | Default |
 |------|------|---------|
-| **$domain** | \Automattic\Domain_Services\Entity\Domain_Name |  |
+| **$domain** | \Automattic\Domain_Services_Client\Entity\Domain_Name |  |
 | **$current_expiration_year** | int |  |
 | **$period** | int | 1 |
 | **$fee_amount** | float|null | null |

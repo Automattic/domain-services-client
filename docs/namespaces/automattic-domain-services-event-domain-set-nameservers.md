@@ -4,5 +4,5 @@
 
 | Name | Summary |
 |------|---------|
-| [\Automattic\Domain_Services\Event\Domain\Set\Nameservers\Fail](../classes/Automattic-Domain-Services-Event-Domain-Set-Nameservers-Fail.md) | Set name servers failure event |
-| [\Automattic\Domain_Services\Event\Domain\Set\Nameservers\Success](../classes/Automattic-Domain-Services-Event-Domain-Set-Nameservers-Success.md) | Set name servers success event |
+| [\Automattic\Domain_Services_Client\Event\Domain\Set\Nameservers\Fail](../classes/Automattic-Domain-Services-Event-Domain-Set-Nameservers-Fail.md) | Set name servers failure event |
+| [\Automattic\Domain_Services_Client\Event\Domain\Set\Nameservers\Success](../classes/Automattic-Domain-Services-Event-Domain-Set-Nameservers-Success.md) | Set name servers success event |

@@ -39,7 +39,7 @@ Represents all contact types for a domain name
 * Implements:
   * [\Iterator](../classes/Iterator.md)
 * See Also:
-  * [\Automattic\Domain_Services\Entity\Domain_Contact](../classes/Automattic-Domain-Services-Entity-Domain-Contact.md)
+  * [\Automattic\Domain_Services_Client\Entity\Domain_Contact](../classes/Automattic-Domain-Services-Entity-Domain-Contact.md)
 
 ---
 
@@ -81,23 +81,23 @@ BILLING = 'billing'
 ### __construct
 
 ```
-public __construct(\Automattic\Domain_Services\Entity\Domain_Contact|null  owner = null, \Automattic\Domain_Services\Entity\Domain_Contact|null  admin = null, \Automattic\Domain_Services\Entity\Domain_Contact|null  tech = null, \Automattic\Domain_Services\Entity\Domain_Contact|null  billing = null) : mixed
+public __construct(\Automattic\Domain_Services_Client\Entity\Domain_Contact|null  owner = null, \Automattic\Domain_Services_Client\Entity\Domain_Contact|null  admin = null, \Automattic\Domain_Services_Client\Entity\Domain_Contact|null  tech = null, \Automattic\Domain_Services_Client\Entity\Domain_Contact|null  billing = null) : mixed
 ```
 
 ##### Parameters:
 
 | Name | Type | Default |
 |------|------|---------|
-| **$owner** | \Automattic\Domain_Services\Entity\Domain_Contact|null | null |
-| **$admin** | \Automattic\Domain_Services\Entity\Domain_Contact|null | null |
-| **$tech** | \Automattic\Domain_Services\Entity\Domain_Contact|null | null |
-| **$billing** | \Automattic\Domain_Services\Entity\Domain_Contact|null | null |
+| **$owner** | \Automattic\Domain_Services_Client\Entity\Domain_Contact|null | null |
+| **$admin** | \Automattic\Domain_Services_Client\Entity\Domain_Contact|null | null |
+| **$tech** | \Automattic\Domain_Services_Client\Entity\Domain_Contact|null | null |
+| **$billing** | \Automattic\Domain_Services_Client\Entity\Domain_Contact|null | null |
 
 ##### Throws:
 
 | Type | Description |
 |------|-------------|
-| \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception |  |
+| \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception |  |
 
 ##### Returns:
 
@@ -111,7 +111,7 @@ mixed
 ### get_admin
 
 ```
-public get_admin() : \Automattic\Domain_Services\Entity\Domain_Contact|null
+public get_admin() : \Automattic\Domain_Services_Client\Entity\Domain_Contact|null
 ```
 
 ##### Summary
@@ -122,12 +122,12 @@ Gets the domain admin&#039;s contact
 
 | Type | Description |
 |------|-------------|
-| \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception |  |
+| \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception |  |
 
 ##### Returns:
 
 ```
-\Automattic\Domain_Services\Entity\Domain_Contact|null
+\Automattic\Domain_Services_Client\Entity\Domain_Contact|null
 ```
 
 ---
@@ -136,7 +136,7 @@ Gets the domain admin&#039;s contact
 ### get_billing
 
 ```
-public get_billing() : \Automattic\Domain_Services\Entity\Domain_Contact|null
+public get_billing() : \Automattic\Domain_Services_Client\Entity\Domain_Contact|null
 ```
 
 ##### Summary
@@ -147,12 +147,12 @@ Gets the domain billing&#039;s contact
 
 | Type | Description |
 |------|-------------|
-| \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception |  |
+| \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception |  |
 
 ##### Returns:
 
 ```
-\Automattic\Domain_Services\Entity\Domain_Contact|null
+\Automattic\Domain_Services_Client\Entity\Domain_Contact|null
 ```
 
 ---
@@ -161,7 +161,7 @@ Gets the domain billing&#039;s contact
 ### get_by_key
 
 ```
-public get_by_key(string  key) : \Automattic\Domain_Services\Entity\Domain_Contact|null
+public get_by_key(string  key) : \Automattic\Domain_Services_Client\Entity\Domain_Contact|null
 ```
 
 ##### Summary
@@ -178,12 +178,12 @@ Gets domain contact by type
 
 | Type | Description |
 |------|-------------|
-| \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception |  |
+| \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception |  |
 
 ##### Returns:
 
 ```
-\Automattic\Domain_Services\Entity\Domain_Contact|null
+\Automattic\Domain_Services_Client\Entity\Domain_Contact|null
 ```
 
 ---
@@ -192,7 +192,7 @@ Gets domain contact by type
 ### get_owner
 
 ```
-public get_owner() : \Automattic\Domain_Services\Entity\Domain_Contact|null
+public get_owner() : \Automattic\Domain_Services_Client\Entity\Domain_Contact|null
 ```
 
 ##### Summary
@@ -203,12 +203,12 @@ Gets the domain owner&#039;s contact
 
 | Type | Description |
 |------|-------------|
-| \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception |  |
+| \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception |  |
 
 ##### Returns:
 
 ```
-\Automattic\Domain_Services\Entity\Domain_Contact|null
+\Automattic\Domain_Services_Client\Entity\Domain_Contact|null
 ```
 
 ---
@@ -217,7 +217,7 @@ Gets the domain owner&#039;s contact
 ### get_tech
 
 ```
-public get_tech() : \Automattic\Domain_Services\Entity\Domain_Contact|null
+public get_tech() : \Automattic\Domain_Services_Client\Entity\Domain_Contact|null
 ```
 
 ##### Summary
@@ -228,12 +228,12 @@ Gets the domain tech&#039;s contact
 
 | Type | Description |
 |------|-------------|
-| \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception |  |
+| \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception |  |
 
 ##### Returns:
 
 ```
-\Automattic\Domain_Services\Entity\Domain_Contact|null
+\Automattic\Domain_Services_Client\Entity\Domain_Contact|null
 ```
 
 ---
@@ -276,7 +276,7 @@ bool
 ### set_admin
 
 ```
-public set_admin(\Automattic\Domain_Services\Entity\Domain_Contact|null  admin) : void
+public set_admin(\Automattic\Domain_Services_Client\Entity\Domain_Contact|null  admin) : void
 ```
 
 ##### Summary
@@ -287,13 +287,13 @@ Sets the domain admin&#039;s contact
 
 | Name | Type | Default |
 |------|------|---------|
-| **$admin** | \Automattic\Domain_Services\Entity\Domain_Contact|null |  |
+| **$admin** | \Automattic\Domain_Services_Client\Entity\Domain_Contact|null |  |
 
 ##### Throws:
 
 | Type | Description |
 |------|-------------|
-| \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception |  |
+| \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception |  |
 
 ##### Returns:
 
@@ -307,7 +307,7 @@ void
 ### set_billing
 
 ```
-public set_billing(\Automattic\Domain_Services\Entity\Domain_Contact|null  billing) : void
+public set_billing(\Automattic\Domain_Services_Client\Entity\Domain_Contact|null  billing) : void
 ```
 
 ##### Summary
@@ -318,13 +318,13 @@ Sets the domain billing&#039;s contact
 
 | Name | Type | Default |
 |------|------|---------|
-| **$billing** | \Automattic\Domain_Services\Entity\Domain_Contact|null |  |
+| **$billing** | \Automattic\Domain_Services_Client\Entity\Domain_Contact|null |  |
 
 ##### Throws:
 
 | Type | Description |
 |------|-------------|
-| \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception |  |
+| \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception |  |
 
 ##### Returns:
 
@@ -338,7 +338,7 @@ void
 ### set_by_key
 
 ```
-public set_by_key(string  key, \Automattic\Domain_Services\Entity\Domain_Contact  domain_contact) : void
+public set_by_key(string  key, \Automattic\Domain_Services_Client\Entity\Domain_Contact  domain_contact) : void
 ```
 
 ##### Summary
@@ -350,13 +350,13 @@ Sets domain contact by type
 | Name | Type | Default |
 |------|------|---------|
 | **$key** | string |  |
-| **$domain_contact** | \Automattic\Domain_Services\Entity\Domain_Contact |  |
+| **$domain_contact** | \Automattic\Domain_Services_Client\Entity\Domain_Contact |  |
 
 ##### Throws:
 
 | Type | Description |
 |------|-------------|
-| \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception |  |
+| \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception |  |
 
 ##### Returns:
 
@@ -370,7 +370,7 @@ void
 ### set_owner
 
 ```
-public set_owner(\Automattic\Domain_Services\Entity\Domain_Contact  owner) : void
+public set_owner(\Automattic\Domain_Services_Client\Entity\Domain_Contact  owner) : void
 ```
 
 ##### Summary
@@ -381,13 +381,13 @@ Sets the domain owner&#039;s contact
 
 | Name | Type | Default |
 |------|------|---------|
-| **$owner** | \Automattic\Domain_Services\Entity\Domain_Contact |  |
+| **$owner** | \Automattic\Domain_Services_Client\Entity\Domain_Contact |  |
 
 ##### Throws:
 
 | Type | Description |
 |------|-------------|
-| \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception |  |
+| \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception |  |
 
 ##### Returns:
 
@@ -401,7 +401,7 @@ void
 ### set_tech
 
 ```
-public set_tech(\Automattic\Domain_Services\Entity\Domain_Contact|null  tech) : void
+public set_tech(\Automattic\Domain_Services_Client\Entity\Domain_Contact|null  tech) : void
 ```
 
 ##### Summary
@@ -412,13 +412,13 @@ Sets the domain tech&#039;s contact
 
 | Name | Type | Default |
 |------|------|---------|
-| **$tech** | \Automattic\Domain_Services\Entity\Domain_Contact|null |  |
+| **$tech** | \Automattic\Domain_Services_Client\Entity\Domain_Contact|null |  |
 
 ##### Throws:
 
 | Type | Description |
 |------|-------------|
-| \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception |  |
+| \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception |  |
 
 ##### Returns:
 

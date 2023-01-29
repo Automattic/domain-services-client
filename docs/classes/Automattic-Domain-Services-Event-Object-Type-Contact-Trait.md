@@ -21,11 +21,11 @@
 ### get_contact_id
 
 ```
-final public get_contact_id() : \Automattic\Domain_Services\Entity\Contact_Id
+final public get_contact_id() : \Automattic\Domain_Services_Client\Entity\Contact_Id
 ```
 
 ##### Returns:
 
 ```
-\Automattic\Domain_Services\Entity\Contact_Id
+\Automattic\Domain_Services_Client\Entity\Contact_Id
 ```

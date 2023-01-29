@@ -17,7 +17,7 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-use Automattic\Domain_Services\{Api, Command, Configuration, Entity, Response, Exception};
+use Automattic\Domain_Services_Client\{Api, Command, Configuration, Entity, Response, Exception};
 use \Http\Factory\Guzzle\{RequestFactory, StreamFactory};
 use \Http\Adapter\Guzzle6\Client;
 

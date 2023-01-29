@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Response\Exception;
+namespace Automattic\Domain_Services_Client\Response\Exception;
 
-use Automattic\Domain_Services\{Response};
+use Automattic\Domain_Services_Client\{Response};
 
 class Error implements Response\Response_Interface {
 	use Response\Data_Trait;

@@ -37,15 +37,15 @@ if ( $response->is_success() ) {
 
 * File: [lib/command/domain/restore.php](../../lib/command/domain/restore.php)
 * Implements:
-  * [\Automattic\Domain_Services\Command\Command_Interface](../classes/Automattic-Domain-Services-Command-Command-Interface.md)
-  * [\Automattic\Domain_Services\Command\Command_Serialize_Interface](../classes/Automattic-Domain-Services-Command-Command-Serialize-Interface.md)
+  * [\Automattic\Domain_Services_Client\Command\Command_Interface](../classes/Automattic-Domain-Services-Command-Command-Interface.md)
+  * [\Automattic\Domain_Services_Client\Command\Command_Serialize_Interface](../classes/Automattic-Domain-Services-Command-Command-Serialize-Interface.md)
 * Uses Traits:
-  * [\Automattic\Domain_Services\Command\Command_Serialize_Trait](../classes/Automattic-Domain-Services-Command-Command-Serialize-Trait.md)
-  * [\Automattic\Domain_Services\Command\Command_Trait](../classes/Automattic-Domain-Services-Command-Command-Trait.md)
+  * [\Automattic\Domain_Services_Client\Command\Command_Serialize_Trait](../classes/Automattic-Domain-Services-Command-Command-Serialize-Trait.md)
+  * [\Automattic\Domain_Services_Client\Command\Command_Trait](../classes/Automattic-Domain-Services-Command-Command-Trait.md)
 * See Also:
-  * [\Automattic\Domain_Services\Event\Domain\Restore\Fail](../classes/Automattic-Domain-Services-Event-Domain-Restore-Fail.md)
-  * [\Automattic\Domain_Services\Event\Domain\Restore\Success](../classes/Automattic-Domain-Services-Event-Domain-Restore-Success.md)
-  * [\Automattic\Domain_Services\Response\Domain\Restore](../classes/Automattic-Domain-Services-Response-Domain-Restore.md)
+  * [\Automattic\Domain_Services_Client\Event\Domain\Restore\Fail](../classes/Automattic-Domain-Services-Event-Domain-Restore-Fail.md)
+  * [\Automattic\Domain_Services_Client\Event\Domain\Restore\Success](../classes/Automattic-Domain-Services-Event-Domain-Restore-Success.md)
+  * [\Automattic\Domain_Services_Client\Response\Domain\Restore](../classes/Automattic-Domain-Services-Response-Domain-Restore.md)
 
 ---
 
@@ -55,7 +55,7 @@ if ( $response->is_success() ) {
 ### __construct
 
 ```
-public __construct(\Automattic\Domain_Services\Entity\Domain_Name  domain) : mixed
+public __construct(\Automattic\Domain_Services_Client\Entity\Domain_Name  domain) : mixed
 ```
 
 ##### Summary
@@ -66,7 +66,7 @@ Constructs the Restore command
 
 | Name | Type | Default |
 |------|------|---------|
-| **$domain** | \Automattic\Domain_Services\Entity\Domain_Name |  |
+| **$domain** | \Automattic\Domain_Services_Client\Entity\Domain_Name |  |
 
 ##### Returns:
 

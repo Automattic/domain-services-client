@@ -4,5 +4,5 @@
 
 | Name | Summary |
 |------|---------|
-| [\Automattic\Domain_Services\Event\Domain\Register\Fail](../classes/Automattic-Domain-Services-Event-Domain-Register-Fail.md) | Failure event for a `Domain\Register` command |
-| [\Automattic\Domain_Services\Event\Domain\Register\Success](../classes/Automattic-Domain-Services-Event-Domain-Register-Success.md) | Success event for a `Domain\Register` command. |
+| [\Automattic\Domain_Services_Client\Event\Domain\Register\Fail](../classes/Automattic-Domain-Services-Event-Domain-Register-Fail.md) | Failure event for a `Domain\Register` command |
+| [\Automattic\Domain_Services_Client\Event\Domain\Register\Success](../classes/Automattic-Domain-Services-Event-Domain-Register-Success.md) | Success event for a `Domain\Register` command. |

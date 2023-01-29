@@ -2,16 +2,16 @@
 
 ### Namespaces
 
-* [\Automattic\Domain_Services\Response\Domain\Set](../namespaces/automattic-domain-services-response-domain-set.md)
+* [\Automattic\Domain_Services_Client\Response\Domain\Set](../namespaces/automattic-domain-services-response-domain-set.md)
 
 ### Classes
 
 | Name | Summary |
 |------|---------|
-| [\Automattic\Domain_Services\Response\Domain\Check](../classes/Automattic-Domain-Services-Response-Domain-Check.md) | Response of the `Domain\Check` command |
-| [\Automattic\Domain_Services\Response\Domain\Delete](../classes/Automattic-Domain-Services-Response-Domain-Delete.md) | Response of a Domain\Delete command |
-| [\Automattic\Domain_Services\Response\Domain\Info](../classes/Automattic-Domain-Services-Response-Domain-Info.md) | Response of a `Domain\Info` command |
-| [\Automattic\Domain_Services\Response\Domain\Register](../classes/Automattic-Domain-Services-Response-Domain-Register.md) |  |
-| [\Automattic\Domain_Services\Response\Domain\Renew](../classes/Automattic-Domain-Services-Response-Domain-Renew.md) | Response of a Domain\Renew command |
-| [\Automattic\Domain_Services\Response\Domain\Restore](../classes/Automattic-Domain-Services-Response-Domain-Restore.md) | Response of a `Domain\Restore` command |
-| [\Automattic\Domain_Services\Response\Domain\Suggestions](../classes/Automattic-Domain-Services-Response-Domain-Suggestions.md) | Response of a Domain_Suggestions command |
+| [\Automattic\Domain_Services_Client\Response\Domain\Check](../classes/Automattic-Domain-Services-Response-Domain-Check.md) | Response of the `Domain\Check` command |
+| [\Automattic\Domain_Services_Client\Response\Domain\Delete](../classes/Automattic-Domain-Services-Response-Domain-Delete.md) | Response of a Domain\Delete command |
+| [\Automattic\Domain_Services_Client\Response\Domain\Info](../classes/Automattic-Domain-Services-Response-Domain-Info.md) | Response of a `Domain\Info` command |
+| [\Automattic\Domain_Services_Client\Response\Domain\Register](../classes/Automattic-Domain-Services-Response-Domain-Register.md) |  |
+| [\Automattic\Domain_Services_Client\Response\Domain\Renew](../classes/Automattic-Domain-Services-Response-Domain-Renew.md) | Response of a Domain\Renew command |
+| [\Automattic\Domain_Services_Client\Response\Domain\Restore](../classes/Automattic-Domain-Services-Response-Domain-Restore.md) | Response of a `Domain\Restore` command |
+| [\Automattic\Domain_Services_Client\Response\Domain\Suggestions](../classes/Automattic-Domain-Services-Response-Domain-Suggestions.md) | Response of a Domain_Suggestions command |

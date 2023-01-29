@@ -19,8 +19,8 @@ Set of DNS records associated with a specific domain
 
 * File: [lib/entity/dns-records.php](../../lib/entity/dns-records.php)
 * See Also:
-  * [\Automattic\Domain_Services\Entity\Domain_Name](../classes/Automattic-Domain-Services-Entity-Domain-Name.md)
-  * [\Automattic\Domain_Services\Entity\Dns_Record_Sets](../classes/Automattic-Domain-Services-Entity-Dns-Record-Sets.md)
+  * [\Automattic\Domain_Services_Client\Entity\Domain_Name](../classes/Automattic-Domain-Services-Entity-Domain-Name.md)
+  * [\Automattic\Domain_Services_Client\Entity\Dns_Record_Sets](../classes/Automattic-Domain-Services-Entity-Dns-Record-Sets.md)
 
 ---
 
@@ -30,7 +30,7 @@ Set of DNS records associated with a specific domain
 ### __construct
 
 ```
-public __construct(\Automattic\Domain_Services\Entity\Domain_Name  domain, \Automattic\Domain_Services\Entity\Dns_Record_Sets  record_sets) : mixed
+public __construct(\Automattic\Domain_Services_Client\Entity\Domain_Name  domain, \Automattic\Domain_Services_Client\Entity\Dns_Record_Sets  record_sets) : mixed
 ```
 
 ##### Summary
@@ -41,8 +41,8 @@ Constructs a Dns_Records entity
 
 | Name | Type | Default |
 |------|------|---------|
-| **$domain** | \Automattic\Domain_Services\Entity\Domain_Name |  |
-| **$record_sets** | \Automattic\Domain_Services\Entity\Dns_Record_Sets |  |
+| **$domain** | \Automattic\Domain_Services_Client\Entity\Domain_Name |  |
+| **$record_sets** | \Automattic\Domain_Services_Client\Entity\Dns_Record_Sets |  |
 
 ##### Returns:
 
@@ -56,7 +56,7 @@ mixed
 ### get_domain
 
 ```
-public get_domain() : \Automattic\Domain_Services\Entity\Domain_Name
+public get_domain() : \Automattic\Domain_Services_Client\Entity\Domain_Name
 ```
 
 ##### Summary
@@ -66,7 +66,7 @@ Returns the domain name associated with the DNS records
 ##### Returns:
 
 ```
-\Automattic\Domain_Services\Entity\Domain_Name
+\Automattic\Domain_Services_Client\Entity\Domain_Name
 ```
 
 ---
@@ -75,7 +75,7 @@ Returns the domain name associated with the DNS records
 ### get_record_sets
 
 ```
-public get_record_sets() : \Automattic\Domain_Services\Entity\Dns_Record_Sets
+public get_record_sets() : \Automattic\Domain_Services_Client\Entity\Dns_Record_Sets
 ```
 
 ##### Summary
@@ -85,5 +85,5 @@ Returns the sets of DNS records associated with a domain
 ##### Returns:
 
 ```
-\Automattic\Domain_Services\Entity\Dns_Record_Sets
+\Automattic\Domain_Services_Client\Entity\Dns_Record_Sets
 ```

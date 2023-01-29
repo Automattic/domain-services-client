@@ -33,12 +33,12 @@ Success event for a `Domain\Set\Privacy command
 
 * File: [lib/event/domain/set/privacy/success.php](../../lib/event/domain/set/privacy/success.php)
 * Implements:
-  * [\Automattic\Domain_Services\Event\Event_Interface](../classes/Automattic-Domain-Services-Event-Event-Interface.md)
+  * [\Automattic\Domain_Services_Client\Event\Event_Interface](../classes/Automattic-Domain-Services-Event-Event-Interface.md)
 * Uses Traits:
-  * [\Automattic\Domain_Services\Event\Data_Trait](../classes/Automattic-Domain-Services-Event-Data-Trait.md)
-  * [\Automattic\Domain_Services\Event\Object_Type_Domain_Trait](../classes/Automattic-Domain-Services-Event-Object-Type-Domain-Trait.md)
+  * [\Automattic\Domain_Services_Client\Event\Data_Trait](../classes/Automattic-Domain-Services-Event-Data-Trait.md)
+  * [\Automattic\Domain_Services_Client\Event\Object_Type_Domain_Trait](../classes/Automattic-Domain-Services-Event-Object-Type-Domain-Trait.md)
 * See Also:
-  * [\Automattic\Domain_Services\Command\Domain\Set\Privacy](../classes/Automattic-Domain-Services-Command-Domain-Set-Privacy.md)
+  * [\Automattic\Domain_Services_Client\Command\Domain\Set\Privacy](../classes/Automattic-Domain-Services-Command-Domain-Set-Privacy.md)
 
 ---
 
@@ -117,13 +117,13 @@ array|mixed|null
 ### get_domain
 
 ```
-final public get_domain() : \Automattic\Domain_Services\Entity\Domain_Name
+final public get_domain() : \Automattic\Domain_Services_Client\Entity\Domain_Name
 ```
 
 ##### Returns:
 
 ```
-\Automattic\Domain_Services\Entity\Domain_Name
+\Automattic\Domain_Services_Client\Entity\Domain_Name
 ```
 
 ---
@@ -276,7 +276,7 @@ string
 ### get_privacy_setting
 
 ```
-public get_privacy_setting() : \Automattic\Domain_Services\Entity\Whois_Privacy|null
+public get_privacy_setting() : \Automattic\Domain_Services_Client\Entity\Whois_Privacy|null
 ```
 
 ##### Summary
@@ -287,10 +287,10 @@ Returns the Whois_Privacy setting that was set for this domain
 
 | Type | Description |
 |------|-------------|
-| \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception |  |
+| \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception |  |
 
 ##### Returns:
 
 ```
-\Automattic\Domain_Services\Entity\Whois_Privacy|null
+\Automattic\Domain_Services_Client\Entity\Whois_Privacy|null
 ```

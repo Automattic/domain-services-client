@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Event\Domain\Notification;
+namespace Automattic\Domain_Services_Client\Event\Domain\Notification;
 
-use Automattic\Domain_Services\{Event, Helper};
+use Automattic\Domain_Services_Client\{Event, Helper};
 
 /**
  * Domain expired event

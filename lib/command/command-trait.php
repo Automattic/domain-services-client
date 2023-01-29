@@ -16,7 +16,7 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Command;
+namespace Automattic\Domain_Services_Client\Command;
 
 trait Command_Trait {
 	private string $client_txn_id = '';

@@ -2,4 +2,4 @@
 
 ### Namespaces
 
-* [\Automattic\Domain_Services\Event\Contact\Verification](../namespaces/automattic-domain-services-event-contact-verification.md)
+* [\Automattic\Domain_Services_Client\Event\Contact\Verification](../namespaces/automattic-domain-services-event-contact-verification.md)
