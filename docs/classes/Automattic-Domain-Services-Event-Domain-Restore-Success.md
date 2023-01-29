@@ -34,12 +34,12 @@ This event is sent when a restore operation succeeds.
 
 * File: [lib/event/domain/restore/success.php](../../lib/event/domain/restore/success.php)
 * Implements:
-  * [\Automattic\Domain_Services\Event\Event_Interface](../classes/Automattic-Domain-Services-Event-Event-Interface.md)
+  * [\Automattic\Domain_Services_Client\Event\Event_Interface](../classes/Automattic-Domain-Services-Event-Event-Interface.md)
 * Uses Traits:
-  * [\Automattic\Domain_Services\Event\Data_Trait](../classes/Automattic-Domain-Services-Event-Data-Trait.md)
-  * [\Automattic\Domain_Services\Event\Object_Type_Domain_Trait](../classes/Automattic-Domain-Services-Event-Object-Type-Domain-Trait.md)
+  * [\Automattic\Domain_Services_Client\Event\Data_Trait](../classes/Automattic-Domain-Services-Event-Data-Trait.md)
+  * [\Automattic\Domain_Services_Client\Event\Object_Type_Domain_Trait](../classes/Automattic-Domain-Services-Event-Object-Type-Domain-Trait.md)
 * See Also:
-  * [\Automattic\Domain_Services\Command\Domain\Restore](../classes/Automattic-Domain-Services-Command-Domain-Restore.md)
+  * [\Automattic\Domain_Services_Client\Command\Domain\Restore](../classes/Automattic-Domain-Services-Command-Domain-Restore.md)
 
 ---
 
@@ -118,13 +118,13 @@ array|mixed|null
 ### get_domain
 
 ```
-final public get_domain() : \Automattic\Domain_Services\Entity\Domain_Name
+final public get_domain() : \Automattic\Domain_Services_Client\Entity\Domain_Name
 ```
 
 ##### Returns:
 
 ```
-\Automattic\Domain_Services\Entity\Domain_Name
+\Automattic\Domain_Services_Client\Entity\Domain_Name
 ```
 
 ---
@@ -133,7 +133,7 @@ final public get_domain() : \Automattic\Domain_Services\Entity\Domain_Name
 ### get_domain_status
 
 ```
-public get_domain_status() : \Automattic\Domain_Services\Entity\Epp_Status_Codes
+public get_domain_status() : \Automattic\Domain_Services_Client\Entity\Epp_Status_Codes
 ```
 
 ##### Summary
@@ -144,12 +144,12 @@ Gets the status of the domain immediately after the restore operation.
 
 | Type | Description |
 |------|-------------|
-| \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception |  |
+| \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception |  |
 
 ##### Returns:
 
 ```
-\Automattic\Domain_Services\Entity\Epp_Status_Codes
+\Automattic\Domain_Services_Client\Entity\Epp_Status_Codes
 ```
 
 ---

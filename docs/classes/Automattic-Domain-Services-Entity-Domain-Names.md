@@ -23,14 +23,14 @@
 ### __construct
 
 ```
-public __construct(\Automattic\Domain_Services\Entity\Domain_Name  ...domain_names) : mixed
+public __construct(\Automattic\Domain_Services_Client\Entity\Domain_Name  ...domain_names) : mixed
 ```
 
 ##### Parameters:
 
 | Name | Type | Default |
 |------|------|---------|
-| **$domain_names** | \Automattic\Domain_Services\Entity\Domain_Name |  |
+| **$domain_names** | \Automattic\Domain_Services_Client\Entity\Domain_Name |  |
 
 ##### Returns:
 
@@ -44,14 +44,14 @@ mixed
 ### add_domain_name
 
 ```
-public add_domain_name(\Automattic\Domain_Services\Entity\Domain_name  domain_name) : $this
+public add_domain_name(\Automattic\Domain_Services_Client\Entity\Domain_name  domain_name) : $this
 ```
 
 ##### Parameters:
 
 | Name | Type | Default |
 |------|------|---------|
-| **$domain_name** | \Automattic\Domain_Services\Entity\Domain_name |  |
+| **$domain_name** | \Automattic\Domain_Services_Client\Entity\Domain_name |  |
 
 ##### Returns:
 
@@ -65,11 +65,11 @@ $this
 ### get_domain_names
 
 ```
-public get_domain_names() : \Automattic\Domain_Services\Entity\Domain_Name[]
+public get_domain_names() : \Automattic\Domain_Services_Client\Entity\Domain_Name[]
 ```
 
 ##### Returns:
 
 ```
-\Automattic\Domain_Services\Entity\Domain_Name[]
+\Automattic\Domain_Services_Client\Entity\Domain_Name[]
 ```

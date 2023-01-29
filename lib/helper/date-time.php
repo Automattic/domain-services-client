@@ -16,7 +16,7 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Helper;
+namespace Automattic\Domain_Services_Client\Helper;
 
 use DateTime;
 use DateTimeImmutable;

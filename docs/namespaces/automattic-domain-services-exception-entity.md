@@ -4,4 +4,4 @@
 
 | Name | Summary |
 |------|---------|
-| [\Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception](../classes/Automattic-Domain-Services-Exception-Entity-Invalid-Value-Exception.md) |  |
+| [\Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception](../classes/Automattic-Domain-Services-Exception-Entity-Invalid-Value-Exception.md) |  |

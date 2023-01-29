@@ -46,9 +46,9 @@ attributes of the domain at the registry.
 
 * File: [lib/response/domain/info.php](../../lib/response/domain/info.php)
 * Implements:
-  * [\Automattic\Domain_Services\Response\Response_Interface](../classes/Automattic-Domain-Services-Response-Response-Interface.md)
+  * [\Automattic\Domain_Services_Client\Response\Response_Interface](../classes/Automattic-Domain-Services-Response-Response-Interface.md)
 * Uses Traits:
-  * [\Automattic\Domain_Services\Response\Data_Trait](../classes/Automattic-Domain-Services-Response-Data-Trait.md)
+  * [\Automattic\Domain_Services_Client\Response\Data_Trait](../classes/Automattic-Domain-Services-Response-Data-Trait.md)
 
 ---
 
@@ -121,7 +121,7 @@ string
 ### get_contacts
 
 ```
-public get_contacts() : \Automattic\Domain_Services\Entity\Domain_Contacts
+public get_contacts() : \Automattic\Domain_Services_Client\Entity\Domain_Contacts
 ```
 
 ##### Summary
@@ -131,7 +131,7 @@ Gets the contacts associated with this domain
 ##### Returns:
 
 ```
-\Automattic\Domain_Services\Entity\Domain_Contacts
+\Automattic\Domain_Services_Client\Entity\Domain_Contacts
 ```
 
 ---
@@ -222,7 +222,7 @@ string|null
 ### get_domain_status
 
 ```
-public get_domain_status() : \Automattic\Domain_Services\Entity\Epp_Status_Codes
+public get_domain_status() : \Automattic\Domain_Services_Client\Entity\Epp_Status_Codes
 ```
 
 ##### Summary
@@ -233,12 +233,12 @@ Gets the current EPP status codes for the domain
 
 | Type | Description |
 |------|-------------|
-| \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception |  |
+| \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception |  |
 
 ##### Returns:
 
 ```
-\Automattic\Domain_Services\Entity\Epp_Status_Codes
+\Automattic\Domain_Services_Client\Entity\Epp_Status_Codes
 ```
 
 ---
@@ -266,7 +266,7 @@ string|null
 ### get_name_servers
 
 ```
-public get_name_servers() : \Automattic\Domain_Services\Entity\Nameservers|null
+public get_name_servers() : \Automattic\Domain_Services_Client\Entity\Nameservers|null
 ```
 
 ##### Summary
@@ -277,12 +277,12 @@ Gets the name servers set at the registry for this domain
 
 | Type | Description |
 |------|-------------|
-| \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception |  |
+| \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception |  |
 
 ##### Returns:
 
 ```
-\Automattic\Domain_Services\Entity\Nameservers|null
+\Automattic\Domain_Services_Client\Entity\Nameservers|null
 ```
 
 ---
@@ -310,7 +310,7 @@ Gets the date until which the domain has been paid for
 ### get_privacy_setting
 
 ```
-public get_privacy_setting() : \Automattic\Domain_Services\Entity\Whois_Privacy|null
+public get_privacy_setting() : \Automattic\Domain_Services_Client\Entity\Whois_Privacy|null
 ```
 
 ##### Summary
@@ -320,7 +320,7 @@ Gets the whois privacy setting for the domain
 ##### Returns:
 
 ```
-\Automattic\Domain_Services\Entity\Whois_Privacy|null
+\Automattic\Domain_Services_Client\Entity\Whois_Privacy|null
 ```
 
 ---
@@ -445,7 +445,7 @@ Gets the response status code
 
 ##### See Also:
 
- * [\Automattic\Domain_Services\Response\Code](../classes/Automattic-Domain-Services-Response-Code.md)
+ * [\Automattic\Domain_Services_Client\Response\Code](../classes/Automattic-Domain-Services-Response-Code.md)
 
 ##### Returns:
 
@@ -468,7 +468,7 @@ Gets the response status description
 
 ##### See Also:
 
- * [\Automattic\Domain_Services\Response\Code::DESCRIPTION](../\Automattic\Domain_Services\Response\Code::DESCRIPTION)
+ * [\Automattic\Domain_Services_Client\Response\Code::DESCRIPTION](../\Automattic\Domain_Services_Client\Response\Code::DESCRIPTION)
 
 ##### Returns:
 

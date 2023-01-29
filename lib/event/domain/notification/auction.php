@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Event\Domain\Notification;
+namespace Automattic\Domain_Services_Client\Event\Domain\Notification;
 
-use Automattic\Domain_Services\{Helper, Event};
+use Automattic\Domain_Services_Client\{Helper, Event};
 
 /**
  * Domain entered auction phase event
@@ -37,7 +37,7 @@ use Automattic\Domain_Services\{Helper, Event};
  *     - `auction_status_end_date` - date until which the domain is in the current auction phase, can be retrieved using
  *       the `get_auction_status_end_date` method
  *
- * @see \Automattic\Domain_Services\Event\Domain\Notification\Redemption
+ * @see \Automattic\Domain_Services_Client\Event\Domain\Notification\Redemption
  */
 class Auction implements Event\Event_Interface {
 	use Event\Data_Trait;

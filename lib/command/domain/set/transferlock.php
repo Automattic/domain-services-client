@@ -16,16 +16,16 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Command\Domain\Set;
+namespace Automattic\Domain_Services_Client\Command\Domain\Set;
 
-use Automattic\Domain_Services\{Command, Entity};
+use Automattic\Domain_Services_Client\{Command, Entity};
 
 /**
  * Enables/Disables the transfer lock
  *
  * This commands requests either enabling or disabling the transfer lock on a specific domain.
  *
- * @see \Automattic\Domain_Services\Response\Domain\Set\Transferlock
+ * @see \Automattic\Domain_Services_Client\Response\Domain\Set\Transferlock
  */
 class Transferlock implements Command\Command_Interface, Command\Command_Serialize_Interface {
 	use Command\Command_Trait;

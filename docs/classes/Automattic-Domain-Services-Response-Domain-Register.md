@@ -21,9 +21,9 @@
 
 * File: [lib/response/domain/register.php](../../lib/response/domain/register.php)
 * Implements:
-  * [\Automattic\Domain_Services\Response\Response_Interface](../classes/Automattic-Domain-Services-Response-Response-Interface.md)
+  * [\Automattic\Domain_Services_Client\Response\Response_Interface](../classes/Automattic-Domain-Services-Response-Response-Interface.md)
 * Uses Traits:
-  * [\Automattic\Domain_Services\Response\Data_Trait](../classes/Automattic-Domain-Services-Response-Data-Trait.md)
+  * [\Automattic\Domain_Services_Client\Response\Data_Trait](../classes/Automattic-Domain-Services-Response-Data-Trait.md)
 
 ---
 
@@ -153,7 +153,7 @@ Gets the response status code
 
 ##### See Also:
 
- * [\Automattic\Domain_Services\Response\Code](../classes/Automattic-Domain-Services-Response-Code.md)
+ * [\Automattic\Domain_Services_Client\Response\Code](../classes/Automattic-Domain-Services-Response-Code.md)
 
 ##### Returns:
 
@@ -176,7 +176,7 @@ Gets the response status description
 
 ##### See Also:
 
- * [\Automattic\Domain_Services\Response\Code::DESCRIPTION](../\Automattic\Domain_Services\Response\Code::DESCRIPTION)
+ * [\Automattic\Domain_Services_Client\Response\Code::DESCRIPTION](../\Automattic\Domain_Services_Client\Response\Code::DESCRIPTION)
 
 ##### Returns:
 

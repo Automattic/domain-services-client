@@ -32,10 +32,10 @@ This event indicates that a verification request was sent to the contact's email
 
 * File: [lib/event/contact/verification/request.php](../../lib/event/contact/verification/request.php)
 * Implements:
-  * [\Automattic\Domain_Services\Event\Event_Interface](../classes/Automattic-Domain-Services-Event-Event-Interface.md)
+  * [\Automattic\Domain_Services_Client\Event\Event_Interface](../classes/Automattic-Domain-Services-Event-Event-Interface.md)
 * Uses Traits:
-  * [\Automattic\Domain_Services\Event\Data_Trait](../classes/Automattic-Domain-Services-Event-Data-Trait.md)
-  * [\Automattic\Domain_Services\Event\Object_Type_Contact_Trait](../classes/Automattic-Domain-Services-Event-Object-Type-Contact-Trait.md)
+  * [\Automattic\Domain_Services_Client\Event\Data_Trait](../classes/Automattic-Domain-Services-Event-Data-Trait.md)
+  * [\Automattic\Domain_Services_Client\Event\Object_Type_Contact_Trait](../classes/Automattic-Domain-Services-Event-Object-Type-Contact-Trait.md)
 
 ---
 
@@ -89,13 +89,13 @@ Gets the date this event was acknowledged.
 ### get_contact_id
 
 ```
-final public get_contact_id() : \Automattic\Domain_Services\Entity\Contact_Id
+final public get_contact_id() : \Automattic\Domain_Services_Client\Entity\Contact_Id
 ```
 
 ##### Returns:
 
 ```
-\Automattic\Domain_Services\Entity\Contact_Id
+\Automattic\Domain_Services_Client\Entity\Contact_Id
 ```
 
 ---

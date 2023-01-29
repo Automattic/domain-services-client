@@ -22,13 +22,13 @@ Retrieves information about a domain that is registered with the reseller.
 
 * File: [lib/command/domain/info.php](../../lib/command/domain/info.php)
 * Implements:
-  * [\Automattic\Domain_Services\Command\Command_Interface](../classes/Automattic-Domain-Services-Command-Command-Interface.md)
-  * [\Automattic\Domain_Services\Command\Command_Serialize_Interface](../classes/Automattic-Domain-Services-Command-Command-Serialize-Interface.md)
+  * [\Automattic\Domain_Services_Client\Command\Command_Interface](../classes/Automattic-Domain-Services-Command-Command-Interface.md)
+  * [\Automattic\Domain_Services_Client\Command\Command_Serialize_Interface](../classes/Automattic-Domain-Services-Command-Command-Serialize-Interface.md)
 * Uses Traits:
-  * [\Automattic\Domain_Services\Command\Command_Serialize_Trait](../classes/Automattic-Domain-Services-Command-Command-Serialize-Trait.md)
-  * [\Automattic\Domain_Services\Command\Command_Trait](../classes/Automattic-Domain-Services-Command-Command-Trait.md)
+  * [\Automattic\Domain_Services_Client\Command\Command_Serialize_Trait](../classes/Automattic-Domain-Services-Command-Command-Serialize-Trait.md)
+  * [\Automattic\Domain_Services_Client\Command\Command_Trait](../classes/Automattic-Domain-Services-Command-Command-Trait.md)
 * See Also:
-  * [\Automattic\Domain_Services\Response\Domain\Info](../classes/Automattic-Domain-Services-Response-Domain-Info.md)
+  * [\Automattic\Domain_Services_Client\Response\Domain\Info](../classes/Automattic-Domain-Services-Response-Domain-Info.md)
 
 ---
 
@@ -38,7 +38,7 @@ Retrieves information about a domain that is registered with the reseller.
 ### __construct
 
 ```
-public __construct(\Automattic\Domain_Services\Entity\Domain_Name  domain) : mixed
+public __construct(\Automattic\Domain_Services_Client\Entity\Domain_Name  domain) : mixed
 ```
 
 ##### Summary
@@ -49,7 +49,7 @@ public __construct(\Automattic\Domain_Services\Entity\Domain_Name  domain) : mix
 
 | Name | Type | Default |
 |------|------|---------|
-| **$domain** | \Automattic\Domain_Services\Entity\Domain_Name |  |
+| **$domain** | \Automattic\Domain_Services_Client\Entity\Domain_Name |  |
 
 ##### Returns:
 

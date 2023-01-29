@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Command\Domain;
+namespace Automattic\Domain_Services_Client\Command\Domain;
 
-use Automattic\Domain_Services\{Command, Entity, Exception};
+use Automattic\Domain_Services_Client\{Command, Entity, Exception};
 
 /**
  * Register a new a domain.
@@ -84,9 +84,9 @@ use Automattic\Domain_Services\{Command, Entity, Exception};
  * }
  * ```
  *
- * @see     \Automattic\Domain_Services\Event\Domain\Register\Fail
- * @see     \Automattic\Domain_Services\Event\Domain\Register\Success
- * @see     \Automattic\Domain_Services\Response\Domain\Register
+ * @see     \Automattic\Domain_Services_Client\Event\Domain\Register\Fail
+ * @see     \Automattic\Domain_Services_Client\Event\Domain\Register\Success
+ * @see     \Automattic\Domain_Services_Client\Response\Domain\Register
  */
 class Register implements Command\Command_Interface, Command\Command_Serialize_Interface {
 	use Command\Command_Serialize_Trait;

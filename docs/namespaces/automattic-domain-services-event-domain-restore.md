@@ -4,5 +4,5 @@
 
 | Name | Summary |
 |------|---------|
-| [\Automattic\Domain_Services\Event\Domain\Restore\Fail](../classes/Automattic-Domain-Services-Event-Domain-Restore-Fail.md) | Failure event for a `Domain\Restore` command |
-| [\Automattic\Domain_Services\Event\Domain\Restore\Success](../classes/Automattic-Domain-Services-Event-Domain-Restore-Success.md) | Success event for a `Domain\Restore` command. |
+| [\Automattic\Domain_Services_Client\Event\Domain\Restore\Fail](../classes/Automattic-Domain-Services-Event-Domain-Restore-Fail.md) | Failure event for a `Domain\Restore` command |
+| [\Automattic\Domain_Services_Client\Event\Domain\Restore\Success](../classes/Automattic-Domain-Services-Event-Domain-Restore-Success.md) | Success event for a `Domain\Restore` command. |

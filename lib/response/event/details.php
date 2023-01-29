@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Response\Event;
+namespace Automattic\Domain_Services_Client\Response\Event;
 
-use Automattic\Domain_Services\{Event, Exception\Event\Invalid_Event_Name, Response};
+use Automattic\Domain_Services_Client\{Event, Exception\Event\Invalid_Event_Name, Response};
 
 /**
  * Response of an Event_Details command.
@@ -26,7 +26,7 @@ use Automattic\Domain_Services\{Event, Exception\Event\Invalid_Event_Name, Respo
  * This is the response returned from a successful execution of Event_Details command. The event can be retrieved using
  * get_event() method.
  *
- * @see \Automattic\Domain_Services\Command\Event\Details
+ * @see \Automattic\Domain_Services_Client\Command\Event\Details
  */
 class Details implements Response\Response_Interface {
 	use Response\Data_Trait;

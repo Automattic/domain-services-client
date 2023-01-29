@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Event;
+namespace Automattic\Domain_Services_Client\Event;
 
-use Automattic\Domain_Services\Helper;
+use Automattic\Domain_Services_Client\Helper;
 
 /**
  * A trait that defines data access methods common to all event classes.

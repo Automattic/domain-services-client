@@ -32,11 +32,11 @@ Contains the domain name, the newly added records and the deleted records.
 
 * File: [lib/response/dns/set.php](../../lib/response/dns/set.php)
 * Implements:
-  * [\Automattic\Domain_Services\Response\Response_Interface](../classes/Automattic-Domain-Services-Response-Response-Interface.md)
+  * [\Automattic\Domain_Services_Client\Response\Response_Interface](../classes/Automattic-Domain-Services-Response-Response-Interface.md)
 * Uses Traits:
-  * [\Automattic\Domain_Services\Response\Data_Trait](../classes/Automattic-Domain-Services-Response-Data-Trait.md)
+  * [\Automattic\Domain_Services_Client\Response\Data_Trait](../classes/Automattic-Domain-Services-Response-Data-Trait.md)
 * See Also:
-  * [\Automattic\Domain_Services\Command\Dns\Set](../classes/Automattic-Domain-Services-Command-Dns-Set.md)
+  * [\Automattic\Domain_Services_Client\Command\Dns\Set](../classes/Automattic-Domain-Services-Command-Dns-Set.md)
 
 ---
 
@@ -115,7 +115,7 @@ array|mixed|null
 ### get_domain_name
 
 ```
-public get_domain_name() : \Automattic\Domain_Services\Entity\Domain_Name
+public get_domain_name() : \Automattic\Domain_Services_Client\Entity\Domain_Name
 ```
 
 ##### Summary
@@ -125,7 +125,7 @@ Returns the domain name for which DNS records were updated
 ##### Returns:
 
 ```
-\Automattic\Domain_Services\Entity\Domain_Name
+\Automattic\Domain_Services_Client\Entity\Domain_Name
 ```
 
 ---
@@ -134,7 +134,7 @@ Returns the domain name for which DNS records were updated
 ### get_records_added
 
 ```
-public get_records_added() : \Automattic\Domain_Services\Entity\Dns_Records
+public get_records_added() : \Automattic\Domain_Services_Client\Entity\Dns_Records
 ```
 
 ##### Summary
@@ -145,12 +145,12 @@ Returns the DNS records that were added
 
 | Type | Description |
 |------|-------------|
-| \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception |  |
+| \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception |  |
 
 ##### Returns:
 
 ```
-\Automattic\Domain_Services\Entity\Dns_Records
+\Automattic\Domain_Services_Client\Entity\Dns_Records
 ```
 
 ---
@@ -159,7 +159,7 @@ Returns the DNS records that were added
 ### get_records_deleted
 
 ```
-public get_records_deleted() : \Automattic\Domain_Services\Entity\Dns_Records
+public get_records_deleted() : \Automattic\Domain_Services_Client\Entity\Dns_Records
 ```
 
 ##### Summary
@@ -169,7 +169,7 @@ Returns the DNS records that were deleted
 ##### Returns:
 
 ```
-\Automattic\Domain_Services\Entity\Dns_Records
+\Automattic\Domain_Services_Client\Entity\Dns_Records
 ```
 
 ---
@@ -229,7 +229,7 @@ Gets the response status code
 
 ##### See Also:
 
- * [\Automattic\Domain_Services\Response\Code](../classes/Automattic-Domain-Services-Response-Code.md)
+ * [\Automattic\Domain_Services_Client\Response\Code](../classes/Automattic-Domain-Services-Response-Code.md)
 
 ##### Returns:
 
@@ -252,7 +252,7 @@ Gets the response status description
 
 ##### See Also:
 
- * [\Automattic\Domain_Services\Response\Code::DESCRIPTION](../\Automattic\Domain_Services\Response\Code::DESCRIPTION)
+ * [\Automattic\Domain_Services_Client\Response\Code::DESCRIPTION](../\Automattic\Domain_Services_Client\Response\Code::DESCRIPTION)
 
 ##### Returns:
 

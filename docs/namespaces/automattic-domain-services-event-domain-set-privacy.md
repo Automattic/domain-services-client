@@ -4,5 +4,5 @@
 
 | Name | Summary |
 |------|---------|
-| [\Automattic\Domain_Services\Event\Domain\Set\Privacy\Fail](../classes/Automattic-Domain-Services-Event-Domain-Set-Privacy-Fail.md) | Fail event for a `Domain\Set\Privacy command |
-| [\Automattic\Domain_Services\Event\Domain\Set\Privacy\Success](../classes/Automattic-Domain-Services-Event-Domain-Set-Privacy-Success.md) | Success event for a `Domain\Set\Privacy command |
+| [\Automattic\Domain_Services_Client\Event\Domain\Set\Privacy\Fail](../classes/Automattic-Domain-Services-Event-Domain-Set-Privacy-Fail.md) | Fail event for a `Domain\Set\Privacy command |
+| [\Automattic\Domain_Services_Client\Event\Domain\Set\Privacy\Success](../classes/Automattic-Domain-Services-Event-Domain-Set-Privacy-Success.md) | Success event for a `Domain\Set\Privacy command |

@@ -4,5 +4,5 @@
 
 | Name | Summary |
 |------|---------|
-| [\Automattic\Domain_Services\Event\Domain\Set\Transferlock\Fail](../classes/Automattic-Domain-Services-Event-Domain-Set-Transferlock-Fail.md) | Fail event for Domain\Set\TransferLock command |
-| [\Automattic\Domain_Services\Event\Domain\Set\Transferlock\Success](../classes/Automattic-Domain-Services-Event-Domain-Set-Transferlock-Success.md) | Success event for Domain\Set\TransferLock command |
+| [\Automattic\Domain_Services_Client\Event\Domain\Set\Transferlock\Fail](../classes/Automattic-Domain-Services-Event-Domain-Set-Transferlock-Fail.md) | Fail event for Domain\Set\TransferLock command |
+| [\Automattic\Domain_Services_Client\Event\Domain\Set\Transferlock\Success](../classes/Automattic-Domain-Services-Event-Domain-Set-Transferlock-Success.md) | Success event for Domain\Set\TransferLock command |

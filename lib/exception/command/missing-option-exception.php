@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Exception\Command;
+namespace Automattic\Domain_Services_Client\Exception\Command;
 
-use Automattic\Domain_Services\{Exception, Response};
+use Automattic\Domain_Services_Client\{Exception, Response};
 
 class Missing_Option_Exception extends Exception\Domain_Services_Exception {
 	/**

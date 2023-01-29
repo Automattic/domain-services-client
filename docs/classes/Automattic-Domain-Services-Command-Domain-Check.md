@@ -21,13 +21,13 @@ This command requests an availability and price check for the list of supplied d
 
 * File: [lib/command/domain/check.php](../../lib/command/domain/check.php)
 * Implements:
-  * [\Automattic\Domain_Services\Command\Command_Interface](../classes/Automattic-Domain-Services-Command-Command-Interface.md)
-  * [\Automattic\Domain_Services\Command\Command_Serialize_Interface](../classes/Automattic-Domain-Services-Command-Command-Serialize-Interface.md)
+  * [\Automattic\Domain_Services_Client\Command\Command_Interface](../classes/Automattic-Domain-Services-Command-Command-Interface.md)
+  * [\Automattic\Domain_Services_Client\Command\Command_Serialize_Interface](../classes/Automattic-Domain-Services-Command-Command-Serialize-Interface.md)
 * Uses Traits:
-  * [\Automattic\Domain_Services\Command\Command_Serialize_Trait](../classes/Automattic-Domain-Services-Command-Command-Serialize-Trait.md)
-  * [\Automattic\Domain_Services\Command\Command_Trait](../classes/Automattic-Domain-Services-Command-Command-Trait.md)
+  * [\Automattic\Domain_Services_Client\Command\Command_Serialize_Trait](../classes/Automattic-Domain-Services-Command-Command-Serialize-Trait.md)
+  * [\Automattic\Domain_Services_Client\Command\Command_Trait](../classes/Automattic-Domain-Services-Command-Command-Trait.md)
 * See Also:
-  * [\Automattic\Domain_Services\Response\Domain\Check](../classes/Automattic-Domain-Services-Response-Domain-Check.md)
+  * [\Automattic\Domain_Services_Client\Response\Domain\Check](../classes/Automattic-Domain-Services-Response-Domain-Check.md)
 
 ---
 
@@ -37,7 +37,7 @@ This command requests an availability and price check for the list of supplied d
 ### __construct
 
 ```
-public __construct(\Automattic\Domain_Services\Entity\Domain_Names  domains) : mixed
+public __construct(\Automattic\Domain_Services_Client\Entity\Domain_Names  domains) : mixed
 ```
 
 ##### Summary
@@ -48,13 +48,13 @@ Constructs the `Domain\Check` command
 
 | Name | Type | Default |
 |------|------|---------|
-| **$domains** | \Automattic\Domain_Services\Entity\Domain_Names |  |
+| **$domains** | \Automattic\Domain_Services_Client\Entity\Domain_Names |  |
 
 ##### Throws:
 
 | Type | Description |
 |------|-------------|
-| \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception |  |
+| \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception |  |
 
 ##### Returns:
 

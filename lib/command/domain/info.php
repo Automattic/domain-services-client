@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Command\Domain;
+namespace Automattic\Domain_Services_Client\Command\Domain;
 
-use Automattic\Domain_Services\{Command, Entity};
+use Automattic\Domain_Services_Client\{Command, Entity};
 
 /**
  * Retrieves information about a domain that is registered with the reseller.
@@ -26,7 +26,7 @@ use Automattic\Domain_Services\{Command, Entity};
  * - This command retrieves information about a domain that is registered on the reseller's account.
  * - If the domain is not registered on the reseller's account an error is returned.
  *
- * @see \Automattic\Domain_Services\Response\Domain\Info
+ * @see \Automattic\Domain_Services_Client\Response\Domain\Info
  */
 class Info implements Command\Command_Interface, Command\Command_Serialize_Interface {
 	use Command\Command_Serialize_Trait;

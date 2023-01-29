@@ -23,7 +23,7 @@ Represents a contact ID
 
 * File: [lib/entity/contact-id.php](../../lib/entity/contact-id.php)
 * See Also:
-  * [\Automattic\Domain_Services\Entity\Domain_Contact](../classes/Automattic-Domain-Services-Entity-Domain-Contact.md)
+  * [\Automattic\Domain_Services_Client\Entity\Domain_Contact](../classes/Automattic-Domain-Services-Entity-Domain-Contact.md)
 
 ---
 
@@ -50,7 +50,7 @@ Constructs a Contact_Id entity
 
 | Type | Description |
 |------|-------------|
-| \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception |  |
+| \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception |  |
 
 ##### Returns:
 

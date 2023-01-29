@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Event\Domain\Register;
+namespace Automattic\Domain_Services_Client\Event\Domain\Register;
 
-use Automattic\Domain_Services\{Event};
+use Automattic\Domain_Services_Client\{Event};
 
 /**
  * Failure event for a `Domain\Register` command
@@ -26,7 +26,7 @@ use Automattic\Domain_Services\{Event};
  * This event is sent when a register operation fails. There may be more information about the cause of the failure in
  * the event data.
  *
- * @see \Automattic\Domain_Services\Command\Domain\Register
+ * @see \Automattic\Domain_Services_Client\Command\Domain\Register
  */
 class Fail implements Event\Event_Interface {
 	use Event\Data_Trait;

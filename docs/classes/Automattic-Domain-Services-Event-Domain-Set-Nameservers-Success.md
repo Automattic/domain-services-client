@@ -33,12 +33,12 @@ Set name servers success event
 
 * File: [lib/event/domain/set/nameservers/success.php](../../lib/event/domain/set/nameservers/success.php)
 * Implements:
-  * [\Automattic\Domain_Services\Event\Event_Interface](../classes/Automattic-Domain-Services-Event-Event-Interface.md)
+  * [\Automattic\Domain_Services_Client\Event\Event_Interface](../classes/Automattic-Domain-Services-Event-Event-Interface.md)
 * Uses Traits:
-  * [\Automattic\Domain_Services\Event\Data_Trait](../classes/Automattic-Domain-Services-Event-Data-Trait.md)
-  * [\Automattic\Domain_Services\Event\Object_Type_Domain_Trait](../classes/Automattic-Domain-Services-Event-Object-Type-Domain-Trait.md)
+  * [\Automattic\Domain_Services_Client\Event\Data_Trait](../classes/Automattic-Domain-Services-Event-Data-Trait.md)
+  * [\Automattic\Domain_Services_Client\Event\Object_Type_Domain_Trait](../classes/Automattic-Domain-Services-Event-Object-Type-Domain-Trait.md)
 * See Also:
-  * [\Automattic\Domain_Services\Command\Domain\Set\Nameservers](../classes/Automattic-Domain-Services-Command-Domain-Set-Nameservers.md)
+  * [\Automattic\Domain_Services_Client\Command\Domain\Set\Nameservers](../classes/Automattic-Domain-Services-Command-Domain-Set-Nameservers.md)
 
 ---
 
@@ -117,13 +117,13 @@ array|mixed|null
 ### get_domain
 
 ```
-final public get_domain() : \Automattic\Domain_Services\Entity\Domain_Name
+final public get_domain() : \Automattic\Domain_Services_Client\Entity\Domain_Name
 ```
 
 ##### Returns:
 
 ```
-\Automattic\Domain_Services\Entity\Domain_Name
+\Automattic\Domain_Services_Client\Entity\Domain_Name
 ```
 
 ---
@@ -233,7 +233,7 @@ int
 ### get_nameservers
 
 ```
-public get_nameservers() : \Automattic\Domain_Services\Entity\Nameservers
+public get_nameservers() : \Automattic\Domain_Services_Client\Entity\Nameservers
 ```
 
 ##### Summary
@@ -244,12 +244,12 @@ Returns the name servers that have been set at the registry.
 
 | Type | Description |
 |------|-------------|
-| \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception |  |
+| \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception |  |
 
 ##### Returns:
 
 ```
-\Automattic\Domain_Services\Entity\Nameservers
+\Automattic\Domain_Services_Client\Entity\Nameservers
 ```
 
 ---

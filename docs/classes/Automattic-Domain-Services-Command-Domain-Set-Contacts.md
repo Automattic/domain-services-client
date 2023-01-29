@@ -44,17 +44,17 @@ if ( $response->is_success() ) {
 
 * File: [lib/command/domain/set/contacts.php](../../lib/command/domain/set/contacts.php)
 * Implements:
-  * [\Automattic\Domain_Services\Command\Command_Interface](../classes/Automattic-Domain-Services-Command-Command-Interface.md)
-  * [\Automattic\Domain_Services\Command\Command_Serialize_Interface](../classes/Automattic-Domain-Services-Command-Command-Serialize-Interface.md)
+  * [\Automattic\Domain_Services_Client\Command\Command_Interface](../classes/Automattic-Domain-Services-Command-Command-Interface.md)
+  * [\Automattic\Domain_Services_Client\Command\Command_Serialize_Interface](../classes/Automattic-Domain-Services-Command-Command-Serialize-Interface.md)
 * Uses Traits:
-  * [\Automattic\Domain_Services\Command\Command_Serialize_Trait](../classes/Automattic-Domain-Services-Command-Command-Serialize-Trait.md)
-  * [\Automattic\Domain_Services\Command\Command_Trait](../classes/Automattic-Domain-Services-Command-Command-Trait.md)
+  * [\Automattic\Domain_Services_Client\Command\Command_Serialize_Trait](../classes/Automattic-Domain-Services-Command-Command-Serialize-Trait.md)
+  * [\Automattic\Domain_Services_Client\Command\Command_Trait](../classes/Automattic-Domain-Services-Command-Command-Trait.md)
 * See Also:
-  * [\Automattic\Domain_Services\Response\Domain\Set\Contacts](../classes/Automattic-Domain-Services-Response-Domain-Set-Contacts.md)
-  * [\Automattic\Domain_Services\Entity\Contact_Id](../classes/Automattic-Domain-Services-Entity-Contact-Id.md)
-  * [\Automattic\Domain_Services\Entity\Contact_Information](../classes/Automattic-Domain-Services-Entity-Contact-Information.md)
-  * [\Automattic\Domain_Services\Entity\Domain_Contacts](../classes/Automattic-Domain-Services-Entity-Domain-Contacts.md)
-  * [\Automattic\Domain_Services\Entity\Domain_Contact](../classes/Automattic-Domain-Services-Entity-Domain-Contact.md)
+  * [\Automattic\Domain_Services_Client\Response\Domain\Set\Contacts](../classes/Automattic-Domain-Services-Response-Domain-Set-Contacts.md)
+  * [\Automattic\Domain_Services_Client\Entity\Contact_Id](../classes/Automattic-Domain-Services-Entity-Contact-Id.md)
+  * [\Automattic\Domain_Services_Client\Entity\Contact_Information](../classes/Automattic-Domain-Services-Entity-Contact-Information.md)
+  * [\Automattic\Domain_Services_Client\Entity\Domain_Contacts](../classes/Automattic-Domain-Services-Entity-Domain-Contacts.md)
+  * [\Automattic\Domain_Services_Client\Entity\Domain_Contact](../classes/Automattic-Domain-Services-Entity-Domain-Contact.md)
 
 ---
 
@@ -64,7 +64,7 @@ if ( $response->is_success() ) {
 ### __construct
 
 ```
-public __construct(\Automattic\Domain_Services\Entity\Domain_Name  domain, \Automattic\Domain_Services\Entity\Domain_Contacts  contacts) : mixed
+public __construct(\Automattic\Domain_Services_Client\Entity\Domain_Name  domain, \Automattic\Domain_Services_Client\Entity\Domain_Contacts  contacts) : mixed
 ```
 
 ##### Summary
@@ -75,14 +75,14 @@ Constructs a Domain\Set\Contacts command
 
 | Name | Type | Default |
 |------|------|---------|
-| **$domain** | \Automattic\Domain_Services\Entity\Domain_Name |  |
-| **$contacts** | \Automattic\Domain_Services\Entity\Domain_Contacts |  |
+| **$domain** | \Automattic\Domain_Services_Client\Entity\Domain_Name |  |
+| **$contacts** | \Automattic\Domain_Services_Client\Entity\Domain_Contacts |  |
 
 ##### Throws:
 
 | Type | Description |
 |------|-------------|
-| \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception |  |
+| \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception |  |
 
 ##### Returns:
 

@@ -16,16 +16,16 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Event\Domain\Set\Nameservers;
+namespace Automattic\Domain_Services_Client\Event\Domain\Set\Nameservers;
 
-use Automattic\Domain_Services\{Event};
+use Automattic\Domain_Services_Client\{Event};
 
 /**
  * Set name servers failure event
  *
  * This event is generated when a name server update fails at the server.
  *
- * @see \Automattic\Domain_Services\Command\Domain\Set\Nameservers
+ * @see \Automattic\Domain_Services_Client\Command\Domain\Set\Nameservers
  */
 class Fail implements Event\Event_Interface {
 	use Event\Data_Trait;

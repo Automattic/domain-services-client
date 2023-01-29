@@ -228,7 +228,7 @@ string
 ### get_default_configuration
 
 ```
-static public get_default_configuration() : \Automattic\Domain_Services\Configuration
+static public get_default_configuration() : \Automattic\Domain_Services_Client\Configuration
 ```
 
 ##### Summary
@@ -238,7 +238,7 @@ Gets the default configuration instance
 ##### Returns:
 
 ```
-\Automattic\Domain_Services\Configuration
+\Automattic\Domain_Services_Client\Configuration
 ```
 
 ---
@@ -574,7 +574,7 @@ $this
 ### set_default_configuration
 
 ```
-static public set_default_configuration(\Automattic\Domain_Services\Configuration  config) : void
+static public set_default_configuration(\Automattic\Domain_Services_Client\Configuration  config) : void
 ```
 
 ##### Summary
@@ -585,7 +585,7 @@ Sets the default configuration instance
 
 | Name | Type | Default |
 |------|------|---------|
-| **$config** | \Automattic\Domain_Services\Configuration |  |
+| **$config** | \Automattic\Domain_Services_Client\Configuration |  |
 
 ##### Returns:
 

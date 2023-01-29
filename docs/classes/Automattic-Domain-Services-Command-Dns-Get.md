@@ -36,14 +36,14 @@ if ( $response->is_success() ) {
 
 * File: [lib/command/dns/get.php](../../lib/command/dns/get.php)
 * Implements:
-  * [\Automattic\Domain_Services\Command\Command_Interface](../classes/Automattic-Domain-Services-Command-Command-Interface.md)
-  * [\Automattic\Domain_Services\Command\Command_Serialize_Interface](../classes/Automattic-Domain-Services-Command-Command-Serialize-Interface.md)
+  * [\Automattic\Domain_Services_Client\Command\Command_Interface](../classes/Automattic-Domain-Services-Command-Command-Interface.md)
+  * [\Automattic\Domain_Services_Client\Command\Command_Serialize_Interface](../classes/Automattic-Domain-Services-Command-Command-Serialize-Interface.md)
 * Uses Traits:
-  * [\Automattic\Domain_Services\Command\Command_Serialize_Trait](../classes/Automattic-Domain-Services-Command-Command-Serialize-Trait.md)
-  * [\Automattic\Domain_Services\Command\Command_Trait](../classes/Automattic-Domain-Services-Command-Command-Trait.md)
+  * [\Automattic\Domain_Services_Client\Command\Command_Serialize_Trait](../classes/Automattic-Domain-Services-Command-Command-Serialize-Trait.md)
+  * [\Automattic\Domain_Services_Client\Command\Command_Trait](../classes/Automattic-Domain-Services-Command-Command-Trait.md)
 * See Also:
-  * [\Automattic\Domain_Services\Response\Dns\Get](../classes/Automattic-Domain-Services-Response-Dns-Get.md)
-  * [\Automattic\Domain_Services\Command\Dns\Set](../classes/Automattic-Domain-Services-Command-Dns-Set.md)
+  * [\Automattic\Domain_Services_Client\Response\Dns\Get](../classes/Automattic-Domain-Services-Response-Dns-Get.md)
+  * [\Automattic\Domain_Services_Client\Command\Dns\Set](../classes/Automattic-Domain-Services-Command-Dns-Set.md)
 
 ---
 
@@ -53,7 +53,7 @@ if ( $response->is_success() ) {
 ### __construct
 
 ```
-public __construct(\Automattic\Domain_Services\Entity\Domain_Name  domain) : mixed
+public __construct(\Automattic\Domain_Services_Client\Entity\Domain_Name  domain) : mixed
 ```
 
 ##### Summary
@@ -64,7 +64,7 @@ Constructs a Dns\Get command
 
 | Name | Type | Default |
 |------|------|---------|
-| **$domain** | \Automattic\Domain_Services\Entity\Domain_Name |  |
+| **$domain** | \Automattic\Domain_Services_Client\Entity\Domain_Name |  |
 
 ##### Returns:
 

@@ -26,13 +26,13 @@ can be set using the $limit property for this command. The limit defaults to 50 
 
 * File: [lib/command/event/enumerate.php](../../lib/command/event/enumerate.php)
 * Implements:
-  * [\Automattic\Domain_Services\Command\Command_Interface](../classes/Automattic-Domain-Services-Command-Command-Interface.md)
-  * [\Automattic\Domain_Services\Command\Command_Serialize_Interface](../classes/Automattic-Domain-Services-Command-Command-Serialize-Interface.md)
+  * [\Automattic\Domain_Services_Client\Command\Command_Interface](../classes/Automattic-Domain-Services-Command-Command-Interface.md)
+  * [\Automattic\Domain_Services_Client\Command\Command_Serialize_Interface](../classes/Automattic-Domain-Services-Command-Command-Serialize-Interface.md)
 * Uses Traits:
-  * [\Automattic\Domain_Services\Command\Command_Serialize_Trait](../classes/Automattic-Domain-Services-Command-Command-Serialize-Trait.md)
-  * [\Automattic\Domain_Services\Command\Command_Trait](../classes/Automattic-Domain-Services-Command-Command-Trait.md)
+  * [\Automattic\Domain_Services_Client\Command\Command_Serialize_Trait](../classes/Automattic-Domain-Services-Command-Command-Serialize-Trait.md)
+  * [\Automattic\Domain_Services_Client\Command\Command_Trait](../classes/Automattic-Domain-Services-Command-Command-Trait.md)
 * See Also:
-  * [\Automattic\Domain_Services\Response\Event\Enumerate](../classes/Automattic-Domain-Services-Response-Event-Enumerate.md)
+  * [\Automattic\Domain_Services_Client\Response\Event\Enumerate](../classes/Automattic-Domain-Services-Response-Event-Enumerate.md)
 
 ---
 
@@ -67,7 +67,7 @@ mixed
 ### set_limit
 
 ```
-public set_limit(int  limit) : \Automattic\Domain_Services\Command\Event\Enumerate
+public set_limit(int  limit) : \Automattic\Domain_Services_Client\Command\Event\Enumerate
 ```
 
 ##### Summary
@@ -83,5 +83,5 @@ Sets the maximum number of events to return in the response.
 ##### Returns:
 
 ```
-\Automattic\Domain_Services\Command\Event\Enumerate
+\Automattic\Domain_Services_Client\Command\Event\Enumerate
 ```

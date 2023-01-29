@@ -24,14 +24,14 @@
 ### __construct
 
 ```
-public __construct(\Automattic\Domain_Services\Entity\Epp_Status_Code  ...epp_status_codes) : mixed
+public __construct(\Automattic\Domain_Services_Client\Entity\Epp_Status_Code  ...epp_status_codes) : mixed
 ```
 
 ##### Parameters:
 
 | Name | Type | Default |
 |------|------|---------|
-| **$epp_status_codes** | \Automattic\Domain_Services\Entity\Epp_Status_Code |  |
+| **$epp_status_codes** | \Automattic\Domain_Services_Client\Entity\Epp_Status_Code |  |
 
 ##### Returns:
 
@@ -45,14 +45,14 @@ mixed
 ### add_epp_code
 
 ```
-public add_epp_code(\Automattic\Domain_Services\Entity\Epp_Status_Code  epp_status_code) : void
+public add_epp_code(\Automattic\Domain_Services_Client\Entity\Epp_Status_Code  epp_status_code) : void
 ```
 
 ##### Parameters:
 
 | Name | Type | Default |
 |------|------|---------|
-| **$epp_status_code** | \Automattic\Domain_Services\Entity\Epp_Status_Code |  |
+| **$epp_status_code** | \Automattic\Domain_Services_Client\Entity\Epp_Status_Code |  |
 
 ##### Returns:
 

@@ -35,11 +35,11 @@ Response containing the Contact_Information associated with a Contact_Id
 
 * File: [lib/response/contact/details.php](../../lib/response/contact/details.php)
 * Implements:
-  * [\Automattic\Domain_Services\Response\Response_Interface](../classes/Automattic-Domain-Services-Response-Response-Interface.md)
+  * [\Automattic\Domain_Services_Client\Response\Response_Interface](../classes/Automattic-Domain-Services-Response-Response-Interface.md)
 * Uses Traits:
-  * [\Automattic\Domain_Services\Response\Data_Trait](../classes/Automattic-Domain-Services-Response-Data-Trait.md)
+  * [\Automattic\Domain_Services_Client\Response\Data_Trait](../classes/Automattic-Domain-Services-Response-Data-Trait.md)
 * See Also:
-  * [\Automattic\Domain_Services\Command\Contact\Details](../classes/Automattic-Domain-Services-Command-Contact-Details.md)
+  * [\Automattic\Domain_Services_Client\Command\Contact\Details](../classes/Automattic-Domain-Services-Command-Contact-Details.md)
 
 ---
 
@@ -118,7 +118,7 @@ string
 ### get_contact_information
 
 ```
-public get_contact_information() : \Automattic\Domain_Services\Entity\Contact_Information
+public get_contact_information() : \Automattic\Domain_Services_Client\Entity\Contact_Information
 ```
 
 ##### Summary
@@ -129,12 +129,12 @@ Returns the contact information
 
 | Type | Description |
 |------|-------------|
-| \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception |  |
+| \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception |  |
 
 ##### Returns:
 
 ```
-\Automattic\Domain_Services\Entity\Contact_Information
+\Automattic\Domain_Services_Client\Entity\Contact_Information
 ```
 
 ---
@@ -219,7 +219,7 @@ Gets the response status code
 
 ##### See Also:
 
- * [\Automattic\Domain_Services\Response\Code](../classes/Automattic-Domain-Services-Response-Code.md)
+ * [\Automattic\Domain_Services_Client\Response\Code](../classes/Automattic-Domain-Services-Response-Code.md)
 
 ##### Returns:
 
@@ -242,7 +242,7 @@ Gets the response status description
 
 ##### See Also:
 
- * [\Automattic\Domain_Services\Response\Code::DESCRIPTION](../\Automattic\Domain_Services\Response\Code::DESCRIPTION)
+ * [\Automattic\Domain_Services_Client\Response\Code::DESCRIPTION](../\Automattic\Domain_Services_Client\Response\Code::DESCRIPTION)
 
 ##### Returns:
 

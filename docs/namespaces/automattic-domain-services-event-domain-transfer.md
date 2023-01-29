@@ -2,5 +2,5 @@
 
 ### Namespaces
 
-* [\Automattic\Domain_Services\Event\Domain\Transfer\In](../namespaces/automattic-domain-services-event-domain-transfer-in.md)
-* [\Automattic\Domain_Services\Event\Domain\Transfer\Out](../namespaces/automattic-domain-services-event-domain-transfer-out.md)
+* [\Automattic\Domain_Services_Client\Event\Domain\Transfer\In](../namespaces/automattic-domain-services-event-domain-transfer-in.md)
+* [\Automattic\Domain_Services_Client\Event\Domain\Transfer\Out](../namespaces/automattic-domain-services-event-domain-transfer-out.md)

@@ -16,16 +16,16 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Command\Domain;
+namespace Automattic\Domain_Services_Client\Command\Domain;
 
-use Automattic\Domain_Services\{Command, Entity, Exception};
+use Automattic\Domain_Services_Client\{Command, Entity, Exception};
 
 /**
  * Checks the price and availability for a list of domain names
  *
  * This command requests an availability and price check for the list of supplied domain names.
  *
- * @see \Automattic\Domain_Services\Response\Domain\Check
+ * @see \Automattic\Domain_Services_Client\Response\Domain\Check
  */
 class Check implements Command\Command_Interface, Command\Command_Serialize_Interface {
 	use Command\Command_Serialize_Trait;

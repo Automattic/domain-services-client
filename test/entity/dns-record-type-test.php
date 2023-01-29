@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Test\Entity;
+namespace Automattic\Domain_Services_Client\Test\Entity;
 
-use Automattic\Domain_Services\{Entity, Exception, Response, Test};
+use Automattic\Domain_Services_Client\{Entity, Exception, Response, Test};
 
 class Dns_Record_Type_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public const VALID_RECORD_TYPES = [

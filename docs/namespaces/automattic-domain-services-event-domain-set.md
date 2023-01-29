@@ -2,7 +2,7 @@
 
 ### Namespaces
 
-* [\Automattic\Domain_Services\Event\Domain\Set\Contacts](../namespaces/automattic-domain-services-event-domain-set-contacts.md)
-* [\Automattic\Domain_Services\Event\Domain\Set\Nameservers](../namespaces/automattic-domain-services-event-domain-set-nameservers.md)
-* [\Automattic\Domain_Services\Event\Domain\Set\Privacy](../namespaces/automattic-domain-services-event-domain-set-privacy.md)
-* [\Automattic\Domain_Services\Event\Domain\Set\Transferlock](../namespaces/automattic-domain-services-event-domain-set-transferlock.md)
+* [\Automattic\Domain_Services_Client\Event\Domain\Set\Contacts](../namespaces/automattic-domain-services-event-domain-set-contacts.md)
+* [\Automattic\Domain_Services_Client\Event\Domain\Set\Nameservers](../namespaces/automattic-domain-services-event-domain-set-nameservers.md)
+* [\Automattic\Domain_Services_Client\Event\Domain\Set\Privacy](../namespaces/automattic-domain-services-event-domain-set-privacy.md)
+* [\Automattic\Domain_Services_Client\Event\Domain\Set\Transferlock](../namespaces/automattic-domain-services-event-domain-set-transferlock.md)
