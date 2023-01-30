@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Command\Domain\Set;
+namespace Automattic\Domain_Services_Client\Command\Domain\Set;
 
-use Automattic\Domain_Services\{Command, Entity, Exception};
+use Automattic\Domain_Services_Client\{Command, Entity, Exception};
 
 /**
  * Updates domain contacts
@@ -48,7 +48,7 @@ use Automattic\Domain_Services\{Command, Entity, Exception};
  * }
  * ```
  *
- * @see \Automattic\Domain_Services\Response\Domain\Set\Contacts
+ * @see \Automattic\Domain_Services_Client\Response\Domain\Set\Contacts
  * @see Entity\Contact_Id
  * @see Entity\Contact_Information
  * @see Entity\Domain_Contacts

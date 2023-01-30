@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Event\Domain\Renew;
+namespace Automattic\Domain_Services_Client\Event\Domain\Renew;
 
-use Automattic\Domain_Services\{Event};
+use Automattic\Domain_Services_Client\{Event};
 
 /**
  * Domain failed to renew event
@@ -26,7 +26,7 @@ use Automattic\Domain_Services\{Event};
  * - This event is generated when a domain renewal operation fails at the server
  * - There might be more information about the cause of the failure in the event data
  *
- * @see \Automattic\Domain_Services\Command\Domain\Renew
+ * @see \Automattic\Domain_Services_Client\Command\Domain\Renew
  */
 class Fail implements Event\Event_Interface {
 	use Event\Data_Trait;

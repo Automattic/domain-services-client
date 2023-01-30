@@ -16,16 +16,16 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Event\Domain\Delete;
+namespace Automattic\Domain_Services_Client\Event\Domain\Delete;
 
-use Automattic\Domain_Services\{Event};
+use Automattic\Domain_Services_Client\{Event};
 
 /**
  * Domain deletion failed event
  *
  * This event is generated when a domain delete operation fails at the server.
  *
- * @see \Automattic\Domain_Services\Command\Domain\Delete
+ * @see \Automattic\Domain_Services_Client\Command\Domain\Delete
  */
 class Fail implements Event\Event_Interface {
 	use Event\Data_Trait;

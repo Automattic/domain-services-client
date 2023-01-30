@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Response;
+namespace Automattic\Domain_Services_Client\Response;
 
-use Automattic\Domain_Services\{Event};
+use Automattic\Domain_Services_Client\{Event};
 
 /**
  * @internal

@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Test\Event;
+namespace Automattic\Domain_Services_Client\Test\Event;
 
-use Automattic\Domain_Services\{Command, Helper, Event, Response, Test};
+use Automattic\Domain_Services_Client\{Command, Helper, Event, Response, Test};
 
 class Domain_Transfer_In_Fail_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_event_success(): void {

@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Event\Domain\Set\Contacts;
+namespace Automattic\Domain_Services_Client\Event\Domain\Set\Contacts;
 
-use Automattic\Domain_Services\{Command, Entity, Event, Exception};
+use Automattic\Domain_Services_Client\{Command, Entity, Event, Exception};
 
 /**
  * Event representing a Domain\Set\Contacts command success

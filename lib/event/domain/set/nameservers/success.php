@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Event\Domain\Set\Nameservers;
+namespace Automattic\Domain_Services_Client\Event\Domain\Set\Nameservers;
 
-use Automattic\Domain_Services\{Entity, Event, Exception};
+use Automattic\Domain_Services_Client\{Entity, Event, Exception};
 
 /**
  * Set name servers success event
@@ -26,7 +26,7 @@ use Automattic\Domain_Services\{Entity, Event, Exception};
  * - This event is generated when a name server update succeeds at the server
  * - Contains a `name_servers` property with the name servers that were set at the registry
  *
- * @see \Automattic\Domain_Services\Command\Domain\Set\Nameservers
+ * @see \Automattic\Domain_Services_Client\Command\Domain\Set\Nameservers
  */
 class Success implements Event\Event_Interface {
 	use Event\Data_Trait;

@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Response\Domain\Set;
+namespace Automattic\Domain_Services_Client\Response\Domain\Set;
 
-use Automattic\Domain_Services\Response;
+use Automattic\Domain_Services_Client\Response;
 
 /**
  * Response of a Domain\Set\Nameservers command
@@ -28,9 +28,9 @@ use Automattic\Domain_Services\Response;
  *     - The `Domain\Set\Nameservers\Success` and `Domain\Set\Nameservers\Fail` events will indicate whether the
  *       operation was successful or not
  *
- * @see \Automattic\Domain_Services\Command\Domain\Set\Nameservers
- * @see \Automattic\Domain_Services\Event\Domain\Set\Nameservers\Success
- * @see \Automattic\Domain_Services\Event\Domain\Set\Nameservers\Fail
+ * @see \Automattic\Domain_Services_Client\Command\Domain\Set\Nameservers
+ * @see \Automattic\Domain_Services_Client\Event\Domain\Set\Nameservers\Success
+ * @see \Automattic\Domain_Services_Client\Event\Domain\Set\Nameservers\Fail
  */
 class Nameservers implements Response\Response_Interface {
 	use Response\Data_Trait;

@@ -16,16 +16,16 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Event\Domain\Renew;
+namespace Automattic\Domain_Services_Client\Event\Domain\Renew;
 
-use Automattic\Domain_Services\{Entity, Event, Helper, Exception};
+use Automattic\Domain_Services_Client\{Entity, Event, Helper, Exception};
 
 /**
  * Domain renewed successfully event
  *
  * This event is generated when a domain renewal operation has completed successfully at the server.
  *
- * @see \Automattic\Domain_Services\Command\Domain\Renew
+ * @see \Automattic\Domain_Services_Client\Command\Domain\Renew
  */
 class Success implements Event\Event_Interface {
 	use Event\Data_Trait;

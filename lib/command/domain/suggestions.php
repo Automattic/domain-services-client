@@ -16,14 +16,14 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Command\Domain;
+namespace Automattic\Domain_Services_Client\Command\Domain;
 
-use Automattic\Domain_Services\{Command};
+use Automattic\Domain_Services_Client\{Command};
 
 /**
  * Retrieves a list of domain name suggestions based on a query string
  *
- * @see \Automattic\Domain_Services\Response\Domain\Suggestions
+ * @see \Automattic\Domain_Services_Client\Response\Domain\Suggestions
  */
 class Suggestions implements Command\Command_Interface, Command\Command_Serialize_Interface {
 	use Command\Command_Serialize_Trait;

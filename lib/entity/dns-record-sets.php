@@ -16,14 +16,14 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Entity;
+namespace Automattic\Domain_Services_Client\Entity;
 
-use Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception;
+use Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception;
 
 /**
  * Set of sets of DNS records
  *
- * @see \Automattic\Domain_Services\Entity\Dns_Record_Set
+ * @see \Automattic\Domain_Services_Client\Entity\Dns_Record_Set
  */
 class Dns_Record_Sets implements \Iterator {
 	/**
@@ -81,12 +81,12 @@ class Dns_Record_Sets implements \Iterator {
 	/**
 	 * Constructs a DNS_Record_Sets entity from an array of DNS record set values
 	 *
-	 * @internal
 	 * @param array $dns_record_sets_data
 	 * @return static
 	 * @throws Invalid_Value_Exception
 	 *
-	 * @see \Automattic\Domain_Services\Entity\Dns_Record_Set
+	 * @internal
+	 * @see \Automattic\Domain_Services_Client\Entity\Dns_Record_Set
 	 */
 	public static function from_array( array $dns_record_sets_data ): self {
 		$dns_record_sets = new self();

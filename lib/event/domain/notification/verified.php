@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Event\Domain\Notification;
+namespace Automattic\Domain_Services_Client\Event\Domain\Notification;
 
-use Automattic\Domain_Services\{Event};
+use Automattic\Domain_Services_Client\{Event};
 
 /**
  * Domain verified event
@@ -28,7 +28,7 @@ use Automattic\Domain_Services\{Event};
  * - This event contains an `info` property with information about the reason why the domain was verified, if available
  *     - It can be retrieved with the `get_info` method
  *
- * @see \Automattic\Domain_Services\Event\Domain\Notification\Suspended
+ * @see \Automattic\Domain_Services_Client\Event\Domain\Notification\Suspended
  */
 class Verified implements Event\Event_Interface {
 	use Event\Data_Trait;

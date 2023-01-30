@@ -16,7 +16,7 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Test\Lib\Mock\Psr\Http\Message;
+namespace Automattic\Domain_Services_Client\Test\Lib\Mock\Psr\Http\Message;
 
 /**
  * Representation of an outgoing, server-side response.

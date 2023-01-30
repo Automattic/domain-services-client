@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Event\Domain\Set\Privacy;
+namespace Automattic\Domain_Services_Client\Event\Domain\Set\Privacy;
 
-use Automattic\Domain_Services\{Entity, Event, Exception};
+use Automattic\Domain_Services_Client\{Entity, Event, Exception};
 
 /**
  * Success event for a `Domain\Set\Privacy command
@@ -26,7 +26,7 @@ use Automattic\Domain_Services\{Entity, Event, Exception};
  * - This event is generated when a privacy setting update succeeds at the server.
  * - Contains a `privacy_setting` property with the privacy option that was set at the registry
  *
- * @see \Automattic\Domain_Services\Command\Domain\Set\Privacy
+ * @see \Automattic\Domain_Services_Client\Command\Domain\Set\Privacy
  */
 class Success implements Event\Event_Interface {
 	use Event\Data_Trait;

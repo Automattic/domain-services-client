@@ -16,16 +16,16 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Response\Dns;
+namespace Automattic\Domain_Services_Client\Response\Dns;
 
-use Automattic\Domain_Services\{Entity, Exception, Response};
+use Automattic\Domain_Services_Client\{Entity, Exception, Response};
 
 /**
  * Response of a Dns\Get command
  *
  * Contains all DNS records associated with a domain, which can be accessed using the `get_dns_records` method.
  *
- * @see \Automattic\Domain_Services\Command\Dns\Set
+ * @see \Automattic\Domain_Services_Client\Command\Dns\Set
  */
 class Get implements Response\Response_Interface {
 	use Response\Data_Trait;

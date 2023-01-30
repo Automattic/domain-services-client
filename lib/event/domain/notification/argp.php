@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Event\Domain\Notification;
+namespace Automattic\Domain_Services_Client\Event\Domain\Notification;
 
-use Automattic\Domain_Services\{Helper, Event};
+use Automattic\Domain_Services_Client\{Helper, Event};
 
 /**
  * Domain entered the Auto-Renew Grace Period (ARGP) event
@@ -30,7 +30,7 @@ use Automattic\Domain_Services\{Helper, Event};
  * - This event may contain an `argp_end_date` property which can be retrieved using the `get_argp_end_date` method
  *     - That is the date until which the domain is in ARGP
  *
- * @see \Automattic\Domain_Services\Event\Domain\Notification\Redemption
+ * @see \Automattic\Domain_Services_Client\Event\Domain\Notification\Redemption
  */
 class Argp implements Event\Event_Interface {
 	use Event\Data_Trait;
