@@ -27,7 +27,8 @@ use Automattic\Domain_Services_Client\{Command};
  * array of events in ascending order by age (oldest to newest). The maximum number of events returned in the response,
  * can be set using the `$limit` property for this command. The limit defaults to 50 if none is set.
  * - This command executes synchronously on the server.
- * - The corresponding response object will include the list of events.
+ * - The corresponding response object will include the list of events and the total number of non acknowledged events
+ *   for the reseller.
  *
  * @see \Automattic\Domain_Services_Client\Response\Event\Enumerate
  */

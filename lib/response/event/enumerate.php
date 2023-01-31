@@ -38,7 +38,7 @@ class Enumerate implements Response\Response_Interface {
 	private const REQUEST_PARAMS = 'data.request_params';
 
 	/**
-	 * Gets the total number of events returned
+	 * Gets the total number of non acknowledged events that exist for the reseller that called the command
 	 *
 	 * @return int
 	 */
