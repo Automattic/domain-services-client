@@ -32,6 +32,8 @@ if ( $response->is_success() ) {
 ### Details
 
 * File: [lib/command/contact/details.php](../../lib/command/contact/details.php)
+* Implements:
+  * [\Automattic\Domain_Services\Command\Command_Interface](../classes/Automattic-Domain-Services-Command-Command-Interface.md)
 * See Also:
   * [\Automattic\Domain_Services\Response\Contact\Details](../classes/Automattic-Domain-Services-Response-Contact-Details.md)
   * [\Automattic\Domain_Services\Command\Domain\Set\Contacts](../classes/Automattic-Domain-Services-Command-Domain-Set-Contacts.md)

@@ -35,6 +35,8 @@ if ( $response->is_success() ) {
 ### Details
 
 * File: [lib/command/dns/get.php](../../lib/command/dns/get.php)
+* Implements:
+  * [\Automattic\Domain_Services\Command\Command_Interface](../classes/Automattic-Domain-Services-Command-Command-Interface.md)
 * See Also:
   * [\Automattic\Domain_Services\Response\Dns\Get](../classes/Automattic-Domain-Services-Response-Dns-Get.md)
   * [\Automattic\Domain_Services\Command\Dns\Set](../classes/Automattic-Domain-Services-Command-Dns-Set.md)

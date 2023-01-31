@@ -20,6 +20,8 @@ This command requests an availability and price check for the list of supplied d
 ### Details
 
 * File: [lib/command/domain/check.php](../../lib/command/domain/check.php)
+* Implements:
+  * [\Automattic\Domain_Services\Command\Command_Interface](../classes/Automattic-Domain-Services-Command-Command-Interface.md)
 * See Also:
   * [\Automattic\Domain_Services\Response\Domain\Check](../classes/Automattic-Domain-Services-Response-Domain-Check.md)
 

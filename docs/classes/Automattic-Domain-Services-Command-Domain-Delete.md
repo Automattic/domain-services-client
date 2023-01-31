@@ -38,6 +38,8 @@ if ( $response->is_success() ) {
 ### Details
 
 * File: [lib/command/domain/delete.php](../../lib/command/domain/delete.php)
+* Implements:
+  * [\Automattic\Domain_Services\Command\Command_Interface](../classes/Automattic-Domain-Services-Command-Command-Interface.md)
 * See Also:
   * [\Automattic\Domain_Services\Response\Domain\Delete](../classes/Automattic-Domain-Services-Response-Domain-Delete.md)
   * [\Automattic\Domain_Services\Event\Domain\Delete\Success](../classes/Automattic-Domain-Services-Event-Domain-Delete-Success.md)

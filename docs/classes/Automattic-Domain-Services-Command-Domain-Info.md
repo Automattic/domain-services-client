@@ -21,6 +21,8 @@ Retrieves information about a domain that is registered with the reseller.
 ### Details
 
 * File: [lib/command/domain/info.php](../../lib/command/domain/info.php)
+* Implements:
+  * [\Automattic\Domain_Services\Command\Command_Interface](../classes/Automattic-Domain-Services-Command-Command-Interface.md)
 * See Also:
   * [\Automattic\Domain_Services\Response\Domain\Info](../classes/Automattic-Domain-Services-Response-Domain-Info.md)
 

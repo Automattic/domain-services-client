@@ -43,6 +43,8 @@ if ( $response->is_success() ) {
 ### Details
 
 * File: [lib/command/domain/set/contacts.php](../../lib/command/domain/set/contacts.php)
+* Implements:
+  * [\Automattic\Domain_Services\Command\Command_Interface](../classes/Automattic-Domain-Services-Command-Command-Interface.md)
 * See Also:
   * [\Automattic\Domain_Services\Response\Domain\Set\Contacts](../classes/Automattic-Domain-Services-Response-Domain-Set-Contacts.md)
   * [\Automattic\Domain_Services\Entity\Contact_Id](../classes/Automattic-Domain-Services-Entity-Contact-Id.md)

@@ -20,6 +20,8 @@ This commands requests either enabling or disabling the transfer lock on a speci
 ### Details
 
 * File: [lib/command/domain/set/transferlock.php](../../lib/command/domain/set/transferlock.php)
+* Implements:
+  * [\Automattic\Domain_Services\Command\Command_Interface](../classes/Automattic-Domain-Services-Command-Command-Interface.md)
 * See Also:
   * [\Automattic\Domain_Services\Response\Domain\Set\Transferlock](../classes/Automattic-Domain-Services-Response-Domain-Set-Transferlock.md)
 

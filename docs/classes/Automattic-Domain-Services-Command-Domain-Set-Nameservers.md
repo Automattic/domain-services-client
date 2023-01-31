@@ -41,6 +41,8 @@ if ( $response->is_success() ) {
 ### Details
 
 * File: [lib/command/domain/set/nameservers.php](../../lib/command/domain/set/nameservers.php)
+* Implements:
+  * [\Automattic\Domain_Services\Command\Command_Interface](../classes/Automattic-Domain-Services-Command-Command-Interface.md)
 * See Also:
   * [\Automattic\Domain_Services\Response\Domain\Set\Nameservers](../classes/Automattic-Domain-Services-Response-Domain-Set-Nameservers.md)
   * [\Automattic\Domain_Services\Event\Domain\Set\Nameservers\Success](../classes/Automattic-Domain-Services-Event-Domain-Set-Nameservers-Success.md)

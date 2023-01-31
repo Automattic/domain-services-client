@@ -36,6 +36,8 @@ if ( $response->is_success() ) {
 ### Details
 
 * File: [lib/command/domain/restore.php](../../lib/command/domain/restore.php)
+* Implements:
+  * [\Automattic\Domain_Services\Command\Command_Interface](../classes/Automattic-Domain-Services-Command-Command-Interface.md)
 * See Also:
   * [\Automattic\Domain_Services\Event\Domain\Restore\Fail](../classes/Automattic-Domain-Services-Event-Domain-Restore-Fail.md)
   * [\Automattic\Domain_Services\Event\Domain\Restore\Success](../classes/Automattic-Domain-Services-Event-Domain-Restore-Success.md)

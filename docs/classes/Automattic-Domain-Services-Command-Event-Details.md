@@ -23,6 +23,8 @@ Requests details of an event
 ### Details
 
 * File: [lib/command/event/details.php](../../lib/command/event/details.php)
+* Implements:
+  * [\Automattic\Domain_Services\Command\Command_Interface](../classes/Automattic-Domain-Services-Command-Command-Interface.md)
 * See Also:
   * [\Automattic\Domain_Services\Response\Event\Details](../classes/Automattic-Domain-Services-Response-Event-Details.md)
   * [\Automattic\Domain_Services\Response\Event\Enumerate](../classes/Automattic-Domain-Services-Response-Event-Enumerate.md)

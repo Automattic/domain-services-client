@@ -22,6 +22,8 @@ Acknowledge an event
 ### Details
 
 * File: [lib/command/event/ack.php](../../lib/command/event/ack.php)
+* Implements:
+  * [\Automattic\Domain_Services\Command\Command_Interface](../classes/Automattic-Domain-Services-Command-Command-Interface.md)
 * See Also:
   * [\Automattic\Domain_Services\Response\Event\Ack](../classes/Automattic-Domain-Services-Response-Event-Ack.md)
   * [\Automattic\Domain_Services\Response\Event\Enumerate](../classes/Automattic-Domain-Services-Response-Event-Enumerate.md)
