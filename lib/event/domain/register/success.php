@@ -16,16 +16,16 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Event\Domain\Register;
+namespace Automattic\Domain_Services_Client\Event\Domain\Register;
 
-use Automattic\Domain_Services\{Entity, Event, Exception, Helper};
+use Automattic\Domain_Services_Client\{Entity, Event, Exception, Helper};
 
 /**
  * Success event for a `Domain\Register` command.
  *
  * This event is sent when a register operation succeeds.
  *
- * @see \Automattic\Domain_Services\Command\Domain\Register
+ * @see \Automattic\Domain_Services_Client\Command\Domain\Register
  */
 class Success implements Event\Event_Interface {
 	use Event\Data_Trait;

@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Entity;
+namespace Automattic\Domain_Services_Client\Entity;
 
-use Automattic\Domain_Services\{Command, Exception};
+use Automattic\Domain_Services_Client\{Command, Exception};
 
 /**
  * Represents a domain contact

@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Response\Domain\Set;
+namespace Automattic\Domain_Services_Client\Response\Domain\Set;
 
-use Automattic\Domain_Services\{Event, Response, Command};
+use Automattic\Domain_Services_Client\{Event, Response, Command};
 
 /**
  * Response for Domain\Set\Contacts command

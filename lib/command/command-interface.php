@@ -16,7 +16,7 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Command;
+namespace Automattic\Domain_Services_Client\Command;
 
 interface Command_Interface {
 	public const COMMAND = 'command';

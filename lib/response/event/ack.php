@@ -16,14 +16,14 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Response\Event;
+namespace Automattic\Domain_Services_Client\Response\Event;
 
-use Automattic\Domain_Services\{Response};
+use Automattic\Domain_Services_Client\{Response};
 
 /**
  * Response of an `Event\Ack` command.
  *
- * @see \Automattic\Domain_Services\Command\Event\Ack
+ * @see \Automattic\Domain_Services_Client\Command\Event\Ack
  */
 class Ack implements Response\Response_Interface {
 	use Response\Data_Trait;

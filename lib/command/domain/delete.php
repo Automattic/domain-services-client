@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Command\Domain;
+namespace Automattic\Domain_Services_Client\Command\Domain;
 
-use Automattic\Domain_Services\{Command, Entity};
+use Automattic\Domain_Services_Client\{Command, Entity};
 
 /**
  * Deletes a domain
@@ -43,9 +43,9 @@ use Automattic\Domain_Services\{Command, Entity};
  * }
  * ```
  *
- * @see \Automattic\Domain_Services\Response\Domain\Delete
- * @see \Automattic\Domain_Services\Event\Domain\Delete\Success
- * @see \Automattic\Domain_Services\Event\Domain\Delete\Fail
+ * @see \Automattic\Domain_Services_Client\Response\Domain\Delete
+ * @see \Automattic\Domain_Services_Client\Event\Domain\Delete\Success
+ * @see \Automattic\Domain_Services_Client\Event\Domain\Delete\Fail
  */
 class Delete implements Command\Command_Interface, Command\Command_Serialize_Interface {
 	use Command\Command_Serialize_Trait;

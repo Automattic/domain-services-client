@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Exception\Entity;
+namespace Automattic\Domain_Services_Client\Exception\Entity;
 
-use Automattic\Domain_Services\{Exception, Response};
+use Automattic\Domain_Services_Client\{Exception, Response};
 
 class Invalid_Value_Exception extends Exception\Domain_Services_Exception {
 	/**

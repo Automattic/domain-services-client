@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Command\Event;
+namespace Automattic\Domain_Services_Client\Command\Event;
 
-use Automattic\Domain_Services\{Command};
+use Automattic\Domain_Services_Client\{Command};
 
 /**
  * Requests details of an event
@@ -28,8 +28,8 @@ use Automattic\Domain_Services\{Command};
  *  - This command executes synchronously on the server.
  *  - The corresponding response object will include the details of an event.
  *
- * @see \Automattic\Domain_Services\Response\Event\Details
- * @see \Automattic\Domain_Services\Response\Event\Enumerate
+ * @see \Automattic\Domain_Services_Client\Response\Event\Details
+ * @see \Automattic\Domain_Services_Client\Response\Event\Enumerate
  */
 class Details implements Command\Command_Interface, Command\Command_Serialize_Interface {
 	use Command\Command_Trait;

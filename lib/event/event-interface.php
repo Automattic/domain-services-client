@@ -16,7 +16,7 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Event;
+namespace Automattic\Domain_Services_Client\Event;
 
 /**
  * An interface used by all event classes.

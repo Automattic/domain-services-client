@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services;
+namespace Automattic\Domain_Services_Client;
 
-use Automattic\Domain_Services\{Command, Exception, Response, Request};
+use Automattic\Domain_Services_Client\{Command, Exception, Response, Request};
 use Psr\Http\Client;
 
 class Api {

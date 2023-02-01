@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Command\Dns;
+namespace Automattic\Domain_Services_Client\Command\Dns;
 
-use Automattic\Domain_Services\{Command, Entity};
+use Automattic\Domain_Services_Client\{Command, Entity};
 
 /**
  * Returns the DNS records of a domain
@@ -40,8 +40,8 @@ use Automattic\Domain_Services\{Command, Entity};
  * }
  * ```
  *
- * @see \Automattic\Domain_Services\Response\Dns\Get
- * @see \Automattic\Domain_Services\Command\Dns\Set
+ * @see \Automattic\Domain_Services_Client\Response\Dns\Get
+ * @see \Automattic\Domain_Services_Client\Command\Dns\Set
  */
 class Get implements Command\Command_Interface, Command\Command_Serialize_Interface {
 	use Command\Command_Serialize_Trait;

@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Test\Command;
+namespace Automattic\Domain_Services_Client\Test\Command;
 
-use Automattic\Domain_Services\{Command, Entity, Test};
+use Automattic\Domain_Services_Client\{Command, Entity, Test};
 
 class Domain_Register_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 

@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Entity;
+namespace Automattic\Domain_Services_Client\Entity;
 
-use Automattic\Domain_Services\{Command, Exception};
+use Automattic\Domain_Services_Client\{Command, Exception};
 
 /**
  * Set of DNS records associated with a specific domain
@@ -86,12 +86,12 @@ class Dns_Records {
 	/**
 	 * Constructs a Dns_Records entity from an array containing sets of DNS records
 	 *
-	 * @internal
 	 * @param array $dns_records_data
 	 * @return static
 	 * @throws Exception\Entity\Invalid_Value_Exception
 	 *
-	 * @see \Automattic\Domain_Services\Entity\Dns_Record_Sets
+	 * @internal
+	 * @see \Automattic\Domain_Services_Client\Entity\Dns_Record_Sets
 	 */
 	public static function from_array( array $dns_records_data ): self {
 		$domain_name = new Domain_Name( $dns_records_data[ Command\Command_Interface::KEY_DOMAIN ] );

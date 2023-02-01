@@ -16,6 +16,6 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Exception\Event;
+namespace Automattic\Domain_Services_Client\Exception\Event;
 
 class Invalid_Event_Name extends \Exception { }

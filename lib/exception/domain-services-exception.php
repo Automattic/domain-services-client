@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Exception;
+namespace Automattic\Domain_Services_Client\Exception;
 
-use Automattic\Domain_Services\{Response};
+use Automattic\Domain_Services_Client\{Response};
 
 class Domain_Services_Exception extends \Exception {
 	private array $data;

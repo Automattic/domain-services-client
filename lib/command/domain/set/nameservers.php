@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Command\Domain\Set;
+namespace Automattic\Domain_Services_Client\Command\Domain\Set;
 
-use Automattic\Domain_Services\{Command, Entity};
+use Automattic\Domain_Services_Client\{Command, Entity};
 
 /**
  * Sets name servers for the specified domain
@@ -46,9 +46,9 @@ use Automattic\Domain_Services\{Command, Entity};
  * }
  * ```
  *
- * @see \Automattic\Domain_Services\Response\Domain\Set\Nameservers
- * @see \Automattic\Domain_Services\Event\Domain\Set\Nameservers\Success
- * @see \Automattic\Domain_Services\Event\Domain\Set\Nameservers\Fail
+ * @see \Automattic\Domain_Services_Client\Response\Domain\Set\Nameservers
+ * @see \Automattic\Domain_Services_Client\Event\Domain\Set\Nameservers\Success
+ * @see \Automattic\Domain_Services_Client\Event\Domain\Set\Nameservers\Fail
  */
 class Nameservers implements Command\Command_Interface, Command\Command_Serialize_Interface {
 	use Command\Command_Serialize_Trait;

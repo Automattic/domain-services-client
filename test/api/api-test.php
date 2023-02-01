@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Test\Api;
+namespace Automattic\Domain_Services_Client\Test\Api;
 
-use Automattic\Domain_Services\{Api, Command, Configuration, Entity, Response, Request, Test};
+use Automattic\Domain_Services_Client\{Api, Command, Configuration, Entity, Response, Request, Test};
 use Http\Factory\Guzzle\RequestFactory;
 use Http\Factory\Guzzle\StreamFactory;
 use Psr\Http\Client\ClientExceptionInterface;
@@ -46,7 +46,7 @@ class ApiTest extends Test\Lib\Domain_Services_Client_Test_Case {
 					'+1.7577468269',
 					null
 				),
-				new Entity\Contact_Disclosure( \Automattic\Domain_Services\Entity\Contact_Disclosure::NONE )
+				new Entity\Contact_Disclosure( \Automattic\Domain_Services_Client\Entity\Contact_Disclosure::NONE )
 			)
 		);
 
