@@ -18,7 +18,7 @@ function main {
     display_usage
   fi
 
-  switch_to_dsapi_dir
+
   prepare_dev_tools
 
   case $1 in
