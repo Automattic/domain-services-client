@@ -14,12 +14,6 @@
 |------|---------|
 | [\Automattic\Domain_Services_Client\Response\Data_Trait](../classes/Automattic-Domain-Services-Client-Response-Data-Trait.md) | Trait that provides a set of methods for accessing a response&#039;s data. |
 
-### Interfaces
-
-| Name | Summary |
-|------|---------|
-| [\Automattic\Domain_Services_Client\Response\Response_Interface](../classes/Automattic-Domain-Services-Client-Response-Response-Interface.md) | Interface used by all responses. |
-
 ### Classes
 
 | Name | Summary |
