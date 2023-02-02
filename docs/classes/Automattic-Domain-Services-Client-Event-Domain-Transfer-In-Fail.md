@@ -38,8 +38,6 @@ Inbound domain transfer failure event
 ### Details
 
 * File: [lib/event/domain/transfer/in/fail.php](../../lib/event/domain/transfer/in/fail.php)
-* Implements:
-  * [\Automattic\Domain_Services_Client\Event\Event_Interface](../classes/Automattic-Domain-Services-Client-Event-Event-Interface.md)
 * Uses Traits:
   * [\Automattic\Domain_Services_Client\Event\Data_Trait](../classes/Automattic-Domain-Services-Client-Event-Data-Trait.md)
   * [\Automattic\Domain_Services_Client\Event\Object_Type_Domain_Trait](../classes/Automattic-Domain-Services-Client-Event-Object-Type-Domain-Trait.md)
@@ -97,13 +95,17 @@ Gets the date this event was acknowledged.
 ### get_auto_nack
 
 ```
-final public get_auto_nack() : ?bool
+final public get_auto_nack() : bool|null
 ```
+
+##### Summary
+
+Gets whether the domain transfer associated with the event was automatically rejected.
 
 ##### Returns:
 
 ```
-?bool
+bool|null
 ```
 
 ---
@@ -112,13 +114,17 @@ final public get_auto_nack() : ?bool
 ### get_current_registrar
 
 ```
-final public get_current_registrar() : ?string
+final public get_current_registrar() : string|null
 ```
+
+##### Summary
+
+Gets the current registrar of the domain associated with the event.
 
 ##### Returns:
 
 ```
-?string
+string|null
 ```
 
 ---
@@ -154,6 +160,10 @@ array|mixed|null
 ```
 final public get_domain() : \Automattic\Domain_Services_Client\Entity\Domain_Name
 ```
+
+##### Summary
+
+Returns the domain name object.
 
 ##### Returns:
 
@@ -249,13 +259,17 @@ string
 ### get_execute_date
 
 ```
-final public get_execute_date() : ?\DateTimeImmutable
+final public get_execute_date() : \DateTimeImmutable|null
 ```
+
+##### Summary
+
+Gets the date the transfer was executed.
 
 ##### Returns:
 
 ```
-?\DateTimeImmutable
+\DateTimeImmutable|null
 ```
 
 ---
@@ -326,13 +340,17 @@ string
 ### get_request_date
 
 ```
-final public get_request_date() : ?\DateTimeImmutable
+final public get_request_date() : \DateTimeImmutable|null
 ```
+
+##### Summary
+
+Gets the date the transfer was requested.
 
 ##### Returns:
 
 ```
-?\DateTimeImmutable
+\DateTimeImmutable|null
 ```
 
 ---
@@ -341,13 +359,17 @@ final public get_request_date() : ?\DateTimeImmutable
 ### get_requesting_registrar
 
 ```
-final public get_requesting_registrar() : ?string
+final public get_requesting_registrar() : string|null
 ```
+
+##### Summary
+
+Gets the requesting registrar for the domain transfer associated with the event.
 
 ##### Returns:
 
 ```
-?string
+string|null
 ```
 
 ---
@@ -356,11 +378,15 @@ final public get_requesting_registrar() : ?string
 ### get_transfer_status
 
 ```
-final public get_transfer_status() : ?string
+final public get_transfer_status() : string|null
 ```
+
+##### Summary
+
+Gets the status of the transfer.
 
 ##### Returns:
 
 ```
-?string
+string|null
 ```

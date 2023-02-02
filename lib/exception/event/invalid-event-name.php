@@ -18,4 +18,9 @@
 
 namespace Automattic\Domain_Services_Client\Exception\Event;
 
-class Invalid_Event_Name extends \Exception { }
+use Automattic\Domain_Services_Client\{Exception};
+
+/**
+ * Exception thrown when an invalid event name is used.
+ */
+class Invalid_Event_Name extends Exception\Domain_Services_Exception { }

@@ -2,7 +2,7 @@
 
 ## Summary:
 
-A class that represents an EPP status code
+Represents an EPP status code
 
 
 ---
@@ -229,11 +229,21 @@ VALID_EPP_STATUSES = [self::CLIENT_DELETE_PROHIBITED => self::READ_WRITE, self::
 public __construct(string  status) : mixed
 ```
 
+##### Summary
+
+Constructs an `Epp_Status_Code` entity
+
 ##### Parameters:
 
 | Name | Type | Default |
 |------|------|---------|
 | **$status** | string |  |
+
+##### Throws:
+
+| Type | Description |
+|------|-------------|
+| \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception |  |
 
 ##### Returns:
 
@@ -249,6 +259,10 @@ mixed
 ```
 public is_updateable() : bool
 ```
+
+##### Summary
+
+Checks whether the EPP status is updateable
 
 ##### Returns:
 

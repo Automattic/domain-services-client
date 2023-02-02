@@ -35,16 +35,20 @@ Represents one of the domain's contacts and its privacy setting.
 ### __construct
 
 ```
-public __construct(?\Automattic\Domain_Services_Client\Entity\Contact_Id  contact_id = null, ?\Automattic\Domain_Services_Client\Entity\Contact_Information  contact_info = null, ?\Automattic\Domain_Services_Client\Entity\Contact_Disclosure  disclose_fields = null) : mixed
+public __construct(\Automattic\Domain_Services_Client\Entity\Contact_Id|null  contact_id = null, \Automattic\Domain_Services_Client\Entity\Contact_Information|null  contact_info = null, \Automattic\Domain_Services_Client\Entity\Contact_Disclosure|null  disclose_fields = null) : mixed
 ```
+
+##### Summary
+
+Constructs a `Domain_Contact` entity
 
 ##### Parameters:
 
 | Name | Type | Default |
 |------|------|---------|
-| **$contact_id** | ?\Automattic\Domain_Services_Client\Entity\Contact_Id | null |
-| **$contact_info** | ?\Automattic\Domain_Services_Client\Entity\Contact_Information | null |
-| **$disclose_fields** | ?\Automattic\Domain_Services_Client\Entity\Contact_Disclosure | null |
+| **$contact_id** | \Automattic\Domain_Services_Client\Entity\Contact_Id|null | null |
+| **$contact_info** | \Automattic\Domain_Services_Client\Entity\Contact_Information|null | null |
+| **$disclose_fields** | \Automattic\Domain_Services_Client\Entity\Contact_Disclosure|null | null |
 
 ##### Returns:
 

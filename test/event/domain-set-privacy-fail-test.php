@@ -48,7 +48,7 @@ class Domain_Set_Privacy_Fail_Test extends Test\Lib\Domain_Services_Client_Test_
 							'subclass' => 'Invalid_Value',
 							'data' =>
 								[
-									'invalid_option' => 'Automattic\\Domain_Services\\Command\\Domain\\Privacy\\Set',
+									'invalid_option' => 'Automattic\\Domain_Services_Client\\Command\\Domain\\Privacy\\Set',
 									'reason' => 'Invalid privacy option.',
 								],
 						],

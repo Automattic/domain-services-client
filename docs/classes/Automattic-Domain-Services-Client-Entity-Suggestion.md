@@ -37,7 +37,7 @@ public __construct(\Automattic\Domain_Services_Client\Entity\Domain_Name  domain
 
 ##### Summary
 
-Constructs a Suggestion entity
+Constructs a `Suggestion` entity
 
 ##### Parameters:
 

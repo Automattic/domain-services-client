@@ -21,7 +21,7 @@ namespace Automattic\Domain_Services_Client\Entity;
 use Automattic\Domain_Services_Client\{Exception};
 
 /**
- * A class that represents an EPP status code
+ * Represents an EPP status code
  *
  * @link: https://www.icann.org/resources/pages/epp-status-codes-2014-06-16-en
  */
@@ -89,6 +89,13 @@ class Epp_Status_Code {
 	 */
 	private string $status;
 
+	/**
+	 * Constructs an `Epp_Status_Code` entity
+	 *
+	 * @param string $status
+	 *
+	 * @throws \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception
+	 */
 	public function __construct( string $status ) {
 		if ( ! isset( self::VALID_EPP_STATUSES[ $status ] ) ) {
 			throw new Exception\Entity\Invalid_Value_Exception( strtolower( __CLASS__ ), $status );
@@ -98,12 +105,21 @@ class Epp_Status_Code {
 	}
 
 	/**
+	 * Returns the string representation of the EPP status code object.
+	 *
 	 * @internal
+	 *
+	 * @return string
 	 */
 	public function __toString(): string {
 		return $this->status;
 	}
 
+	/**
+	 * Checks whether the EPP status is updateable
+	 *
+	 * @return bool
+	 */
 	public function is_updateable(): bool {
 		return self::READ_WRITE === self::VALID_EPP_STATUSES[ $this->status ];
 	}

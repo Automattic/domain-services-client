@@ -21,7 +21,7 @@ namespace Automattic\Domain_Services_Client\Response\Domain\Set;
 use Automattic\Domain_Services_Client\{Event, Response, Command};
 
 /**
- * Response for Domain\Set\Contacts command
+ * Response of a `Domain\Set\Contacts` command
  *
  * - The contacts set operation runs asynchronously at the server
  * - A success response indicates that the operation was queued, not completed

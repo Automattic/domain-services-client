@@ -18,14 +18,29 @@
 
 namespace Automattic\Domain_Services_Client\Entity;
 
+/**
+ * Represents a domain name
+ */
 class Domain_Name {
+	/**
+	 * The domain name
+	 *
+	 * @var string
+	 */
 	private string $name;
 
+	/**
+	 * Constructs a `Domain_Name` entity
+	 *
+	 * @param string $name
+	 */
 	public function __construct( string $name ) {
 		$this->name = $name;
 	}
 
 	/**
+	 * Returns the domain name
+	 *
 	 * @return string
 	 */
 	public function get_name(): string {
@@ -33,7 +48,11 @@ class Domain_Name {
 	}
 
 	/**
+	 * Returns the string representation of the `Domain_Name` object (the domain name itself).
+	 *
 	 * @internal
+	 *
+	 * @return string
 	 */
 	public function __toString() {
 		return $this->get_name();

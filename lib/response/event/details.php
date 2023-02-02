@@ -21,10 +21,10 @@ namespace Automattic\Domain_Services_Client\Response\Event;
 use Automattic\Domain_Services_Client\{Event, Exception\Event\Invalid_Event_Name, Response};
 
 /**
- * Response of an Event_Details command.
+ * Response of an `Event\Details` command.
  *
- * This is the response returned from a successful execution of Event_Details command. The event can be retrieved using
- * get_event() method.
+ * This is the response returned from a successful execution of `Event\Details` command. The event can be retrieved using
+ * `get_event()` method.
  *
  * @see \Automattic\Domain_Services_Client\Command\Event\Details
  */

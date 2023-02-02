@@ -55,7 +55,7 @@ class Get implements Command\Command_Interface, Command\Command_Serialize_Interf
 	private Entity\Domain_Name $domain;
 
 	/**
-	 * Constructs a Dns\Get command
+	 * Constructs a `Dns\Get` command
 	 *
 	 * @param Entity\Domain_Name $domain
 	 */
@@ -73,7 +73,11 @@ class Get implements Command\Command_Interface, Command\Command_Serialize_Interf
 	}
 
 	/**
+	 * Converts the command to an associative array
+	 *
 	 * @internal
+	 *
+	 * @return array
 	 */
 	public function to_array(): array {
 		return [

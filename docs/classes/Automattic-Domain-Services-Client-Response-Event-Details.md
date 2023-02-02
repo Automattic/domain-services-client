@@ -2,12 +2,12 @@
 
 ## Summary:
 
-Response of an Event_Details command.
+Response of an `Event\Details` command.
 
 ## Description:
 
-This is the response returned from a successful execution of Event_Details command. The event can be retrieved using
-get_event() method.
+This is the response returned from a successful execution of `Event\Details` command. The event can be retrieved using
+`get_event()` method.
 
 
 ---
@@ -30,11 +30,8 @@ get_event() method.
 ### Details
 
 * File: [lib/response/event/details.php](../../lib/response/event/details.php)
-* Implements:
-  * [\Automattic\Domain_Services_Client\Response\Response_Interface](../classes/Automattic-Domain-Services-Client-Response-Response-Interface.md)
 * Uses Traits:
   * [\Automattic\Domain_Services_Client\Response\Data_Trait](../classes/Automattic-Domain-Services-Client-Response-Data-Trait.md)
-  * [\Automattic\Domain_Services_Client\Response\Event_Aware](../classes/Automattic-Domain-Services-Client-Response-Event-Aware.md)
 * See Also:
   * [\Automattic\Domain_Services_Client\Command\Event\Details](../classes/Automattic-Domain-Services-Client-Command-Event-Details.md)
 
@@ -214,7 +211,7 @@ Gets the response status description
 
 ##### See Also:
 
- * [\Automattic\Domain_Services_Client\Response\Code::DESCRIPTION](../\Automattic\Domain_Services_Client\Response\Code::DESCRIPTION)
+ * [\Automattic\Domain_Services_Client\Response\Code](../classes/Automattic-Domain-Services-Client-Response-Code.md)
 
 ##### Returns:
 

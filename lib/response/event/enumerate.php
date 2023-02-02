@@ -21,11 +21,11 @@ namespace Automattic\Domain_Services_Client\Response\Event;
 use Automattic\Domain_Services_Client\{Event, Exception, Response};
 
 /**
- * Response of Event\Enumerate command
+ * Response of an `Event\Enumerate` command
  *
- * This class encapsulates the data for a successful call to the Event\Enumerate command. It includes a list of Event
- * objects which all implement the methods in Event\Data_Trait. Each individual event class may also implement
- * additional methods depending on the specific event_class and event_subclass properties of the event.
+ * This class encapsulates the data for a successful call to the `Event\Enumerate` command. It includes a list of Event
+ * objects which all implement the methods in `Event\Data_Trait`. Each individual event class may also implement
+ * additional methods depending on the specific `event_class` and `event_subclass` properties of the event.
  *
  * @see Event\Data_Trait
  */
@@ -64,7 +64,7 @@ class Enumerate implements Response\Response_Interface {
 	}
 
 	/**
-	 * Gets the request parameters from the original Command\Event\Enumerate request
+	 * Gets the request parameters from the original `Command\Event\Enumerate` request
 	 *
 	 * @return array
 	 */

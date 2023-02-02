@@ -21,7 +21,7 @@ namespace Automattic\Domain_Services_Client\Response\Domain\Set;
 use Automattic\Domain_Services_Client\Response;
 
 /**
- * Response of a Domain\Set\Nameservers command
+ * Response of a `Domain\Set\Nameservers` command
  *
  * - The name server update operation runs asynchronously at the server
  * - A success response indicates that the operation was queued, not completed

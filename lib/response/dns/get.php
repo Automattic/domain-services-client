@@ -21,7 +21,7 @@ namespace Automattic\Domain_Services_Client\Response\Dns;
 use Automattic\Domain_Services_Client\{Entity, Exception, Response};
 
 /**
- * Response of a Dns\Get command
+ * Response of a `Dns\Get` command
  *
  * Contains all DNS records associated with a domain, which can be accessed using the `get_dns_records` method.
  *

@@ -24,10 +24,6 @@ Acknowledge an event
 * File: [lib/command/event/ack.php](../../lib/command/event/ack.php)
 * Implements:
   * [\Automattic\Domain_Services_Client\Command\Command_Interface](../classes/Automattic-Domain-Services-Client-Command-Command-Interface.md)
-  * [\Automattic\Domain_Services_Client\Command\Command_Serialize_Interface](../classes/Automattic-Domain-Services-Client-Command-Command-Serialize-Interface.md)
-* Uses Traits:
-  * [\Automattic\Domain_Services_Client\Command\Command_Serialize_Trait](../classes/Automattic-Domain-Services-Client-Command-Command-Serialize-Trait.md)
-  * [\Automattic\Domain_Services_Client\Command\Command_Trait](../classes/Automattic-Domain-Services-Client-Command-Command-Trait.md)
 * See Also:
   * [\Automattic\Domain_Services_Client\Response\Event\Ack](../classes/Automattic-Domain-Services-Client-Response-Event-Ack.md)
   * [\Automattic\Domain_Services_Client\Response\Event\Enumerate](../classes/Automattic-Domain-Services-Client-Response-Event-Enumerate.md)
@@ -42,6 +38,10 @@ Acknowledge an event
 ```
 public __construct(int  event_id) : mixed
 ```
+
+##### Summary
+
+Constructs an `Event\Ack` command
 
 ##### Parameters:
 

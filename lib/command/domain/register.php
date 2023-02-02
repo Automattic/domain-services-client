@@ -25,7 +25,7 @@ use Automattic\Domain_Services_Client\{Command, Entity, Exception};
  *
  * - This command requests a new domain registration
  * - It runs asynchronously on the server
- * - Reseller will receive a Domain\Register\Success or Domain\Register\Fail event depending on the result of the
+ * - Reseller will receive a `Domain\Register\Success` or `Domain\Register\Fail` event depending on the result of the
  *   command
  *
  * Example usage:
@@ -147,7 +147,7 @@ class Register implements Command\Command_Interface, Command\Command_Serialize_I
 	private ?int $price;
 
 	/**
-	 * Constructs the Register command
+	 * Constructs a `Domain\Register` command
 	 *
 	 * @param Entity\Domain_Name      $domain
 	 * @param Entity\Domain_Contacts  $contacts
@@ -243,7 +243,11 @@ class Register implements Command\Command_Interface, Command\Command_Serialize_I
 	}
 
 	/**
+	 * Converts the command to an associative array
+	 *
 	 * @internal
+	 *
+	 * @return array
 	 */
 	public function to_array(): array {
 		return [

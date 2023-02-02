@@ -1,5 +1,9 @@
 # Class: [\Automattic](../namespaces/automattic.md)[\Domain_Services_Client](../namespaces/automattic-domain-services-client.md)[\Response](../namespaces/automattic-domain-services-client-response.md)\Data_Trait
 
+## Summary:
+
+Trait that provides a set of methods for accessing a response's data.
+
 
 ---
 
@@ -172,7 +176,7 @@ Gets the response status description
 
 ##### See Also:
 
- * [\Automattic\Domain_Services_Client\Response\Code::DESCRIPTION](../\Automattic\Domain_Services_Client\Response\Code::DESCRIPTION)
+ * [\Automattic\Domain_Services_Client\Response\Code](../classes/Automattic-Domain-Services-Client-Response-Code.md)
 
 ##### Returns:
 

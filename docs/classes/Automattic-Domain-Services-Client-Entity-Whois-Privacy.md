@@ -70,7 +70,7 @@ public __construct(string  setting) : mixed
 
 ##### Summary
 
-Whois_Privacy entity constructor
+Constructs a `Whois_Privacy` entity
 
 ##### Parameters:
 

@@ -43,10 +43,6 @@ if ( $response->is_success() ) {
 * File: [lib/command/domain/set/nameservers.php](../../lib/command/domain/set/nameservers.php)
 * Implements:
   * [\Automattic\Domain_Services_Client\Command\Command_Interface](../classes/Automattic-Domain-Services-Client-Command-Command-Interface.md)
-  * [\Automattic\Domain_Services_Client\Command\Command_Serialize_Interface](../classes/Automattic-Domain-Services-Client-Command-Command-Serialize-Interface.md)
-* Uses Traits:
-  * [\Automattic\Domain_Services_Client\Command\Command_Serialize_Trait](../classes/Automattic-Domain-Services-Client-Command-Command-Serialize-Trait.md)
-  * [\Automattic\Domain_Services_Client\Command\Command_Trait](../classes/Automattic-Domain-Services-Client-Command-Command-Trait.md)
 * See Also:
   * [\Automattic\Domain_Services_Client\Response\Domain\Set\Nameservers](../classes/Automattic-Domain-Services-Client-Response-Domain-Set-Nameservers.md)
   * [\Automattic\Domain_Services_Client\Event\Domain\Set\Nameservers\Success](../classes/Automattic-Domain-Services-Client-Event-Domain-Set-Nameservers-Success.md)
@@ -62,6 +58,10 @@ if ( $response->is_success() ) {
 ```
 public __construct(\Automattic\Domain_Services_Client\Entity\Domain_Name  domain, \Automattic\Domain_Services_Client\Entity\Nameservers  nameservers) : mixed
 ```
+
+##### Summary
+
+Constructs a `Domain\Set\Nameservers` command
 
 ##### Parameters:
 

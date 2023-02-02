@@ -56,10 +56,6 @@ if ( $response->is_success() ) {
 * File: [lib/command/dns/set.php](../../lib/command/dns/set.php)
 * Implements:
   * [\Automattic\Domain_Services_Client\Command\Command_Interface](../classes/Automattic-Domain-Services-Client-Command-Command-Interface.md)
-  * [\Automattic\Domain_Services_Client\Command\Command_Serialize_Interface](../classes/Automattic-Domain-Services-Client-Command-Command-Serialize-Interface.md)
-* Uses Traits:
-  * [\Automattic\Domain_Services_Client\Command\Command_Serialize_Trait](../classes/Automattic-Domain-Services-Client-Command-Command-Serialize-Trait.md)
-  * [\Automattic\Domain_Services_Client\Command\Command_Trait](../classes/Automattic-Domain-Services-Client-Command-Command-Trait.md)
 * See Also:
   * [\Automattic\Domain_Services_Client\Command\Dns\Get](../classes/Automattic-Domain-Services-Client-Command-Dns-Get.md)
   * [\Automattic\Domain_Services_Client\Response\Dns\Set](../classes/Automattic-Domain-Services-Client-Response-Dns-Set.md)
@@ -77,7 +73,7 @@ public __construct(\Automattic\Domain_Services_Client\Entity\Dns_Records  record
 
 ##### Summary
 
-Constructs a Dns\Set command
+Constructs a `Dns\Set` command
 
 ##### Parameters:
 

@@ -43,7 +43,7 @@ class Details implements Command\Command_Interface, Command\Command_Serialize_In
 	private int $event_id;
 
 	/**
-	 * Event_Details command constructor
+	 * Constructs an `Event\Details` command
 	 *
 	 * @param int $event_id
 	 */
@@ -61,7 +61,11 @@ class Details implements Command\Command_Interface, Command\Command_Serialize_In
 	}
 
 	/**
+	 * Converts the command to an associative array
+	 *
 	 * @internal
+	 *
+	 * @return array
 	 */
 	public function to_array(): array {
 		return [

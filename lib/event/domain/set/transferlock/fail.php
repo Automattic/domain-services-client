@@ -21,7 +21,7 @@ namespace Automattic\Domain_Services_Client\Event\Domain\Set\Transferlock;
 use Automattic\Domain_Services_Client\{Command, Event};
 
 /**
- * Fail event for Domain\Set\TransferLock command
+ * Fail event for `Domain\Set\TransferLock` command
  *
  * @see Command\Domain\Set\Transferlock
  */

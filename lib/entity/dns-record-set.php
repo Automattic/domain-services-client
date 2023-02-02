@@ -57,7 +57,7 @@ class Dns_Record_Set {
 	private array $data;
 
 	/**
-	 * Constructs a Dns_Record_Set entity
+	 * Constructs a `Dns_Record_Set` entity
 	 *
 	 * @param string          $name
 	 * @param Dns_Record_Type $type
@@ -133,7 +133,7 @@ class Dns_Record_Set {
 	}
 
 	/**
-	 * Constructs a Dns_Record_Set entity from an associative array containing a DNS record set
+	 * Constructs a `Dns_Record_Set` entity from an associative array containing a DNS record set
 	 *
 	 * @param array $data
 	 * @return static

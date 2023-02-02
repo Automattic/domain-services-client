@@ -1,5 +1,14 @@
 # Class: [\Automattic](../namespaces/automattic.md)[\Domain_Services_Client](../namespaces/automattic-domain-services-client.md)[\Response](../namespaces/automattic-domain-services-client-response.md)[\Domain](../namespaces/automattic-domain-services-client-response-domain.md)\Register
 
+## Summary:
+
+Response of a `Domain\Register` command
+
+## Description:
+
+Since the command runs asynchronously on the server, success response indicates that request has been queued, not
+completed.
+
 
 ---
 
@@ -20,10 +29,12 @@
 ### Details
 
 * File: [lib/response/domain/register.php](../../lib/response/domain/register.php)
-* Implements:
-  * [\Automattic\Domain_Services_Client\Response\Response_Interface](../classes/Automattic-Domain-Services-Client-Response-Response-Interface.md)
 * Uses Traits:
   * [\Automattic\Domain_Services_Client\Response\Data_Trait](../classes/Automattic-Domain-Services-Client-Response-Data-Trait.md)
+* See Also:
+  * [\Automattic\Domain_Services_Client\Command\Domain\Register](../classes/Automattic-Domain-Services-Client-Command-Domain-Register.md)
+  * [\Automattic\Domain_Services_Client\Event\Domain\Register\Fail](../classes/Automattic-Domain-Services-Client-Event-Domain-Register-Fail.md)
+  * [\Automattic\Domain_Services_Client\Event\Domain\Register\Success](../classes/Automattic-Domain-Services-Client-Event-Domain-Register-Success.md)
 
 ---
 
@@ -176,7 +187,7 @@ Gets the response status description
 
 ##### See Also:
 
- * [\Automattic\Domain_Services_Client\Response\Code::DESCRIPTION](../\Automattic\Domain_Services_Client\Response\Code::DESCRIPTION)
+ * [\Automattic\Domain_Services_Client\Response\Code](../classes/Automattic-Domain-Services-Client-Response-Code.md)
 
 ##### Returns:
 

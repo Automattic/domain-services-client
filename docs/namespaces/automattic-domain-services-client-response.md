@@ -12,16 +12,10 @@
 
 | Name | Summary |
 |------|---------|
-| [\Automattic\Domain_Services_Client\Response\Data_Trait](../classes/Automattic-Domain-Services-Client-Response-Data-Trait.md) |  |
-
-### Interfaces
-
-| Name | Summary |
-|------|---------|
-| [\Automattic\Domain_Services_Client\Response\Response_Interface](../classes/Automattic-Domain-Services-Client-Response-Response-Interface.md) |  |
+| [\Automattic\Domain_Services_Client\Response\Data_Trait](../classes/Automattic-Domain-Services-Client-Response-Data-Trait.md) | Trait that provides a set of methods for accessing a response&#039;s data. |
 
 ### Classes
 
 | Name | Summary |
 |------|---------|
-| [\Automattic\Domain_Services_Client\Response\Code](../classes/Automattic-Domain-Services-Client-Response-Code.md) |  |
+| [\Automattic\Domain_Services_Client\Response\Code](../classes/Automattic-Domain-Services-Client-Response-Code.md) | Represents status codes and descriptions from the DSAPI command&#039;s responses |

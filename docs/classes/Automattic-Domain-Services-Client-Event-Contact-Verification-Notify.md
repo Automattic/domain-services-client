@@ -31,8 +31,6 @@ This event indicates a change in the contact's status. It's usually generated wh
 ### Details
 
 * File: [lib/event/contact/verification/notify.php](../../lib/event/contact/verification/notify.php)
-* Implements:
-  * [\Automattic\Domain_Services_Client\Event\Event_Interface](../classes/Automattic-Domain-Services-Client-Event-Event-Interface.md)
 * Uses Traits:
   * [\Automattic\Domain_Services_Client\Event\Data_Trait](../classes/Automattic-Domain-Services-Client-Event-Data-Trait.md)
   * [\Automattic\Domain_Services_Client\Event\Object_Type_Contact_Trait](../classes/Automattic-Domain-Services-Client-Event-Object-Type-Contact-Trait.md)
@@ -91,6 +89,16 @@ Gets the date this event was acknowledged.
 ```
 final public get_contact_id() : \Automattic\Domain_Services_Client\Entity\Contact_Id
 ```
+
+##### Summary
+
+Returns the contact object.
+
+##### Throws:
+
+| Type | Description |
+|------|-------------|
+| \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception |  |
 
 ##### Returns:
 

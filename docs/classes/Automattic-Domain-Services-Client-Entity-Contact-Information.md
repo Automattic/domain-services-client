@@ -42,6 +42,10 @@ The contact information for domain registrants.
 public __construct(string|null  first_name = null, string|null  last_name = null, string|null  organization = null, string|null  address_1 = null, string|null  address_2 = null, string|null  postal_code = null, string|null  city = null, string|null  state = null, string|null  country_code = null, string|null  email = null, string|null  phone = null, string|null  fax = null) : mixed
 ```
 
+##### Summary
+
+Constructs a `Contact_Information` entity
+
 ##### Parameters:
 
 | Name | Type | Default |

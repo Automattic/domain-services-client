@@ -45,8 +45,6 @@ attributes of the domain at the registry.
 ### Details
 
 * File: [lib/response/domain/info.php](../../lib/response/domain/info.php)
-* Implements:
-  * [\Automattic\Domain_Services_Client\Response\Response_Interface](../classes/Automattic-Domain-Services-Client-Response-Response-Interface.md)
 * Uses Traits:
   * [\Automattic\Domain_Services_Client\Response\Data_Trait](../classes/Automattic-Domain-Services-Client-Response-Data-Trait.md)
 
@@ -127,6 +125,12 @@ public get_contacts() : \Automattic\Domain_Services_Client\Entity\Domain_Contact
 ##### Summary
 
 Gets the contacts associated with this domain
+
+##### Throws:
+
+| Type | Description |
+|------|-------------|
+| \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception |  |
 
 ##### Returns:
 
@@ -317,6 +321,12 @@ public get_privacy_setting() : \Automattic\Domain_Services_Client\Entity\Whois_P
 
 Gets the whois privacy setting for the domain
 
+##### Throws:
+
+| Type | Description |
+|------|-------------|
+| \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception |  |
+
 ##### Returns:
 
 ```
@@ -468,7 +478,7 @@ Gets the response status description
 
 ##### See Also:
 
- * [\Automattic\Domain_Services_Client\Response\Code::DESCRIPTION](../\Automattic\Domain_Services_Client\Response\Code::DESCRIPTION)
+ * [\Automattic\Domain_Services_Client\Response\Code](../classes/Automattic-Domain-Services-Client-Response-Code.md)
 
 ##### Returns:
 

@@ -36,8 +36,6 @@ Represents all contact types for a domain name
 ### Details
 
 * File: [lib/entity/domain-contacts.php](../../lib/entity/domain-contacts.php)
-* Implements:
-  * [\Iterator](../classes/Iterator.md)
 * See Also:
   * [\Automattic\Domain_Services_Client\Entity\Domain_Contact](../classes/Automattic-Domain-Services-Client-Entity-Domain-Contact.md)
 
@@ -83,6 +81,10 @@ BILLING = 'billing'
 ```
 public __construct(\Automattic\Domain_Services_Client\Entity\Domain_Contact|null  owner = null, \Automattic\Domain_Services_Client\Entity\Domain_Contact|null  admin = null, \Automattic\Domain_Services_Client\Entity\Domain_Contact|null  tech = null, \Automattic\Domain_Services_Client\Entity\Domain_Contact|null  billing = null) : mixed
 ```
+
+##### Summary
+
+Constructs a `Domain_Contacts` entity
 
 ##### Parameters:
 

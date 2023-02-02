@@ -1,5 +1,9 @@
 # Class: [\Automattic](../namespaces/automattic.md)[\Domain_Services_Client](../namespaces/automattic-domain-services-client.md)[\Entity](../namespaces/automattic-domain-services-client-entity.md)\Contact_Verification_Data
 
+## Summary:
+
+Represents the verification data of contact associated with a domain
+
 
 ---
 
@@ -25,6 +29,10 @@
 public __construct(string  code) : mixed
 ```
 
+##### Summary
+
+Constructs a `Contact_Verification_Data` entity
+
 ##### Parameters:
 
 | Name | Type | Default |
@@ -45,6 +53,10 @@ mixed
 ```
 public get_code() : string
 ```
+
+##### Summary
+
+Returns the verification code
 
 ##### Returns:
 

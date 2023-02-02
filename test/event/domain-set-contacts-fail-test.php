@@ -48,7 +48,7 @@ class Domain_Set_Contacts_Fail_Test extends Test\Lib\Domain_Services_Client_Test
 							'subclass' => 'Invalid_Value',
 							'data' =>
 								[
-									'invalid_option' => 'Automattic\\Domain_Services\\Command\\Domain\\Contacts\\Contacts',
+									'invalid_option' => 'Automattic\\Domain_Services_Client\\Command\\Domain\\Contacts\\Contacts',
 									'reason' => 'Missing country code.',
 								],
 						],
