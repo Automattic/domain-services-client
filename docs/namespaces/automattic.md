@@ -2,4 +2,4 @@
 
 ### Namespaces
 
-* [\Automattic\Domain_Services](../namespaces/automattic-domain-services.md)
+* [\Automattic\Domain_Services_Client](../namespaces/automattic-domain-services-client.md)
