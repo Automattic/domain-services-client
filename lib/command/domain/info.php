@@ -38,7 +38,7 @@ class Info implements Command\Command_Interface, Command\Command_Serialize_Inter
 	private Entity\Domain_Name $domain;
 
 	/**
-	 * `Domain\Info` command constructor
+	 * Constructs a `Domain\Info` command
 	 *
 	 * @param Entity\Domain_Name $domain
 	 */
@@ -56,7 +56,11 @@ class Info implements Command\Command_Interface, Command\Command_Serialize_Inter
 	}
 
 	/**
+	 * Converts the command to an associative array
+	 *
 	 * @internal
+	 *
+	 * @return array
 	 */
 	public function to_array(): array {
 		return [

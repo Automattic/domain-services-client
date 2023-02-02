@@ -53,6 +53,8 @@ class Domain_Contacts implements \Iterator {
 	private int $iterator_pointer = 0;
 
 	/**
+	 * Constructs a `Domain_Contacts` entity
+	 *
 	 * @param Domain_Contact|null $owner
 	 * @param Domain_Contact|null $admin
 	 * @param Domain_Contact|null $tech
@@ -101,7 +103,7 @@ class Domain_Contacts implements \Iterator {
 	/**
 	 * Builds an instance from an array
 	 *
-	 * - The $data array is expected to have the contact type as key and an array as a value.
+	 * - The `$data` array is expected to have the contact type as key and an array as a value.
 	 * - The array can either have a `contact_id` or a `contact_information` key with the corresponding data.
 	 * - There is also an optional `contact_disclosure` that can be passed for each contact.
 	 *
@@ -253,37 +255,56 @@ class Domain_Contacts implements \Iterator {
 	}
 
 	/**
-	 * Functions to implement the Iterator interface
+	 * Part of the iterator interface implementation
 	 *
 	 * @internal
+	 *
+	 * @return Domain_Contact|null
+	 * @throws Exception\Entity\Invalid_Value_Exception
 	 */
 	public function current(): ?Domain_Contact {
 		return $this->get_by_key( self::ITERATOR_KEYS[ $this->iterator_pointer ] );
 	}
 
 	/**
+	 * Part of the iterator interface implementation
+	 *
 	 * @internal
+	 *
+	 * @return void
 	 */
 	public function next(): void {
 		$this->iterator_pointer++;
 	}
 
 	/**
+	 * Part of the iterator interface implementation
+	 *
 	 * @internal
+	 *
+	 * @return string|null
 	 */
 	public function key(): ?string {
 		return self::ITERATOR_KEYS[ $this->iterator_pointer ];
 	}
 
 	/**
+	 * Part of the iterator interface implementation
+	 *
 	 * @internal
+	 *
+	 * @return void
 	 */
 	public function valid(): bool {
 		return isset( self::ITERATOR_KEYS[ $this->iterator_pointer ] );
 	}
 
 	/**
+	 * Part of the iterator interface implementation
+	 *
 	 * @internal
+	 *
+	 * @return void
 	 */
 	public function rewind(): void {
 		$this->iterator_pointer = 0;

@@ -40,7 +40,7 @@ class Suggestions implements Command\Command_Interface, Command\Command_Serializ
 	private int $quantity;
 
 	/**
-	 * Constructs a Domain\Suggestions command
+	 * Constructs a `Domain\Suggestions` command
 	 *
 	 * @param string $query
 	 * @param int    $quantity
@@ -69,7 +69,11 @@ class Suggestions implements Command\Command_Interface, Command\Command_Serializ
 	}
 
 	/**
+	 * Converts the command to an associative array
+	 *
 	 * @internal
+	 *
+	 * @return array
 	 */
 	public function to_array(): array {
 		return [

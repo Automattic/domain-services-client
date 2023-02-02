@@ -20,10 +20,15 @@ namespace Automattic\Domain_Services_Client\Exception;
 
 use Automattic\Domain_Services_Client\{Response};
 
+/**
+ * Base class for all DSAPI exceptions.
+ */
 class Domain_Services_Exception extends \Exception {
 	private array $data;
 
 	/**
+	 * Constructs a `Domain_Services_Exception` object.
+	 *
 	 * @internal
 	 */
 	public function __construct( int $code, array $data, \Throwable $previous = null ) {
@@ -32,7 +37,11 @@ class Domain_Services_Exception extends \Exception {
 	}
 
 	/**
+	 * Returns the type of exception - associative array with exception class and subclass
+	 *
 	 * @internal
+	 *
+	 * @return array
 	 */
 	public function get_exception_type(): array {
 		return [
@@ -41,6 +50,11 @@ class Domain_Services_Exception extends \Exception {
 		];
 	}
 
+	/**
+	 * Returns the error data associated with the exception
+	 *
+	 * @return array
+	 */
 	public function get_error_data(): array {
 		return $this->data;
 	}

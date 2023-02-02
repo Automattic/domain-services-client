@@ -39,7 +39,7 @@ class Check implements Command\Command_Interface, Command\Command_Serialize_Inte
 	private Entity\Domain_Names $domains;
 
 	/**
-	 * Constructs the `Domain\Check` command
+	 * Constructs a `Domain\Check` command
 	 *
 	 * @param Entity\Domain_Names $domains
 	 * @throws Exception\Entity\Invalid_Value_Exception
@@ -61,7 +61,11 @@ class Check implements Command\Command_Interface, Command\Command_Serialize_Inte
 	}
 
 	/**
+	 * Converts the command to an associative array
+	 *
 	 * @internal
+	 *
+	 * @return array
 	 */
 	public function to_array(): array {
 		return [

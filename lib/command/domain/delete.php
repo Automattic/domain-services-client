@@ -59,7 +59,7 @@ class Delete implements Command\Command_Interface, Command\Command_Serialize_Int
 	private Entity\Domain_Name $domain;
 
 	/**
-	 * Constructs the Delete command
+	 * Constructs a `Domain\Delete` command
 	 *
 	 * @param Entity\Domain_Name $domain
 	 */
@@ -77,7 +77,11 @@ class Delete implements Command\Command_Interface, Command\Command_Serialize_Int
 	}
 
 	/**
+	 * Converts the command to an associative array
+	 *
 	 * @internal
+	 *
+	 * @return array
 	 */
 	public function to_array(): array {
 		return [

@@ -21,7 +21,7 @@ namespace Automattic\Domain_Services_Client\Response\Domain;
 use Automattic\Domain_Services_Client\{Response};
 
 /**
- * Response of a Domain\Renew command
+ * Response of a `Domain\Renew` command
  *
  * - The domain renewal operation runs asynchronously at the server
  * - A success response indicates that the operation was queued, not completed

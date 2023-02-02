@@ -32,7 +32,7 @@ class Suggestion {
 	private Domain_Name $domain_name;
 
 	/**
-	 * Constructs a Suggestion entity
+	 * Constructs a `Suggestion` entity
 	 *
 	 * @param Domain_Name $domain_name
 	 */

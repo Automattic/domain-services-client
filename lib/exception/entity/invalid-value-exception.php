@@ -20,8 +20,13 @@ namespace Automattic\Domain_Services_Client\Exception\Entity;
 
 use Automattic\Domain_Services_Client\{Exception, Response};
 
+/**
+ * Exception thrown when an invalid value/option is passed to the entity.
+ */
 class Invalid_Value_Exception extends Exception\Domain_Services_Exception {
 	/**
+	 * Constructs a `Invalid_Value_Exception` object.
+	 *
 	 * @internal
 	 */
 	public function __construct( string $invalid_option, string $reason = '' ) {
@@ -29,7 +34,11 @@ class Invalid_Value_Exception extends Exception\Domain_Services_Exception {
 	}
 
 	/**
+	 * Returns the type of exception - associative array with exception class and subclass
+	 *
 	 * @internal
+	 *
+	 * @return array
 	 */
 	public function get_exception_type(): array {
 		return [

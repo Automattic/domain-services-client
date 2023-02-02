@@ -21,7 +21,7 @@ namespace Automattic\Domain_Services_Client\Response\Domain\Set;
 use Automattic\Domain_Services_Client\{Response};
 
 /**
- * Response of a Domain\Set\Privacy command
+ * Response of a `Domain\Set\Privacy` command
  *
  * Since the command runs asynchronously on the server, success response indicates that request has been queued, not
  * completed.

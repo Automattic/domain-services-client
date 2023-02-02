@@ -18,5 +18,8 @@
 
 namespace Automattic\Domain_Services_Client\Response;
 
+/**
+ * Interface used by all responses.
+ */
 interface Response_Interface {
 }
