@@ -23,7 +23,7 @@ use Automattic\Domain_Services_Client\Response;
 /**
  * Response of a `Domain\Check` command
  *
- * @see \Automattic\Domain_Services\Command\Domain\Check
+ * @see \Automattic\Domain_Services_Client\Command\Domain\Check
  */
 class Check implements Response\Response_Interface {
 	use Response\Data_Trait;

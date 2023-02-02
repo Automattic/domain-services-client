@@ -42,7 +42,7 @@ class Info implements Response\Response_Interface {
 	 * Gets the contacts associated with this domain
 	 *
 	 * @return Entity\Domain_Contacts
-	 * @throws \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception
+	 * @throws \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception
 	 */
 	public function get_contacts(): Entity\Domain_Contacts {
 		$contact_data = $this->get_data_by_key( 'data.contacts' ) ?? [];
@@ -131,7 +131,7 @@ class Info implements Response\Response_Interface {
 	 * Gets the whois privacy setting for the domain
 	 *
 	 * @return Entity\Whois_Privacy|null
-	 * @throws \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception
+	 * @throws \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception
 	 */
 	public function get_privacy_setting(): ?Entity\Whois_Privacy {
 		$privacy_setting_data = $this->get_data_by_key( 'data.privacy_setting' );

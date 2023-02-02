@@ -62,7 +62,7 @@ class Dns_Record_Type {
 	 *
 	 * @param string $type
 	 *
-	 * @throws \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception
+	 * @throws \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception
 	 */
 	public function __construct( string $type ) {
 		if ( ! in_array( $type, self::VALID_RECORD_TYPES ) ) {

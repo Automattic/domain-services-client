@@ -28,7 +28,7 @@ Response of a `Domain\Check` command
 * Uses Traits:
   * [\Automattic\Domain_Services_Client\Response\Data_Trait](../classes/Automattic-Domain-Services-Client-Response-Data-Trait.md)
 * See Also:
-  * [\Automattic\Domain_Services\Command\Domain\Check](../\Automattic\Domain_Services\Command\Domain\Check)
+  * [\Automattic\Domain_Services_Client\Command\Domain\Check](../classes/Automattic-Domain-Services-Client-Command-Domain-Check.md)
 
 ---
 

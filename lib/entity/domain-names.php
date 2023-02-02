@@ -21,7 +21,7 @@ namespace Automattic\Domain_Services_Client\Entity;
 /**
  * List of `Domain_Name` entities
  *
- * @see \Automattic\Domain_Services\Entity\Domain_Name
+ * @see \Automattic\Domain_Services_Client\Entity\Domain_Name
  */
 class Domain_Names {
 	/**

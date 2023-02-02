@@ -29,7 +29,7 @@ This trait relies on the `get_object_id()` method to be defined in the class tha
 ### get_contact_id
 
 ```
-final public get_contact_id() : \Automattic\Domain_Services\Entity\Contact_Id
+final public get_contact_id() : \Automattic\Domain_Services_Client\Entity\Contact_Id
 ```
 
 ##### Summary
@@ -40,10 +40,10 @@ Returns the contact object.
 
 | Type | Description |
 |------|-------------|
-| \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception |  |
+| \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception |  |
 
 ##### Returns:
 
 ```
-\Automattic\Domain_Services\Entity\Contact_Id
+\Automattic\Domain_Services_Client\Entity\Contact_Id
 ```

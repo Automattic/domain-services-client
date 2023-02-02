@@ -63,7 +63,7 @@ class Set implements Response\Response_Interface {
 	 * Returns the DNS records that were deleted
 	 *
 	 * @return Entity\Dns_Records
-	 * @throws \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception
+	 * @throws \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception
 	 */
 	public function get_records_deleted(): Entity\Dns_Records {
 		$domain_name_data = $this->get_data_by_key( 'data.change_set.domain' );

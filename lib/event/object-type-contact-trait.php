@@ -28,8 +28,8 @@ trait Object_Type_Contact_Trait {
 	/**
 	 * Returns the contact object.
 	 *
-	 * @return \Automattic\Domain_Services\Entity\Contact_Id
-	 * @throws \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception
+	 * @return \Automattic\Domain_Services_Client\Entity\Contact_Id
+	 * @throws \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception
 	 */
 	final public function get_contact_id(): Entity\Contact_Id {
 		return new Entity\Contact_Id( $this->get_object_id() );

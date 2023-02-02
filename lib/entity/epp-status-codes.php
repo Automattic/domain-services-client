@@ -21,7 +21,7 @@ namespace Automattic\Domain_Services_Client\Entity;
 /**
  * List of `Epp_Status_Code` entities
  *
- * @see \Automattic\Domain_Services\Entity\Epp_Status_Code
+ * @see \Automattic\Domain_Services_Client\Entity\Epp_Status_Code
  */
 class Epp_Status_Codes implements \Iterator {
 	/**
@@ -41,7 +41,7 @@ class Epp_Status_Codes implements \Iterator {
 	/**
 	 * Constructs an `Epp_Status_Codes` entity
 	 *
-	 * @param \Automattic\Domain_Services\Entity\Epp_Status_Code ...$epp_status_codes
+	 * @param \Automattic\Domain_Services_Client\Entity\Epp_Status_Code ...$epp_status_codes
 	 */
 	public function __construct( Epp_Status_Code ...$epp_status_codes ) {
 		foreach ( $epp_status_codes as $epp_status_code ) {

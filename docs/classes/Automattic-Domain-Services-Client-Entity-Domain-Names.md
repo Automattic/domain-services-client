@@ -19,7 +19,7 @@ List of `Domain_Name` entities
 
 * File: [lib/entity/domain-names.php](../../lib/entity/domain-names.php)
 * See Also:
-  * [\Automattic\Domain_Services\Entity\Domain_Name](../\Automattic\Domain_Services\Entity\Domain_Name)
+  * [\Automattic\Domain_Services_Client\Entity\Domain_Name](../classes/Automattic-Domain-Services-Client-Entity-Domain-Name.md)
 
 ---
 

@@ -18,7 +18,7 @@ List of `Epp_Status_Code` entities
 
 * File: [lib/entity/epp-status-codes.php](../../lib/entity/epp-status-codes.php)
 * See Also:
-  * [\Automattic\Domain_Services\Entity\Epp_Status_Code](../\Automattic\Domain_Services\Entity\Epp_Status_Code)
+  * [\Automattic\Domain_Services_Client\Entity\Epp_Status_Code](../classes/Automattic-Domain-Services-Client-Entity-Epp-Status-Code.md)
 
 ---
 
@@ -28,7 +28,7 @@ List of `Epp_Status_Code` entities
 ### __construct
 
 ```
-public __construct(\Automattic\Domain_Services\Entity\Epp_Status_Code  ...epp_status_codes) : mixed
+public __construct(\Automattic\Domain_Services_Client\Entity\Epp_Status_Code  ...epp_status_codes) : mixed
 ```
 
 ##### Summary
@@ -39,7 +39,7 @@ Constructs an `Epp_Status_Codes` entity
 
 | Name | Type | Default |
 |------|------|---------|
-| **$epp_status_codes** | \Automattic\Domain_Services\Entity\Epp_Status_Code |  |
+| **$epp_status_codes** | \Automattic\Domain_Services_Client\Entity\Epp_Status_Code |  |
 
 ##### Returns:
 

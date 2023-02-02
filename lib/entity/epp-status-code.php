@@ -94,7 +94,7 @@ class Epp_Status_Code {
 	 *
 	 * @param string $status
 	 *
-	 * @throws \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception
+	 * @throws \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception
 	 */
 	public function __construct( string $status ) {
 		if ( ! isset( self::VALID_EPP_STATUSES[ $status ] ) ) {
