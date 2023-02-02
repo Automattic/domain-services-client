@@ -7,7 +7,7 @@ Sets the privacy option that determines what contact information is shown in WHO
 ## Description:
 
 - Runs asynchronously on the server
-- Reseller will receive a Domain\Set\Privacy\Success or Domain\Set\Privacy\Fail event depending on the result of the
+- Reseller will receive a `Domain\Set\Privacy\Success` or `Domain\Set\Privacy\Fail` event depending on the result of the
 command
 
 Example:
@@ -35,10 +35,6 @@ if ( $response->is_success() ) {
 * File: [lib/command/domain/set/privacy.php](../../lib/command/domain/set/privacy.php)
 * Implements:
   * [\Automattic\Domain_Services_Client\Command\Command_Interface](../classes/Automattic-Domain-Services-Client-Command-Command-Interface.md)
-  * [\Automattic\Domain_Services_Client\Command\Command_Serialize_Interface](../classes/Automattic-Domain-Services-Client-Command-Command-Serialize-Interface.md)
-* Uses Traits:
-  * [\Automattic\Domain_Services_Client\Command\Command_Serialize_Trait](../classes/Automattic-Domain-Services-Client-Command-Command-Serialize-Trait.md)
-  * [\Automattic\Domain_Services_Client\Command\Command_Trait](../classes/Automattic-Domain-Services-Client-Command-Command-Trait.md)
 * See Also:
   * [\Automattic\Domain_Services_Client\Event\Domain\Set\Privacy\Fail](../classes/Automattic-Domain-Services-Client-Event-Domain-Set-Privacy-Fail.md)
   * [\Automattic\Domain_Services_Client\Event\Domain\Set\Privacy\Success](../classes/Automattic-Domain-Services-Client-Event-Domain-Set-Privacy-Success.md)
@@ -57,7 +53,7 @@ public __construct(\Automattic\Domain_Services_Client\Entity\Domain_Name  domain
 
 ##### Summary
 
-Construct the Domain\Set\Privacy
+Constructs a `Domain\Set\Privacy` command
 
 ##### Parameters:
 

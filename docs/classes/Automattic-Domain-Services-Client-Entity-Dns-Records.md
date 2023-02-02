@@ -35,7 +35,7 @@ public __construct(\Automattic\Domain_Services_Client\Entity\Domain_Name  domain
 
 ##### Summary
 
-Constructs a Dns_Records entity
+Constructs a `Dns_Records` entity
 
 ##### Parameters:
 

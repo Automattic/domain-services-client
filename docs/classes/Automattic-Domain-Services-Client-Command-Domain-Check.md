@@ -22,10 +22,6 @@ This command requests an availability and price check for the list of supplied d
 * File: [lib/command/domain/check.php](../../lib/command/domain/check.php)
 * Implements:
   * [\Automattic\Domain_Services_Client\Command\Command_Interface](../classes/Automattic-Domain-Services-Client-Command-Command-Interface.md)
-  * [\Automattic\Domain_Services_Client\Command\Command_Serialize_Interface](../classes/Automattic-Domain-Services-Client-Command-Command-Serialize-Interface.md)
-* Uses Traits:
-  * [\Automattic\Domain_Services_Client\Command\Command_Serialize_Trait](../classes/Automattic-Domain-Services-Client-Command-Command-Serialize-Trait.md)
-  * [\Automattic\Domain_Services_Client\Command\Command_Trait](../classes/Automattic-Domain-Services-Client-Command-Command-Trait.md)
 * See Also:
   * [\Automattic\Domain_Services_Client\Response\Domain\Check](../classes/Automattic-Domain-Services-Client-Response-Domain-Check.md)
 
@@ -42,7 +38,7 @@ public __construct(\Automattic\Domain_Services_Client\Entity\Domain_Names  domai
 
 ##### Summary
 
-Constructs the `Domain\Check` command
+Constructs a `Domain\Check` command
 
 ##### Parameters:
 

@@ -44,8 +44,6 @@ Domain entered auction phase event
 ### Details
 
 * File: [lib/event/domain/notification/auction.php](../../lib/event/domain/notification/auction.php)
-* Implements:
-  * [\Automattic\Domain_Services_Client\Event\Event_Interface](../classes/Automattic-Domain-Services-Client-Event-Event-Interface.md)
 * Uses Traits:
   * [\Automattic\Domain_Services_Client\Event\Data_Trait](../classes/Automattic-Domain-Services-Client-Event-Data-Trait.md)
   * [\Automattic\Domain_Services_Client\Event\Object_Type_Domain_Trait](../classes/Automattic-Domain-Services-Client-Event-Object-Type-Domain-Trait.md)
@@ -169,6 +167,10 @@ array|mixed|null
 ```
 final public get_domain() : \Automattic\Domain_Services_Client\Entity\Domain_Name
 ```
+
+##### Summary
+
+Returns the domain name object.
 
 ##### Returns:
 

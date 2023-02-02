@@ -1,5 +1,9 @@
 # Class: [\Automattic](../namespaces/automattic.md)[\Domain_Services_Client](../namespaces/automattic-domain-services-client.md)[\Response](../namespaces/automattic-domain-services-client-response.md)[\Exception](../namespaces/automattic-domain-services-client-response-exception.md)\Error
 
+## Summary:
+
+Response of a request that returned an error.
+
 
 ---
 
@@ -24,8 +28,6 @@
 ### Details
 
 * File: [lib/response/exception/error.php](../../lib/response/exception/error.php)
-* Implements:
-  * [\Automattic\Domain_Services_Client\Response\Response_Interface](../classes/Automattic-Domain-Services-Client-Response-Response-Interface.md)
 * Uses Traits:
   * [\Automattic\Domain_Services_Client\Response\Data_Trait](../classes/Automattic-Domain-Services-Client-Response-Data-Trait.md)
 
@@ -81,13 +83,17 @@ string
 ### get_command
 
 ```
-public get_command() : ?string
+public get_command() : string|null
 ```
+
+##### Summary
+
+Returns the command used
 
 ##### Returns:
 
 ```
-?string
+string|null
 ```
 
 ---
@@ -96,13 +102,17 @@ public get_command() : ?string
 ### get_command_params
 
 ```
-public get_command_params() : ?array
+public get_command_params() : array|null
 ```
+
+##### Summary
+
+Returns the command parameters used
 
 ##### Returns:
 
 ```
-?array
+array|null
 ```
 
 ---
@@ -136,13 +146,17 @@ array|mixed|null
 ### get_invalid_option
 
 ```
-public get_invalid_option() : ?string
+public get_invalid_option() : string|null
 ```
+
+##### Summary
+
+Returns the invalid option
 
 ##### Returns:
 
 ```
-?string
+string|null
 ```
 
 ---
@@ -151,13 +165,17 @@ public get_invalid_option() : ?string
 ### get_reason
 
 ```
-public get_reason() : ?string
+public get_reason() : string|null
 ```
+
+##### Summary
+
+Returns the reason for the error
 
 ##### Returns:
 
 ```
-?string
+string|null
 ```
 
 ---
@@ -240,7 +258,7 @@ Gets the response status description
 
 ##### See Also:
 
- * [\Automattic\Domain_Services_Client\Response\Code::DESCRIPTION](../\Automattic\Domain_Services_Client\Response\Code::DESCRIPTION)
+ * [\Automattic\Domain_Services_Client\Response\Code](../classes/Automattic-Domain-Services-Client-Response-Code.md)
 
 ##### Returns:
 

@@ -2,7 +2,7 @@
 
 ## Summary:
 
-Response of the `Domain\Check` command
+Response of a `Domain\Check` command
 
 
 ---
@@ -25,10 +25,10 @@ Response of the `Domain\Check` command
 ### Details
 
 * File: [lib/response/domain/check.php](../../lib/response/domain/check.php)
-* Implements:
-  * [\Automattic\Domain_Services_Client\Response\Response_Interface](../classes/Automattic-Domain-Services-Client-Response-Response-Interface.md)
 * Uses Traits:
   * [\Automattic\Domain_Services_Client\Response\Data_Trait](../classes/Automattic-Domain-Services-Client-Response-Data-Trait.md)
+* See Also:
+  * [\Automattic\Domain_Services\Command\Domain\Check](../\Automattic\Domain_Services\Command\Domain\Check)
 
 ---
 
@@ -212,7 +212,7 @@ Gets the response status description
 
 ##### See Also:
 
- * [\Automattic\Domain_Services_Client\Response\Code::DESCRIPTION](../\Automattic\Domain_Services_Client\Response\Code::DESCRIPTION)
+ * [\Automattic\Domain_Services_Client\Response\Code](../classes/Automattic-Domain-Services-Client-Response-Code.md)
 
 ##### Returns:
 

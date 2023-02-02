@@ -1,4 +1,8 @@
 # Interface: Response_Interface
+## Summary:
+
+Interface used by all responses.
+
 
 ---
 

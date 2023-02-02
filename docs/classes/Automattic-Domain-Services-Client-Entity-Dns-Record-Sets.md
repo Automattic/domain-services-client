@@ -17,8 +17,6 @@ Set of sets of DNS records
 ### Details
 
 * File: [lib/entity/dns-record-sets.php](../../lib/entity/dns-record-sets.php)
-* Implements:
-  * [\Iterator](../classes/Iterator.md)
 * See Also:
   * [\Automattic\Domain_Services_Client\Entity\Dns_Record_Set](../classes/Automattic-Domain-Services-Client-Entity-Dns-Record-Set.md)
 
@@ -35,7 +33,7 @@ public __construct(\Automattic\Domain_Services_Client\Entity\Dns_Record_Set  ...
 
 ##### Summary
 
-Constructs a Dns_Record_Sets entity
+Constructs a `Dns_Record_Sets` entity
 
 ##### Parameters:
 
@@ -60,7 +58,7 @@ public add_record_set(\Automattic\Domain_Services_Client\Entity\Dns_Record_Set  
 
 ##### Summary
 
-Adds a Dns_Record_Set to this entity
+Adds a `Dns_Record_Set` to this entity
 
 ##### Parameters:
 

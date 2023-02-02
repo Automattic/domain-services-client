@@ -1,5 +1,9 @@
 # Class: [\Automattic](../namespaces/automattic.md)[\Domain_Services_Client](../namespaces/automattic-domain-services-client.md)[\Exception](../namespaces/automattic-domain-services-client-exception.md)\Domain_Services_Exception
 
+## Summary:
+
+Base class for all DSAPI exceptions.
+
 
 ---
 
@@ -23,6 +27,10 @@
 ```
 public get_error_data() : array
 ```
+
+##### Summary
+
+Returns the error data associated with the exception
 
 ##### Returns:
 

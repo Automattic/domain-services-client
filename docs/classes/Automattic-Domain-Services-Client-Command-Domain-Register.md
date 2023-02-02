@@ -8,7 +8,7 @@ Register a new a domain.
 
 - This command requests a new domain registration
 - It runs asynchronously on the server
-- Reseller will receive a Domain\Register\Success or Domain\Register\Fail event depending on the result of the
+- Reseller will receive a `Domain\Register\Success` or `Domain\Register\Fail` event depending on the result of the
   command
 
 Example usage:
@@ -81,10 +81,6 @@ if ( $response->is_success() ) {
 * File: [lib/command/domain/register.php](../../lib/command/domain/register.php)
 * Implements:
   * [\Automattic\Domain_Services_Client\Command\Command_Interface](../classes/Automattic-Domain-Services-Client-Command-Command-Interface.md)
-  * [\Automattic\Domain_Services_Client\Command\Command_Serialize_Interface](../classes/Automattic-Domain-Services-Client-Command-Command-Serialize-Interface.md)
-* Uses Traits:
-  * [\Automattic\Domain_Services_Client\Command\Command_Serialize_Trait](../classes/Automattic-Domain-Services-Client-Command-Command-Serialize-Trait.md)
-  * [\Automattic\Domain_Services_Client\Command\Command_Trait](../classes/Automattic-Domain-Services-Client-Command-Command-Trait.md)
 * See Also:
   * [\Automattic\Domain_Services_Client\Event\Domain\Register\Fail](../classes/Automattic-Domain-Services-Client-Event-Domain-Register-Fail.md)
   * [\Automattic\Domain_Services_Client\Event\Domain\Register\Success](../classes/Automattic-Domain-Services-Client-Event-Domain-Register-Success.md)
@@ -103,7 +99,7 @@ public __construct(\Automattic\Domain_Services_Client\Entity\Domain_Name  domain
 
 ##### Summary
 
-Constructs the Register command
+Constructs a `Domain\Register` command
 
 ##### Parameters:
 

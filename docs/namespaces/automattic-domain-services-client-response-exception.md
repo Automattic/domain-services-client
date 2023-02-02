@@ -4,4 +4,4 @@
 
 | Name | Summary |
 |------|---------|
-| [\Automattic\Domain_Services_Client\Response\Exception\Error](../classes/Automattic-Domain-Services-Client-Response-Exception-Error.md) |  |
+| [\Automattic\Domain_Services_Client\Response\Exception\Error](../classes/Automattic-Domain-Services-Client-Response-Exception-Error.md) | Response of a request that returned an error. |

@@ -4,5 +4,5 @@
 
 | Name | Summary |
 |------|---------|
-| [\Automattic\Domain_Services_Client\Exception\Command\Invalid_Format_Exception](../classes/Automattic-Domain-Services-Client-Exception-Command-Invalid-Format-Exception.md) |  |
-| [\Automattic\Domain_Services_Client\Exception\Command\Missing_Option_Exception](../classes/Automattic-Domain-Services-Client-Exception-Command-Missing-Option-Exception.md) |  |
+| [\Automattic\Domain_Services_Client\Exception\Command\Invalid_Format_Exception](../classes/Automattic-Domain-Services-Client-Exception-Command-Invalid-Format-Exception.md) | Exception thrown when a command is sent with an invalid format. |
+| [\Automattic\Domain_Services_Client\Exception\Command\Missing_Option_Exception](../classes/Automattic-Domain-Services-Client-Exception-Command-Missing-Option-Exception.md) | Exception thrown when a required option is missing from the command. |

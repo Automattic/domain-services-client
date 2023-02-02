@@ -4,4 +4,4 @@
 
 | Name | Summary |
 |------|---------|
-| [\Automattic\Domain_Services_Client\Exception\Event\Invalid_Event_Name](../classes/Automattic-Domain-Services-Client-Exception-Event-Invalid-Event-Name.md) |  |
+| [\Automattic\Domain_Services_Client\Exception\Event\Invalid_Event_Name](../classes/Automattic-Domain-Services-Client-Exception-Event-Invalid-Event-Name.md) | Exception thrown when an invalid event name is used. |

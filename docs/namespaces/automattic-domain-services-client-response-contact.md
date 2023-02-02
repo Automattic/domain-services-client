@@ -4,4 +4,4 @@
 
 | Name | Summary |
 |------|---------|
-| [\Automattic\Domain_Services_Client\Response\Contact\Details](../classes/Automattic-Domain-Services-Client-Response-Contact-Details.md) | Response containing the Contact_Information associated with a Contact_Id |
+| [\Automattic\Domain_Services_Client\Response\Contact\Details](../classes/Automattic-Domain-Services-Client-Response-Contact-Details.md) | Response containing the `Entity\Contact_Information` associated with a `Contact_Id` |

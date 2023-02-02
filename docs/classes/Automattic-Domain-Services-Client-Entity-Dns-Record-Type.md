@@ -1,5 +1,9 @@
 # Class: [\Automattic](../namespaces/automattic.md)[\Domain_Services_Client](../namespaces/automattic-domain-services-client.md)[\Entity](../namespaces/automattic-domain-services-client-entity.md)\Dns_Record_Type
 
+## Summary:
+
+Represents a DNS Record Type
+
 
 ---
 
@@ -129,11 +133,21 @@ VALID_RECORD_TYPES = [self::A, self::AAAA, self::ALIAS, self::CAA, self::CNAME, 
 public __construct(string  type) : mixed
 ```
 
+##### Summary
+
+Constructs a `Dns_Record_Type` entity
+
 ##### Parameters:
 
 | Name | Type | Default |
 |------|------|---------|
 | **$type** | string |  |
+
+##### Throws:
+
+| Type | Description |
+|------|-------------|
+| \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception |  |
 
 ##### Returns:
 
@@ -149,6 +163,10 @@ mixed
 ```
 public get_type() : string
 ```
+
+##### Summary
+
+Returns the DNS record type
 
 ##### Returns:
 

@@ -25,10 +25,6 @@ Requests details of an event
 * File: [lib/command/event/details.php](../../lib/command/event/details.php)
 * Implements:
   * [\Automattic\Domain_Services_Client\Command\Command_Interface](../classes/Automattic-Domain-Services-Client-Command-Command-Interface.md)
-  * [\Automattic\Domain_Services_Client\Command\Command_Serialize_Interface](../classes/Automattic-Domain-Services-Client-Command-Command-Serialize-Interface.md)
-* Uses Traits:
-  * [\Automattic\Domain_Services_Client\Command\Command_Trait](../classes/Automattic-Domain-Services-Client-Command-Command-Trait.md)
-  * [\Automattic\Domain_Services_Client\Command\Command_Serialize_Trait](../classes/Automattic-Domain-Services-Client-Command-Command-Serialize-Trait.md)
 * See Also:
   * [\Automattic\Domain_Services_Client\Response\Event\Details](../classes/Automattic-Domain-Services-Client-Response-Event-Details.md)
   * [\Automattic\Domain_Services_Client\Response\Event\Enumerate](../classes/Automattic-Domain-Services-Client-Response-Event-Enumerate.md)
@@ -46,7 +42,7 @@ public __construct(int  event_id) : mixed
 
 ##### Summary
 
-Event_Details command constructor
+Constructs an `Event\Details` command
 
 ##### Parameters:
 

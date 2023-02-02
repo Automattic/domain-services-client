@@ -38,7 +38,7 @@ public __construct(string  contact_id) : mixed
 
 ##### Summary
 
-Constructs a Contact_Id entity
+Constructs a `Contact_Id` entity
 
 ##### Parameters:
 
@@ -66,6 +66,10 @@ mixed
 ```
 public get_contact_id() : string
 ```
+
+##### Summary
+
+Returns the contact ID
 
 ##### Returns:
 

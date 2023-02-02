@@ -31,7 +31,7 @@ public __construct(\Automattic\Domain_Services_Client\Entity\Domain_Name  ...nam
 
 ##### Summary
 
-Constructs the Nameservers entity
+Constructs a `Nameservers` entity
 
 ##### Parameters:
 

@@ -8,7 +8,7 @@ Requests a list of unacknowledged events
 
 This command is used to request a list of the unacknowledged events. On success, the response object will include an
 array of events in ascending order by age (oldest to newest). The maximum number of events returned in the response,
-can be set using the $limit property for this command. The limit defaults to 50 if none is set.
+can be set using the `$limit` property for this command. The limit defaults to 50 if none is set.
 - This command executes synchronously on the server.
 - The corresponding response object will include the list of events.
 
@@ -27,10 +27,6 @@ can be set using the $limit property for this command. The limit defaults to 50 
 * File: [lib/command/event/enumerate.php](../../lib/command/event/enumerate.php)
 * Implements:
   * [\Automattic\Domain_Services_Client\Command\Command_Interface](../classes/Automattic-Domain-Services-Client-Command-Command-Interface.md)
-  * [\Automattic\Domain_Services_Client\Command\Command_Serialize_Interface](../classes/Automattic-Domain-Services-Client-Command-Command-Serialize-Interface.md)
-* Uses Traits:
-  * [\Automattic\Domain_Services_Client\Command\Command_Serialize_Trait](../classes/Automattic-Domain-Services-Client-Command-Command-Serialize-Trait.md)
-  * [\Automattic\Domain_Services_Client\Command\Command_Trait](../classes/Automattic-Domain-Services-Client-Command-Command-Trait.md)
 * See Also:
   * [\Automattic\Domain_Services_Client\Response\Event\Enumerate](../classes/Automattic-Domain-Services-Client-Response-Event-Enumerate.md)
 
@@ -42,18 +38,18 @@ can be set using the $limit property for this command. The limit defaults to 50 
 ### __construct
 
 ```
-public __construct(null|int  limit = 50) : mixed
+public __construct(int|null  limit = 50) : mixed
 ```
 
 ##### Summary
 
-Class constructor
+Constructs an `Event\Enumerate` command
 
 ##### Parameters:
 
 | Name | Type | Default |
 |------|------|---------|
-| **$limit** | null|int | 50 |
+| **$limit** | int|null | 50 |
 
 ##### Returns:
 

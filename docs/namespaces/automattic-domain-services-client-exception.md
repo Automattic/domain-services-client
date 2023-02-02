@@ -10,4 +10,4 @@
 
 | Name | Summary |
 |------|---------|
-| [\Automattic\Domain_Services_Client\Exception\Domain_Services_Exception](../classes/Automattic-Domain-Services-Client-Exception-Domain-Services-Exception.md) |  |
+| [\Automattic\Domain_Services_Client\Exception\Domain_Services_Exception](../classes/Automattic-Domain-Services-Client-Exception-Domain-Services-Exception.md) | Base class for all DSAPI exceptions. |

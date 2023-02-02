@@ -2,13 +2,13 @@
 
 ## Summary:
 
-Response of Event\Enumerate command
+Response of an `Event\Enumerate` command
 
 ## Description:
 
-This class encapsulates the data for a successful call to the Event\Enumerate command. It includes a list of Event
-objects which all implement the methods in Event\Data_Trait. Each individual event class may also implement
-additional methods depending on the specific event_class and event_subclass properties of the event.
+This class encapsulates the data for a successful call to the `Event\Enumerate` command. It includes a list of Event
+objects which all implement the methods in `Event\Data_Trait`. Each individual event class may also implement
+additional methods depending on the specific `event_class` and `event_subclass` properties of the event.
 
 
 ---
@@ -33,11 +33,8 @@ additional methods depending on the specific event_class and event_subclass prop
 ### Details
 
 * File: [lib/response/event/enumerate.php](../../lib/response/event/enumerate.php)
-* Implements:
-  * [\Automattic\Domain_Services_Client\Response\Response_Interface](../classes/Automattic-Domain-Services-Client-Response-Response-Interface.md)
 * Uses Traits:
   * [\Automattic\Domain_Services_Client\Response\Data_Trait](../classes/Automattic-Domain-Services-Client-Response-Data-Trait.md)
-  * [\Automattic\Domain_Services_Client\Response\Event_Aware](../classes/Automattic-Domain-Services-Client-Response-Event-Aware.md)
 * See Also:
   * [\Automattic\Domain_Services_Client\Event\Data_Trait](../classes/Automattic-Domain-Services-Client-Event-Data-Trait.md)
 
@@ -148,7 +145,7 @@ public get_request_params() : array
 
 ##### Summary
 
-Gets the request parameters from the original Command\Event\Enumerate request
+Gets the request parameters from the original `Command\Event\Enumerate` request
 
 ##### Returns:
 
@@ -236,7 +233,7 @@ Gets the response status description
 
 ##### See Also:
 
- * [\Automattic\Domain_Services_Client\Response\Code::DESCRIPTION](../\Automattic\Domain_Services_Client\Response\Code::DESCRIPTION)
+ * [\Automattic\Domain_Services_Client\Response\Code](../classes/Automattic-Domain-Services-Client-Response-Code.md)
 
 ##### Returns:
 

@@ -61,6 +61,10 @@ VALID_DISCLOSURE_SETTINGS = [self::NONE, self::ALL]
 public __construct(string  disclose_fields) : mixed
 ```
 
+##### Summary
+
+Constructs a `Contact_Disclosure` entity
+
 ##### Parameters:
 
 | Name | Type | Default |
