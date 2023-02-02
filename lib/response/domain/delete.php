@@ -16,21 +16,21 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Response\Domain;
+namespace Automattic\Domain_Services_Client\Response\Domain;
 
-use Automattic\Domain_Services\Response;
+use Automattic\Domain_Services_Client\Response;
 
 /**
- * Response of a Domain\Delete command
+ * Response of a `Domain\Delete` command
  *
  * - The domain deletion operation runs asynchronously at the server
  * - A success response indicates that the operation was queued, not completed
  *     - The `Domain\Delete\Success` and `Domain\Delete\Fail` events will indicate whether the operation was successful
  *       or not
  *
- * @see \Automattic\Domain_Services\Command\Domain\Delete
- * @see \Automattic\Domain_Services\Event\Domain\Delete\Success
- * @see \Automattic\Domain_Services\Event\Domain\Delete\Fail
+ * @see \Automattic\Domain_Services_Client\Command\Domain\Delete
+ * @see \Automattic\Domain_Services_Client\Event\Domain\Delete\Success
+ * @see \Automattic\Domain_Services_Client\Event\Domain\Delete\Fail
  */
 class Delete implements Response\Response_Interface {
 	use Response\Data_Trait;

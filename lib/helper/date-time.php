@@ -16,7 +16,7 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Helper;
+namespace Automattic\Domain_Services_Client\Helper;
 
 use DateTime;
 use DateTimeImmutable;
@@ -24,6 +24,7 @@ use DateTimeInterface;
 
 /**
  * A helper class to help formatting DateTime
+ *
  * @internal
  */
 class Date_Time {
@@ -33,6 +34,7 @@ class Date_Time {
 	 * Returns the DateTime format used by the client
 	 *
 	 * @internal
+	 *
 	 * @return string
 	 */
 	public static function get_format(): string {
@@ -43,6 +45,7 @@ class Date_Time {
 	 * Formats either a DateTime or a DateTimeImmutable object into a string
 	 *
 	 * @internal
+	 *
 	 * @param DateTimeInterface $datetime
 	 *
 	 * @return string
@@ -55,6 +58,7 @@ class Date_Time {
 	 * Creates a DateTime instance from string
 	 *
 	 * @internal
+	 *
 	 * @param string $datetime
 	 *
 	 * @return DateTime|false
@@ -67,6 +71,7 @@ class Date_Time {
 	 * Creates a DateTimeImmutable instance from a string
 	 *
 	 * @internal
+	 *
 	 * @param string $datetime
 	 *
 	 * @return DateTimeImmutable|false

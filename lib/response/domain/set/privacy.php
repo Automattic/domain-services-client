@@ -16,19 +16,19 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Response\Domain\Set;
+namespace Automattic\Domain_Services_Client\Response\Domain\Set;
 
-use Automattic\Domain_Services\{Response};
+use Automattic\Domain_Services_Client\{Response};
 
 /**
- * Response of a Domain\Set\Privacy command
+ * Response of a `Domain\Set\Privacy` command
  *
  * Since the command runs asynchronously on the server, success response indicates that request has been queued, not
  * completed.
  *
- * @see \Automattic\Domain_Services\Command\Domain\Set\Privacy
- * @see \Automattic\Domain_Services\Event\Domain\Set\Privacy\Success
- * @see \Automattic\Domain_Services\Event\Domain\Set\Privacy\Fail
+ * @see \Automattic\Domain_Services_Client\Command\Domain\Set\Privacy
+ * @see \Automattic\Domain_Services_Client\Event\Domain\Set\Privacy\Success
+ * @see \Automattic\Domain_Services_Client\Event\Domain\Set\Privacy\Fail
  */
 class Privacy implements Response\Response_Interface {
 	use Response\Data_Trait;

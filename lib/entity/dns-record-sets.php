@@ -16,14 +16,14 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Entity;
+namespace Automattic\Domain_Services_Client\Entity;
 
-use Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception;
+use Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception;
 
 /**
  * Set of sets of DNS records
  *
- * @see \Automattic\Domain_Services\Entity\Dns_Record_Set
+ * @see \Automattic\Domain_Services_Client\Entity\Dns_Record_Set
  */
 class Dns_Record_Sets implements \Iterator {
 	/**
@@ -41,7 +41,7 @@ class Dns_Record_Sets implements \Iterator {
 	private int $iterator_pointer = 0;
 
 	/**
-	 * Constructs a Dns_Record_Sets entity
+	 * Constructs a `Dns_Record_Sets` entity
 	 *
 	 * @param Dns_Record_Set ...$dns_record_sets
 	 */
@@ -52,7 +52,7 @@ class Dns_Record_Sets implements \Iterator {
 	}
 
 	/**
-	 * Adds a Dns_Record_Set to this entity
+	 * Adds a `Dns_Record_Set` to this entity
 	 *
 	 * @param Dns_Record_Set $dns_record_set
 	 * @return void
@@ -63,7 +63,7 @@ class Dns_Record_Sets implements \Iterator {
 	}
 
 	/**
-	 * Returns each Dns_Record_Set in this entity as an array
+	 * Returns each `Dns_Record_Set` in this entity as an array
 	 *
 	 * @internal
 	 * @return array
@@ -79,14 +79,14 @@ class Dns_Record_Sets implements \Iterator {
 	}
 
 	/**
-	 * Constructs a DNS_Record_Sets entity from an array of DNS record set values
+	 * Constructs a `Dns_Record_Sets` entity from an array of DNS record set values
 	 *
-	 * @internal
 	 * @param array $dns_record_sets_data
 	 * @return static
 	 * @throws Invalid_Value_Exception
 	 *
-	 * @see \Automattic\Domain_Services\Entity\Dns_Record_Set
+	 * @internal
+	 * @see \Automattic\Domain_Services_Client\Entity\Dns_Record_Set
 	 */
 	public static function from_array( array $dns_record_sets_data ): self {
 		$dns_record_sets = new self();
@@ -100,8 +100,11 @@ class Dns_Record_Sets implements \Iterator {
 	}
 
 	/**
-	 * Functions to implement the Iterator interface
+	 * Part of the iterator interface implementation
+	 *
 	 * @internal
+	 *
+	 * @return Dns_Record_Set|null
 	 */
 	public function current(): ?Dns_Record_Set {
 		$keys = array_keys( $this->dns_record_sets );
@@ -112,6 +115,7 @@ class Dns_Record_Sets implements \Iterator {
 	 * Part of the iterator interface implementation
 	 *
 	 * @internal
+	 *
 	 * @return void
 	 */
 	public function next(): void {
@@ -122,6 +126,7 @@ class Dns_Record_Sets implements \Iterator {
 	 * Part of the iterator interface implementation
 	 *
 	 * @internal
+	 *
 	 * @return int|null
 	 */
 	public function key(): ?int {
@@ -132,6 +137,7 @@ class Dns_Record_Sets implements \Iterator {
 	 * Part of the iterator interface implementation
 	 *
 	 * @internal
+	 *
 	 * @return bool
 	 */
 	public function valid(): bool {
@@ -142,6 +148,7 @@ class Dns_Record_Sets implements \Iterator {
 	 * Part of the iterator interface implementation
 	 *
 	 * @internal
+	 *
 	 * @return void
 	 */
 	public function rewind(): void {

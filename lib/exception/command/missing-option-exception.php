@@ -16,12 +16,17 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Exception\Command;
+namespace Automattic\Domain_Services_Client\Exception\Command;
 
-use Automattic\Domain_Services\{Exception, Response};
+use Automattic\Domain_Services_Client\{Exception, Response};
 
+/**
+ * Exception thrown when a required option is missing from the command.
+ */
 class Missing_Option_Exception extends Exception\Domain_Services_Exception {
 	/**
+	 * Constructs a `Missing_Option_Exception` object.
+	 *
 	 * @internal
 	 */
 	public function __construct( string $missing_option ) {

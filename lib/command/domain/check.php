@@ -16,16 +16,16 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Command\Domain;
+namespace Automattic\Domain_Services_Client\Command\Domain;
 
-use Automattic\Domain_Services\{Command, Entity, Exception};
+use Automattic\Domain_Services_Client\{Command, Entity, Exception};
 
 /**
  * Checks the price and availability for a list of domain names
  *
  * This command requests an availability and price check for the list of supplied domain names.
  *
- * @see \Automattic\Domain_Services\Response\Domain\Check
+ * @see \Automattic\Domain_Services_Client\Response\Domain\Check
  */
 class Check implements Command\Command_Interface, Command\Command_Serialize_Interface {
 	use Command\Command_Serialize_Trait;
@@ -39,7 +39,7 @@ class Check implements Command\Command_Interface, Command\Command_Serialize_Inte
 	private Entity\Domain_Names $domains;
 
 	/**
-	 * Constructs the `Domain\Check` command
+	 * Constructs a `Domain\Check` command
 	 *
 	 * @param Entity\Domain_Names $domains
 	 * @throws Exception\Entity\Invalid_Value_Exception
@@ -61,7 +61,11 @@ class Check implements Command\Command_Interface, Command\Command_Serialize_Inte
 	}
 
 	/**
+	 * Converts the command to an associative array
+	 *
 	 * @internal
+	 *
+	 * @return array
 	 */
 	public function to_array(): array {
 		return [

@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Test\Event;
+namespace Automattic\Domain_Services_Client\Test\Event;
 
-use Automattic\Domain_Services\{Command, Event, Response, Test};
+use Automattic\Domain_Services_Client\{Command, Event, Response, Test};
 
 class Domain_Set_Privacy_Fail_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_event_success(): void {
@@ -48,7 +48,7 @@ class Domain_Set_Privacy_Fail_Test extends Test\Lib\Domain_Services_Client_Test_
 							'subclass' => 'Invalid_Value',
 							'data' =>
 								[
-									'invalid_option' => 'Automattic\\Domain_Services\\Command\\Domain\\Privacy\\Set',
+									'invalid_option' => 'Automattic\\Domain_Services_Client\\Command\\Domain\\Privacy\\Set',
 									'reason' => 'Invalid privacy option.',
 								],
 						],

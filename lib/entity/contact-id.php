@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Entity;
+namespace Automattic\Domain_Services_Client\Entity;
 
-use Automattic\Domain_Services\{Exception};
+use Automattic\Domain_Services_Client\{Exception};
 
 /**
  * Represents a contact ID
@@ -30,12 +30,14 @@ use Automattic\Domain_Services\{Exception};
  */
 class Contact_Id {
 	/**
+	 * The contact ID
+	 *
 	 * @var string
 	 */
 	private string $contact_id;
 
 	/**
-	 * Constructs a Contact_Id entity
+	 * Constructs a `Contact_Id` entity
 	 *
 	 * @param string $contact_id
 	 *
@@ -52,13 +54,19 @@ class Contact_Id {
 	}
 
 	/**
+	 * Returns the string representation of the contact ID
+	 *
 	 * @internal
+	 *
+	 * @return string
 	 */
 	public function __toString(): string {
 		return $this->get_contact_id();
 	}
 
 	/**
+	 * Returns the contact ID
+	 *
 	 * @return string
 	 */
 	public function get_contact_id(): string {

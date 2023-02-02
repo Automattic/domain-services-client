@@ -16,16 +16,16 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Command\Domain;
+namespace Automattic\Domain_Services_Client\Command\Domain;
 
-use Automattic\Domain_Services\{Command, Entity, Exception};
+use Automattic\Domain_Services_Client\{Command, Entity, Exception};
 
 /**
  * Register a new a domain.
  *
  * - This command requests a new domain registration
  * - It runs asynchronously on the server
- * - Reseller will receive a Domain\Register\Success or Domain\Register\Fail event depending on the result of the
+ * - Reseller will receive a `Domain\Register\Success` or `Domain\Register\Fail` event depending on the result of the
  *   command
  *
  * Example usage:
@@ -84,9 +84,9 @@ use Automattic\Domain_Services\{Command, Entity, Exception};
  * }
  * ```
  *
- * @see     \Automattic\Domain_Services\Event\Domain\Register\Fail
- * @see     \Automattic\Domain_Services\Event\Domain\Register\Success
- * @see     \Automattic\Domain_Services\Response\Domain\Register
+ * @see     \Automattic\Domain_Services_Client\Event\Domain\Register\Fail
+ * @see     \Automattic\Domain_Services_Client\Event\Domain\Register\Success
+ * @see     \Automattic\Domain_Services_Client\Response\Domain\Register
  */
 class Register implements Command\Command_Interface, Command\Command_Serialize_Interface {
 	use Command\Command_Serialize_Trait;
@@ -147,7 +147,7 @@ class Register implements Command\Command_Interface, Command\Command_Serialize_I
 	private ?int $price;
 
 	/**
-	 * Constructs the Register command
+	 * Constructs a `Domain\Register` command
 	 *
 	 * @param Entity\Domain_Name      $domain
 	 * @param Entity\Domain_Contacts  $contacts
@@ -243,7 +243,11 @@ class Register implements Command\Command_Interface, Command\Command_Serialize_I
 	}
 
 	/**
+	 * Converts the command to an associative array
+	 *
 	 * @internal
+	 *
+	 * @return array
 	 */
 	public function to_array(): array {
 		return [

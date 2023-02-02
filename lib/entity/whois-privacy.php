@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Entity;
+namespace Automattic\Domain_Services_Client\Entity;
 
-use Automattic\Domain_Services\{Exception};
+use Automattic\Domain_Services_Client\{Exception};
 
 /**
  * Define a valid privacy setting to be used for a domain
@@ -52,7 +52,7 @@ class Whois_Privacy {
 	private string $setting;
 
 	/**
-	 * Whois_Privacy entity constructor
+	 * Constructs a `Whois_Privacy` entity
 	 *
 	 * @param string $setting
 	 * @throws Exception\Entity\Invalid_Value_Exception
@@ -78,6 +78,7 @@ class Whois_Privacy {
 	 * Convert the object to scalar
 	 *
 	 * @internal
+	 *
 	 * @return string
 	 */
 	public function to_scalar(): string {

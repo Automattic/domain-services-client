@@ -16,26 +16,43 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services;
+namespace Automattic\Domain_Services_Client;
 
-use Automattic\Domain_Services\{Command, Exception, Response, Request};
+use Automattic\Domain_Services_Client\{Command, Exception, Response, Request};
 use Psr\Http\Client;
 
+/**
+ * The API client.
+ */
 class Api {
 	private Configuration $configuration;
 	/**
+	 * The factory used to build the request object for the given command and additional configurations
+	 *
 	 * @var Request\Factory
 	 */
 	private Request\Factory $request_factory;
 	/**
+	 * The factory used to build a response object based on the request's result
+	 *
 	 * @var Response\Factory
 	 */
 	private Response\Factory $response_factory;
 	/**
+	 * The PSR-18 compatible HTTP client used to send the request and get its response
+	 *
 	 * @var Client\ClientInterface
 	 */
 	private Client\ClientInterface $http_client;
 
+	/**
+	 * Constructs an Api object
+	 *
+	 * @param Configuration $configuration
+	 * @param Request\Factory $request_factory
+	 * @param Response\Factory $response_factory
+	 * @param Client\ClientInterface $http_client
+	 */
 	public function __construct( Configuration $configuration, Request\Factory $request_factory, Response\Factory $response_factory, Client\ClientInterface $http_client ) {
 		$this->configuration = $configuration;
 		$this->request_factory = $request_factory;
@@ -44,15 +61,17 @@ class Api {
 	}
 
 	/**
-	 * @param Command\Command_Interface $command
-	 * @param string                    $client_txn_id
+	 * Executes a POST request using the provided command and client transaction ID
 	 *
-	 * @return Response\Response_Interface
-	 * @throws Exception\Command\Invalid_Format_Exception
-	 * @throws Exception\Command\Missing_Option_Exception
-	 * @throws Exception\Domain_Services_Exception
-	 * @throws \JsonException
-	 * @throws Client\ClientExceptionInterface
+	 * @param Command\Command_Interface $command The command to be executed.
+	 * @param string                    $client_txn_id The client transaction ID to be included in the request.
+	 *
+	 * @return Response\Response_Interface The response object generated from the request's result.
+	 * @throws Exception\Command\Invalid_Format_Exception If the command's format is invalid.
+	 * @throws Exception\Command\Missing_Option_Exception If a required option is missing from the command.
+	 * @throws Exception\Domain_Services_Exception If an internal error occurs.
+	 * @throws \JsonException If there's an error while encoding/decoding JSON.
+	 * @throws Client\ClientExceptionInterface If there's an error while sending the request.
 	 */
 	public function post( Command\Command_Interface $command, string $client_txn_id = '' ): Response\Response_Interface {
 		$command->set_client_txn_id( $client_txn_id );

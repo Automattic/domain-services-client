@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Entity;
+namespace Automattic\Domain_Services_Client\Entity;
 
-use Automattic\Domain_Services\{Exception};
+use Automattic\Domain_Services_Client\{Exception};
 
 /**
  * The contact information for domain registrants.
@@ -60,6 +60,8 @@ class Contact_Information {
 	private array $contact_information = [];
 
 	/**
+	 * Constructs a `Contact_Information` entity
+	 *
 	 * @param string|null $first_name
 	 * @param string|null $last_name
 	 * @param string|null $organization

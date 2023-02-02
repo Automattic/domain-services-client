@@ -16,21 +16,20 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Response\Domain;
+namespace Automattic\Domain_Services_Client\Response\Domain;
+
+use Automattic\Domain_Services_Client\{Response};
 
 /**
- * Response of a Domain\Register command
+ * Response of a `Domain\Register` command
  *
  * Since the command runs asynchronously on the server, success response indicates that request has been queued, not
  * completed.
  *
- * @see \Automattic\Domain_Services\Command\Domain\Register
- * @see \Automattic\Domain_Services\Event\Domain\Register\Fail
- * @see \Automattic\Domain_Services\Event\Domain\Register\Success
+ * @see \Automattic\Domain_Services_Client\Command\Domain\Register
+ * @see \Automattic\Domain_Services_Client\Event\Domain\Register\Fail
+ * @see \Automattic\Domain_Services_Client\Event\Domain\Register\Success
  */
-
-use Automattic\Domain_Services\{Response};
-
 class Register implements Response\Response_Interface {
 	use Response\Data_Trait;
 }

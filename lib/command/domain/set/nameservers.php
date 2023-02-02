@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Command\Domain\Set;
+namespace Automattic\Domain_Services_Client\Command\Domain\Set;
 
-use Automattic\Domain_Services\{Command, Entity};
+use Automattic\Domain_Services_Client\{Command, Entity};
 
 /**
  * Sets name servers for the specified domain
@@ -46,9 +46,9 @@ use Automattic\Domain_Services\{Command, Entity};
  * }
  * ```
  *
- * @see \Automattic\Domain_Services\Response\Domain\Set\Nameservers
- * @see \Automattic\Domain_Services\Event\Domain\Set\Nameservers\Success
- * @see \Automattic\Domain_Services\Event\Domain\Set\Nameservers\Fail
+ * @see \Automattic\Domain_Services_Client\Response\Domain\Set\Nameservers
+ * @see \Automattic\Domain_Services_Client\Event\Domain\Set\Nameservers\Success
+ * @see \Automattic\Domain_Services_Client\Event\Domain\Set\Nameservers\Fail
  */
 class Nameservers implements Command\Command_Interface, Command\Command_Serialize_Interface {
 	use Command\Command_Serialize_Trait;
@@ -69,6 +69,8 @@ class Nameservers implements Command\Command_Interface, Command\Command_Serializ
 	private Entity\Nameservers $nameservers;
 
 	/**
+	 * Constructs a `Domain\Set\Nameservers` command
+	 *
 	 * @param Entity\Domain_Name $domain
 	 * @param Entity\Nameservers $nameservers
 	 */
@@ -78,6 +80,8 @@ class Nameservers implements Command\Command_Interface, Command\Command_Serializ
 	}
 
 	/**
+	 * Gets the domain name that will be updated
+	 *
 	 * @return Entity\Domain_Name
 	 */
 	private function get_domain(): Entity\Domain_Name {
@@ -85,6 +89,8 @@ class Nameservers implements Command\Command_Interface, Command\Command_Serializ
 	}
 
 	/**
+	 * Gets the list of nameservers that will be set for the domain
+	 *
 	 * @return Entity\Nameservers
 	 */
 	private function get_nameservers(): Entity\Nameservers {
@@ -92,7 +98,10 @@ class Nameservers implements Command\Command_Interface, Command\Command_Serializ
 	}
 
 	/**
+	 * Converts the command to an associative array
+	 *
 	 * @internal
+	 *
 	 * @return array
 	 */
 	public function to_array(): array {

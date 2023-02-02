@@ -16,10 +16,10 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Event;
+namespace Automattic\Domain_Services_Client\Event;
 
 /**
- * A trait that specifies methods common to all error event classes.
+ * Trait that specifies methods common to all error event classes.
  */
 trait Error_Trait {
 

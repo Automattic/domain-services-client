@@ -16,12 +16,12 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Event\Domain\Set\Transferlock;
+namespace Automattic\Domain_Services_Client\Event\Domain\Set\Transferlock;
 
-use Automattic\Domain_Services\{Event, Command};
+use Automattic\Domain_Services_Client\{Event, Command};
 
 /**
- * Success event for Domain\Set\TransferLock command
+ * Success event for `Domain\Set\TransferLock` command
  *
  * @see Command\Domain\Set\Transferlock
  */
@@ -29,6 +29,11 @@ class Success implements Event\Event_Interface {
 	use Event\Data_Trait;
 	use Event\Object_Type_Domain_Trait;
 
+	/**
+	 * Checks if the domain has a transfer lock.
+	 *
+	 * @return bool
+	 */
 	public function is_locked(): bool {
 		return $this->get_data_by_key( 'event_data.transferlock' ) ?? false;
 	}

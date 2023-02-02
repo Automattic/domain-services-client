@@ -16,15 +16,24 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Command;
+namespace Automattic\Domain_Services_Client\Command;
 
+/**
+ * Trait that specifies methods common to all commands
+ */
 trait Command_Trait {
+	/**
+	 * The client transaction ID
+	 *
+	 * @var string
+	 */
 	private string $client_txn_id = '';
 
 	/**
 	 * Gets the client transaction ID set for this command.
 	 *
 	 * @internal
+	 *
 	 * @return string
 	 */
 	final public function get_client_txn_id(): string {
@@ -36,6 +45,7 @@ trait Command_Trait {
 	 * reflected in the corresponding Response class and may be useful for logging and debugging.
 	 *
 	 * @internal
+	 *
 	 * @param string $client_txn_id
 	 */
 	final public function set_client_txn_id( string $client_txn_id ): void {
@@ -46,6 +56,7 @@ trait Command_Trait {
 	 * Returns the command name that can be used to build command data
 	 *
 	 * @internal
+	 *
 	 * @return string
 	 */
 	final public static function get_name(): string {

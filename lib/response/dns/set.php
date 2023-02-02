@@ -16,16 +16,16 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Response\Dns;
+namespace Automattic\Domain_Services_Client\Response\Dns;
 
-use Automattic\Domain_Services\{Entity, Exception, Response};
+use Automattic\Domain_Services_Client\{Entity, Exception, Response};
 
 /**
- * Response of a Dns\Set command
+ * Response of a `Dns\Set` command
  *
  * Contains the domain name, the newly added records and the deleted records.
  *
- * @see \Automattic\Domain_Services\Command\Dns\Set
+ * @see \Automattic\Domain_Services_Client\Command\Dns\Set
  */
 class Set implements Response\Response_Interface {
 	use Response\Data_Trait;
@@ -63,6 +63,7 @@ class Set implements Response\Response_Interface {
 	 * Returns the DNS records that were deleted
 	 *
 	 * @return Entity\Dns_Records
+	 * @throws \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception
 	 */
 	public function get_records_deleted(): Entity\Dns_Records {
 		$domain_name_data = $this->get_data_by_key( 'data.change_set.domain' );

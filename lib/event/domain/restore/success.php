@@ -16,16 +16,16 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Event\Domain\Restore;
+namespace Automattic\Domain_Services_Client\Event\Domain\Restore;
 
-use Automattic\Domain_Services\{Entity, Event, Helper, Exception};
+use Automattic\Domain_Services_Client\{Entity, Event, Helper, Exception};
 
 /**
  * Success event for a `Domain\Restore` command.
  *
  * This event is sent when a restore operation succeeds.
  *
- * @see \Automattic\Domain_Services\Command\Domain\Restore
+ * @see \Automattic\Domain_Services_Client\Command\Domain\Restore
  */
 class Success implements Event\Event_Interface {
 	use Event\Data_Trait;

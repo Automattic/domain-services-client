@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Command\Domain\Set;
+namespace Automattic\Domain_Services_Client\Command\Domain\Set;
 
-use Automattic\Domain_Services\{Command, Entity, Exception};
+use Automattic\Domain_Services_Client\{Command, Entity, Exception};
 
 /**
  * Updates domain contacts
@@ -48,7 +48,7 @@ use Automattic\Domain_Services\{Command, Entity, Exception};
  * }
  * ```
  *
- * @see \Automattic\Domain_Services\Response\Domain\Set\Contacts
+ * @see \Automattic\Domain_Services_Client\Response\Domain\Set\Contacts
  * @see Entity\Contact_Id
  * @see Entity\Contact_Information
  * @see Entity\Domain_Contacts
@@ -74,7 +74,7 @@ class Contacts implements Command\Command_Interface, Command\Command_Serialize_I
 	private Entity\Domain_Contacts $contacts;
 
 	/**
-	 * Constructs a Domain\Set\Contacts command
+	 * Constructs a `Domain\Set\Contacts` command
 	 *
 	 * @param Entity\Domain_Name     $domain
 	 * @param Entity\Domain_Contacts $contacts
@@ -92,6 +92,8 @@ class Contacts implements Command\Command_Interface, Command\Command_Serialize_I
 	}
 
 	/**
+	 * Gets the domain name that will be updated
+	 *
 	 * @return Entity\Domain_Name
 	 */
 	private function get_domain(): Entity\Domain_Name {
@@ -99,6 +101,8 @@ class Contacts implements Command\Command_Interface, Command\Command_Serialize_I
 	}
 
 	/**
+	 * Gets the contact information that will be updated in the domain
+	 *
 	 * @return Entity\Domain_Contacts
 	 */
 	private function get_contacts(): Entity\Domain_Contacts {
@@ -106,7 +110,11 @@ class Contacts implements Command\Command_Interface, Command\Command_Serialize_I
 	}
 
 	/**
+	 * Converts the command to an associative array
+	 *
 	 * @internal
+	 *
+	 * @return array
 	 */
 	public function to_array(): array {
 		return [

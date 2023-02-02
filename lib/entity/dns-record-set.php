@@ -16,7 +16,7 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Entity;
+namespace Automattic\Domain_Services_Client\Entity;
 
 /**
  * A set of DNS records that share the same name, type and TTL
@@ -57,7 +57,7 @@ class Dns_Record_Set {
 	private array $data;
 
 	/**
-	 * Constructs a Dns_Record_Set entity
+	 * Constructs a `Dns_Record_Set` entity
 	 *
 	 * @param string          $name
 	 * @param Dns_Record_Type $type
@@ -133,12 +133,12 @@ class Dns_Record_Set {
 	}
 
 	/**
-	 * Constructs a Dns_Record_Set entity from an associative array containing a DNS record set
+	 * Constructs a `Dns_Record_Set` entity from an associative array containing a DNS record set
 	 *
-	 * @internal
 	 * @param array $data
 	 * @return static
-	 * @throws \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception
+	 * @throws \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception
+	 *@internal
 	 */
 	public static function from_array( array $data ): self {
 		return new self(

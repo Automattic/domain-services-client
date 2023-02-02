@@ -16,14 +16,14 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Entity;
+namespace Automattic\Domain_Services_Client\Entity;
 
 /**
  * Domain name suggestion
  *
  * Used in the `Domain\Suggestions` response.
  *
- * @see \Automattic\Domain_Services\Response\Domain\Suggestions
+ * @see \Automattic\Domain_Services_Client\Response\Domain\Suggestions
  */
 class Suggestion {
 	/**
@@ -32,7 +32,7 @@ class Suggestion {
 	private Domain_Name $domain_name;
 
 	/**
-	 * Constructs a Suggestion entity
+	 * Constructs a `Suggestion` entity
 	 *
 	 * @param Domain_Name $domain_name
 	 */

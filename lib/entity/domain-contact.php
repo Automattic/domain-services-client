@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Entity;
+namespace Automattic\Domain_Services_Client\Entity;
 
-use Automattic\Domain_Services\{Command, Exception};
+use Automattic\Domain_Services_Client\{Command, Exception};
 
 /**
  * Represents a domain contact
@@ -47,6 +47,13 @@ class Domain_Contact {
 	 */
 	private Contact_Disclosure $contact_disclosure;
 
+	/**
+	 * Constructs a `Domain_Contact` entity
+	 *
+	 * @param Contact_Id|null $contact_id
+	 * @param Contact_Information|null $contact_info
+	 * @param Contact_Disclosure|null $disclose_fields
+	 */
 	public function __construct( ?Contact_Id $contact_id = null, ?Contact_Information $contact_info = null, ?Contact_Disclosure $disclose_fields = null ) {
 		$this->contact_id = $contact_id;
 		$this->contact_information = $contact_info;

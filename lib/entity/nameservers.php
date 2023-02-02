@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Entity;
+namespace Automattic\Domain_Services_Client\Entity;
 
-use Automattic\Domain_Services\{Exception};
+use Automattic\Domain_Services_Client\{Exception};
 
 /**
  * Set of name servers
@@ -34,7 +34,7 @@ class Nameservers {
 	private array $nameservers = [];
 
 	/**
-	 * Constructs the Nameservers entity
+	 * Constructs a `Nameservers` entity
 	 *
 	 * @param Domain_Name ...$nameservers
 	 * @throws Exception\Entity\Invalid_Value_Exception
@@ -73,9 +73,10 @@ class Nameservers {
 	}
 
 	/**
-	 * Returns the list os name servers as an array of strings
+	 * Returns the list of name servers as an array of strings
 	 *
 	 * @internal
+	 *
 	 * @return array
 	 */
 	public function to_array(): array {

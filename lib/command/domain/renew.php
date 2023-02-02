@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Command\Domain;
+namespace Automattic\Domain_Services_Client\Command\Domain;
 
-use Automattic\Domain_Services\{Command, Entity};
+use Automattic\Domain_Services_Client\{Command, Entity};
 
 /**
  * Renews a domain
@@ -50,9 +50,9 @@ use Automattic\Domain_Services\{Command, Entity};
  * }
  * ```
  *
- * @see \Automattic\Domain_Services\Response\Domain\Renew
- * @see \Automattic\Domain_Services\Event\Domain\Renew\Success
- * @see \Automattic\Domain_Services\Event\Domain\Renew\Fail
+ * @see \Automattic\Domain_Services_Client\Response\Domain\Renew
+ * @see \Automattic\Domain_Services_Client\Event\Domain\Renew\Success
+ * @see \Automattic\Domain_Services_Client\Event\Domain\Renew\Fail
  */
 class Renew implements Command\Command_Interface, Command\Command_Serialize_Interface {
 	use Command\Command_Serialize_Trait;
@@ -94,7 +94,7 @@ class Renew implements Command\Command_Interface, Command\Command_Serialize_Inte
 	private ?float $fee_amount;
 
 	/**
-	 * Constructs a Domain\Renew command
+	 * Constructs a `Domain\Renew` command
 	 *
 	 * @param Entity\Domain_Name $domain
 	 * @param int                $current_expiration_year
@@ -145,7 +145,11 @@ class Renew implements Command\Command_Interface, Command\Command_Serialize_Inte
 	}
 
 	/**
+	 * Converts the command to an associative array
+	 *
 	 * @internal
+	 *
+	 * @return array
 	 */
 	public function to_array(): array {
 		return [

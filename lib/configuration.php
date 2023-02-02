@@ -16,13 +16,32 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services;
+namespace Automattic\Domain_Services_Client;
 
+/**
+ * Configuration class for the API settings.
+ */
 class Configuration {
+	/**
+	 * Used for getting boolean values in the query string represented as an integer.
+	 * - `true`: `1`
+	 * - `false`: `0`
+	 *
+	 * @var string
+	 */
 	public const BOOLEAN_FORMAT_INT = 'int';
+	/**
+	 * Used for getting boolean values in the query string represented as a string.
+	 * - `true`: `true`
+	 * - `false`: `false`
+	 *
+	 * @var string
+	 */
 	public const BOOLEAN_FORMAT_STRING = 'string';
 
 	/**
+	 * The default configuration instance - used when no configuration is provided
+	 *
 	 * @var Configuration|null
 	 */
 	private static ?self $default_configuration = null;

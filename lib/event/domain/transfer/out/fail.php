@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Event\Domain\Transfer\Out;
+namespace Automattic\Domain_Services_Client\Event\Domain\Transfer\Out;
 
-use Automattic\Domain_Services\{Event};
+use Automattic\Domain_Services_Client\{Event};
 
 /**
  * Outbound domain transfer failure event

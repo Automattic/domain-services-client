@@ -16,7 +16,10 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Response;
+namespace Automattic\Domain_Services_Client\Response;
 
+/**
+ * Interface used by all responses.
+ */
 interface Response_Interface {
 }

@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Command\Contact;
+namespace Automattic\Domain_Services_Client\Command\Contact;
 
-use Automattic\Domain_Services\{Command, Entity};
+use Automattic\Domain_Services_Client\{Command, Entity};
 
 /**
  * Retrieves the details of a contact by ID
@@ -37,8 +37,8 @@ use Automattic\Domain_Services\{Command, Entity};
  * }
  * ```
  *
- * @see \Automattic\Domain_Services\Response\Contact\Details
- * @see \Automattic\Domain_Services\Command\Domain\Set\Contacts
+ * @see \Automattic\Domain_Services_Client\Response\Contact\Details
+ * @see \Automattic\Domain_Services_Client\Command\Domain\Set\Contacts
  */
 class Details implements Command\Command_Interface, Command\Command_Serialize_Interface {
 	use Command\Command_Serialize_Trait;
@@ -52,6 +52,8 @@ class Details implements Command\Command_Interface, Command\Command_Serialize_In
 	private Entity\Contact_Id $contact_id;
 
 	/**
+	 * Constructs a `Contact\Details` command
+	 *
 	 * @param Entity\Contact_Id $contact_id
 	 */
 	public function __construct( Entity\Contact_Id $contact_id ) {
@@ -68,7 +70,11 @@ class Details implements Command\Command_Interface, Command\Command_Serialize_In
 	}
 
 	/**
+	 * Converts the command to an associative array
+	 *
 	 * @internal
+	 *
+	 * @return array
 	 */
 	public function to_array(): array {
 		return [

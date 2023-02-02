@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Command\Event;
+namespace Automattic\Domain_Services_Client\Command\Event;
 
-use Automattic\Domain_Services\{Command};
+use Automattic\Domain_Services_Client\{Command};
 
 /**
  * Acknowledge an event
@@ -27,8 +27,8 @@ use Automattic\Domain_Services\{Command};
  *  - IDs can be fetched using the `Event\Enumerate` command.
  *  - This command executes synchronously on the server.
  *
- * @see \Automattic\Domain_Services\Response\Event\Ack
- * @see \Automattic\Domain_Services\Response\Event\Enumerate
+ * @see \Automattic\Domain_Services_Client\Response\Event\Ack
+ * @see \Automattic\Domain_Services_Client\Response\Event\Enumerate
  */
 class Ack implements Command\Command_Interface, Command\Command_Serialize_Interface {
 	use Command\Command_Serialize_Trait;
@@ -42,6 +42,8 @@ class Ack implements Command\Command_Interface, Command\Command_Serialize_Interf
 	private int $event_id;
 
 	/**
+	 * Constructs an `Event\Ack` command
+	 *
 	 * @param int $event_id
 	 */
 	public function __construct( int $event_id ) {
@@ -58,7 +60,11 @@ class Ack implements Command\Command_Interface, Command\Command_Serialize_Interf
 	}
 
 	/**
+	 * Converts the command to an associative array
+	 *
 	 * @internal
+	 *
+	 * @return array
 	 */
 	public function to_array(): array {
 		return [

@@ -16,8 +16,11 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Response;
+namespace Automattic\Domain_Services_Client\Response;
 
+/**
+ * Represents status codes and descriptions from the DSAPI command's responses
+ */
 class Code {
 	public const SUCCESS = 200;
 	public const INVALID_COMMAND_NAME = 500;
@@ -61,6 +64,13 @@ class Code {
 		self::UNKNOWN_ERROR => 'Unknown error',
 	];
 
+	/**
+	 * Gets the description of a status code
+	 *
+	 * @param int $code
+	 *
+	 * @return string
+	 */
 	public static function get_description( int $code ): string {
 		return self::DESCRIPTION[ $code ] ?? 'Unknown error code';
 	}

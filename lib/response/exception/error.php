@@ -16,25 +16,48 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Response\Exception;
+namespace Automattic\Domain_Services_Client\Response\Exception;
 
-use Automattic\Domain_Services\{Response};
+use Automattic\Domain_Services_Client\{Response};
 
+/**
+ * Response of a request that returned an error.
+ */
 class Error implements Response\Response_Interface {
 	use Response\Data_Trait;
 
+	/**
+	 * Returns the invalid option
+	 *
+	 * @return string|null
+	 */
 	public function get_invalid_option(): ?string {
 		return $this->get_data_by_key( 'invalid_option' );
 	}
 
+	/**
+	 * Returns the reason for the error
+	 *
+	 * @return string|null
+	 */
 	public function get_reason(): ?string {
 		return $this->get_data_by_key( 'reason' );
 	}
 
+	/**
+	 * Returns the command used
+	 *
+	 * @return string|null
+	 */
 	public function get_command(): ?string {
 		return $this->get_data_by_key( 'command_data.command' );
 	}
 
+	/**
+	 * Returns the command parameters used
+	 *
+	 * @return array|null
+	 */
 	public function get_command_params(): ?array {
 		return $this->get_data_by_key( 'command_data.params' );
 	}

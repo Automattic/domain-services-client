@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Response\Domain;
+namespace Automattic\Domain_Services_Client\Response\Domain;
 
-use Automattic\Domain_Services\{Entity, Response, Helper};
+use Automattic\Domain_Services_Client\{Entity, Response, Helper};
 
 /**
  * Response of a `Domain\Info` command
@@ -42,6 +42,7 @@ class Info implements Response\Response_Interface {
 	 * Gets the contacts associated with this domain
 	 *
 	 * @return Entity\Domain_Contacts
+	 * @throws \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception
 	 */
 	public function get_contacts(): Entity\Domain_Contacts {
 		$contact_data = $this->get_data_by_key( 'data.contacts' ) ?? [];
@@ -88,7 +89,7 @@ class Info implements Response\Response_Interface {
 	 * Gets the current EPP status codes for the domain
 	 *
 	 * @return Entity\Epp_Status_Codes
-	 * @throws \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception
+	 * @throws \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception
 	 */
 	public function get_domain_status(): Entity\Epp_Status_Codes {
 		$epp_statuses_data = $this->get_data_by_key( 'data.domain_status' );
@@ -103,7 +104,7 @@ class Info implements Response\Response_Interface {
 	 * Gets the name servers set at the registry for this domain
 	 *
 	 * @return Entity\Nameservers|null
-	 * @throws \Automattic\Domain_Services\Exception\Entity\Invalid_Value_Exception
+	 * @throws \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception
 	 */
 	public function get_name_servers(): ?Entity\Nameservers {
 		$nameservers_data = $this->get_data_by_key( 'data.name_servers' );
@@ -130,6 +131,7 @@ class Info implements Response\Response_Interface {
 	 * Gets the whois privacy setting for the domain
 	 *
 	 * @return Entity\Whois_Privacy|null
+	 * @throws \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception
 	 */
 	public function get_privacy_setting(): ?Entity\Whois_Privacy {
 		$privacy_setting_data = $this->get_data_by_key( 'data.privacy_setting' );

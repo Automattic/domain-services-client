@@ -16,8 +16,13 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Entity;
+namespace Automattic\Domain_Services_Client\Entity;
 
+/**
+ * List of `Epp_Status_Code` entities
+ *
+ * @see \Automattic\Domain_Services_Client\Entity\Epp_Status_Code
+ */
 class Epp_Status_Codes implements \Iterator {
 	/**
 	 * The list of EPP status codes that apply to a single domain
@@ -33,19 +38,35 @@ class Epp_Status_Codes implements \Iterator {
 	 */
 	private int $iterator_pointer = 0;
 
+	/**
+	 * Constructs an `Epp_Status_Codes` entity
+	 *
+	 * @param \Automattic\Domain_Services_Client\Entity\Epp_Status_Code ...$epp_status_codes
+	 */
 	public function __construct( Epp_Status_Code ...$epp_status_codes ) {
 		foreach ( $epp_status_codes as $epp_status_code ) {
 			$this->add_epp_code( $epp_status_code );
 		}
 	}
 
+	/**
+	 * Add an EPP status code to the current object
+	 *
+	 * @param Epp_Status_Code $epp_status_code
+	 *
+	 * @return void
+	 */
 	public function add_epp_code( Epp_Status_Code $epp_status_code ): void {
 		// @todo where are we checking whether the EPP status is updateable or not
 		$this->epp_status_codes[ (string) $epp_status_code ] = $epp_status_code;
 	}
 
 	/**
+	 * Returns the list of EPP status codes as an array of strings
+	 *
 	 * @internal
+	 *
+	 * @return array
 	 */
 	public function to_array(): array {
 		$epp_status_codes = [];
@@ -58,8 +79,11 @@ class Epp_Status_Codes implements \Iterator {
 	}
 
 	/**
-	 * Functions to implement the Iterator interface
+	 * Part of the iterator interface implementation
+	 *
 	 * @internal
+	 *
+	 * @return Epp_Status_Code|null
 	 */
 	public function current(): ?Epp_Status_Code {
 		$keys = array_keys( $this->epp_status_codes );
@@ -67,28 +91,44 @@ class Epp_Status_Codes implements \Iterator {
 	}
 
 	/**
+	 * Part of the iterator interface implementation
+	 *
 	 * @internal
+	 *
+	 * @return void
 	 */
 	public function next(): void {
 		$this->iterator_pointer++;
 	}
 
 	/**
+	 * Part of the iterator interface implementation
+	 *
 	 * @internal
+	 *
+	 * @return int|null
 	 */
 	public function key(): ?int {
 		return $this->iterator_pointer;
 	}
 
 	/**
+	 * Part of the iterator interface implementation
+	 *
 	 * @internal
+	 *
+	 * @return bool
 	 */
 	public function valid(): bool {
 		return $this->iterator_pointer < count( $this->epp_status_codes );
 	}
 
 	/**
+	 * Part of the iterator interface implementation
+	 *
 	 * @internal
+	 *
+	 * @return void
 	 */
 	public function rewind(): void {
 		$this->iterator_pointer = 0;

@@ -16,26 +16,26 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Entity;
+namespace Automattic\Domain_Services_Client\Entity;
 
 /**
- * List of Suggestion entities
+ * List of `Suggestion` entities
  *
  * Used in the `Domain\Suggestions` response.
  *
- * @see \Automattic\Domain_Services\Entity\Suggestion
- * @see \Automattic\Domain_Services\Response\Domain\Suggestions
+ * @see \Automattic\Domain_Services_Client\Entity\Suggestion
+ * @see \Automattic\Domain_Services_Client\Response\Domain\Suggestions
  */
 class Suggestions {
 	/**
-	 * List of Suggestion entities
+	 * List of `Suggestion` entities
 	 *
 	 * @var Suggestion[]
 	 */
 	private array $suggestions = [];
 
 	/**
-	 * Constructs a Suggestions entity
+	 * Constructs a `Suggestions` entity
 	 *
 	 * @param Suggestion ...$suggestions
 	 */
@@ -44,7 +44,7 @@ class Suggestions {
 	}
 
 	/**
-	 * Adds a new Suggestion to the list of suggestions
+	 * Adds a new `Suggestion` to the list of suggestions
 	 *
 	 * @param Suggestion $suggestion
 	 * @return $this

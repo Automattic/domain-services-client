@@ -16,14 +16,14 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Response\Domain\Set;
+namespace Automattic\Domain_Services_Client\Response\Domain\Set;
 
-use Automattic\Domain_Services\Response;
+use Automattic\Domain_Services_Client\Response;
 
 /**
- * Response of a Transferlock\Set command.
+ * Response of a `Domain\Transferlock\Set` command.
  *
- * @see \Automattic\Domain_Services\Command\Domain\Set\Transferlock
+ * @see \Automattic\Domain_Services_Client\Command\Domain\Set\Transferlock
  */
 class Transferlock implements Response\Response_Interface {
 	use Response\Data_Trait;

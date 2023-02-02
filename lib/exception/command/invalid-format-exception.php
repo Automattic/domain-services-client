@@ -16,12 +16,17 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Exception\Command;
+namespace Automattic\Domain_Services_Client\Exception\Command;
 
-use Automattic\Domain_Services\{Exception, Response};
+use Automattic\Domain_Services_Client\{Exception, Response};
 
+/**
+ * Exception thrown when a command is sent with an invalid format.
+ */
 class Invalid_Format_Exception extends Exception\Domain_Services_Exception {
 	/**
+	 * Constructs a `Invalid_Format_Exception` object.
+	 *
 	 * @internal
 	 */
 	public function __construct( string $error_detail ) {

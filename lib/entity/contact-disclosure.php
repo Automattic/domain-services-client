@@ -16,9 +16,9 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Entity;
+namespace Automattic\Domain_Services_Client\Entity;
 
-use Automattic\Domain_Services\{Exception};
+use Automattic\Domain_Services_Client\{Exception};
 
 /**
  * The list of domain contact fields to disclose in the Whois results
@@ -40,6 +40,8 @@ class Contact_Disclosure {
 	private string $disclose_fields;
 
 	/**
+	 * Constructs a `Contact_Disclosure` entity
+	 *
 	 * @param string $disclose_fields The fields to disclose in whois responses
 	 * @throws Exception\Entity\Invalid_Value_Exception
 	 */
@@ -64,6 +66,7 @@ class Contact_Disclosure {
 	 * Get the disclosed fields as a comma delimited list.
 	 *
 	 * @internal
+	 *
 	 * @return string
 	 */
 	public function __toString(): string {

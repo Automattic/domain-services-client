@@ -16,12 +16,12 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services\Event\Domain\Set\Contacts;
+namespace Automattic\Domain_Services_Client\Event\Domain\Set\Contacts;
 
-use Automattic\Domain_Services\{Command, Event};
+use Automattic\Domain_Services_Client\{Command, Event};
 
 /**
- * Event representing a Domain\Set\Contacts command failure
+ * Event representing a `Domain\Set\Contacts` command failure
  *
  * @see Command\Domain\Set\Contacts
  */
