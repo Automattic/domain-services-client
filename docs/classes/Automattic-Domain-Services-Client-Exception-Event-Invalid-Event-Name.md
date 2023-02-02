@@ -7,6 +7,33 @@ Exception thrown when an invalid event name is used.
 
 ---
 
+### Methods
+
+* public [get_error_data()](#method_get_error_data)
+
+---
+
 ### Details
 
 * File: [lib/exception/event/invalid-event-name.php](../../lib/exception/event/invalid-event-name.php)
+
+---
+
+## Methods
+
+<a id="method_get_error_data"></a>
+### get_error_data
+
+```
+public get_error_data() : array
+```
+
+##### Summary
+
+Returns the error data associated with the exception
+
+##### Returns:
+
+```
+array
+```
