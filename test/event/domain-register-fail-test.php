@@ -46,10 +46,9 @@ class Domain_Register_Fail_Test extends Test\Lib\Domain_Services_Client_Test_Cas
 						'error' => [
 							'class' => '',
 							'subclass' => 'Domain_Services',
-							'data' =>
-								[
-									'reason' => 'Domain is not available',
-								],
+							'data' => [
+								'error_detail' => 'Domain is not available',
+							],
 						],
 					],
 				],
@@ -66,6 +65,6 @@ class Domain_Register_Fail_Test extends Test\Lib\Domain_Services_Client_Test_Cas
 
 		$this->assertInstanceOf( Event\Domain\Register\Fail::class, $event );
 		$this->assertSame( $response_data['data']['event']['object_id'], $event->get_domain()->get_name() );
-		$this->assertSame( $response_data['data']['event']['event_data']['error']['data']['reason'], $event->get_error_reason() );
+		$this->assertSame( $response_data['data']['event']['event_data']['error']['data']['error_detail'], $event->get_error_detail() );
 	}
 }

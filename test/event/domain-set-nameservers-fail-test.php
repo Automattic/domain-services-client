@@ -47,7 +47,7 @@ class Domain_Set_Nameservers_Fail_Test extends Test\Lib\Domain_Services_Client_T
 							'class' => '',
 							'subclass' => 'Domain_Services',
 							'data' => [
-								'reason' => 'Entity not found',
+								'error_detail' => 'Entity not found',
 							],
 						],
 					],
@@ -65,6 +65,6 @@ class Domain_Set_Nameservers_Fail_Test extends Test\Lib\Domain_Services_Client_T
 
 		$this->assertInstanceOf( Event\Domain\Set\Nameservers\Fail::class, $event );
 		$this->assertSame( $response_data['data']['event']['object_id'], $event->get_domain()->get_name() );
-		$this->assertSame( $response_data['data']['event']['event_data']['error']['data']['reason'], $event->get_error_reason() );
+		$this->assertSame( $response_data['data']['event']['event_data']['error']['data']['error_detail'], $event->get_error_detail() );
 	}
 }
