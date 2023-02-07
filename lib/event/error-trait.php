@@ -28,7 +28,7 @@ trait Error_Trait {
 	 *
 	 * @return string
 	 */
-	final public function get_error_reason(): string {
-		return $this->get_data_by_key( 'event_data.error.data.reason' );
+	final public function get_error_detail(): string {
+		return $this->get_data_by_key( 'event_data.error.data.error_detail' );
 	}
 }

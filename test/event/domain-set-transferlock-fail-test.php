@@ -47,7 +47,7 @@ class Domain_Set_Transferlock_Fail_Test extends Test\Lib\Domain_Services_Client_
 							'class' => '',
 							'subclass' => 'Domain_Services',
 							'data' => [
-								'reason' => 'Invalid domain state',
+								'error_detail' => 'Invalid domain state',
 							],
 						],
 					],
@@ -65,6 +65,6 @@ class Domain_Set_Transferlock_Fail_Test extends Test\Lib\Domain_Services_Client_
 
 		$this->assertInstanceOf( Event\Domain\Set\Transferlock\Fail::class, $event );
 		$this->assertSame( $response_data['data']['event']['object_id'], $event->get_domain()->get_name() );
-		$this->assertSame( $response_data['data']['event']['event_data']['error']['data']['reason'], $event->get_error_reason() );
+		$this->assertSame( $response_data['data']['event']['event_data']['error']['data']['error_detail'], $event->get_error_detail() );
 	}
 }

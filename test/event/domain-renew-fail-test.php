@@ -46,10 +46,9 @@ class Domain_Renew_Fail_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 						'error' => [
 							'class' => '',
 							'subclass' => 'Domain_Services',
-							'data' =>
-								[
-									'reason' => 'Invalid attribute value; wrong expiration',
-								],
+							'data' => [
+								'error_detail' => 'Invalid attribute value; wrong expiration',
+							],
 						],
 					],
 				],
@@ -66,6 +65,6 @@ class Domain_Renew_Fail_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 
 		$this->assertInstanceOf( Event\Domain\Renew\Fail::class, $event );
 		$this->assertSame( $response_data['data']['event']['object_id'], $event->get_domain()->get_name() );
-		$this->assertSame( $response_data['data']['event']['event_data']['error']['data']['reason'], $event->get_error_reason() );
+		$this->assertSame( $response_data['data']['event']['event_data']['error']['data']['error_detail'], $event->get_error_detail() );
 	}
 }

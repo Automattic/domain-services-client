@@ -9,7 +9,7 @@ Trait that specifies methods common to all error event classes.
 
 ### Methods
 
-* public [get_error_reason()](#method_get_error_reason)
+* public [get_error_detail()](#method_get_error_detail)
 
 ---
 
@@ -21,11 +21,11 @@ Trait that specifies methods common to all error event classes.
 
 ## Methods
 
-<a id="method_get_error_reason"></a>
-### get_error_reason
+<a id="method_get_error_detail"></a>
+### get_error_detail
 
 ```
-final public get_error_reason() : string
+final public get_error_detail() : string
 ```
 
 ##### Summary

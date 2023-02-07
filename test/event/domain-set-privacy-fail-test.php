@@ -46,11 +46,10 @@ class Domain_Set_Privacy_Fail_Test extends Test\Lib\Domain_Services_Client_Test_
 						'error' => [
 							'class' => 'Entity',
 							'subclass' => 'Invalid_Value',
-							'data' =>
-								[
-									'invalid_option' => 'Automattic\\Domain_Services_Client\\Command\\Domain\\Privacy\\Set',
-									'reason' => 'Invalid privacy option.',
-								],
+							'data' => [
+								'invalid_option' => 'Automattic\\Domain_Services_Client\\Command\\Domain\\Privacy\\Set',
+								'error_detail' => 'Invalid privacy option.',
+							],
 						],
 					],
 				],
@@ -67,6 +66,6 @@ class Domain_Set_Privacy_Fail_Test extends Test\Lib\Domain_Services_Client_Test_
 
 		$this->assertInstanceOf( Event\Domain\Set\Privacy\Fail::class, $event );
 		$this->assertSame( $response_data['data']['event']['object_id'], $event->get_domain()->get_name() );
-		$this->assertSame( $response_data['data']['event']['event_data']['error']['data']['reason'], $event->get_error_reason() );
+		$this->assertSame( $response_data['data']['event']['event_data']['error']['data']['error_detail'], $event->get_error_detail() );
 	}
 }

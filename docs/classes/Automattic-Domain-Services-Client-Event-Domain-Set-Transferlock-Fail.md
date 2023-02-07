@@ -13,7 +13,7 @@ Fail event for `Domain\Set\TransferLock` command
 * public [get_acknowledged_date()](#method_get_acknowledged_date)
 * public [get_data_by_key()](#method_get_data_by_key)
 * public [get_domain()](#method_get_domain)
-* public [get_error_reason()](#method_get_error_reason)
+* public [get_error_detail()](#method_get_error_detail)
 * public [get_event_class()](#method_get_event_class)
 * public [get_event_data()](#method_get_event_data)
 * public [get_event_date()](#method_get_event_date)
@@ -126,11 +126,11 @@ Returns the domain name object.
 
 ---
 
-<a id="method_get_error_reason"></a>
-### get_error_reason
+<a id="method_get_error_detail"></a>
+### get_error_detail
 
 ```
-final public get_error_reason() : string
+final public get_error_detail() : string
 ```
 
 ##### Summary
