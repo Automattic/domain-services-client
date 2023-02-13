@@ -45,7 +45,7 @@ interface Command_Interface {
 	public const KEY_QUANTITY = 'quantity';
 	public const KEY_QUERY = 'query';
 	public const KEY_RECORD_SETS = 'record_sets';
-	public const KEY_RECORDS = 'records';
+	public const KEY_RECORDS = 'dns_records';
 	public const KEY_TRANSFERLOCK = 'transferlock';
 
 	/**

@@ -250,9 +250,15 @@ class Register implements Command\Command_Interface, Command\Command_Serialize_I
 	 * @return array
 	 */
 	public function to_array(): array {
-		return [
+		$array = [
 			Command\Command_Interface::KEY_DOMAIN => $this->get_domain()->get_name(),
 			Command\Command_Interface::KEY_CONTACTS => $this->get_contacts()->to_array(),
 		];
+
+		if ( $this->get_dns_records() ) {
+			$array[ Command\Command_Interface::KEY_RECORDS ] = $this->get_dns_records()->to_array();
+		}
+
+		return $array;
 	}
 }
