@@ -56,7 +56,7 @@ class Epp_Status_Code {
 	private const READ_ONLY = 'read_only';
 	private const READ_WRITE = 'read_write';
 
-	public const VALID_EPP_STATUSES = [
+	public const ICANN_EPP_STATUSES = [
 		self::CLIENT_DELETE_PROHIBITED => self::READ_WRITE,
 		self::CLIENT_HOLD => self::READ_WRITE,
 		self::CLIENT_RENEW_PROHIBITED => self::READ_WRITE,
@@ -90,15 +90,21 @@ class Epp_Status_Code {
 	private string $status;
 
 	/**
+	 * The status is an ICANN standard status
+	 *
+	 * @var bool
+	 */
+	private bool $is_icann_status = true;
+
+	/**
 	 * Constructs an `Epp_Status_Code` entity
 	 *
 	 * @param string $status
 	 *
-	 * @throws \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception
 	 */
 	public function __construct( string $status ) {
-		if ( ! isset( self::VALID_EPP_STATUSES[ $status ] ) ) {
-			throw new Exception\Entity\Invalid_Value_Exception( strtolower( __CLASS__ ), $status );
+		if ( ! isset( self::ICANN_EPP_STATUSES[ $status ] ) ) {
+			$this->is_icann_status = false;
 		}
 
 		$this->status = $status;
@@ -107,20 +113,29 @@ class Epp_Status_Code {
 	/**
 	 * Returns the string representation of the EPP status code object.
 	 *
+	 * @return string
 	 * @internal
 	 *
-	 * @return string
 	 */
 	public function __toString(): string {
 		return $this->status;
 	}
 
 	/**
-	 * Checks whether the EPP status is updateable
+	 * Checks wither this a standard ICANN EPP status code
+	 *
+	 * @return bool
+	 */
+	public function is_icann_status(): bool {
+		return $this->is_icann_status;
+	}
+
+	/**
+	 * Checks whether the EPP status is able to be set by the registrar
 	 *
 	 * @return bool
 	 */
 	public function is_updateable(): bool {
-		return self::READ_WRITE === self::VALID_EPP_STATUSES[ $this->status ];
+		return self::READ_WRITE === self::ICANN_EPP_STATUSES[ $this->status ];
 	}
 }

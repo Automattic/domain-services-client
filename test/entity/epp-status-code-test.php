@@ -18,13 +18,13 @@
 
 namespace Automattic\Domain_Services_Client\Test\Entity;
 
-use Automattic\Domain_Services_Client\{Entity, Exception, Response, Test};
+use Automattic\Domain_Services_Client\{Entity, Test};
 
 class EPP_Status_Code_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	/**
 	 * <status>, <is_updateable>
 	 */
-	public const VALID_EPP_STATUSES = [
+	public const ICANN_EPP_STATUSES = [
 		'clientDeleteProhibited' => true,
 		'clientHold' => true,
 		'clientRenewProhibited' => true,
@@ -51,17 +51,16 @@ class EPP_Status_Code_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	];
 
 	public function test_entity_instance_success_disclose_all(): void {
-		foreach ( self::VALID_EPP_STATUSES as $status => $is_updateable ) {
+		foreach ( self::ICANN_EPP_STATUSES as $status => $is_updateable ) {
 			$entity = new Entity\Epp_Status_Code( $status );
 			$this->assertSame( $status, (string) $entity );
 			$this->assertSame( $is_updateable, $entity->is_updateable() );
+			$this->assertTrue( $entity->is_icann_status() );
 		}
 	}
 
 	public function test_entity_instance_fail(): void {
-		$this->expectException( Exception\Entity\Invalid_Value_Exception::class );
-		$this->expectExceptionCode( Response\Code::INVALID_ENTITY_VALUE );
-		$this->expectExceptionMessage( Response\Code::get_description( Response\Code::INVALID_ENTITY_VALUE ) );
-		new Entity\Epp_Status_Code( 'INVALID' );
+		$entity = new Entity\Epp_Status_Code( 'Non-standard EPP code' );
+		$this->assertFalse( $entity->is_icann_status() );
 	}
 }
