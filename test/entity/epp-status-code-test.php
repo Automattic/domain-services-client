@@ -59,7 +59,7 @@ class EPP_Status_Code_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 		}
 	}
 
-	public function test_entity_instance_fail(): void {
+	public function test_non_icann_epp_status(): void {
 		$entity = new Entity\Epp_Status_Code( 'Non-standard EPP code' );
 		$this->assertFalse( $entity->is_icann_status() );
 	}
