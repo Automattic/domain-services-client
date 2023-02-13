@@ -23,7 +23,7 @@ use Automattic\Domain_Services_Client\{Entity, Test};
 class Epp_Status_Codes_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_entity_instance_success(): void {
 		$status_codes_entities = [];
-		$status_codes_array = array_keys( Entity\Epp_Status_Code::VALID_EPP_STATUSES );
+		$status_codes_array = array_keys( Entity\Epp_Status_Code::ICANN_EPP_STATUSES );
 		foreach ( $status_codes_array as $code ) {
 			$status_codes_entities[] = new Entity\Epp_Status_Code( $code );
 		}
@@ -38,7 +38,7 @@ class Epp_Status_Codes_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	}
 
 	public function test_entity_instance_using_add_success(): void {
-		$status_codes_array = array_keys( Entity\Epp_Status_Code::VALID_EPP_STATUSES );
+		$status_codes_array = array_keys( Entity\Epp_Status_Code::ICANN_EPP_STATUSES );
 		$entity = new Entity\Epp_Status_Codes();
 
 		foreach ( $status_codes_array as $code ) {
