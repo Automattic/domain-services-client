@@ -9,7 +9,7 @@ Trait that specifies methods common to all error event classes.
 
 ### Methods
 
-* public [get_error_detail()](#method_get_error_detail)
+* public [get_event_errors()](#method_get_event_errors)
 
 ---
 
@@ -21,19 +21,37 @@ Trait that specifies methods common to all error event classes.
 
 ## Methods
 
-<a id="method_get_error_detail"></a>
-### get_error_detail
+<a id="method_get_event_errors"></a>
+### get_event_errors
 
 ```
-final public get_error_detail() : string
+final public get_event_errors() : array[]
 ```
 
 ##### Summary
 
 Gets additional information about the reason for the error.
 
+##### Description
+
+The format will be an array of arrays:
+[
+    [
+        &#039;description&#039; =&gt; &#039;A description of an error&#039;,
+        &#039;extra&#039; =&gt; [
+            &#039;extra_info_example_1&#039; =&gt; &#039;some additional information about this error&#039;,
+    ],
+    [
+        &#039;description&#039; =&gt; &#039;A description of another error&#039;,
+        &#039;extra&#039; =&gt; [
+            &#039;extra_info_example_2&#039; =&gt; &#039;some additional information about this error&#039;,
+            &#039;extra_info_example_3&#039; =&gt; &#039;even more additional information about this error&#039;,
+        ],
+    ],
+]
+
 ##### Returns:
 
 ```
-string
+array[]
 ```
