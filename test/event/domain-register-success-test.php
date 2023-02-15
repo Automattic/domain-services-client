@@ -99,7 +99,7 @@ class Domain_Register_Success_Test extends Test\Lib\Domain_Services_Client_Test_
 		$this->assertNotNull( $event );
 
 		$this->assertInstanceOf( Event\Domain\Register\Success::class, $event );
-		$this->assertSame( $response_data['data']['event']['object_id'], $event->get_domain()->get_name() );
+		$this->assertIsValidEvent( $response_data['data']['event'], $event );
 
 		$event_contacts = $event->get_contacts();
 		foreach ( $event_contacts as $contact_type => $event_contact ) {

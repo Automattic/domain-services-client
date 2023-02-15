@@ -59,7 +59,7 @@ class Domain_Renew_Success_Test extends Test\Lib\Domain_Services_Client_Test_Cas
 		$this->assertNotNull( $event );
 
 		$this->assertInstanceOf( Event\Domain\Renew\Success::class, $event );
-		$this->assertSame( $response_data['data']['event']['object_id'], $event->get_domain()->get_name() );
+		$this->assertIsValidEvent( $response_data['data']['event'], $event );
 
 		$this->assertSame( $response_data['data']['event']['event_data']['domain_status'], $event->get_domain_status()->to_array() );
 		$this->assertSame( $response_data['data']['event']['event_data']['expiration_date'], Helper\Date_Time::format( $event->get_expiration_date() ) );

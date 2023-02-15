@@ -57,7 +57,7 @@ class Domain_Notification_Argp_Test extends Test\Lib\Domain_Services_Client_Test
 		$this->assertNotNull( $event );
 
 		$this->assertInstanceOf( Event\Domain\Notification\Argp::class, $event );
-		$this->assertSame( $response_data['data']['event']['object_id'], $event->get_domain()->get_name() );
+		$this->assertIsValidEvent( $response_data['data']['event'], $event );
 		$this->assertSame( $response_data['data']['event']['event_data']['argp_end_date'], Helper\Date_Time::format( $event->get_argp_end_date() ) );
 	}
 }

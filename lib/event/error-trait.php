@@ -26,9 +26,25 @@ trait Error_Trait {
 	/**
 	 * Gets additional information about the reason for the error.
 	 *
-	 * @return string
+	 * The format will be an array of arrays:
+	 *    [
+	 *        [
+	 *            'description' => 'A description of an error',
+	 *            'extra' => [
+	 *                'extra_info_example_1' => 'some additional information about this error',
+	 *        ],
+	 *        [
+	 *            'description' => 'A description of another error',
+	 *            'extra' => [
+	 *                'extra_info_example_2' => 'some additional information about this error',
+	 *                'extra_info_example_3' => 'even more additional information about this error',
+	 *            ],
+	 *        ],
+	 *    ]
+	 *
+	 * @return array[]
 	 */
-	final public function get_error_detail(): string {
-		return $this->get_data_by_key( 'event_data.error.data.error_detail' );
+	final public function get_event_errors(): array {
+		return $this->get_data_by_key( 'event_data.errors' );
 	}
 }

@@ -42,12 +42,23 @@ class Domain_Register_Fail_Test extends Test\Lib\Domain_Services_Client_Test_Cas
 					'event_date' => '2022-01-23 12:34:56',
 					'acknowledged_date' => null,
 					'event_data' => [
-						// TODO: Provide accurate error data once this is finalized in the server repo
-						'error' => [
-							'class' => '',
-							'subclass' => 'Domain_Services',
-							'data' => [
-								'error_detail' => 'Domain is not available',
+						'status' => Response\Code::COMMAND_FAILED,
+						'status_description' => Response\Code::get_description( Response\Code::COMMAND_FAILED ),
+						'client_txn_id' => 'test-client-transaction-id',
+						'server_txn_id' => '5ffdba44-eeec-4647-9cc4-27cdf8352efc.local-isolated-test-request',
+						'errors' => [
+							[
+								'description' => 'Missing country code.',
+								'extra' => [
+									'error_info_1' => 'some information about this error',
+								],
+							],
+							[
+								'description' => 'Missing country code.',
+								'extra' => [
+									'error_info_1' => 'some information about this error',
+									'error_info_2' => 'some additional information about this error',
+								],
 							],
 						],
 					],
@@ -64,7 +75,6 @@ class Domain_Register_Fail_Test extends Test\Lib\Domain_Services_Client_Test_Cas
 		$this->assertNotNull( $event );
 
 		$this->assertInstanceOf( Event\Domain\Register\Fail::class, $event );
-		$this->assertSame( $response_data['data']['event']['object_id'], $event->get_domain()->get_name() );
-		$this->assertSame( $response_data['data']['event']['event_data']['error']['data']['error_detail'], $event->get_error_detail() );
+		$this->assertIsValidEvent( $response_data['data']['event'], $event );
 	}
 }

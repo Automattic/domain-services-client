@@ -60,7 +60,7 @@ class Domain_Set_Nameservers_Success_Test extends Test\Lib\Domain_Services_Clien
 		$this->assertNotNull( $event );
 
 		$this->assertInstanceOf( Event\Domain\Set\Nameservers\Success::class, $event );
-		$this->assertSame( $response_data['data']['event']['object_id'], $event->get_domain()->get_name() );
+		$this->assertIsValidEvent( $response_data['data']['event'], $event );
 		$this->assertSame( $response_data['data']['event']['event_data']['name_servers'], $event->get_nameservers()->to_array() );
 	}
 }

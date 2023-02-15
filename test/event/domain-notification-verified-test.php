@@ -57,7 +57,7 @@ class Domain_Notification_Verified_Test extends Test\Lib\Domain_Services_Client_
 		$this->assertNotNull( $event );
 
 		$this->assertInstanceOf( Event\Domain\Notification\Verified::class, $event );
-		$this->assertSame( $response_data['data']['event']['object_id'], $event->get_domain()->get_name() );
+		$this->assertIsValidEvent( $response_data['data']['event'], $event );
 		$this->assertSame( $response_data['data']['event']['event_data']['info'], $event->get_info() );
 	}
 }

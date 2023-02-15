@@ -58,7 +58,7 @@ class Domain_Notification_Auction_Test extends Test\Lib\Domain_Services_Client_T
 		$this->assertNotNull( $event );
 
 		$this->assertInstanceOf( Event\Domain\Notification\Auction::class, $event );
-		$this->assertSame( $response_data['data']['event']['object_id'], $event->get_domain()->get_name() );
+		$this->assertIsValidEvent( $response_data['data']['event'], $event );
 		$this->assertSame( $response_data['data']['event']['event_data']['auction_status'], $event->get_auction_status() );
 		$this->assertSame( $response_data['data']['event']['event_data']['auction_status_end_date'], Helper\Date_Time::format( $event->get_auction_status_end_date() ) );
 	}

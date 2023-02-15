@@ -83,7 +83,7 @@ class Domain_Set_Contacts_Success_Test extends Test\Lib\Domain_Services_Client_T
 		$this->assertNotNull( $event );
 
 		$this->assertInstanceOf( Event\Domain\Set\Contacts\Success::class, $event );
+		$this->assertIsValidEvent( $response_data['data']['event'], $event );
 		$this->assertSame( $response_data['data']['event']['event_data']['contacts'], $event->get_contacts()->to_array() );
-		$this->assertSame( $response_data['data']['event']['object_id'], $event->get_domain()->get_name() );
 	}
 }
