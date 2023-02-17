@@ -13,8 +13,11 @@ Trait that defines data access methods common to all event classes.
 * public [get_acknowledged_date()](#method_get_acknowledged_date)
 * public [get_data_by_key()](#method_get_data_by_key)
 * public [get_event_class()](#method_get_event_class)
-* public [get_event_data()](#method_get_event_data)
+* public [get_event_client_txn_id()](#method_get_event_client_txn_id)
 * public [get_event_date()](#method_get_event_date)
+* public [get_event_server_txn_id()](#method_get_event_server_txn_id)
+* public [get_event_status()](#method_get_event_status)
+* public [get_event_status_description()](#method_get_event_status_description)
 * public [get_event_subclass()](#method_get_event_subclass)
 * public [get_id()](#method_get_id)
 * public [get_object_id()](#method_get_object_id)
@@ -118,27 +121,21 @@ string
 
 ---
 
-<a id="method_get_event_data"></a>
-### get_event_data
+<a id="method_get_event_client_txn_id"></a>
+### get_event_client_txn_id
 
 ```
-public get_event_data() : array
+public get_event_client_txn_id() : string
 ```
 
 ##### Summary
 
-Gets all the event data as an array
-
-##### Throws:
-
-| Type | Description |
-|------|-------------|
-| \JsonException |  |
+Gets the client_txn_id from the command related to this event, if any
 
 ##### Returns:
 
 ```
-array
+string
 ```
 
 ---
@@ -158,6 +155,63 @@ Gets the date this event was generated.
 
 ```
 \DateTimeInterface
+```
+
+---
+
+<a id="method_get_event_server_txn_id"></a>
+### get_event_server_txn_id
+
+```
+public get_event_server_txn_id() : string
+```
+
+##### Summary
+
+Gets the server_txn_id from the command related to this event, if any
+
+##### Returns:
+
+```
+string
+```
+
+---
+
+<a id="method_get_event_status"></a>
+### get_event_status
+
+```
+public get_event_status() : int
+```
+
+##### Summary
+
+Gets the status code for this event
+
+##### Returns:
+
+```
+int
+```
+
+---
+
+<a id="method_get_event_status_description"></a>
+### get_event_status_description
+
+```
+public get_event_status_description() : string
+```
+
+##### Summary
+
+Gets a description of the status code meaning
+
+##### Returns:
+
+```
+string
 ```
 
 ---

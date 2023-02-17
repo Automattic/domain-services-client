@@ -126,12 +126,38 @@ trait Data_Trait {
 	}
 
 	/**
-	 * Gets all the event data as an array
+	 * Gets the status code for this event
 	 *
-	 * @return array
-	 * @throws \JsonException
+	 * @return int
 	 */
-	public function get_event_data(): array {
-		return json_decode( $this->get_data_by_key( 'event_data' ), true, 512, JSON_THROW_ON_ERROR );
+	public function get_event_status(): ?int {
+		return $this->get_data_by_key( 'event_data.status' );
+	}
+
+	/**
+	 * Gets a description of the status code meaning
+	 *
+	 * @return string
+	 */
+	public function get_event_status_description(): ?string {
+		return $this->get_data_by_key( 'event_data.status_description' );
+	}
+
+	/**
+	 * Gets the client_txn_id from the command related to this event, if any
+	 *
+	 * @return string
+	 */
+	public function get_event_client_txn_id(): ?string {
+		return $this->get_data_by_key( 'event_data.client_txn_id' );
+	}
+
+	/**
+	 * Gets the server_txn_id from the command related to this event, if any
+	 *
+	 * @return string
+	 */
+	public function get_event_server_txn_id(): ?string {
+		return $this->get_data_by_key( 'event_data.server_txn_id' );
 	}
 }

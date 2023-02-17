@@ -39,7 +39,7 @@ class Event_Enumerate_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 						'id' => 1,
 						'event_class' => 'Domain\Set\Nameservers',
 						'event_subclass' => 'Success',
-						'event_data' => '[]',
+						'event_data' => [],
 						'object_type' => 'domain',
 						'object_id' => 'example.com',
 						'event_date' => '2022-01-01 00:00:00',
@@ -49,7 +49,7 @@ class Event_Enumerate_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 						'id' => 2,
 						'event_class' => 'Domain\Set\Nameservers',
 						'event_subclass' => 'Success',
-						'event_data' => '[]',
+						'event_data' => [],
 						'object_type' => 'domain',
 						'object_id' => 'example.com',
 						'event_date' => '2022-02-01 00:00:00',
@@ -59,7 +59,7 @@ class Event_Enumerate_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 						'id' => 3,
 						'event_class' => 'Domain\Set\Nameservers',
 						'event_subclass' => 'Success',
-						'event_data' => '[]',
+						'event_data' => [],
 						'object_type' => 'domain',
 						'object_id' => 'example.com',
 						'event_date' => '2022-03-01 00:00:00',
@@ -89,7 +89,6 @@ class Event_Enumerate_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 		$total_count = $response_object->get_total_count();
 
 		foreach ( $events as $index => $event ) {
-			$this->assertEquals( $response_data['data']['events'][ $index ]['event_data'], json_encode( $event->get_event_data(), JSON_THROW_ON_ERROR ) );
 			$this->assertEquals( $response_data['data']['events'][ $index ]['object_type'], $event->get_object_type() );
 			$this->assertEquals( $response_data['data']['events'][ $index ]['object_id'], $event->get_object_id() );
 			$this->assertEquals( $response_data['data']['events'][ $index ]['event_subclass'], $event->get_event_subclass() );

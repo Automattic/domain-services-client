@@ -55,6 +55,6 @@ class Domain_Delete_Success_Test extends Test\Lib\Domain_Services_Client_Test_Ca
 		$this->assertNotNull( $event );
 
 		$this->assertInstanceOf( Event\Domain\Delete\Success::class, $event );
-		$this->assertSame( $response_data['data']['event']['object_id'], $event->get_domain()->get_name() );
+		$this->assertIsValidEvent( $response_data['data']['event'], $event );
 	}
 }

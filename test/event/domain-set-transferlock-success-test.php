@@ -57,7 +57,7 @@ class Domain_Set_Transferlock_Success_Test extends Test\Lib\Domain_Services_Clie
 		$this->assertNotNull( $event );
 
 		$this->assertInstanceOf( Event\Domain\Set\Transferlock\Success::class, $event );
+		$this->assertIsValidEvent( $response_data['data']['event'], $event );
 		$this->assertSame( $response_data['data']['event']['event_data']['transferlock'], $event->is_locked() );
-		$this->assertSame( $response_data['data']['event']['object_id'], $event->get_domain()->get_name() );
 	}
 }

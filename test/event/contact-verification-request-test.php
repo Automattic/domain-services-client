@@ -58,6 +58,7 @@ class Contact_Verification_Request_Test extends Test\Lib\Domain_Services_Client_
 		$this->assertNotNull( $event );
 
 		$this->assertInstanceOf( Event\Contact\Verification\Request::class, $event );
+		$this->assertIsValidEvent( $response_data['data']['event'], $event );
 		$this->assertSame( $response_data['data']['event']['event_data']['email'], $event->get_email() );
 		$this->assertSame( $response_data['data']['event']['object_id'], (string) $event->get_contact_id() );
 	}

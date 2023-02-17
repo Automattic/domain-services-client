@@ -37,20 +37,6 @@ class Domain_Services_Exception extends \Exception {
 	}
 
 	/**
-	 * Returns the type of exception - associative array with exception class and subclass
-	 *
-	 * @internal
-	 *
-	 * @return array
-	 */
-	public function get_exception_type(): array {
-		return [
-			'class' => null,
-			'subclass' => 'Domain_Services',
-		];
-	}
-
-	/**
 	 * Returns the error data associated with the exception
 	 *
 	 * @return array

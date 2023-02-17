@@ -57,7 +57,7 @@ class Domain_Notification_Pending_Delete_Test extends Test\Lib\Domain_Services_C
 		$this->assertNotNull( $event );
 
 		$this->assertInstanceOf( Event\Domain\Notification\Pending_Delete::class, $event );
-		$this->assertSame( $response_data['data']['event']['object_id'], $event->get_domain()->get_name() );
+		$this->assertIsValidEvent( $response_data['data']['event'], $event );
 		$this->assertSame( $response_data['data']['event']['event_data']['pending_delete_end_date'], Helper\Date_Time::format( $event->get_pending_delete_end_date() ) );
 	}
 }

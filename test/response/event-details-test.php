@@ -37,11 +37,16 @@ class Event_Details_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 					'id' => 1234,
 					'event_class' => 'Domain\Set\Nameservers',
 					'event_subclass' => 'Success',
-					'event_data' => '[]',
 					'object_type' => 'domain',
 					'object_id' => 'example.com',
-					'event_date' => '2022-08-01 01:23:45',
+					'event_date' => '2022-01-23 12:34:56',
 					'acknowledged_date' => '2022-08-02 06:07:08',
+					'event_data' => [
+						'name_servers' => [
+							'ns1.wordpress.com',
+							'ns2.wordpress.com',
+						],
+					],
 				],
 			],
 		];
@@ -59,7 +64,6 @@ class Event_Details_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 		$this->assertEquals( $expected_response_data['event_date'], $event->get_event_date()->format( 'Y-m-d H:i:s' ) );
 		$this->assertEquals( $expected_response_data['acknowledged_date'], $event->get_acknowledged_date()->format( 'Y-m-d H:i:s' ) );
 		$this->assertEquals( $expected_response_data['event_class'], $event->get_event_class() );
-		$this->assertEquals( $expected_response_data['event_data'], json_encode( $event->get_event_data(), JSON_THROW_ON_ERROR ) );
 		$this->assertEquals( $expected_response_data['event_subclass'], $event->get_event_subclass() );
 		$this->assertEquals( $expected_response_data['id'], $event->get_id() );
 		$this->assertEquals( $expected_response_data['object_id'], $event->get_object_id() );

@@ -62,7 +62,7 @@ class Domain_Transfer_Out_Success_Test extends Test\Lib\Domain_Services_Client_T
 		$this->assertNotNull( $event );
 
 		$this->assertInstanceOf( Event\Domain\Transfer\Out\Success::class, $event );
-		$this->assertSame( $response_data['data']['event']['object_id'], $event->get_domain()->get_name() );
+		$this->assertIsValidEvent( $response_data['data']['event'], $event );
 		$this->assertSame( $response_data['data']['event']['event_data']['current_registrar'], $event->get_current_registrar() );
 		$this->assertSame( $response_data['data']['event']['event_data']['requesting_registrar'], $event->get_requesting_registrar() );
 		$this->assertSame( $response_data['data']['event']['event_data']['auto_nack'], $event->get_auto_nack() );
