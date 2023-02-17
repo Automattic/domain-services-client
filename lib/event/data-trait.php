@@ -29,7 +29,7 @@ trait Data_Trait {
 	 *
 	 * @var array
 	 */
-	private array $data;
+	protected array $data;
 
 	/**
 	 * Constructs an event object
@@ -44,14 +44,20 @@ trait Data_Trait {
 	 * Gets the value of the event data specified by the given key.
 	 *
 	 * @param string $key
-	 * @return array|mixed|null
+	 *
+	 * @return mixed
 	 */
 	final public function get_data_by_key( string $key ) {
 		$key_parts = explode( '.', $key );
 		$data = $this->data;
 		foreach ( $key_parts as $key_part ) {
-			$data = $data[ $key_part ] ?? null;
+			if ( ! isset( $data[ $key_part ] ) ) {
+				return null;
+			}
+
+			$data = $data[ $key_part ];
 		}
+
 		return $data;
 	}
 
@@ -61,7 +67,7 @@ trait Data_Trait {
 	 * @return int
 	 */
 	public function get_id(): int {
-		return $this->get_data_by_key( 'id' );
+		return $this->get_data_by_key( Event_Interface::KEY_ID );
 	}
 
 	/**
@@ -70,7 +76,7 @@ trait Data_Trait {
 	 * @return string
 	 */
 	public function get_event_class(): string {
-		return $this->get_data_by_key( 'event_class' );
+		return $this->get_data_by_key( Event_Interface::KEY_EVENT_CLASS );
 	}
 
 	/**
@@ -79,7 +85,7 @@ trait Data_Trait {
 	 * @return string
 	 */
 	public function get_event_subclass(): string {
-		return $this->get_data_by_key( 'event_subclass' );
+		return $this->get_data_by_key( Event_Interface::KEY_EVENT_SUBCLASS );
 	}
 
 	/**
@@ -88,7 +94,7 @@ trait Data_Trait {
 	 * @return string
 	 */
 	public function get_object_type(): string {
-		return $this->get_data_by_key( 'object_type' );
+		return $this->get_data_by_key( Event_Interface::KEY_OBJECT_TYPE );
 	}
 
 	/**
@@ -99,7 +105,7 @@ trait Data_Trait {
 	 * @return string
 	 */
 	public function get_object_id(): string {
-		return $this->get_data_by_key( 'object_id' );
+		return $this->get_data_by_key( Event_Interface::KEY_OBJECT_ID );
 	}
 
 	/**
@@ -108,7 +114,7 @@ trait Data_Trait {
 	 * @return \DateTimeInterface
 	 */
 	public function get_event_date(): \DateTimeInterface {
-		return Helper\Date_Time::createImmutable( $this->get_data_by_key( 'event_date' ) );
+		return Helper\Date_Time::createImmutable( $this->get_data_by_key( Event_Interface::KEY_EVENT_DATE ) );
 	}
 
 	/**
@@ -117,47 +123,11 @@ trait Data_Trait {
 	 * @return \DateTimeInterface|null
 	 */
 	public function get_acknowledged_date(): ?\DateTimeInterface {
-		$acknowledged_date = $this->get_data_by_key( 'acknowledged_date' );
+		$acknowledged_date = $this->get_data_by_key( Event_Interface::KEY_ACKNOWLEDGED_DATE );
 		if ( null === $acknowledged_date ) {
 			return null;
 		}
 
-		return Helper\Date_Time::createImmutable( $this->get_data_by_key( 'acknowledged_date' ) );
-	}
-
-	/**
-	 * Gets the status code for this event
-	 *
-	 * @return int
-	 */
-	public function get_event_status(): ?int {
-		return $this->get_data_by_key( 'event_data.status' );
-	}
-
-	/**
-	 * Gets a description of the status code meaning
-	 *
-	 * @return string
-	 */
-	public function get_event_status_description(): ?string {
-		return $this->get_data_by_key( 'event_data.status_description' );
-	}
-
-	/**
-	 * Gets the client_txn_id from the command related to this event, if any
-	 *
-	 * @return string
-	 */
-	public function get_event_client_txn_id(): ?string {
-		return $this->get_data_by_key( 'event_data.client_txn_id' );
-	}
-
-	/**
-	 * Gets the server_txn_id from the command related to this event, if any
-	 *
-	 * @return string
-	 */
-	public function get_event_server_txn_id(): ?string {
-		return $this->get_data_by_key( 'event_data.server_txn_id' );
+		return Helper\Date_Time::createImmutable( $acknowledged_date );
 	}
 }
