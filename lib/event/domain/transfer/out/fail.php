@@ -26,8 +26,8 @@ use Automattic\Domain_Services_Client\{Event};
  * - This event is generated when a domain transfer to another registrar fails after it was successfully started
  * - There might be more information about the cause of the failure in the event data
  */
-class Fail implements Event\Event_Interface {
-	use Event\Data_Trait;
+class Fail implements Event\Event_Interface, Event\Async_Command_Related_Interface {
+	use Event\Async_Command_Related_Trait;
 	use Event\Object_Type_Domain_Trait;
 	use Event\Transfer_Trait;
 }

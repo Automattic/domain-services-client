@@ -28,8 +28,8 @@ use Automattic\Domain_Services_Client\{Event};
  *
  * @see \Automattic\Domain_Services_Client\Command\Domain\Renew
  */
-class Fail implements Event\Event_Interface {
-	use Event\Data_Trait;
+class Fail implements Event\Event_Interface, Event\Async_Command_Related_Interface {
+	use Event\Async_Command_Related_Trait;
 	use Event\Error_Trait;
 	use Event\Object_Type_Domain_Trait;
 }
