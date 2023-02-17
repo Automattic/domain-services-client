@@ -31,13 +31,14 @@ Represents an EPP status code
 * public [SERVER_TRANSFER_PROHIBITED](#constant_SERVER_TRANSFER_PROHIBITED)
 * public [SERVER_UPDATE_PROHIBITED](#constant_SERVER_UPDATE_PROHIBITED)
 * public [TRANSFER_PERIOD](#constant_TRANSFER_PERIOD)
-* public [VALID_EPP_STATUSES](#constant_VALID_EPP_STATUSES)
+* public [ICANN_EPP_STATUSES](#constant_ICANN_EPP_STATUSES)
 
 ---
 
 ### Methods
 
 * public [__construct()](#method___construct)
+* public [is_icann_status()](#method_is_icann_status)
 * public [is_updateable()](#method_is_updateable)
 
 ---
@@ -210,10 +211,10 @@ TRANSFER_PERIOD = 'transferPeriod'
 ```
 
 
-<a id="constant_VALID_EPP_STATUSES"></a>
-###### VALID_EPP_STATUSES
+<a id="constant_ICANN_EPP_STATUSES"></a>
+###### ICANN_EPP_STATUSES
 ```
-VALID_EPP_STATUSES = [self::CLIENT_DELETE_PROHIBITED => self::READ_WRITE, self::CLIENT_HOLD => self::READ_WRITE, self::CLIENT_RENEW_PROHIBITED => self::READ_WRITE, self::CLIENT_TRANSFER_PROHIBITED => self::READ_WRITE, self::CLIENT_UPDATE_PROHIBITED => self::READ_WRITE, self::ADD_PERIOD => self::READ_ONLY, self::AUTO_RENEW_PERIOD => self::READ_ONLY, self::INACTIVE => self::READ_ONLY, self::OK => self::READ_ONLY, self::PENDING_CREATE => self::READ_ONLY, self::PENDING_DELETE => self::READ_ONLY, self::PENDING_RENEW => self::READ_ONLY, self::PENDING_RESTORE => self::READ_ONLY, self::PENDING_TRANSFER => self::READ_ONLY, self::PENDING_UPDATE => self::READ_ONLY, self::REDEMPTION_PERIOD => self::READ_ONLY, self::RENEW_PERIOD => self::READ_ONLY, self::SERVER_DELETE_PROHIBITED => self::READ_ONLY, self::SERVER_HOLD => self::READ_ONLY, self::SERVER_RENEW_PROHIBITED => self::READ_ONLY, self::SERVER_TRANSFER_PROHIBITED => self::READ_ONLY, self::SERVER_UPDATE_PROHIBITED => self::READ_ONLY, self::TRANSFER_PERIOD => self::READ_ONLY]
+ICANN_EPP_STATUSES = [self::CLIENT_DELETE_PROHIBITED => self::READ_WRITE, self::CLIENT_HOLD => self::READ_WRITE, self::CLIENT_RENEW_PROHIBITED => self::READ_WRITE, self::CLIENT_TRANSFER_PROHIBITED => self::READ_WRITE, self::CLIENT_UPDATE_PROHIBITED => self::READ_WRITE, self::ADD_PERIOD => self::READ_ONLY, self::AUTO_RENEW_PERIOD => self::READ_ONLY, self::INACTIVE => self::READ_ONLY, self::OK => self::READ_ONLY, self::PENDING_CREATE => self::READ_ONLY, self::PENDING_DELETE => self::READ_ONLY, self::PENDING_RENEW => self::READ_ONLY, self::PENDING_RESTORE => self::READ_ONLY, self::PENDING_TRANSFER => self::READ_ONLY, self::PENDING_UPDATE => self::READ_ONLY, self::REDEMPTION_PERIOD => self::READ_ONLY, self::RENEW_PERIOD => self::READ_ONLY, self::SERVER_DELETE_PROHIBITED => self::READ_ONLY, self::SERVER_HOLD => self::READ_ONLY, self::SERVER_RENEW_PROHIBITED => self::READ_ONLY, self::SERVER_TRANSFER_PROHIBITED => self::READ_ONLY, self::SERVER_UPDATE_PROHIBITED => self::READ_ONLY, self::TRANSFER_PERIOD => self::READ_ONLY]
 ```
 
 
@@ -239,16 +240,29 @@ Constructs an `Epp_Status_Code` entity
 |------|------|---------|
 | **$status** | string |  |
 
-##### Throws:
-
-| Type | Description |
-|------|-------------|
-| \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception |  |
-
 ##### Returns:
 
 ```
 mixed
+```
+
+---
+
+<a id="method_is_icann_status"></a>
+### is_icann_status
+
+```
+public is_icann_status() : bool
+```
+
+##### Summary
+
+Checks wither this a standard ICANN EPP status code
+
+##### Returns:
+
+```
+bool
 ```
 
 ---
@@ -262,7 +276,7 @@ public is_updateable() : bool
 
 ##### Summary
 
-Checks whether the EPP status is updateable
+Checks whether the EPP status is able to be set by the registrar
 
 ##### Returns:
 

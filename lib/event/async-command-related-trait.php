@@ -18,6 +18,9 @@
 
 namespace Automattic\Domain_Services_Client\Event;
 
+/**
+ * Used by all events resulting from running an asynchronous command
+ */
 trait Async_Command_Related_Trait {
 	use Data_Trait;
 

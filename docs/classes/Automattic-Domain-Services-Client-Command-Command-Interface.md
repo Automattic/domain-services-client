@@ -176,7 +176,7 @@ KEY_RECORD_SETS = 'record_sets'
 <a id="constant_KEY_RECORDS"></a>
 ###### KEY_RECORDS
 ```
-KEY_RECORDS = 'records'
+KEY_RECORDS = 'dns_records'
 ```
 
 

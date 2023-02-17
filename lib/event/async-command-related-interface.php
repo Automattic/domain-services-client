@@ -18,6 +18,9 @@
 
 namespace Automattic\Domain_Services_Client\Event;
 
+/**
+ * Implemented by all events resulting from running an asynchronous command
+ */
 interface Async_Command_Related_Interface {
 	/**
 	 * Gets the status code for this event

@@ -10,7 +10,8 @@ This command is used to request a list of the unacknowledged events. On success,
 array of events in ascending order by age (oldest to newest). The maximum number of events returned in the response,
 can be set using the `$limit` property for this command. The limit defaults to 50 if none is set.
 - This command executes synchronously on the server.
-- The corresponding response object will include the list of events.
+- The corresponding response object will include the list of events and the total number of unacknowledged events
+  for the reseller.
 
 
 ---

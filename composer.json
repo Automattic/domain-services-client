@@ -34,5 +34,10 @@
     "classmap": [
       "test/"
     ]
+  },
+  "config": {
+    "allow-plugins": {
+      "php-http/discovery": false
+    }
   }
 }
