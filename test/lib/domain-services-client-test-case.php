@@ -58,10 +58,10 @@ class Domain_Services_Client_Test_Case extends \PHPUnit\Framework\TestCase {
 		$this->assertEquals( $expected_event_data['object_id'], $event->get_object_id() );
 		$this->assertEquals( $expected_event_data['event_date'], Helper\Date_Time::format( $event->get_event_date() ) );
 		$this->assertEquals( $expected_event_data['acknowledged_date'], null === $event->get_acknowledged_date() ? null : Helper\Date_Time::format( $event->get_acknowledged_date() ) );
-		$this->assertEquals( $expected_event_data['event_data']['status'], $event->get_event_status() );
-		$this->assertEquals( $expected_event_data['event_data']['status_description'], $event->get_event_status_description() );
-		$this->assertEquals( $expected_event_data['event_data']['client_txn_id'], $event->get_event_client_txn_id() );
-		$this->assertEquals( $expected_event_data['event_data']['server_txn_id'], $event->get_event_server_txn_id() );
+		$this->assertEquals( $expected_event_data['event_data']['status'] ?? null, $event->get_event_status() );
+		$this->assertEquals( $expected_event_data['event_data']['status_description'] ?? null, $event->get_event_status_description() );
+		$this->assertEquals( $expected_event_data['event_data']['client_txn_id'] ?? null, $event->get_event_client_txn_id() );
+		$this->assertEquals( $expected_event_data['event_data']['server_txn_id'] ?? null, $event->get_event_server_txn_id() );
 
 		if ( 'domain' === $expected_event_data['object_type'] ) {
 			$this->assertSame( $expected_event_data['object_id'], $event->get_domain()->get_name() );
