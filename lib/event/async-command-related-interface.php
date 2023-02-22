@@ -16,18 +16,37 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services_Client\Event\Domain\Transfer\Out;
-
-use Automattic\Domain_Services_Client\{Event};
+namespace Automattic\Domain_Services_Client\Event;
 
 /**
- * Outbound domain transfer failure event
- *
- * - This event is generated when a domain transfer to another registrar fails after it was successfully started
- * - There might be more information about the cause of the failure in the event data
+ * Implemented by all events resulting from running an asynchronous command
  */
-class Fail implements Event\Event_Interface, Event\Async_Command_Related_Interface {
-	use Event\Async_Command_Related_Trait;
-	use Event\Object_Type_Domain_Trait;
-	use Event\Transfer_Trait;
+interface Async_Command_Related_Interface {
+	/**
+	 * Gets the status code for this event
+	 *
+	 * @return int
+	 */
+	public function get_command_status(): ?int;
+
+	/**
+	 * Gets a description of the status code meaning
+	 *
+	 * @return string
+	 */
+	public function get_command_status_description(): ?string;
+
+	/**
+	 * Gets the client_txn_id from the command related to this event, if any
+	 *
+	 * @return string
+	 */
+	public function get_command_client_txn_id(): ?string;
+
+	/**
+	 * Gets the server_txn_id from the command related to this event, if any
+	 *
+	 * @return string
+	 */
+	public function get_command_server_txn_id(): ?string;
 }

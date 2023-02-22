@@ -28,8 +28,8 @@ use Automattic\Domain_Services_Client\{Entity, Event, Exception};
  *
  * @see \Automattic\Domain_Services_Client\Command\Domain\Set\Nameservers
  */
-class Success implements Event\Event_Interface {
-	use Event\Data_Trait;
+class Success implements Event\Event_Interface, Event\Async_Command_Related_Interface {
+	use Event\Async_Command_Related_Trait;
 	use Event\Object_Type_Domain_Trait;
 
 	/**

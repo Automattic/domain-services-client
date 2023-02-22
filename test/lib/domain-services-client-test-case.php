@@ -20,7 +20,7 @@ namespace Automattic\Domain_Services_Client\Test\Lib;
 
 use Automattic\Domain_Services_Client\{Event, Helper, Response};
 
-class Domain_Services_Client_Test_Case extends \PHPUnit\Framework\TestCase {
+abstract class Domain_Services_Client_Test_Case extends \PHPUnit\Framework\TestCase {
 	protected Response\Factory $response_factory;
 
 	public function setUp(): void {
@@ -58,10 +58,13 @@ class Domain_Services_Client_Test_Case extends \PHPUnit\Framework\TestCase {
 		$this->assertEquals( $expected_event_data['object_id'], $event->get_object_id() );
 		$this->assertEquals( $expected_event_data['event_date'], Helper\Date_Time::format( $event->get_event_date() ) );
 		$this->assertEquals( $expected_event_data['acknowledged_date'], null === $event->get_acknowledged_date() ? null : Helper\Date_Time::format( $event->get_acknowledged_date() ) );
-		$this->assertEquals( $expected_event_data['event_data']['status'] ?? null, $event->get_event_status() );
-		$this->assertEquals( $expected_event_data['event_data']['status_description'] ?? null, $event->get_event_status_description() );
-		$this->assertEquals( $expected_event_data['event_data']['client_txn_id'] ?? null, $event->get_event_client_txn_id() );
-		$this->assertEquals( $expected_event_data['event_data']['server_txn_id'] ?? null, $event->get_event_server_txn_id() );
+
+		if ( $event instanceof Event\Async_Command_Related_Interface ) {
+			$this->assertEquals( $expected_event_data['event_data']['status_description'] ?? null, $event->get_command_status_description() );
+			$this->assertEquals( $expected_event_data['event_data']['client_txn_id'] ?? null, $event->get_command_client_txn_id() );
+			$this->assertEquals( $expected_event_data['event_data']['server_txn_id'] ?? null, $event->get_command_server_txn_id() );
+			$this->assertEquals( $expected_event_data['event_data']['status'] ?? null, $event->get_command_status() );
+		}
 
 		if ( 'domain' === $expected_event_data['object_type'] ) {
 			$this->assertSame( $expected_event_data['object_id'], $event->get_domain()->get_name() );

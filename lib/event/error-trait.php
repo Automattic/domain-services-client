@@ -45,6 +45,6 @@ trait Error_Trait {
 	 * @return array[]
 	 */
 	final public function get_event_errors(): array {
-		return $this->get_data_by_key( 'event_data.errors' );
+		return $this->get_data_by_key( Event_Interface::KEY_EVENT_ERRORS );
 	}
 }

@@ -20,11 +20,7 @@ Domain expired event
 * public [get_data_by_key()](#method_get_data_by_key)
 * public [get_domain()](#method_get_domain)
 * public [get_event_class()](#method_get_event_class)
-* public [get_event_client_txn_id()](#method_get_event_client_txn_id)
 * public [get_event_date()](#method_get_event_date)
-* public [get_event_server_txn_id()](#method_get_event_server_txn_id)
-* public [get_event_status()](#method_get_event_status)
-* public [get_event_status_description()](#method_get_event_status_description)
 * public [get_event_subclass()](#method_get_event_subclass)
 * public [get_id()](#method_get_id)
 * public [get_object_id()](#method_get_object_id)
@@ -36,6 +32,8 @@ Domain expired event
 ### Details
 
 * File: [lib/event/domain/notification/pending-delete.php](../../lib/event/domain/notification/pending-delete.php)
+* Implements:
+  * [\Automattic\Domain_Services_Client\Event\Event_Interface](../classes/Automattic-Domain-Services-Client-Event-Event-Interface.md)
 * Uses Traits:
   * [\Automattic\Domain_Services_Client\Event\Data_Trait](../classes/Automattic-Domain-Services-Client-Event-Data-Trait.md)
   * [\Automattic\Domain_Services_Client\Event\Object_Type_Domain_Trait](../classes/Automattic-Domain-Services-Client-Event-Object-Type-Domain-Trait.md)
@@ -92,7 +90,7 @@ Gets the date this event was acknowledged.
 ### get_data_by_key
 
 ```
-final public get_data_by_key(string  key) : array|mixed|null
+final public get_data_by_key(string  key) : mixed
 ```
 
 ##### Summary
@@ -108,7 +106,7 @@ Gets the value of the event data specified by the given key.
 ##### Returns:
 
 ```
-array|mixed|null
+mixed
 ```
 
 ---
@@ -151,25 +149,6 @@ string
 
 ---
 
-<a id="method_get_event_client_txn_id"></a>
-### get_event_client_txn_id
-
-```
-public get_event_client_txn_id() : string
-```
-
-##### Summary
-
-Gets the client_txn_id from the command related to this event, if any
-
-##### Returns:
-
-```
-string
-```
-
----
-
 <a id="method_get_event_date"></a>
 ### get_event_date
 
@@ -185,63 +164,6 @@ Gets the date this event was generated.
 
 ```
 \DateTimeInterface
-```
-
----
-
-<a id="method_get_event_server_txn_id"></a>
-### get_event_server_txn_id
-
-```
-public get_event_server_txn_id() : string
-```
-
-##### Summary
-
-Gets the server_txn_id from the command related to this event, if any
-
-##### Returns:
-
-```
-string
-```
-
----
-
-<a id="method_get_event_status"></a>
-### get_event_status
-
-```
-public get_event_status() : int
-```
-
-##### Summary
-
-Gets the status code for this event
-
-##### Returns:
-
-```
-int
-```
-
----
-
-<a id="method_get_event_status_description"></a>
-### get_event_status_description
-
-```
-public get_event_status_description() : string
-```
-
-##### Summary
-
-Gets a description of the status code meaning
-
-##### Returns:
-
-```
-string
 ```
 
 ---

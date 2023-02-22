@@ -13,29 +13,23 @@ This event is generated when a name server update fails at the server.
 
 ### Methods
 
-* public [__construct()](#method___construct)
-* public [get_acknowledged_date()](#method_get_acknowledged_date)
-* public [get_data_by_key()](#method_get_data_by_key)
+* public [get_command_client_txn_id()](#method_get_command_client_txn_id)
+* public [get_command_server_txn_id()](#method_get_command_server_txn_id)
+* public [get_command_status()](#method_get_command_status)
+* public [get_command_status_description()](#method_get_command_status_description)
 * public [get_domain()](#method_get_domain)
-* public [get_event_class()](#method_get_event_class)
-* public [get_event_client_txn_id()](#method_get_event_client_txn_id)
-* public [get_event_date()](#method_get_event_date)
 * public [get_event_errors()](#method_get_event_errors)
-* public [get_event_server_txn_id()](#method_get_event_server_txn_id)
-* public [get_event_status()](#method_get_event_status)
-* public [get_event_status_description()](#method_get_event_status_description)
-* public [get_event_subclass()](#method_get_event_subclass)
-* public [get_id()](#method_get_id)
-* public [get_object_id()](#method_get_object_id)
-* public [get_object_type()](#method_get_object_type)
 
 ---
 
 ### Details
 
 * File: [lib/event/domain/set/nameservers/fail.php](../../lib/event/domain/set/nameservers/fail.php)
+* Implements:
+  * [\Automattic\Domain_Services_Client\Event\Event_Interface](../classes/Automattic-Domain-Services-Client-Event-Event-Interface.md)
+  * [\Automattic\Domain_Services_Client\Event\Async_Command_Related_Interface](../classes/Automattic-Domain-Services-Client-Event-Async-Command-Related-Interface.md)
 * Uses Traits:
-  * [\Automattic\Domain_Services_Client\Event\Data_Trait](../classes/Automattic-Domain-Services-Client-Event-Data-Trait.md)
+  * [\Automattic\Domain_Services_Client\Event\Async_Command_Related_Trait](../classes/Automattic-Domain-Services-Client-Event-Async-Command-Related-Trait.md)
   * [\Automattic\Domain_Services_Client\Event\Error_Trait](../classes/Automattic-Domain-Services-Client-Event-Error-Trait.md)
   * [\Automattic\Domain_Services_Client\Event\Object_Type_Domain_Trait](../classes/Automattic-Domain-Services-Client-Event-Object-Type-Domain-Trait.md)
 * See Also:
@@ -45,71 +39,78 @@ This event is generated when a name server update fails at the server.
 
 ## Methods
 
-<a id="method___construct"></a>
-### __construct
+<a id="method_get_command_client_txn_id"></a>
+### get_command_client_txn_id
 
 ```
-final public __construct(array  data = []) : mixed
+public get_command_client_txn_id() : string
 ```
 
 ##### Summary
 
-Constructs an event object
-
-##### Parameters:
-
-| Name | Type | Default |
-|------|------|---------|
-| **$data** | array | [] |
+Gets the client_txn_id from the command related to this event, if any
 
 ##### Returns:
 
 ```
-mixed
+string
 ```
 
 ---
 
-<a id="method_get_acknowledged_date"></a>
-### get_acknowledged_date
+<a id="method_get_command_server_txn_id"></a>
+### get_command_server_txn_id
 
 ```
-public get_acknowledged_date() : \DateTimeInterface|null
+public get_command_server_txn_id() : string
 ```
 
 ##### Summary
 
-Gets the date this event was acknowledged.
+Gets the server_txn_id from the command related to this event, if any
 
 ##### Returns:
 
 ```
-\DateTimeInterface|null
+string
 ```
 
 ---
 
-<a id="method_get_data_by_key"></a>
-### get_data_by_key
+<a id="method_get_command_status"></a>
+### get_command_status
 
 ```
-final public get_data_by_key(string  key) : array|mixed|null
+public get_command_status() : int
 ```
 
 ##### Summary
 
-Gets the value of the event data specified by the given key.
-
-##### Parameters:
-
-| Name | Type | Default |
-|------|------|---------|
-| **$key** | string |  |
+Gets the status code for this event
 
 ##### Returns:
 
 ```
-array|mixed|null
+int
+```
+
+---
+
+<a id="method_get_command_status_description"></a>
+### get_command_status_description
+
+```
+public get_command_status_description() : string
+```
+
+##### Summary
+
+Gets a description of the status code meaning
+
+##### Returns:
+
+```
+string
 ```
 
 ---
@@ -129,63 +130,6 @@ Returns the domain name object.
 
 ```
 \Automattic\Domain_Services_Client\Entity\Domain_Name
-```
-
----
-
-<a id="method_get_event_class"></a>
-### get_event_class
-
-```
-public get_event_class() : string
-```
-
-##### Summary
-
-Gets the event class
-
-##### Returns:
-
-```
-string
-```
-
----
-
-<a id="method_get_event_client_txn_id"></a>
-### get_event_client_txn_id
-
-```
-public get_event_client_txn_id() : string
-```
-
-##### Summary
-
-Gets the client_txn_id from the command related to this event, if any
-
-##### Returns:
-
-```
-string
-```
-
----
-
-<a id="method_get_event_date"></a>
-### get_event_date
-
-```
-public get_event_date() : \DateTimeInterface
-```
-
-##### Summary
-
-Gets the date this event was generated.
-
-##### Returns:
-
-```
-\DateTimeInterface
 ```
 
 ---
@@ -223,142 +167,4 @@ The format will be an array of arrays:
 
 ```
 array[]
-```
-
----
-
-<a id="method_get_event_server_txn_id"></a>
-### get_event_server_txn_id
-
-```
-public get_event_server_txn_id() : string
-```
-
-##### Summary
-
-Gets the server_txn_id from the command related to this event, if any
-
-##### Returns:
-
-```
-string
-```
-
----
-
-<a id="method_get_event_status"></a>
-### get_event_status
-
-```
-public get_event_status() : int
-```
-
-##### Summary
-
-Gets the status code for this event
-
-##### Returns:
-
-```
-int
-```
-
----
-
-<a id="method_get_event_status_description"></a>
-### get_event_status_description
-
-```
-public get_event_status_description() : string
-```
-
-##### Summary
-
-Gets a description of the status code meaning
-
-##### Returns:
-
-```
-string
-```
-
----
-
-<a id="method_get_event_subclass"></a>
-### get_event_subclass
-
-```
-public get_event_subclass() : string
-```
-
-##### Summary
-
-Gets the event subclass
-
-##### Returns:
-
-```
-string
-```
-
----
-
-<a id="method_get_id"></a>
-### get_id
-
-```
-public get_id() : int
-```
-
-##### Summary
-
-Gets the event ID
-
-##### Returns:
-
-```
-int
-```
-
----
-
-<a id="method_get_object_id"></a>
-### get_object_id
-
-```
-public get_object_id() : string
-```
-
-##### Summary
-
-Gets the ID of the object that this event references.
-
-##### Description
-
-- The contact ID for a contact object type
-- The domain name for a domain object type
-
-##### Returns:
-
-```
-string
-```
-
----
-
-<a id="method_get_object_type"></a>
-### get_object_type
-
-```
-public get_object_type() : string
-```
-
-##### Summary
-
-Gets the type of object that this event references (ex. &#039;domain&#039; or &#039;contact&#039;)
-
-##### Returns:
-
-```
-string
 ```

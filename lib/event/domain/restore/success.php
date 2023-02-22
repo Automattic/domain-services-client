@@ -18,7 +18,7 @@
 
 namespace Automattic\Domain_Services_Client\Event\Domain\Restore;
 
-use Automattic\Domain_Services_Client\{Entity, Event, Helper, Exception};
+use Automattic\Domain_Services_Client\{Entity, Event, Helper};
 
 /**
  * Success event for a `Domain\Restore` command.
@@ -27,15 +27,14 @@ use Automattic\Domain_Services_Client\{Entity, Event, Helper, Exception};
  *
  * @see \Automattic\Domain_Services_Client\Command\Domain\Restore
  */
-class Success implements Event\Event_Interface {
-	use Event\Data_Trait;
+class Success implements Event\Event_Interface, Event\Async_Command_Related_Interface {
+	use Event\Async_Command_Related_Trait;
 	use Event\Object_Type_Domain_Trait;
 
 	/**
 	 * Gets the status of the domain immediately after the restore operation.
 	 *
 	 * @return Entity\Epp_Status_Codes
-	 * @throws Exception\Entity\Invalid_Value_Exception
 	 */
 	public function get_domain_status(): Entity\Epp_Status_Codes {
 		$epp_statuses_data = $this->get_data_by_key( 'event_data.domain_status' );

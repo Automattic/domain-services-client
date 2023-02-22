@@ -18,7 +18,7 @@
 
 namespace Automattic\Domain_Services_Client\Event\Domain\Renew;
 
-use Automattic\Domain_Services_Client\{Entity, Event, Helper, Exception};
+use Automattic\Domain_Services_Client\{Entity, Event, Helper};
 
 /**
  * Domain renewed successfully event
@@ -27,15 +27,14 @@ use Automattic\Domain_Services_Client\{Entity, Event, Helper, Exception};
  *
  * @see \Automattic\Domain_Services_Client\Command\Domain\Renew
  */
-class Success implements Event\Event_Interface {
-	use Event\Data_Trait;
+class Success implements Event\Event_Interface, Event\Async_Command_Related_Interface {
+	use Event\Async_Command_Related_Trait;
 	use Event\Object_Type_Domain_Trait;
 
 	/**
 	 * Returns the domain status after the renewal operation
 	 *
 	 * @return Entity\Epp_Status_Codes
-	 * @throws Exception\Entity\Invalid_Value_Exception
 	 */
 	public function get_domain_status(): Entity\Epp_Status_Codes {
 		$epp_statuses_data = $this->get_data_by_key( 'event_data.domain_status' );
@@ -43,6 +42,7 @@ class Success implements Event\Event_Interface {
 		foreach ( $epp_statuses_data as $epp_status_data ) {
 			$epp_statuses[] = new Entity\Epp_Status_Code( $epp_status_data );
 		}
+
 		return new Entity\Epp_Status_Codes( ...$epp_statuses );
 	}
 
@@ -53,6 +53,7 @@ class Success implements Event\Event_Interface {
 	 */
 	public function get_expiration_date(): ?\DateTimeInterface {
 		$expiration_date = $this->get_data_by_key( 'event_data.expiration_date' );
+
 		return null === $expiration_date ? null : Helper\Date_Time::createImmutable( $expiration_date );
 	}
 
@@ -63,6 +64,7 @@ class Success implements Event\Event_Interface {
 	 */
 	public function get_renewable_until(): ?\DateTimeInterface {
 		$renewable_until = $this->get_data_by_key( 'event_data.renewable_until' );
+
 		return null === $renewable_until ? null : Helper\Date_Time::createImmutable( $renewable_until );
 	}
 }

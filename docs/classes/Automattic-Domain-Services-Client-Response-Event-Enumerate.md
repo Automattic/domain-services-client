@@ -271,7 +271,7 @@ public get_total_count() : int
 
 ##### Summary
 
-Gets the total number of events returned
+Gets the total number of unacknowledged events that exist for the reseller that called the command
 
 ##### Returns:
 
