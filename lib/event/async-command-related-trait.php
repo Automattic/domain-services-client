@@ -48,7 +48,7 @@ trait Async_Command_Related_Trait {
 	 * @return string
 	 */
 	public function get_command_client_txn_id(): ?string {
-		return $this->get_data_by_key( Event_Interface::KEY_COMMAND_CLIENT_TNX_ID );
+		return $this->get_data_by_key( Event_Interface::KEY_COMMAND_CLIENT_TXN_ID );
 	}
 
 	/**
@@ -57,6 +57,6 @@ trait Async_Command_Related_Trait {
 	 * @return string
 	 */
 	public function get_command_server_txn_id(): ?string {
-		return $this->get_data_by_key( Event_Interface::KEY_COMMAND_SERVER_TNX_ID );
+		return $this->get_data_by_key( Event_Interface::KEY_COMMAND_SERVER_TXN_ID );
 	}
 }

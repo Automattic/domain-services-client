@@ -33,8 +33,8 @@ interface Event_Interface {
 	public const KEY_EVENT_ERRORS = 'event_data.errors';
 	public const KEY_COMMAND_STATUS = 'event_data.status';
 	public const KEY_COMMAND_STATUS_DESCRIPTION = 'event_data.status_description';
-	public const KEY_COMMAND_CLIENT_TNX_ID = 'event_data.client_tnx_id';
-	public const KEY_COMMAND_SERVER_TNX_ID = 'event_data.server_tnx_id';
+	public const KEY_COMMAND_CLIENT_TXN_ID = 'event_data.client_txn_id';
+	public const KEY_COMMAND_SERVER_TXN_ID = 'event_data.server_txn_id';
 
 	/**
 	 * Gets the value of the event data specified by the given key.
