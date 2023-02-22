@@ -5,9 +5,7 @@ namespace Automattic\Domain_Services_Client\Tld_Spec\Data\Effective_Tld_List;
 /**
  * Defines the list of supported TLDs. This list is based on https://publicsuffix.org/list/ and is generated with the
  * following script:
- *
- *   php bin/one-time/2012/build-domain-tld-list.php
- *
+ * @internal
  */
 const TLDS = array(
 	'ac' => 1,
