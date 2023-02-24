@@ -22,9 +22,9 @@ use Automattic\Domain_Services_Client\{Entity, Test};
 
 class Domain_Suggestions_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_entity_instance_success(): void {
-		$domain_suggestion_data = array_map( static fn( $i ) => [ 'name' => "example$i.blog" ], range( 1, 10 ) );
+		$domain_suggestion_data = array_map( static fn( $i ) => [ 'name' => "example$i.blog", 'reseller_fee' => 100, 'is_premium' => false ], range( 1, 10 ) );
 		$domain_name_list = array_map( static fn( $n ) => new Entity\Domain_Name( $n['name'] ), $domain_suggestion_data );
-		$suggestion_list = array_map( static fn( $d ) => new Entity\Suggestion( $d ), $domain_name_list );
+		$suggestion_list = array_map( static fn( $dn, $dsd ) => new Entity\Suggestion( $dn, $dsd['reseller_fee'], $dsd['is_premium'] ), $domain_name_list, $domain_suggestion_data );
 		$suggestions = new Entity\Suggestions( ... $suggestion_list );
 
 		$this->assertArraysEqual( $domain_suggestion_data, $suggestions->to_array()['suggestions'] );

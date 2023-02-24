@@ -32,12 +32,24 @@ class Suggestion {
 	private Domain_Name $domain_name;
 
 	/**
+	 * @var int fee the reseller must pay to register this domain
+	 */
+	private int $reseller_fee;
+
+	/**
+	 * @var bool is the suggestion a premium domain?
+	 */
+	private bool $is_premium;
+
+	/**
 	 * Constructs a `Suggestion` entity
 	 *
 	 * @param Domain_Name $domain_name
 	 */
-	public function __construct( Domain_Name $domain_name ) {
+	public function __construct( Domain_Name $domain_name, int $reseller_fee = 0, bool $is_premium = false ) {
 		$this->domain_name = $domain_name;
+		$this->reseller_fee = $reseller_fee;
+		$this->is_premium = $is_premium;
 	}
 
 	/**
@@ -50,7 +62,25 @@ class Suggestion {
 	}
 
 	/**
-	 * Returns an associative array containing the domain name suggestion
+	 * Returns the reseller fee to register this domain
+	 *
+	 * @return int
+	 */
+	public function get_reseller_fee(): int {
+		return $this->reseller_fee;
+	}
+
+	/**
+	 * Returns uf the domain suggestion is premium
+	 *
+	 * @return bool
+	 */
+	public function is_premium(): bool {
+		return $this->is_premium;
+	}
+
+	/**
+	 * Returns an associative array containing the domain name suggestion and its related properties
 	 *
 	 * @internal
 	 * @return array
@@ -58,6 +88,8 @@ class Suggestion {
 	public function to_array(): array {
 		return [
 			'name' => $this->domain_name->get_name(),
+			'reseller_fee' => $this->get_reseller_fee(),
+			'is_premium' => $this->is_premium(),
 		];
 	}
 }
