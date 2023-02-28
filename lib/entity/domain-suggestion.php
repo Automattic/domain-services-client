@@ -71,7 +71,7 @@ class Suggestion {
 	}
 
 	/**
-	 * Returns uf the domain suggestion is premium
+	 * Returns whether the domain suggestion is premium
 	 *
 	 * @return bool
 	 */
