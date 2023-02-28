@@ -39,7 +39,14 @@ class Suggestions implements Response\Response_Interface {
 		$suggestions = new Entity\Suggestions();
 		foreach ( $suggestions_data as $suggestion_data ) {
 			$domain_name = new Entity\Domain_Name( $suggestion_data['name'] );
-			$suggestions->add_suggestion( new Entity\Suggestion( $domain_name, $suggestion_data['reseller_fee'], $suggestion_data['is_premium'] ) );
+			$suggestions->add_suggestion(
+				new Entity\Suggestion(
+					$domain_name,
+					$suggestion_data['reseller_register_fee'],
+					$suggestion_data['reseller_renewal_fee'],
+					$suggestion_data['is_premium']
+				)
+			);
 		}
 
 		return $suggestions;

@@ -34,7 +34,12 @@ class Suggestion {
 	/**
 	 * @var int fee the reseller must pay to register this domain
 	 */
-	private int $reseller_fee;
+	private int $reseller_register_fee;
+
+	/**
+	 * @var int fee the reseller must pay to renew this domain
+	 */
+	private int $reseller_renewal_fee;
 
 	/**
 	 * @var bool is the suggestion a premium domain?
@@ -46,9 +51,10 @@ class Suggestion {
 	 *
 	 * @param Domain_Name $domain_name
 	 */
-	public function __construct( Domain_Name $domain_name, int $reseller_fee = 0, bool $is_premium = false ) {
+	public function __construct( Domain_Name $domain_name, int $reseller_create_fee = 0, int $reseller_renewal_fee = 0, bool $is_premium = false ) {
 		$this->domain_name = $domain_name;
-		$this->reseller_fee = $reseller_fee;
+		$this->reseller_register_fee = $reseller_create_fee;
+		$this->reseller_renewal_fee = $reseller_renewal_fee;
 		$this->is_premium = $is_premium;
 	}
 
@@ -66,8 +72,17 @@ class Suggestion {
 	 *
 	 * @return int
 	 */
-	public function get_reseller_fee(): int {
-		return $this->reseller_fee;
+	public function get_reseller_register_fee(): int {
+		return $this->reseller_register_fee;
+	}
+
+	/**
+	 * Returns the reseller fee to renew this domain
+	 *
+	 * @return int
+	 */
+	public function get_reseller_renewal_fee(): int {
+		return $this->reseller_renewal_fee;
 	}
 
 	/**
@@ -88,7 +103,8 @@ class Suggestion {
 	public function to_array(): array {
 		return [
 			'name' => $this->domain_name->get_name(),
-			'reseller_fee' => $this->get_reseller_fee(),
+			'reseller_register_fee' => $this->get_reseller_register_fee(),
+			'reseller_renewal_fee' => $this->get_reseller_renewal_fee(),
 			'is_premium' => $this->is_premium(),
 		];
 	}

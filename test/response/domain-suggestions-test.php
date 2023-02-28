@@ -34,7 +34,8 @@ class Domain_Suggestions_Test extends Test\Lib\Domain_Services_Client_Test_Case 
 				'suggestions' => array_map(
 					static fn( $i ) => [
 						'name' => "example$i.blog",
-						'reseller_fee' => $i * 100,
+						'reseller_register_fee' => $i * 100,
+						'reseller_renewal_fee' => $i * 100,
 						'is_premium' => false
 					],
 					range( 1, 10 )
