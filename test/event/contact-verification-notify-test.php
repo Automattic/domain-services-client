@@ -43,6 +43,7 @@ class Contact_Verification_Notify_Test extends Test\Lib\Domain_Services_Client_T
 					'acknowledged_date' => null,
 					'event_data' => [
 						'verified' => true,
+						'associated_domain' => 'example.com',
 					],
 				],
 			],
@@ -59,6 +60,7 @@ class Contact_Verification_Notify_Test extends Test\Lib\Domain_Services_Client_T
 		$this->assertInstanceOf( Event\Contact\Verification\Notify::class, $event );
 		$this->assertIsValidEvent( $response_data['data']['event'], $event );
 		$this->assertSame( $response_data['data']['event']['event_data']['verified'], $event->is_verified() );
+		$this->assertSame( $response_data['data']['event']['event_data']['associated_domain'], $event->get_associated_domain() );
 		$this->assertSame( $response_data['data']['event']['object_id'], (string) $event->get_contact_id() );
 	}
 }
