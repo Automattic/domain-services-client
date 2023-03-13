@@ -37,4 +37,13 @@ class Notify implements Event\Event_Interface {
 	public function is_verified(): bool {
 		return $this->get_data_by_key( 'event_data.verified' ) ?? false;
 	}
+
+	/**
+	 * Returns the domain associated with the event's contact handle
+	 *
+	 * @return string
+	 */
+	public function get_associated_domain(): string {
+		return $this->get_data_by_key( 'event_data.associated_domain' ) ?? '';
+	}
 }
