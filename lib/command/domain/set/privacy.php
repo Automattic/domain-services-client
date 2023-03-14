@@ -23,10 +23,6 @@ use Automattic\Domain_Services_Client\{Command, Entity};
 /**
  * Sets the privacy option that determines what contact information is shown in WHOIS.
  *
- * - Runs asynchronously on the server
- * - Reseller will receive a `Domain\Set\Privacy\Success` or `Domain\Set\Privacy\Fail` event depending on the result of the
- * command
- *
  * Example:
  * ```
  * $domain_name = new Entity\Domain_Name( 'example-domain.com' );
