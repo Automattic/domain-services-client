@@ -30,3 +30,4 @@ use Automattic\Domain_Services_Client\{Response};
 class Privacy implements Response\Response_Interface {
 	use Response\Data_Trait;
 }
+
