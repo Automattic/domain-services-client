@@ -28,13 +28,17 @@ class Domain_Suggestions_Test extends Test\Lib\Domain_Services_Client_Test_Case 
 			Command\Command_Interface::PARAMS => [
 				Command\Command_Interface::KEY_QUERY => 'some query string',
 				Command\Command_Interface::KEY_QUANTITY => 10,
+				Command\Command_Interface::KEY_TLDS => [ 'com', 'net', 'org' ],
+				COmmand\Command_Interface::KEY_EXACT_MATCH => true,
 			],
 			Command\Command_Interface::CLIENT_TXN_ID => 'client-transaction-info-for-domain-suggestions-test-1',
 		];
 
 		$command = new Command\Domain\Suggestions(
 			$mock_command_data[ Command\Command_Interface::PARAMS ][ Command\Command_Interface::KEY_QUERY ],
-			$mock_command_data[ Command\Command_Interface::PARAMS ][ Command\Command_Interface::KEY_QUANTITY ]
+			$mock_command_data[ Command\Command_Interface::PARAMS ][ Command\Command_Interface::KEY_QUANTITY ],
+			$mock_command_data[ Command\Command_Interface::PARAMS ][ Command\Command_Interface::KEY_TLDS ],
+			$mock_command_data[ Command\Command_Interface::PARAMS ][ Command\Command_Interface::KEY_EXACT_MATCH ]
 		);
 		$command->set_client_txn_id( $mock_command_data[ Command\Command_Interface::CLIENT_TXN_ID ] );
 
