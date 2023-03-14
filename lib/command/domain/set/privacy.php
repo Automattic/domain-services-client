@@ -38,7 +38,6 @@ use Automattic\Domain_Services_Client\{Command, Entity};
  * }
  * ```
  *
- * @see \Automattic\Domain_Services_Client\Command\Domain\Set\Privacy
  * @see \Automattic\Domain_Services_Client\Response\Domain\Set\Privacy
  */
 class Privacy implements Command\Command_Interface, Command\Command_Serialize_Interface {
