@@ -27,8 +27,6 @@ use Automattic\Domain_Services_Client\{Command, Entity, Exception};
  * - Contact types not included in the request would not be updated, but won't be deleted.
  * - For each contact type, either a contact ID or the full contact information can be provided.
  * - If contact information is provided, a new contact will be created and the contact ID will be returned.
- * - This command runs asynchronously on the server.
- * - Getting a success response means that the operation was queued successfully.
  * - A domain has four contact types: owner, admin, tech and billing
  *
  * ## Example:
@@ -44,7 +42,7 @@ use Automattic\Domain_Services_Client\{Command, Entity, Exception};
  *
  * $response = $api->post( $command );
  * if ( $response->is_success() ) {
- *     // The update request was queued successfully
+ *     // The update request was successfully processed
  * }
  * ```
  *

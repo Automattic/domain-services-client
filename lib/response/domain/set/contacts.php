@@ -18,19 +18,14 @@
 
 namespace Automattic\Domain_Services_Client\Response\Domain\Set;
 
-use Automattic\Domain_Services_Client\{Event, Response, Command};
+use Automattic\Domain_Services_Client\{Response, Command};
 
 /**
  * Response of a `Domain\Set\Contacts` command
  *
- * - The contacts set operation runs asynchronously at the server
- * - A success response indicates that the operation was queued, not completed
- * - The `Domain\Set\Contacts\Success` and `Domain\Set\Contacts\Fail` events will indicate whether the operation was
- * successful or not
+ * - A success response indicates that the operation was successfully processed.
  *
  * @see Command\Domain\Set\Contacts
- * @see Event\Domain\Set\Contacts\Success
- * @see Event\Domain\Set\Contacts\Fail
  */
 class Contacts implements Response\Response_Interface {
 	use Response\Data_Trait;
