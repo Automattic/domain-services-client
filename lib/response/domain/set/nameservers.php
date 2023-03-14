@@ -23,14 +23,9 @@ use Automattic\Domain_Services_Client\Response;
 /**
  * Response of a `Domain\Set\Nameservers` command
  *
- * - The name server update operation runs asynchronously at the server
- * - A success response indicates that the operation was queued, not completed
- *     - The `Domain\Set\Nameservers\Success` and `Domain\Set\Nameservers\Fail` events will indicate whether the
- *       operation was successful or not
+ * - A success response indicates that the operation has been processed successfully
  *
  * @see \Automattic\Domain_Services_Client\Command\Domain\Set\Nameservers
- * @see \Automattic\Domain_Services_Client\Event\Domain\Set\Nameservers\Success
- * @see \Automattic\Domain_Services_Client\Event\Domain\Set\Nameservers\Fail
  */
 class Nameservers implements Response\Response_Interface {
 	use Response\Data_Trait;

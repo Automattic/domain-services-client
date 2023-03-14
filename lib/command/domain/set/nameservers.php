@@ -23,10 +23,6 @@ use Automattic\Domain_Services_Client\{Command, Entity};
 /**
  * Sets name servers for the specified domain
  *
- * - Runs asynchronously on the server
- * - Reseller will receive a `Domain\Set\Nameservers\Success` or `Domain\Set\Nameservers\Fail` event depending on the
- *   result of the operation
- *
  * Example usage:
  *
  * ```
@@ -41,14 +37,11 @@ use Automattic\Domain_Services_Client\{Command, Entity};
  * $response = $api->post( $command );
  *
  * if ( $response->is_success() ) {
- *     // command was issued successfully, the client should wait for a `Domain\Set\Nameservers\Success` or
- *     `Domain\Set\Nameservers\Fail event`
+ *     // The request has been successfully processed
  * }
  * ```
  *
  * @see \Automattic\Domain_Services_Client\Response\Domain\Set\Nameservers
- * @see \Automattic\Domain_Services_Client\Event\Domain\Set\Nameservers\Success
- * @see \Automattic\Domain_Services_Client\Event\Domain\Set\Nameservers\Fail
  */
 class Nameservers implements Command\Command_Interface, Command\Command_Serialize_Interface {
 	use Command\Command_Serialize_Trait;
