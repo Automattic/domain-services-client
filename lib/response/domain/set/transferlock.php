@@ -23,6 +23,8 @@ use Automattic\Domain_Services_Client\Response;
 /**
  * Response of a `Domain\Transferlock\Set` command.
  *
+ * - A Success response indicates that request has been successfully processed
+ *
  * @see \Automattic\Domain_Services_Client\Command\Domain\Set\Transferlock
  */
 class Transferlock implements Response\Response_Interface {

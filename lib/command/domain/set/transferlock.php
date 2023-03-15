@@ -25,6 +25,16 @@ use Automattic\Domain_Services_Client\{Command, Entity};
  *
  * This commands requests either enabling or disabling the transfer lock on a specific domain.
  *
+ * Example:
+ * ```
+ * $domain_name = new Entity\Domain_Name( 'example-domain.com' );
+ * $command = new Command\Domain\Set\Transferlock( $domain, true );
+ * $response = $api->post( $command );
+ * if ( $response->is_success() ) {
+ *   // the request to update transferlock setting has been successfully processed
+ * }
+ * ```
+ *
  * @see \Automattic\Domain_Services_Client\Response\Domain\Set\Transferlock
  */
 class Transferlock implements Command\Command_Interface, Command\Command_Serialize_Interface {
