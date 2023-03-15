@@ -23,10 +23,6 @@ use Automattic\Domain_Services_Client\{Command, Entity};
 /**
  * Sets the privacy option that determines what contact information is shown in WHOIS.
  *
- * - Runs asynchronously on the server
- * - Reseller will receive a `Domain\Set\Privacy\Success` or `Domain\Set\Privacy\Fail` event depending on the result of the
- * command
- *
  * Example:
  * ```
  * $domain_name = new Entity\Domain_Name( 'example-domain.com' );
@@ -34,12 +30,10 @@ use Automattic\Domain_Services_Client\{Command, Entity};
  * $command = new Command\Domain\Set\Privacy( $domain, $privacy_setting );
  * $response = $api->post( $command );
  * if ( $response->is_success() ) {
- *   // the request to update the privacy setting was queued successfully
+ *   // the request to update the privacy has been successfully processed
  * }
  * ```
  *
- * @see \Automattic\Domain_Services_Client\Event\Domain\Set\Privacy\Fail
- * @see \Automattic\Domain_Services_Client\Event\Domain\Set\Privacy\Success
  * @see \Automattic\Domain_Services_Client\Response\Domain\Set\Privacy
  */
 class Privacy implements Command\Command_Interface, Command\Command_Serialize_Interface {

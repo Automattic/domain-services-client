@@ -23,12 +23,9 @@ use Automattic\Domain_Services_Client\{Response};
 /**
  * Response of a `Domain\Set\Privacy` command
  *
- * Since the command runs asynchronously on the server, success response indicates that request has been queued, not
- * completed.
+ * Success response indicates that request has been successfully processed.
  *
  * @see \Automattic\Domain_Services_Client\Command\Domain\Set\Privacy
- * @see \Automattic\Domain_Services_Client\Event\Domain\Set\Privacy\Success
- * @see \Automattic\Domain_Services_Client\Event\Domain\Set\Privacy\Fail
  */
 class Privacy implements Response\Response_Interface {
 	use Response\Data_Trait;
