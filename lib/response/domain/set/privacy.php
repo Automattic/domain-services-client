@@ -23,7 +23,7 @@ use Automattic\Domain_Services_Client\{Response};
 /**
  * Response of a `Domain\Set\Privacy` command
  *
- * Success response indicates that request has been successfully processed.
+ * - A Success response indicates that request has been successfully processed
  *
  * @see \Automattic\Domain_Services_Client\Command\Domain\Set\Privacy
  */
