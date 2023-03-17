@@ -116,4 +116,15 @@ class Success implements Event\Event_Interface, Event\Async_Command_Related_Inte
 
 		return null === $contact_data ? null : Entity\Domain_Contacts::from_array( $contact_data );
 	}
+
+	/**
+	 * Gets the date until when the domain is transfer locked
+	 *
+	 * @return \DateTimeInterface|null
+	 */
+	public function get_transfer_locked_until_date(): ?\DateTimeInterface {
+		$transfer_locked_until_date = $this->get_data_by_key( 'event_data.transfer_locked_until_date' );
+
+		return null === $transfer_locked_until_date ? null : Helper\Date_Time::createImmutable( $transfer_locked_until_date );
+	}
 }

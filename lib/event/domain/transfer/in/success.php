@@ -18,7 +18,7 @@
 
 namespace Automattic\Domain_Services_Client\Event\Domain\Transfer\In;
 
-use Automattic\Domain_Services_Client\{Event};
+use Automattic\Domain_Services_Client\{Event, Helper};
 
 /**
  * Inbound domain transfer success event
@@ -29,4 +29,15 @@ class Success implements Event\Event_Interface, Event\Async_Command_Related_Inte
 	use Event\Async_Command_Related_Trait;
 	use Event\Object_Type_Domain_Trait;
 	use Event\Transfer_Trait;
+
+	/**
+	 * Gets the date until when the domain is transfer locked
+	 *
+	 * @return \DateTimeInterface|null
+	 */
+	public function get_transfer_locked_until_date(): ?\DateTimeInterface {
+		$transfer_locked_until_date = $this->get_data_by_key( 'event_data.transfer_locked_until_date' );
+
+		return null === $transfer_locked_until_date ? null : Helper\Date_Time::createImmutable( $transfer_locked_until_date );
+	}
 }
