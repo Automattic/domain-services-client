@@ -37,6 +37,7 @@ interface Command_Interface {
 	public const KEY_DOMAIN = 'domain';
 	public const KEY_DOMAINS = 'domains';
 	public const KEY_EVENT_ID = 'event_id';
+	public const KEY_EXACT_MATCH = 'exact_match';
 	public const KEY_FEE_AMOUNT = 'fee_amount';
 	public const KEY_LIMIT = 'limit';
 	public const KEY_NAMESERVERS = 'nameservers';
@@ -46,6 +47,7 @@ interface Command_Interface {
 	public const KEY_QUERY = 'query';
 	public const KEY_RECORD_SETS = 'record_sets';
 	public const KEY_RECORDS = 'dns_records';
+	public const KEY_TLDS = 'tlds';
 	public const KEY_TRANSFERLOCK = 'transferlock';
 
 	/**

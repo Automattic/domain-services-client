@@ -40,14 +40,28 @@ class Suggestions implements Command\Command_Interface, Command\Command_Serializ
 	private int $quantity;
 
 	/**
+	 * @var array|null list of TLDs that the retrieved suggestions should be limited to (optional, defaults to all available TLDs for the reseller)
+	 */
+	private ?array $tlds;
+
+	/**
+	 * @var bool whether the retrieved suggestions should be an exact match of the query string (optional, default to false)
+	 */
+	private bool $exact_match;
+
+	/**
 	 * Constructs a `Domain\Suggestions` command
 	 *
 	 * @param string $query
-	 * @param int    $quantity
+	 * @param int $quantity
+	 * @param array|null $tlds
+	 * @param bool $exact_match
 	 */
-	public function __construct( string $query, int $quantity ) {
+	public function __construct( string $query, int $quantity, ?array $tlds = null, bool $exact_match = false ) {
 		$this->query = $query;
 		$this->quantity = $quantity;
+		$this->tlds = $tlds;
+		$this->exact_match = $exact_match;
 	}
 
 	/**
@@ -69,6 +83,24 @@ class Suggestions implements Command\Command_Interface, Command\Command_Serializ
 	}
 
 	/**
+	 * Returns the list of TLDs that the retrieved suggestions should be limited to
+	 *
+	 * @return array|null
+	 */
+	public function get_tlds(): ?array {
+		return $this->tlds ?? null;
+	}
+
+	/**
+	 * Returns whether the retrieved suggestions should be an exact match of the query string
+	 *
+	 * @return bool
+	 */
+	public function is_exact_match(): bool {
+		return $this->exact_match;
+	}
+
+	/**
 	 * Converts the command to an associative array
 	 *
 	 * @internal
@@ -79,6 +111,8 @@ class Suggestions implements Command\Command_Interface, Command\Command_Serializ
 		return [
 			Command\Command_Interface::KEY_QUERY => $this->query,
 			Command\Command_Interface::KEY_QUANTITY => $this->quantity,
+			Command\Command_Interface::KEY_TLDS => $this->tlds,
+			Command\Command_Interface::KEY_EXACT_MATCH => $this->exact_match,
 		];
 	}
 }
