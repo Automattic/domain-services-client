@@ -31,7 +31,7 @@ Response of a `Domain\Set\Contacts` command
 * Uses Traits:
   * [\Automattic\Domain_Services_Client\Response\Data_Trait](../classes/Automattic-Domain-Services-Client-Response-Data-Trait.md)
 * See Also:
-  * [\Automattic\Domain_Services_Client\Response\Domain\Set\Command\Domain\Set\Contacts](../\Automattic\Domain_Services_Client\Response\Domain\Set\Command\Domain\Set\Contacts)
+  * [\Automattic\Domain_Services_Client\Response\Domain\Set\Command\Domain\Set\Contacts](../classes/Automattic\Domain_Services_Client\Response\Domain\Set\Command\Domain\Set\Contacts)
 
 ---
 
