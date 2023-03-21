@@ -25,7 +25,7 @@ use Automattic\Domain_Services_Client\Response;
  *
  * - A success response indicates that the operation was successfully processed.
  *
- * @see Command\Domain\Set\Contacts
+ * @see \Automattic\Domain_Services_Client\Command\Domain\Set\Contacts
  */
 class Contacts implements Response\Response_Interface {
 	use Response\Data_Trait;
