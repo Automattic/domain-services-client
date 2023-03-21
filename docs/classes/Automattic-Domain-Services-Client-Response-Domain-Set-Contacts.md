@@ -6,10 +6,7 @@ Response of a `Domain\Set\Contacts` command
 
 ## Description:
 
-- The contacts set operation runs asynchronously at the server
-- A success response indicates that the operation was queued, not completed
-- The `Domain\Set\Contacts\Success` and `Domain\Set\Contacts\Fail` events will indicate whether the operation was
-successful or not
+- A success response indicates that the operation was successfully processed.
 
 
 ---
@@ -34,9 +31,7 @@ successful or not
 * Uses Traits:
   * [\Automattic\Domain_Services_Client\Response\Data_Trait](../classes/Automattic-Domain-Services-Client-Response-Data-Trait.md)
 * See Also:
-  * [\Automattic\Domain_Services_Client\Command\Domain\Set\Contacts](../classes/Automattic-Domain-Services-Client-Command-Domain-Set-Contacts.md)
-  * [\Automattic\Domain_Services_Client\Event\Domain\Set\Contacts\Success](../classes/Automattic-Domain-Services-Client-Event-Domain-Set-Contacts-Success.md)
-  * [\Automattic\Domain_Services_Client\Event\Domain\Set\Contacts\Fail](../classes/Automattic-Domain-Services-Client-Event-Domain-Set-Contacts-Fail.md)
+  * [\Automattic\Domain_Services_Client\Response\Domain\Set\Command\Domain\Set\Contacts](../\Automattic\Domain_Services_Client\Response\Domain\Set\Command\Domain\Set\Contacts)
 
 ---
 

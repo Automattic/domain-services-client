@@ -15,6 +15,7 @@ This event indicates a change in the contact's status. It's usually generated wh
 
 * public [__construct()](#method___construct)
 * public [get_acknowledged_date()](#method_get_acknowledged_date)
+* public [get_associated_domain()](#method_get_associated_domain)
 * public [get_contact_id()](#method_get_contact_id)
 * public [get_data_by_key()](#method_get_data_by_key)
 * public [get_event_class()](#method_get_event_class)
@@ -80,6 +81,25 @@ Gets the date this event was acknowledged.
 
 ```
 \DateTimeInterface|null
+```
+
+---
+
+<a id="method_get_associated_domain"></a>
+### get_associated_domain
+
+```
+public get_associated_domain() : string
+```
+
+##### Summary
+
+Returns the domain associated with the event&#039;s contact handle
+
+##### Returns:
+
+```
+string
 ```
 
 ---
