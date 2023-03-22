@@ -18,7 +18,7 @@
 
 namespace Automattic\Domain_Services_Client\Event\Domain\Set\Contacts;
 
-use Automattic\Domain_Services_Client\{Command, Entity, Event, Helper, Exception};
+use Automattic\Domain_Services_Client\{Command, Entity, Event, Exception};
 
 /**
  * Event representing a `Domain\Set\Contacts` command success
@@ -28,6 +28,7 @@ use Automattic\Domain_Services_Client\{Command, Entity, Event, Helper, Exception
 class Success implements Event\Event_Interface, Event\Async_Command_Related_Interface {
 	use Event\Async_Command_Related_Trait;
 	use Event\Object_Type_Domain_Trait;
+	use Event\Transfer_Locked_Trait;
 
 	/**
 	 * Returns the domain contacts of the updated domain
@@ -39,16 +40,5 @@ class Success implements Event\Event_Interface, Event\Async_Command_Related_Inte
 		$contact_data = $this->get_data_by_key( 'event_data.contacts' ) ?? [];
 
 		return Entity\Domain_Contacts::from_array( $contact_data );
-	}
-
-	/**
-	 * Gets the date until when the domain is transfer locked
-	 *
-	 * @return \DateTimeInterface|null
-	 */
-	public function get_transfer_locked_until_date(): ?\DateTimeInterface {
-		$transfer_locked_until_date = $this->get_data_by_key( 'event_data.transfer_locked_until_date' );
-
-		return null === $transfer_locked_until_date ? null : Helper\Date_Time::createImmutable( $transfer_locked_until_date );
 	}
 }

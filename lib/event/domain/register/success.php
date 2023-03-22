@@ -30,6 +30,7 @@ use Automattic\Domain_Services_Client\{Entity, Event, Exception, Helper};
 class Success implements Event\Event_Interface, Event\Async_Command_Related_Interface {
 	use Event\Async_Command_Related_Trait;
 	use Event\Object_Type_Domain_Trait;
+	use Event\Transfer_Locked_Trait;
 
 	/**
 	 * Gets the date the domain will exit the Add Grace Period (AGP); null if no AGP is offered
@@ -115,16 +116,5 @@ class Success implements Event\Event_Interface, Event\Async_Command_Related_Inte
 		$contact_data = $this->get_data_by_key( 'event_data.contacts' ) ?? [];
 
 		return null === $contact_data ? null : Entity\Domain_Contacts::from_array( $contact_data );
-	}
-
-	/**
-	 * Gets the date until when the domain is transfer locked
-	 *
-	 * @return \DateTimeInterface|null
-	 */
-	public function get_transfer_locked_until_date(): ?\DateTimeInterface {
-		$transfer_locked_until_date = $this->get_data_by_key( 'event_data.transfer_locked_until_date' );
-
-		return null === $transfer_locked_until_date ? null : Helper\Date_Time::createImmutable( $transfer_locked_until_date );
 	}
 }
