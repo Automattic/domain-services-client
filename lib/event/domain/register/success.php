@@ -30,6 +30,7 @@ use Automattic\Domain_Services_Client\{Entity, Event, Exception, Helper};
 class Success implements Event\Event_Interface, Event\Async_Command_Related_Interface {
 	use Event\Async_Command_Related_Trait;
 	use Event\Object_Type_Domain_Trait;
+	use Event\Transfer_Locked_Trait;
 
 	/**
 	 * Gets the date the domain will exit the Add Grace Period (AGP); null if no AGP is offered

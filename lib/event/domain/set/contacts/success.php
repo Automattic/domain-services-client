@@ -28,6 +28,7 @@ use Automattic\Domain_Services_Client\{Command, Entity, Event, Exception};
 class Success implements Event\Event_Interface, Event\Async_Command_Related_Interface {
 	use Event\Async_Command_Related_Trait;
 	use Event\Object_Type_Domain_Trait;
+	use Event\Transfer_Locked_Trait;
 
 	/**
 	 * Returns the domain contacts of the updated domain

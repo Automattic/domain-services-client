@@ -16,18 +16,22 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services_Client\Event\Domain\Transfer\In;
+namespace Automattic\Domain_Services_Client\Event;
 
-use Automattic\Domain_Services_Client\{Event};
+use Automattic\Domain_Services_Client\{Helper};
 
 /**
- * Inbound domain transfer success event
- *
- * This event is generated when a domain transfer from another registrar to the reseller's account is successful.
+ * Trait that adds the `get_transfer_locked_until_date` method to an event
  */
-class Success implements Event\Event_Interface, Event\Async_Command_Related_Interface {
-	use Event\Async_Command_Related_Trait;
-	use Event\Object_Type_Domain_Trait;
-	use Event\Transfer_Trait;
-	use Event\Transfer_Locked_Trait;
+trait Transfer_Locked_Trait {
+	/**
+	 * Gets the date until when the domain is transfer locked
+	 *
+	 * @return \DateTimeInterface|null
+	 */
+	public function get_transfer_locked_until_date(): ?\DateTimeInterface {
+		$transfer_locked_until_date = $this->get_data_by_key( 'transfer_locked_until_date' );
+
+		return null === $transfer_locked_until_date ? null : Helper\Date_Time::createImmutable( $transfer_locked_until_date );
+	}
 }
