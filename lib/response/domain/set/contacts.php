@@ -49,4 +49,13 @@ class Contacts implements Response\Response_Interface {
 	public function get_transfer_locked_until_date(): ?string {
 		return $this->get_data_by_key( 'data.transfer_locked_until_date' );
 	}
+
+	/**
+	 * Gets the date when a domain will be suspended due to an unverified contact
+	 *
+	 * @return string|null
+	 */
+	public function get_unverified_contact_suspension_date(): ?string {
+		return $this->get_data_by_key( 'data.unverified_contact_suspension_date' );
+	}
 }
