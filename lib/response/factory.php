@@ -22,8 +22,6 @@ use Automattic\Domain_Services_Client\{Command, Event, Exception};
 
 /**
  * Factory for creating response objects.
- *
- * @internal
  */
 class Factory {
 	/**

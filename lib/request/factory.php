@@ -24,8 +24,6 @@ use Psr\Http\Message\StreamFactoryInterface;
 
 /**
  * Factory for creating PSR-7 requests.
- *
- * @internal
  */
 class Factory {
 

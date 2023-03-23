@@ -22,8 +22,6 @@ use Automattic\Domain_Services_Client\{Exception};
 
 /**
  * Factory class used to build an event from the provided data.
- *
- * @internal
  */
 class Factory {
 	/**
