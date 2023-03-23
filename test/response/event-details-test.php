@@ -35,17 +35,16 @@ class Event_Details_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 			'data' => [
 				'event' => [
 					'id' => 1234,
-					'event_class' => 'Domain\Set\Nameservers',
+					'event_class' => 'Domain\Renew',
 					'event_subclass' => 'Success',
 					'object_type' => 'domain',
 					'object_id' => 'example.com',
 					'event_date' => '2022-01-23 12:34:56',
 					'acknowledged_date' => '2022-08-02 06:07:08',
 					'event_data' => [
-						'name_servers' => [
-							'ns1.wordpress.com',
-							'ns2.wordpress.com',
-						],
+						'expiration_date' => '2023-01-01 01:23:45',
+						'renewable_until' => '2023-02-13 01:23:45',
+						'domain_status' => [ 'clientTransferProhibited' ]
 					],
 				],
 			],

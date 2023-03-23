@@ -18,7 +18,7 @@
 
 namespace Automattic\Domain_Services_Client\Response\Domain\Set;
 
-use Automattic\Domain_Services_Client\{Response};
+use Automattic\Domain_Services_Client\Response;
 
 /**
  * Response of a `Domain\Set\Privacy` command

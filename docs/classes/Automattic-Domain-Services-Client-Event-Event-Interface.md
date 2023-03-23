@@ -17,8 +17,8 @@ An interface used by all event classes.
 * public [KEY_EVENT_ERRORS](#constant_KEY_EVENT_ERRORS)
 * public [KEY_COMMAND_STATUS](#constant_KEY_COMMAND_STATUS)
 * public [KEY_COMMAND_STATUS_DESCRIPTION](#constant_KEY_COMMAND_STATUS_DESCRIPTION)
-* public [KEY_COMMAND_CLIENT_TNX_ID](#constant_KEY_COMMAND_CLIENT_TNX_ID)
-* public [KEY_COMMAND_SERVER_TNX_ID](#constant_KEY_COMMAND_SERVER_TNX_ID)
+* public [KEY_COMMAND_CLIENT_TXN_ID](#constant_KEY_COMMAND_CLIENT_TXN_ID)
+* public [KEY_COMMAND_SERVER_TXN_ID](#constant_KEY_COMMAND_SERVER_TXN_ID)
 
 ---
 
@@ -112,17 +112,17 @@ KEY_COMMAND_STATUS_DESCRIPTION = 'event_data.status_description'
 ```
 
 
-<a id="constant_KEY_COMMAND_CLIENT_TNX_ID"></a>
-###### KEY_COMMAND_CLIENT_TNX_ID
+<a id="constant_KEY_COMMAND_CLIENT_TXN_ID"></a>
+###### KEY_COMMAND_CLIENT_TXN_ID
 ```
-KEY_COMMAND_CLIENT_TNX_ID = 'event_data.client_tnx_id'
+KEY_COMMAND_CLIENT_TXN_ID = 'event_data.client_txn_id'
 ```
 
 
-<a id="constant_KEY_COMMAND_SERVER_TNX_ID"></a>
-###### KEY_COMMAND_SERVER_TNX_ID
+<a id="constant_KEY_COMMAND_SERVER_TXN_ID"></a>
+###### KEY_COMMAND_SERVER_TXN_ID
 ```
-KEY_COMMAND_SERVER_TNX_ID = 'event_data.server_tnx_id'
+KEY_COMMAND_SERVER_TXN_ID = 'event_data.server_txn_id'
 ```
 
 

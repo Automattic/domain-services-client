@@ -6,10 +6,7 @@ Response of a `Domain\Set\Nameservers` command
 
 ## Description:
 
-- The name server update operation runs asynchronously at the server
-- A success response indicates that the operation was queued, not completed
-    - The `Domain\Set\Nameservers\Success` and `Domain\Set\Nameservers\Fail` events will indicate whether the
-      operation was successful or not
+- A success response indicates that the operation has been processed successfully
 
 
 ---
@@ -35,8 +32,6 @@ Response of a `Domain\Set\Nameservers` command
   * [\Automattic\Domain_Services_Client\Response\Data_Trait](../classes/Automattic-Domain-Services-Client-Response-Data-Trait.md)
 * See Also:
   * [\Automattic\Domain_Services_Client\Command\Domain\Set\Nameservers](../classes/Automattic-Domain-Services-Client-Command-Domain-Set-Nameservers.md)
-  * [\Automattic\Domain_Services_Client\Event\Domain\Set\Nameservers\Success](../classes/Automattic-Domain-Services-Client-Event-Domain-Set-Nameservers-Success.md)
-  * [\Automattic\Domain_Services_Client\Event\Domain\Set\Nameservers\Fail](../classes/Automattic-Domain-Services-Client-Event-Domain-Set-Nameservers-Fail.md)
 
 ---
 

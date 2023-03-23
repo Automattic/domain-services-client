@@ -15,6 +15,9 @@ Used in the `Domain\Suggestions` response.
 
 * public [__construct()](#method___construct)
 * public [get_domain_name()](#method_get_domain_name)
+* public [get_reseller_register_fee()](#method_get_reseller_register_fee)
+* public [get_reseller_renewal_fee()](#method_get_reseller_renewal_fee)
+* public [is_premium()](#method_is_premium)
 
 ---
 
@@ -32,7 +35,7 @@ Used in the `Domain\Suggestions` response.
 ### __construct
 
 ```
-public __construct(\Automattic\Domain_Services_Client\Entity\Domain_Name  domain_name) : mixed
+public __construct(\Automattic\Domain_Services_Client\Entity\Domain_Name  domain_name, int  reseller_create_fee, int  reseller_renewal_fee, bool  is_premium = false) : mixed
 ```
 
 ##### Summary
@@ -44,6 +47,9 @@ Constructs a `Suggestion` entity
 | Name | Type | Default |
 |------|------|---------|
 | **$domain_name** | \Automattic\Domain_Services_Client\Entity\Domain_Name |  |
+| **$reseller_create_fee** | int | 0 |
+| **$reseller_renewal_fee** | int | 0 |
+| **$is_premium** | bool | false |
 
 ##### Returns:
 
@@ -68,4 +74,61 @@ Returns the domain name suggestion
 
 ```
 \Automattic\Domain_Services_Client\Entity\Domain_Name
+```
+
+---
+
+<a id="method_get_reseller_register_fee"></a>
+### get_reseller_register_fee
+
+```
+public get_reseller_register_fee() : int
+```
+
+##### Summary
+
+Returns the reseller fee to register this domain
+
+##### Returns:
+
+```
+int
+```
+
+---
+
+<a id="method_get_reseller_renewal_fee"></a>
+### get_reseller_renewal_fee
+
+```
+public get_reseller_renewal_fee() : int
+```
+
+##### Summary
+
+Returns the reseller fee to renew this domain
+
+##### Returns:
+
+```
+int
+```
+
+---
+
+<a id="method_is_premium"></a>
+### is_premium
+
+```
+public is_premium() : bool
+```
+
+##### Summary
+
+Returns whether the domain suggestion is premium
+
+##### Returns:
+
+```
+bool
 ```

@@ -4,6 +4,10 @@
 
 Response of a `Domain\Transferlock\Set` command.
 
+## Description:
+
+- A Success response indicates that request has been successfully processed
+
 
 ---
 

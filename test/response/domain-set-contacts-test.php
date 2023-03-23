@@ -54,7 +54,31 @@ class Domain_Set_Contacts_Test extends Test\Lib\Domain_Services_Client_Test_Case
 			'server_txn_id' => 'bf091ce4-bca4-4f8e-8d65-30f37d13609d.local-isolated-test-request',
 			'timestamp' => 1669075519,
 			'runtime' => 0.0104,
-			'data' => [],
+			'data' => [
+				'contacts' => [
+					'owner' => [
+						'contact_id' => 'SP1:P-ABC1234',
+						'contact_information' => NULL,
+						'contact_disclosure' => 'none',
+					],
+					'admin' => [
+						'contact_id' => 'SP1:P-ABC1234',
+						'contact_information' => NULL,
+						'contact_disclosure' => 'none',
+					],
+					'tech' => [
+						'contact_id' => 'SP1:P-ABC1234',
+						'contact_information' => NULL,
+						'contact_disclosure' => 'none',
+					],
+					'billing' => [
+						'contact_id' => 'SP1:P-ABC1234',
+						'contact_information' => NULL,
+						'contact_disclosure' => 'none',
+					],
+				],
+				'transfer_locked_until_date' => '2022-06-22 01:23:45',
+			],
 		];
 
 
@@ -64,5 +88,8 @@ class Domain_Set_Contacts_Test extends Test\Lib\Domain_Services_Client_Test_Case
 		$this->assertInstanceOf( Response\Domain\Set\Contacts::class, $response_object );
 
 		$this->assertIsValidResponse( $mock_response_data, $response_object );
+
+		$this->assertEquals( $mock_response_data['data']['contacts'], $response_object->get_contacts()->to_array() );
+		$this->assertEquals( $mock_response_data['data']['transfer_locked_until_date'], $response_object->get_transfer_locked_until_date() );
 	}
 }

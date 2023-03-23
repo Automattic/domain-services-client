@@ -6,10 +6,6 @@ Sets the privacy option that determines what contact information is shown in WHO
 
 ## Description:
 
-- Runs asynchronously on the server
-- Reseller will receive a `Domain\Set\Privacy\Success` or `Domain\Set\Privacy\Fail` event depending on the result of the
-command
-
 Example:
 ```
 $domain_name = new Entity\Domain_Name( 'example-domain.com' );
@@ -17,7 +13,7 @@ $privacy_setting = new Entity\Whois_Privacy( Entity\Whois_Privacy::ENABLE_PRIVAC
 $command = new Command\Domain\Set\Privacy( $domain, $privacy_setting );
 $response = $api->post( $command );
 if ( $response->is_success() ) {
-  // the request to update the privacy setting was queued successfully
+  // the request to update the privacy has been successfully processed
 }
 ```
 
@@ -36,8 +32,6 @@ if ( $response->is_success() ) {
 * Implements:
   * [\Automattic\Domain_Services_Client\Command\Command_Interface](../classes/Automattic-Domain-Services-Client-Command-Command-Interface.md)
 * See Also:
-  * [\Automattic\Domain_Services_Client\Event\Domain\Set\Privacy\Fail](../classes/Automattic-Domain-Services-Client-Event-Domain-Set-Privacy-Fail.md)
-  * [\Automattic\Domain_Services_Client\Event\Domain\Set\Privacy\Success](../classes/Automattic-Domain-Services-Client-Event-Domain-Set-Privacy-Success.md)
   * [\Automattic\Domain_Services_Client\Response\Domain\Set\Privacy](../classes/Automattic-Domain-Services-Client-Response-Domain-Set-Privacy.md)
 
 ---

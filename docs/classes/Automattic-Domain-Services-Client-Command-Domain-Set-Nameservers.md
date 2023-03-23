@@ -6,10 +6,6 @@ Sets name servers for the specified domain
 
 ## Description:
 
-- Runs asynchronously on the server
-- Reseller will receive a `Domain\Set\Nameservers\Success` or `Domain\Set\Nameservers\Fail` event depending on the
-  result of the operation
-
 Example usage:
 
 ```
@@ -24,8 +20,7 @@ $command = new Command\Domain\Set\Nameservers( $domain_name, $nameservers );
 $response = $api->post( $command );
 
 if ( $response->is_success() ) {
-    // command was issued successfully, the client should wait for a `Domain\Set\Nameservers\Success` or
-    `Domain\Set\Nameservers\Fail event`
+    // The request has been successfully processed
 }
 ```
 
@@ -45,8 +40,6 @@ if ( $response->is_success() ) {
   * [\Automattic\Domain_Services_Client\Command\Command_Interface](../classes/Automattic-Domain-Services-Client-Command-Command-Interface.md)
 * See Also:
   * [\Automattic\Domain_Services_Client\Response\Domain\Set\Nameservers](../classes/Automattic-Domain-Services-Client-Response-Domain-Set-Nameservers.md)
-  * [\Automattic\Domain_Services_Client\Event\Domain\Set\Nameservers\Success](../classes/Automattic-Domain-Services-Client-Event-Domain-Set-Nameservers-Success.md)
-  * [\Automattic\Domain_Services_Client\Event\Domain\Set\Nameservers\Fail](../classes/Automattic-Domain-Services-Client-Event-Domain-Set-Nameservers-Fail.md)
 
 ---
 

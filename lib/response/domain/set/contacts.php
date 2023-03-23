@@ -18,15 +18,35 @@
 
 namespace Automattic\Domain_Services_Client\Response\Domain\Set;
 
-use Automattic\Domain_Services_Client\{Response, Command};
+use Automattic\Domain_Services_Client\{Entity, Response};
 
 /**
  * Response of a `Domain\Set\Contacts` command
  *
  * - A success response indicates that the operation was successfully processed.
  *
- * @see Command\Domain\Set\Contacts
+ * @see \Automattic\Domain_Services_Client\Command\Domain\Set\Contacts
  */
 class Contacts implements Response\Response_Interface {
 	use Response\Data_Trait;
+
+	/**
+	 * Gets the contacts associated with this domain
+	 *
+	 * @return Entity\Domain_Contacts
+	 * @throws \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception
+	 */
+	public function get_contacts(): Entity\Domain_Contacts {
+		$contact_data = $this->get_data_by_key( 'data.contacts' ) ?? [];
+		return Entity\Domain_Contacts::from_array( $contact_data );
+	}
+
+	/**
+	 * Gets the date the domain transfer lock will expire
+	 *
+	 * @return string|null
+	 */
+	public function get_transfer_locked_until_date(): ?string {
+		return $this->get_data_by_key( 'data.transfer_locked_until_date' );
+	}
 }

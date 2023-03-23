@@ -6,8 +6,7 @@ Response of a `Domain\Set\Privacy` command
 
 ## Description:
 
-Since the command runs asynchronously on the server, success response indicates that request has been queued, not
-completed.
+- A Success response indicates that request has been successfully processed
 
 
 ---
@@ -33,8 +32,6 @@ completed.
   * [\Automattic\Domain_Services_Client\Response\Data_Trait](../classes/Automattic-Domain-Services-Client-Response-Data-Trait.md)
 * See Also:
   * [\Automattic\Domain_Services_Client\Command\Domain\Set\Privacy](../classes/Automattic-Domain-Services-Client-Command-Domain-Set-Privacy.md)
-  * [\Automattic\Domain_Services_Client\Event\Domain\Set\Privacy\Success](../classes/Automattic-Domain-Services-Client-Event-Domain-Set-Privacy-Success.md)
-  * [\Automattic\Domain_Services_Client\Event\Domain\Set\Privacy\Fail](../classes/Automattic-Domain-Services-Client-Event-Domain-Set-Privacy-Fail.md)
 
 ---
 

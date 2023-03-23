@@ -37,9 +37,13 @@ class Event_Enumerate_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 				'events' => [
 					[
 						'id' => 1,
-						'event_class' => 'Domain\Set\Nameservers',
+						'event_class' => 'Domain\Renew',
 						'event_subclass' => 'Success',
-						'event_data' => [],
+						'event_data' => [
+							'expiration_date' => '2023-01-01 01:23:45',
+							'renewable_until' => '2023-02-13 01:23:45',
+							'domain_status' => [ 'clientTransferProhibited' ]
+						],
 						'object_type' => 'domain',
 						'object_id' => 'example.com',
 						'event_date' => '2022-01-01 00:00:00',
@@ -47,9 +51,13 @@ class Event_Enumerate_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 					],
 					[
 						'id' => 2,
-						'event_class' => 'Domain\Set\Nameservers',
+						'event_class' => 'Domain\Renew',
 						'event_subclass' => 'Success',
-						'event_data' => [],
+						'event_data' => [
+							'expiration_date' => '2023-01-01 01:23:45',
+							'renewable_until' => '2023-02-13 01:23:45',
+							'domain_status' => [ 'clientTransferProhibited' ]
+						],
 						'object_type' => 'domain',
 						'object_id' => 'example.com',
 						'event_date' => '2022-02-01 00:00:00',
@@ -57,9 +65,13 @@ class Event_Enumerate_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 					],
 					[
 						'id' => 3,
-						'event_class' => 'Domain\Set\Nameservers',
+						'event_class' => 'Domain\Renew',
 						'event_subclass' => 'Success',
-						'event_data' => [],
+						'event_data' => [
+							'expiration_date' => '2023-01-01 01:23:45',
+							'renewable_until' => '2023-02-13 01:23:45',
+							'domain_status' => [ 'clientTransferProhibited' ]
+						],
 						'object_type' => 'domain',
 						'object_id' => 'example.com',
 						'event_date' => '2022-03-01 00:00:00',
