@@ -28,7 +28,7 @@ use Automattic\Domain_Services_Client\{Command, Entity, Exception};
  * - For each contact type, either a contact ID or the full contact information can be provided.
  * - If contact information is provided, a new contact will be created and the contact ID will be returned.
  * - A domain has four contact types: owner, admin, tech and billing
- * - The `transfer_lock` property determines whether the domain's transfer lock will be set when the command updates the contact information. By default, it's set to true: the domain's transfer lock will be set, which prevents transfers until the end of the lock period - specific to the TLD of the domain. When false, no lock will be set.
+ * - The `transferlock` property determines whether the domain's transfer lock will be set when the command updates the contact information. By default, it's set to true: the domain's transfer lock will be set, which prevents transfers until the end of the lock period - specific to the TLD of the domain. When false, no lock will be set.
  *
  * ## Example:
  * ```
@@ -77,7 +77,7 @@ class Contacts implements Command\Command_Interface, Command\Command_Serialize_I
 	 *
 	 * @var boolean
 	 */
-	private bool $transfer_lock;
+	private bool $transferlock;
 
 	/**
 	 * Constructs a `Domain\Set\Contacts` command
@@ -87,7 +87,7 @@ class Contacts implements Command\Command_Interface, Command\Command_Serialize_I
 	 *
 	 * @throws Exception\Entity\Invalid_Value_Exception
 	 */
-	public function __construct( Entity\Domain_Name $domain, Entity\Domain_Contacts $contacts, bool $transfer_lock = true ) {
+	public function __construct( Entity\Domain_Name $domain, Entity\Domain_Contacts $contacts, bool $transferlock = true ) {
 		$this->domain = $domain;
 
 		if ( $contacts->is_empty() ) {
@@ -95,7 +95,7 @@ class Contacts implements Command\Command_Interface, Command\Command_Serialize_I
 		}
 
 		$this->contacts = $contacts;
-		$this->transfer_lock = $transfer_lock;
+		$this->transferlock = $transferlock;
 	}
 
 	/**
@@ -121,8 +121,8 @@ class Contacts implements Command\Command_Interface, Command\Command_Serialize_I
 	 *
 	 * @return bool
 	 */
-	public function get_transfer_lock(): bool {
-		return $this->transfer_lock;
+	public function get_transferlock(): bool {
+		return $this->transferlock;
 	}
 
 	/**
@@ -136,7 +136,7 @@ class Contacts implements Command\Command_Interface, Command\Command_Serialize_I
 		return [
 			Command\Command_Interface::KEY_DOMAIN => $this->get_domain()->get_name(),
 			Command\Command_Interface::KEY_CONTACTS => $this->get_contacts()->to_array(),
-			Command\Command_Interface::KEY_TRANSFERLOCK => $this->get_transfer_lock(),
+			Command\Command_Interface::KEY_TRANSFERLOCK => $this->get_transferlock(),
 		];
 	}
 }
