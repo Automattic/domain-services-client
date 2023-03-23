@@ -47,13 +47,14 @@ class Domain_Set_Contacts_Test extends Test\Lib\Domain_Services_Client_Test_Case
 						Command\Command_Interface::KEY_CONTACT_DISCLOSURE => Entity\Contact_Disclosure::NONE,
 					],
 				],
+				Command\Command_Interface::KEY_TRANSFERLOCK => false,
 			],
 			Command\Command_Interface::CLIENT_TXN_ID => 'client-transaction-info-for-dns-records-get-test-1',
 		];
 
 		$domain = new Entity\Domain_Name( $mock_command_data[ Command\Command_Interface::PARAMS ][ Command\Command_Interface::KEY_DOMAIN ] );
 		$contacts = Entity\Domain_Contacts::from_array( $mock_command_data[ Command\Command_Interface::PARAMS ][ Command\Command_Interface::KEY_CONTACTS ] );
-		$command = new Command\Domain\Set\Contacts( $domain, $contacts );
+		$command = new Command\Domain\Set\Contacts( $domain, $contacts, false );
 		$command->set_client_txn_id( $mock_command_data[ Command\Command_Interface::CLIENT_TXN_ID ] );
 
 		$this->assertInstanceOf( Command\Domain\Set\Contacts::class, $command );
