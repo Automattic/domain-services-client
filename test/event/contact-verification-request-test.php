@@ -44,6 +44,7 @@ class Contact_Verification_Request_Test extends Test\Lib\Domain_Services_Client_
 					'event_data' => [
 						'email' => 'registrant@example.com',
 						'verification_code' => 'qwerty12345',
+						'associated_domain' => 'example.com',
 					],
 				],
 			],
@@ -60,6 +61,7 @@ class Contact_Verification_Request_Test extends Test\Lib\Domain_Services_Client_
 		$this->assertInstanceOf( Event\Contact\Verification\Request::class, $event );
 		$this->assertIsValidEvent( $response_data['data']['event'], $event );
 		$this->assertSame( $response_data['data']['event']['event_data']['email'], $event->get_email() );
+		$this->assertSame( $response_data['data']['event']['event_data']['associated_domain'], $event->get_associated_domain() );
 		$this->assertSame( $response_data['data']['event']['object_id'], (string) $event->get_contact_id() );
 	}
 }
