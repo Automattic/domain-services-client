@@ -42,6 +42,11 @@ class Suggestion {
 	private int $reseller_renewal_fee;
 
 	/**
+	 * @var bool is the suggestion available?
+	 */
+	private bool $is_available;
+
+	/**
 	 * @var bool is the suggestion a premium domain?
 	 */
 	private bool $is_premium;
@@ -51,11 +56,12 @@ class Suggestion {
 	 *
 	 * @param Domain_Name $domain_name
 	 */
-	public function __construct( Domain_Name $domain_name, int $reseller_create_fee = 0, int $reseller_renewal_fee = 0, bool $is_premium = false ) {
+	public function __construct( Domain_Name $domain_name, int $reseller_create_fee = 0, int $reseller_renewal_fee = 0, bool $is_premium = false, bool $is_available = true ) {
 		$this->domain_name = $domain_name;
 		$this->reseller_register_fee = $reseller_create_fee;
 		$this->reseller_renewal_fee = $reseller_renewal_fee;
 		$this->is_premium = $is_premium;
+		$this->is_available = $is_available;
 	}
 
 	/**
@@ -86,6 +92,15 @@ class Suggestion {
 	}
 
 	/**
+	 * Returns whether the domain suggestion is available
+	 *
+	 * @return bool
+	 */
+	public function is_available(): bool {
+		return $this->is_available;
+	}
+
+	/**
 	 * Returns whether the domain suggestion is premium
 	 *
 	 * @return bool
@@ -97,8 +112,8 @@ class Suggestion {
 	/**
 	 * Returns an associative array containing the domain name suggestion and its related properties
 	 *
-	 * @internal
 	 * @return array
+	 * @internal
 	 */
 	public function to_array(): array {
 		return [
@@ -106,6 +121,7 @@ class Suggestion {
 			'reseller_register_fee' => $this->get_reseller_register_fee(),
 			'reseller_renewal_fee' => $this->get_reseller_renewal_fee(),
 			'is_premium' => $this->is_premium(),
+			'is_available' => $this->is_available(),
 		];
 	}
 }

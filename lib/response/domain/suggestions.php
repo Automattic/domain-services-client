@@ -44,7 +44,8 @@ class Suggestions implements Response\Response_Interface {
 					$domain_name,
 					$suggestion_data['reseller_register_fee'],
 					$suggestion_data['reseller_renewal_fee'],
-					$suggestion_data['is_premium']
+					$suggestion_data['is_premium'],
+					$suggestion_data['is_available']
 				)
 			);
 		}
