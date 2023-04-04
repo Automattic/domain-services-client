@@ -88,7 +88,7 @@ class Api {
 		$result = $this->http_client->sendRequest( $request );
 		$body = $result->getBody()->getContents();
 		$result_data = json_decode( $body, true, 512, JSON_THROW_ON_ERROR );
-
+    var_dump($result_data);
 		return $this->response_factory->build_response( $command, $result_data );
 	}
 }

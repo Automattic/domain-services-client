@@ -40,6 +40,7 @@ class Factory {
 			throw new Exception\Domain_Services_Exception( $response['status'], $response );
 		}
 
+    var_dump($response['response']['data']);
 		$class_name = $command::get_name();
 
 		if ( empty( $class_name ) ) {
