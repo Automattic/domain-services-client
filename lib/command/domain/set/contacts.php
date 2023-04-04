@@ -28,7 +28,7 @@ use Automattic\Domain_Services_Client\{Command, Entity, Exception};
  * - For each contact type, either a contact ID or the full contact information can be provided.
  * - If contact information is provided, a new contact will be created and the contact ID will be returned.
  * - A domain has four contact types: owner, admin, tech and billing
- * - The `transferlock_opt_out` property determines whether the domain's 60 days transfer lock will be opted out when the command updates the contact information. By default, it's set to false: a 60 days transfer lock will be set, which prevents transfers until the end of the lock period - specific to the TLD of the domain. When false, no lock will be set.
+ * - The `transferlock_opt_out` property determines whether the domain's 60 days transfer lock will be opted out when the command updates the contact information. By default, it's set to false: a 60 days transfer lock will be set, which prevents transfers until the end of the lock period - specific to the TLD of the domain. When true, no lock will be set.
  *
  * ## Example:
  * ```
