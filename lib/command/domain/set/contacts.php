@@ -73,7 +73,7 @@ class Contacts implements Command\Command_Interface, Command\Command_Serialize_I
 	private Entity\Domain_Contacts $contacts;
 
 	/**
-	 * Whether the command should opt out the 60 days transfer lock after updating the contact information.
+	 * Whether the command should opt out of the 60 days transfer lock after updating the contact information.
 	 *
 	 * @var boolean
 	 */
