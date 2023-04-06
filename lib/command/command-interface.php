@@ -49,6 +49,7 @@ interface Command_Interface {
 	public const KEY_RECORDS = 'dns_records';
 	public const KEY_TLDS = 'tlds';
 	public const KEY_TRANSFERLOCK = 'transferlock';
+	public const KEY_TRANSFERLOCK_OPT_OUT = 'transferlock_opt_out';
 
 	/**
 	 * Returns the command name that can be used to build command data
