@@ -117,7 +117,7 @@ class Contacts implements Command\Command_Interface, Command\Command_Serialize_I
 	}
 
 	/**
-	 * Gets whether this command should opt out the transfer lock when updating the contact information.
+	 * Gets whether this command should opt out of the transfer lock when updating the contact information.
 	 *
 	 * @return bool
 	 */
