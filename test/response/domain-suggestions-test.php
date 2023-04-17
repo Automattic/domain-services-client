@@ -36,7 +36,8 @@ class Domain_Suggestions_Test extends Test\Lib\Domain_Services_Client_Test_Case 
 						'name' => "example$i.blog",
 						'reseller_register_fee' => $i * 100,
 						'reseller_renewal_fee' => $i * 100,
-						'is_premium' => false
+						'is_premium' => false,
+						'is_available' => true,
 					],
 					range( 1, 10 )
 				),
