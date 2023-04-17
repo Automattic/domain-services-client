@@ -48,9 +48,9 @@ class Api {
 	/**
 	 * Constructs an Api object
 	 *
-	 * @param Configuration          $configuration
-	 * @param Request\Factory        $request_factory
-	 * @param Response\Factory       $response_factory
+	 * @param Configuration $configuration
+	 * @param Request\Factory $request_factory
+	 * @param Response\Factory $response_factory
 	 * @param Client\ClientInterface $http_client
 	 */
 	public function __construct( Configuration $configuration, Request\Factory $request_factory, Response\Factory $response_factory, Client\ClientInterface $http_client ) {
@@ -63,7 +63,7 @@ class Api {
 	/**
 	 * Executes a POST request using the provided command and client transaction ID
 	 *
-	 * @param Command\Command_Interface $command       The command to be executed.
+	 * @param Command\Command_Interface $command The command to be executed.
 	 * @param string                    $client_txn_id The client transaction ID to be included in the request.
 	 *
 	 * @return Response\Response_Interface The response object generated from the request's result.
