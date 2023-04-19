@@ -47,7 +47,7 @@ class Domain_Set_Contacts_Test extends Test\Lib\Domain_Services_Client_Test_Case
 						Command\Command_Interface::KEY_CONTACT_DISCLOSURE => Entity\Contact_Disclosure::NONE,
 					],
 				],
-				Command\Command_Interface::KEY_TRANSFERLOCK_OPT_OUT => true,
+				Command\Command_Interface::KEY_TRANSFERLOCK_OPT_OUT => false,
 			],
 			Command\Command_Interface::CLIENT_TXN_ID => 'client-transaction-info-for-dns-records-get-test-1',
 		];
