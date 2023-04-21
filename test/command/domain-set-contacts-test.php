@@ -54,7 +54,7 @@ class Domain_Set_Contacts_Test extends Test\Lib\Domain_Services_Client_Test_Case
 
 		$domain = new Entity\Domain_Name( $mock_command_data[ Command\Command_Interface::PARAMS ][ Command\Command_Interface::KEY_DOMAIN ] );
 		$contacts = Entity\Domain_Contacts::from_array( $mock_command_data[ Command\Command_Interface::PARAMS ][ Command\Command_Interface::KEY_CONTACTS ] );
-		$command = new Command\Domain\Set\Contacts( $domain, $contacts, false );
+		$command = new Command\Domain\Set\Contacts( $domain, $contacts, true );
 		$command->set_client_txn_id( $mock_command_data[ Command\Command_Interface::CLIENT_TXN_ID ] );
 
 		$this->assertInstanceOf( Command\Domain\Set\Contacts::class, $command );
