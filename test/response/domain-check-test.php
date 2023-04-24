@@ -41,14 +41,20 @@ class Domain_Check_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 					'test-domain-name-1.com' => [
 						'available' => true,
 						'fee_class' => 'standard',
+						'fee_amount' => 12.34,
+						'zone_is_active' => true,
 					],
 					'test-domain-name-2.com' => [
 						'available' => true,
 						'fee_class' => 'standard',
+						'fee_amount' => 12.34,
+						'zone_is_active' => true,
 					],
 					'test-domain-name-3.com' => [
 						'available' => false,
 						'fee_class' => 'standard',
+						'fee_amount' => 12.34,
+						'zone_is_active' => true,
 					],
 				],
 			],
