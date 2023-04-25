@@ -77,7 +77,7 @@ class Domain_Set_Contacts_Test extends Test\Lib\Domain_Services_Client_Test_Case
 						'contact_disclosure' => 'none',
 					],
 				],
-				'transfer_locked_until_date' => '2022-06-22 01:23:45',
+				'transferlocked_until_date' => '2022-06-22 01:23:45',
 				'unverified_contact_suspension_date' => '2022-05-07 01:23:45',
 			],
 		];
@@ -91,7 +91,7 @@ class Domain_Set_Contacts_Test extends Test\Lib\Domain_Services_Client_Test_Case
 		$this->assertIsValidResponse( $mock_response_data, $response_object );
 
 		$this->assertEquals( $mock_response_data['data']['contacts'], $response_object->get_contacts()->to_array() );
-		$this->assertEquals( $mock_response_data['data']['transfer_locked_until_date'], $response_object->get_transfer_locked_until_date() );
+		$this->assertEquals( $mock_response_data['data']['transferlocked_until_date'], $response_object->get_transferlocked_until_date() );
 		$this->assertEquals( $mock_response_data['data']['unverified_contact_suspension_date'], $response_object->get_unverified_contact_suspension_date() );
 	}
 }

@@ -179,8 +179,8 @@ class Info implements Response\Response_Interface {
 	 *
 	 * @return bool|null
 	 */
-	public function get_transfer_lock(): ?bool {
-		return $this->get_data_by_key( 'data.transfer_lock' );
+	public function get_transferlock(): ?bool {
+		return $this->get_data_by_key( 'data.transferlock' );
 	}
 
 	/**

@@ -35,7 +35,7 @@ attributes of the domain at the registry.
 * public [get_status()](#method_get_status)
 * public [get_status_description()](#method_get_status_description)
 * public [get_timestamp()](#method_get_timestamp)
-* public [get_transfer_lock()](#method_get_transfer_lock)
+* public [get_transferlock()](#method_get_transferlock)
 * public [get_transfer_mode()](#method_get_transfer_mode)
 * public [get_updated_date()](#method_get_updated_date)
 * public [is_success()](#method_is_success)
@@ -507,11 +507,11 @@ int
 
 ---
 
-<a id="method_get_transfer_lock"></a>
-### get_transfer_lock
+<a id="method_get_transferlock"></a>
+### get_transferlock
 
 ```
-public get_transfer_lock() : bool|null
+public get_transferlock() : bool|null
 ```
 
 ##### Summary

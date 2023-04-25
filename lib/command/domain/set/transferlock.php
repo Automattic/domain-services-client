@@ -53,17 +53,17 @@ class Transferlock implements Command\Command_Interface, Command\Command_Seriali
 	 *
 	 * @var bool
 	 */
-	private bool $transfer_lock;
+	private bool $transferlock;
 
 	/**
 	 * Constructs a `Domain\Set\Transferlock` command
 	 *
 	 * @param Entity\Domain_Name $domain
-	 * @param bool               $transfer_lock
+	 * @param bool               $transferlock
 	 */
-	public function __construct( Entity\Domain_Name $domain, bool $transfer_lock ) {
+	public function __construct( Entity\Domain_Name $domain, bool $transferlock ) {
 		$this->domain = $domain;
-		$this->transfer_lock = $transfer_lock;
+		$this->transferlock = $transferlock;
 	}
 
 	/**
@@ -80,8 +80,8 @@ class Transferlock implements Command\Command_Interface, Command\Command_Seriali
 	 *
 	 * @return bool
 	 */
-	private function get_transfer_lock(): bool {
-		return $this->transfer_lock;
+	private function get_transferlock(): bool {
+		return $this->transferlock;
 	}
 
 	/**
@@ -94,7 +94,7 @@ class Transferlock implements Command\Command_Interface, Command\Command_Seriali
 	public function to_array(): array {
 		return [
 			Command\Command_Interface::KEY_DOMAIN => $this->get_domain()->get_name(),
-			Command\Command_Interface::KEY_TRANSFERLOCK => $this->get_transfer_lock(),
+			Command\Command_Interface::KEY_TRANSFERLOCK => $this->get_transferlock(),
 		];
 	}
 }

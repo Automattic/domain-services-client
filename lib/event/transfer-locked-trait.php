@@ -21,17 +21,17 @@ namespace Automattic\Domain_Services_Client\Event;
 use Automattic\Domain_Services_Client\{Helper};
 
 /**
- * Trait that adds the `get_transfer_locked_until_date` method to an event
+ * Trait that adds the `get_transferlocked_until_date` method to an event
  */
-trait Transfer_Locked_Trait {
+trait TransferLocked_Trait {
 	/**
 	 * Gets the date until when the domain is transfer locked
 	 *
 	 * @return \DateTimeInterface|null
 	 */
-	public function get_transfer_locked_until_date(): ?\DateTimeInterface {
-		$transfer_locked_until_date = $this->get_data_by_key( 'transfer_locked_until_date' );
+	public function get_transferlocked_until_date(): ?\DateTimeInterface {
+		$transferlocked_until_date = $this->get_data_by_key( 'transferlocked_until_date' );
 
-		return null === $transfer_locked_until_date ? null : Helper\Date_Time::createImmutable( $transfer_locked_until_date );
+		return null === $transferlocked_until_date ? null : Helper\Date_Time::createImmutable( $transferlocked_until_date );
 	}
 }

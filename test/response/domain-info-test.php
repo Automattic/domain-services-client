@@ -74,7 +74,7 @@ class Domain_Info_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 				'registrar_transfer_date' => NULL,
 				'renewal_mode' => 'DEFAULT',
 				'rgp_status' => 'addPeriod',
-				'transfer_lock' => true,
+				'transferlock' => true,
 				'transfer_mode' => 'DEFAULT',
 				'updated_date' => '2022-06-24 06:54:32',
 			],
@@ -98,7 +98,7 @@ class Domain_Info_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 		$this->assertEquals( $mock_response_data['data']['privacy_setting'], $response_object->get_privacy_setting()->get_setting() );
 		$this->assertEquals( $mock_response_data['data']['registrar_transfer_date'], $response_object->get_registrar_transfer_date() );
 		$this->assertEquals( $mock_response_data['data']['rgp_status'], $response_object->get_rgp_status() );
-		$this->assertEquals( $mock_response_data['data']['transfer_lock'], $response_object->get_transfer_lock() );
+		$this->assertEquals( $mock_response_data['data']['transferlock'], $response_object->get_transferlock() );
 		$this->assertEquals( $mock_response_data['data']['transfer_mode'], $response_object->get_transfer_mode() );
 		$this->assertEquals( $mock_response_data['data']['updated_date'], Helper\Date_Time::format( $response_object->get_updated_date() ) );
 	}

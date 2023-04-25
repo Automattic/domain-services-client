@@ -43,7 +43,7 @@ if ( $response->is_success() ) {
 ### __construct
 
 ```
-public __construct(\Automattic\Domain_Services_Client\Entity\Domain_Name  domain, bool  transfer_lock) : mixed
+public __construct(\Automattic\Domain_Services_Client\Entity\Domain_Name  domain, bool  transferlock) : mixed
 ```
 
 ##### Summary
@@ -55,7 +55,7 @@ Constructs a `Domain\Set\Transferlock` command
 | Name | Type | Default |
 |------|------|---------|
 | **$domain** | \Automattic\Domain_Services_Client\Entity\Domain_Name |  |
-| **$transfer_lock** | bool |  |
+| **$transferlock** | bool |  |
 
 ##### Returns:
 
