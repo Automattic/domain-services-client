@@ -46,8 +46,8 @@ class Contacts implements Response\Response_Interface {
 	 *
 	 * @return string|null
 	 */
-	public function get_transfer_locked_until_date(): ?string {
-		return $this->get_data_by_key( 'data.transfer_locked_until_date' );
+	public function get_transferlocked_until_date(): ?string {
+		return $this->get_data_by_key( 'data.transferlocked_until_date' );
 	}
 
 	/**

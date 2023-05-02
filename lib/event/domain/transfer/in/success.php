@@ -29,5 +29,5 @@ class Success implements Event\Event_Interface, Event\Async_Command_Related_Inte
 	use Event\Async_Command_Related_Trait;
 	use Event\Object_Type_Domain_Trait;
 	use Event\Transfer_Trait;
-	use Event\Transfer_Locked_Trait;
+	use Event\TransferLocked_Trait;
 }
