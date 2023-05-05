@@ -24,6 +24,7 @@ This event is generated when a domain transfer from another registrar to the res
 * public [get_request_date()](#method_get_request_date)
 * public [get_requesting_registrar()](#method_get_requesting_registrar)
 * public [get_transfer_status()](#method_get_transfer_status)
+* public [get_transferlocked_until_date()](#method_get_transferlocked_until_date)
 
 ---
 
@@ -37,6 +38,7 @@ This event is generated when a domain transfer from another registrar to the res
   * [\Automattic\Domain_Services_Client\Event\Async_Command_Related_Trait](../classes/Automattic-Domain-Services-Client-Event-Async-Command-Related-Trait.md)
   * [\Automattic\Domain_Services_Client\Event\Object_Type_Domain_Trait](../classes/Automattic-Domain-Services-Client-Event-Object-Type-Domain-Trait.md)
   * [\Automattic\Domain_Services_Client\Event\Transfer_Trait](../classes/Automattic-Domain-Services-Client-Event-Transfer-Trait.md)
+  * [\Automattic\Domain_Services_Client\Event\TransferLocked_Trait](../classes/Automattic-Domain-Services-Client-Event-TransferLocked-Trait.md)
 
 ---
 
@@ -247,4 +249,23 @@ Gets the status of the transfer.
 
 ```
 string|null
+```
+
+---
+
+<a id="method_get_transferlocked_until_date"></a>
+### get_transferlocked_until_date
+
+```
+public get_transferlocked_until_date() : \DateTimeInterface|null
+```
+
+##### Summary
+
+Gets the date until when the domain is transfer locked
+
+##### Returns:
+
+```
+\DateTimeInterface|null
 ```

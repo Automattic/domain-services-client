@@ -24,6 +24,7 @@ This event is sent when a register operation succeeds.
 * public [get_domain_status()](#method_get_domain_status)
 * public [get_expiration_date()](#method_get_expiration_date)
 * public [get_renewable_until()](#method_get_renewable_until)
+* public [get_transferlocked_until_date()](#method_get_transferlocked_until_date)
 * public [get_unverified_contact_suspension_date()](#method_get_unverified_contact_suspension_date)
 
 ---
@@ -37,6 +38,7 @@ This event is sent when a register operation succeeds.
 * Uses Traits:
   * [\Automattic\Domain_Services_Client\Event\Async_Command_Related_Trait](../classes/Automattic-Domain-Services-Client-Event-Async-Command-Related-Trait.md)
   * [\Automattic\Domain_Services_Client\Event\Object_Type_Domain_Trait](../classes/Automattic-Domain-Services-Client-Event-Object-Type-Domain-Trait.md)
+  * [\Automattic\Domain_Services_Client\Event\TransferLocked_Trait](../classes/Automattic-Domain-Services-Client-Event-TransferLocked-Trait.md)
 * See Also:
   * [\Automattic\Domain_Services_Client\Command\Domain\Register](../classes/Automattic-Domain-Services-Client-Command-Domain-Register.md)
 
@@ -267,6 +269,25 @@ Get the last date to renew the domain
 
 ```
 null|\DateTimeInterface
+```
+
+---
+
+<a id="method_get_transferlocked_until_date"></a>
+### get_transferlocked_until_date
+
+```
+public get_transferlocked_until_date() : \DateTimeInterface|null
+```
+
+##### Summary
+
+Gets the date until when the domain is transfer locked
+
+##### Returns:
+
+```
+\DateTimeInterface|null
 ```
 
 ---

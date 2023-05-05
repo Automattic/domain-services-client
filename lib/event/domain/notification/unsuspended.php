@@ -16,22 +16,29 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services_Client\Event;
+namespace Automattic\Domain_Services_Client\Event\Domain\Notification;
 
-use Automattic\Domain_Services_Client\{Entity};
+use Automattic\Domain_Services_Client\{Event};
 
 /**
- * Trait for objects that are associated with a contact.
- * This trait relies on the `get_object_id()` method to be defined in the class that uses it.
+ * Domain unsuspended event
+ *
+ * - This event is generated when a domain is unsuspended
+ * - This event contains an `info` property with information about the reason why the domain was unsuspended, if available
+ *     - It can be retrieved with the `get_info` method
+ *
+ * @see \Automattic\Domain_Services_Client\Event\Domain\Notification\Suspended
  */
-trait Object_Type_Contact_Trait {
+class Unsuspended implements Event\Event_Interface {
+	use Event\Data_Trait;
+	use Event\Object_Type_Domain_Trait;
+
 	/**
-	 * Returns the contact object.
+	 * Returns information about the reason the domain is unsuspended, if available.
 	 *
-	 * @return \Automattic\Domain_Services_Client\Entity\Contact_Id
-	 * @throws \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception
+	 * @return string|null
 	 */
-	final public function get_contact_id(): Entity\Contact_Id {
-		return new Entity\Contact_Id( $this->get_object_id() );
+	public function get_info(): ?string {
+		return $this->get_data_by_key( 'event_data.info' );
 	}
 }

@@ -18,6 +18,7 @@ Interface implemented by all commands
 * public [KEY_DOMAIN](#constant_KEY_DOMAIN)
 * public [KEY_DOMAINS](#constant_KEY_DOMAINS)
 * public [KEY_EVENT_ID](#constant_KEY_EVENT_ID)
+* public [KEY_EXACT_MATCH](#constant_KEY_EXACT_MATCH)
 * public [KEY_FEE_AMOUNT](#constant_KEY_FEE_AMOUNT)
 * public [KEY_LIMIT](#constant_KEY_LIMIT)
 * public [KEY_NAMESERVERS](#constant_KEY_NAMESERVERS)
@@ -27,7 +28,9 @@ Interface implemented by all commands
 * public [KEY_QUERY](#constant_KEY_QUERY)
 * public [KEY_RECORD_SETS](#constant_KEY_RECORD_SETS)
 * public [KEY_RECORDS](#constant_KEY_RECORDS)
+* public [KEY_TLDS](#constant_KEY_TLDS)
 * public [KEY_TRANSFERLOCK](#constant_KEY_TRANSFERLOCK)
+* public [KEY_TRANSFERLOCK_OPT_OUT](#constant_KEY_TRANSFERLOCK_OPT_OUT)
 
 ---
 
@@ -117,6 +120,13 @@ KEY_EVENT_ID = 'event_id'
 ```
 
 
+<a id="constant_KEY_EXACT_MATCH"></a>
+###### KEY_EXACT_MATCH
+```
+KEY_EXACT_MATCH = 'exact_match'
+```
+
+
 <a id="constant_KEY_FEE_AMOUNT"></a>
 ###### KEY_FEE_AMOUNT
 ```
@@ -180,10 +190,24 @@ KEY_RECORDS = 'dns_records'
 ```
 
 
+<a id="constant_KEY_TLDS"></a>
+###### KEY_TLDS
+```
+KEY_TLDS = 'tlds'
+```
+
+
 <a id="constant_KEY_TRANSFERLOCK"></a>
 ###### KEY_TRANSFERLOCK
 ```
 KEY_TRANSFERLOCK = 'transferlock'
+```
+
+
+<a id="constant_KEY_TRANSFERLOCK_OPT_OUT"></a>
+###### KEY_TRANSFERLOCK_OPT_OUT
+```
+KEY_TRANSFERLOCK_OPT_OUT = 'transferlock_opt_out'
 ```
 
 

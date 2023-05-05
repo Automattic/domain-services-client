@@ -1,12 +1,15 @@
-# Class: [\Automattic](../namespaces/automattic.md)[\Domain_Services_Client](../namespaces/automattic-domain-services-client.md)[\Event](../namespaces/automattic-domain-services-client-event.md)[\Contact](../namespaces/automattic-domain-services-client-event-contact.md)[\Verification](../namespaces/automattic-domain-services-client-event-contact-verification.md)\Request
+# Class: [\Automattic](../namespaces/automattic.md)[\Domain_Services_Client](../namespaces/automattic-domain-services-client.md)[\Event](../namespaces/automattic-domain-services-client-event.md)[\Domain](../namespaces/automattic-domain-services-client-event-domain.md)[\Notification](../namespaces/automattic-domain-services-client-event-domain-notification.md)\Verification_Success
 
 ## Summary:
 
-Verification request event
+Domain verified event
 
 ## Description:
 
-This event indicates that a verification request was sent to the contact's email address.
+- This event is generated when a domain is verified
+- A domain is usually verified when its contact info email is verified
+- This event contains an `info` property with information about the reason why the domain was verified, if available
+    - It can be retrieved with the `get_info` method
 
 
 ---
@@ -15,13 +18,13 @@ This event indicates that a verification request was sent to the contact's email
 
 * public [__construct()](#method___construct)
 * public [get_acknowledged_date()](#method_get_acknowledged_date)
-* public [get_contact_id()](#method_get_contact_id)
 * public [get_data_by_key()](#method_get_data_by_key)
-* public [get_email()](#method_get_email)
+* public [get_domain()](#method_get_domain)
 * public [get_event_class()](#method_get_event_class)
 * public [get_event_date()](#method_get_event_date)
 * public [get_event_subclass()](#method_get_event_subclass)
 * public [get_id()](#method_get_id)
+* public [get_info()](#method_get_info)
 * public [get_object_id()](#method_get_object_id)
 * public [get_object_type()](#method_get_object_type)
 
@@ -29,12 +32,14 @@ This event indicates that a verification request was sent to the contact's email
 
 ### Details
 
-* File: [lib/event/contact/verification/request.php](../../lib/event/contact/verification/request.php)
+* File: [lib/event/domain/notification/verification-success.php](../../lib/event/domain/notification/verification-success.php)
 * Implements:
   * [\Automattic\Domain_Services_Client\Event\Event_Interface](../classes/Automattic-Domain-Services-Client-Event-Event-Interface.md)
 * Uses Traits:
   * [\Automattic\Domain_Services_Client\Event\Data_Trait](../classes/Automattic-Domain-Services-Client-Event-Data-Trait.md)
-  * [\Automattic\Domain_Services_Client\Event\Object_Type_Contact_Trait](../classes/Automattic-Domain-Services-Client-Event-Object-Type-Contact-Trait.md)
+  * [\Automattic\Domain_Services_Client\Event\Object_Type_Domain_Trait](../classes/Automattic-Domain-Services-Client-Event-Object-Type-Domain-Trait.md)
+* See Also:
+  * [\Automattic\Domain_Services_Client\Event\Domain\Notification\Suspended](../classes/Automattic-Domain-Services-Client-Event-Domain-Notification-Suspended.md)
 
 ---
 
@@ -84,31 +89,6 @@ Gets the date this event was acknowledged.
 
 ---
 
-<a id="method_get_contact_id"></a>
-### get_contact_id
-
-```
-final public get_contact_id() : \Automattic\Domain_Services_Client\Entity\Contact_Id
-```
-
-##### Summary
-
-Returns the contact object.
-
-##### Throws:
-
-| Type | Description |
-|------|-------------|
-| \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception |  |
-
-##### Returns:
-
-```
-\Automattic\Domain_Services_Client\Entity\Contact_Id
-```
-
----
-
 <a id="method_get_data_by_key"></a>
 ### get_data_by_key
 
@@ -134,21 +114,21 @@ mixed
 
 ---
 
-<a id="method_get_email"></a>
-### get_email
+<a id="method_get_domain"></a>
+### get_domain
 
 ```
-public get_email() : string|null
+final public get_domain() : \Automattic\Domain_Services_Client\Entity\Domain_Name
 ```
 
 ##### Summary
 
-Returns the email address that the verification request was sent to
+Returns the domain name object.
 
 ##### Returns:
 
 ```
-string|null
+\Automattic\Domain_Services_Client\Entity\Domain_Name
 ```
 
 ---
@@ -225,6 +205,25 @@ Gets the event ID
 
 ```
 int
+```
+
+---
+
+<a id="method_get_info"></a>
+### get_info
+
+```
+public get_info() : string|null
+```
+
+##### Summary
+
+Returns information about the reason the domain is verified, if available.
+
+##### Returns:
+
+```
+string|null
 ```
 
 ---

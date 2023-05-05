@@ -39,7 +39,8 @@ Domain suspended event
   * [\Automattic\Domain_Services_Client\Event\Data_Trait](../classes/Automattic-Domain-Services-Client-Event-Data-Trait.md)
   * [\Automattic\Domain_Services_Client\Event\Object_Type_Domain_Trait](../classes/Automattic-Domain-Services-Client-Event-Object-Type-Domain-Trait.md)
 * See Also:
-  * [\Automattic\Domain_Services_Client\Event\Domain\Notification\Verified](../classes/Automattic-Domain-Services-Client-Event-Domain-Notification-Verified.md)
+  * [\Automattic\Domain_Services_Client\Event\Domain\Notification\Unsupended](../classes/Automattic-Domain-Services-Client-Event-Domain-Notification-Unsuspended.md)
+  * [\Automattic\Domain_Services_Client\Event\Domain\Notification\Verification_Success](../classes/Automattic-Domain-Services-Client-Event-Domain-Notification-Verification-Success.md)
 
 ---
 

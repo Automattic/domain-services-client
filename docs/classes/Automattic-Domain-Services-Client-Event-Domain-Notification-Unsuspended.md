@@ -1,14 +1,13 @@
-# Class: [\Automattic](../namespaces/automattic.md)[\Domain_Services_Client](../namespaces/automattic-domain-services-client.md)[\Event](../namespaces/automattic-domain-services-client-event.md)[\Domain](../namespaces/automattic-domain-services-client-event-domain.md)[\Notification](../namespaces/automattic-domain-services-client-event-domain-notification.md)\Verified
+# Class: [\Automattic](../namespaces/automattic.md)[\Domain_Services_Client](../namespaces/automattic-domain-services-client.md)[\Event](../namespaces/automattic-domain-services-client-event.md)[\Domain](../namespaces/automattic-domain-services-client-event-domain.md)[\Notification](../namespaces/automattic-domain-services-client-event-domain-notification.md)\Unsuspended
 
 ## Summary:
 
-Domain verified event
+Domain unsuspended event
 
 ## Description:
 
-- This event is generated when a domain is verified
-- A domain is usually verified when its contact info email is verified
-- This event contains an `info` property with information about the reason why the domain was verified, if available
+- This event is generated when a domain is unsuspended
+- This event contains an `info` property with information about the reason why the domain was unsuspended, if available
     - It can be retrieved with the `get_info` method
 
 
@@ -32,7 +31,7 @@ Domain verified event
 
 ### Details
 
-* File: [lib/event/domain/notification/verified.php](../../lib/event/domain/notification/verified.php)
+* File: [lib/event/domain/notification/unsuspended.php](../../lib/event/domain/notification/unsuspended.php)
 * Implements:
   * [\Automattic\Domain_Services_Client\Event\Event_Interface](../classes/Automattic-Domain-Services-Client-Event-Event-Interface.md)
 * Uses Traits:
@@ -218,7 +217,7 @@ public get_info() : string|null
 
 ##### Summary
 
-Returns information about the reason the domain is verified, if available.
+Returns information about the reason the domain is unsuspended, if available.
 
 ##### Returns:
 

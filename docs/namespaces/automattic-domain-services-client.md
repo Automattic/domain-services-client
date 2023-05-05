@@ -6,6 +6,7 @@
 * [\Automattic\Domain_Services_Client\Entity](../namespaces/automattic-domain-services-client-entity.md)
 * [\Automattic\Domain_Services_Client\Event](../namespaces/automattic-domain-services-client-event.md)
 * [\Automattic\Domain_Services_Client\Exception](../namespaces/automattic-domain-services-client-exception.md)
+* [\Automattic\Domain_Services_Client\Request](../namespaces/automattic-domain-services-client-request.md)
 * [\Automattic\Domain_Services_Client\Response](../namespaces/automattic-domain-services-client-response.md)
 
 ### Classes

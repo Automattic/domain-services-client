@@ -23,23 +23,22 @@ use Automattic\Domain_Services_Client\{Event};
 /**
  * Domain verified event
  *
- * - This event is generated when a domain is verified
- * - A domain is usually verified when its contact info email is verified
- * - This event contains an `info` property with information about the reason why the domain was verified, if available
- *     - It can be retrieved with the `get_info` method
+ * - This event is generated when a verification is requested for the domain's contact owner
+ * - This event contains the email linked to the domain.
+ *     - It can be retrieved with the `get_email` method
  *
- * @see \Automattic\Domain_Services_Client\Event\Domain\Notification\Suspended
+ * @see \Automattic\Domain_Services_Client\Event\Domain\Notification\Verification_Success
  */
-class Verified implements Event\Event_Interface {
+class Verification_Request implements Event\Event_Interface {
 	use Event\Data_Trait;
 	use Event\Object_Type_Domain_Trait;
 
 	/**
-	 * Returns information about the reason the domain is verified, if available.
+	 * Returns the email linked to the domain
 	 *
-	 * @return string|null
+	 * @return string
 	 */
-	public function get_info(): ?string {
-		return $this->get_data_by_key( 'event_data.info' );
+	public function get_email(): string {
+		return $this->get_data_by_key( 'event_data.email' );
 	}
 }

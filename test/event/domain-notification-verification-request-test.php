@@ -20,7 +20,7 @@ namespace Automattic\Domain_Services_Client\Test\Event;
 
 use Automattic\Domain_Services_Client\{Command, Event, Response, Test};
 
-class Contact_Verification_Notify_Test extends Test\Lib\Domain_Services_Client_Test_Case {
+class Domain_Notification_Verification_Request_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_event_success(): void {
 		$command = new Command\Event\Details( 1234 );
 
@@ -35,15 +35,14 @@ class Contact_Verification_Notify_Test extends Test\Lib\Domain_Services_Client_T
 			'data' => [
 				'event' => [
 					'id' => 1234,
-					'event_class' => 'Contact\Verification',
-					'event_subclass' => 'Notify',
-					'object_type' => 'contact',
-					'object_id' => 'SP1:P-ABC1234',
+					'event_class' => 'Domain\Notification',
+					'event_subclass' => 'Verification_Request',
+					'object_type' => 'domain',
+					'object_id' => 'test-domain.com',
 					'event_date' => '2022-01-23 12:34:56',
 					'acknowledged_date' => null,
 					'event_data' => [
-						'verified' => true,
-						'associated_domain' => 'example.com',
+						'email' => 'registrant@example.com',
 					],
 				],
 			],
@@ -57,10 +56,9 @@ class Contact_Verification_Notify_Test extends Test\Lib\Domain_Services_Client_T
 		$event = $response_object->get_event();
 		$this->assertNotNull( $event );
 
-		$this->assertInstanceOf( Event\Contact\Verification\Notify::class, $event );
+		$this->assertInstanceOf( Event\Domain\Notification\Verification_Request::class, $event );
 		$this->assertIsValidEvent( $response_data['data']['event'], $event );
-		$this->assertSame( $response_data['data']['event']['event_data']['verified'], $event->is_verified() );
-		$this->assertSame( $response_data['data']['event']['event_data']['associated_domain'], $event->get_associated_domain() );
-		$this->assertSame( $response_data['data']['event']['object_id'], (string) $event->get_contact_id() );
+		$this->assertSame( $response_data['data']['event']['event_data']['email'], $event->get_email() );
+		$this->assertSame( $response_data['data']['event']['object_id'], (string) $event->get_object_id() );
 	}
 }

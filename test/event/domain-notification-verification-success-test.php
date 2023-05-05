@@ -20,7 +20,7 @@ namespace Automattic\Domain_Services_Client\Test\Event;
 
 use Automattic\Domain_Services_Client\{Command, Event, Response, Test};
 
-class Domain_Notification_Verified_Test extends Test\Lib\Domain_Services_Client_Test_Case {
+class Domain_Notification_Verification_Success_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_event_success(): void {
 		$command = new Command\Event\Details( 1234 );
 
@@ -36,14 +36,12 @@ class Domain_Notification_Verified_Test extends Test\Lib\Domain_Services_Client_
 				'event' => [
 					'id' => 1234,
 					'event_class' => 'Domain\Notification',
-					'event_subclass' => 'Verified',
-					'object_type' => 'domain',
-					'object_id' => 'example.com',
+					'event_subclass' => 'Verification_Success',
+					'object_type' => 'domaiun',
+					'object_id' => 'test-domain.com',
 					'event_date' => '2022-01-23 12:34:56',
 					'acknowledged_date' => null,
-					'event_data' => [
-						'info' => 'The owner email: registrant@example.com of the domain has been verified and the domain is reactivated again',
-					],
+					'event_data' => [],
 				],
 			],
 		];
@@ -56,8 +54,8 @@ class Domain_Notification_Verified_Test extends Test\Lib\Domain_Services_Client_
 		$event = $response_object->get_event();
 		$this->assertNotNull( $event );
 
-		$this->assertInstanceOf( Event\Domain\Notification\Verified::class, $event );
+		$this->assertInstanceOf( Event\Domain\Notification\Verification_Success::class, $event );
 		$this->assertIsValidEvent( $response_data['data']['event'], $event );
-		$this->assertSame( $response_data['data']['event']['event_data']['info'], $event->get_info() );
+		$this->assertSame( $response_data['data']['event']['object_id'], (string) $event->get_object_id() );
 	}
 }

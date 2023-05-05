@@ -19,3 +19,4 @@
 | Name | Summary |
 |------|---------|
 | [\Automattic\Domain_Services_Client\Response\Code](../classes/Automattic-Domain-Services-Client-Response-Code.md) | Represents status codes and descriptions from the DSAPI command&#039;s responses |
+| [\Automattic\Domain_Services_Client\Response\Factory](../classes/Automattic-Domain-Services-Client-Response-Factory.md) | Factory for creating response objects. |

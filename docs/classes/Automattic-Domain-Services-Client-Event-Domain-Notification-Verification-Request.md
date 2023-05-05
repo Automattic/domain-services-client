@@ -1,12 +1,14 @@
-# Class: [\Automattic](../namespaces/automattic.md)[\Domain_Services_Client](../namespaces/automattic-domain-services-client.md)[\Event](../namespaces/automattic-domain-services-client-event.md)[\Contact](../namespaces/automattic-domain-services-client-event-contact.md)[\Verification](../namespaces/automattic-domain-services-client-event-contact-verification.md)\Notify
+# Class: [\Automattic](../namespaces/automattic.md)[\Domain_Services_Client](../namespaces/automattic-domain-services-client.md)[\Event](../namespaces/automattic-domain-services-client-event.md)[\Domain](../namespaces/automattic-domain-services-client-event-domain.md)[\Notification](../namespaces/automattic-domain-services-client-event-domain-notification.md)\Verification_Request
 
 ## Summary:
 
-Verification notify event
+Domain verified event
 
 ## Description:
 
-This event indicates a change in the contact's status. It's usually generated when a contact is marked as verified.
+- This event is generated when a verification is requested for the domain's contact owner
+- This event contains the email linked to the domain.
+    - It can be retrieved with the `get_email` method
 
 
 ---
@@ -15,27 +17,28 @@ This event indicates a change in the contact's status. It's usually generated wh
 
 * public [__construct()](#method___construct)
 * public [get_acknowledged_date()](#method_get_acknowledged_date)
-* public [get_associated_domain()](#method_get_associated_domain)
-* public [get_contact_id()](#method_get_contact_id)
 * public [get_data_by_key()](#method_get_data_by_key)
+* public [get_domain()](#method_get_domain)
+* public [get_email()](#method_get_email)
 * public [get_event_class()](#method_get_event_class)
 * public [get_event_date()](#method_get_event_date)
 * public [get_event_subclass()](#method_get_event_subclass)
 * public [get_id()](#method_get_id)
 * public [get_object_id()](#method_get_object_id)
 * public [get_object_type()](#method_get_object_type)
-* public [is_verified()](#method_is_verified)
 
 ---
 
 ### Details
 
-* File: [lib/event/contact/verification/notify.php](../../lib/event/contact/verification/notify.php)
+* File: [lib/event/domain/notification/verification-request.php](../../lib/event/domain/notification/verification-request.php)
 * Implements:
   * [\Automattic\Domain_Services_Client\Event\Event_Interface](../classes/Automattic-Domain-Services-Client-Event-Event-Interface.md)
 * Uses Traits:
   * [\Automattic\Domain_Services_Client\Event\Data_Trait](../classes/Automattic-Domain-Services-Client-Event-Data-Trait.md)
-  * [\Automattic\Domain_Services_Client\Event\Object_Type_Contact_Trait](../classes/Automattic-Domain-Services-Client-Event-Object-Type-Contact-Trait.md)
+  * [\Automattic\Domain_Services_Client\Event\Object_Type_Domain_Trait](../classes/Automattic-Domain-Services-Client-Event-Object-Type-Domain-Trait.md)
+* See Also:
+  * [\Automattic\Domain_Services_Client\Event\Domain\Notification\Verification_Success](../classes/Automattic-Domain-Services-Client-Event-Domain-Notification-Verification-Success.md)
 
 ---
 
@@ -85,50 +88,6 @@ Gets the date this event was acknowledged.
 
 ---
 
-<a id="method_get_associated_domain"></a>
-### get_associated_domain
-
-```
-public get_associated_domain() : string
-```
-
-##### Summary
-
-Returns the domain associated with the event&#039;s contact handle
-
-##### Returns:
-
-```
-string
-```
-
----
-
-<a id="method_get_contact_id"></a>
-### get_contact_id
-
-```
-final public get_contact_id() : \Automattic\Domain_Services_Client\Entity\Contact_Id
-```
-
-##### Summary
-
-Returns the contact object.
-
-##### Throws:
-
-| Type | Description |
-|------|-------------|
-| \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception |  |
-
-##### Returns:
-
-```
-\Automattic\Domain_Services_Client\Entity\Contact_Id
-```
-
----
-
 <a id="method_get_data_by_key"></a>
 ### get_data_by_key
 
@@ -150,6 +109,44 @@ Gets the value of the event data specified by the given key.
 
 ```
 mixed
+```
+
+---
+
+<a id="method_get_domain"></a>
+### get_domain
+
+```
+final public get_domain() : \Automattic\Domain_Services_Client\Entity\Domain_Name
+```
+
+##### Summary
+
+Returns the domain name object.
+
+##### Returns:
+
+```
+\Automattic\Domain_Services_Client\Entity\Domain_Name
+```
+
+---
+
+<a id="method_get_email"></a>
+### get_email
+
+```
+public get_email() : string
+```
+
+##### Summary
+
+Returns the email linked to the domain
+
+##### Returns:
+
+```
+string
 ```
 
 ---
@@ -269,23 +266,4 @@ Gets the type of object that this event references (ex. &#039;domain&#039; or &#
 
 ```
 string
-```
-
----
-
-<a id="method_is_verified"></a>
-### is_verified
-
-```
-public is_verified() : bool
-```
-
-##### Summary
-
-Returns tha verification status of the contact
-
-##### Returns:
-
-```
-bool
 ```
