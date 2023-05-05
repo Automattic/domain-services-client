@@ -28,7 +28,8 @@ use Automattic\Domain_Services_Client\{Event};
  * - This event contains an `info` property with information about the reason why the domain was suspended, if available
  *     - It can be retrieved with the `get_info` method
  *
- * @see \Automattic\Domain_Services_Client\Event\Domain\Notification\Verified
+ * @see \Automattic\Domain_Services_Client\Event\Domain\Notification\Unsupended
+ * @see \Automattic\Domain_Services_Client\Event\Domain\Notification\Verification_Success
  */
 class Suspended implements Event\Event_Interface {
 	use Event\Data_Trait;

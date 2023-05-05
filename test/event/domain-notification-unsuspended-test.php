@@ -20,7 +20,7 @@ namespace Automattic\Domain_Services_Client\Test\Event;
 
 use Automattic\Domain_Services_Client\{Command, Event, Response, Test};
 
-class Contact_Verification_Request_Test extends Test\Lib\Domain_Services_Client_Test_Case {
+class Domain_Notification_Unsuspended_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_event_success(): void {
 		$command = new Command\Event\Details( 1234 );
 
@@ -35,16 +35,14 @@ class Contact_Verification_Request_Test extends Test\Lib\Domain_Services_Client_
 			'data' => [
 				'event' => [
 					'id' => 1234,
-					'event_class' => 'Contact\Verification',
-					'event_subclass' => 'Request',
-					'object_type' => 'contact',
-					'object_id' => 'SP1:P-ABC1234',
+					'event_class' => 'Domain\Notification',
+					'event_subclass' => 'Unsuspended',
+					'object_type' => 'domain',
+					'object_id' => 'example.com',
 					'event_date' => '2022-01-23 12:34:56',
 					'acknowledged_date' => null,
 					'event_data' => [
-						'email' => 'registrant@example.com',
-						'verification_code' => 'qwerty12345',
-						'associated_domain' => 'example.com',
+						'info' => 'The owner email: registrant@example.comof the domain has been verified and the domain is reactivated again',
 					],
 				],
 			],
@@ -58,10 +56,8 @@ class Contact_Verification_Request_Test extends Test\Lib\Domain_Services_Client_
 		$event = $response_object->get_event();
 		$this->assertNotNull( $event );
 
-		$this->assertInstanceOf( Event\Contact\Verification\Request::class, $event );
+		$this->assertInstanceOf( Event\Domain\Notification\Unsuspended::class, $event );
 		$this->assertIsValidEvent( $response_data['data']['event'], $event );
-		$this->assertSame( $response_data['data']['event']['event_data']['email'], $event->get_email() );
-		$this->assertSame( $response_data['data']['event']['event_data']['associated_domain'], $event->get_associated_domain() );
-		$this->assertSame( $response_data['data']['event']['object_id'], (string) $event->get_contact_id() );
+		$this->assertSame( $response_data['data']['event']['event_data']['info'], $event->get_info() );
 	}
 }

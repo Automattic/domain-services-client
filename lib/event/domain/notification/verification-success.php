@@ -16,34 +16,30 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services_Client\Event\Contact\Verification;
+namespace Automattic\Domain_Services_Client\Event\Domain\Notification;
 
 use Automattic\Domain_Services_Client\{Event};
 
 /**
- * Verification notify event
+ * Domain verified event
  *
- * This event indicates a change in the contact's status. It's usually generated when a contact is marked as verified.
+ * - This event is generated when a domain is verified
+ * - A domain is usually verified when its contact info email is verified
+ * - This event contains an `info` property with information about the reason why the domain was verified, if available
+ *     - It can be retrieved with the `get_info` method
+ *
+ * @see \Automattic\Domain_Services_Client\Event\Domain\Notification\Suspended
  */
-class Notify implements Event\Event_Interface {
+class Verification_Success implements Event\Event_Interface {
 	use Event\Data_Trait;
-	use Event\Object_Type_Contact_Trait;
+	use Event\Object_Type_Domain_Trait;
 
 	/**
-	 * Returns tha verification status of the contact
+	 * Returns information about the reason the domain is verified, if available.
 	 *
-	 * @return bool
+	 * @return string|null
 	 */
-	public function is_verified(): bool {
-		return $this->get_data_by_key( 'event_data.verified' ) ?? false;
-	}
-
-	/**
-	 * Returns the domain associated with the event's contact handle
-	 *
-	 * @return string
-	 */
-	public function get_associated_domain(): string {
-		return $this->get_data_by_key( 'event_data.associated_domain' ) ?? '';
+	public function get_info(): ?string {
+		return $this->get_data_by_key( 'event_data.info' );
 	}
 }
