@@ -11,6 +11,7 @@ Updates domain contacts
 - For each contact type, either a contact ID or the full contact information can be provided.
 - If contact information is provided, a new contact will be created and the contact ID will be returned.
 - A domain has four contact types: owner, admin, tech and billing
+- The `transferlock_opt_out` property determines whether the domain's 60 days transfer lock will be opted out when the command updates the contact information. By default, it's set to false: a 60 days transfer lock will be set, which prevents transfers until the end of the lock period - specific to the TLD of the domain. When true, no lock will be set.
 
 ## Example:
 ```
@@ -35,6 +36,7 @@ if ( $response->is_success() ) {
 ### Methods
 
 * public [__construct()](#method___construct)
+* public [get_transferlock_opt_out()](#method_get_transferlock_opt_out)
 
 ---
 
@@ -58,7 +60,7 @@ if ( $response->is_success() ) {
 ### __construct
 
 ```
-public __construct(\Automattic\Domain_Services_Client\Entity\Domain_Name  domain, \Automattic\Domain_Services_Client\Entity\Domain_Contacts  contacts) : mixed
+public __construct(\Automattic\Domain_Services_Client\Entity\Domain_Name  domain, \Automattic\Domain_Services_Client\Entity\Domain_Contacts  contacts, bool  transferlock_opt_out = false) : mixed
 ```
 
 ##### Summary
@@ -71,6 +73,7 @@ Constructs a `Domain\Set\Contacts` command
 |------|------|---------|
 | **$domain** | \Automattic\Domain_Services_Client\Entity\Domain_Name |  |
 | **$contacts** | \Automattic\Domain_Services_Client\Entity\Domain_Contacts |  |
+| **$transferlock_opt_out** | bool | false |
 
 ##### Throws:
 
@@ -82,4 +85,23 @@ Constructs a `Domain\Set\Contacts` command
 
 ```
 mixed
+```
+
+---
+
+<a id="method_get_transferlock_opt_out"></a>
+### get_transferlock_opt_out
+
+```
+public get_transferlock_opt_out() : bool
+```
+
+##### Summary
+
+Gets whether this command should opt out of the transfer lock when updating the contact information.
+
+##### Returns:
+
+```
+bool
 ```

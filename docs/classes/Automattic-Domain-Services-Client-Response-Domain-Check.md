@@ -122,6 +122,8 @@ Gets the availability and pricing information for a list of domain from the resp
     &#039;domain_name&#039; =&gt; [
         &#039;available&#039; =&gt; bool,
         &#039;fee_class&#039; =&gt; &#039;standard&#039;,
+        &#039;fee_amount&#039; =&gt; 12.34,
+        &#039;zone_is_active&#039; =&gt; true,
     ],
 ]
 ```

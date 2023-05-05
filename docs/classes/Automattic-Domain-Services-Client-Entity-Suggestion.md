@@ -17,6 +17,7 @@ Used in the `Domain\Suggestions` response.
 * public [get_domain_name()](#method_get_domain_name)
 * public [get_reseller_register_fee()](#method_get_reseller_register_fee)
 * public [get_reseller_renewal_fee()](#method_get_reseller_renewal_fee)
+* public [is_available()](#method_is_available)
 * public [is_premium()](#method_is_premium)
 
 ---
@@ -35,7 +36,7 @@ Used in the `Domain\Suggestions` response.
 ### __construct
 
 ```
-public __construct(\Automattic\Domain_Services_Client\Entity\Domain_Name  domain_name, int  reseller_create_fee, int  reseller_renewal_fee, bool  is_premium = false) : mixed
+public __construct(\Automattic\Domain_Services_Client\Entity\Domain_Name  domain_name, int  reseller_create_fee, int  reseller_renewal_fee, bool  is_premium = false, bool  is_available = true) : mixed
 ```
 
 ##### Summary
@@ -50,6 +51,7 @@ Constructs a `Suggestion` entity
 | **$reseller_create_fee** | int | 0 |
 | **$reseller_renewal_fee** | int | 0 |
 | **$is_premium** | bool | false |
+| **$is_available** | bool | true |
 
 ##### Returns:
 
@@ -112,6 +114,25 @@ Returns the reseller fee to renew this domain
 
 ```
 int
+```
+
+---
+
+<a id="method_is_available"></a>
+### is_available
+
+```
+public is_available() : bool
+```
+
+##### Summary
+
+Returns whether the domain suggestion is available
+
+##### Returns:
+
+```
+bool
 ```
 
 ---

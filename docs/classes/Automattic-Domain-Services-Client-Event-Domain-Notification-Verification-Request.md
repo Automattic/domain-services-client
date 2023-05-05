@@ -1,15 +1,14 @@
-# Class: [\Automattic](../namespaces/automattic.md)[\Domain_Services_Client](../namespaces/automattic-domain-services-client.md)[\Event](../namespaces/automattic-domain-services-client-event.md)[\Domain](../namespaces/automattic-domain-services-client-event-domain.md)[\Notification](../namespaces/automattic-domain-services-client-event-domain-notification.md)\Suspended
+# Class: [\Automattic](../namespaces/automattic.md)[\Domain_Services_Client](../namespaces/automattic-domain-services-client.md)[\Event](../namespaces/automattic-domain-services-client-event.md)[\Domain](../namespaces/automattic-domain-services-client-event-domain.md)[\Notification](../namespaces/automattic-domain-services-client-event-domain-notification.md)\Verification_Request
 
 ## Summary:
 
-Domain suspended event
+Domain verified event
 
 ## Description:
 
-- This event is generated when a domain is suspended
-- One frequent cause for suspension is the contact info email not being verified some time after registration
-- This event contains an `info` property with information about the reason why the domain was suspended, if available
-    - It can be retrieved with the `get_info` method
+- This event is generated when a verification is requested for the domain's contact owner
+- This event contains the email linked to the domain.
+    - It can be retrieved with the `get_email` method
 
 
 ---
@@ -20,11 +19,11 @@ Domain suspended event
 * public [get_acknowledged_date()](#method_get_acknowledged_date)
 * public [get_data_by_key()](#method_get_data_by_key)
 * public [get_domain()](#method_get_domain)
+* public [get_email()](#method_get_email)
 * public [get_event_class()](#method_get_event_class)
 * public [get_event_date()](#method_get_event_date)
 * public [get_event_subclass()](#method_get_event_subclass)
 * public [get_id()](#method_get_id)
-* public [get_info()](#method_get_info)
 * public [get_object_id()](#method_get_object_id)
 * public [get_object_type()](#method_get_object_type)
 
@@ -32,14 +31,13 @@ Domain suspended event
 
 ### Details
 
-* File: [lib/event/domain/notification/suspended.php](../../lib/event/domain/notification/suspended.php)
+* File: [lib/event/domain/notification/verification-request.php](../../lib/event/domain/notification/verification-request.php)
 * Implements:
   * [\Automattic\Domain_Services_Client\Event\Event_Interface](../classes/Automattic-Domain-Services-Client-Event-Event-Interface.md)
 * Uses Traits:
   * [\Automattic\Domain_Services_Client\Event\Data_Trait](../classes/Automattic-Domain-Services-Client-Event-Data-Trait.md)
   * [\Automattic\Domain_Services_Client\Event\Object_Type_Domain_Trait](../classes/Automattic-Domain-Services-Client-Event-Object-Type-Domain-Trait.md)
 * See Also:
-  * [\Automattic\Domain_Services_Client\Event\Domain\Notification\Unsupended](../\Automattic\Domain_Services_Client\Event\Domain\Notification\Unsupended)
   * [\Automattic\Domain_Services_Client\Event\Domain\Notification\Verification_Success](../classes/Automattic-Domain-Services-Client-Event-Domain-Notification-Verification-Success.md)
 
 ---
@@ -134,6 +132,25 @@ Returns the domain name object.
 
 ---
 
+<a id="method_get_email"></a>
+### get_email
+
+```
+public get_email() : string
+```
+
+##### Summary
+
+Returns the email linked to the domain
+
+##### Returns:
+
+```
+string
+```
+
+---
+
 <a id="method_get_event_class"></a>
 ### get_event_class
 
@@ -206,25 +223,6 @@ Gets the event ID
 
 ```
 int
-```
-
----
-
-<a id="method_get_info"></a>
-### get_info
-
-```
-public get_info() : string|null
-```
-
-##### Summary
-
-Returns information about the reason the domain is suspended, if available.
-
-##### Returns:
-
-```
-string|null
 ```
 
 ---

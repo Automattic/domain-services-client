@@ -15,12 +15,15 @@ Response of a `Domain\Set\Contacts` command
 
 * public [__construct()](#method___construct)
 * public [get_client_txn_id()](#method_get_client_txn_id)
+* public [get_contacts()](#method_get_contacts)
 * public [get_data_by_key()](#method_get_data_by_key)
 * public [get_runtime()](#method_get_runtime)
 * public [get_server_txn_id()](#method_get_server_txn_id)
 * public [get_status()](#method_get_status)
 * public [get_status_description()](#method_get_status_description)
 * public [get_timestamp()](#method_get_timestamp)
+* public [get_transferlocked_until_date()](#method_get_transferlocked_until_date)
+* public [get_unverified_contact_suspension_date()](#method_get_unverified_contact_suspension_date)
 * public [is_success()](#method_is_success)
 
 ---
@@ -77,6 +80,31 @@ Gets the client transaction ID that was sent with the request. Useful for loggin
 
 ```
 string
+```
+
+---
+
+<a id="method_get_contacts"></a>
+### get_contacts
+
+```
+public get_contacts() : \Automattic\Domain_Services_Client\Entity\Domain_Contacts
+```
+
+##### Summary
+
+Gets the contacts associated with this domain
+
+##### Throws:
+
+| Type | Description |
+|------|-------------|
+| \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception |  |
+
+##### Returns:
+
+```
+\Automattic\Domain_Services_Client\Entity\Domain_Contacts
 ```
 
 ---
@@ -209,6 +237,44 @@ Gets the timestamp this response was generated.
 
 ```
 int
+```
+
+---
+
+<a id="method_get_transferlocked_until_date"></a>
+### get_transferlocked_until_date
+
+```
+public get_transferlocked_until_date() : string|null
+```
+
+##### Summary
+
+Gets the date the domain transfer lock will expire
+
+##### Returns:
+
+```
+string|null
+```
+
+---
+
+<a id="method_get_unverified_contact_suspension_date"></a>
+### get_unverified_contact_suspension_date
+
+```
+public get_unverified_contact_suspension_date() : string|null
+```
+
+##### Summary
+
+Gets the date when a domain will be suspended due to an unverified contact
+
+##### Returns:
+
+```
+string|null
 ```
 
 ---

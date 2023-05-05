@@ -35,8 +35,8 @@ attributes of the domain at the registry.
 * public [get_status()](#method_get_status)
 * public [get_status_description()](#method_get_status_description)
 * public [get_timestamp()](#method_get_timestamp)
-* public [get_transferlock()](#method_get_transferlock)
 * public [get_transfer_mode()](#method_get_transfer_mode)
+* public [get_transferlock()](#method_get_transferlock)
 * public [get_updated_date()](#method_get_updated_date)
 * public [is_success()](#method_is_success)
 
@@ -507,6 +507,28 @@ int
 
 ---
 
+<a id="method_get_transfer_mode"></a>
+### get_transfer_mode
+
+```
+public get_transfer_mode() : string|null
+```
+
+##### Summary
+
+Gets the transfer mode. One of the following:
+- Default: apply the registry policy (usually auto deny)
+- `autoapprove`: Automatically approve outbound transfers after 5 days
+- `autodeny`: Automatically deny outbound transfers after 5 days
+
+##### Returns:
+
+```
+string|null
+```
+
+---
+
 <a id="method_get_transferlock"></a>
 ### get_transferlock
 
@@ -527,28 +549,6 @@ Gets the transferlock status.
 
 ```
 bool|null
-```
-
----
-
-<a id="method_get_transfer_mode"></a>
-### get_transfer_mode
-
-```
-public get_transfer_mode() : string|null
-```
-
-##### Summary
-
-Gets the transfer mode. One of the following:
-- Default: apply the registry policy (usually auto deny)
-- `autoapprove`: Automatically approve outbound transfers after 5 days
-- `autodeny`: Automatically deny outbound transfers after 5 days
-
-##### Returns:
-
-```
-string|null
 ```
 
 ---

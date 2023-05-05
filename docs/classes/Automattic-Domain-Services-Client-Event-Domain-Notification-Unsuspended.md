@@ -1,14 +1,13 @@
-# Class: [\Automattic](../namespaces/automattic.md)[\Domain_Services_Client](../namespaces/automattic-domain-services-client.md)[\Event](../namespaces/automattic-domain-services-client-event.md)[\Domain](../namespaces/automattic-domain-services-client-event-domain.md)[\Notification](../namespaces/automattic-domain-services-client-event-domain-notification.md)\Suspended
+# Class: [\Automattic](../namespaces/automattic.md)[\Domain_Services_Client](../namespaces/automattic-domain-services-client.md)[\Event](../namespaces/automattic-domain-services-client-event.md)[\Domain](../namespaces/automattic-domain-services-client-event-domain.md)[\Notification](../namespaces/automattic-domain-services-client-event-domain-notification.md)\Unsuspended
 
 ## Summary:
 
-Domain suspended event
+Domain unsuspended event
 
 ## Description:
 
-- This event is generated when a domain is suspended
-- One frequent cause for suspension is the contact info email not being verified some time after registration
-- This event contains an `info` property with information about the reason why the domain was suspended, if available
+- This event is generated when a domain is unsuspended
+- This event contains an `info` property with information about the reason why the domain was unsuspended, if available
     - It can be retrieved with the `get_info` method
 
 
@@ -32,15 +31,14 @@ Domain suspended event
 
 ### Details
 
-* File: [lib/event/domain/notification/suspended.php](../../lib/event/domain/notification/suspended.php)
+* File: [lib/event/domain/notification/unsuspended.php](../../lib/event/domain/notification/unsuspended.php)
 * Implements:
   * [\Automattic\Domain_Services_Client\Event\Event_Interface](../classes/Automattic-Domain-Services-Client-Event-Event-Interface.md)
 * Uses Traits:
   * [\Automattic\Domain_Services_Client\Event\Data_Trait](../classes/Automattic-Domain-Services-Client-Event-Data-Trait.md)
   * [\Automattic\Domain_Services_Client\Event\Object_Type_Domain_Trait](../classes/Automattic-Domain-Services-Client-Event-Object-Type-Domain-Trait.md)
 * See Also:
-  * [\Automattic\Domain_Services_Client\Event\Domain\Notification\Unsupended](../\Automattic\Domain_Services_Client\Event\Domain\Notification\Unsupended)
-  * [\Automattic\Domain_Services_Client\Event\Domain\Notification\Verification_Success](../classes/Automattic-Domain-Services-Client-Event-Domain-Notification-Verification-Success.md)
+  * [\Automattic\Domain_Services_Client\Event\Domain\Notification\Suspended](../classes/Automattic-Domain-Services-Client-Event-Domain-Notification-Suspended.md)
 
 ---
 
@@ -219,7 +217,7 @@ public get_info() : string|null
 
 ##### Summary
 
-Returns information about the reason the domain is suspended, if available.
+Returns information about the reason the domain is unsuspended, if available.
 
 ##### Returns:
 
