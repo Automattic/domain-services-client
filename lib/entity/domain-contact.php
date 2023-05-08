@@ -50,18 +50,12 @@ class Domain_Contact {
 	/**
 	 * Constructs a `Domain_Contact` entity
 	 *
-	 * @param Contact_Id|null $contact_id
 	 * @param Contact_Information|null $contact_info
-	 * @param Contact_Disclosure|null $disclose_fields
 	 */
-	public function __construct( ?Contact_Id $contact_id = null, ?Contact_Information $contact_info = null, ?Contact_Disclosure $disclose_fields = null ) {
-		$this->contact_id = $contact_id;
+	public function __construct( ?Contact_Information $contact_info = null ) {
+		$this->contact_id = null;
 		$this->contact_information = $contact_info;
-
-		if ( null === $disclose_fields ) {
-			$disclose_fields = new Contact_Disclosure( Contact_Disclosure::NONE );
-		}
-		$this->contact_disclosure = $disclose_fields;
+		$this->contact_disclosure = new Contact_Disclosure( Contact_Disclosure::NONE );
 	}
 
 	/**
@@ -131,7 +125,7 @@ class Domain_Contact {
 	/**
 	 * @param Contact_Id|null $contact_id
 	 */
-	public function set_contact_id( Contact_Id $contact_id ): void {
+	private function set_contact_id( Contact_Id $contact_id ): void {
 		$this->contact_id = $contact_id;
 	}
 
@@ -159,7 +153,7 @@ class Domain_Contact {
 	/**
 	 * @param Contact_Disclosure $contact_disclosure
 	 */
-	public function set_contact_disclosure( Contact_Disclosure $contact_disclosure ): void {
+	private function set_contact_disclosure( Contact_Disclosure $contact_disclosure ): void {
 		$this->contact_disclosure = $contact_disclosure;
 	}
 }

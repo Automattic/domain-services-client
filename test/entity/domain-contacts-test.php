@@ -54,7 +54,7 @@ class Domain_Contacts_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 			];
 
 			$contact_information_entity = Entity\Contact_Information::from_array( $contact_information );
-			$domain_contact = new Entity\Domain_Contact( null, $contact_information_entity );
+			$domain_contact = new Entity\Domain_Contact( $contact_information_entity );
 
 			$entity->set_by_key( $type, $domain_contact );
 
