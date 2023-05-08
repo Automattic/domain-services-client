@@ -33,6 +33,7 @@ class Code {
 	public const INVALID_COMMAND_FORMAT = 507;
 	public const MISSING_REQUIRED_ENTITY = 508;
 	public const MISSING_COMMAND_OPTION = 509;
+  public const INVALID_EVENT_NAME = 510;
 	public const SERVER_CLOSING_CONNECTION = 520;
 	public const TOO_MANY_SESSIONS_OPEN = 521;
 	public const AUTHENTICATION_FAILED = 530;
@@ -52,6 +53,7 @@ class Code {
 		self::INVALID_ATTRIBUTE_VALUE_SYNTAX => 'Invalid attribute value syntax',
 		self::INVALID_OPTION_VALUE => 'Invalid option value',
 		self::INVALID_COMMAND_FORMAT => 'Invalid command format',
+		self::INVALID_EVENT_NAME => 'Invalid event name',
 		self::MISSING_REQUIRED_ENTITY => 'Missing required entity',
 		self::MISSING_COMMAND_OPTION => 'Missing command option',
 		self::SERVER_CLOSING_CONNECTION => 'Server closing connection. Client should try opening new connection',

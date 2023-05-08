@@ -23,4 +23,13 @@ use Automattic\Domain_Services_Client\{Exception};
 /**
  * Exception thrown when an invalid event name is used.
  */
-class Invalid_Event_Name extends Exception\Domain_Services_Exception { }
+class Invalid_Event_Name extends Exception\Domain_Services_Exception {
+	/**
+	 * Constructs a `Invalid_Event_Name` object.
+	 *
+	 * @internal
+	 */
+	public function __construct( ?string $invalid_event_class = null, ?string $invalid_event_subclass = null ) {
+		parent::__construct( Response\Code::INVALID_EVENT_NAME, [ 'event_class' => $invalid_event_class, 'event_subclass' => $invalid_event_subclass ] );
+	}
+}
