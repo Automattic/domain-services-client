@@ -37,12 +37,12 @@ class Factory {
 		$event_subclass = $event_data['event_subclass'] ?? null;
 
 		if ( null === $event_class || null === $event_subclass ) {
-			throw new Exception\Event\Invalid_Event_Name( 'Missing event class or subclass' );
+			throw new Exception\Event\Invalid_Event_Name();
 		}
 
 		$class_name = __NAMESPACE__ . '\\' . $event_class . '\\' . $event_subclass;
 		if ( ! class_exists( $class_name ) ) {
-			throw new Exception\Event\Invalid_Event_Name( 'Event class does not exist: ' . $class_name );
+			throw new Exception\Event\Invalid_Event_Name( $event_class, $event_subclass );
 		}
 
 		return new $class_name( $event_data );
