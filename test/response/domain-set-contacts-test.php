@@ -18,7 +18,7 @@
 
 namespace Automattic\Domain_Services_Client\Test\Response;
 
-use Automattic\Domain_Services_Client\{Command, Entity, Response, Test};
+use Automattic\Domain_Services_Client\{Command, Entity, Helper, Response, Test};
 
 class Domain_Set_Contacts_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_response_factory_success(): void {
@@ -91,7 +91,7 @@ class Domain_Set_Contacts_Test extends Test\Lib\Domain_Services_Client_Test_Case
 		$this->assertIsValidResponse( $mock_response_data, $response_object );
 
 		$this->assertEquals( $mock_response_data['data']['contacts'], $response_object->get_contacts()->to_array() );
-		$this->assertEquals( $mock_response_data['data']['transferlocked_until_date'], $response_object->get_transferlocked_until_date() );
-		$this->assertEquals( $mock_response_data['data']['unverified_contact_suspension_date'], $response_object->get_unverified_contact_suspension_date() );
+		$this->assertEquals( $mock_response_data['data']['transferlocked_until_date'], Helper\Date_Time::format( $response_object->get_transferlocked_until_date() ) );
+		$this->assertEquals( $mock_response_data['data']['unverified_contact_suspension_date'], Helper\Date_Time::format( $response_object->get_unverified_contact_suspension_date() ) );
 	}
 }
