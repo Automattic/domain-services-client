@@ -245,7 +245,7 @@ int
 ### get_transferlocked_until_date
 
 ```
-public get_transferlocked_until_date() : string|null
+public get_transferlocked_until_date() : \DateTimeInterface|null
 ```
 
 ##### Summary
@@ -255,7 +255,7 @@ Gets the date the domain transfer lock will expire
 ##### Returns:
 
 ```
-string|null
+\DateTimeInterface|null
 ```
 
 ---
@@ -264,7 +264,7 @@ string|null
 ### get_unverified_contact_suspension_date
 
 ```
-public get_unverified_contact_suspension_date() : string|null
+public get_unverified_contact_suspension_date() : \DateTimeInterface|null
 ```
 
 ##### Summary
@@ -274,7 +274,7 @@ Gets the date when a domain will be suspended due to an unverified contact
 ##### Returns:
 
 ```
-string|null
+\DateTimeInterface|null
 ```
 
 ---
