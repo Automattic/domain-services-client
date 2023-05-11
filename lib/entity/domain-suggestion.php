@@ -52,16 +52,22 @@ class Suggestion {
 	private bool $is_premium;
 
 	/**
+	 * @var bool is this suggestion's zone (TLD) active for the reseller?
+	 */
+	private bool $zone_is_active;
+
+	/**
 	 * Constructs a `Suggestion` entity
 	 *
 	 * @param Domain_Name $domain_name
 	 */
-	public function __construct( Domain_Name $domain_name, int $reseller_create_fee = 0, int $reseller_renewal_fee = 0, bool $is_premium = false, bool $is_available = true ) {
+	public function __construct( Domain_Name $domain_name, int $reseller_create_fee = 0, int $reseller_renewal_fee = 0, bool $is_premium = false, bool $is_available = true, $zone_is_active = true ) {
 		$this->domain_name = $domain_name;
 		$this->reseller_register_fee = $reseller_create_fee;
 		$this->reseller_renewal_fee = $reseller_renewal_fee;
 		$this->is_premium = $is_premium;
 		$this->is_available = $is_available;
+		$this->zone_is_active = $zone_is_active;
 	}
 
 	/**
@@ -110,6 +116,15 @@ class Suggestion {
 	}
 
 	/**
+	 * Returns whether the domain suggestion's zone (TLD) is active for the reseller
+	 *
+	 * @return bool
+	 */
+	public function is_zone_active(): bool {
+		return $this->zone_is_active;
+	}
+
+	/**
 	 * Returns an associative array containing the domain name suggestion and its related properties
 	 *
 	 * @return array
@@ -122,6 +137,7 @@ class Suggestion {
 			'reseller_renewal_fee' => $this->get_reseller_renewal_fee(),
 			'is_premium' => $this->is_premium(),
 			'is_available' => $this->is_available(),
+			'zone_is_active' => $this->is_zone_active(),
 		];
 	}
 }

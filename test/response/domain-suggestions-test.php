@@ -38,6 +38,7 @@ class Domain_Suggestions_Test extends Test\Lib\Domain_Services_Client_Test_Case 
 						'reseller_renewal_fee' => $i * 100,
 						'is_premium' => false,
 						'is_available' => true,
+						'zone_is_active' => true,
 					],
 					range( 1, 10 )
 				),

@@ -29,6 +29,7 @@ class Domain_Suggestions_Test extends Test\Lib\Domain_Services_Client_Test_Case 
 				'reseller_renewal_fee' => 100 * $i,
 				'is_premium' => false,
 				'is_available' => true,
+				'zone_is_active' => true,
 			],
 			range( 1, 10 )
 		);
@@ -38,7 +39,8 @@ class Domain_Suggestions_Test extends Test\Lib\Domain_Services_Client_Test_Case 
 				$domain_name,
 				$domain_suggestion_datum['reseller_register_fee'],
 				$domain_suggestion_datum['reseller_renewal_fee'],
-				$domain_suggestion_datum['is_premium']
+				$domain_suggestion_datum['is_premium'],
+				$domain_suggestion_datum['zone_is_active']
 			),
 			$domain_name_list,
 			$domain_suggestion_data
