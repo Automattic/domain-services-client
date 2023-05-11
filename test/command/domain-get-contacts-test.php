@@ -20,20 +20,20 @@ namespace Automattic\Domain_Services_Client\Test\Command;
 
 use Automattic\Domain_Services_Client\{Command, Entity, Test};
 
-class Contact_Details_Test extends Test\Lib\Domain_Services_Client_Test_Case {
+class Domain_Get_Contacts_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_command_instance_success(): void {
 		$mock_command_data = [
-			Command\Command_Interface::COMMAND => 'Contact\Details',
+			Command\Command_Interface::COMMAND => 'Domain\Get\Contacts',
 			Command\Command_Interface::PARAMS => [
-				Command\Command_Interface::KEY_CONTACT_ID => 'SP1:P-ABC2134',
+				Command\Command_Interface::KEY_DOMAIN => 'test-domain.com',
 			],
-			Command\Command_Interface::CLIENT_TXN_ID => 'client-transaction-info-for-contact-details-test-1',
+			Command\Command_Interface::CLIENT_TXN_ID => 'client-transaction-info-for-domain-get-contacts-test-1',
 		];
-		$contact_id = new Entity\Contact_Id( $mock_command_data[ Command\Command_Interface::PARAMS ][ Command\Command_Interface::KEY_CONTACT_ID ] );
-		$command = new Command\Contact\Details( $contact_id );
+		$domain = new Entity\Domain_Name( $mock_command_data[ Command\Command_Interface::PARAMS ][ Command\Command_Interface::KEY_DOMAIN ] );
+		$command = new Command\Domain\Get\Contacts( $domain );
 		$command->set_client_txn_id( $mock_command_data[ Command\Command_Interface::CLIENT_TXN_ID ] );
 
-		$this->assertInstanceOf( Command\Contact\Details::class, $command );
+		$this->assertInstanceOf( Command\Domain\Get\Contacts::class, $command );
 
 		$actual_command_array = $command->jsonSerialize();
 
