@@ -65,7 +65,6 @@ $domain_name = new Entity\Domain_Name( 'a8ctest.com' );
 // Set up a new domain contact
 $domain_contacts = new Entity\Domain_Contacts(
 	new Entity\Domain_Contact(
-		null,
 		new Entity\Contact_Information(
 			'John',
 			'Doe',
@@ -79,8 +78,7 @@ $domain_contacts = new Entity\Domain_Contacts(
 			'john.doe@example.com',
 			'+1.7575551234',
 			''
-		),
-		new Entity\Contact_Disclosure( \Automattic\Domain_Services_Client\Entity\Contact_Disclosure::NONE )
+		)
 	)
 );
 

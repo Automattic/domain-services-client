@@ -31,7 +31,6 @@ class ApiTest extends Test\Lib\Domain_Services_Client_Test_Case {
 		// Set up a new domain contact
 		$domain_contacts = new Entity\Domain_Contacts(
 			new Entity\Domain_Contact(
-				null,
 				new Entity\Contact_Information(
 					'Del',
 					'Putnam',
@@ -45,8 +44,7 @@ class ApiTest extends Test\Lib\Domain_Services_Client_Test_Case {
 					'del@putnams.net',
 					'+1.7577468269',
 					null
-				),
-				new Entity\Contact_Disclosure( \Automattic\Domain_Services_Client\Entity\Contact_Disclosure::NONE )
+				)
 			)
 		);
 

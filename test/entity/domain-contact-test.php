@@ -38,7 +38,7 @@ class Domain_Contact_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 		];
 
 		$contact_information_entity = Entity\Contact_Information::from_array( $contact_information );
-		$entity = new Entity\Domain_Contact( null, $contact_information_entity );
+		$entity = new Entity\Domain_Contact( $contact_information_entity );
 
 		$domain_contact = [
 			'contact_id' => null,
@@ -48,25 +48,6 @@ class Domain_Contact_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 
 		$this->assertSame( $contact_information_entity, $entity->get_contact_information() );
 		$this->assertNull( $entity->get_contact_id() );
-
-		$array = $entity->to_array();
-
-		$this->assertArraysEqual( $domain_contact, $array );
-	}
-
-	public function test_entity_instance_contact_id_success(): void {
-		$contact_id = 'SP1:A-34322';
-		$contact_id_entity = new Entity\Contact_Id( $contact_id );
-		$entity = new Entity\Domain_Contact( $contact_id_entity, null );
-
-		$domain_contact = [
-			'contact_id' => $contact_id,
-			'contact_information' => null,
-			'contact_disclosure' => 'none',
-		];
-
-		$this->assertSame( $contact_id_entity, $entity->get_contact_id() );
-		$this->assertNull( $entity->get_contact_information() );
 
 		$array = $entity->to_array();
 
