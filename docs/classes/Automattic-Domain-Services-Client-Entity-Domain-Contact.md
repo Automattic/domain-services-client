@@ -17,8 +17,6 @@ Represents one of the domain's contacts and its privacy setting.
 * public [get_contact_disclosure()](#method_get_contact_disclosure)
 * public [get_contact_id()](#method_get_contact_id)
 * public [get_contact_information()](#method_get_contact_information)
-* public [set_contact_disclosure()](#method_set_contact_disclosure)
-* public [set_contact_id()](#method_set_contact_id)
 * public [set_contact_information()](#method_set_contact_information)
 
 ---
@@ -35,7 +33,7 @@ Represents one of the domain's contacts and its privacy setting.
 ### __construct
 
 ```
-public __construct(\Automattic\Domain_Services_Client\Entity\Contact_Id|null  contact_id = null, \Automattic\Domain_Services_Client\Entity\Contact_Information|null  contact_info = null, \Automattic\Domain_Services_Client\Entity\Contact_Disclosure|null  disclose_fields = null) : mixed
+public __construct(\Automattic\Domain_Services_Client\Entity\Contact_Information|null  contact_info = null) : mixed
 ```
 
 ##### Summary
@@ -46,9 +44,7 @@ Constructs a `Domain_Contact` entity
 
 | Name | Type | Default |
 |------|------|---------|
-| **$contact_id** | \Automattic\Domain_Services_Client\Entity\Contact_Id|null | null |
 | **$contact_info** | \Automattic\Domain_Services_Client\Entity\Contact_Information|null | null |
-| **$disclose_fields** | \Automattic\Domain_Services_Client\Entity\Contact_Disclosure|null | null |
 
 ##### Returns:
 
@@ -99,48 +95,6 @@ public get_contact_information() : \Automattic\Domain_Services_Client\Entity\Con
 
 ```
 \Automattic\Domain_Services_Client\Entity\Contact_Information|null
-```
-
----
-
-<a id="method_set_contact_disclosure"></a>
-### set_contact_disclosure
-
-```
-public set_contact_disclosure(\Automattic\Domain_Services_Client\Entity\Contact_Disclosure  contact_disclosure) : void
-```
-
-##### Parameters:
-
-| Name | Type | Default |
-|------|------|---------|
-| **$contact_disclosure** | \Automattic\Domain_Services_Client\Entity\Contact_Disclosure |  |
-
-##### Returns:
-
-```
-void
-```
-
----
-
-<a id="method_set_contact_id"></a>
-### set_contact_id
-
-```
-public set_contact_id(\Automattic\Domain_Services_Client\Entity\Contact_Id|null  contact_id) : void
-```
-
-##### Parameters:
-
-| Name | Type | Default |
-|------|------|---------|
-| **$contact_id** | \Automattic\Domain_Services_Client\Entity\Contact_Id|null |  |
-
-##### Returns:
-
-```
-void
 ```
 
 ---
