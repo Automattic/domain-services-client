@@ -18,7 +18,7 @@
 
 namespace Automattic\Domain_Services_Client\Response\Domain;
 
-use Automattic\Domain_Services_Client\{Entity, Response, Helper};
+use Automattic\Domain_Services_Client\{Entity, Helper, Response};
 
 /**
  * Response of a `Domain\Info` command
@@ -52,19 +52,21 @@ class Info implements Response\Response_Interface {
 	/**
 	 * Gets the date the domain was registered to the reseller's account
 	 *
-	 * @return string|null
+	 * @return \DateTimeInterface|null
 	 */
-	public function get_created_date(): ?string {
-		return $this->get_data_by_key( 'data.created_date' );
+	public function get_created_date(): ?\DateTimeInterface {
+		$created_date = $this->get_data_by_key( 'data.created_date' );
+		return null === $created_date ? null : Helper\Date_Time::createImmutable( $created_date );
 	}
 
 	/**
 	 * Gets the date the domain registration will expire
 	 *
-	 * @return string|null
+	 * @return \DateTimeInterface|null
 	 */
-	public function get_expiration_date(): ?string {
-		return $this->get_data_by_key( 'data.expiration_date' );
+	public function get_expiration_date(): ?\DateTimeInterface {
+		$expiration_date = $this->get_data_by_key( 'data.expiration_date' );
+		return null === $expiration_date ? null : Helper\Date_Time::createImmutable( $expiration_date );
 	}
 
 	/**

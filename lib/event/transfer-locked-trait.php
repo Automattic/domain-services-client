@@ -30,7 +30,7 @@ trait TransferLocked_Trait {
 	 * @return \DateTimeInterface|null
 	 */
 	public function get_transferlocked_until_date(): ?\DateTimeInterface {
-		$transferlocked_until_date = $this->get_data_by_key( 'transferlocked_until_date' );
+		$transferlocked_until_date = $this->get_data_by_key( 'event_data.transferlocked_until_date' );
 
 		return null === $transferlocked_until_date ? null : Helper\Date_Time::createImmutable( $transferlocked_until_date );
 	}

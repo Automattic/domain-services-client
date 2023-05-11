@@ -85,6 +85,7 @@ class Domain_Register_Success_Test extends Test\Lib\Domain_Services_Client_Test_
 								'contact_disclosure' => 'none',
 							],
 						],
+						'transferlocked_until_date' => '2023-07-10 14:34:14',
 					],
 				],
 			],
@@ -119,5 +120,6 @@ class Domain_Register_Success_Test extends Test\Lib\Domain_Services_Client_Test_
 		$this->assertSame( $response_data['data']['event']['event_data']['expiration_date'], Helper\Date_Time::format( $event->get_expiration_date() ) );
 		$this->assertSame( $response_data['data']['event']['event_data']['renewable_until'], Helper\Date_Time::format( $event->get_renewable_until() ) );
 		$this->assertSame( $response_data['data']['event']['event_data']['unverified_contact_suspension_date'], Helper\Date_Time::format( $event->get_unverified_contact_suspension_date() ) );
+		$this->assertSame( $response_data['data']['event']['event_data']['transferlocked_until_date'], Helper\Date_Time::format( $event->get_transferlocked_until_date() ) );
 	}
 }

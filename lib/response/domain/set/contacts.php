@@ -18,7 +18,7 @@
 
 namespace Automattic\Domain_Services_Client\Response\Domain\Set;
 
-use Automattic\Domain_Services_Client\{Entity, Response};
+use Automattic\Domain_Services_Client\{Entity, Helper, Response};
 
 /**
  * Response of a `Domain\Set\Contacts` command
@@ -44,18 +44,20 @@ class Contacts implements Response\Response_Interface {
 	/**
 	 * Gets the date the domain transfer lock will expire
 	 *
-	 * @return string|null
+	 * @return \DateTimeInterface|null
 	 */
-	public function get_transferlocked_until_date(): ?string {
-		return $this->get_data_by_key( 'data.transferlocked_until_date' );
+	public function get_transferlocked_until_date(): ?\DateTimeInterface {
+		$transferlocked_until_date = $this->get_data_by_key( 'data.transferlocked_until_date' );
+		return null === $transferlocked_until_date ? null : Helper\Date_Time::createImmutable( $transferlocked_until_date );
 	}
 
 	/**
 	 * Gets the date when a domain will be suspended due to an unverified contact
 	 *
-	 * @return string|null
+	 * @return \DateTimeInterface|null
 	 */
-	public function get_unverified_contact_suspension_date(): ?string {
-		return $this->get_data_by_key( 'data.unverified_contact_suspension_date' );
+	public function get_unverified_contact_suspension_date(): ?\DateTimeInterface {
+		$unverified_contact_suspension_date = $this->get_data_by_key( 'data.unverified_contact_suspension_date' );
+		return null === $unverified_contact_suspension_date ? null : Helper\Date_Time::createImmutable( $unverified_contact_suspension_date );
 	}
 }

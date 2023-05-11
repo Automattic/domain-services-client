@@ -144,7 +144,7 @@ Gets the contacts associated with this domain
 ### get_created_date
 
 ```
-public get_created_date() : string|null
+public get_created_date() : \DateTimeInterface|null
 ```
 
 ##### Summary
@@ -154,7 +154,7 @@ Gets the date the domain was registered to the reseller&#039;s account
 ##### Returns:
 
 ```
-string|null
+\DateTimeInterface|null
 ```
 
 ---
@@ -251,7 +251,7 @@ Gets the current EPP status codes for the domain
 ### get_expiration_date
 
 ```
-public get_expiration_date() : string|null
+public get_expiration_date() : \DateTimeInterface|null
 ```
 
 ##### Summary
@@ -261,7 +261,7 @@ Gets the date the domain registration will expire
 ##### Returns:
 
 ```
-string|null
+\DateTimeInterface|null
 ```
 
 ---
