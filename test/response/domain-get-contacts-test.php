@@ -119,7 +119,6 @@ class Domain_Get_Contacts_Test extends Test\Lib\Domain_Services_Client_Test_Case
 		$this->assertIsValidResponse( $response_data, $response_object );
 
 		$contact_informations = $response_object->get_contacts()->to_array();
-		var_dump( $response_object->get_contacts());
 		$this->assertSame( $response_data['data']['contacts'], $contact_informations );
 	}
 }
