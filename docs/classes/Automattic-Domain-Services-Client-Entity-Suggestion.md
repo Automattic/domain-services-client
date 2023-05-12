@@ -19,6 +19,7 @@ Used in the `Domain\Suggestions` response.
 * public [get_reseller_renewal_fee()](#method_get_reseller_renewal_fee)
 * public [is_available()](#method_is_available)
 * public [is_premium()](#method_is_premium)
+* public [is_zone_active()](#method_is_zone_active)
 
 ---
 
@@ -36,7 +37,7 @@ Used in the `Domain\Suggestions` response.
 ### __construct
 
 ```
-public __construct(\Automattic\Domain_Services_Client\Entity\Domain_Name  domain_name, int  reseller_create_fee, int  reseller_renewal_fee, bool  is_premium = false, bool  is_available = true) : mixed
+public __construct(\Automattic\Domain_Services_Client\Entity\Domain_Name  domain_name, int  reseller_create_fee, int  reseller_renewal_fee, bool  is_premium = false, bool  is_available = true, mixed  zone_is_active = true) : mixed
 ```
 
 ##### Summary
@@ -52,6 +53,7 @@ Constructs a `Suggestion` entity
 | **$reseller_renewal_fee** | int | 0 |
 | **$is_premium** | bool | false |
 | **$is_available** | bool | true |
+| **$zone_is_active** | mixed | true |
 
 ##### Returns:
 
@@ -147,6 +149,25 @@ public is_premium() : bool
 ##### Summary
 
 Returns whether the domain suggestion is premium
+
+##### Returns:
+
+```
+bool
+```
+
+---
+
+<a id="method_is_zone_active"></a>
+### is_zone_active
+
+```
+public is_zone_active() : bool
+```
+
+##### Summary
+
+Returns whether the domain suggestion&#039;s zone (TLD) is active for the reseller
 
 ##### Returns:
 
