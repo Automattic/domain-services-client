@@ -1,16 +1,13 @@
-# Class: [\Automattic](../namespaces/automattic.md)[\Domain_Services_Client](../namespaces/automattic-domain-services-client.md)[\Response](../namespaces/automattic-domain-services-client-response.md)[\Contact](../namespaces/automattic-domain-services-client-response-contact.md)\Details
+# Class: [\Automattic](../namespaces/automattic.md)[\Domain_Services_Client](../namespaces/automattic-domain-services-client.md)[\Response](../namespaces/automattic-domain-services-client-response.md)[\Domain](../namespaces/automattic-domain-services-client-response-domain.md)[\Get](../namespaces/automattic-domain-services-client-response-domain-get.md)\Contacts
 
 ## Summary:
 
-Response containing the `Entity\Contact_Information` associated with a `Contact_Id`
+Response of a `Domain\Get\Contacts` command
 
+## Description:
 
----
+- A success response indicates that the operation was successfully processed.
 
-### Constants
-* public [CONTACT_INFORMATION](#constant_CONTACT_INFORMATION)
-* public [VALIDATED](#constant_VALIDATED)
-* public [VERIFIED](#constant_VERIFIED)
 
 ---
 
@@ -18,7 +15,7 @@ Response containing the `Entity\Contact_Information` associated with a `Contact_
 
 * public [__construct()](#method___construct)
 * public [get_client_txn_id()](#method_get_client_txn_id)
-* public [get_contact_information()](#method_get_contact_information)
+* public [get_contacts()](#method_get_contacts)
 * public [get_data_by_key()](#method_get_data_by_key)
 * public [get_runtime()](#method_get_runtime)
 * public [get_server_txn_id()](#method_get_server_txn_id)
@@ -26,43 +23,16 @@ Response containing the `Entity\Contact_Information` associated with a `Contact_
 * public [get_status_description()](#method_get_status_description)
 * public [get_timestamp()](#method_get_timestamp)
 * public [is_success()](#method_is_success)
-* public [is_validated()](#method_is_validated)
-* public [is_verified()](#method_is_verified)
 
 ---
 
 ### Details
 
-* File: [lib/response/contact/details.php](../../lib/response/contact/details.php)
+* File: [lib/response/domain/get/contacts.php](../../lib/response/domain/get/contacts.php)
 * Uses Traits:
   * [\Automattic\Domain_Services_Client\Response\Data_Trait](../classes/Automattic-Domain-Services-Client-Response-Data-Trait.md)
 * See Also:
-  * [\Automattic\Domain_Services_Client\Command\Contact\Details](../classes/Automattic-Domain-Services-Client-Command-Contact-Details.md)
-
----
-
-## Constants
-<a id="constant_CONTACT_INFORMATION"></a>
-###### CONTACT_INFORMATION
-```
-CONTACT_INFORMATION = 'data.contact_information'
-```
-
-
-<a id="constant_VALIDATED"></a>
-###### VALIDATED
-```
-VALIDATED = 'data.validated'
-```
-
-
-<a id="constant_VERIFIED"></a>
-###### VERIFIED
-```
-VERIFIED = 'data.verified'
-```
-
-
+  * [\Automattic\Domain_Services_Client\Command\Domain\Get\Contacts](../classes/Automattic-Domain-Services-Client-Command-Domain-Get-Contacts.md)
 
 ---
 
@@ -112,16 +82,16 @@ string
 
 ---
 
-<a id="method_get_contact_information"></a>
-### get_contact_information
+<a id="method_get_contacts"></a>
+### get_contacts
 
 ```
-public get_contact_information() : \Automattic\Domain_Services_Client\Entity\Contact_Information
+public get_contacts() : \Automattic\Domain_Services_Client\Entity\Domain_Contacts
 ```
 
 ##### Summary
 
-Returns the contact information
+Gets the contacts associated with this domain
 
 ##### Throws:
 
@@ -132,7 +102,7 @@ Returns the contact information
 ##### Returns:
 
 ```
-\Automattic\Domain_Services_Client\Entity\Contact_Information
+\Automattic\Domain_Services_Client\Entity\Domain_Contacts
 ```
 
 ---
@@ -279,44 +249,6 @@ final public is_success() : bool
 ##### Summary
 
 Gets whether the request succeeded.
-
-##### Returns:
-
-```
-bool
-```
-
----
-
-<a id="method_is_validated"></a>
-### is_validated
-
-```
-public is_validated() : bool
-```
-
-##### Summary
-
-Returns whether a contact is validated or not
-
-##### Returns:
-
-```
-bool
-```
-
----
-
-<a id="method_is_verified"></a>
-### is_verified
-
-```
-public is_verified() : bool
-```
-
-##### Summary
-
-Returns whether a contact is verified or not
 
 ##### Returns:
 

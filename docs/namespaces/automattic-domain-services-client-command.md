@@ -2,7 +2,6 @@
 
 ### Namespaces
 
-* [\Automattic\Domain_Services_Client\Command\Contact](../namespaces/automattic-domain-services-client-command-contact.md)
 * [\Automattic\Domain_Services_Client\Command\Dns](../namespaces/automattic-domain-services-client-command-dns.md)
 * [\Automattic\Domain_Services_Client\Command\Domain](../namespaces/automattic-domain-services-client-command-domain.md)
 * [\Automattic\Domain_Services_Client\Command\Event](../namespaces/automattic-domain-services-client-command-event.md)

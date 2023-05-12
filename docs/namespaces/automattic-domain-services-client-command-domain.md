@@ -2,6 +2,7 @@
 
 ### Namespaces
 
+* [\Automattic\Domain_Services_Client\Command\Domain\Get](../namespaces/automattic-domain-services-client-command-domain-get.md)
 * [\Automattic\Domain_Services_Client\Command\Domain\Set](../namespaces/automattic-domain-services-client-command-domain-set.md)
 
 ### Classes

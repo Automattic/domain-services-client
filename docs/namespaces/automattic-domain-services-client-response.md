@@ -2,7 +2,6 @@
 
 ### Namespaces
 
-* [\Automattic\Domain_Services_Client\Response\Contact](../namespaces/automattic-domain-services-client-response-contact.md)
 * [\Automattic\Domain_Services_Client\Response\Dns](../namespaces/automattic-domain-services-client-response-dns.md)
 * [\Automattic\Domain_Services_Client\Response\Domain](../namespaces/automattic-domain-services-client-response-domain.md)
 * [\Automattic\Domain_Services_Client\Response\Event](../namespaces/automattic-domain-services-client-response-event.md)
