@@ -36,6 +36,7 @@ interface Command_Interface {
 	public const KEY_CURRENT_EXPIRATION_YEAR = 'current_expiration_year';
 	public const KEY_DOMAIN = 'domain';
 	public const KEY_DOMAINS = 'domains';
+	public const KEY_EMAIL = 'email';
 	public const KEY_EVENT_ID = 'event_id';
 	public const KEY_EXACT_MATCH = 'exact_match';
 	public const KEY_FEE_AMOUNT = 'fee_amount';
