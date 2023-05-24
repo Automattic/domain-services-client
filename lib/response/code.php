@@ -71,7 +71,7 @@ class Code {
 		self::UNKNOWN_ERROR => 'Unknown error',
 		self::DOMAIN_ALREADY_REGISTERD => 'Domain already registered',
 		self::INVALID_EVENT_DATA => 'Invalid event data',
-		self::INVALID_EVENT_NAME => 'Invalid event event',
+		self::INVALID_EVENT_NAME => 'Invalid event name',
 		self::INVALID_VERIFICATION_DATA => 'Invalid verification data',
 		self::UNUSED_CONTACT_HANDLE => 'Contact hanlde not linked with a domain',
 	];
