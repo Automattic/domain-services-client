@@ -9,6 +9,7 @@ Represents status codes and descriptions from the DSAPI command's responses
 
 ### Constants
 * public [SUCCESS](#constant_SUCCESS)
+* public [ACCEPTED](#constant_ACCEPTED)
 * public [INVALID_COMMAND_NAME](#constant_INVALID_COMMAND_NAME)
 * public [INVALID_COMMAND_OPTION](#constant_INVALID_COMMAND_OPTION)
 * public [INVALID_ENTITY_VALUE](#constant_INVALID_ENTITY_VALUE)
@@ -19,14 +20,18 @@ Represents status codes and descriptions from the DSAPI command's responses
 * public [INVALID_COMMAND_FORMAT](#constant_INVALID_COMMAND_FORMAT)
 * public [MISSING_REQUIRED_ENTITY](#constant_MISSING_REQUIRED_ENTITY)
 * public [MISSING_COMMAND_OPTION](#constant_MISSING_COMMAND_OPTION)
-* public [INVALID_EVENT_NAME](#constant_INVALID_EVENT_NAME)
 * public [SERVER_CLOSING_CONNECTION](#constant_SERVER_CLOSING_CONNECTION)
 * public [TOO_MANY_SESSIONS_OPEN](#constant_TOO_MANY_SESSIONS_OPEN)
 * public [AUTHENTICATION_FAILED](#constant_AUTHENTICATION_FAILED)
 * public [AUTHORIZATION_FAILED](#constant_AUTHORIZATION_FAILED)
 * public [INVALID_ATTRIBUTE_VALUE](#constant_INVALID_ATTRIBUTE_VALUE)
+* public [DOMAIN_ALREADY_REGISTERD](#constant_DOMAIN_ALREADY_REGISTERD)
 * public [ENTITY_NOT_FOUND](#constant_ENTITY_NOT_FOUND)
 * public [COMMAND_FAILED](#constant_COMMAND_FAILED)
+* public [INVALID_EVENT_DATA](#constant_INVALID_EVENT_DATA)
+* public [INVALID_EVENT_NAME](#constant_INVALID_EVENT_NAME)
+* public [INVALID_VERIFICATION_DATA](#constant_INVALID_VERIFICATION_DATA)
+* public [UNUSED_CONTACT_HANDLE](#constant_UNUSED_CONTACT_HANDLE)
 * public [UNKNOWN_ERROR](#constant_UNKNOWN_ERROR)
 
 ---
@@ -48,6 +53,13 @@ Represents status codes and descriptions from the DSAPI command's responses
 ###### SUCCESS
 ```
 SUCCESS = 200
+```
+
+
+<a id="constant_ACCEPTED"></a>
+###### ACCEPTED
+```
+ACCEPTED = 202
 ```
 
 
@@ -121,13 +133,6 @@ MISSING_COMMAND_OPTION = 509
 ```
 
 
-<a id="constant_INVALID_EVENT_NAME"></a>
-###### INVALID_EVENT_NAME
-```
-INVALID_EVENT_NAME = 510
-```
-
-
 <a id="constant_SERVER_CLOSING_CONNECTION"></a>
 ###### SERVER_CLOSING_CONNECTION
 ```
@@ -163,6 +168,13 @@ INVALID_ATTRIBUTE_VALUE = 541
 ```
 
 
+<a id="constant_DOMAIN_ALREADY_REGISTERD"></a>
+###### DOMAIN_ALREADY_REGISTERD
+```
+DOMAIN_ALREADY_REGISTERD = 554
+```
+
+
 <a id="constant_ENTITY_NOT_FOUND"></a>
 ###### ENTITY_NOT_FOUND
 ```
@@ -174,6 +186,34 @@ ENTITY_NOT_FOUND = 545
 ###### COMMAND_FAILED
 ```
 COMMAND_FAILED = 549
+```
+
+
+<a id="constant_INVALID_EVENT_DATA"></a>
+###### INVALID_EVENT_DATA
+```
+INVALID_EVENT_DATA = 600
+```
+
+
+<a id="constant_INVALID_EVENT_NAME"></a>
+###### INVALID_EVENT_NAME
+```
+INVALID_EVENT_NAME = 601
+```
+
+
+<a id="constant_INVALID_VERIFICATION_DATA"></a>
+###### INVALID_VERIFICATION_DATA
+```
+INVALID_VERIFICATION_DATA = 602
+```
+
+
+<a id="constant_UNUSED_CONTACT_HANDLE"></a>
+###### UNUSED_CONTACT_HANDLE
+```
+UNUSED_CONTACT_HANDLE = 603
 ```
 
 

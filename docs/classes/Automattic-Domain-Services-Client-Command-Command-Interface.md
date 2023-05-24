@@ -17,6 +17,7 @@ Interface implemented by all commands
 * public [KEY_CURRENT_EXPIRATION_YEAR](#constant_KEY_CURRENT_EXPIRATION_YEAR)
 * public [KEY_DOMAIN](#constant_KEY_DOMAIN)
 * public [KEY_DOMAINS](#constant_KEY_DOMAINS)
+* public [KEY_EMAIL](#constant_KEY_EMAIL)
 * public [KEY_EVENT_ID](#constant_KEY_EVENT_ID)
 * public [KEY_EXACT_MATCH](#constant_KEY_EXACT_MATCH)
 * public [KEY_FEE_AMOUNT](#constant_KEY_FEE_AMOUNT)
@@ -110,6 +111,13 @@ KEY_DOMAIN = 'domain'
 ###### KEY_DOMAINS
 ```
 KEY_DOMAINS = 'domains'
+```
+
+
+<a id="constant_KEY_EMAIL"></a>
+###### KEY_EMAIL
+```
+KEY_EMAIL = 'email'
 ```
 
 
