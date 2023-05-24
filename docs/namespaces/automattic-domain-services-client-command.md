@@ -4,6 +4,7 @@
 
 * [\Automattic\Domain_Services_Client\Command\Dns](../namespaces/automattic-domain-services-client-command-dns.md)
 * [\Automattic\Domain_Services_Client\Command\Domain](../namespaces/automattic-domain-services-client-command-domain.md)
+* [\Automattic\Domain_Services_Client\Command\Email](../namespaces/automattic-domain-services-client-command-email.md)
 * [\Automattic\Domain_Services_Client\Command\Event](../namespaces/automattic-domain-services-client-command-event.md)
 
 

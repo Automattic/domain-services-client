@@ -16,6 +16,7 @@
 | [\Automattic\Domain_Services_Client\Entity\Domain_Contacts](../classes/Automattic-Domain-Services-Client-Entity-Domain-Contacts.md) | Represents all contact types for a domain name |
 | [\Automattic\Domain_Services_Client\Entity\Domain_Name](../classes/Automattic-Domain-Services-Client-Entity-Domain-Name.md) | Represents a domain name |
 | [\Automattic\Domain_Services_Client\Entity\Domain_Names](../classes/Automattic-Domain-Services-Client-Entity-Domain-Names.md) | List of `Domain_Name` entities |
+| [\Automattic\Domain_Services_Client\Entity\Email_Address](../classes/Automattic-Domain-Services-Client-Entity-Email-Address.md) | Represents an email address |
 | [\Automattic\Domain_Services_Client\Entity\Epp_Status_Code](../classes/Automattic-Domain-Services-Client-Entity-Epp-Status-Code.md) | Represents an EPP status code |
 | [\Automattic\Domain_Services_Client\Entity\Epp_Status_Codes](../classes/Automattic-Domain-Services-Client-Entity-Epp-Status-Codes.md) | List of `Epp_Status_Code` entities |
 | [\Automattic\Domain_Services_Client\Entity\Nameservers](../classes/Automattic-Domain-Services-Client-Entity-Nameservers.md) | Set of name servers |
