@@ -48,7 +48,7 @@ class Code {
 	public const UNUSED_CONTACT_HANDLE = 603;
 	public const UNKNOWN_ERROR = 999;
 
-	const DESCRIPTION = [
+	private const DESCRIPTION = [
 		self::SUCCESS => 'Command completed successfully',
 		self::ACCEPTED => 'Request has been accepted for processing',
 		self::INVALID_COMMAND_NAME => 'Invalid command name',

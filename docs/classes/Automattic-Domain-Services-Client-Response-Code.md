@@ -33,7 +33,6 @@ Represents status codes and descriptions from the DSAPI command's responses
 * public [INVALID_VERIFICATION_DATA](#constant_INVALID_VERIFICATION_DATA)
 * public [UNUSED_CONTACT_HANDLE](#constant_UNUSED_CONTACT_HANDLE)
 * public [UNKNOWN_ERROR](#constant_UNKNOWN_ERROR)
-* public [DESCRIPTION](#constant_DESCRIPTION)
 
 ---
 
@@ -222,13 +221,6 @@ UNUSED_CONTACT_HANDLE = 603
 ###### UNKNOWN_ERROR
 ```
 UNKNOWN_ERROR = 999
-```
-
-
-<a id="constant_DESCRIPTION"></a>
-###### DESCRIPTION
-```
-DESCRIPTION = [self::SUCCESS => 'Command completed successfully', self::ACCEPTED => 'Request has been accepted for processing', self::INVALID_COMMAND_NAME => 'Invalid command name', self::INVALID_COMMAND_OPTION => 'Invalid command option', self::INVALID_ENTITY_VALUE => 'Invalid entity value', self::INVALID_ATTRIBUTE_NAME => 'Invalid attribute name', self::MISSING_REQUIRED_ATTRIBUTE => 'Missing required attribute', self::INVALID_ATTRIBUTE_VALUE_SYNTAX => 'Invalid attribute value syntax', self::INVALID_OPTION_VALUE => 'Invalid option value', self::INVALID_COMMAND_FORMAT => 'Invalid command format', self::MISSING_REQUIRED_ENTITY => 'Missing required entity', self::MISSING_COMMAND_OPTION => 'Missing command option', self::SERVER_CLOSING_CONNECTION => 'Server closing connection. Client should try opening new connection', self::TOO_MANY_SESSIONS_OPEN => 'Too many sessions open. Server closing connection', self::AUTHENTICATION_FAILED => 'Authentication failed', self::AUTHORIZATION_FAILED => 'Authorization failed', self::INVALID_ATTRIBUTE_VALUE => 'Invalid attribute value', self::ENTITY_NOT_FOUND => 'Entity not found', self::COMMAND_FAILED => 'Command failed', self::UNKNOWN_ERROR => 'Unknown error', self::DOMAIN_ALREADY_REGISTERD => 'Domain already registered', self::INVALID_EVENT_DATA => 'Invalid event data', self::INVALID_EVENT_NAME => 'Invalid event event', self::INVALID_VERIFICATION_DATA => 'Invalid verification data', self::UNUSED_CONTACT_HANDLE => 'Contact hanlde not linked with a domain']
 ```
 
 
