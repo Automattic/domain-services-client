@@ -28,6 +28,7 @@ Represents status codes and descriptions from the DSAPI command's responses
 * public [DOMAIN_ALREADY_REGISTERD](#constant_DOMAIN_ALREADY_REGISTERD)
 * public [ENTITY_NOT_FOUND](#constant_ENTITY_NOT_FOUND)
 * public [COMMAND_FAILED](#constant_COMMAND_FAILED)
+* public [TLD_IN_MAINTENANCE](#constant_TLD_IN_MAINTENANCE)
 * public [INVALID_EVENT_DATA](#constant_INVALID_EVENT_DATA)
 * public [INVALID_EVENT_NAME](#constant_INVALID_EVENT_NAME)
 * public [INVALID_VERIFICATION_DATA](#constant_INVALID_VERIFICATION_DATA)
@@ -186,6 +187,13 @@ ENTITY_NOT_FOUND = 545
 ###### COMMAND_FAILED
 ```
 COMMAND_FAILED = 549
+```
+
+
+<a id="constant_TLD_IN_MAINTENANCE"></a>
+###### TLD_IN_MAINTENANCE
+```
+TLD_IN_MAINTENANCE = 599
 ```
 
 
