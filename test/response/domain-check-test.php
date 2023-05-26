@@ -25,7 +25,8 @@ class Domain_Check_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 		$domain_names = new Entity\Domain_Names();
 		$domain_names->add_domain_name( new Entity\Domain_Name( 'test-domain-name-1.com' ) )
 			->add_domain_name( new Entity\Domain_Name( 'test-domain-name-2.com' ) )
-			->add_domain_name( new Entity\Domain_Name( 'test-domain-name-3.com' ) );
+			->add_domain_name( new Entity\Domain_Name( 'test-domain-name-3.com' ) )
+			->add_domain_name( new Entity\Domain_Name( 'test-domain-name-tld-in-maintenance.blog' ) );
 		$command = new Command\Domain\Check( $domain_names );
 
 		$response_data = [
@@ -43,18 +44,28 @@ class Domain_Check_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 						'fee_class' => 'standard',
 						'fee_amount' => 12.34,
 						'zone_is_active' => true,
+						'tld_in_maintenance' => false,
 					],
 					'test-domain-name-2.com' => [
 						'available' => true,
 						'fee_class' => 'standard',
 						'fee_amount' => 12.34,
 						'zone_is_active' => true,
+						'tld_in_maintenance' => false,
 					],
 					'test-domain-name-3.com' => [
 						'available' => false,
 						'fee_class' => 'standard',
 						'fee_amount' => 12.34,
 						'zone_is_active' => true,
+						'tld_in_maintenance' => false,
+					],
+					'test-domain-name-tld-in-maintenance.blog' => [
+						'available' => false,
+						'fee_class' => '',
+						'fee_amount' => 0,
+						'zone_is_active' => true,
+						'tld_in_maintenance' => true,
 					],
 				],
 			],

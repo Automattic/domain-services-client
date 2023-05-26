@@ -39,6 +39,7 @@ class Check implements Response\Response_Interface {
 	 *         'fee_class' => 'standard',
 	 *         'fee_amount' => 12.34,
 	 *         'zone_is_active' => true,
+	 *         'tld_in_maintenance' => false,
 	 *     ],
 	 * ]
 	 * ```
