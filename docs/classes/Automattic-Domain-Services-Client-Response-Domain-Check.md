@@ -124,6 +124,7 @@ Gets the availability and pricing information for a list of domain from the resp
         &#039;fee_class&#039; =&gt; &#039;standard&#039;,
         &#039;fee_amount&#039; =&gt; 12.34,
         &#039;zone_is_active&#039; =&gt; true,
+        &#039;tld_in_maintenance&#039; =&gt; false,
     ],
 ]
 ```
