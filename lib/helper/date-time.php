@@ -21,9 +21,12 @@ namespace Automattic\Domain_Services_Client\Helper;
 use DateTime;
 use DateTimeImmutable;
 use DateTimeInterface;
+use DateTimeZone;
 
 /**
  * A helper class to help formatting DateTime
+ *
+ * All dates returned from the server are always in UTC
  *
  * @internal
  */
@@ -64,7 +67,7 @@ class Date_Time {
 	 * @return DateTime|false
 	 */
 	public static function create( string $datetime ) {
-		return DateTime::createFromFormat( self::FORMAT, $datetime );
+		return DateTime::createFromFormat( self::FORMAT, $datetime, new DateTimeZone( 'UTC' ) );
 	}
 
 	/**
@@ -77,6 +80,6 @@ class Date_Time {
 	 * @return DateTimeImmutable|false
 	 */
 	public static function createImmutable( string $datetime ) {
-		return DateTimeImmutable::createFromFormat( self::FORMAT, $datetime );
+		return DateTimeImmutable::createFromFormat( self::FORMAT, $datetime, new DateTimeZone( 'UTC' ) );
 	}
 }
