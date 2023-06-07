@@ -21,7 +21,7 @@ attributes of the domain at the registry.
 * public [get_created_date()](#method_get_created_date)
 * public [get_data_by_key()](#method_get_data_by_key)
 * public [get_dnssec()](#method_get_dnssec)
-* public [get_dnssec_ds_dsata()](#method_get_dnssec_ds_dsata)
+* public [get_dnssec_ds_data()](#method_get_dnssec_ds_data)
 * public [get_domain_status()](#method_get_domain_status)
 * public [get_expiration_date()](#method_get_expiration_date)
 * public [get_name_servers()](#method_get_name_servers)
@@ -203,11 +203,11 @@ string|null
 
 ---
 
-<a id="method_get_dnssec_ds_dsata"></a>
-### get_dnssec_ds_dsata
+<a id="method_get_dnssec_ds_data"></a>
+### get_dnssec_ds_data
 
 ```
-public get_dnssec_ds_dsata() : string|null
+public get_dnssec_ds_data() : string|null
 ```
 
 ##### Summary
