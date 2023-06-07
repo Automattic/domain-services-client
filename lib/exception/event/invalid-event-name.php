@@ -18,7 +18,7 @@
 
 namespace Automattic\Domain_Services_Client\Exception\Event;
 
-use Automattic\Domain_Services_Client\{Exception};
+use Automattic\Domain_Services_Client\{Exception, Response};
 
 /**
  * Exception thrown when an invalid event name is used.

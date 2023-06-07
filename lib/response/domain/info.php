@@ -83,7 +83,7 @@ class Info implements Response\Response_Interface {
 	 *
 	 * @return string|null
 	 */
-	public function get_dnssec_ds_dsata(): ?string {
+	public function get_dnssec_ds_data(): ?string {
 		return $this->get_data_by_key( 'data.dnssec_ds_data' );
 	}
 

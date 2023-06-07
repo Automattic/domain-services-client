@@ -91,7 +91,7 @@ class Domain_Info_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 		$this->assertEquals( $mock_response_data['data']['created_date'], Helper\Date_Time::format( $response_object->get_created_date() ) );
 		$this->assertEquals( $mock_response_data['data']['expiration_date'], Helper\Date_Time::format( $response_object->get_expiration_date() ) );
 		$this->assertEquals( $mock_response_data['data']['dnssec'], $response_object->get_dnssec() );
-		$this->assertEquals( $mock_response_data['data']['dnssec_ds_data'], $response_object->get_dnssec_ds_dsata() );
+		$this->assertEquals( $mock_response_data['data']['dnssec_ds_data'], $response_object->get_dnssec_ds_data() );
 		$this->assertEquals( $mock_response_data['data']['domain_status'], $response_object->get_domain_status()->to_array() );
 		$this->assertEquals( $mock_response_data['data']['name_servers'], $response_object->get_name_servers()->to_array() );
 		$this->assertEquals( $mock_response_data['data']['paid_until'], Helper\Date_Time::format( $response_object->get_paid_until() ) );
