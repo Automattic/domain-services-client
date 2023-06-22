@@ -21,43 +21,40 @@ namespace Automattic\Domain_Services_Client\Command\Email\Send;
 use Automattic\Domain_Services_Client\{Command, Entity, Exception};
 
 /**
- * Resend email for domain contact verification
+ * Send domain auth code to the domain owner
  *
- * @see \Automattic\Domain_Services_Client\Response\Domain\Set\Contacts
- * @see Entity\Contact_Id
- * @see Entity\Contact_Information
- * @see Entity\Domain_Contacts
- * @see Entity\Domain_Contact
+ * @see \Automattic\Domain_Services_Client\Response\Email\Send\Auth_Code
+ * @see Entity\Domain_Name
  */
-class Verification implements Command\Command_Interface, Command\Command_Serialize_Interface {
+class Auth_Code implements Command\Command_Interface, Command\Command_Serialize_Interface {
 	use Command\Command_Serialize_Trait;
 	use Command\Command_Trait;
 
 	/**
-	 * The domain name that will be updated.
+	 * The domain name for which auth code is required.
 	 *
-	 * @var Entity\Email_Address
+	 * @var Entity\Domain_Name
 	 */
-	private Entity\Email_Address $email_address;
+	private Entity\Domain_Name $domain;
 
 	/**
-	 * Constructs a `Email\Send\Verification` command
+	 * Constructs a `Email\Send\Auth_Code` command
 	 *
-	 * @param Entity\Email_Address     $email
+	 * @param Entity\Domain_Name $domain
 	 *
 	 * @throws Exception\Entity\Invalid_Value_Exception
 	 */
-	public function __construct( Entity\Email_Address $email_address ) {
-		$this->email_address = $email_address;
+	public function __construct( Entity\Domain_Name $domain ) {
+		$this->domain = $domain;
 	}
 
 	/**
-	 * Gets the email address that will be verified
+	 * Gets the domain name for which auth code is required
 	 *
-	 * @return Entity\Email_Address
+	 * @return Entity\Domain_Name
 	 */
-	private function get_email_address(): Entity\Email_Address {
-		return $this->email_address;
+	private function get_domain(): Entity\Domain_Name {
+		return $this->domain;
 	}
 
 	/**
@@ -69,7 +66,7 @@ class Verification implements Command\Command_Interface, Command\Command_Seriali
 	 */
 	public function to_array(): array {
 		return [
-			Command\Command_Interface::KEY_EMAIL => $this->get_email_address()->get_email_address(),
+			Command\Command_Interface::KEY_DOMAIN => $this->get_domain()->get_name(),
 		];
 	}
 }
