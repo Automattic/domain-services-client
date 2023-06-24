@@ -35,9 +35,6 @@ class Auth_Code implements Response\Response_Interface {
 	 * @throws \Automattic\Domain_Services_Client\Exception\Entity\Invalid_Value_Exception
 	 */
 	public function get_email(): ?Entity\Email_Address {
-		var_dump("\n\n**********\n\n");
-		var_dump( $this->get_data_by_key( 'data.email' ) );
-		var_dump("\n\n**********\n\n");
 		$email = $this->get_data_by_key( 'data.email' ) ?? null;
 		return $email ? new Entity\Email_Address( $email ) : null;
 	}
