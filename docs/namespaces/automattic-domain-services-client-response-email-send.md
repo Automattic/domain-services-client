@@ -4,4 +4,5 @@
 
 | Name | Summary |
 |------|---------|
+| [\Automattic\Domain_Services_Client\Response\Email\Send\Auth_Code](../classes/Automattic-Domain-Services-Client-Response-Email-Send-Auth-Code.md) | Response of an `Email\Send\Auth_Code` command. |
 | [\Automattic\Domain_Services_Client\Response\Email\Send\Verification](../classes/Automattic-Domain-Services-Client-Response-Email-Send-Verification.md) | Response of an `Email\Send\Verification` command. |
