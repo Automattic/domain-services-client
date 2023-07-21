@@ -36,7 +36,7 @@ class Domain_Transfer_Out_Success_Test extends Test\Lib\Domain_Services_Client_T
 				'event' => [
 					'id' => 1234,
 					'event_class' => 'Domain\Transfer\Out',
-					'event_subclass' => 'Success',
+					'event_subclass' => 'Completed',
 					'object_type' => 'domain',
 					'object_id' => 'example.com',
 					'event_date' => '2022-01-23 12:34:56',
@@ -61,7 +61,7 @@ class Domain_Transfer_Out_Success_Test extends Test\Lib\Domain_Services_Client_T
 		$event = $response_object->get_event();
 		$this->assertNotNull( $event );
 
-		$this->assertInstanceOf( Event\Domain\Transfer\Out\Success::class, $event );
+		$this->assertInstanceOf( Event\Domain\Transfer\Out\Completed::class, $event );
 		$this->assertIsValidEvent( $response_data['data']['event'], $event );
 		$this->assertSame( $response_data['data']['event']['event_data']['current_registrar'], $event->get_current_registrar() );
 		$this->assertSame( $response_data['data']['event']['event_data']['requesting_registrar'], $event->get_requesting_registrar() );

@@ -20,7 +20,7 @@ namespace Automattic\Domain_Services_Client\Test\Event;
 
 use Automattic\Domain_Services_Client\{Command, Helper, Event, Response, Test};
 
-class Domain_Transfer_In_Fail_Test extends Test\Lib\Domain_Services_Client_Test_Case {
+class Domain_Transfer_Out_Fail_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 	public function test_event_success(): void {
 		$command = new Command\Event\Details( 1234 );
 
@@ -35,15 +35,15 @@ class Domain_Transfer_In_Fail_Test extends Test\Lib\Domain_Services_Client_Test_
 			'data' => [
 				'event' => [
 					'id' => 1234,
-					'event_class' => 'Domain\Transfer\In',
-					'event_subclass' => 'Fail',
+					'event_class' => 'Domain\Transfer\Out',
+					'event_subclass' => 'Rejected',
 					'object_type' => 'domain',
 					'object_id' => 'example.com',
 					'event_date' => '2022-01-23 12:34:56',
 					'acknowledged_date' => null,
 					'event_data' => [
-						'current_registrar' => 'losing_registrar',
-						'requesting_registrar' => 'automattic',
+						'current_registrar' => 'automattic',
+						'requesting_registrar' => 'gaining_registrar',
 						'auto_nack' => false,
 						'request_date' => '2022-12-08 18:03:16',
 						'execute_date' => '2022-12-08 18:03:44',
@@ -61,7 +61,7 @@ class Domain_Transfer_In_Fail_Test extends Test\Lib\Domain_Services_Client_Test_
 		$event = $response_object->get_event();
 		$this->assertNotNull( $event );
 
-		$this->assertInstanceOf( Event\Domain\Transfer\In\Fail::class, $event );
+		$this->assertInstanceOf( Event\Domain\Transfer\Out\Rejected::class, $event );
 		$this->assertIsValidEvent( $response_data['data']['event'], $event );
 		$this->assertSame( $response_data['data']['event']['event_data']['current_registrar'], $event->get_current_registrar() );
 		$this->assertSame( $response_data['data']['event']['event_data']['requesting_registrar'], $event->get_requesting_registrar() );

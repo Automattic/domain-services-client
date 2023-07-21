@@ -4,6 +4,6 @@
 
 | Name | Summary |
 |------|---------|
-| [\Automattic\Domain_Services_Client\Event\Domain\Transfer\In\Fail](../classes/Automattic-Domain-Services-Client-Event-Domain-Transfer-In-Fail.md) | Inbound domain transfer failure event |
+| [\Automattic\Domain_Services_Client\Event\Domain\Transfer\In\Completed](../classes/Automattic-Domain-Services-Client-Event-Domain-Transfer-In-Completed.md) | Inbound domain transfer success event |
 | [\Automattic\Domain_Services_Client\Event\Domain\Transfer\In\Pending](../classes/Automattic-Domain-Services-Client-Event-Domain-Transfer-In-Pending.md) | Inbound domain transfer start event |
-| [\Automattic\Domain_Services_Client\Event\Domain\Transfer\In\Success](../classes/Automattic-Domain-Services-Client-Event-Domain-Transfer-In-Success.md) | Inbound domain transfer success event |
+| [\Automattic\Domain_Services_Client\Event\Domain\Transfer\In\Rejected](../classes/Automattic-Domain-Services-Client-Event-Domain-Transfer-In-Rejected.md) | Inbound domain transfer failure event |

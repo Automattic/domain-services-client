@@ -1,14 +1,12 @@
-# Class: [\Automattic](../namespaces/automattic.md)[\Domain_Services_Client](../namespaces/automattic-domain-services-client.md)[\Event](../namespaces/automattic-domain-services-client-event.md)[\Domain](../namespaces/automattic-domain-services-client-event-domain.md)[\Transfer](../namespaces/automattic-domain-services-client-event-domain-transfer.md)[\In](../namespaces/automattic-domain-services-client-event-domain-transfer-in.md)\Fail
+# Class: [\Automattic](../namespaces/automattic.md)[\Domain_Services_Client](../namespaces/automattic-domain-services-client.md)[\Event](../namespaces/automattic-domain-services-client-event.md)[\Domain](../namespaces/automattic-domain-services-client-event-domain.md)[\Transfer](../namespaces/automattic-domain-services-client-event-domain-transfer.md)[\In](../namespaces/automattic-domain-services-client-event-domain-transfer-in.md)\Completed
 
 ## Summary:
 
-Inbound domain transfer failure event
+Inbound domain transfer success event
 
 ## Description:
 
-- This event is generated when a domain transfer from another registrar to the reseller's account fails after it was
-  successfully started
-- There might be more information about the cause of the failure in the event data
+This event is generated when a domain transfer from another registrar to the reseller's account is successful.
 
 
 ---
@@ -26,12 +24,13 @@ Inbound domain transfer failure event
 * public [get_request_date()](#method_get_request_date)
 * public [get_requesting_registrar()](#method_get_requesting_registrar)
 * public [get_transfer_status()](#method_get_transfer_status)
+* public [get_transferlocked_until_date()](#method_get_transferlocked_until_date)
 
 ---
 
 ### Details
 
-* File: [lib/event/domain/transfer/in/fail.php](../../lib/event/domain/transfer/in/fail.php)
+* File: [lib/event/domain/transfer/in/completed.php](../../lib/event/domain/transfer/in/completed.php)
 * Implements:
   * [\Automattic\Domain_Services_Client\Event\Event_Interface](../classes/Automattic-Domain-Services-Client-Event-Event-Interface.md)
   * [\Automattic\Domain_Services_Client\Event\Async_Command_Related_Interface](../classes/Automattic-Domain-Services-Client-Event-Async-Command-Related-Interface.md)
@@ -39,6 +38,7 @@ Inbound domain transfer failure event
   * [\Automattic\Domain_Services_Client\Event\Async_Command_Related_Trait](../classes/Automattic-Domain-Services-Client-Event-Async-Command-Related-Trait.md)
   * [\Automattic\Domain_Services_Client\Event\Object_Type_Domain_Trait](../classes/Automattic-Domain-Services-Client-Event-Object-Type-Domain-Trait.md)
   * [\Automattic\Domain_Services_Client\Event\Transfer_Trait](../classes/Automattic-Domain-Services-Client-Event-Transfer-Trait.md)
+  * [\Automattic\Domain_Services_Client\Event\TransferLocked_Trait](../classes/Automattic-Domain-Services-Client-Event-TransferLocked-Trait.md)
 
 ---
 
@@ -249,4 +249,23 @@ Gets the status of the transfer.
 
 ```
 string|null
+```
+
+---
+
+<a id="method_get_transferlocked_until_date"></a>
+### get_transferlocked_until_date
+
+```
+public get_transferlocked_until_date() : \DateTimeInterface|null
+```
+
+##### Summary
+
+Gets the date until when the domain is transfer locked
+
+##### Returns:
+
+```
+\DateTimeInterface|null
 ```
