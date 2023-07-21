@@ -1,12 +1,14 @@
-# Class: [\Automattic](../namespaces/automattic.md)[\Domain_Services_Client](../namespaces/automattic-domain-services-client.md)[\Event](../namespaces/automattic-domain-services-client-event.md)[\Domain](../namespaces/automattic-domain-services-client-event-domain.md)[\Transfer](../namespaces/automattic-domain-services-client-event-domain-transfer.md)[\Out](../namespaces/automattic-domain-services-client-event-domain-transfer-out.md)\Success
+# Class: [\Automattic](../namespaces/automattic.md)[\Domain_Services_Client](../namespaces/automattic-domain-services-client.md)[\Event](../namespaces/automattic-domain-services-client-event.md)[\Domain](../namespaces/automattic-domain-services-client-event-domain.md)[\Transfer](../namespaces/automattic-domain-services-client-event-domain-transfer.md)[\In](../namespaces/automattic-domain-services-client-event-domain-transfer-in.md)\Rejected
 
 ## Summary:
 
-Outbound domain transfer success event
+Inbound domain transfer failure event
 
 ## Description:
 
-This event is generated when a domain transfer to another registrar is successful.
+- This event is generated when a domain transfer from another registrar to the reseller's account fails after it was
+  successfully started
+- There might be more information about the cause of the failure in the event data
 
 
 ---
@@ -29,7 +31,7 @@ This event is generated when a domain transfer to another registrar is successfu
 
 ### Details
 
-* File: [lib/event/domain/transfer/out/success.php](../../lib/event/domain/transfer/out/success.php)
+* File: [lib/event/domain/transfer/in/rejected.php](../../lib/event/domain/transfer/in/rejected.php)
 * Implements:
   * [\Automattic\Domain_Services_Client\Event\Event_Interface](../classes/Automattic-Domain-Services-Client-Event-Event-Interface.md)
   * [\Automattic\Domain_Services_Client\Event\Async_Command_Related_Interface](../classes/Automattic-Domain-Services-Client-Event-Async-Command-Related-Interface.md)

@@ -21,11 +21,12 @@ namespace Automattic\Domain_Services_Client\Event\Domain\Transfer\Out;
 use Automattic\Domain_Services_Client\{Event};
 
 /**
- * Outbound domain transfer success event
+ * Outbound domain transfer failure event
  *
- * This event is generated when a domain transfer to another registrar is successful.
+ * - This event is generated when a domain transfer to another registrar fails after it was successfully started
+ * - There might be more information about the cause of the failure in the event data
  */
-class Success implements Event\Event_Interface, Event\Async_Command_Related_Interface {
+class Rejected implements Event\Event_Interface, Event\Async_Command_Related_Interface {
 	use Event\Async_Command_Related_Trait;
 	use Event\Object_Type_Domain_Trait;
 	use Event\Transfer_Trait;

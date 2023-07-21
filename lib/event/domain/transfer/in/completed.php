@@ -16,18 +16,18 @@
  * if not, see https://www.gnu.org/licenses.
  */
 
-namespace Automattic\Domain_Services_Client\Event\Domain\Transfer\Out;
+namespace Automattic\Domain_Services_Client\Event\Domain\Transfer\In;
 
 use Automattic\Domain_Services_Client\{Event};
 
 /**
- * Outbound domain transfer failure event
+ * Inbound domain transfer success event
  *
- * - This event is generated when a domain transfer to another registrar fails after it was successfully started
- * - There might be more information about the cause of the failure in the event data
+ * This event is generated when a domain transfer from another registrar to the reseller's account is successful.
  */
-class Fail implements Event\Event_Interface, Event\Async_Command_Related_Interface {
+class Completed implements Event\Event_Interface, Event\Async_Command_Related_Interface {
 	use Event\Async_Command_Related_Trait;
 	use Event\Object_Type_Domain_Trait;
 	use Event\Transfer_Trait;
+	use Event\TransferLocked_Trait;
 }

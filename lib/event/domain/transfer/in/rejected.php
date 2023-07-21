@@ -27,7 +27,7 @@ use Automattic\Domain_Services_Client\{Event};
  *   successfully started
  * - There might be more information about the cause of the failure in the event data
  */
-class Fail implements Event\Event_Interface, Event\Async_Command_Related_Interface {
+class Rejected implements Event\Event_Interface, Event\Async_Command_Related_Interface {
 	use Event\Async_Command_Related_Trait;
 	use Event\Object_Type_Domain_Trait;
 	use Event\Transfer_Trait;
