@@ -29,13 +29,51 @@ use Automattic\Domain_Services_Client\{Command, Entity};
  * - The domain must not be within 60 days of a previous transfer.
  * - The domain must not be premium.
  * - The tld should be supported.
- * - The actual restore is processed asynchronously on the server. The result of the actual transfer operation will be
+ * - The actual transfer is processed asynchronously on the server. The result of the actual transfer operation will be
  *   returned in an event.
  *
  * Example usage:
  * ```
  * $domain_name = new Entity\Domain_Name( 'example.com' );
- * $command = new Command\Domain\Transfer( $domain_name );
+ * $auth_code = '1234567890';
+ * $contact_info = [
+ *   'first_name' => 'John',
+ *   'last_name' => 'Doe',
+ *   'organization' => '',
+ *   'address_1' => '60 29th Street #343',
+ *   'address_2' => '',
+ *   'postal_code' => '94110',
+ *   'city' => 'San Francisco',
+ *   'state' => 'CA',
+ *   'country_code' => 'US',
+ *   'email' => 'registrar@automattic.com',
+ *   'phone' => '+1.8772733049',
+ *   'fax' => null,
+ * ];
+ * $contacts = Entity\Domain_Contacts::from_array(
+ *   [
+ *     'owner' => [ 'contact_information' => $contact_info ],
+ *   ]
+ * );
+ * $name_servers = new Entity\Nameservers(
+ *   new Entity\Domain_Name( 'ns1.example.com' ),
+ *   new Entity\Domain_Name( 'ns2.example.com' ),
+ * );
+ * $dns_records = new Entity\Dns_Records(
+ *   $domain,
+ *   new Entity\Dns_Record_Sets(
+ *     new Entity\Dns_Record_Set(
+ *       '@',
+ *       new Entity\Dns_Record_Type( Entity\Dns_Record_Type::A ),
+ *       3600,
+ *       [
+ *         '1.2.3.4',
+ *         '5.6.7.8',
+ *       ]
+ *     )
+ *   )
+ * );
+ * $command = new Command\Domain\Transfer( $domain_name, $auth_code, $contacts, $nameservers, $dns_records );
  * $response = $api->post( $command );
  * if ( $response->is_success() ) {
  *        // The transfer request was successfully queued.
@@ -79,6 +117,13 @@ class Transfer implements Command\Command_Interface, Command\Command_Serialize_I
 	 * @var Entity\Dns_Records
 	 */
 	private ?Entity\Dns_Records $dns_records;
+
+	/**
+	 * The auth code for the domain.
+	 *
+	 * @var string
+	 */
+	private string $auth_code;
 
 	public function __construct( Entity\Domain_Name $domain, string $auth_code, Entity\Domain_Contacts $contacts, Entity\Nameservers $nameservers = null, Entity\Dns_Records $dns_records = null ) {
 		if ( null === $nameservers ) {
