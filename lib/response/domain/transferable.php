@@ -18,14 +18,14 @@
 
 namespace Automattic\Domain_Services_Client\Response\Domain;
 
-use Automattic\Domain_Services_Client\{Entity, Helper, Response};
+use Automattic\Domain_Services_Client\{Response};
 
 /**
  * Response of a `Domain\Transferable` command
  *
  * This is the response returned from a successful execution of the `Domain\Transferable` command.
  */
-class Info implements Response\Response_Interface {
+class Transferable implements Response\Response_Interface {
 	use Response\Data_Trait;
 
 	/**
@@ -33,7 +33,7 @@ class Info implements Response\Response_Interface {
 	 *
 	 * @return bool
 	 */
-	public function get_transferable(): string {
+	public function get_transferable(): bool {
 		return $this->get_data_by_key( 'data.transferable' );
 	}
 
