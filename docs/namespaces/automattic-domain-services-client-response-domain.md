@@ -16,3 +16,5 @@
 | [\Automattic\Domain_Services_Client\Response\Domain\Renew](../classes/Automattic-Domain-Services-Client-Response-Domain-Renew.md) | Response of a `Domain\Renew` command |
 | [\Automattic\Domain_Services_Client\Response\Domain\Restore](../classes/Automattic-Domain-Services-Client-Response-Domain-Restore.md) | Response of a `Domain\Restore` command |
 | [\Automattic\Domain_Services_Client\Response\Domain\Suggestions](../classes/Automattic-Domain-Services-Client-Response-Domain-Suggestions.md) | Response of a `Domain\Suggestions` command |
+| [\Automattic\Domain_Services_Client\Response\Domain\Transfer](../classes/Automattic-Domain-Services-Client-Response-Domain-Transfer.md) | Response of a `Domain\Transfer` command |
+| [\Automattic\Domain_Services_Client\Response\Domain\Transferable](../classes/Automattic-Domain-Services-Client-Response-Domain-Transferable.md) | Response of a `Domain\Transferable` command |

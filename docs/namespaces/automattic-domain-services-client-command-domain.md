@@ -16,3 +16,5 @@
 | [\Automattic\Domain_Services_Client\Command\Domain\Renew](../classes/Automattic-Domain-Services-Client-Command-Domain-Renew.md) | Renews a domain |
 | [\Automattic\Domain_Services_Client\Command\Domain\Restore](../classes/Automattic-Domain-Services-Client-Command-Domain-Restore.md) | Restores (redeems) a domain that is currently in the redemption period. |
 | [\Automattic\Domain_Services_Client\Command\Domain\Suggestions](../classes/Automattic-Domain-Services-Client-Command-Domain-Suggestions.md) | Retrieves a list of domain name suggestions based on a query string |
+| [\Automattic\Domain_Services_Client\Command\Domain\Transfer](../classes/Automattic-Domain-Services-Client-Command-Domain-Transfer.md) | Transfer in a domain. |
+| [\Automattic\Domain_Services_Client\Command\Domain\Transferable](../classes/Automattic-Domain-Services-Client-Command-Domain-Transferable.md) | Check if a domain can be transferred in. |
