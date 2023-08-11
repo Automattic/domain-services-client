@@ -82,7 +82,7 @@ use Automattic\Domain_Services_Client\{Command, Entity};
  *
  * @see \Automattic\Domain_Services_Client\Event\Domain\Transfer\Fail
  * @see \Automattic\Domain_Services_Client\Event\Domain\Transfer\Success
- * @see \Automattic\Domain_Services_Client\Response\Transfer
+ * @see \Automattic\Domain_Services_Client\Response\Domain\Transfer
  */
 class Transfer implements Command\Command_Interface, Command\Command_Serialize_Interface {
 	use Command\Command_Serialize_Trait;

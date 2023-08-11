@@ -85,7 +85,7 @@ if ( $response->is_success() ) {
 * See Also:
   * [\Automattic\Domain_Services_Client\Event\Domain\Transfer\Fail](../classes/Automattic-Domain-Services-Client-Event-Domain-Transfer-Fail.md)
   * [\Automattic\Domain_Services_Client\Event\Domain\Transfer\Success](../classes/Automattic-Domain-Services-Client-Event-Domain-Transfer-Success.md)
-  * [\Automattic\Domain_Services_Client\Response\Transfer](../\Automattic\Domain_Services_Client\Response\Transfer)
+  * [\Automattic\Domain_Services_Client\Response\Domain\Transfer](../classes/Automattic-Domain-Services-Client-Response-Domain-Transfer.md)
 
 ---
 
