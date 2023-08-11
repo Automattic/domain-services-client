@@ -95,7 +95,7 @@ if ( $response->is_success() ) {
 ### __construct
 
 ```
-public __construct(\Automattic\Domain_Services_Client\Entity\Domain_Name  domain, string  auth_code, \Automattic\Domain_Services_Client\Entity\Domain_Contacts  contacts, \Automattic\Domain_Services_Client\Entity\Nameservers  nameservers = null, \Automattic\Domain_Services_Client\Entity\Dns_Records  dns_records = null) : mixed
+public __construct(\Automattic\Domain_Services_Client\Entity\Domain_Name  domain, string  auth_code, \Automattic\Domain_Services_Client\Entity\Domain_Contacts  contacts, ?\Automattic\Domain_Services_Client\Entity\Nameservers  nameservers = null, ?\Automattic\Domain_Services_Client\Entity\Dns_Records  dns_records = null) : mixed
 ```
 
 ##### Parameters:
@@ -105,8 +105,8 @@ public __construct(\Automattic\Domain_Services_Client\Entity\Domain_Name  domain
 | **$domain** | \Automattic\Domain_Services_Client\Entity\Domain_Name |  |
 | **$auth_code** | string |  |
 | **$contacts** | \Automattic\Domain_Services_Client\Entity\Domain_Contacts |  |
-| **$nameservers** | \Automattic\Domain_Services_Client\Entity\Nameservers | null |
-| **$dns_records** | \Automattic\Domain_Services_Client\Entity\Dns_Records | null |
+| **$nameservers** | ?\Automattic\Domain_Services_Client\Entity\Nameservers | null |
+| **$dns_records** | ?\Automattic\Domain_Services_Client\Entity\Dns_Records | null |
 
 ##### Returns:
 

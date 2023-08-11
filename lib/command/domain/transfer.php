@@ -106,15 +106,15 @@ class Transfer implements Command\Command_Interface, Command\Command_Serialize_I
 	 * The nameservers to set for the domain once it is transferred.
 	 * (Optional, defaults to WordPress.com name servers.)
 	 *
-	 * @var Entity\Nameservers
+	 * @var Entity\Nameservers|null
 	 */
-	private Entity\Nameservers $nameservers;
+	private ?Entity\Nameservers $nameservers;
 
 	/**
 	 * The DNS records to set for this domain, if using WordPress.com nameservers.
 	 * (Optional, defaults to no records.)
 	 *
-	 * @var Entity\Dns_Records
+	 * @var Entity\Dns_Records|null
 	 */
 	private ?Entity\Dns_Records $dns_records;
 
@@ -125,15 +125,7 @@ class Transfer implements Command\Command_Interface, Command\Command_Serialize_I
 	 */
 	private string $auth_code;
 
-	public function __construct( Entity\Domain_Name $domain, string $auth_code, Entity\Domain_Contacts $contacts, Entity\Nameservers $nameservers = null, Entity\Dns_Records $dns_records = null ) {
-		if ( null === $nameservers ) {
-			$nameservers = new Entity\Nameservers(
-				new Entity\Domain_Name( 'ns1.wordpress.com' ),
-				new Entity\Domain_Name( 'ns2.wordpress.com' ),
-				new Entity\Domain_Name( 'ns3.wordpress.com' ),
-			);
-		}
-
+	public function __construct( Entity\Domain_Name $domain, string $auth_code, Entity\Domain_Contacts $contacts, ?Entity\Nameservers $nameservers = null, ?Entity\Dns_Records $dns_records = null ) {
 		$this->domain = $domain;
 		if ( null === $contacts->get_owner() ) {
 			throw new Exception\Entity\Invalid_Value_Exception( 'contacts', 'The owner contact information cannot be null.' );

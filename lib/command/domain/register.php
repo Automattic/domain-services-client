@@ -120,7 +120,7 @@ class Register implements Command\Command_Interface, Command\Command_Serialize_I
 	 *
 	 * @var Entity\Nameservers|null
 	 */
-	private Entity\Nameservers $nameservers;
+	private ?Entity\Nameservers $nameservers;
 
 	/**
 	 * The DNS records to set for this domain, if using WordPress.com nameservers.
@@ -158,15 +158,7 @@ class Register implements Command\Command_Interface, Command\Command_Serialize_I
 	 * @param null|int                $price
 	 * @throws Exception\Entity\Invalid_Value_Exception
 	 */
-	public function __construct( Entity\Domain_Name $domain, Entity\Domain_Contacts $contacts, int $period = 1, Entity\Nameservers $nameservers = null, Entity\Dns_Records $dns_records = null, string $privacy_setting = 'a8c_privacy_service', ?int $price = null ) {
-		if ( null === $nameservers ) {
-			$nameservers = new Entity\Nameservers(
-				new Entity\Domain_Name( 'ns1.wordpress.com' ),
-				new Entity\Domain_Name( 'ns2.wordpress.com' ),
-				new Entity\Domain_Name( 'ns3.wordpress.com' ),
-			);
-		}
-
+	public function __construct( Entity\Domain_Name $domain, Entity\Domain_Contacts $contacts, int $period = 1, ?Entity\Nameservers $nameservers = null, ?Entity\Dns_Records $dns_records = null, string $privacy_setting = 'a8c_privacy_service', ?int $price = null ) {
 		$this->domain = $domain;
 		if ( null === $contacts->get_owner() ) {
 			throw new Exception\Entity\Invalid_Value_Exception( 'contacts', 'The owner contact information cannot be null.' );
