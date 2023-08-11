@@ -41,7 +41,7 @@ use Automattic\Domain_Services_Client\{Command, Entity};
  * }
  * ```
  *
- * @see \Automattic\Domain_Services_Client\Response\Transferable
+ * @see \Automattic\Domain_Services_Client\Response\Domain\Transferable
  */
 class Transferable implements Command\Command_Interface, Command\Command_Serialize_Interface {
 	use Command\Command_Serialize_Trait;

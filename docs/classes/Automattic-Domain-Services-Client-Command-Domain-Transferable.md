@@ -41,7 +41,7 @@ if ( $response->is_success() ) {
 * Implements:
   * [\Automattic\Domain_Services_Client\Command\Command_Interface](../classes/Automattic-Domain-Services-Client-Command-Command-Interface.md)
 * See Also:
-  * [\Automattic\Domain_Services_Client\Response\Transferable](../\Automattic\Domain_Services_Client\Response\Transferable)
+  * [\Automattic\Domain_Services_Client\Response\Domain\Transferable](../classes/Automattic-Domain-Services-Client-Response-Domain-Transferable.md)
 
 ---
 
