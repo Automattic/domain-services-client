@@ -47,6 +47,7 @@ class Code {
 	public const INVALID_EVENT_NAME = 601;
 	public const INVALID_VERIFICATION_DATA = 602;
 	public const UNUSED_CONTACT_HANDLE = 603;
+	public const INVALID_TRANSFER_REQUEST = 604;
 	public const UNKNOWN_ERROR = 999;
 
 	private const DESCRIPTION = [
@@ -75,6 +76,7 @@ class Code {
 		self::INVALID_EVENT_DATA => 'Invalid event data',
 		self::INVALID_EVENT_NAME => 'Invalid event name',
 		self::INVALID_VERIFICATION_DATA => 'Invalid verification data',
+		self::INVALID_TRANSFER_REQUEST => 'Domain transfer cannot be initiated',
 		self::UNUSED_CONTACT_HANDLE => 'Contact hanlde not linked with a domain',
 	];
 

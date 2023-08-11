@@ -18,19 +18,24 @@
 
 namespace Automattic\Domain_Services_Client\Command\Domain;
 
-use Automattic\Domain_Services_Client\{Command, Entity, Exception};
+use Automattic\Domain_Services_Client\{Command, Entity};
 
 /**
- * Register a new a domain.
+ * Transfer in a domain.
  *
- * - This command requests a new domain registration
- * - It runs asynchronously on the server
- * - Reseller will receive a `Domain\Register\Success` or `Domain\Register\Fail` event depending on the result of the
- *   command
+ * - This command transfer in a domain registered with a different registrar.
+ * - The domain must be unlocked and have the correct auth code.
+ * - The domain must not be within 60 days of the registration date or a previous transfer.
+ * - The domain must not be within 60 days of a previous transfer.
+ * - The domain must not be premium.
+ * - The tld should be supported.
+ * - The actual transfer is processed asynchronously on the server. The result of the actual transfer operation will be
+ *   returned in an event.
  *
  * Example usage:
  * ```
  * $domain_name = new Entity\Domain_Name( 'example.com' );
+ * $auth_code = '1234567890';
  * $contact_info = [
  *   'first_name' => 'John',
  *   'last_name' => 'Doe',
@@ -48,7 +53,6 @@ use Automattic\Domain_Services_Client\{Command, Entity, Exception};
  * $contacts = Entity\Domain_Contacts::from_array(
  *   [
  *     'owner' => [ 'contact_information' => $contact_info ],
- *     'admin' => [ 'contact_information' => $contact_info ],
  *   ]
  * );
  * $name_servers = new Entity\Nameservers(
@@ -69,53 +73,37 @@ use Automattic\Domain_Services_Client\{Command, Entity, Exception};
  *     )
  *   )
  * );
- * $command = new Command\Domain\Register(
- *     $domain_name,
- *     $contacts,
- *     1,
- *     $name_servers,
- *     $dns_records,
- *     Entity\Whois_Privacy::ENABLE_PRIVACY_SERVICE,
- *     null
- * );
+ * $command = new Command\Domain\Transfer( $domain_name, $auth_code, $contacts, $nameservers, $dns_records );
  * $response = $api->post( $command );
  * if ( $response->is_success() ) {
- *   // The register request was successfully queued.
+ *        // The transfer request was successfully queued.
  * }
  * ```
  *
- * @see     \Automattic\Domain_Services_Client\Event\Domain\Register\Fail
- * @see     \Automattic\Domain_Services_Client\Event\Domain\Register\Success
- * @see     \Automattic\Domain_Services_Client\Response\Domain\Register
+ * @see \Automattic\Domain_Services_Client\Event\Domain\Transfer\Fail
+ * @see \Automattic\Domain_Services_Client\Event\Domain\Transfer\Success
+ * @see \Automattic\Domain_Services_Client\Response\Domain\Transfer
  */
-class Register implements Command\Command_Interface, Command\Command_Serialize_Interface {
+class Transfer implements Command\Command_Interface, Command\Command_Serialize_Interface {
 	use Command\Command_Serialize_Trait;
 	use Command\Command_Trait;
 
 	/**
-	 * The domain name to register
+	 * The domain to transfer in
 	 *
 	 * @var Entity\Domain_Name
 	 */
 	private Entity\Domain_Name $domain;
 
 	/**
-	 * The contact information to use when registering this domain.
+	 * The contact information to use when transferring the domain.
 	 *
 	 * @var Entity\Domain_Contacts
 	 */
 	private Entity\Domain_Contacts $contacts;
 
 	/**
-	 * The number of years to register this domain for.
-	 * (Optional, defaults to 1.)
-	 *
-	 * @var int
-	 */
-	private int $period;
-
-	/**
-	 * The nameservers to set for this domain once it is registered.
+	 * The nameservers to set for the domain once it is transferred.
 	 * (Optional, defaults to WordPress.com name servers.)
 	 *
 	 * @var Entity\Nameservers|null
@@ -131,107 +119,56 @@ class Register implements Command\Command_Interface, Command\Command_Serialize_I
 	private ?Entity\Dns_Records $dns_records;
 
 	/**
-	 * The Whois privacy setting to use for this domain.
-	 * (Optional, defaults to "a8c_privacy_service" which uses the Knock Knock Whois Not There privacy service.)
+	 * The auth code for the domain.
 	 *
 	 * @var string
 	 */
-	private string $privacy_setting;
+	private string $auth_code;
 
-	/**
-	 * The price of the domain.
-	 * (Only used when registering a premium domain. Defaults to null.)
-	 *
-	 * @var int|null
-	 */
-	private ?int $price;
-
-	/**
-	 * Constructs a `Domain\Register` command
-	 *
-	 * @param Entity\Domain_Name      $domain
-	 * @param Entity\Domain_Contacts  $contacts
-	 * @param int                     $period
-	 * @param Entity\Nameservers|null $nameservers
-	 * @param Entity\Dns_Records|null $dns_records
-	 * @param string                  $privacy_setting
-	 * @param null|int                $price
-	 * @throws Exception\Entity\Invalid_Value_Exception
-	 */
-	public function __construct( Entity\Domain_Name $domain, Entity\Domain_Contacts $contacts, int $period = 1, ?Entity\Nameservers $nameservers = null, ?Entity\Dns_Records $dns_records = null, string $privacy_setting = 'a8c_privacy_service', ?int $price = null ) {
+	public function __construct( Entity\Domain_Name $domain, string $auth_code, Entity\Domain_Contacts $contacts, ?Entity\Nameservers $nameservers = null, ?Entity\Dns_Records $dns_records = null ) {
 		$this->domain = $domain;
 		if ( null === $contacts->get_owner() ) {
 			throw new Exception\Entity\Invalid_Value_Exception( 'contacts', 'The owner contact information cannot be null.' );
 		}
 		$this->contacts = $contacts;
-		$this->period = $period;
 		$this->nameservers = $nameservers;
+		$this->auth_code = $auth_code;
 		$this->dns_records = $dns_records;
-		$this->privacy_setting = $privacy_setting;
-		$this->price = $price;
 	}
 
-	/**
-	 * Gets the domain name to be registered
-	 *
+		/**
 	 * @return Entity\Domain_Name
 	 */
-	private function get_domain(): Entity\Domain_Name {
+	public function get_domain(): Entity\Domain_Name {
 		return $this->domain;
 	}
 
 	/**
-	 * Gets the contacts to be created for the domain
-	 *
 	 * @return Entity\Domain_Contacts
 	 */
-	private function get_contacts(): Entity\Domain_Contacts {
+	public function get_contacts(): Entity\Domain_Contacts {
 		return $this->contacts;
 	}
 
 	/**
-	 * Get the amount of years for which the domain is to be renewed.
-	 *
-	 * @return int
-	 */
-	private function get_period(): int {
-		return $this->period;
-	}
-
-	/**
-	 * Gets the contacts to be set for the domain
-	 *
 	 * @return Entity\Nameservers
 	 */
-	private function get_nameservers(): Entity\Nameservers {
+	public function get_nameservers(): Entity\Nameservers {
 		return $this->nameservers;
 	}
 
 	/**
-	 * Gets the dns records to be set for the domain
-	 *
-	 * @return ?Entity\Dns_Records
-	 */
-	private function get_dns_records(): ?Entity\Dns_Records {
-		return $this->dns_records;
-	}
-
-	/**
-	 * Gets the Whois privacy setting to be used for this domain.
-	 *
 	 * @return string
 	 */
-	private function get_privacy_setting(): string {
-		return $this->privacy_setting;
+	public function get_auth_code(): string {
+		return $this->auth_code;
 	}
 
 	/**
-	 * Gets the price for this domain.
-	 *
-	 * @return int|null
+	 * @return ?Entity\Dns_Records
 	 */
-	private function get_price(): ?int {
-		return $this->price;
+	public function get_dns_records(): ?Entity\Dns_Records {
+		return $this->dns_records;
 	}
 
 	/**
@@ -242,15 +179,12 @@ class Register implements Command\Command_Interface, Command\Command_Serialize_I
 	 * @return array
 	 */
 	public function to_array(): array {
-		$array = [
+		return [
 			Command\Command_Interface::KEY_DOMAIN => $this->get_domain()->get_name(),
 			Command\Command_Interface::KEY_CONTACTS => $this->get_contacts()->to_array(),
+			Command\Command_Interface::KEY_NAMESERVERS => $this->get_nameservers()->to_array(),
+			Command\Command_Interface::KEY_RECORDS => $this->get_dns_records() ? $this->get_dns_records()->to_array() : null,
+			Command\Command_Interface::KEY_AUTH_CODE => $this->get_auth_code(),
 		];
-
-		if ( $this->get_dns_records() ) {
-			$array[ Command\Command_Interface::KEY_RECORDS ] = $this->get_dns_records()->to_array();
-		}
-
-		return $array;
 	}
 }

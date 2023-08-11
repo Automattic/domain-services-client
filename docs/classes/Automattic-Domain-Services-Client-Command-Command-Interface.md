@@ -10,6 +10,7 @@ Interface implemented by all commands
 * public [COMMAND](#constant_COMMAND)
 * public [PARAMS](#constant_PARAMS)
 * public [CLIENT_TXN_ID](#constant_CLIENT_TXN_ID)
+* public [KEY_AUTH_CODE](#constant_KEY_AUTH_CODE)
 * public [KEY_CONTACT_DISCLOSURE](#constant_KEY_CONTACT_DISCLOSURE)
 * public [KEY_CONTACT_ID](#constant_KEY_CONTACT_ID)
 * public [KEY_CONTACT_INFORMATION](#constant_KEY_CONTACT_INFORMATION)
@@ -63,10 +64,17 @@ CLIENT_TXN_ID = 'client_txn_id'
 ```
 
 
-<a id="constant_KEY_CONTACT_DISCLOSURE"></a>
-###### KEY_CONTACT_DISCLOSURE
+<a id="constant_KEY_AUTH_CODE"></a>
+###### KEY_AUTH_CODE
 Array keys to be used with all commands
 
+```
+KEY_AUTH_CODE = 'auth_code'
+```
+
+
+<a id="constant_KEY_CONTACT_DISCLOSURE"></a>
+###### KEY_CONTACT_DISCLOSURE
 ```
 KEY_CONTACT_DISCLOSURE = 'contact_disclosure'
 ```

@@ -29,6 +29,7 @@ interface Command_Interface {
 	/**
 	 * Array keys to be used with all commands
 	 */
+	public const KEY_AUTH_CODE = 'auth_code';
 	public const KEY_CONTACT_DISCLOSURE = 'contact_disclosure';
 	public const KEY_CONTACT_ID = 'contact_id';
 	public const KEY_CONTACT_INFORMATION = 'contact_information';
