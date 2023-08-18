@@ -26,6 +26,7 @@ class Dns_Set_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 		$mock_command_data = [
 			Command\Command_Interface::COMMAND => 'Dns\Set',
 			Command\Command_Interface::PARAMS => [
+				Command\Command_Interface::KEY_DOMAIN => 'test-domain-name.com',
 				Command\Command_Interface::KEY_RECORDS => [
 					Command\Command_Interface::KEY_DOMAIN => 'test-domain-name.com',
 					Command\Command_Interface::KEY_RECORD_SETS => [
@@ -53,7 +54,8 @@ class Dns_Set_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 		];
 
 		$dns_records = Entity\Dns_Records::from_array( $mock_command_data[ Command\Command_Interface::PARAMS ][ Command\Command_Interface::KEY_RECORDS ] );
-		$command = new Command\Dns\Set( $dns_records );
+		$domain = new Entity\Domain_Name( $mock_command_data[ Command\Command_Interface::PARAMS ][ Command\Command_Interface::KEY_DOMAIN ] );
+		$command = new Command\Dns\Set( $domain, $dns_records );
 		$command->set_client_txn_id( $mock_command_data[ Command\Command_Interface::CLIENT_TXN_ID ] );
 
 		$this->assertInstanceOf( Command\Dns\Set::class, $command );
