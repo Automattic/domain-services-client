@@ -31,7 +31,7 @@ $records_array = [
 $dns_record_sets = Entity\Dns_Record_Sets::from_array( $records_array );
 
 $dns_records = new Entity\Dns_Records( $domain_name, $dns_record_sets );
-$command = new Command\Dns\Set( $dns_records );
+$command = new Command\Dns\Set( $domain_name, $dns_records );
 
 $response = $api->post( $command );
 
@@ -68,7 +68,7 @@ if ( $response->is_success() ) {
 ### __construct
 
 ```
-public __construct(\Automattic\Domain_Services_Client\Entity\Dns_Records  records) : mixed
+public __construct(\Automattic\Domain_Services_Client\Entity\Domain_Name  domain, \Automattic\Domain_Services_Client\Entity\Dns_Records  records) : mixed
 ```
 
 ##### Summary
@@ -79,6 +79,7 @@ Constructs a `Dns\Set` command
 
 | Name | Type | Default |
 |------|------|---------|
+| **$domain** | \Automattic\Domain_Services_Client\Entity\Domain_Name |  |
 | **$records** | \Automattic\Domain_Services_Client\Entity\Dns_Records |  |
 
 ##### Returns:

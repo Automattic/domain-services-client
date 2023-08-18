@@ -46,7 +46,7 @@ class Dns_Set_Test extends Test\Lib\Domain_Services_Client_Test_Case {
 			],
 		);
 		$dns_records = new Entity\Dns_Records( $domain, $dns_record_sets );
-		$command = new Command\Dns\Set( $dns_records );
+		$command = new Command\Dns\Set( $domain, $dns_records );
 
 		$response_data = [
 			'data' => [

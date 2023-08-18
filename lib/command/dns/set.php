@@ -48,7 +48,7 @@ use Automattic\Domain_Services_Client\{Command, Entity};
  * $dns_record_sets = Entity\Dns_Record_Sets::from_array( $records_array );
  *
  * $dns_records = new Entity\Dns_Records( $domain_name, $dns_record_sets );
- * $command = new Command\Dns\Set( $dns_records );
+ * $command = new Command\Dns\Set( $domain_name, $dns_records );
  *
  * $response = $api->post( $command );
  *
@@ -67,6 +67,13 @@ class Set implements Command\Command_Interface, Command\Command_Serialize_Interf
 	use Command\Command_Trait;
 
 	/**
+	 * The domain name whose DNS records will be set
+	 *
+	 * @var Entity\Domain_Name
+	 */
+	private Entity\Domain_Name $domain;
+
+	/**
 	 * DNS records that will be set at the server
 	 *
 	 * @var Entity\Dns_Records
@@ -78,8 +85,18 @@ class Set implements Command\Command_Interface, Command\Command_Serialize_Interf
 	 *
 	 * @param Entity\Dns_Records $records
 	 */
-	public function __construct( Entity\Dns_Records $records ) {
+	public function __construct( Entity\Domain_Name $domain, Entity\Dns_Records $records ) {
+		$this->domain = $domain;
 		$this->records = $records;
+	}
+
+	/**
+	 * Returns the domain name whose DNS records will be set
+	 *
+	 * @return Entity\Domain_Name
+	 */
+	private function get_domain(): Entity\Domain_Name {
+		return $this->domain;
 	}
 
 	/**
@@ -100,6 +117,7 @@ class Set implements Command\Command_Interface, Command\Command_Serialize_Interf
 	 */
 	public function to_array(): array {
 		return [
+			Command\Command_Interface::KEY_DOMAIN => $this->get_domain()->get_name(),
 			Command\Command_Interface::KEY_RECORDS => $this->get_records()->to_array(),
 		];
 	}
