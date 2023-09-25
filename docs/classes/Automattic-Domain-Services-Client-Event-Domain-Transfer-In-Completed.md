@@ -18,13 +18,17 @@ This event is generated when a domain transfer from another registrar to the res
 * public [get_command_server_txn_id()](#method_get_command_server_txn_id)
 * public [get_command_status()](#method_get_command_status)
 * public [get_command_status_description()](#method_get_command_status_description)
+* public [get_created_date()](#method_get_created_date)
 * public [get_current_registrar()](#method_get_current_registrar)
 * public [get_domain()](#method_get_domain)
 * public [get_execute_date()](#method_get_execute_date)
+* public [get_expiration_date()](#method_get_expiration_date)
+* public [get_renewable_until()](#method_get_renewable_until)
 * public [get_request_date()](#method_get_request_date)
 * public [get_requesting_registrar()](#method_get_requesting_registrar)
 * public [get_transfer_status()](#method_get_transfer_status)
 * public [get_transferlocked_until_date()](#method_get_transferlocked_until_date)
+* public [get_unverified_contact_suspension_date()](#method_get_unverified_contact_suspension_date)
 
 ---
 
@@ -39,6 +43,10 @@ This event is generated when a domain transfer from another registrar to the res
   * [\Automattic\Domain_Services_Client\Event\Object_Type_Domain_Trait](../classes/Automattic-Domain-Services-Client-Event-Object-Type-Domain-Trait.md)
   * [\Automattic\Domain_Services_Client\Event\Transfer_Trait](../classes/Automattic-Domain-Services-Client-Event-Transfer-Trait.md)
   * [\Automattic\Domain_Services_Client\Event\TransferLocked_Trait](../classes/Automattic-Domain-Services-Client-Event-TransferLocked-Trait.md)
+  * [\Automattic\Domain_Services_Client\Event\Renewable_Until_Trait](../classes/Automattic-Domain-Services-Client-Event-Renewable-Until-Trait.md)
+  * [\Automattic\Domain_Services_Client\Event\Created_Date_Trait](../classes/Automattic-Domain-Services-Client-Event-Created-Date-Trait.md)
+  * [\Automattic\Domain_Services_Client\Event\Expiration_Date_Trait](../classes/Automattic-Domain-Services-Client-Event-Expiration-Date-Trait.md)
+  * [\Automattic\Domain_Services_Client\Event\Unverified_Contact_Suspension_Date_Trait](../classes/Automattic-Domain-Services-Client-Event-Unverified-Contact-Suspension-Date-Trait.md)
 
 ---
 
@@ -139,6 +147,25 @@ string
 
 ---
 
+<a id="method_get_created_date"></a>
+### get_created_date
+
+```
+public get_created_date() : null|\DateTimeInterface
+```
+
+##### Summary
+
+Gets the date the domain was created
+
+##### Returns:
+
+```
+null|\DateTimeInterface
+```
+
+---
+
 <a id="method_get_current_registrar"></a>
 ### get_current_registrar
 
@@ -192,6 +219,44 @@ Gets the date the transfer was executed.
 
 ```
 \DateTimeImmutable|null
+```
+
+---
+
+<a id="method_get_expiration_date"></a>
+### get_expiration_date
+
+```
+public get_expiration_date() : null|\DateTimeInterface
+```
+
+##### Summary
+
+Gets the domain expiration date
+
+##### Returns:
+
+```
+null|\DateTimeInterface
+```
+
+---
+
+<a id="method_get_renewable_until"></a>
+### get_renewable_until
+
+```
+public get_renewable_until() : null|\DateTimeInterface
+```
+
+##### Summary
+
+Get the last date to renew the domain
+
+##### Returns:
+
+```
+null|\DateTimeInterface
 ```
 
 ---
@@ -268,4 +333,23 @@ Gets the date until when the domain is transfer locked
 
 ```
 \DateTimeInterface|null
+```
+
+---
+
+<a id="method_get_unverified_contact_suspension_date"></a>
+### get_unverified_contact_suspension_date
+
+```
+public get_unverified_contact_suspension_date() : null|\DateTimeInterface
+```
+
+##### Summary
+
+Gets the date when the domain will be suspended if the contact information is not verified
+
+##### Returns:
+
+```
+null|\DateTimeInterface
 ```

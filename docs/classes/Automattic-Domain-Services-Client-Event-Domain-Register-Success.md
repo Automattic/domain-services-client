@@ -39,6 +39,10 @@ This event is sent when a register operation succeeds.
   * [\Automattic\Domain_Services_Client\Event\Async_Command_Related_Trait](../classes/Automattic-Domain-Services-Client-Event-Async-Command-Related-Trait.md)
   * [\Automattic\Domain_Services_Client\Event\Object_Type_Domain_Trait](../classes/Automattic-Domain-Services-Client-Event-Object-Type-Domain-Trait.md)
   * [\Automattic\Domain_Services_Client\Event\TransferLocked_Trait](../classes/Automattic-Domain-Services-Client-Event-TransferLocked-Trait.md)
+  * [\Automattic\Domain_Services_Client\Event\Renewable_Until_Trait](../classes/Automattic-Domain-Services-Client-Event-Renewable-Until-Trait.md)
+  * [\Automattic\Domain_Services_Client\Event\Created_Date_Trait](../classes/Automattic-Domain-Services-Client-Event-Created-Date-Trait.md)
+  * [\Automattic\Domain_Services_Client\Event\Expiration_Date_Trait](../classes/Automattic-Domain-Services-Client-Event-Expiration-Date-Trait.md)
+  * [\Automattic\Domain_Services_Client\Event\Unverified_Contact_Suspension_Date_Trait](../classes/Automattic-Domain-Services-Client-Event-Unverified-Contact-Suspension-Date-Trait.md)
 * See Also:
   * [\Automattic\Domain_Services_Client\Command\Domain\Register](../classes/Automattic-Domain-Services-Client-Command-Domain-Register.md)
 
