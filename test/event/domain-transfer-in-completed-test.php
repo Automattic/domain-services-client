@@ -48,6 +48,11 @@ class Domain_Transfer_In_Success_Test extends Test\Lib\Domain_Services_Client_Te
 						'request_date' => '2022-12-08 18:03:16',
 						'execute_date' => '2022-12-08 18:03:44',
 						'transfer_status' => 'clientApproved',
+						'renewable_until' => '2023-12-08 18:03:44',
+						'created_date' => '2022-01-23 12:34:56',
+						'expiration_date' => '2023-01-23 12:34:56',
+						'unverified_contact_suspension_date' => '2022-01-23 12:34:56',
+						'transferlocked_until_date' => '2023-07-10 14:34:14',
 					],
 				],
 			],
@@ -69,5 +74,10 @@ class Domain_Transfer_In_Success_Test extends Test\Lib\Domain_Services_Client_Te
 		$this->assertSame( $response_data['data']['event']['event_data']['request_date'], Helper\Date_Time::format( $event->get_request_date() ) );
 		$this->assertSame( $response_data['data']['event']['event_data']['execute_date'], Helper\Date_Time::format( $event->get_execute_date() ) );
 		$this->assertSame( $response_data['data']['event']['event_data']['transfer_status'], $event->get_transfer_status() );
+		$this->assertSame( $response_data['data']['event']['event_data']['renewable_until'], Helper\Date_Time::format( $event->get_renewable_until() ) );
+		$this->assertSame( $response_data['data']['event']['event_data']['created_date'], Helper\Date_Time::format( $event->get_created_date() ) );
+		$this->assertSame( $response_data['data']['event']['event_data']['expiration_date'], Helper\Date_Time::format( $event->get_expiration_date() ) );
+		$this->assertSame( $response_data['data']['event']['event_data']['unverified_contact_suspension_date'], Helper\Date_Time::format( $event->get_unverified_contact_suspension_date() ) );
+		$this->assertSame( $response_data['data']['event']['event_data']['transferlocked_until_date'], Helper\Date_Time::format( $event->get_transferlocked_until_date() ) );
 	}
 }

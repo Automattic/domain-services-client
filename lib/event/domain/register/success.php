@@ -35,7 +35,7 @@ class Success implements Event\Event_Interface, Event\Async_Command_Related_Inte
 	use Event\Renewable_Until_Trait;
 	use Event\Created_Date_Trait;
 	use Event\Expiration_Date_Trait;
-	use Event\Unverified_Contact_Suspension_Date_Trait
+	use Event\Unverified_Contact_Suspension_Date_Trait;
 
 	/**
 	 * Gets the date the domain will exit the Add Grace Period (AGP); null if no AGP is offered
