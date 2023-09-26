@@ -19,7 +19,6 @@
 namespace Automattic\Domain_Services_Client\Event\Domain\Register;
 
 use Automattic\Domain_Services_Client\{Entity, Event, Exception, Helper};
-use Automattic\Domain_Services_Client\Response\Event_Aware;
 
 /**
  * Success event for a `Domain\Register` command.

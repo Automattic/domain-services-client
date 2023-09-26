@@ -2,7 +2,7 @@
 
 ## Summary:
 
-Trait that adds the `renewable_until` method to an event
+Trait that adds the `get_renewable_until` method to an event
 
 
 ---

@@ -21,7 +21,7 @@ namespace Automattic\Domain_Services_Client\Event;
 use Automattic\Domain_Services_Client\{Helper};
 
 /**
- * Trait that adds the `renewable_until` method to an event
+ * Trait that adds the `get_renewable_until` method to an event
  */
 trait Renewable_Until_Trait {
 	/**

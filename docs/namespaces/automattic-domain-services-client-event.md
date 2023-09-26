@@ -14,7 +14,7 @@
 | [\Automattic\Domain_Services_Client\Event\Error_Trait](../classes/Automattic-Domain-Services-Client-Event-Error-Trait.md) | Trait that specifies methods common to all error event classes. |
 | [\Automattic\Domain_Services_Client\Event\Expiration_Date_Trait](../classes/Automattic-Domain-Services-Client-Event-Expiration-Date-Trait.md) | Trait that adds the `get_expiration_date` method to an event |
 | [\Automattic\Domain_Services_Client\Event\Object_Type_Domain_Trait](../classes/Automattic-Domain-Services-Client-Event-Object-Type-Domain-Trait.md) | Trait for objects that are associated with a domain. |
-| [\Automattic\Domain_Services_Client\Event\Renewable_Until_Trait](../classes/Automattic-Domain-Services-Client-Event-Renewable-Until-Trait.md) | Trait that adds the `renewable_until` method to an event |
+| [\Automattic\Domain_Services_Client\Event\Renewable_Until_Trait](../classes/Automattic-Domain-Services-Client-Event-Renewable-Until-Trait.md) | Trait that adds the `get_renewable_until` method to an event |
 | [\Automattic\Domain_Services_Client\Event\Transfer_Trait](../classes/Automattic-Domain-Services-Client-Event-Transfer-Trait.md) | Trait that adds transfer-related methods to an event. |
 | [\Automattic\Domain_Services_Client\Event\TransferLocked_Trait](../classes/Automattic-Domain-Services-Client-Event-TransferLocked-Trait.md) | Trait that adds the `get_transferlocked_until_date` method to an event |
 | [\Automattic\Domain_Services_Client\Event\Unverified_Contact_Suspension_Date_Trait](../classes/Automattic-Domain-Services-Client-Event-Unverified-Contact-Suspension-Date-Trait.md) | Trait that adds the `get_unverified_contact_suspension_date` method to an event |
