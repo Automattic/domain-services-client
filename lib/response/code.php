@@ -39,7 +39,7 @@ class Code {
 	public const AUTHENTICATION_FAILED = 530;
 	public const AUTHORIZATION_FAILED = 531;
 	public const INVALID_ATTRIBUTE_VALUE = 541;
-	public const DOMAIN_ALREADY_REGISTERD = 554;
+	public const DOMAIN_ALREADY_REGISTERED = 554;
 	public const ENTITY_NOT_FOUND = 545;
 	public const COMMAND_FAILED = 549;
 	public const TLD_IN_MAINTENANCE = 599;
@@ -71,7 +71,7 @@ class Code {
 		self::ENTITY_NOT_FOUND => 'Entity not found',
 		self::COMMAND_FAILED => 'Command failed',
 		self::UNKNOWN_ERROR => 'Unknown error',
-		self::DOMAIN_ALREADY_REGISTERD => 'Domain already registered',
+		self::DOMAIN_ALREADY_REGISTERED => 'Domain already registered',
 		self::TLD_IN_MAINTENANCE => 'Domain TLD currently in maintenance',
 		self::INVALID_EVENT_DATA => 'Invalid event data',
 		self::INVALID_EVENT_NAME => 'Invalid event name',
