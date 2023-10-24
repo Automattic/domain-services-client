@@ -60,7 +60,7 @@ class Transferable implements Response\Response_Interface {
 	 *
 	 * @return bool
 	 */
-	public function get_sixty_days_registration(): bool {
-		return $this->get_data_by_key( 'data.sixty_days_registration' );
+	public function get_registered_within_60_days(): bool {
+		return $this->get_data_by_key( 'data.registered_within_60_days' );
 	}
 }
