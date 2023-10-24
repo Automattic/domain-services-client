@@ -54,4 +54,13 @@ class Transferable implements Response\Response_Interface {
 	public function get_transferlock(): bool {
 		return $this->get_data_by_key( 'data.transferlock' );
 	}
+
+	/**
+	 * Returns true if the domain has been registered less than 60 days ago
+	 *
+	 * @return bool
+	 */
+	public function get_sixty_days_registration(): bool {
+		return $this->get_data_by_key( 'data.sixty_days_registration' );
+	}
 }

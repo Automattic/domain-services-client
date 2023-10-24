@@ -19,6 +19,7 @@ This is the response returned from a successful execution of the `Domain\Transfe
 * public [get_pending_transfer()](#method_get_pending_transfer)
 * public [get_runtime()](#method_get_runtime)
 * public [get_server_txn_id()](#method_get_server_txn_id)
+* public [get_sixty_days_registration()](#method_get_sixty_days_registration)
 * public [get_status()](#method_get_status)
 * public [get_status_description()](#method_get_status_description)
 * public [get_timestamp()](#method_get_timestamp)
@@ -164,6 +165,25 @@ Useful for logging and debugging.
 
 ```
 string
+```
+
+---
+
+<a id="method_get_sixty_days_registration"></a>
+### get_sixty_days_registration
+
+```
+public get_sixty_days_registration() : bool
+```
+
+##### Summary
+
+Returns true if the domain has been registered less than 60 days ago
+
+##### Returns:
+
+```
+bool
 ```
 
 ---

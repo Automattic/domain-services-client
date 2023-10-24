@@ -39,6 +39,7 @@ class Domain_Transferable_Test extends Test\Lib\Domain_Services_Client_Test_Case
 				'transferable' => true,
 				'transferlock' => false,
 				'pending_transfer' => false,
+				'sixty_days_registration' => false,
 			],
 		];
 
@@ -52,5 +53,6 @@ class Domain_Transferable_Test extends Test\Lib\Domain_Services_Client_Test_Case
 		$this->assertTrue( $response_object->get_transferable() );
 		$this->assertFalse( $response_object->get_transferlock() );
 		$this->assertFalse( $response_object->get_pending_transfer() );
+		$this->assertFalse( $response_object->get_sixty_days_registration() );
 	}
 }
