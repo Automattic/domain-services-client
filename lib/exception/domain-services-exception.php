@@ -31,7 +31,7 @@ class Domain_Services_Exception extends \Exception {
 	 *
 	 * @internal
 	 */
-	public function __construct( int $code, array $data, ?\Throwable $previous = null ) {
+	public function __construct( int $code, array $data, \Throwable $previous = null ) {
 		$this->data = $data;
 		parent::__construct( Response\Code::get_description( $code ), $code, $previous );
 	}
