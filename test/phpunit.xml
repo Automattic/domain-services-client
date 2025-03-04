@@ -21,8 +21,9 @@
 		timeoutForSmallTests="25"
 		timeoutForMediumTests="50"
 		timeoutForLargeTests="120"
-		convertNoticesToExceptions="false"
-		convertWarningsToExceptions="false"
+		convertNoticesToExceptions="true"
+		convertWarningsToExceptions="true"
+		convertDeprecationsToExceptions="true"
 		bootstrap="bootstrap.php">
 	<testsuites>
 		<testsuite name="command">
