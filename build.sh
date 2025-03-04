@@ -10,7 +10,7 @@ phpdoc_dir=".phpdoc"
 phpcs="phpcs"
 
 # This makes sure we are always using the same version and only explicitly update it when we want to.
-phpdoc_version="3.3.1"
+phpdoc_version="3.7.1"
 phpdoc_exec="./dev-tools/phpDocumentor.phar"
 
 function main {
