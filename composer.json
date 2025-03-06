@@ -34,5 +34,8 @@
     "classmap": [
       "test/"
     ]
+  },
+  "config": {
+    "allow-plugins": false
   }
 }

@@ -21,9 +21,13 @@
 		timeoutForSmallTests="25"
 		timeoutForMediumTests="50"
 		timeoutForLargeTests="120"
-		convertNoticesToExceptions="false"
-		convertWarningsToExceptions="false"
+		convertNoticesToExceptions="true"
+		convertWarningsToExceptions="true"
+		convertDeprecationsToExceptions="true"
 		bootstrap="bootstrap.php">
+	<php>
+		<ini name="error_reporting" value="E_ALL"/>
+	</php>
 	<testsuites>
 		<testsuite name="command">
 			<directory suffix="test.php">command</directory>

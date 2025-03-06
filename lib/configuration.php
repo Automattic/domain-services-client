@@ -497,7 +497,7 @@ class Configuration {
 	 * @param array|null $variables hash of variable and the corresponding value (optional)
 	 * @return string URL based on host settings
 	 */
-	public function get_host_from_settings( int $index, array $variables = null ): string {
+	public function get_host_from_settings( int $index, ?array $variables = null ): string {
 		return self::get_host_string( $this->get_host_settings(), $index, $variables );
 	}
 }
